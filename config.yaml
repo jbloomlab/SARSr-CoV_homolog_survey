@@ -1,0 +1,9 @@
+# config for analysis
+
+# most CPUs to ever use at once
+max_cpus: 16
+
+# output directories / files
+RBD_annotation_file: data/RBD_sites.csv
+summary_dir: results/summary
+anc_RBDs_dir: results/ancestral_RBD

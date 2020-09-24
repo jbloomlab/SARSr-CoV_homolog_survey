@@ -1,0 +1,20 @@
+﻿node_ML,node_tree1,node_tree2,name,notes
+N2,N2,N2,AncSarbecovirus,ancestral sarbecovirus
+N3,N3,N3,AncEurAf,ancestral non-Asian sarbecovirus
+N4,N4,N4,AncAsia,ancestral SE-Asian sarbecovirus
+N6,N27,N5,AncClade2,ancestor of clade 2
+N49,N49,N49,AncSARS2a,ancestor of SARS-CoV-2 clade
+N50,N50,N50,AncSARS2b,ancestor of GDPangolin/RaTG13/SARS2
+N51,N51,N51,AncSARS2c,ancestor of RaTG13/SARS2
+N28,N5,N28,AncSARS1a,ancestor of SARS-CoV-1 clade
+N29,N8,N31,AncSARS1b,ancestor excluding RsSHC014 clade
+N30,N9,N32,AncSARS1c,ancestor of WIV1/16/LYRa11/SARS1
+N31,N10,N33,AncSARS1d,ancestor of LYRa11/SARS1
+N32,N11,N34,AncSARS-CoV-1,ancestor of SARS-CoV-1 strains from civet and humans 2002-2004
+N33,N12,N35,AncSARS-CoV-1_02-03EML,ancestor of 2002-2003 epidemic SARS-CoV-1 strains E/M/L
+N34,N13,N36,AncSARS-CoV-1_02-03ML,ancestor of 2002-2003 epidemic SARS-CoV-1 strains M/L
+N35,N14,N37,AncSARS-CoV-1_02-03L,ancestor of 2002-2003 epidemic SARS-CoV-1 strains L
+N39,N18,N41,AncSARS-CoV-1_03-04,ancestor of 2003-2004 SARS-CoV-1 strains humans and civets
+N42,N21,N43,AncSARS-CoV-1_04,ancestor of 2004 SARS-CoV-1 strains humans and civets
+N43,N22,N44,AncSARS-CoV-1_04_civet,ancestor of 2004 SARS-CoV-1 strains civets
+N45,N24,N46,AncSARS-CoV-1_04_human,ancestor of 2004 SARS-CoV-1 strains humans

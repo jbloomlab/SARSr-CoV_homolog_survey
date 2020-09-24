@@ -1,0 +1,160 @@
+START OF LOG FILE
+# Process_id= 29386
++=============================================================+
++  The gainLoss project:										
++  Analysis of Phyletic Patterns in a Likelihood Framework		
++  Version: gainLoss.VR01.266 - last updated 14.10.2013						
++  Ofir Cohen - ofircohe@tau.ac.il								
++=============================================================+
+
+ ---------------------- THE PARAMETERS ----------------------------
+Likelihood computation is performed while acounting for un-oberved data
+With min number of presences('1's)= 1
+With min number of absences('0's)= 0
+'Reversible'(Root.freq==stationary.freq) model is used
+RootFreq EQ stationary (taken from each sp - gain/(gain+loss) )
+inTree file: /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/RBD_codon_tree_constrained/alt1/RAxML_bestTree_RBD_codon_rooted_alt1.txt.ForIndelReconstruction
+inSeq file: /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/RBD_codon_tree_constrained/alt1/IndelsReconstruction//RBD_aa_aligned.fasta.indelOutputFastaFile
+log: RESULTS//log.txt with level= 5
+Optimization of the model parmeters is performed
+rate inference method is: empirical Bayesian estimate
+using a Gamma prior distribution with: 4 discrete categories
+branch lengths are not optimized
+rate4site is calculated 
+calculePosteriorExpectationOfChange is done Analytically
+-------------------------------------------------------------------
+
+ startSequenceContainer
+numberOfSeqs=52
+seqLen=9
+Num of zeros=346
+Num of ones=233
+Num of unKnowns=111
+
+ startStochasticProcess...
+
+InitGainLossByEmpiricalFreq: freq 1=init_gain= 0.341737
+rateDist GAMMA with: initAlphaRate=0.5 and _numberOfRateCategories= 4
+Stochastic process normalized with norm_factor=0.449905
+startStochasticProcess SimpleGamma of 4 categories... 
+with gain=0.341737 loss=0.658263 root(1)=0.2
+Stochastic process 'simple' normalized with norm_factor=0.449905
+
+ startingEvolTreeTopology...
+default rooting used, root name is N1
+sons of root are:
+N2  S52  
+unObservableData object initialized with number of unObservable patterns= 1
+The Tree Likelihood AllPosAlphTheSame is -47.4523
+Starting normalizeQandTree...(so that sumQii=1 (or weighted ave. of sunOii's for many Qs))
+Q were multiplied by 1
+The Tree Likelihood AllPosAlphTheSame is -47.4523
+ AlphaRate 0.5
+ Gain 0.759574
+ Loss 1.46311
+	Gain/Loss  ratio= 0.519149
+ Stationary '1' Freq at the root (g/(g+l) = 0.341737
+ Total branch lengths:44.8412
+
+Starting MaxParsimonyChange...
+ MaxParsimony with costMatrix - gainLossRatio 1:2
+Cost of tree is 18 (with 10 events)
+ Gain=8
+ Losses=2
+TIME = 0 minutes
+
+
+
+ *** Start Optimizations
+
+ WARN: no branch length estimation is performed with too few positions =9
+
+ WARN: Skip MultipleAllBranchesByFactorAtStart with too few number of positions 9
+  multipleAllBranchesByFactorAtStartByMaxParsimonyCost Total branch lengths: 1.11111 with respect to costOfTreeMP 10
+-------------------------------
+Starting optimizations: maxNumIterations=1
+
+######### optimization starting epsilonCycle=5 maxNumIterations=1
+start optimization with L= -51.7655
+
+------ Model+BBL iter=1
+### optimization starting- epsilonOptParam=0.04999 epsilonOptIter= 0.14997, MaxNumIterations=1
+start optimization with:
+ L= -51.7655 gainLossRatio= 0.519149 gain= 0.759574 loss= 1.46311 Alpha= 0.5
+
+---- iter=1
+for _which_param 6 with val = 3.30483 logL = -56.7234
+for _which_param 6 with val = 0.360512 logL = -45.8204
+for _which_param 6 with val = 0.0916704 logL = -42.7756
+for _which_param 6 with val = 0.0414826 logL = -43.365
+for _which_param 6 with val = 0.0808488 logL = -42.7234
+for _which_param 6 with val = 0.0712965 logL = -42.7207
+for _which_param 6 with val = 0.0579734 logL = -42.8345
+currBestL= -42.7207	GainLossRatio= 0.0712965
+for _which_param 2 with val = 0.5 logL = -42.7207
+for _which_param 2 with val = 38.5056 logL = -41.6825
+for _which_param 2 with val = 61.9944 logL = -41.6772
+for _which_param 2 with val = 50.5052 logL = -41.6792
+for _which_param 2 with val = 76.5112 logL = -41.6755
+for _which_param 2 with val = 80.336 logL = -41.6752
+for _which_param 2 with val = 87.847 logL = -41.6746
+for _which_param 2 with val = 92.489 logL = -41.6743
+currBestL= -41.6743	Alpha= 92.489
+ Too many iterations in optimizeGainLossModel. Iter= 2 Last optimized parameters are used. iter=2
+-------------------------------
+Model optimization over with: 
+Gain 0.267014
+Loss 7.51297
+	Gain/Loss  ratio= 0.0355404
+AlphaRateRate 92.489
+updated likelihood (after optimizeParameters)= -41.6743
+Model optimization RUNNING TIME = 0 minutes
+
+ Too many=1 iterations in Model+BBL. Last optimized parameters are used.
+Optimization RUNNING TIME = 0 minutes
+
+# Best likelihood after optimization=-41.6743
+TIME = 0 minutes
+
+Starting normalizeQandTree...(so that sumQii=1 (or weighted ave. of sunOii's for many Qs))
+Q were multiplied by 1
+Tree branches multi by 1
+The Tree Likelihood AllPosAlphTheSame is -41.6743
+ AlphaRate 92.489
+ Gain 0.535648
+ Loss 7.51297
+	Gain/Loss  ratio= 0.0712965
+ Stationary '1' Freq at the root (g/(g+l) = 0.0665516
+ Total branch lengths:1.11111
+
+ WARN: distanceFromRootForRecent=1, distanceFromNearestOTUForRecent=0.000001 are not estimated
+Starting printLofPos...
+
+Starting rate4site...
+Running rate4site...
+perform computeEB_EXP_siteSpecificRate... while computing posteriorProb PerCategory PerPosition
+computeRate4site RUNNING TIME = 0 minutes
+TIME = 0 minutes
+
+
+Starting calculePosteriorExpectationOfChange...
+
+Computation stochastic mapping
+Computation performed analytically for rate 0.871104
+Computation performed analytically for rate 0.963218
+Computation performed analytically for rate 1.03062
+Computation performed analytically for rate 1.13505
+TIME = 0 minutes
+
+Mean   values Gain=1.50486	Loss=0.796548
+Median values Gain=1.43281	Loss=0.961427
+
+TIME = 0 minutes (calculePosteriorExpectationOfChange)
+
+
+Starting ancestralReconstructorBasedOnJoint...
+computeAncestralPosterior (take into acount joint probabilty)...
+TIME = 0 minutes
+
+
+TOTAL RUNNING TIME = 0.0166667 minutes

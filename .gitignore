@@ -1,0 +1,17 @@
+.*
+!.gitignore
+!.gitattributes
+*.pyc
+*.log
+*.Log
+*.out
+_*
+
+src/
+env/
+programs/
+
+results/*
+!results/summary
+
+

@@ -1,0 +1,39 @@
+SARS-CoV-2: &SARS-CoV-2_parse_specs
+  query_clip5: 4
+  query_clip3: 4
+  termini5:
+    filter:
+      clip5: 4
+      mutation_nt_count: 1
+      mutation_op_count: null
+  gene:
+    filter:
+      mutation_nt_count: 45
+      mutation_op_count: null
+    return: [mutations, accuracy]
+  spacer:
+    filter:
+      mutation_nt_count: 1
+      mutation_op_count: null
+  barcode:
+    filter:
+      mutation_nt_count: 0
+      mutation_op_count: null
+    return: [sequence, accuracy]
+  termini3:
+    filter:
+      clip3: 4
+      mutation_nt_count: 1
+      mutation_op_count: null
+
+BM48-31: *SARS-CoV-2_parse_specs
+GD-Pangolin: *SARS-CoV-2_parse_specs
+HKU3-1: *SARS-CoV-2_parse_specs
+LYRa11: *SARS-CoV-2_parse_specs
+RaTG13: *SARS-CoV-2_parse_specs
+Rf1: *SARS-CoV-2_parse_specs
+Rp3: *SARS-CoV-2_parse_specs
+SARS-CoV: *SARS-CoV-2_parse_specs
+WIV16: *SARS-CoV-2_parse_specs
+ZC45: *SARS-CoV-2_parse_specs
+ZXC21: *SARS-CoV-2_parse_specs

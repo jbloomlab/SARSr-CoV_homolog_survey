@@ -1,0 +1,28 @@
+name: SARSr-CoV_homolog_survey
+channels:
+  - bioconda
+  - conda-forge
+  - salilab
+  - defaults
+dependencies:
+  - python=3.7
+  - pip
+  - pbccs
+  - raxml
+  - sra-tools
+  - dssp
+  - mafft
+  - minimap2
+  - nodejs
+  - pal2nal
+  - jupyter
+  - jupyterlab
+  - jupyter_contrib_nbextensions
+  - snakemake
+  - paml
+  - git-lfs
+  - pip:
+    - alignparse
+    - dms-variants
+    - logomaker
+    - natsort

@@ -1,0 +1,17 @@
+# print with MP based on the cost matrix: 
+#  0->0 =0
+#  0->1 =2
+#  1->0 =1
+#  1->1 =0
+G/L	POS	branch	branchLength	distance2Root	distance2NearestOTU	numOfNodes2NearestOTU	probability	expectation
+loss	1	S27	0.356627	17.626	0	0	1	1
+loss	1	S26	0.537697	17.9565	0	0	1	1
+gain	2	S26	0.537697	17.9565	0	0	1	1
+gain	3	S27	0.356627	17.626	0	0	1	1
+gain	4	N6	1.19557	19.6396	0.167082	2	1	1
+gain	5	N7	0.172281	19.8119	0.304677	2	1	1
+gain	5	N22	0.0978588	19.8988	0.149279	1	1	1
+gain	6	N15	0.0629145	19.7025	0.104167	1	1	1
+gain	7	N28	0.195361	18.6394	0.268348	2	1	1
+loss	8	N2	17.2694	17.2694	0.356627	1	1	1
+gain	9	S26	0.537697	17.9565	0	0	1	1
