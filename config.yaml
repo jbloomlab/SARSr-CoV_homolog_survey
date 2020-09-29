@@ -3,7 +3,76 @@
 # most CPUs to ever use at once
 max_cpus: 16
 
+# amplicons sequenced by PacBio
+amplicons: data/PacBio_amplicons.gb
+
+# the primary targets for which we are calling mutations
+mutated_targets:
+  - AncSarbecovirus_MAP
+  - AncAsia_MAP
+  - AncClade2_MAP
+  - AncSARS2a_MAP
+  - AncSARS2c_MAP
+  - AncSARS1a_MAP
+  - SARS-CoV-2
+  - SARS-CoV-2_2649
+  - GD-Pangolin
+  - RaTG13
+  - SARS-CoV-1_Urbani_HP03L
+  - SARS-CoV-1_2693
+  - SARS-CoV-1_PC4-137_PC04
+  - Rs7327
+  - BM48-31
+  
+# how to parse the amplicon
+feature_parse_specs: data/feature_parse_specs.yaml
+
+# do we get the sequencing data from the 'HutchServer' or 'SRA'?
+seqdata_source: HutchServer
+
+# list of PacBio sequencing runs linking barcodes to variants
+pacbio_runs: data/PacBio_runs.csv
+
+# list of Illumina sequencing runs of barcodes
+barcode_runs: data/barcode_runs.csv
+
 # output directories / files
-RBD_annotation_file: data/RBD_sites.csv
 summary_dir: results/summary
+RBD_annotation_file: data/RBD_sites.csv
 anc_RBDs_dir: results/ancestral_RBD
+ccs_dir: results/ccs
+process_ccs_dir: results/process_ccs
+processed_ccs_file: results/process_ccs/processed_ccs.csv
+variants_dir: results/variants
+nt_variant_table_file: results/variants/nucleotide_variant_table.csv
+counts_dir: results/counts
+variant_counts_file: results/counts/variant_counts.csv
+figs_dir: results/figures
+Titeseq_Kds_dir: results/binding_Kds
+Titeseq_Kds_file: results/binding_Kds/binding_Kds.csv
+Titeseq_Kds_homologs_file: results/binding_Kds/binding_Kds_homologs.csv
+expression_sortseq_dir: results/expression_meanFs
+expression_sortseq_file: results/expression_meanFs/expression_meanFs.csv
+expression_sortseq_homologs_file: results/expression_meanFs/expression_meanFs_homologs.csv
+
+
+# parameters for running PacBio `ccs` program
+min_ccs_accuracy: 0.999
+min_ccs_passes: 3
+min_ccs_length: 50
+max_ccs_length: 5000
+
+# max error rate in gene / barcode CCSs retained for consensu building
+max_error_rate: 0.0001
+
+# Parameters for processing Illumina barcodes, assuming this structure:
+#  [R2 binds] - [upstream] - [barcode] - [downstream] - [R1 binds]
+#  This orientation is hard-wired in the barcode parser, but here it is opposite
+#  Therefore, supplied the "downstream" sequence as reverse complemented upstream
+# Passed to `dms_variants.illuminabarcodeparser.IlluminaBarcodeParser`:
+illumina_barcode_parser_params:
+  upstream: GCTCGCGGCCGC
+  downstream: ''
+  minq: 20
+  upstream_mismatch: 1
+  downstream_mismatch: 0
