@@ -8,7 +8,7 @@ SARS-CoV-2: &SARS-CoV-2_parse_specs
       mutation_op_count: null
   gene:
     filter:
-      mutation_nt_count: 45
+      mutation_nt_count: 18
       mutation_op_count: null
     return: [mutations, accuracy]
   spacer:
@@ -26,14 +26,77 @@ SARS-CoV-2: &SARS-CoV-2_parse_specs
       mutation_nt_count: 1
       mutation_op_count: null
 
-BM48-31: *SARS-CoV-2_parse_specs
+AncSarbecovirus_MAP: *SARS-CoV-2_parse_specs
+AncSarbecovirus_alt: *SARS-CoV-2_parse_specs
+AncSarbecovirus_alt1_ins117ins118: *SARS-CoV-2_parse_specs
+AncSarbecovirus_tree1: *SARS-CoV-2_parse_specs
+AncEurAf_alt: *SARS-CoV-2_parse_specs
+AncEurAf_tree1: *SARS-CoV-2_parse_specs
+AncAsia_MAP: *SARS-CoV-2_parse_specs
+AncAsia_alt: *SARS-CoV-2_parse_specs
+AncAsia_tree1: *SARS-CoV-2_parse_specs
+AncAsia_tree2: *SARS-CoV-2_parse_specs
+AncClade2_MAP: *SARS-CoV-2_parse_specs
+AncClade2_alt1_subs-only: *SARS-CoV-2_parse_specs
+AncClade2_alt2_del1-only: *SARS-CoV-2_parse_specs
+AncClade2_alt3_del2-only: *SARS-CoV-2_parse_specs
+AncClade2_alt4_dels-only: *SARS-CoV-2_parse_specs
+AncClade2_alt: *SARS-CoV-2_parse_specs
+AncClade2_tree2: *SARS-CoV-2_parse_specs
+AncSARS2a_MAP: *SARS-CoV-2_parse_specs
+AncSARS2a_alt: *SARS-CoV-2_parse_specs
+AncSARS2c_MAP: *SARS-CoV-2_parse_specs
+AncSARS1a_MAP: *SARS-CoV-2_parse_specs
+AncSARS1a_alt: *SARS-CoV-2_parse_specs
+AncSARS1a_tree1: *SARS-CoV-2_parse_specs
+AncSARS1a_tree2: *SARS-CoV-2_parse_specs
+AncSARS1c_MAP: *SARS-CoV-2_parse_specs
+AncSARS-CoV-1_MAP: *SARS-CoV-2_parse_specs
+AncSARS-CoV-1_alt: *SARS-CoV-2_parse_specs
 GD-Pangolin: *SARS-CoV-2_parse_specs
-HKU3-1: *SARS-CoV-2_parse_specs
-LYRa11: *SARS-CoV-2_parse_specs
 RaTG13: *SARS-CoV-2_parse_specs
-Rf1: *SARS-CoV-2_parse_specs
-Rp3: *SARS-CoV-2_parse_specs
-SARS-CoV: *SARS-CoV-2_parse_specs
-WIV16: *SARS-CoV-2_parse_specs
-ZC45: *SARS-CoV-2_parse_specs
+GX-Pangolin: *SARS-CoV-2_parse_specs
+SARS-CoV-1_Urbani_HP03L: *SARS-CoV-2_parse_specs
+SARS-CoV-1_HGZ8L1-A_HP03E: *SARS-CoV-2_parse_specs
+SARS-CoV-1_GD01_HP03L: *SARS-CoV-2_parse_specs
+SARS-CoV-1_GZ-C_HP03L: *SARS-CoV-2_parse_specs
+SARS-CoV-1_Sino1-11_HP03L: *SARS-CoV-2_parse_specs
+SARS-CoV-1_Sin852_HP03L: *SARS-CoV-2_parse_specs
+SARS-CoV-1_SZ1_PC03: *SARS-CoV-2_parse_specs
+SARS-CoV-1_GD03T0013_HP04: *SARS-CoV-2_parse_specs
+SARS-CoV-1_GZ0402_HP04: *SARS-CoV-2_parse_specs
+SARS-CoV-1_PC4-127_PC04: *SARS-CoV-2_parse_specs
+SARS-CoV-1_PC4-137_PC04: *SARS-CoV-2_parse_specs
+SARS-CoV-1_PC4-13_PC04: *SARS-CoV-2_parse_specs
+WIV1: *SARS-CoV-2_parse_specs
+Rs7327: *SARS-CoV-2_parse_specs
+LYRa11: *SARS-CoV-2_parse_specs
+Rs4231: *SARS-CoV-2_parse_specs
+RsSHC014: *SARS-CoV-2_parse_specs
+Rs4084: *SARS-CoV-2_parse_specs
+BM48-31: *SARS-CoV-2_parse_specs
+BtKY72: *SARS-CoV-2_parse_specs
 ZXC21: *SARS-CoV-2_parse_specs
+ZC45: *SARS-CoV-2_parse_specs
+JL2012: *SARS-CoV-2_parse_specs
+Rf1: *SARS-CoV-2_parse_specs
+HeB2013: *SARS-CoV-2_parse_specs
+273-2005: *SARS-CoV-2_parse_specs
+Rf4092: *SARS-CoV-2_parse_specs
+YN2013: *SARS-CoV-2_parse_specs
+RmYN02: *SARS-CoV-2_parse_specs
+As6526: *SARS-CoV-2_parse_specs
+Rs4237: *SARS-CoV-2_parse_specs
+Rs4081: *SARS-CoV-2_parse_specs
+Rp3: *SARS-CoV-2_parse_specs
+279-2005: *SARS-CoV-2_parse_specs
+Shaanxi2011: *SARS-CoV-2_parse_specs
+Yunnan2011: *SARS-CoV-2_parse_specs
+Rs4247: *SARS-CoV-2_parse_specs
+HKU3-1: *SARS-CoV-2_parse_specs
+GX2013: *SARS-CoV-2_parse_specs
+Longquan-140: *SARS-CoV-2_parse_specs
+HKU3-8: *SARS-CoV-2_parse_specs
+HuB2013: *SARS-CoV-2_parse_specs
+SARS-CoV-2_2649: *SARS-CoV-2_parse_specs
+SARS-CoV-1_2693: *SARS-CoV-2_parse_specs

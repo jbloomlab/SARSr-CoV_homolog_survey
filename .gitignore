@@ -14,4 +14,10 @@ programs/
 results/*
 !results/summary
 
+!results/variants
+results/variants/*
+!results/variants/nucleotide_variant_table.csv
 
+!results/counts
+results/counts/*
+!results/counts/variant_counts.csv
