@@ -1,0 +1,2 @@
+results/variants/nucleotide_variant_table.csv filter=lfs diff=lfs merge=lfs -text
+results/counts/variant_counts.csv filter=lfs diff=lfs merge=lfs -text
