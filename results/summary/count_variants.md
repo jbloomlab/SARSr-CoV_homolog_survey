@@ -99,39 +99,39 @@ display(HTML(variants.head().to_html(index=False)))
   </thead>
   <tbody>
     <tr>
-      <td>AncSarbecovirus_MAP</td>
-      <td>lib1</td>
-      <td>AAAAAAAAAACAAAGG</td>
-      <td>T508A C509T T510G</td>
-      <td>1</td>
-    </tr>
-    <tr>
       <td>SARS-CoV-2_2649</td>
       <td>lib1</td>
       <td>AAAAAAAAAACATGGC</td>
       <td>T490C C491A T492C</td>
-      <td>1</td>
+      <td>4</td>
     </tr>
     <tr>
-      <td>AncSARS1a_tree1</td>
+      <td>AncAsia_MAP</td>
       <td>lib1</td>
-      <td>AAAAAAAAAGTGAAAG</td>
-      <td>NaN</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>ZXC21</td>
-      <td>lib1</td>
-      <td>AAAAAAAAAGTTACTA</td>
-      <td>NaN</td>
+      <td>AAAAAAAAAACATTCA</td>
+      <td>C502T A503T</td>
       <td>2</td>
     </tr>
     <tr>
-      <td>AncSarbecovirus_MAP</td>
+      <td>SARS-CoV-1_Urbani_HP03L</td>
       <td>lib1</td>
-      <td>AAAAAAAAATATTACA</td>
-      <td>T464A A465T</td>
+      <td>AAAAAAAAAATCATCA</td>
+      <td>T463G T464A A465T</td>
       <td>1</td>
+    </tr>
+    <tr>
+      <td>SARS-CoV-1_PC4-137_PC04</td>
+      <td>lib1</td>
+      <td>AAAAAAAAACGAAATC</td>
+      <td>C186T T373G</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>BM48-31</td>
+      <td>lib1</td>
+      <td>AAAAAAAAAGAATCGT</td>
+      <td>G365A A366T</td>
+      <td>3</td>
     </tr>
   </tbody>
 </table>
@@ -2096,11 +2096,11 @@ display(HTML(
   <tbody>
     <tr>
       <td>lib2</td>
-      <td>43028</td>
+      <td>85072</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>45670</td>
+      <td>79542</td>
     </tr>
   </tbody>
 </table>
@@ -2222,13 +2222,13 @@ display(HTML(fates.head().to_html(index=False)))
   <tbody>
     <tr>
       <td>invalid barcode</td>
-      <td>1500754</td>
+      <td>1226612</td>
       <td>lib1</td>
       <td>SortSeq_bin1</td>
     </tr>
     <tr>
       <td>valid barcode</td>
-      <td>676749</td>
+      <td>950891</td>
       <td>lib1</td>
       <td>SortSeq_bin1</td>
     </tr>
@@ -2314,1443 +2314,1443 @@ display(HTML(fates
       <th rowspan="140" valign="top">lib1</th>
       <th>RaACE2_01_bin1</th>
       <td>441076</td>
-      <td>3348709</td>
+      <td>1497308</td>
       <td>424509</td>
       <td>157784</td>
-      <td>4085971</td>
+      <td>5937372</td>
     </tr>
     <tr>
       <th>RaACE2_01_bin2</th>
       <td>90628</td>
-      <td>700105</td>
+      <td>328309</td>
       <td>87666</td>
       <td>30308</td>
-      <td>808275</td>
+      <td>1180071</td>
     </tr>
     <tr>
       <th>RaACE2_01_bin3</th>
       <td>44448</td>
-      <td>336527</td>
+      <td>157259</td>
       <td>42835</td>
       <td>18377</td>
-      <td>393856</td>
+      <td>573124</td>
     </tr>
     <tr>
       <th>RaACE2_01_bin4</th>
       <td>147498</td>
-      <td>1032908</td>
+      <td>456582</td>
       <td>141011</td>
       <td>58032</td>
-      <td>1434103</td>
+      <td>2010429</td>
     </tr>
     <tr>
       <th>RaACE2_02_bin1</th>
       <td>366141</td>
-      <td>2735394</td>
+      <td>1243850</td>
       <td>350335</td>
       <td>157931</td>
-      <td>3294104</td>
+      <td>4785648</td>
     </tr>
     <tr>
       <th>RaACE2_02_bin2</th>
       <td>70826</td>
-      <td>539830</td>
+      <td>244490</td>
       <td>70264</td>
       <td>25680</td>
-      <td>649451</td>
+      <td>944791</td>
     </tr>
     <tr>
       <th>RaACE2_02_bin3</th>
       <td>43306</td>
-      <td>325491</td>
+      <td>154219</td>
       <td>42147</td>
       <td>20205</td>
-      <td>388739</td>
+      <td>560011</td>
     </tr>
     <tr>
       <th>RaACE2_02_bin4</th>
       <td>141581</td>
-      <td>967943</td>
+      <td>421190</td>
       <td>137393</td>
       <td>48828</td>
-      <td>1389079</td>
+      <td>1935832</td>
     </tr>
     <tr>
       <th>RaACE2_03_bin1</th>
       <td>622398</td>
-      <td>4697890</td>
+      <td>2127859</td>
       <td>614877</td>
       <td>222773</td>
-      <td>5640024</td>
+      <td>8210055</td>
     </tr>
     <tr>
       <th>RaACE2_03_bin2</th>
       <td>51306</td>
-      <td>384683</td>
+      <td>176115</td>
       <td>49747</td>
       <td>20317</td>
-      <td>463937</td>
+      <td>672505</td>
     </tr>
     <tr>
       <th>RaACE2_03_bin3</th>
       <td>43721</td>
-      <td>307078</td>
+      <td>145279</td>
       <td>40719</td>
       <td>25749</td>
-      <td>393580</td>
+      <td>555379</td>
     </tr>
     <tr>
       <th>RaACE2_03_bin4</th>
       <td>136555</td>
-      <td>905253</td>
+      <td>387606</td>
       <td>128412</td>
       <td>44353</td>
-      <td>1308274</td>
+      <td>1825921</td>
     </tr>
     <tr>
       <th>RaACE2_04_bin1</th>
       <td>592410</td>
-      <td>4533495</td>
+      <td>2064668</td>
       <td>577756</td>
       <td>205502</td>
-      <td>5430665</td>
+      <td>7899492</td>
     </tr>
     <tr>
       <th>RaACE2_04_bin2</th>
       <td>42896</td>
-      <td>312219</td>
+      <td>148601</td>
       <td>41155</td>
       <td>19281</td>
-      <td>382993</td>
+      <td>546611</td>
     </tr>
     <tr>
       <th>RaACE2_04_bin3</th>
       <td>60106</td>
-      <td>426477</td>
+      <td>189817</td>
       <td>59168</td>
       <td>23627</td>
-      <td>589420</td>
+      <td>826080</td>
     </tr>
     <tr>
       <th>RaACE2_04_bin4</th>
       <td>105670</td>
-      <td>699397</td>
+      <td>299725</td>
       <td>101172</td>
       <td>52990</td>
-      <td>1024118</td>
+      <td>1423790</td>
     </tr>
     <tr>
       <th>RaACE2_05_bin1</th>
       <td>410625</td>
-      <td>3199169</td>
+      <td>1463445</td>
       <td>416320</td>
       <td>144980</td>
-      <td>3849897</td>
+      <td>5585621</td>
     </tr>
     <tr>
       <th>RaACE2_05_bin2</th>
       <td>63201</td>
-      <td>448230</td>
+      <td>200233</td>
       <td>61751</td>
       <td>22987</td>
-      <td>601870</td>
+      <td>849867</td>
     </tr>
     <tr>
       <th>RaACE2_05_bin3</th>
       <td>66559</td>
-      <td>461526</td>
+      <td>193092</td>
       <td>65514</td>
       <td>23536</td>
-      <td>662974</td>
+      <td>931408</td>
     </tr>
     <tr>
       <th>RaACE2_05_bin4</th>
       <td>52982</td>
-      <td>351685</td>
+      <td>152824</td>
       <td>52160</td>
       <td>22620</td>
-      <td>537565</td>
+      <td>736426</td>
     </tr>
     <tr>
       <th>RaACE2_06_bin1</th>
       <td>517875</td>
-      <td>3936873</td>
+      <td>1791903</td>
       <td>503207</td>
       <td>177516</td>
-      <td>4796571</td>
+      <td>6941541</td>
     </tr>
     <tr>
       <th>RaACE2_06_bin2</th>
       <td>77284</td>
-      <td>549880</td>
+      <td>234140</td>
       <td>76887</td>
       <td>26837</td>
-      <td>770474</td>
+      <td>1086214</td>
     </tr>
     <tr>
       <th>RaACE2_06_bin3</th>
       <td>63791</td>
-      <td>420425</td>
+      <td>183909</td>
       <td>63082</td>
       <td>23800</td>
-      <td>637201</td>
+      <td>873717</td>
     </tr>
     <tr>
       <th>RaACE2_06_bin4</th>
       <td>4650</td>
-      <td>26997</td>
+      <td>11738</td>
       <td>3898</td>
       <td>5192</td>
-      <td>38796</td>
+      <td>54055</td>
     </tr>
     <tr>
       <th>RaACE2_07_bin1</th>
       <td>510966</td>
-      <td>3896710</td>
+      <td>1764807</td>
       <td>513664</td>
       <td>193724</td>
-      <td>4832685</td>
+      <td>6964588</td>
     </tr>
     <tr>
       <th>RaACE2_07_bin2</th>
       <td>76194</td>
-      <td>496669</td>
+      <td>215654</td>
       <td>72259</td>
       <td>39752</td>
-      <td>724128</td>
+      <td>1005143</td>
     </tr>
     <tr>
       <th>RaACE2_07_bin3</th>
       <td>3854</td>
-      <td>24472</td>
+      <td>10486</td>
       <td>3510</td>
       <td>4098</td>
-      <td>35070</td>
+      <td>49056</td>
     </tr>
     <tr>
       <th>RaACE2_07_bin4</th>
       <td>652</td>
-      <td>4989</td>
+      <td>2847</td>
       <td>472</td>
       <td>1493</td>
-      <td>3462</td>
+      <td>5604</td>
     </tr>
     <tr>
       <th>RaACE2_08_bin1</th>
       <td>762546</td>
-      <td>5430892</td>
+      <td>2449254</td>
       <td>721736</td>
       <td>312707</td>
-      <td>6858789</td>
+      <td>9840427</td>
     </tr>
     <tr>
       <th>RaACE2_08_bin2</th>
       <td>24790</td>
-      <td>172800</td>
+      <td>76109</td>
       <td>24746</td>
       <td>9333</td>
-      <td>239951</td>
+      <td>336642</td>
     </tr>
     <tr>
       <th>RaACE2_08_bin3</th>
       <td>24346</td>
-      <td>171576</td>
+      <td>69441</td>
       <td>24786</td>
       <td>6457</td>
-      <td>247321</td>
+      <td>349456</td>
     </tr>
     <tr>
       <th>RaACE2_08_bin4</th>
       <td>1369</td>
-      <td>12627</td>
+      <td>3546</td>
       <td>1228</td>
       <td>3141</td>
-      <td>5420</td>
+      <td>14501</td>
     </tr>
     <tr>
       <th>RaACE2_09_bin1</th>
       <td>619320</td>
-      <td>4542326</td>
+      <td>2045630</td>
       <td>593529</td>
       <td>204706</td>
-      <td>5735777</td>
+      <td>8232473</td>
     </tr>
     <tr>
       <th>RaACE2_09_bin2</th>
       <td>11650</td>
-      <td>83396</td>
+      <td>37233</td>
       <td>11231</td>
       <td>4875</td>
-      <td>107840</td>
+      <td>154003</td>
     </tr>
     <tr>
       <th>RaACE2_09_bin3</th>
       <td>10257</td>
-      <td>71148</td>
+      <td>26568</td>
       <td>9045</td>
       <td>6441</td>
-      <td>86492</td>
+      <td>131072</td>
     </tr>
     <tr>
       <th>RaACE2_09_bin4</th>
       <td>1967</td>
-      <td>17681</td>
+      <td>10416</td>
       <td>1829</td>
       <td>2171</td>
-      <td>13212</td>
+      <td>20477</td>
     </tr>
     <tr>
       <th>RpACE2_02_bin1</th>
       <td>537028</td>
-      <td>3903859</td>
+      <td>1743789</td>
       <td>523529</td>
       <td>186529</td>
-      <td>4953218</td>
+      <td>7113288</td>
     </tr>
     <tr>
       <th>RpACE2_02_bin2</th>
       <td>84539</td>
-      <td>617860</td>
+      <td>281718</td>
       <td>81675</td>
       <td>30522</td>
-      <td>773928</td>
+      <td>1110070</td>
     </tr>
     <tr>
       <th>RpACE2_02_bin3</th>
       <td>4288</td>
-      <td>32237</td>
+      <td>14366</td>
       <td>4071</td>
       <td>2345</td>
-      <td>40132</td>
+      <td>58003</td>
     </tr>
     <tr>
       <th>RpACE2_02_bin4</th>
       <td>45074</td>
-      <td>324441</td>
+      <td>152212</td>
       <td>43359</td>
       <td>16714</td>
-      <td>430458</td>
+      <td>602687</td>
     </tr>
     <tr>
       <th>RpACE2_03_bin1</th>
       <td>616465</td>
-      <td>4606839</td>
+      <td>2066126</td>
       <td>613244</td>
       <td>203518</td>
-      <td>5838297</td>
+      <td>8379010</td>
     </tr>
     <tr>
       <th>RpACE2_03_bin2</th>
       <td>8659</td>
-      <td>59677</td>
+      <td>26455</td>
       <td>7980</td>
       <td>3425</td>
-      <td>76764</td>
+      <td>109986</td>
     </tr>
     <tr>
       <th>RpACE2_03_bin3</th>
       <td>66556</td>
-      <td>482632</td>
+      <td>236142</td>
       <td>63643</td>
       <td>24726</td>
-      <td>643193</td>
+      <td>889683</td>
     </tr>
     <tr>
       <th>RpACE2_03_bin4</th>
       <td>30770</td>
-      <td>219663</td>
+      <td>96747</td>
       <td>30620</td>
       <td>9750</td>
-      <td>289903</td>
+      <td>412819</td>
     </tr>
     <tr>
       <th>RpACE2_04_bin1</th>
       <td>626619</td>
-      <td>4596635</td>
+      <td>2070331</td>
       <td>613678</td>
       <td>215701</td>
-      <td>5822661</td>
+      <td>8348965</td>
     </tr>
     <tr>
       <th>RpACE2_04_bin2</th>
       <td>11855</td>
-      <td>86367</td>
+      <td>38547</td>
       <td>11124</td>
       <td>5485</td>
-      <td>111470</td>
+      <td>159290</td>
     </tr>
     <tr>
       <th>RpACE2_04_bin3</th>
       <td>4113</td>
-      <td>28616</td>
+      <td>12804</td>
       <td>3816</td>
       <td>2880</td>
-      <td>36160</td>
+      <td>51972</td>
     </tr>
     <tr>
       <th>RpACE2_04_bin4</th>
       <td>2410</td>
-      <td>16359</td>
+      <td>7618</td>
       <td>2150</td>
       <td>3059</td>
-      <td>20272</td>
+      <td>29013</td>
     </tr>
     <tr>
       <th>RpACE2_05_bin1</th>
       <td>951034</td>
-      <td>7019411</td>
+      <td>3155962</td>
       <td>911895</td>
       <td>339720</td>
-      <td>8854518</td>
+      <td>12717967</td>
     </tr>
     <tr>
       <th>RpACE2_05_bin2</th>
       <td>15539</td>
-      <td>108270</td>
+      <td>48960</td>
       <td>14393</td>
       <td>10398</td>
-      <td>138266</td>
+      <td>197576</td>
     </tr>
     <tr>
       <th>RpACE2_05_bin3</th>
       <td>5212</td>
-      <td>26833</td>
+      <td>11853</td>
       <td>3623</td>
       <td>25101</td>
-      <td>34499</td>
+      <td>49479</td>
     </tr>
     <tr>
       <th>RpACE2_05_bin4</th>
       <td>9711</td>
-      <td>85528</td>
+      <td>36631</td>
       <td>8805</td>
       <td>7689</td>
-      <td>67315</td>
+      <td>116212</td>
     </tr>
     <tr>
       <th>RpACE2_06_bin1</th>
       <td>599441</td>
-      <td>4440356</td>
+      <td>1998109</td>
       <td>593415</td>
       <td>208707</td>
-      <td>5629741</td>
+      <td>8071988</td>
     </tr>
     <tr>
       <th>RpACE2_06_bin2</th>
       <td>8966</td>
-      <td>51792</td>
+      <td>22768</td>
       <td>6925</td>
       <td>10817</td>
-      <td>65959</td>
+      <td>94983</td>
     </tr>
     <tr>
       <th>RpACE2_06_bin3</th>
       <td>34538</td>
-      <td>262672</td>
+      <td>120958</td>
       <td>34474</td>
       <td>15951</td>
-      <td>322546</td>
+      <td>464260</td>
     </tr>
     <tr>
       <th>RpACE2_06_bin4</th>
       <td>2019</td>
-      <td>11696</td>
+      <td>3726</td>
       <td>1233</td>
       <td>9010</td>
-      <td>9479</td>
+      <td>17449</td>
     </tr>
     <tr>
       <th>RpACE2_07_bin1</th>
       <td>868002</td>
-      <td>6431293</td>
+      <td>2899501</td>
       <td>849934</td>
       <td>297319</td>
-      <td>8101052</td>
+      <td>11632844</td>
     </tr>
     <tr>
       <th>RpACE2_07_bin2</th>
       <td>9361</td>
-      <td>67523</td>
+      <td>30141</td>
       <td>9104</td>
       <td>5687</td>
-      <td>86821</td>
+      <td>124203</td>
     </tr>
     <tr>
       <th>RpACE2_07_bin3</th>
       <td>31921</td>
-      <td>239400</td>
+      <td>110191</td>
       <td>30855</td>
       <td>14519</td>
-      <td>295073</td>
+      <td>424282</td>
     </tr>
     <tr>
       <th>RpACE2_07_bin4</th>
       <td>321</td>
-      <td>33</td>
+      <td>15</td>
       <td>8</td>
       <td>4024</td>
-      <td>53</td>
+      <td>71</td>
     </tr>
     <tr>
       <th>RpACE2_09_bin1</th>
       <td>619320</td>
-      <td>4542326</td>
+      <td>2045630</td>
       <td>593529</td>
       <td>204706</td>
-      <td>5735777</td>
+      <td>8232473</td>
     </tr>
     <tr>
       <th>RpACE2_09_bin2</th>
       <td>11650</td>
-      <td>83396</td>
+      <td>37233</td>
       <td>11231</td>
       <td>4875</td>
-      <td>107840</td>
+      <td>154003</td>
     </tr>
     <tr>
       <th>RpACE2_09_bin3</th>
       <td>10257</td>
-      <td>71148</td>
+      <td>26568</td>
       <td>9045</td>
       <td>6441</td>
-      <td>86492</td>
+      <td>131072</td>
     </tr>
     <tr>
       <th>RpACE2_09_bin4</th>
       <td>1967</td>
-      <td>17681</td>
+      <td>10416</td>
       <td>1829</td>
       <td>2171</td>
-      <td>13212</td>
+      <td>20477</td>
     </tr>
     <tr>
       <th>RsACE2_01_bin1</th>
       <td>302112</td>
-      <td>2267692</td>
+      <td>1039267</td>
       <td>289766</td>
       <td>104963</td>
-      <td>2757409</td>
+      <td>3985834</td>
     </tr>
     <tr>
       <th>RsACE2_01_bin2</th>
       <td>190280</td>
-      <td>1412082</td>
+      <td>648710</td>
       <td>180146</td>
       <td>75974</td>
-      <td>1757044</td>
+      <td>2520416</td>
     </tr>
     <tr>
       <th>RsACE2_01_bin3</th>
       <td>52637</td>
-      <td>380411</td>
+      <td>164082</td>
       <td>51226</td>
       <td>20003</td>
-      <td>501634</td>
+      <td>717963</td>
     </tr>
     <tr>
       <th>RsACE2_01_bin4</th>
       <td>92068</td>
-      <td>652412</td>
+      <td>280954</td>
       <td>91702</td>
       <td>31495</td>
-      <td>893360</td>
+      <td>1264818</td>
     </tr>
     <tr>
       <th>RsACE2_02_bin1</th>
       <td>437733</td>
-      <td>3257292</td>
+      <td>1490671</td>
       <td>423311</td>
       <td>159635</td>
-      <td>4039537</td>
+      <td>5806158</td>
     </tr>
     <tr>
       <th>RsACE2_02_bin2</th>
       <td>91461</td>
-      <td>649325</td>
+      <td>288500</td>
       <td>91749</td>
       <td>40283</td>
-      <td>839216</td>
+      <td>1200041</td>
     </tr>
     <tr>
       <th>RsACE2_02_bin3</th>
       <td>45787</td>
-      <td>316433</td>
+      <td>138984</td>
       <td>43924</td>
       <td>18840</td>
-      <td>450147</td>
+      <td>627596</td>
     </tr>
     <tr>
       <th>RsACE2_02_bin4</th>
       <td>68571</td>
-      <td>493806</td>
+      <td>210075</td>
       <td>65683</td>
       <td>26645</td>
-      <td>659173</td>
+      <td>942904</td>
     </tr>
     <tr>
       <th>RsACE2_03_bin1</th>
       <td>452146</td>
-      <td>3338179</td>
+      <td>1516441</td>
       <td>450417</td>
       <td>157690</td>
-      <td>4154358</td>
+      <td>5976096</td>
     </tr>
     <tr>
       <th>RsACE2_03_bin2</th>
       <td>45105</td>
-      <td>312312</td>
+      <td>137562</td>
       <td>42066</td>
       <td>17623</td>
-      <td>429159</td>
+      <td>603909</td>
     </tr>
     <tr>
       <th>RsACE2_03_bin3</th>
       <td>36306</td>
-      <td>256955</td>
+      <td>110573</td>
       <td>35540</td>
       <td>13684</td>
-      <td>341070</td>
+      <td>487452</td>
     </tr>
     <tr>
       <th>RsACE2_03_bin4</th>
       <td>43174</td>
-      <td>297485</td>
+      <td>128577</td>
       <td>41111</td>
       <td>18266</td>
-      <td>407943</td>
+      <td>576851</td>
     </tr>
     <tr>
       <th>RsACE2_04_bin1</th>
       <td>414126</td>
-      <td>3018067</td>
+      <td>1363172</td>
       <td>390346</td>
       <td>147128</td>
-      <td>3780822</td>
+      <td>5435717</td>
     </tr>
     <tr>
       <th>RsACE2_04_bin2</th>
       <td>39077</td>
-      <td>274618</td>
+      <td>120191</td>
       <td>36979</td>
       <td>14297</td>
-      <td>362148</td>
+      <td>516575</td>
     </tr>
     <tr>
       <th>RsACE2_04_bin3</th>
       <td>32714</td>
-      <td>230900</td>
+      <td>102153</td>
       <td>31524</td>
       <td>10654</td>
-      <td>307925</td>
+      <td>436672</td>
     </tr>
     <tr>
       <th>RsACE2_04_bin4</th>
       <td>7849</td>
-      <td>53285</td>
+      <td>22517</td>
       <td>7480</td>
       <td>5203</td>
-      <td>70872</td>
+      <td>101640</td>
     </tr>
     <tr>
       <th>RsACE2_05_bin1</th>
       <td>608666</td>
-      <td>4500698</td>
+      <td>2034842</td>
       <td>583402</td>
       <td>205115</td>
-      <td>5660770</td>
+      <td>8126626</td>
     </tr>
     <tr>
       <th>RsACE2_05_bin2</th>
       <td>41456</td>
-      <td>286783</td>
+      <td>125989</td>
       <td>38606</td>
       <td>21911</td>
-      <td>383748</td>
+      <td>544542</td>
     </tr>
     <tr>
       <th>RsACE2_05_bin3</th>
       <td>7821</td>
-      <td>53663</td>
+      <td>22204</td>
       <td>7059</td>
       <td>4472</td>
-      <td>72017</td>
+      <td>103476</td>
     </tr>
     <tr>
       <th>RsACE2_05_bin4</th>
       <td>2684</td>
-      <td>12017</td>
+      <td>4504</td>
       <td>1617</td>
       <td>7710</td>
-      <td>14851</td>
+      <td>22364</td>
     </tr>
     <tr>
       <th>RsACE2_06_bin1</th>
       <td>549775</td>
-      <td>4034487</td>
+      <td>1816397</td>
       <td>534406</td>
       <td>182733</td>
-      <td>5105398</td>
+      <td>7323488</td>
     </tr>
     <tr>
       <th>RsACE2_06_bin2</th>
       <td>17726</td>
-      <td>123102</td>
+      <td>53896</td>
       <td>16527</td>
       <td>6829</td>
-      <td>164698</td>
+      <td>233904</td>
     </tr>
     <tr>
       <th>RsACE2_06_bin3</th>
       <td>10684</td>
-      <td>77393</td>
+      <td>27904</td>
       <td>9525</td>
       <td>6101</td>
-      <td>90830</td>
+      <td>140319</td>
     </tr>
     <tr>
       <th>RsACE2_06_bin4</th>
       <td>24041</td>
-      <td>135341</td>
+      <td>58508</td>
       <td>22605</td>
       <td>8924</td>
-      <td>258470</td>
+      <td>335303</td>
     </tr>
     <tr>
       <th>RsACE2_07_bin1</th>
       <td>647808</td>
-      <td>4736853</td>
+      <td>2134711</td>
       <td>628532</td>
       <td>220863</td>
-      <td>5993872</td>
+      <td>8596014</td>
     </tr>
     <tr>
       <th>RsACE2_07_bin2</th>
       <td>12356</td>
-      <td>87952</td>
+      <td>37860</td>
       <td>11544</td>
       <td>7238</td>
-      <td>109081</td>
+      <td>159173</td>
     </tr>
     <tr>
       <th>RsACE2_07_bin3</th>
       <td>23809</td>
-      <td>144139</td>
+      <td>53218</td>
       <td>23121</td>
       <td>4167</td>
-      <td>255619</td>
+      <td>346540</td>
     </tr>
     <tr>
       <th>RsACE2_07_bin4</th>
       <td>2685</td>
-      <td>18399</td>
+      <td>8393</td>
       <td>2632</td>
       <td>783</td>
-      <td>25069</td>
+      <td>35075</td>
     </tr>
     <tr>
       <th>RsACE2_08_bin1</th>
       <td>575179</td>
-      <td>4329050</td>
+      <td>1948082</td>
       <td>556825</td>
       <td>193577</td>
-      <td>5483362</td>
+      <td>7864330</td>
     </tr>
     <tr>
       <th>RsACE2_08_bin2</th>
       <td>7564</td>
-      <td>45296</td>
+      <td>19771</td>
       <td>5978</td>
       <td>9128</td>
-      <td>56942</td>
+      <td>82467</td>
     </tr>
     <tr>
       <th>RsACE2_08_bin3</th>
       <td>35948</td>
-      <td>252748</td>
+      <td>115250</td>
       <td>35228</td>
       <td>6482</td>
-      <td>358824</td>
+      <td>496322</td>
     </tr>
     <tr>
       <th>RsACE2_08_bin4</th>
       <td>2608</td>
-      <td>16876</td>
+      <td>7289</td>
       <td>2319</td>
       <td>3835</td>
-      <td>22807</td>
+      <td>32394</td>
     </tr>
     <tr>
       <th>RsACE2_09_bin1</th>
       <td>619320</td>
-      <td>4542326</td>
+      <td>2045630</td>
       <td>593529</td>
       <td>204706</td>
-      <td>5735777</td>
+      <td>8232473</td>
     </tr>
     <tr>
       <th>RsACE2_09_bin2</th>
       <td>11650</td>
-      <td>83396</td>
+      <td>37233</td>
       <td>11231</td>
       <td>4875</td>
-      <td>107840</td>
+      <td>154003</td>
     </tr>
     <tr>
       <th>RsACE2_09_bin3</th>
       <td>10257</td>
-      <td>71148</td>
+      <td>26568</td>
       <td>9045</td>
       <td>6441</td>
-      <td>86492</td>
+      <td>131072</td>
     </tr>
     <tr>
       <th>RsACE2_09_bin4</th>
       <td>1967</td>
-      <td>17681</td>
+      <td>10416</td>
       <td>1829</td>
       <td>2171</td>
-      <td>13212</td>
+      <td>20477</td>
     </tr>
     <tr>
       <th>SortSeq_bin1</th>
       <td>72906</td>
-      <td>1500754</td>
+      <td>1226612</td>
       <td>164732</td>
       <td>45343</td>
-      <td>676749</td>
+      <td>950891</td>
     </tr>
     <tr>
       <th>SortSeq_bin2</th>
       <td>144911</td>
-      <td>1951605</td>
+      <td>973975</td>
       <td>324741</td>
       <td>107830</td>
-      <td>2255278</td>
+      <td>3232908</td>
     </tr>
     <tr>
       <th>SortSeq_bin3</th>
       <td>135929</td>
-      <td>1856088</td>
+      <td>851076</td>
       <td>314197</td>
       <td>99720</td>
-      <td>2289690</td>
+      <td>3294702</td>
     </tr>
     <tr>
       <th>SortSeq_bin4</th>
       <td>114735</td>
-      <td>1468035</td>
+      <td>654646</td>
       <td>251958</td>
       <td>97298</td>
-      <td>1861891</td>
+      <td>2675280</td>
     </tr>
     <tr>
       <th>huACE2_01_bin1</th>
       <td>138057</td>
-      <td>1855435</td>
+      <td>862580</td>
       <td>308271</td>
       <td>95926</td>
-      <td>2250168</td>
+      <td>3243023</td>
     </tr>
     <tr>
       <th>huACE2_01_bin2</th>
       <td>28837</td>
-      <td>384964</td>
+      <td>180687</td>
       <td>62904</td>
       <td>26533</td>
-      <td>460844</td>
+      <td>665121</td>
     </tr>
     <tr>
       <th>huACE2_01_bin3</th>
       <td>28720</td>
-      <td>383358</td>
+      <td>179501</td>
       <td>64622</td>
       <td>18607</td>
-      <td>475785</td>
+      <td>679642</td>
     </tr>
     <tr>
       <th>huACE2_01_bin4</th>
       <td>240833</td>
-      <td>3152698</td>
+      <td>1393472</td>
       <td>552377</td>
       <td>150198</td>
-      <td>3993767</td>
+      <td>5752993</td>
     </tr>
     <tr>
       <th>huACE2_02_bin1</th>
       <td>166189</td>
-      <td>2230809</td>
+      <td>1025360</td>
       <td>373349</td>
       <td>117380</td>
-      <td>2714401</td>
+      <td>3919850</td>
     </tr>
     <tr>
       <th>huACE2_02_bin2</th>
       <td>34576</td>
-      <td>449971</td>
+      <td>212427</td>
       <td>78255</td>
       <td>25249</td>
-      <td>538528</td>
+      <td>776072</td>
     </tr>
     <tr>
       <th>huACE2_02_bin3</th>
       <td>44288</td>
-      <td>588990</td>
+      <td>273974</td>
       <td>99409</td>
       <td>43255</td>
-      <td>734031</td>
+      <td>1049047</td>
     </tr>
     <tr>
       <th>huACE2_02_bin4</th>
       <td>223321</td>
-      <td>2978885</td>
+      <td>1315539</td>
       <td>502332</td>
       <td>163369</td>
-      <td>3773408</td>
+      <td>5436754</td>
     </tr>
     <tr>
       <th>huACE2_03_bin1</th>
       <td>155119</td>
-      <td>2080410</td>
+      <td>974709</td>
       <td>358830</td>
       <td>115449</td>
-      <td>2513158</td>
+      <td>3618859</td>
     </tr>
     <tr>
       <th>huACE2_03_bin2</th>
       <td>19877</td>
-      <td>254503</td>
+      <td>117523</td>
       <td>42834</td>
       <td>14302</td>
-      <td>328075</td>
+      <td>465055</td>
     </tr>
     <tr>
       <th>huACE2_03_bin3</th>
       <td>40976</td>
-      <td>538757</td>
+      <td>253671</td>
       <td>93323</td>
       <td>28125</td>
-      <td>661877</td>
+      <td>946963</td>
     </tr>
     <tr>
       <th>huACE2_03_bin4</th>
       <td>229756</td>
-      <td>2971859</td>
+      <td>1320056</td>
       <td>516143</td>
       <td>165156</td>
-      <td>3795091</td>
+      <td>5446894</td>
     </tr>
     <tr>
       <th>huACE2_04_bin1</th>
       <td>228859</td>
-      <td>2968504</td>
+      <td>1393231</td>
       <td>491873</td>
       <td>147736</td>
-      <td>3608886</td>
+      <td>5184159</td>
     </tr>
     <tr>
       <th>huACE2_04_bin2</th>
       <td>40761</td>
-      <td>543274</td>
+      <td>247639</td>
       <td>89365</td>
       <td>25875</td>
-      <td>650181</td>
+      <td>945816</td>
     </tr>
     <tr>
       <th>huACE2_04_bin3</th>
       <td>71150</td>
-      <td>924944</td>
+      <td>417283</td>
       <td>158800</td>
       <td>47333</td>
-      <td>1171324</td>
+      <td>1678985</td>
     </tr>
     <tr>
       <th>huACE2_04_bin4</th>
       <td>147224</td>
-      <td>1874363</td>
+      <td>823358</td>
       <td>328375</td>
       <td>90946</td>
-      <td>2417522</td>
+      <td>3468527</td>
     </tr>
     <tr>
       <th>huACE2_05_bin1</th>
       <td>260439</td>
-      <td>3490468</td>
+      <td>1605857</td>
       <td>578054</td>
       <td>165149</td>
-      <td>4246910</td>
+      <td>6131521</td>
     </tr>
     <tr>
       <th>huACE2_05_bin2</th>
       <td>54564</td>
-      <td>693747</td>
+      <td>312412</td>
       <td>118254</td>
       <td>39778</td>
-      <td>873332</td>
+      <td>1254667</td>
     </tr>
     <tr>
       <th>huACE2_05_bin3</th>
       <td>109870</td>
-      <td>1369016</td>
+      <td>624193</td>
       <td>237753</td>
       <td>73315</td>
-      <td>1871267</td>
+      <td>2616090</td>
     </tr>
     <tr>
       <th>huACE2_05_bin4</th>
       <td>47536</td>
-      <td>630018</td>
+      <td>270660</td>
       <td>104488</td>
       <td>33334</td>
-      <td>758208</td>
+      <td>1117566</td>
     </tr>
     <tr>
       <th>huACE2_06_bin1</th>
       <td>273982</td>
-      <td>3646347</td>
+      <td>1684131</td>
       <td>616912</td>
       <td>173218</td>
-      <td>4493498</td>
+      <td>6455714</td>
     </tr>
     <tr>
       <th>huACE2_06_bin2</th>
       <td>111553</td>
-      <td>1409272</td>
+      <td>640320</td>
       <td>246204</td>
       <td>70145</td>
-      <td>1861000</td>
+      <td>2629952</td>
     </tr>
     <tr>
       <th>huACE2_06_bin3</th>
       <td>52574</td>
-      <td>715575</td>
+      <td>311884</td>
       <td>115450</td>
       <td>32998</td>
-      <td>842071</td>
+      <td>1245762</td>
     </tr>
     <tr>
       <th>huACE2_06_bin4</th>
       <td>47459</td>
-      <td>685845</td>
+      <td>325188</td>
       <td>107880</td>
       <td>29130</td>
-      <td>740594</td>
+      <td>1101251</td>
     </tr>
     <tr>
       <th>huACE2_07_bin1</th>
       <td>401233</td>
-      <td>5153322</td>
+      <td>2367926</td>
       <td>890823</td>
       <td>252192</td>
-      <td>6492300</td>
+      <td>9277696</td>
     </tr>
     <tr>
       <th>huACE2_07_bin2</th>
       <td>95427</td>
-      <td>1244873</td>
+      <td>545290</td>
       <td>212798</td>
       <td>62089</td>
-      <td>1549839</td>
+      <td>2249422</td>
     </tr>
     <tr>
       <th>huACE2_07_bin3</th>
       <td>64851</td>
-      <td>979008</td>
+      <td>407711</td>
       <td>150957</td>
       <td>33872</td>
-      <td>1012574</td>
+      <td>1583871</td>
     </tr>
     <tr>
       <th>huACE2_07_bin4</th>
       <td>8449</td>
-      <td>104301</td>
+      <td>49648</td>
       <td>18420</td>
       <td>6742</td>
-      <td>140938</td>
+      <td>195591</td>
     </tr>
     <tr>
       <th>huACE2_08_bin1</th>
       <td>430498</td>
-      <td>5909886</td>
+      <td>2685745</td>
       <td>984160</td>
       <td>275407</td>
-      <td>7398377</td>
+      <td>10622518</td>
     </tr>
     <tr>
       <th>huACE2_08_bin2</th>
       <td>43740</td>
-      <td>541656</td>
+      <td>239592</td>
       <td>92430</td>
       <td>34008</td>
-      <td>677929</td>
+      <td>979993</td>
     </tr>
     <tr>
       <th>huACE2_08_bin3</th>
       <td>15928</td>
-      <td>221452</td>
+      <td>95906</td>
       <td>37206</td>
       <td>6038</td>
-      <td>270716</td>
+      <td>396262</td>
     </tr>
     <tr>
       <th>huACE2_08_bin4</th>
       <td>11326</td>
-      <td>147859</td>
+      <td>65609</td>
       <td>25677</td>
       <td>9615</td>
-      <td>184863</td>
+      <td>267113</td>
     </tr>
     <tr>
       <th>huACE2_09_bin1</th>
       <td>433009</td>
-      <td>5670959</td>
+      <td>2571481</td>
       <td>959950</td>
       <td>288453</td>
-      <td>7119028</td>
+      <td>10218506</td>
     </tr>
     <tr>
       <th>huACE2_09_bin2</th>
       <td>27684</td>
-      <td>354136</td>
+      <td>160292</td>
       <td>61525</td>
       <td>20547</td>
-      <td>449179</td>
+      <td>643023</td>
     </tr>
     <tr>
       <th>huACE2_09_bin3</th>
       <td>7727</td>
-      <td>93972</td>
+      <td>35005</td>
       <td>16064</td>
       <td>5537</td>
-      <td>123814</td>
+      <td>182781</td>
     </tr>
     <tr>
       <th>huACE2_09_bin4</th>
       <td>10690</td>
-      <td>139157</td>
+      <td>63921</td>
       <td>24570</td>
       <td>6558</td>
-      <td>184630</td>
+      <td>259866</td>
     </tr>
     <tr>
       <th rowspan="40" valign="top">lib2</th>
       <th>SortSeq_bin1</th>
       <td>76232</td>
-      <td>1816311</td>
+      <td>1468675</td>
       <td>188869</td>
       <td>57905</td>
-      <td>651521</td>
+      <td>999157</td>
     </tr>
     <tr>
       <th>SortSeq_bin2</th>
       <td>151967</td>
-      <td>2299730</td>
+      <td>1062079</td>
       <td>344785</td>
       <td>101046</td>
-      <td>2190472</td>
+      <td>3428123</td>
     </tr>
     <tr>
       <th>SortSeq_bin3</th>
       <td>105513</td>
-      <td>1571600</td>
+      <td>661460</td>
       <td>239907</td>
       <td>74376</td>
-      <td>1599307</td>
+      <td>2509447</td>
     </tr>
     <tr>
       <th>SortSeq_bin4</th>
       <td>147054</td>
-      <td>2150196</td>
+      <td>875783</td>
       <td>333603</td>
       <td>110151</td>
-      <td>2226795</td>
+      <td>3501208</td>
     </tr>
     <tr>
       <th>huACE2_01_bin1</th>
       <td>166857</td>
-      <td>2526710</td>
+      <td>1091627</td>
       <td>373206</td>
       <td>112647</td>
-      <td>2345126</td>
+      <td>3780209</td>
     </tr>
     <tr>
       <th>huACE2_01_bin2</th>
       <td>34132</td>
-      <td>519758</td>
+      <td>225956</td>
       <td>77483</td>
       <td>23397</td>
-      <td>483808</td>
+      <td>777610</td>
     </tr>
     <tr>
       <th>huACE2_01_bin3</th>
       <td>37433</td>
-      <td>547549</td>
+      <td>231247</td>
       <td>83543</td>
       <td>25441</td>
-      <td>558810</td>
+      <td>875112</td>
     </tr>
     <tr>
       <th>huACE2_01_bin4</th>
       <td>254951</td>
-      <td>3661036</td>
+      <td>1475207</td>
       <td>570921</td>
       <td>171951</td>
-      <td>3990309</td>
+      <td>6176138</td>
     </tr>
     <tr>
       <th>huACE2_02_bin1</th>
       <td>181334</td>
-      <td>2802733</td>
+      <td>1202333</td>
       <td>411639</td>
       <td>118495</td>
-      <td>2612768</td>
+      <td>4213168</td>
     </tr>
     <tr>
       <th>huACE2_02_bin2</th>
       <td>24802</td>
-      <td>364745</td>
+      <td>162030</td>
       <td>53424</td>
       <td>16693</td>
-      <td>349924</td>
+      <td>552639</td>
     </tr>
     <tr>
       <th>huACE2_02_bin3</th>
       <td>48370</td>
-      <td>705614</td>
+      <td>300163</td>
       <td>105853</td>
       <td>33967</td>
-      <td>735738</td>
+      <td>1141189</td>
     </tr>
     <tr>
       <th>huACE2_02_bin4</th>
       <td>240972</td>
-      <td>3342488</td>
+      <td>1344988</td>
       <td>543044</td>
       <td>160710</td>
-      <td>3650350</td>
+      <td>5647850</td>
     </tr>
     <tr>
       <th>huACE2_03_bin1</th>
       <td>185260</td>
-      <td>2805041</td>
+      <td>1215873</td>
       <td>413847</td>
       <td>122605</td>
-      <td>2613198</td>
+      <td>4202366</td>
     </tr>
     <tr>
       <th>huACE2_03_bin2</th>
       <td>18939</td>
-      <td>286625</td>
+      <td>124772</td>
       <td>42605</td>
       <td>14851</td>
-      <td>290860</td>
+      <td>452713</td>
     </tr>
     <tr>
       <th>huACE2_03_bin3</th>
       <td>41959</td>
-      <td>618679</td>
+      <td>264513</td>
       <td>93827</td>
       <td>31116</td>
-      <td>642045</td>
+      <td>996211</td>
     </tr>
     <tr>
       <th>huACE2_03_bin4</th>
       <td>211837</td>
-      <td>3003526</td>
+      <td>1207239</td>
       <td>469098</td>
       <td>137919</td>
-      <td>3270746</td>
+      <td>5067033</td>
     </tr>
     <tr>
       <th>huACE2_04_bin1</th>
       <td>227030</td>
-      <td>3449047</td>
+      <td>1486360</td>
       <td>503601</td>
       <td>153591</td>
-      <td>3277328</td>
+      <td>5240015</td>
     </tr>
     <tr>
       <th>huACE2_04_bin2</th>
       <td>42704</td>
-      <td>619611</td>
+      <td>258389</td>
       <td>93871</td>
       <td>30327</td>
-      <td>621888</td>
+      <td>983110</td>
     </tr>
     <tr>
       <th>huACE2_04_bin3</th>
       <td>67126</td>
-      <td>950572</td>
+      <td>398013</td>
       <td>149482</td>
       <td>57044</td>
-      <td>1028383</td>
+      <td>1580942</td>
     </tr>
     <tr>
       <th>huACE2_04_bin4</th>
       <td>147723</td>
-      <td>2060267</td>
+      <td>818838</td>
       <td>326392</td>
       <td>101009</td>
-      <td>2316083</td>
+      <td>3557512</td>
     </tr>
     <tr>
       <th>huACE2_05_bin1</th>
       <td>259250</td>
-      <td>3962997</td>
+      <td>1690939</td>
       <td>595246</td>
       <td>172856</td>
-      <td>3813966</td>
+      <td>6086024</td>
     </tr>
     <tr>
       <th>huACE2_05_bin2</th>
       <td>55851</td>
-      <td>803677</td>
+      <td>336352</td>
       <td>124903</td>
       <td>41880</td>
-      <td>836764</td>
+      <td>1304089</td>
     </tr>
     <tr>
       <th>huACE2_05_bin3</th>
       <td>104347</td>
-      <td>1452211</td>
+      <td>585769</td>
       <td>243569</td>
       <td>69090</td>
-      <td>1707615</td>
+      <td>2574057</td>
     </tr>
     <tr>
       <th>huACE2_05_bin4</th>
       <td>43721</td>
-      <td>623560</td>
+      <td>245375</td>
       <td>96757</td>
       <td>37474</td>
-      <td>658279</td>
+      <td>1036464</td>
     </tr>
     <tr>
       <th>huACE2_06_bin1</th>
       <td>286669</td>
-      <td>4336555</td>
+      <td>1856222</td>
       <td>652002</td>
       <td>193660</td>
-      <td>4253787</td>
+      <td>6734120</td>
     </tr>
     <tr>
       <th>huACE2_06_bin2</th>
       <td>126639</td>
-      <td>1779998</td>
+      <td>725315</td>
       <td>287438</td>
       <td>85097</td>
-      <td>1989623</td>
+      <td>3044306</td>
     </tr>
     <tr>
       <th>huACE2_06_bin3</th>
       <td>46835</td>
-      <td>699616</td>
+      <td>276239</td>
       <td>107829</td>
       <td>36013</td>
-      <td>737053</td>
+      <td>1160430</td>
     </tr>
     <tr>
       <th>huACE2_06_bin4</th>
       <td>33941</td>
-      <td>484357</td>
+      <td>199212</td>
       <td>72345</td>
       <td>39485</td>
-      <td>490929</td>
+      <td>776074</td>
     </tr>
     <tr>
       <th>huACE2_07_bin1</th>
       <td>414924</td>
-      <td>6140493</td>
+      <td>2600949</td>
       <td>923504</td>
       <td>273686</td>
-      <td>6281098</td>
+      <td>9820642</td>
     </tr>
     <tr>
       <th>huACE2_07_bin2</th>
       <td>110076</td>
-      <td>1610748</td>
+      <td>650279</td>
       <td>251386</td>
       <td>76036</td>
-      <td>1710522</td>
+      <td>2670991</td>
     </tr>
     <tr>
       <th>huACE2_07_bin3</th>
       <td>54646</td>
-      <td>805434</td>
+      <td>310538</td>
       <td>120314</td>
       <td>50667</td>
-      <td>755632</td>
+      <td>1250528</td>
     </tr>
     <tr>
       <th>huACE2_07_bin4</th>
       <td>9824</td>
-      <td>119438</td>
+      <td>62919</td>
       <td>19933</td>
       <td>13517</td>
-      <td>145671</td>
+      <td>202190</td>
     </tr>
     <tr>
       <th>huACE2_08_bin1</th>
       <td>410123</td>
-      <td>5979891</td>
+      <td>2498515</td>
       <td>917522</td>
       <td>287627</td>
-      <td>6151974</td>
+      <td>9633350</td>
     </tr>
     <tr>
       <th>huACE2_08_bin2</th>
       <td>50941</td>
-      <td>749397</td>
+      <td>307567</td>
       <td>117858</td>
       <td>34735</td>
-      <td>776844</td>
+      <td>1218674</td>
     </tr>
     <tr>
       <th>huACE2_08_bin3</th>
       <td>17939</td>
-      <td>272560</td>
+      <td>111998</td>
       <td>42369</td>
       <td>8156</td>
-      <td>283459</td>
+      <td>444021</td>
     </tr>
     <tr>
       <th>huACE2_08_bin4</th>
       <td>7199</td>
-      <td>118921</td>
+      <td>55434</td>
       <td>16552</td>
       <td>2858</td>
-      <td>100042</td>
+      <td>163529</td>
     </tr>
     <tr>
       <th>huACE2_09_bin1</th>
       <td>352097</td>
-      <td>5179133</td>
+      <td>2156355</td>
       <td>812985</td>
       <td>251470</td>
-      <td>5323628</td>
+      <td>8346406</td>
     </tr>
     <tr>
       <th>huACE2_09_bin2</th>
       <td>23926</td>
-      <td>357284</td>
+      <td>147356</td>
       <td>55251</td>
       <td>19040</td>
-      <td>372085</td>
+      <td>582013</td>
     </tr>
     <tr>
       <th>huACE2_09_bin3</th>
       <td>12228</td>
-      <td>172346</td>
+      <td>78798</td>
       <td>25872</td>
       <td>9686</td>
-      <td>165586</td>
+      <td>259134</td>
     </tr>
     <tr>
       <th>huACE2_09_bin4</th>
       <td>10437</td>
-      <td>123159</td>
+      <td>39364</td>
       <td>22777</td>
       <td>14720</td>
-      <td>180049</td>
+      <td>263844</td>
     </tr>
   </tbody>
 </table>

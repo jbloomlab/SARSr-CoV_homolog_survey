@@ -37,7 +37,7 @@ rule make_summary:
         nt_variant_table=config['nt_variant_table_file'],
         variant_counts_file=config['variant_counts_file'],
         count_variants=nb_markdown('count_variants.ipynb'),
-        merge_sequencing='results/summary/merge_sequencing.Rmd.md',
+        #merge_sequencing='results/summary/merge_sequencing.Rmd.md',
     output:
         summary = os.path.join(config['summary_dir'], 'summary.md')
     run:

@@ -308,6 +308,20 @@ display(HTML(pacbio_runs.to_html(index=False)))
       <td>results/ccs/lib2_200916_1_ccs.fastq.gz</td>
       <td>results/ccs/lib2_200916_1_report.txt</td>
     </tr>
+    <tr>
+      <td>lib1</td>
+      <td>200916_2</td>
+      <td>lib1_200916_2</td>
+      <td>results/ccs/lib1_200916_2_ccs.fastq.gz</td>
+      <td>results/ccs/lib1_200916_2_report.txt</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>200916_2</td>
+      <td>lib2_200916_2</td>
+      <td>results/ccs/lib2_200916_2_ccs.fastq.gz</td>
+      <td>results/ccs/lib2_200916_2_report.txt</td>
+    </tr>
   </tbody>
 </table>
 
@@ -697,7 +711,7 @@ ntargets = processed_ccs['target'].nunique()  # number of unique targets
 print(f"Read {len(processed_ccs)} CCSs from {nlibs} libraries and {ntargets} targets.")
 ```
 
-    Read 149805 CCSs from 2 libraries and 75 targets.
+    Read 493227 CCSs from 2 libraries and 75 targets.
 
 
 Overall statistics on number of total CCSs and number of unique barcodes:
@@ -737,977 +751,977 @@ display(HTML(
     <tr>
       <th rowspan="2" valign="top">273-2005</th>
       <th>lib1</th>
-      <td>420</td>
-      <td>275</td>
-      <td>1.53</td>
+      <td>1206</td>
+      <td>436</td>
+      <td>2.77</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>235</td>
-      <td>164</td>
-      <td>1.43</td>
+      <td>827</td>
+      <td>333</td>
+      <td>2.48</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">279-2005</th>
       <th>lib1</th>
-      <td>465</td>
-      <td>279</td>
-      <td>1.67</td>
+      <td>1361</td>
+      <td>454</td>
+      <td>3.00</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>315</td>
-      <td>213</td>
-      <td>1.48</td>
+      <td>969</td>
+      <td>379</td>
+      <td>2.56</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncAsia_MAP</th>
       <th>lib1</th>
-      <td>5117</td>
-      <td>3423</td>
-      <td>1.49</td>
+      <td>15531</td>
+      <td>6165</td>
+      <td>2.52</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>4873</td>
-      <td>3436</td>
-      <td>1.42</td>
+      <td>17273</td>
+      <td>7005</td>
+      <td>2.47</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncAsia_alt</th>
       <th>lib1</th>
-      <td>326</td>
-      <td>193</td>
-      <td>1.69</td>
+      <td>965</td>
+      <td>321</td>
+      <td>3.01</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>242</td>
-      <td>144</td>
-      <td>1.68</td>
+      <td>788</td>
+      <td>258</td>
+      <td>3.05</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncAsia_tree1</th>
       <th>lib1</th>
-      <td>201</td>
-      <td>124</td>
-      <td>1.62</td>
+      <td>621</td>
+      <td>198</td>
+      <td>3.14</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>212</td>
-      <td>129</td>
-      <td>1.64</td>
+      <td>791</td>
+      <td>230</td>
+      <td>3.44</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncAsia_tree2</th>
       <th>lib1</th>
-      <td>402</td>
-      <td>246</td>
-      <td>1.63</td>
+      <td>1192</td>
+      <td>376</td>
+      <td>3.17</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>291</td>
-      <td>187</td>
-      <td>1.56</td>
+      <td>1030</td>
+      <td>331</td>
+      <td>3.11</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncClade2_MAP</th>
       <th>lib1</th>
-      <td>4238</td>
-      <td>2828</td>
-      <td>1.50</td>
+      <td>12903</td>
+      <td>5246</td>
+      <td>2.46</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>3831</td>
-      <td>2847</td>
-      <td>1.35</td>
+      <td>13586</td>
+      <td>6226</td>
+      <td>2.18</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncClade2_alt</th>
       <th>lib1</th>
-      <td>445</td>
-      <td>277</td>
-      <td>1.61</td>
+      <td>1464</td>
+      <td>500</td>
+      <td>2.93</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>287</td>
-      <td>211</td>
-      <td>1.36</td>
+      <td>1149</td>
+      <td>456</td>
+      <td>2.52</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncClade2_alt1_subs-only</th>
       <th>lib1</th>
-      <td>418</td>
-      <td>252</td>
-      <td>1.66</td>
+      <td>1305</td>
+      <td>448</td>
+      <td>2.91</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>434</td>
-      <td>252</td>
-      <td>1.72</td>
+      <td>1559</td>
+      <td>443</td>
+      <td>3.52</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncClade2_alt2_del1-only</th>
       <th>lib1</th>
-      <td>495</td>
-      <td>283</td>
-      <td>1.75</td>
+      <td>1438</td>
+      <td>453</td>
+      <td>3.17</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>414</td>
-      <td>251</td>
-      <td>1.65</td>
+      <td>1387</td>
+      <td>416</td>
+      <td>3.33</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncClade2_alt3_del2-only</th>
       <th>lib1</th>
-      <td>380</td>
-      <td>232</td>
-      <td>1.64</td>
+      <td>1207</td>
+      <td>389</td>
+      <td>3.10</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>260</td>
-      <td>164</td>
-      <td>1.59</td>
+      <td>936</td>
+      <td>316</td>
+      <td>2.96</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncClade2_alt4_dels-only</th>
       <th>lib1</th>
-      <td>414</td>
-      <td>244</td>
-      <td>1.70</td>
+      <td>1204</td>
+      <td>409</td>
+      <td>2.94</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>269</td>
-      <td>190</td>
-      <td>1.42</td>
+      <td>954</td>
+      <td>359</td>
+      <td>2.66</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncClade2_tree2</th>
       <th>lib1</th>
-      <td>495</td>
-      <td>302</td>
-      <td>1.64</td>
+      <td>1561</td>
+      <td>510</td>
+      <td>3.06</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>293</td>
-      <td>205</td>
-      <td>1.43</td>
+      <td>1092</td>
+      <td>410</td>
+      <td>2.66</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncEurAf_alt</th>
       <th>lib1</th>
-      <td>426</td>
-      <td>269</td>
-      <td>1.58</td>
+      <td>1331</td>
+      <td>466</td>
+      <td>2.86</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>315</td>
-      <td>196</td>
-      <td>1.61</td>
+      <td>1154</td>
+      <td>381</td>
+      <td>3.03</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncEurAf_tree1</th>
       <th>lib1</th>
-      <td>398</td>
-      <td>233</td>
-      <td>1.71</td>
+      <td>1257</td>
+      <td>394</td>
+      <td>3.19</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>374</td>
-      <td>232</td>
-      <td>1.61</td>
+      <td>1283</td>
+      <td>379</td>
+      <td>3.39</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncSARS-CoV-1_MAP</th>
       <th>lib1</th>
-      <td>203</td>
-      <td>119</td>
-      <td>1.71</td>
+      <td>603</td>
+      <td>201</td>
+      <td>3.00</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>174</td>
-      <td>115</td>
-      <td>1.51</td>
+      <td>564</td>
+      <td>179</td>
+      <td>3.15</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncSARS-CoV-1_alt</th>
       <th>lib1</th>
-      <td>467</td>
-      <td>273</td>
-      <td>1.71</td>
+      <td>1348</td>
+      <td>411</td>
+      <td>3.28</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>288</td>
-      <td>176</td>
-      <td>1.64</td>
+      <td>1101</td>
+      <td>355</td>
+      <td>3.10</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncSARS1a_MAP</th>
       <th>lib1</th>
-      <td>3541</td>
-      <td>2433</td>
-      <td>1.46</td>
+      <td>10948</td>
+      <td>4500</td>
+      <td>2.43</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>3264</td>
-      <td>2405</td>
-      <td>1.36</td>
+      <td>11648</td>
+      <td>5006</td>
+      <td>2.33</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncSARS1a_alt</th>
       <th>lib1</th>
-      <td>541</td>
-      <td>321</td>
-      <td>1.69</td>
+      <td>1585</td>
+      <td>494</td>
+      <td>3.21</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>373</td>
-      <td>244</td>
-      <td>1.53</td>
+      <td>1332</td>
+      <td>422</td>
+      <td>3.16</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncSARS1a_tree1</th>
       <th>lib1</th>
-      <td>260</td>
-      <td>156</td>
-      <td>1.67</td>
+      <td>872</td>
+      <td>247</td>
+      <td>3.53</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>239</td>
-      <td>136</td>
-      <td>1.76</td>
+      <td>830</td>
+      <td>224</td>
+      <td>3.71</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncSARS1a_tree2</th>
       <th>lib1</th>
-      <td>414</td>
-      <td>252</td>
-      <td>1.64</td>
+      <td>1323</td>
+      <td>430</td>
+      <td>3.08</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>336</td>
-      <td>214</td>
-      <td>1.57</td>
+      <td>1247</td>
+      <td>388</td>
+      <td>3.21</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncSARS1c_MAP</th>
       <th>lib1</th>
-      <td>203</td>
-      <td>116</td>
-      <td>1.75</td>
+      <td>575</td>
+      <td>182</td>
+      <td>3.16</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>125</td>
-      <td>84</td>
-      <td>1.49</td>
+      <td>473</td>
+      <td>164</td>
+      <td>2.88</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncSARS2a_MAP</th>
       <th>lib1</th>
-      <td>4734</td>
-      <td>3079</td>
-      <td>1.54</td>
+      <td>14890</td>
+      <td>5662</td>
+      <td>2.63</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>4664</td>
-      <td>3220</td>
-      <td>1.45</td>
+      <td>16906</td>
+      <td>6539</td>
+      <td>2.59</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncSARS2a_alt</th>
       <th>lib1</th>
-      <td>240</td>
-      <td>146</td>
-      <td>1.64</td>
+      <td>714</td>
+      <td>243</td>
+      <td>2.94</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>208</td>
-      <td>126</td>
-      <td>1.65</td>
+      <td>692</td>
+      <td>210</td>
+      <td>3.30</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncSARS2c_MAP</th>
       <th>lib1</th>
-      <td>2909</td>
-      <td>2024</td>
-      <td>1.44</td>
+      <td>8904</td>
+      <td>3715</td>
+      <td>2.40</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>2765</td>
-      <td>1948</td>
-      <td>1.42</td>
+      <td>9540</td>
+      <td>4007</td>
+      <td>2.38</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncSarbecovirus_MAP</th>
       <th>lib1</th>
-      <td>4125</td>
-      <td>2779</td>
-      <td>1.48</td>
+      <td>12728</td>
+      <td>5100</td>
+      <td>2.50</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>3893</td>
-      <td>2774</td>
-      <td>1.40</td>
+      <td>13436</td>
+      <td>5751</td>
+      <td>2.34</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncSarbecovirus_alt</th>
       <th>lib1</th>
-      <td>205</td>
-      <td>128</td>
-      <td>1.60</td>
+      <td>581</td>
+      <td>201</td>
+      <td>2.89</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>182</td>
-      <td>93</td>
-      <td>1.96</td>
+      <td>618</td>
+      <td>161</td>
+      <td>3.84</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncSarbecovirus_alt1_ins117ins118</th>
       <th>lib1</th>
+      <td>597</td>
       <td>195</td>
-      <td>127</td>
-      <td>1.54</td>
+      <td>3.06</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>198</td>
-      <td>115</td>
-      <td>1.72</td>
+      <td>670</td>
+      <td>210</td>
+      <td>3.19</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">AncSarbecovirus_tree1</th>
       <th>lib1</th>
-      <td>449</td>
-      <td>254</td>
-      <td>1.77</td>
+      <td>1409</td>
+      <td>418</td>
+      <td>3.37</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>337</td>
-      <td>191</td>
-      <td>1.76</td>
+      <td>1241</td>
+      <td>344</td>
+      <td>3.61</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">As6526</th>
       <th>lib1</th>
-      <td>336</td>
-      <td>203</td>
-      <td>1.66</td>
+      <td>1044</td>
+      <td>341</td>
+      <td>3.06</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>216</td>
-      <td>143</td>
-      <td>1.51</td>
+      <td>721</td>
+      <td>276</td>
+      <td>2.61</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">BM48-31</th>
       <th>lib1</th>
-      <td>4123</td>
-      <td>2659</td>
-      <td>1.55</td>
+      <td>12750</td>
+      <td>4828</td>
+      <td>2.64</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>4137</td>
-      <td>2738</td>
-      <td>1.51</td>
+      <td>14562</td>
+      <td>5530</td>
+      <td>2.63</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">BtKY72</th>
       <th>lib1</th>
-      <td>353</td>
-      <td>218</td>
-      <td>1.62</td>
+      <td>1003</td>
+      <td>347</td>
+      <td>2.89</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>257</td>
-      <td>166</td>
-      <td>1.55</td>
+      <td>861</td>
+      <td>289</td>
+      <td>2.98</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">GD-Pangolin</th>
       <th>lib1</th>
-      <td>3066</td>
-      <td>2138</td>
-      <td>1.43</td>
+      <td>9336</td>
+      <td>3946</td>
+      <td>2.37</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>2897</td>
-      <td>2097</td>
-      <td>1.38</td>
+      <td>10172</td>
+      <td>4432</td>
+      <td>2.30</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">GX-Pangolin</th>
       <th>lib1</th>
-      <td>288</td>
-      <td>165</td>
-      <td>1.75</td>
+      <td>861</td>
+      <td>271</td>
+      <td>3.18</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>256</td>
-      <td>150</td>
-      <td>1.71</td>
+      <td>967</td>
+      <td>278</td>
+      <td>3.48</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">GX2013</th>
       <th>lib1</th>
-      <td>715</td>
-      <td>419</td>
-      <td>1.71</td>
+      <td>2240</td>
+      <td>692</td>
+      <td>3.24</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>555</td>
-      <td>345</td>
-      <td>1.61</td>
+      <td>1903</td>
+      <td>633</td>
+      <td>3.01</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">HKU3-1</th>
       <th>lib1</th>
-      <td>264</td>
-      <td>156</td>
-      <td>1.69</td>
+      <td>822</td>
+      <td>240</td>
+      <td>3.42</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>171</td>
-      <td>117</td>
-      <td>1.46</td>
+      <td>602</td>
+      <td>203</td>
+      <td>2.97</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">HKU3-8</th>
       <th>lib1</th>
-      <td>578</td>
-      <td>373</td>
-      <td>1.55</td>
+      <td>1747</td>
+      <td>610</td>
+      <td>2.86</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>299</td>
-      <td>219</td>
-      <td>1.37</td>
+      <td>1106</td>
+      <td>444</td>
+      <td>2.49</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">HeB2013</th>
       <th>lib1</th>
-      <td>444</td>
-      <td>281</td>
-      <td>1.58</td>
+      <td>1310</td>
+      <td>467</td>
+      <td>2.81</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>239</td>
-      <td>163</td>
-      <td>1.47</td>
+      <td>815</td>
+      <td>319</td>
+      <td>2.55</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">HuB2013</th>
       <th>lib1</th>
-      <td>513</td>
-      <td>310</td>
-      <td>1.65</td>
+      <td>1455</td>
+      <td>505</td>
+      <td>2.88</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>356</td>
-      <td>239</td>
-      <td>1.49</td>
+      <td>1230</td>
+      <td>470</td>
+      <td>2.62</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">JL2012</th>
       <th>lib1</th>
-      <td>595</td>
-      <td>352</td>
-      <td>1.69</td>
+      <td>1773</td>
+      <td>590</td>
+      <td>3.01</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>361</td>
-      <td>253</td>
-      <td>1.43</td>
+      <td>1291</td>
+      <td>503</td>
+      <td>2.57</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">LYRa11</th>
       <th>lib1</th>
-      <td>393</td>
-      <td>233</td>
-      <td>1.69</td>
+      <td>1221</td>
+      <td>374</td>
+      <td>3.26</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>363</td>
-      <td>215</td>
-      <td>1.69</td>
+      <td>1373</td>
+      <td>382</td>
+      <td>3.59</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">Longquan-140</th>
       <th>lib1</th>
-      <td>476</td>
-      <td>267</td>
-      <td>1.78</td>
+      <td>1452</td>
+      <td>442</td>
+      <td>3.29</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>282</td>
-      <td>188</td>
-      <td>1.50</td>
+      <td>1039</td>
+      <td>366</td>
+      <td>2.84</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">RaTG13</th>
       <th>lib1</th>
-      <td>2805</td>
-      <td>1912</td>
-      <td>1.47</td>
+      <td>8473</td>
+      <td>3583</td>
+      <td>2.36</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>2523</td>
-      <td>1857</td>
-      <td>1.36</td>
+      <td>9042</td>
+      <td>3992</td>
+      <td>2.27</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">Rf1</th>
       <th>lib1</th>
-      <td>321</td>
-      <td>196</td>
-      <td>1.64</td>
+      <td>952</td>
+      <td>325</td>
+      <td>2.93</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>216</td>
-      <td>130</td>
-      <td>1.66</td>
+      <td>797</td>
+      <td>257</td>
+      <td>3.10</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">Rf4092</th>
       <th>lib1</th>
-      <td>586</td>
-      <td>375</td>
-      <td>1.56</td>
+      <td>1722</td>
+      <td>580</td>
+      <td>2.97</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>364</td>
-      <td>248</td>
-      <td>1.47</td>
+      <td>1247</td>
+      <td>487</td>
+      <td>2.56</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">RmYN02</th>
       <th>lib1</th>
-      <td>471</td>
-      <td>303</td>
-      <td>1.55</td>
+      <td>1382</td>
+      <td>485</td>
+      <td>2.85</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>273</td>
-      <td>195</td>
-      <td>1.40</td>
+      <td>919</td>
+      <td>359</td>
+      <td>2.56</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">Rp3</th>
       <th>lib1</th>
-      <td>627</td>
-      <td>377</td>
-      <td>1.66</td>
+      <td>1998</td>
+      <td>596</td>
+      <td>3.35</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>339</td>
-      <td>250</td>
-      <td>1.36</td>
+      <td>1224</td>
+      <td>453</td>
+      <td>2.70</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">Rs4081</th>
       <th>lib1</th>
-      <td>467</td>
-      <td>275</td>
-      <td>1.70</td>
+      <td>1347</td>
+      <td>445</td>
+      <td>3.03</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>256</td>
-      <td>182</td>
-      <td>1.41</td>
+      <td>955</td>
+      <td>364</td>
+      <td>2.62</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">Rs4084</th>
       <th>lib1</th>
-      <td>348</td>
-      <td>207</td>
-      <td>1.68</td>
+      <td>1038</td>
+      <td>323</td>
+      <td>3.21</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>255</td>
-      <td>159</td>
-      <td>1.60</td>
+      <td>909</td>
+      <td>276</td>
+      <td>3.29</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">Rs4231</th>
       <th>lib1</th>
-      <td>484</td>
-      <td>300</td>
-      <td>1.61</td>
+      <td>1510</td>
+      <td>515</td>
+      <td>2.93</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>379</td>
-      <td>235</td>
-      <td>1.61</td>
+      <td>1348</td>
+      <td>439</td>
+      <td>3.07</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">Rs4237</th>
       <th>lib1</th>
-      <td>471</td>
-      <td>290</td>
-      <td>1.62</td>
+      <td>1361</td>
+      <td>475</td>
+      <td>2.87</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>268</td>
-      <td>185</td>
-      <td>1.45</td>
+      <td>954</td>
+      <td>361</td>
+      <td>2.64</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">Rs4247</th>
       <th>lib1</th>
-      <td>679</td>
-      <td>417</td>
-      <td>1.63</td>
+      <td>2073</td>
+      <td>696</td>
+      <td>2.98</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>436</td>
-      <td>297</td>
-      <td>1.47</td>
+      <td>1670</td>
+      <td>600</td>
+      <td>2.78</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">Rs7327</th>
       <th>lib1</th>
-      <td>3136</td>
-      <td>2135</td>
-      <td>1.47</td>
+      <td>9695</td>
+      <td>3916</td>
+      <td>2.48</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>2815</td>
-      <td>2008</td>
-      <td>1.40</td>
+      <td>10073</td>
+      <td>4152</td>
+      <td>2.43</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">RsSHC014</th>
       <th>lib1</th>
-      <td>298</td>
-      <td>175</td>
-      <td>1.70</td>
+      <td>894</td>
+      <td>280</td>
+      <td>3.19</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>218</td>
-      <td>132</td>
-      <td>1.65</td>
+      <td>840</td>
+      <td>244</td>
+      <td>3.44</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">SARS-CoV-1_2693</th>
       <th>lib1</th>
-      <td>7248</td>
-      <td>3819</td>
-      <td>1.90</td>
+      <td>23031</td>
+      <td>5778</td>
+      <td>3.99</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>7574</td>
-      <td>4284</td>
-      <td>1.77</td>
+      <td>26778</td>
+      <td>6793</td>
+      <td>3.94</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">SARS-CoV-1_GD01_HP03L</th>
       <th>lib1</th>
-      <td>251</td>
-      <td>144</td>
-      <td>1.74</td>
+      <td>784</td>
+      <td>237</td>
+      <td>3.31</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>209</td>
-      <td>115</td>
-      <td>1.82</td>
+      <td>636</td>
+      <td>189</td>
+      <td>3.37</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">SARS-CoV-1_GD03T0013_HP04</th>
       <th>lib1</th>
-      <td>434</td>
-      <td>281</td>
-      <td>1.54</td>
+      <td>1357</td>
+      <td>483</td>
+      <td>2.81</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>417</td>
-      <td>258</td>
-      <td>1.62</td>
+      <td>1403</td>
+      <td>425</td>
+      <td>3.30</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">SARS-CoV-1_GZ-C_HP03L</th>
       <th>lib1</th>
+      <td>607</td>
       <td>195</td>
-      <td>118</td>
-      <td>1.65</td>
+      <td>3.11</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>151</td>
-      <td>106</td>
-      <td>1.42</td>
+      <td>519</td>
+      <td>193</td>
+      <td>2.69</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">SARS-CoV-1_GZ0402_HP04</th>
       <th>lib1</th>
-      <td>356</td>
-      <td>209</td>
-      <td>1.70</td>
+      <td>1044</td>
+      <td>334</td>
+      <td>3.13</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>277</td>
-      <td>174</td>
-      <td>1.59</td>
+      <td>938</td>
+      <td>307</td>
+      <td>3.06</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">SARS-CoV-1_HGZ8L1-A_HP03E</th>
       <th>lib1</th>
-      <td>319</td>
-      <td>182</td>
-      <td>1.75</td>
+      <td>1017</td>
+      <td>332</td>
+      <td>3.06</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>285</td>
-      <td>174</td>
-      <td>1.64</td>
+      <td>1004</td>
+      <td>307</td>
+      <td>3.27</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">SARS-CoV-1_PC4-127_PC04</th>
       <th>lib1</th>
-      <td>488</td>
-      <td>290</td>
-      <td>1.68</td>
+      <td>1603</td>
+      <td>492</td>
+      <td>3.26</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>384</td>
-      <td>250</td>
-      <td>1.54</td>
+      <td>1423</td>
+      <td>429</td>
+      <td>3.32</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">SARS-CoV-1_PC4-137_PC04</th>
       <th>lib1</th>
-      <td>2940</td>
-      <td>1872</td>
-      <td>1.57</td>
+      <td>8929</td>
+      <td>3313</td>
+      <td>2.70</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>2696</td>
-      <td>1823</td>
-      <td>1.48</td>
+      <td>9805</td>
+      <td>3559</td>
+      <td>2.75</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">SARS-CoV-1_PC4-13_PC04</th>
       <th>lib1</th>
-      <td>429</td>
-      <td>257</td>
-      <td>1.67</td>
+      <td>1369</td>
+      <td>441</td>
+      <td>3.10</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>353</td>
-      <td>221</td>
-      <td>1.60</td>
+      <td>1294</td>
+      <td>390</td>
+      <td>3.32</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">SARS-CoV-1_SZ1_PC03</th>
       <th>lib1</th>
-      <td>397</td>
-      <td>240</td>
-      <td>1.65</td>
+      <td>1244</td>
+      <td>394</td>
+      <td>3.16</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>343</td>
-      <td>219</td>
-      <td>1.57</td>
+      <td>1205</td>
+      <td>385</td>
+      <td>3.13</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">SARS-CoV-1_Sin852_HP03L</th>
       <th>lib1</th>
-      <td>395</td>
-      <td>249</td>
-      <td>1.59</td>
+      <td>1238</td>
+      <td>394</td>
+      <td>3.14</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>311</td>
-      <td>194</td>
-      <td>1.60</td>
+      <td>1112</td>
+      <td>334</td>
+      <td>3.33</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">SARS-CoV-1_Sino1-11_HP03L</th>
       <th>lib1</th>
-      <td>445</td>
-      <td>300</td>
-      <td>1.48</td>
+      <td>1385</td>
+      <td>504</td>
+      <td>2.75</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>338</td>
-      <td>232</td>
-      <td>1.46</td>
+      <td>1198</td>
+      <td>437</td>
+      <td>2.74</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">SARS-CoV-1_Urbani_HP03L</th>
       <th>lib1</th>
-      <td>3731</td>
-      <td>2486</td>
-      <td>1.50</td>
+      <td>11520</td>
+      <td>4339</td>
+      <td>2.65</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>3096</td>
-      <td>2428</td>
-      <td>1.28</td>
+      <td>10803</td>
+      <td>5658</td>
+      <td>1.91</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">SARS-CoV-2</th>
       <th>lib1</th>
-      <td>2205</td>
-      <td>1413</td>
-      <td>1.56</td>
+      <td>6764</td>
+      <td>2519</td>
+      <td>2.69</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>2149</td>
-      <td>1460</td>
-      <td>1.47</td>
+      <td>7753</td>
+      <td>2783</td>
+      <td>2.79</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">SARS-CoV-2_2649</th>
       <th>lib1</th>
-      <td>900</td>
-      <td>541</td>
-      <td>1.66</td>
+      <td>2966</td>
+      <td>890</td>
+      <td>3.33</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>728</td>
-      <td>423</td>
-      <td>1.72</td>
+      <td>2672</td>
+      <td>713</td>
+      <td>3.75</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">Shaanxi2011</th>
       <th>lib1</th>
-      <td>516</td>
-      <td>316</td>
-      <td>1.63</td>
+      <td>1479</td>
+      <td>508</td>
+      <td>2.91</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>360</td>
-      <td>249</td>
-      <td>1.45</td>
+      <td>1161</td>
+      <td>449</td>
+      <td>2.59</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">WIV1</th>
       <th>lib1</th>
-      <td>423</td>
-      <td>244</td>
-      <td>1.73</td>
+      <td>1265</td>
+      <td>391</td>
+      <td>3.24</td>
     </tr>
     <tr>
       <th>lib2</th>
+      <td>1391</td>
       <td>396</td>
-      <td>231</td>
-      <td>1.71</td>
+      <td>3.51</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">YN2013</th>
       <th>lib1</th>
-      <td>377</td>
-      <td>255</td>
-      <td>1.48</td>
+      <td>1162</td>
+      <td>419</td>
+      <td>2.77</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>233</td>
-      <td>175</td>
-      <td>1.33</td>
+      <td>793</td>
+      <td>330</td>
+      <td>2.40</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">Yunnan2011</th>
       <th>lib1</th>
-      <td>515</td>
-      <td>326</td>
-      <td>1.58</td>
+      <td>1658</td>
+      <td>567</td>
+      <td>2.92</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>385</td>
-      <td>256</td>
-      <td>1.50</td>
+      <td>1264</td>
+      <td>486</td>
+      <td>2.60</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">ZC45</th>
       <th>lib1</th>
-      <td>494</td>
-      <td>290</td>
-      <td>1.70</td>
+      <td>1467</td>
+      <td>468</td>
+      <td>3.13</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>367</td>
-      <td>236</td>
-      <td>1.56</td>
+      <td>1214</td>
+      <td>443</td>
+      <td>2.74</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">ZXC21</th>
       <th>lib1</th>
-      <td>787</td>
-      <td>474</td>
-      <td>1.66</td>
+      <td>2390</td>
+      <td>774</td>
+      <td>3.09</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>523</td>
-      <td>343</td>
-      <td>1.52</td>
+      <td>1804</td>
+      <td>645</td>
+      <td>2.80</td>
     </tr>
   </tbody>
 </table>
@@ -1986,58 +2000,58 @@ display(HTML(empirical_acc.to_html(index=False)))
   <tbody>
     <tr>
       <td>lib1</td>
-      <td>0.984107</td>
+      <td>0.984167</td>
       <td>retained</td>
-      <td>76744</td>
+      <td>231786</td>
       <td>False</td>
     </tr>
     <tr>
       <td>lib2</td>
-      <td>0.982199</td>
+      <td>0.981568</td>
       <td>retained</td>
-      <td>67515</td>
+      <td>235631</td>
       <td>False</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>0.995001</td>
+      <td>0.995896</td>
       <td>retained, no indel</td>
-      <td>73320</td>
+      <td>221053</td>
       <td>True</td>
     </tr>
     <tr>
       <td>lib2</td>
-      <td>0.994807</td>
+      <td>0.996143</td>
       <td>retained, no indel</td>
-      <td>64459</td>
+      <td>224426</td>
       <td>True</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>0.987827</td>
+      <td>0.988745</td>
       <td>10X accuracy</td>
-      <td>74697</td>
+      <td>222883</td>
       <td>False</td>
     </tr>
     <tr>
       <td>lib2</td>
-      <td>0.985763</td>
+      <td>0.986516</td>
       <td>10X accuracy</td>
-      <td>65850</td>
+      <td>227641</td>
       <td>False</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>0.994991</td>
+      <td>0.995932</td>
       <td>10X accuracy, no indel</td>
-      <td>71625</td>
+      <td>213531</td>
       <td>False</td>
     </tr>
     <tr>
       <td>lib2</td>
-      <td>0.994858</td>
+      <td>0.996166</td>
       <td>10X accuracy, no indel</td>
-      <td>63120</td>
+      <td>217934</td>
       <td>False</td>
     </tr>
   </tbody>
@@ -2124,38 +2138,38 @@ display(HTML(consensus.head().to_html(index=False)))
   <tbody>
     <tr>
       <td>lib1</td>
-      <td>AAAAAAAAAACAAAGG</td>
-      <td>AncSarbecovirus_MAP</td>
-      <td>T508A C509T T510G</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
       <td>AAAAAAAAAACATGGC</td>
       <td>SARS-CoV-2_2649</td>
       <td>T490C C491A T492C</td>
-      <td>1</td>
+      <td>4</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>AAAAAAAAAGTGAAAG</td>
-      <td>AncSARS1a_tree1</td>
-      <td></td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>AAAAAAAAAGTTACTA</td>
-      <td>ZXC21</td>
-      <td></td>
+      <td>AAAAAAAAAACATTCA</td>
+      <td>AncAsia_MAP</td>
+      <td>C502T A503T</td>
       <td>2</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>AAAAAAAAATAATGTT</td>
-      <td>Rf1</td>
-      <td>T506A</td>
+      <td>AAAAAAAAAATCATCA</td>
+      <td>SARS-CoV-1_Urbani_HP03L</td>
+      <td>T463G T464A A465T</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>AAAAAAAAACGAAATC</td>
+      <td>SARS-CoV-1_PC4-137_PC04</td>
+      <td>C186T T373G</td>
       <td>2</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>AAAAAAAAAGAATCGT</td>
+      <td>BM48-31</td>
+      <td>G365A A366T</td>
+      <td>3</td>
     </tr>
   </tbody>
 </table>
@@ -2191,47 +2205,47 @@ display(HTML(consensus.head().to_html(index=False)))
   <tbody>
     <tr>
       <td>lib1</td>
-      <td>AAAAAAAAAACAAAGG</td>
-      <td>AncSarbecovirus_MAP</td>
-      <td>T508A C509T T510G</td>
-      <td>1</td>
-      <td>T508A C509T T510G</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
       <td>AAAAAAAAAACATGGC</td>
       <td>SARS-CoV-2_2649</td>
       <td>T490C C491A T492C</td>
-      <td>1</td>
+      <td>4</td>
       <td>T490C C491A T492C</td>
       <td>0</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>AAAAAAAAAGTGAAAG</td>
-      <td>AncSARS1a_tree1</td>
-      <td></td>
+      <td>AAAAAAAAAACATTCA</td>
+      <td>AncAsia_MAP</td>
+      <td>C502T A503T</td>
+      <td>2</td>
+      <td>C502T A503T</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>AAAAAAAAAATCATCA</td>
+      <td>SARS-CoV-1_Urbani_HP03L</td>
+      <td>T463G T464A A465T</td>
       <td>1</td>
-      <td></td>
+      <td>T463G T464A A465T</td>
       <td>0</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>AAAAAAAAAGTTACTA</td>
-      <td>ZXC21</td>
-      <td></td>
+      <td>AAAAAAAAACGAAATC</td>
+      <td>SARS-CoV-1_PC4-137_PC04</td>
+      <td>C186T T373G</td>
       <td>2</td>
-      <td></td>
+      <td>C186T T373G</td>
       <td>0</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>AAAAAAAAATAATGTT</td>
-      <td>Rf1</td>
-      <td>T506A</td>
-      <td>2</td>
-      <td>T506A</td>
+      <td>AAAAAAAAAGAATCGT</td>
+      <td>BM48-31</td>
+      <td>G365A A366T</td>
+      <td>3</td>
+      <td>G365A A366T</td>
       <td>0</td>
     </tr>
   </tbody>
@@ -2316,752 +2330,752 @@ _ = p.draw()
     <tr>
       <td>lib1</td>
       <td>273-2005</td>
-      <td>234</td>
+      <td>368</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>279-2005</td>
-      <td>247</td>
+      <td>403</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>AncAsia_MAP</td>
-      <td>3075</td>
+      <td>5572</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>AncAsia_alt</td>
-      <td>176</td>
+      <td>291</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>AncAsia_tree1</td>
-      <td>118</td>
+      <td>178</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>AncAsia_tree2</td>
-      <td>209</td>
+      <td>325</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>AncClade2_MAP</td>
-      <td>2688</td>
+      <td>5013</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>AncClade2_alt</td>
-      <td>242</td>
+      <td>447</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>AncClade2_alt1_subs-only</td>
-      <td>220</td>
+      <td>397</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>AncClade2_alt2_del1-only</td>
-      <td>234</td>
+      <td>385</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>AncClade2_alt3_del2-only</td>
-      <td>219</td>
+      <td>354</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>AncClade2_alt4_dels-only</td>
-      <td>223</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>AncClade2_tree2</td>
-      <td>259</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>AncEurAf_alt</td>
-      <td>232</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>AncEurAf_tree1</td>
-      <td>202</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>AncSARS-CoV-1_MAP</td>
-      <td>113</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>AncSARS-CoV-1_alt</td>
-      <td>235</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>AncSARS1a_MAP</td>
-      <td>2308</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>AncSARS1a_alt</td>
-      <td>290</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>AncSARS1a_tree1</td>
-      <td>137</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>AncSARS1a_tree2</td>
-      <td>220</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>AncSARS1c_MAP</td>
-      <td>93</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>AncSARS2a_MAP</td>
-      <td>2951</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>AncSARS2a_alt</td>
-      <td>119</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>AncSARS2c_MAP</td>
-      <td>1948</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>AncSarbecovirus_MAP</td>
-      <td>2651</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>AncSarbecovirus_alt</td>
-      <td>113</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>AncSarbecovirus_alt1_ins117ins118</td>
-      <td>116</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>AncSarbecovirus_tree1</td>
-      <td>235</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>As6526</td>
-      <td>187</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>BM48-31</td>
-      <td>2536</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>BtKY72</td>
-      <td>195</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>GD-Pangolin</td>
-      <td>2033</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>GX-Pangolin</td>
-      <td>153</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>GX2013</td>
-      <td>382</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>HKU3-1</td>
-      <td>153</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>HKU3-8</td>
-      <td>348</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>HeB2013</td>
-      <td>255</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>HuB2013</td>
-      <td>278</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>JL2012</td>
-      <td>321</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>LYRa11</td>
-      <td>224</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>Longquan-140</td>
-      <td>241</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>RaTG13</td>
-      <td>1827</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>Rf1</td>
-      <td>193</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>Rf4092</td>
-      <td>331</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>RmYN02</td>
-      <td>261</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>Rp3</td>
       <td>371</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>Rs4081</td>
-      <td>250</td>
+      <td>AncClade2_tree2</td>
+      <td>440</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>Rs4084</td>
+      <td>AncEurAf_alt</td>
+      <td>396</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>AncEurAf_tree1</td>
+      <td>336</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>AncSARS-CoV-1_MAP</td>
       <td>192</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>Rs4231</td>
-      <td>281</td>
+      <td>AncSARS-CoV-1_alt</td>
+      <td>361</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>Rs4237</td>
-      <td>260</td>
+      <td>AncSARS1a_MAP</td>
+      <td>4277</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>Rs4247</td>
-      <td>377</td>
+      <td>AncSARS1a_alt</td>
+      <td>447</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>Rs7327</td>
-      <td>2039</td>
+      <td>AncSARS1a_tree1</td>
+      <td>217</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsSHC014</td>
+      <td>AncSARS1a_tree2</td>
+      <td>394</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>AncSARS1c_MAP</td>
       <td>154</td>
     </tr>
     <tr>
       <td>lib1</td>
+      <td>AncSARS2a_MAP</td>
+      <td>5410</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>AncSARS2a_alt</td>
+      <td>210</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>AncSARS2c_MAP</td>
+      <td>3543</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>AncSarbecovirus_MAP</td>
+      <td>4848</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>AncSarbecovirus_alt</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>AncSarbecovirus_alt1_ins117ins118</td>
+      <td>181</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>AncSarbecovirus_tree1</td>
+      <td>383</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>As6526</td>
+      <td>309</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>BM48-31</td>
+      <td>4605</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>BtKY72</td>
+      <td>324</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>GD-Pangolin</td>
+      <td>3783</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>GX-Pangolin</td>
+      <td>254</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>GX2013</td>
+      <td>642</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>HKU3-1</td>
+      <td>236</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>HKU3-8</td>
+      <td>579</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>HeB2013</td>
+      <td>427</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>HuB2013</td>
+      <td>452</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>JL2012</td>
+      <td>544</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>LYRa11</td>
+      <td>365</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>Longquan-140</td>
+      <td>406</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaTG13</td>
+      <td>3448</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>Rf1</td>
+      <td>321</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>Rf4092</td>
+      <td>514</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RmYN02</td>
+      <td>427</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>Rp3</td>
+      <td>584</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>Rs4081</td>
+      <td>411</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>Rs4084</td>
+      <td>299</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>Rs4231</td>
+      <td>486</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>Rs4237</td>
+      <td>430</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>Rs4247</td>
+      <td>638</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>Rs7327</td>
+      <td>3717</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsSHC014</td>
+      <td>244</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
       <td>SARS-CoV-1_2693</td>
-      <td>3535</td>
+      <td>5345</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>SARS-CoV-1_GD01_HP03L</td>
-      <td>134</td>
+      <td>224</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>SARS-CoV-1_GD03T0013_HP04</td>
-      <td>252</td>
+      <td>438</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>SARS-CoV-1_GZ-C_HP03L</td>
-      <td>96</td>
+      <td>160</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>SARS-CoV-1_GZ0402_HP04</td>
-      <td>169</td>
+      <td>255</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>SARS-CoV-1_HGZ8L1-A_HP03E</td>
-      <td>171</td>
+      <td>310</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>SARS-CoV-1_PC4-127_PC04</td>
-      <td>262</td>
+      <td>442</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>SARS-CoV-1_PC4-137_PC04</td>
-      <td>1800</td>
+      <td>3174</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>SARS-CoV-1_PC4-13_PC04</td>
-      <td>230</td>
+      <td>404</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>SARS-CoV-1_SZ1_PC03</td>
-      <td>208</td>
+      <td>331</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>SARS-CoV-1_Sin852_HP03L</td>
-      <td>229</td>
+      <td>353</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>SARS-CoV-1_Sino1-11_HP03L</td>
-      <td>268</td>
+      <td>451</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>SARS-CoV-1_Urbani_HP03L</td>
-      <td>2333</td>
+      <td>4053</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>SARS-CoV-2</td>
-      <td>1342</td>
+      <td>2403</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>SARS-CoV-2_2649</td>
-      <td>500</td>
+      <td>797</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>Shaanxi2011</td>
-      <td>282</td>
+      <td>462</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>WIV1</td>
-      <td>237</td>
+      <td>376</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>YN2013</td>
-      <td>230</td>
+      <td>378</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>Yunnan2011</td>
-      <td>294</td>
+      <td>518</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>ZC45</td>
-      <td>284</td>
+      <td>460</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>ZXC21</td>
-      <td>466</td>
+      <td>765</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>273-2005</td>
-      <td>138</td>
+      <td>291</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>279-2005</td>
-      <td>198</td>
+      <td>353</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>AncAsia_MAP</td>
-      <td>3085</td>
+      <td>6329</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>AncAsia_alt</td>
-      <td>130</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncAsia_tree1</td>
-      <td>111</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncAsia_tree2</td>
-      <td>166</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncClade2_MAP</td>
-      <td>2693</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncClade2_alt</td>
-      <td>182</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncClade2_alt1_subs-only</td>
-      <td>220</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncClade2_alt2_del1-only</td>
-      <td>223</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncClade2_alt3_del2-only</td>
-      <td>145</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncClade2_alt4_dels-only</td>
-      <td>174</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncClade2_tree2</td>
-      <td>179</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncEurAf_alt</td>
-      <td>162</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncEurAf_tree1</td>
-      <td>205</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncSARS-CoV-1_MAP</td>
-      <td>107</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncSARS-CoV-1_alt</td>
-      <td>148</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncSARS1a_MAP</td>
-      <td>2276</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncSARS1a_alt</td>
-      <td>214</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncSARS1a_tree1</td>
-      <td>124</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncSARS1a_tree2</td>
-      <td>198</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncSARS1c_MAP</td>
-      <td>69</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncSARS2a_MAP</td>
-      <td>3071</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncSARS2a_alt</td>
-      <td>108</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncSARS2c_MAP</td>
-      <td>1856</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncSarbecovirus_MAP</td>
-      <td>2648</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncSarbecovirus_alt</td>
-      <td>78</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncSarbecovirus_alt1_ins117ins118</td>
-      <td>112</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>AncSarbecovirus_tree1</td>
-      <td>163</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>As6526</td>
-      <td>123</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>BM48-31</td>
-      <td>2609</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>BtKY72</td>
-      <td>151</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>GD-Pangolin</td>
-      <td>2008</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>GX-Pangolin</td>
-      <td>140</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>GX2013</td>
-      <td>314</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>HKU3-1</td>
-      <td>116</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>HKU3-8</td>
-      <td>199</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>HeB2013</td>
-      <td>149</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>HuB2013</td>
-      <td>211</td>
-    </tr>
-    <tr>
-      <td>lib2</td>
-      <td>JL2012</td>
       <td>235</td>
     </tr>
     <tr>
       <td>lib2</td>
+      <td>AncAsia_tree1</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncAsia_tree2</td>
+      <td>291</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncClade2_MAP</td>
+      <td>5899</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncClade2_alt</td>
+      <td>399</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncClade2_alt1_subs-only</td>
+      <td>395</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncClade2_alt2_del1-only</td>
+      <td>376</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncClade2_alt3_del2-only</td>
+      <td>283</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncClade2_alt4_dels-only</td>
+      <td>323</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncClade2_tree2</td>
+      <td>359</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncEurAf_alt</td>
+      <td>326</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncEurAf_tree1</td>
+      <td>343</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncSARS-CoV-1_MAP</td>
+      <td>168</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncSARS-CoV-1_alt</td>
+      <td>306</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncSARS1a_MAP</td>
+      <td>4759</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncSARS1a_alt</td>
+      <td>384</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncSARS1a_tree1</td>
+      <td>212</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncSARS1a_tree2</td>
+      <td>358</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncSARS1c_MAP</td>
+      <td>139</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncSARS2a_MAP</td>
+      <td>6255</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncSARS2a_alt</td>
+      <td>183</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncSARS2c_MAP</td>
+      <td>3843</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncSarbecovirus_MAP</td>
+      <td>5462</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncSarbecovirus_alt</td>
+      <td>139</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncSarbecovirus_alt1_ins117ins118</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>AncSarbecovirus_tree1</td>
+      <td>302</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>As6526</td>
+      <td>244</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>BM48-31</td>
+      <td>5298</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>BtKY72</td>
+      <td>267</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>GD-Pangolin</td>
+      <td>4245</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>GX-Pangolin</td>
+      <td>255</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>GX2013</td>
+      <td>586</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>HKU3-1</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>HKU3-8</td>
+      <td>400</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>HeB2013</td>
+      <td>292</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>HuB2013</td>
+      <td>412</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>JL2012</td>
+      <td>471</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
       <td>LYRa11</td>
-      <td>206</td>
+      <td>372</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>Longquan-140</td>
-      <td>167</td>
+      <td>332</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>RaTG13</td>
-      <td>1775</td>
+      <td>3832</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>Rf1</td>
-      <td>128</td>
+      <td>255</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>Rf4092</td>
-      <td>229</td>
+      <td>452</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>RmYN02</td>
-      <td>167</td>
+      <td>308</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>Rp3</td>
-      <td>242</td>
+      <td>450</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>Rs4081</td>
-      <td>167</td>
+      <td>331</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>Rs4084</td>
-      <td>149</td>
+      <td>257</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>Rs4231</td>
-      <td>219</td>
+      <td>405</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>Rs4237</td>
-      <td>159</td>
+      <td>325</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>Rs4247</td>
-      <td>273</td>
+      <td>553</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>Rs7327</td>
-      <td>1903</td>
+      <td>3958</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>RsSHC014</td>
-      <td>124</td>
+      <td>228</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>SARS-CoV-1_2693</td>
-      <td>3951</td>
+      <td>6216</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>SARS-CoV-1_GD01_HP03L</td>
-      <td>101</td>
+      <td>172</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>SARS-CoV-1_GD03T0013_HP04</td>
-      <td>240</td>
+      <td>400</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>SARS-CoV-1_GZ-C_HP03L</td>
-      <td>92</td>
+      <td>161</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>SARS-CoV-1_GZ0402_HP04</td>
-      <td>141</td>
+      <td>248</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>SARS-CoV-1_HGZ8L1-A_HP03E</td>
-      <td>158</td>
+      <td>281</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>SARS-CoV-1_PC4-127_PC04</td>
-      <td>219</td>
+      <td>369</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>SARS-CoV-1_PC4-137_PC04</td>
-      <td>1741</td>
+      <td>3393</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>SARS-CoV-1_PC4-13_PC04</td>
-      <td>202</td>
+      <td>359</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>SARS-CoV-1_SZ1_PC03</td>
-      <td>189</td>
+      <td>329</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>SARS-CoV-1_Sin852_HP03L</td>
-      <td>173</td>
+      <td>295</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>SARS-CoV-1_Sino1-11_HP03L</td>
-      <td>207</td>
+      <td>393</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>SARS-CoV-1_Urbani_HP03L</td>
-      <td>2291</td>
+      <td>5279</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>SARS-CoV-2</td>
-      <td>1392</td>
+      <td>2667</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>SARS-CoV-2_2649</td>
-      <td>387</td>
+      <td>647</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>Shaanxi2011</td>
-      <td>223</td>
+      <td>415</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>WIV1</td>
-      <td>227</td>
+      <td>385</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>YN2013</td>
-      <td>152</td>
+      <td>301</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>Yunnan2011</td>
-      <td>229</td>
+      <td>443</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>ZC45</td>
-      <td>226</td>
+      <td>434</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>ZXC21</td>
-      <td>336</td>
+      <td>631</td>
     </tr>
   </tbody>
 </table>
@@ -3135,827 +3149,827 @@ _ = p.draw()
     <tr>
       <th rowspan="2" valign="top">273-2005</th>
       <th>lib1</th>
-      <td>210</td>
-      <td>24</td>
+      <td>330</td>
+      <td>38</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>128</td>
-      <td>10</td>
+      <td>275</td>
+      <td>16</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">279-2005</th>
       <th>lib1</th>
-      <td>232</td>
-      <td>15</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>182</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncAsia_MAP</th>
-      <th>lib1</th>
-      <td>315</td>
-      <td>2760</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>311</td>
-      <td>2774</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncAsia_alt</th>
-      <th>lib1</th>
-      <td>161</td>
-      <td>15</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>117</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncAsia_tree1</th>
-      <th>lib1</th>
-      <td>112</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>101</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncAsia_tree2</th>
-      <th>lib1</th>
-      <td>194</td>
-      <td>15</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>160</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncClade2_MAP</th>
-      <th>lib1</th>
-      <td>160</td>
-      <td>2528</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>156</td>
-      <td>2537</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncClade2_alt</th>
-      <th>lib1</th>
-      <td>217</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>171</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncClade2_alt1_subs-only</th>
-      <th>lib1</th>
-      <td>199</td>
-      <td>21</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>201</td>
-      <td>19</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncClade2_alt2_del1-only</th>
-      <th>lib1</th>
-      <td>216</td>
-      <td>18</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>201</td>
-      <td>22</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncClade2_alt3_del2-only</th>
-      <th>lib1</th>
-      <td>194</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>126</td>
-      <td>19</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncClade2_alt4_dels-only</th>
-      <th>lib1</th>
-      <td>211</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>158</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncClade2_tree2</th>
-      <th>lib1</th>
-      <td>231</td>
-      <td>28</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>163</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncEurAf_alt</th>
-      <th>lib1</th>
-      <td>207</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>151</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncEurAf_tree1</th>
-      <th>lib1</th>
-      <td>181</td>
-      <td>21</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>187</td>
-      <td>18</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncSARS-CoV-1_MAP</th>
-      <th>lib1</th>
-      <td>106</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>96</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncSARS-CoV-1_alt</th>
-      <th>lib1</th>
-      <td>214</td>
-      <td>21</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>138</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncSARS1a_MAP</th>
-      <th>lib1</th>
-      <td>325</td>
-      <td>1983</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>261</td>
-      <td>2015</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncSARS1a_alt</th>
-      <th>lib1</th>
-      <td>266</td>
-      <td>24</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>192</td>
-      <td>22</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncSARS1a_tree1</th>
-      <th>lib1</th>
-      <td>116</td>
-      <td>21</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>107</td>
-      <td>17</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncSARS1a_tree2</th>
-      <th>lib1</th>
-      <td>207</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>181</td>
-      <td>17</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncSARS1c_MAP</th>
-      <th>lib1</th>
-      <td>75</td>
-      <td>18</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>62</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncSARS2a_MAP</th>
-      <th>lib1</th>
-      <td>304</td>
-      <td>2647</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>268</td>
-      <td>2803</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncSARS2a_alt</th>
-      <th>lib1</th>
-      <td>107</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>98</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncSARS2c_MAP</th>
-      <th>lib1</th>
-      <td>302</td>
-      <td>1646</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>249</td>
-      <td>1607</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncSarbecovirus_MAP</th>
-      <th>lib1</th>
-      <td>271</td>
-      <td>2380</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>228</td>
-      <td>2420</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncSarbecovirus_alt</th>
-      <th>lib1</th>
-      <td>102</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>73</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncSarbecovirus_alt1_ins117ins118</th>
-      <th>lib1</th>
-      <td>112</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>100</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">AncSarbecovirus_tree1</th>
-      <th>lib1</th>
-      <td>206</td>
+      <td>374</td>
       <td>29</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>150</td>
-      <td>13</td>
+      <td>331</td>
+      <td>22</td>
     </tr>
     <tr>
-      <th rowspan="2" valign="top">As6526</th>
+      <th rowspan="2" valign="top">AncAsia_MAP</th>
       <th>lib1</th>
-      <td>170</td>
-      <td>17</td>
+      <td>534</td>
+      <td>5038</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>113</td>
+      <td>584</td>
+      <td>5745</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AncAsia_alt</th>
+      <th>lib1</th>
+      <td>261</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>212</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AncAsia_tree1</th>
+      <th>lib1</th>
+      <td>168</td>
       <td>10</td>
     </tr>
     <tr>
-      <th rowspan="2" valign="top">BM48-31</th>
+      <th>lib2</th>
+      <td>186</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AncAsia_tree2</th>
       <th>lib1</th>
-      <td>164</td>
-      <td>2372</td>
+      <td>297</td>
+      <td>28</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>165</td>
-      <td>2444</td>
+      <td>274</td>
+      <td>17</td>
     </tr>
     <tr>
-      <th rowspan="2" valign="top">BtKY72</th>
+      <th rowspan="2" valign="top">AncClade2_MAP</th>
       <th>lib1</th>
-      <td>187</td>
-      <td>8</td>
+      <td>267</td>
+      <td>4746</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>139</td>
-      <td>12</td>
+      <td>311</td>
+      <td>5588</td>
     </tr>
     <tr>
-      <th rowspan="2" valign="top">GD-Pangolin</th>
+      <th rowspan="2" valign="top">AncClade2_alt</th>
+      <th>lib1</th>
+      <td>411</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>373</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AncClade2_alt1_subs-only</th>
+      <th>lib1</th>
+      <td>356</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>357</td>
+      <td>38</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AncClade2_alt2_del1-only</th>
+      <th>lib1</th>
+      <td>353</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>345</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AncClade2_alt3_del2-only</th>
       <th>lib1</th>
       <td>314</td>
-      <td>1719</td>
+      <td>40</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>324</td>
-      <td>1684</td>
+      <td>254</td>
+      <td>29</td>
     </tr>
     <tr>
-      <th rowspan="2" valign="top">GX-Pangolin</th>
+      <th rowspan="2" valign="top">AncClade2_alt4_dels-only</th>
       <th>lib1</th>
-      <td>136</td>
+      <td>351</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>301</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AncClade2_tree2</th>
+      <th>lib1</th>
+      <td>396</td>
+      <td>44</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>328</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AncEurAf_alt</th>
+      <th>lib1</th>
+      <td>354</td>
+      <td>42</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>298</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AncEurAf_tree1</th>
+      <th>lib1</th>
+      <td>301</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>312</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AncSARS-CoV-1_MAP</th>
+      <th>lib1</th>
+      <td>182</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>150</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AncSARS-CoV-1_alt</th>
+      <th>lib1</th>
+      <td>330</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>281</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AncSARS1a_MAP</th>
+      <th>lib1</th>
+      <td>545</td>
+      <td>3732</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>524</td>
+      <td>4235</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AncSARS1a_alt</th>
+      <th>lib1</th>
+      <td>412</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>347</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AncSARS1a_tree1</th>
+      <th>lib1</th>
+      <td>182</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>185</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AncSARS1a_tree2</th>
+      <th>lib1</th>
+      <td>356</td>
+      <td>38</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>328</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AncSARS1c_MAP</th>
+      <th>lib1</th>
+      <td>130</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>117</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AncSARS2a_MAP</th>
+      <th>lib1</th>
+      <td>528</td>
+      <td>4882</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>497</td>
+      <td>5758</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AncSARS2a_alt</th>
+      <th>lib1</th>
+      <td>186</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>159</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AncSARS2c_MAP</th>
+      <th>lib1</th>
+      <td>528</td>
+      <td>3015</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>473</td>
+      <td>3370</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AncSarbecovirus_MAP</th>
+      <th>lib1</th>
+      <td>445</td>
+      <td>4403</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>400</td>
+      <td>5062</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AncSarbecovirus_alt</th>
+      <th>lib1</th>
+      <td>163</td>
       <td>17</td>
     </tr>
     <tr>
       <th>lib2</th>
       <td>128</td>
-      <td>12</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AncSarbecovirus_alt1_ins117ins118</th>
+      <th>lib1</th>
+      <td>173</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>175</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">AncSarbecovirus_tree1</th>
+      <th>lib1</th>
+      <td>345</td>
+      <td>38</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>280</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">As6526</th>
+      <th>lib1</th>
+      <td>282</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>221</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">BM48-31</th>
+      <th>lib1</th>
+      <td>296</td>
+      <td>4309</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>295</td>
+      <td>5003</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">BtKY72</th>
+      <th>lib1</th>
+      <td>307</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>248</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">GD-Pangolin</th>
+      <th>lib1</th>
+      <td>585</td>
+      <td>3198</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>619</td>
+      <td>3626</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">GX-Pangolin</th>
+      <th>lib1</th>
+      <td>229</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>236</td>
+      <td>19</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">GX2013</th>
       <th>lib1</th>
-      <td>347</td>
-      <td>35</td>
+      <td>585</td>
+      <td>57</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>288</td>
-      <td>26</td>
+      <td>537</td>
+      <td>49</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">HKU3-1</th>
       <th>lib1</th>
-      <td>144</td>
-      <td>9</td>
+      <td>223</td>
+      <td>13</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>108</td>
-      <td>8</td>
+      <td>190</td>
+      <td>10</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">HKU3-8</th>
       <th>lib1</th>
-      <td>313</td>
+      <td>530</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>362</td>
+      <td>38</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">HeB2013</th>
+      <th>lib1</th>
+      <td>385</td>
+      <td>42</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>263</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">HuB2013</th>
+      <th>lib1</th>
+      <td>417</td>
       <td>35</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>176</td>
-      <td>23</td>
+      <td>390</td>
+      <td>22</td>
     </tr>
     <tr>
-      <th rowspan="2" valign="top">HeB2013</th>
+      <th rowspan="2" valign="top">JL2012</th>
+      <th>lib1</th>
+      <td>515</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>441</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">LYRa11</th>
+      <th>lib1</th>
+      <td>168</td>
+      <td>197</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>147</td>
+      <td>225</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Longquan-140</th>
+      <th>lib1</th>
+      <td>365</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>299</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">RaTG13</th>
+      <th>lib1</th>
+      <td>632</td>
+      <td>2816</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>620</td>
+      <td>3212</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Rf1</th>
+      <th>lib1</th>
+      <td>184</td>
+      <td>137</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>152</td>
+      <td>103</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Rf4092</th>
+      <th>lib1</th>
+      <td>467</td>
+      <td>47</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>412</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">RmYN02</th>
+      <th>lib1</th>
+      <td>387</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>280</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Rp3</th>
+      <th>lib1</th>
+      <td>549</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>421</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Rs4081</th>
+      <th>lib1</th>
+      <td>381</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>303</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Rs4084</th>
+      <th>lib1</th>
+      <td>274</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>222</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Rs4231</th>
+      <th>lib1</th>
+      <td>439</td>
+      <td>47</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>374</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Rs4237</th>
+      <th>lib1</th>
+      <td>397</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>311</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Rs4247</th>
+      <th>lib1</th>
+      <td>564</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>502</td>
+      <td>51</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Rs7327</th>
+      <th>lib1</th>
+      <td>547</td>
+      <td>3170</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>502</td>
+      <td>3456</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">RsSHC014</th>
+      <th>lib1</th>
+      <td>214</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>196</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">SARS-CoV-1_2693</th>
+      <th>lib1</th>
+      <td>215</td>
+      <td>5130</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>218</td>
+      <td>5998</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">SARS-CoV-1_GD01_HP03L</th>
+      <th>lib1</th>
+      <td>209</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>154</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">SARS-CoV-1_GD03T0013_HP04</th>
+      <th>lib1</th>
+      <td>384</td>
+      <td>54</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>362</td>
+      <td>38</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">SARS-CoV-1_GZ-C_HP03L</th>
+      <th>lib1</th>
+      <td>147</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>149</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">SARS-CoV-1_GZ0402_HP04</th>
       <th>lib1</th>
       <td>229</td>
       <td>26</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>134</td>
-      <td>15</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">HuB2013</th>
-      <th>lib1</th>
-      <td>254</td>
-      <td>24</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>197</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">JL2012</th>
-      <th>lib1</th>
-      <td>305</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>223</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">LYRa11</th>
-      <th>lib1</th>
-      <td>107</td>
-      <td>117</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>76</td>
-      <td>130</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">Longquan-140</th>
-      <th>lib1</th>
-      <td>216</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>143</td>
-      <td>24</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">RaTG13</th>
-      <th>lib1</th>
-      <td>359</td>
-      <td>1468</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>296</td>
-      <td>1479</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">Rf1</th>
-      <th>lib1</th>
-      <td>111</td>
-      <td>82</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>68</td>
-      <td>60</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">Rf4092</th>
-      <th>lib1</th>
-      <td>298</td>
-      <td>33</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>210</td>
-      <td>19</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">RmYN02</th>
-      <th>lib1</th>
-      <td>240</td>
-      <td>21</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>152</td>
-      <td>15</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">Rp3</th>
-      <th>lib1</th>
-      <td>345</td>
-      <td>26</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>227</td>
-      <td>15</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">Rs4081</th>
-      <th>lib1</th>
-      <td>235</td>
-      <td>15</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>155</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">Rs4084</th>
-      <th>lib1</th>
-      <td>181</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>127</td>
+      <td>226</td>
       <td>22</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">Rs4231</th>
-      <th>lib1</th>
-      <td>250</td>
-      <td>31</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>205</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">Rs4237</th>
-      <th>lib1</th>
-      <td>245</td>
-      <td>15</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>153</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">Rs4247</th>
-      <th>lib1</th>
-      <td>338</td>
-      <td>39</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>247</td>
-      <td>26</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">Rs7327</th>
-      <th>lib1</th>
-      <td>323</td>
-      <td>1716</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>270</td>
-      <td>1633</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">RsSHC014</th>
-      <th>lib1</th>
-      <td>135</td>
-      <td>19</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>108</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">SARS-CoV-1_2693</th>
-      <th>lib1</th>
-      <td>145</td>
-      <td>3390</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>143</td>
-      <td>3808</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">SARS-CoV-1_GD01_HP03L</th>
-      <th>lib1</th>
-      <td>125</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>94</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">SARS-CoV-1_GD03T0013_HP04</th>
-      <th>lib1</th>
-      <td>218</td>
-      <td>34</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>218</td>
-      <td>22</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">SARS-CoV-1_GZ-C_HP03L</th>
-      <th>lib1</th>
-      <td>91</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>86</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">SARS-CoV-1_GZ0402_HP04</th>
-      <th>lib1</th>
-      <td>151</td>
-      <td>18</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>127</td>
-      <td>14</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">SARS-CoV-1_HGZ8L1-A_HP03E</th>
       <th>lib1</th>
-      <td>157</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>144</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">SARS-CoV-1_PC4-127_PC04</th>
-      <th>lib1</th>
-      <td>235</td>
+      <td>283</td>
       <td>27</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>204</td>
-      <td>15</td>
+      <td>260</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">SARS-CoV-1_PC4-127_PC04</th>
+      <th>lib1</th>
+      <td>407</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>343</td>
+      <td>26</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">SARS-CoV-1_PC4-137_PC04</th>
       <th>lib1</th>
-      <td>256</td>
-      <td>1544</td>
+      <td>418</td>
+      <td>2756</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>253</td>
-      <td>1488</td>
+      <td>461</td>
+      <td>2932</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">SARS-CoV-1_PC4-13_PC04</th>
       <th>lib1</th>
-      <td>204</td>
-      <td>26</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>177</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">SARS-CoV-1_SZ1_PC03</th>
-      <th>lib1</th>
-      <td>180</td>
-      <td>28</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>171</td>
-      <td>18</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">SARS-CoV-1_Sin852_HP03L</th>
-      <th>lib1</th>
-      <td>209</td>
-      <td>20</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>157</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">SARS-CoV-1_Sino1-11_HP03L</th>
-      <th>lib1</th>
-      <td>239</td>
-      <td>29</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>197</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">SARS-CoV-1_Urbani_HP03L</th>
-      <th>lib1</th>
-      <td>253</td>
-      <td>2080</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>249</td>
-      <td>2042</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">SARS-CoV-2</th>
-      <th>lib1</th>
-      <td>180</td>
-      <td>1162</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>162</td>
-      <td>1230</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">SARS-CoV-2_2649</th>
-      <th>lib1</th>
-      <td>7</td>
-      <td>493</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>2</td>
-      <td>385</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">Shaanxi2011</th>
-      <th>lib1</th>
-      <td>271</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>204</td>
-      <td>19</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">WIV1</th>
-      <th>lib1</th>
-      <td>216</td>
-      <td>21</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>214</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">YN2013</th>
-      <th>lib1</th>
-      <td>215</td>
-      <td>15</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>143</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">Yunnan2011</th>
-      <th>lib1</th>
-      <td>270</td>
-      <td>24</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>201</td>
-      <td>28</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">ZC45</th>
-      <th>lib1</th>
-      <td>262</td>
-      <td>22</td>
-    </tr>
-    <tr>
-      <th>lib2</th>
-      <td>216</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">ZXC21</th>
-      <th>lib1</th>
-      <td>447</td>
-      <td>19</td>
+      <td>354</td>
+      <td>50</td>
     </tr>
     <tr>
       <th>lib2</th>
       <td>315</td>
+      <td>44</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">SARS-CoV-1_SZ1_PC03</th>
+      <th>lib1</th>
+      <td>292</td>
+      <td>39</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>302</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">SARS-CoV-1_Sin852_HP03L</th>
+      <th>lib1</th>
+      <td>322</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>262</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">SARS-CoV-1_Sino1-11_HP03L</th>
+      <th>lib1</th>
+      <td>406</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>355</td>
+      <td>38</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">SARS-CoV-1_Urbani_HP03L</th>
+      <th>lib1</th>
+      <td>468</td>
+      <td>3585</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>527</td>
+      <td>4752</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">SARS-CoV-2</th>
+      <th>lib1</th>
+      <td>328</td>
+      <td>2075</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>267</td>
+      <td>2400</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">SARS-CoV-2_2649</th>
+      <th>lib1</th>
+      <td>10</td>
+      <td>787</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>5</td>
+      <td>642</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Shaanxi2011</th>
+      <th>lib1</th>
+      <td>435</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>383</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">WIV1</th>
+      <th>lib1</th>
+      <td>343</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>360</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">YN2013</th>
+      <th>lib1</th>
+      <td>357</td>
       <td>21</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>285</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Yunnan2011</th>
+      <th>lib1</th>
+      <td>474</td>
+      <td>44</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>386</td>
+      <td>57</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">ZC45</th>
+      <th>lib1</th>
+      <td>429</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>412</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">ZXC21</th>
+      <th>lib1</th>
+      <td>732</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>lib2</th>
+      <td>596</td>
+      <td>35</td>
     </tr>
   </tbody>
 </table>
@@ -3999,29 +4013,65 @@ display(HTML(
       <td>LYRa11</td>
       <td>lib2</td>
       <td>G64A</td>
-      <td>119</td>
+      <td>207</td>
     </tr>
     <tr>
       <td>LYRa11</td>
       <td>lib1</td>
       <td>G64A</td>
-      <td>106</td>
+      <td>180</td>
     </tr>
     <tr>
       <td>Rf1</td>
       <td>lib1</td>
       <td>T506A</td>
-      <td>77</td>
+      <td>126</td>
     </tr>
     <tr>
       <td>Rf1</td>
       <td>lib2</td>
       <td>T506A</td>
-      <td>54</td>
+      <td>92</td>
     </tr>
     <tr>
       <td>Rs4247</td>
       <td>lib1</td>
+      <td>T48C</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>JL2012</td>
+      <td>lib1</td>
+      <td>C200T</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>GX2013</td>
+      <td>lib1</td>
+      <td>G78T</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>279-2005</td>
+      <td>lib1</td>
+      <td>C494A</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>Rs4247</td>
+      <td>lib1</td>
+      <td>G31T</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>273-2005</td>
+      <td>lib1</td>
+      <td>G522T</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>Rs4247</td>
+      <td>lib2</td>
       <td>T48C</td>
       <td>9</td>
     </tr>
@@ -4029,91 +4079,55 @@ display(HTML(
       <td>HKU3-1</td>
       <td>lib1</td>
       <td>T179G</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <td>GX2013</td>
-      <td>lib1</td>
-      <td>G78T</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <td>273-2005</td>
-      <td>lib1</td>
-      <td>G522T</td>
-      <td>7</td>
+      <td>9</td>
     </tr>
     <tr>
       <td>AncSARS1a_tree1</td>
       <td>lib1</td>
       <td>C207T</td>
-      <td>6</td>
+      <td>8</td>
     </tr>
     <tr>
-      <td>AncClade2_tree2</td>
-      <td>lib1</td>
-      <td>T186A</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <td>JL2012</td>
-      <td>lib1</td>
-      <td>C200T</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <td>279-2005</td>
-      <td>lib1</td>
-      <td>C494A</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>YN2013</td>
-      <td>lib1</td>
-      <td>G68A</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>AncClade2_alt2_del1-only</td>
-      <td>lib1</td>
-      <td>G241T</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>AncEurAf_alt</td>
-      <td>lib1</td>
-      <td>C602T</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>Rs4084</td>
+      <td>SARS-CoV-1_Sino1-11_HP03L</td>
       <td>lib2</td>
-      <td>C582T</td>
-      <td>5</td>
+      <td>C434A</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>Rs4081</td>
+      <td>lib2</td>
+      <td>C20A</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>AncSARS2a_alt</td>
+      <td>lib1</td>
+      <td>A75G</td>
+      <td>8</td>
     </tr>
     <tr>
       <td>SARS-CoV-1_GD03T0013_HP04</td>
       <td>lib1</td>
       <td>C564A</td>
-      <td>5</td>
+      <td>8</td>
     </tr>
     <tr>
-      <td>HeB2013</td>
-      <td>lib1</td>
-      <td>G193T</td>
-      <td>5</td>
+      <td>Rs4084</td>
+      <td>lib2</td>
+      <td>C582T</td>
+      <td>8</td>
     </tr>
     <tr>
-      <td>HuB2013</td>
+      <td>AncClade2_alt3_del2-only</td>
       <td>lib1</td>
-      <td>C77T</td>
-      <td>5</td>
+      <td>C549A</td>
+      <td>7</td>
     </tr>
     <tr>
-      <td>AncAsia_tree1</td>
-      <td>lib1</td>
-      <td>A6T</td>
-      <td>4</td>
+      <td>ZXC21</td>
+      <td>lib2</td>
+      <td>C18T</td>
+      <td>7</td>
     </tr>
   </tbody>
 </table>
@@ -4130,8 +4144,8 @@ consensus = consensus.query('(target == @mutated_targets) or (has_substitutions 
 print(f"Retained {len(consensus)} barcodes after culling")
 ```
 
-    Culling the 91494 barcodes to remove mutated non-primary targets
-    Retained 89092 barcodes after culling
+    Culling the 170275 barcodes to remove mutated non-primary targets
+    Retained 166113 barcodes after culling
 
 
 Are there any barcodes in the same library that are shared across targets?
@@ -4181,22 +4195,22 @@ print(f"After removing duplicates, there are {len(consensus)} barcodes.")
     </tr>
     <tr>
       <td>lib1</td>
-      <td>AAAATGTGCTTTGGGA</td>
+      <td>AAAAATAGCATTTAAT</td>
       <td>2</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>AAACTATCAAGCTGCC</td>
+      <td>AAAACGCCCACCCATT</td>
       <td>2</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>AAACTGCGGAAACGCG</td>
+      <td>AAAAGATTTTGTATAG</td>
       <td>2</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>AAATAAGTACAATTTT</td>
+      <td>AAAATGGAATAAATGG</td>
       <td>2</td>
     </tr>
   </tbody>
@@ -4204,8 +4218,8 @@ print(f"After removing duplicates, there are {len(consensus)} barcodes.")
 
 
     
-    Removing the 197 duplicated barcodes.Started with 89092 barcodes:
-    After removing duplicates, there are 88698 barcodes.
+    Removing the 749 duplicated barcodes.Started with 166113 barcodes:
+    After removing duplicates, there are 164614 barcodes.
 
 
 Below we write the retained consensus sequences to a CSV file that links the nucleotide mutations to the barcodes:
@@ -4244,39 +4258,39 @@ display(HTML(
   </thead>
   <tbody>
     <tr>
-      <td>AncSarbecovirus_MAP</td>
-      <td>lib1</td>
-      <td>AAAAAAAAAACAAAGG</td>
-      <td>T508A C509T T510G</td>
-      <td>1</td>
-    </tr>
-    <tr>
       <td>SARS-CoV-2_2649</td>
       <td>lib1</td>
       <td>AAAAAAAAAACATGGC</td>
       <td>T490C C491A T492C</td>
-      <td>1</td>
+      <td>4</td>
     </tr>
     <tr>
-      <td>AncSARS1a_tree1</td>
+      <td>AncAsia_MAP</td>
       <td>lib1</td>
-      <td>AAAAAAAAAGTGAAAG</td>
-      <td></td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>ZXC21</td>
-      <td>lib1</td>
-      <td>AAAAAAAAAGTTACTA</td>
-      <td></td>
+      <td>AAAAAAAAAACATTCA</td>
+      <td>C502T A503T</td>
       <td>2</td>
     </tr>
     <tr>
-      <td>AncSarbecovirus_MAP</td>
+      <td>SARS-CoV-1_Urbani_HP03L</td>
       <td>lib1</td>
-      <td>AAAAAAAAATATTACA</td>
-      <td>T464A A465T</td>
+      <td>AAAAAAAAAATCATCA</td>
+      <td>T463G T464A A465T</td>
       <td>1</td>
+    </tr>
+    <tr>
+      <td>SARS-CoV-1_PC4-137_PC04</td>
+      <td>lib1</td>
+      <td>AAAAAAAAACGAAATC</td>
+      <td>C186T T373G</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>BM48-31</td>
+      <td>lib1</td>
+      <td>AAAAAAAAAGAATCGT</td>
+      <td>G365A A366T</td>
+      <td>3</td>
     </tr>
   </tbody>
 </table>
@@ -4304,38 +4318,38 @@ display(HTML(dropped.head().to_html(index=False)))
   <tbody>
     <tr>
       <td>lib1</td>
-      <td>AAAACAAAATATATCA</td>
-      <td>AncSARS1a_MAP</td>
+      <td>AAAAAAAAAACAAAGG</td>
+      <td>AncSarbecovirus_MAP</td>
       <td>subs diff too large</td>
-      <td>2</td>
+      <td>3</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>AAAACAAATATGAGCA</td>
+      <td>AAAAAAACCAATGCGT</td>
       <td>SARS-CoV-1_Urbani_HP03L</td>
       <td>subs diff too large</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>AAAACGGACAAATCAG</td>
-      <td>Rs7327</td>
-      <td>subs diff too large</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>AAAATAAATTGGCGCG</td>
-      <td>SARS-CoV-1_2693</td>
-      <td>subs diff too large</td>
       <td>2</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>AAAATGAATCAATAAC</td>
-      <td>SARS-CoV-2_2649</td>
+      <td>AAAAACAAATTATTAG</td>
+      <td>SARS-CoV-1_Urbani_HP03L</td>
       <td>subs diff too large</td>
       <td>3</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>AAAAACCTTTCATTAA</td>
+      <td>AncSarbecovirus_MAP</td>
+      <td>subs diff too large</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>AAAAAGGACAAAAACA</td>
+      <td>SARS-CoV-1_Urbani_HP03L</td>
+      <td>minor subs too frequent</td>
+      <td>4</td>
     </tr>
   </tbody>
 </table>
