@@ -54,6 +54,7 @@ counts_dir: results/counts
 variant_counts_file: results/counts/variant_counts.csv
 figs_dir: results/figures
 merged_sequencing_dir: results/merged_sequencing
+merged_sequencing_file: results/merged_sequencing/merged_sequencing_dt.csv
 Titeseq_Kds_dir: results/binding_Kds
 Titeseq_Kds_file: results/binding_Kds/binding_Kds.csv
 Titeseq_Kds_homologs_file: results/binding_Kds/binding_Kds_homologs.csv

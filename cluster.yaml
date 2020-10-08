@@ -20,6 +20,11 @@ count_variants:
   cpus: 16
   mem: 100000
 
+merge_sequencing:
+  cpus: 16
+  mem: 100000
+
+
 compute_Titeseq_Kds:
   cpus: 16
   mem: 100000

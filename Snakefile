@@ -37,7 +37,7 @@ rule make_summary:
         nt_variant_table=config['nt_variant_table_file'],
         variant_counts_file=config['variant_counts_file'],
         count_variants=nb_markdown('count_variants.ipynb'),
-        #merge_sequencing='results/summary/merge_sequencing.Rmd.md',
+        merge_sequencing='results/summary/merge_sequencing.md',
     output:
         summary = os.path.join(config['summary_dir'], 'summary.md')
     run:
@@ -66,7 +66,7 @@ rule make_summary:
                Creates a [variant counts file]({path(input.variant_counts_file)})
                giving counts of each barcoded variant in each condition.
 
-            3. [Parse amino acid mutants and merge PacBio and Illumina sequencing data]().
+            3. [Parse amino acid mutants and merge PacBio and Illumina sequencing data]({path(input.merge_sequencing)}).
 
             """
             ).strip())
@@ -85,6 +85,7 @@ rule merge_sequencing:
         config['nt_variant_table_file'],
         config['variant_counts_file']
     output:
+        config['merged_sequencing_file'],
         md='results/summary/merge_sequencing.md',
         md_files=directory('results/summary/merge_sequencing_files')
     envmodules:
