@@ -18,4 +18,4 @@ workflow:
    Creates a [variant counts file](../counts/variant_counts.csv)
    giving counts of each barcoded variant in each condition.
 
-3. [Parse amino acid mutants and merge PacBio and Illumina sequencing data]().
+3. [Parse amino acid mutants and merge PacBio and Illumina sequencing data](merge_sequencing.md).
