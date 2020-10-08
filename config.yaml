@@ -24,6 +24,9 @@ mutated_targets:
   - Rs7327
   - BM48-31
   
+#indexing of mutated sites for mutated targets
+mutant_indexing_file: data/mutated_target_indexing.csv  
+  
 # how to parse the amplicon
 feature_parse_specs: data/feature_parse_specs.yaml
 
@@ -36,9 +39,11 @@ pacbio_runs: data/PacBio_runs.csv
 # list of Illumina sequencing runs of barcodes
 barcode_runs: data/barcode_runs.csv
 
+#annotations about RBD sites
+RBD_annotation_file: data/RBD_sites.csv
+ 
 # output directories / files
 summary_dir: results/summary
-RBD_annotation_file: data/RBD_sites.csv
 anc_RBDs_dir: results/ancestral_RBD
 ccs_dir: results/ccs
 process_ccs_dir: results/process_ccs
@@ -48,6 +53,8 @@ nt_variant_table_file: results/variants/nucleotide_variant_table.csv
 counts_dir: results/counts
 variant_counts_file: results/counts/variant_counts.csv
 figs_dir: results/figures
+merged_sequencing_dir: results/merged_sequencing
+merged_sequencing_file: results/merged_sequencing/merged_sequencing_dt.csv
 Titeseq_Kds_dir: results/binding_Kds
 Titeseq_Kds_file: results/binding_Kds/binding_Kds.csv
 Titeseq_Kds_homologs_file: results/binding_Kds/binding_Kds_homologs.csv
@@ -71,7 +78,7 @@ max_error_rate: 0.0001
 #  Therefore, supplied the "downstream" sequence as reverse complemented upstream
 # Passed to `dms_variants.illuminabarcodeparser.IlluminaBarcodeParser`:
 illumina_barcode_parser_params:
-  upstream: GCTCGCGGCCGC
+  upstream: GGCCGC
   downstream: ''
   minq: 20
   upstream_mismatch: 1
