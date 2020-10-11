@@ -331,7 +331,7 @@ dt <- dcast.data.table(dt, library+barcode+target+variant_class+wildtype+positio
 Last, we remove variants that are invalid (unintended mutation or indel). This removes `r nrow(dt[variant_class=="indel",])` indel and `r nrow(dt[variant_class=="invalid",])` invalidly mutated variants across the two libraries, leaving `r nrow(dt[variant_class %in% c("wildtype","mutant","synonymous","stop") & library=="lib1",])` valid variants from lib1 and `r nrow(dt[variant_class %in% c("wildtype","mutant","synonymous","stop") & library=="lib2",])` from lib2.
 
 ```{r remove_invalid}
-dt <- dt[variant_class %in% c("wildtype","mutant","synonymous","stop"),]
+dt <- dt[variant_class %in% c("wildtype","mutant","synonymous"),]
 ```
 
 Save table of processed and merged sequencing information.
