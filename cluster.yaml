@@ -26,7 +26,7 @@ merge_sequencing:
   mem: 100000
   constraint: gizmok
 
-compute_Titeseq_Kds:
+fit_titrations:
   cpus: 16
   mem: 100000
   constraint: gizmok
