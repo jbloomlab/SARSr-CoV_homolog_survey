@@ -38,6 +38,8 @@ rule make_summary:
         variant_counts_file=config['variant_counts_file'],
         count_variants=nb_markdown('count_variants.ipynb'),
         merge_sequencing='results/summary/merge_sequencing.md',
+        fit_titrations='results/summary/compute_binding_Kd.md',
+        variant_Kds_file=config['Titeseq_Kds_file'],
     output:
         summary = os.path.join(config['summary_dir'], 'summary.md')
     run:
@@ -67,6 +69,8 @@ rule make_summary:
                giving counts of each barcoded variant in each condition.
 
             3. [Parse amino acid mutants and merge PacBio and Illumina sequencing data]({path(input.merge_sequencing)}).
+            
+            4. [Fit titration curves]({path(input.fit_titrations)}) to calculate per-barcode K<sub>D</sub>, recorded in [this file]({path(input.variant_Kds_file)})
 
             """
             ).strip())
@@ -79,6 +83,26 @@ rule make_dag:
         os.path.join(config['summary_dir'], 'dag.svg')
     shell:
         "snakemake --forceall --dag | dot -Tsvg > {output}"
+
+rule fit_titrations:
+    input:
+        config['merged_sequencing_file']
+    output:
+        config['Titeseq_Kds_file'],
+        md='results/summary/compute_binding_Kd.md',
+        md_files=directory('results/summary/compute_binding_Kd_files')
+    envmodules:
+        'R/3.6.2-foss-2019b'
+    params:
+        nb='compute_binding_Kd.Rmd',
+        md='compute_binding_Kd.md',
+        md_files='compute_binding_Kd_files'
+    shell:
+        """
+        R -e \"rmarkdown::render(input=\'{params.nb}\')\";
+        mv {params.md} {output.md};
+        mv {params.md_files} {output.md_files}
+        """
 
 rule merge_sequencing:
     input:

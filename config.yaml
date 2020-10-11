@@ -23,7 +23,11 @@ mutated_targets:
   - SARS-CoV-1_PC4-137_PC04
   - Rs7327
   - BM48-31
-  
+
+# groups and orders of targets for plotting
+ 
+ 
+ 
 #indexing of mutated sites for mutated targets
 mutant_indexing_file: data/mutated_target_indexing.csv  
   
