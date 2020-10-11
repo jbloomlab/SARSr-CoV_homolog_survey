@@ -85,6 +85,7 @@ Then the large results files were added for tracking with:
 
     git lfs track results/variants/nucleotide_variant_table.csv
     git lfs track results/counts/variant_counts.csv
+    git lfs track results/binding_Kds/binding_Kds.csv
  
 
 ## Updating the conda environment
