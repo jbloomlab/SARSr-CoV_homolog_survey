@@ -26,3 +26,7 @@ results/counts/*
 !results/binding_Kds
 results/binding_Kds/*
 !results/binding_Kds/binding_Kds.csv
+
+!results/expression_meanFs
+results/expression_meanFs/*
+!results/expression_meanFs/expression_meanFs.csv
