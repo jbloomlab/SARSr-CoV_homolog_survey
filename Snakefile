@@ -74,7 +74,7 @@ rule make_summary:
             
             4. [Fit titration curves]({path(input.fit_titrations)}) to calculate per-barcode K<sub>D</sub>, recorded in [this file]({path(input.variant_Kds_file)}).
             
-            5. [Analyze Sort-seq]({path(input.fit_titrations)}) to calculate per-barcode RBD expression, recorded in [this file]({path(input.variant_expression_file)}).
+            5. [Analyze Sort-seq]({path(input.calculate_expression)}) to calculate per-barcode RBD expression, recorded in [this file]({path(input.variant_expression_file)}).
 
             """
             ).strip())
