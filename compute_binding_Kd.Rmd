@@ -560,7 +560,7 @@ dt[,log10Ka_RsACE2 := -log10Kd_RsACE2,by=c("barcode","library")]
 
 Let's visualize the final binding measurements as violin plots for the different wildtype targets
 
-```{r final_pheno_DFE, fig.width=9, fig.height=18, fig.align="center",dpi=300,dev="png"}
+```{r final_pheno_DFE, fig.width=13, fig.height=20, fig.align="center",dpi=300,dev="png"}
 #set target as factor variable with levels in order specified in config file targets_ordered object
 dt[,target := factor(dt$target,levels=config$targets_ordered)]
 
