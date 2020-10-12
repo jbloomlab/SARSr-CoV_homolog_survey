@@ -60,7 +60,7 @@ print(f"Using dms_variants version {dms_variants.__version__}")
 ```
 
     Using alignparse version 0.1.3
-    Using dms_variants version 0.8.4
+    Using dms_variants version 0.8.5
 
 
 Ignore warnings that clutter output:
@@ -123,9 +123,7 @@ fig.savefig(plotfile, bbox_inches='tight')
 
 
 
-    
 ![png](process_ccs_files/process_ccs_17_1.png)
-    
 
 
 Write out the specs used to parse the features (these are the same specs provided as `feature_parse_specs` when initializing `targets`, but with defaults filled in):
@@ -431,9 +429,7 @@ _ = p.draw()
 ```
 
 
-    
 ![png](process_ccs_files/process_ccs_35_0.png)
-    
 
 
 And the read stats by library (combining all targets and runs within a library):
@@ -459,9 +455,7 @@ _ = p.draw()
 ```
 
 
-    
 ![png](process_ccs_files/process_ccs_37_0.png)
-    
 
 
 And the number of reads by target (combining all libraries and runs for a target):
@@ -485,9 +479,7 @@ _ = p.draw()
 ```
 
 
-    
 ![png](process_ccs_files/process_ccs_39_0.png)
-    
 
 
 And read stats by target (combining all libraries and runs for a target):
@@ -514,9 +506,7 @@ _ = p.draw()
 ```
 
 
-    
 ![png](process_ccs_files/process_ccs_41_0.png)
-    
 
 
 Now let's see **why** we filtered the reads.
@@ -564,9 +554,7 @@ _ = p.draw()
 ```
 
 
-    
 ![png](process_ccs_files/process_ccs_45_0.png)
-    
 
 
 Now make a similar plot to above, but combine all the runs for each library:
@@ -590,9 +578,7 @@ _ = p.draw()
 ```
 
 
-    
 ![png](process_ccs_files/process_ccs_47_0.png)
-    
 
 
 Finally, we take the successfully parsed alignments and read them into a data frame, keeping track of the target that each CCS aligns to.
@@ -1772,9 +1758,7 @@ _ = (
 ```
 
 
-    
 ![png](process_ccs_files/process_ccs_60_0.png)
-    
 
 
 Flag the CCSs to retain, and indicate how many we are retaining and purging due to the accuracy filter:
@@ -1812,9 +1796,7 @@ _ = (
 ```
 
 
-    
 ![png](process_ccs_files/process_ccs_64_0.png)
-    
 
 
 ### Sequences per barcode
@@ -1850,9 +1832,7 @@ _ = p.draw()
 ```
 
 
-    
 ![png](process_ccs_files/process_ccs_66_0.png)
-    
 
 
 Now we plot the distribution of the number of **sequences** with barcodes that are observed a given number of time (again among retained CCSs).
@@ -1878,9 +1858,7 @@ _ = (
 ```
 
 
-    
 ![png](process_ccs_files/process_ccs_68_0.png)
-    
 
 
 ### Empirical accuracy of CCSs
@@ -1930,9 +1908,7 @@ _ = (
 ```
 
 
-    
 ![png](process_ccs_files/process_ccs_72_0.png)
-    
 
 
 Now get the empirical accuracy for each of the CCS groups mentioned above:
@@ -2087,9 +2063,7 @@ _ = p.draw()
 
 
 
-    
 ![png](process_ccs_files/process_ccs_78_1.png)
-    
 
 
 The above analysis shows that if we exclude sequences with indels (which we plan to do among our consensus sequences), then the accuracy of each CCS is around 99%. 
@@ -2277,9 +2251,7 @@ _ = (
 ```
 
 
-    
 ![png](process_ccs_files/process_ccs_86_0.png)
-    
 
 
 We see that most variant consensus sequences do **not** have indels, especially if we limit to the more "accurate" ones that have multiple CCSs supporting them.
@@ -3083,9 +3055,7 @@ _ = p.draw()
 
 
 
-    
 ![png](process_ccs_files/process_ccs_88_1.png)
-    
 
 
 For the non-primary targets, we want to drop all barcodes with mutations:
@@ -3974,9 +3944,7 @@ _ = p.draw()
 
 
 
-    
 ![png](process_ccs_files/process_ccs_90_1.png)
-    
 
 
 Print most common non-primary targets with mutations (useful for debugging):
@@ -4382,7 +4350,5 @@ _ = (
 ```
 
 
-    
 ![png](process_ccs_files/process_ccs_102_0.png)
-    
 

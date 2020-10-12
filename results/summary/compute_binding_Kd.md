@@ -322,9 +322,9 @@ our library barcodes. We will also spot check titration curves from
 across our measurement range, and spot check curves whose fit parameters
 hit the different boundary conditions of the fit variables.
 
-We successfully generated *K*<sub>D,app</sub> estimates for 113310 of
-our lib1 barcodes (78.68%) of our lib1+lib2 huACE2 titrations, 82.44%)
-of the RaACE2 titrations, 85.21%) of the RpACE2 titrations, and 83.4%)
+We successfully generated *K*<sub>D,app</sub> estimates for 113250 of
+our lib1 barcodes (78.65%) of our lib1+lib2 huACE2 titrations, 82.41%)
+of the RaACE2 titrations, 85.19%) of the RpACE2 titrations, and 83.38%)
 of the RsACE2 titrations.
 
 To allow manual checks of what the data looks like for different curve
@@ -633,9 +633,9 @@ worst 2.5% of curves on this metric.
     dt[nMSR_RpACE2 > quantile(dt$nMSR_RpACE2,0.95,na.rm=T),c("Kd_RpACE2","Kd_SE_RpACE2","response_RpACE2","baseline_RpACE2","RSE_RpACE2","fit_RpACE2") := list(as.numeric(NA),as.numeric(NA),as.numeric(NA),as.numeric(NA),as.numeric(NA),as.list(NA))]
     dt[nMSR_RsACE2 > quantile(dt$nMSR_RsACE2,0.95,na.rm=T),c("Kd_RsACE2","Kd_SE_RsACE2","response_RsACE2","baseline_RsACE2","RSE_RsACE2","fit_RsACE2") := list(as.numeric(NA),as.numeric(NA),as.numeric(NA),as.numeric(NA),as.numeric(NA),as.list(NA))]
 
-This leaves us with filtered *K*<sub>D,app</sub> estimates for 74.74% of
-our lib1+lib2 huACE2 titrations, 78.31%) of the RaACE2 titrations,
-80.95%) of the RpACE2 titrations, and 79.23%) of the RsACE2 titrations.
+This leaves us with filtered *K*<sub>D,app</sub> estimates for 74.72% of
+our lib1+lib2 huACE2 titrations, 78.29%) of the RaACE2 titrations,
+80.93%) of the RpACE2 titrations, and 79.21%) of the RsACE2 titrations.
 
 Last, let’s convert our *K*<sub>D,app</sub> to 1) a
 log<sub>10</sub>-scale, and 2) *K*<sub>A,app</sub>, the inverse of
@@ -660,39 +660,30 @@ log<sub>10</sub>(*K*<sub>A,app</sub>) as
 Let’s visualize the final binding measurements as violin plots for the
 different wildtype targets
 
+    #set target as factor variable with levels in order specified in config file targets_ordered object
+    dt[,target := factor(dt$target,levels=config$targets_ordered)]
+
     p1 <- ggplot(dt[!is.na(log10Ka_huACE2) & variant_class=="wildtype",],aes(x=target,y=log10Ka_huACE2))+
       geom_violin(scale="width")+stat_summary(fun=median,geom="point",size=1)+
       ggtitle("huACE2")+xlab("homolog")+theme(axis.text.x=element_text(angle=-90,hjust=0))+
-      scale_y_continuous(limits=c(6,12))
+      scale_y_continuous(limits=c(4.99,12))
 
     p2 <- ggplot(dt[!is.na(log10Ka_RaACE2) & variant_class=="wildtype",],aes(x=target,y=log10Ka_RaACE2))+
       geom_violin(scale="width")+stat_summary(fun=median,geom="point",size=1)+
       ggtitle("RaACE2")+xlab("homolog")+theme(axis.text.x=element_text(angle=-90,hjust=0))+
-      scale_y_continuous(limits=c(6,12))
+      scale_y_continuous(limits=c(4.99,12))
 
     p3 <- ggplot(dt[!is.na(log10Ka_RpACE2) & variant_class=="wildtype",],aes(x=target,y=log10Ka_RpACE2))+
       geom_violin(scale="width")+stat_summary(fun=median,geom="point",size=1)+
       ggtitle("RpACE2")+xlab("homolog")+theme(axis.text.x=element_text(angle=-90,hjust=0))+
-      scale_y_continuous(limits=c(6,12))
+      scale_y_continuous(limits=c(5.99,12))
 
     p4 <- ggplot(dt[!is.na(log10Ka_RsACE2) & variant_class=="wildtype",],aes(x=target,y=log10Ka_RsACE2))+
       geom_violin(scale="width")+stat_summary(fun=median,geom="point",size=1)+
       ggtitle("RsACE2")+xlab("homolog")+theme(axis.text.x=element_text(angle=-90,hjust=0))+
-      scale_y_continuous(limits=c(6,12))
+      scale_y_continuous(limits=c(4.99,12))
 
     grid.arrange(p1,p2,p3,p4,ncol=1)
-
-    ## Warning: Removed 18242 rows containing non-finite values (stat_ydensity).
-
-    ## Warning: Removed 18242 rows containing non-finite values (stat_summary).
-
-    ## Warning: Removed 12812 rows containing non-finite values (stat_ydensity).
-
-    ## Warning: Removed 12812 rows containing non-finite values (stat_summary).
-
-    ## Warning: Removed 14805 rows containing non-finite values (stat_ydensity).
-
-    ## Warning: Removed 14805 rows containing non-finite values (stat_summary).
 
 <img src="compute_binding_Kd_files/figure-gfm/final_pheno_DFE-1.png" style="display: block; margin: auto;" />
 

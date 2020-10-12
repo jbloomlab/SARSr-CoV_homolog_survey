@@ -98,6 +98,23 @@ gives the barcode, RBD background, and any nucleotide mutations found
 for each variant in each background. The `dt_illumina` table gives
 counts of each barcode in each FACS bin.
 
+In this PacBio sequencing, we have two backgrounds currently present for
+SARS-CoV-1\_Urbani and SARS-CoV-2. For SARS-CoV-1, we created our own
+“in-house” SSM libraries in the 2693 background coding sequence due to
+delay in shipment of the product from Genscript. The Genscript product
+did arrive in time for PacBio sequencing, so we included it for barcode
+attribution in case there were problems with our “in-house” assembly,
+but because the “in-house” assembly looks good, we will move forward
+just that background (\_2693, but we will rename it to the full
+\_Urbani\_HP03L name below). On the SARS-CoV-2 side, the tube from
+Genscript corresponding to the SSM library for position S494 had zero
+volume, and it does not appear that DNA was deposited in any of the
+other tubes inadvertently since I do not see these mutated positions
+present in this background. In expectation that this was the case, we
+performed SSM at position S494 in our 2649 background SARS-CoV-2
+sequence, so we pool the mutants across these two backgrounds to get our
+final set of mini-mutant scanning mutants for this background.
+
 Process PacBio sequencing: variant parsing, library coverage
 ------------------------------------------------------------
 
@@ -111,23 +128,6 @@ that should be mutated as targeted positiosn differ in index across
 backgrounds due to variations in length over evolutionary time. We then
 output the variant\_class as wildtype, mutant, invalid (unintended
 mutation), indel (also unintended), synonymous, or stop mutant.
-
-Also note – we have two backgrounds currently present for
-SARS-CoV-1\_Urbani and SARS-CoV-2. For SARS-CoV-1, we created our own
-“in-house” SSM libraries in the 2693 background coding sequence due to
-delay in shipment of the product from Genscript. The Genscript product
-did arrive in time for PacBio sequencing, so we included it for barcode
-attribution in case there were problems with our “in-house” assembly,
-but if the “in-house” assembly looks good, we will move forward with
-just that background as it is what was included in our first round of
-ACE2 titrations. On the SARS-CoV-2 side, the tube from Genscript
-corresponding to the SSM library for position S494 had zero volume, and
-it does not appear that DNA was deposited in any of the other tubes
-inadvertently since I do not see these mutated positions present in this
-background. In expectation that this was the case, we performed SSM at
-position S494 in our 2649 background SARS-CoV-2 sequence, meaning we
-will pool the mutants across these two backgrounds to get our final set
-of mini-mutant scanning mutants.
 
     #load a table giving the indexing of nucleotide numbers for sites targeted in each mutated background
     index <- read.csv(file=config$mutant_indexing_file,stringsAsFactors=F)
@@ -293,19 +293,7 @@ encouraging to see most assemblies are correct.
 <img src="merge_sequencing_files/figure-gfm/variant_fractions_unmutated-1.png" style="display: block; margin: auto;" />
 
 Let’s look at coverage of mutants at each position across each
-background. For assessing coverage of mutants in the different
-backgrounds, let’s pool together the SARS-CoV-2 (genscript mutants) and
-SARS-CoV-2\_2649 sequence (my in-house mutagenesis to add the missing
-mutants at position 494). Let’s also only consider the SARS-CoV-1\_2693
-sequences, as these are what are actually pooled in our libraries for
-the titration experiments, as SARS-CoV-1\_Urbani SSM library from
-Genscript arrived late for experiments, and I only pooled it here for
-PacBio sequencing in case my in-house mutagenesis was unsuccessful. (And
-it should therefore have zero counts in the Illumina sequencing, anyway,
-so fine to purge now for downstream counts management.)
-
-    dt_pacbio[target=="SARS-CoV-2_2649",target:="SARS-CoV-2"]
-    dt_pacbio <- dt_pacbio[target!="SARS-CoV-1_Urbani_HP03L"]
+background.
 
     ## Warning: Removed 78 rows containing missing values (position_stack).
 
@@ -318,46 +306,53 @@ N501K
 
     kable(aa_coverage[aa_coverage$count==0 & !is.na(aa_coverage$count),])
 
-|      | target         | site | mutant | count |
-|------|:---------------|-----:|:-------|------:|
-| 8    | GD-Pangolin    |  455 | A      |     0 |
-| 9    | RaTG13         |  455 | A      |     0 |
-| 86   | GD-Pangolin    |  455 | C      |     0 |
-| 87   | RaTG13         |  455 | C      |     0 |
-| 164  | GD-Pangolin    |  455 | D      |     0 |
-| 165  | RaTG13         |  455 | D      |     0 |
-| 242  | GD-Pangolin    |  455 | E      |     0 |
-| 243  | RaTG13         |  455 | E      |     0 |
-| 320  | GD-Pangolin    |  455 | F      |     0 |
-| 321  | RaTG13         |  455 | F      |     0 |
-| 398  | GD-Pangolin    |  455 | G      |     0 |
-| 399  | RaTG13         |  455 | G      |     0 |
-| 476  | GD-Pangolin    |  455 | H      |     0 |
-| 477  | RaTG13         |  455 | H      |     0 |
-| 554  | GD-Pangolin    |  455 | I      |     0 |
-| 555  | RaTG13         |  455 | I      |     0 |
-| 632  | GD-Pangolin    |  455 | K      |     0 |
-| 633  | RaTG13         |  455 | K      |     0 |
-| 693  | AncSARS1a\_MAP |  501 | K      |     0 |
-| 788  | GD-Pangolin    |  455 | M      |     0 |
-| 789  | RaTG13         |  455 | M      |     0 |
-| 866  | GD-Pangolin    |  455 | N      |     0 |
-| 867  | RaTG13         |  455 | N      |     0 |
-| 944  | GD-Pangolin    |  455 | P      |     0 |
-| 1022 | GD-Pangolin    |  455 | Q      |     0 |
-| 1023 | RaTG13         |  455 | Q      |     0 |
-| 1100 | GD-Pangolin    |  455 | R      |     0 |
-| 1101 | RaTG13         |  455 | R      |     0 |
-| 1178 | GD-Pangolin    |  455 | S      |     0 |
-| 1179 | RaTG13         |  455 | S      |     0 |
-| 1256 | GD-Pangolin    |  455 | T      |     0 |
-| 1257 | RaTG13         |  455 | T      |     0 |
-| 1334 | GD-Pangolin    |  455 | V      |     0 |
-| 1335 | RaTG13         |  455 | V      |     0 |
-| 1412 | GD-Pangolin    |  455 | W      |     0 |
-| 1413 | RaTG13         |  455 | W      |     0 |
-| 1490 | GD-Pangolin    |  455 | Y      |     0 |
-| 1491 | RaTG13         |  455 | Y      |     0 |
+|      | target                    | site | mutant | count |
+|------|:--------------------------|-----:|:-------|------:|
+| 8    | GD-Pangolin               |  455 | A      |     0 |
+| 9    | RaTG13                    |  455 | A      |     0 |
+| 86   | GD-Pangolin               |  455 | C      |     0 |
+| 87   | RaTG13                    |  455 | C      |     0 |
+| 164  | GD-Pangolin               |  455 | D      |     0 |
+| 165  | RaTG13                    |  455 | D      |     0 |
+| 242  | GD-Pangolin               |  455 | E      |     0 |
+| 243  | RaTG13                    |  455 | E      |     0 |
+| 311  | SARS-CoV-1\_Urbani\_HP03L |  501 | E      |     0 |
+| 320  | GD-Pangolin               |  455 | F      |     0 |
+| 321  | RaTG13                    |  455 | F      |     0 |
+| 398  | GD-Pangolin               |  455 | G      |     0 |
+| 399  | RaTG13                    |  455 | G      |     0 |
+| 476  | GD-Pangolin               |  455 | H      |     0 |
+| 477  | RaTG13                    |  455 | H      |     0 |
+| 554  | GD-Pangolin               |  455 | I      |     0 |
+| 555  | RaTG13                    |  455 | I      |     0 |
+| 632  | GD-Pangolin               |  455 | K      |     0 |
+| 633  | RaTG13                    |  455 | K      |     0 |
+| 693  | AncSARS1a\_MAP            |  501 | K      |     0 |
+| 701  | SARS-CoV-1\_Urbani\_HP03L |  501 | K      |     0 |
+| 788  | GD-Pangolin               |  455 | M      |     0 |
+| 789  | RaTG13                    |  455 | M      |     0 |
+| 805  | SARS-CoV-1\_Urbani\_HP03L |  486 | M      |     0 |
+| 857  | SARS-CoV-1\_Urbani\_HP03L |  501 | M      |     0 |
+| 866  | GD-Pangolin               |  455 | N      |     0 |
+| 867  | RaTG13                    |  455 | N      |     0 |
+| 944  | GD-Pangolin               |  455 | P      |     0 |
+| 1022 | GD-Pangolin               |  455 | Q      |     0 |
+| 1023 | RaTG13                    |  455 | Q      |     0 |
+| 1091 | SARS-CoV-1\_Urbani\_HP03L |  501 | Q      |     0 |
+| 1100 | GD-Pangolin               |  455 | R      |     0 |
+| 1101 | RaTG13                    |  455 | R      |     0 |
+| 1178 | GD-Pangolin               |  455 | S      |     0 |
+| 1179 | RaTG13                    |  455 | S      |     0 |
+| 1256 | GD-Pangolin               |  455 | T      |     0 |
+| 1257 | RaTG13                    |  455 | T      |     0 |
+| 1334 | GD-Pangolin               |  455 | V      |     0 |
+| 1335 | RaTG13                    |  455 | V      |     0 |
+| 1412 | GD-Pangolin               |  455 | W      |     0 |
+| 1413 | RaTG13                    |  455 | W      |     0 |
+| 1429 | SARS-CoV-1\_Urbani\_HP03L |  486 | W      |     0 |
+| 1481 | SARS-CoV-1\_Urbani\_HP03L |  501 | W      |     0 |
+| 1490 | GD-Pangolin               |  455 | Y      |     0 |
+| 1491 | RaTG13                    |  455 | Y      |     0 |
 
 Check out some other coverage statistics: average (median) \# barcodes
 for a mutant across the two libraries is 59, minimum is 9. The

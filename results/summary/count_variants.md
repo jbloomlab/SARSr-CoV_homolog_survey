@@ -49,7 +49,7 @@ print(f"Using dms_variants version {dms_variants.__version__}")
 ```
 
     Using alignparse version 0.1.3
-    Using dms_variants version 0.8.4
+    Using dms_variants version 0.8.5
 
 
 Ignore warnings that clutter output:
@@ -3796,9 +3796,7 @@ _ = barcode_fate_plot.draw()
 ```
 
 
-    
 ![png](count_variants_files/count_variants_40_0.png)
-    
 
 
 ## Output csv of barcode counts
