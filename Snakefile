@@ -40,6 +40,8 @@ rule make_summary:
         merge_sequencing='results/summary/merge_sequencing.md',
         fit_titrations='results/summary/compute_binding_Kd.md',
         variant_Kds_file=config['Titeseq_Kds_file'],
+        calculate_expression='results/summary/compute_expression_meanF.md',
+        variant_expression_file=config['expression_sortseq_file'],
     output:
         summary = os.path.join(config['summary_dir'], 'summary.md')
     run:
@@ -70,7 +72,9 @@ rule make_summary:
 
             3. [Parse amino acid mutants and merge PacBio and Illumina sequencing data]({path(input.merge_sequencing)}).
             
-            4. [Fit titration curves]({path(input.fit_titrations)}) to calculate per-barcode K<sub>D</sub>, recorded in [this file]({path(input.variant_Kds_file)})
+            4. [Fit titration curves]({path(input.fit_titrations)}) to calculate per-barcode K<sub>D</sub>, recorded in [this file]({path(input.variant_Kds_file)}).
+            
+            5. [Analyze Sort-seq]({path(input.fit_titrations)}) to calculate per-barcode RBD expression, recorded in [this file]({path(input.variant_expression_file)}).
 
             """
             ).strip())
