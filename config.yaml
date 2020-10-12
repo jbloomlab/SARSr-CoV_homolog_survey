@@ -6,28 +6,198 @@ max_cpus: 16
 # amplicons sequenced by PacBio
 amplicons: data/PacBio_amplicons.gb
 
-# the primary targets for which we are calling mutations
+# list of the primary targets for which we are calling mutations
 mutated_targets:
   - AncSarbecovirus_MAP
   - AncAsia_MAP
-  - AncClade2_MAP
   - AncSARS2a_MAP
   - AncSARS2c_MAP
-  - AncSARS1a_MAP
   - SARS-CoV-2
   - SARS-CoV-2_2649
   - GD-Pangolin
   - RaTG13
+  - AncSARS1a_MAP
+  - Rs7327
   - SARS-CoV-1_Urbani_HP03L
   - SARS-CoV-1_2693
   - SARS-CoV-1_PC4-137_PC04
-  - Rs7327
+  - AncClade2_MAP
   - BM48-31
 
 # groups and orders of targets for plotting
- 
- 
- 
+targets_ordered:
+  - AncSarbecovirus_MAP
+  - AncSarbecovirus_alt
+  - AncSarbecovirus_alt1_ins117ins118
+  - AncSarbecovirus_tree1
+  - AncEurAf_alt
+  - AncEurAf_tree1
+  - BM48-31
+  - BtKY72
+  - AncAsia_MAP
+  - AncAsia_alt
+  - AncAsia_tree1
+  - AncAsia_tree2
+  - AncSARS2a_MAP
+  - AncSARS2a_alt
+  - AncSARS2c_MAP
+  - SARS-CoV-2
+  - RaTG13
+  - GD-Pangolin
+  - GX-Pangolin
+  - AncSARS1a_MAP
+  - AncSARS1a_alt
+  - AncSARS1a_tree1
+  - AncSARS1a_tree2
+  - AncSARS1c_MAP
+  - AncSARS-CoV-1_MAP
+  - AncSARS-CoV-1_alt
+  - SARS-CoV-1_Sin852_HP03L
+  - SARS-CoV-1_GD01_HP03L
+  - SARS-CoV-1_GZ-C_HP03L
+  - SARS-CoV-1_Urbani_HP03L
+  - SARS-CoV-1_HGZ8L1-A_HP03E
+  - SARS-CoV-1_Sino1-11_HP03L
+  - SARS-CoV-1_PC4-127_PC04
+  - SARS-CoV-1_PC4-13_PC04
+  - SARS-CoV-1_PC4-137_PC04
+  - SARS-CoV-1_GD03T0013_HP04
+  - SARS-CoV-1_GZ0402_HP04
+  - SARS-CoV-1_SZ1_PC03
+  - LYRa11
+  - WIV1
+  - Rs7327
+  - Rs4231
+  - RsSHC014
+  - Rs4084
+  - AncClade2_MAP
+  - AncClade2_alt
+  - AncClade2_tree2
+  - AncClade2_alt1_subs-only
+  - AncClade2_alt2_del1-only
+  - AncClade2_alt3_del2-only
+  - AncClade2_alt4_dels-only
+  - Rf4092
+  - RmYN02
+  - YN2013
+  - ZC45
+  - ZXC21
+  - Rf1
+  - JL2012
+  - 273-2005
+  - HeB2013
+  - HuB2013
+  - Rs4247
+  - Longquan-140
+  - HKU3-8
+  - HKU3-1
+  - GX2013
+  - Shaanxi2011
+  - 279-2005
+  - As6526
+  - Yunnan2011
+  - Rs4237
+  - Rs4081
+  - Rp3
+
+
+EurAf_extant:
+  - BM48-31
+  - BtKY72
+
+SARS2_extant:
+  - SARS-CoV-2
+  - RaTG13
+  - GD-Pangolin
+  - GX-Pangolin
+  
+SARS1_extant:
+  - SARS-CoV-1_Sin852_HP03L
+  - SARS-CoV-1_GD01_HP03L
+  - SARS-CoV-1_GZ-C_HP03L
+  - SARS-CoV-1_Urbani_HP03L
+  - SARS-CoV-1_HGZ8L1-A_HP03E
+  - SARS-CoV-1_Sino1-11_HP03L
+  - SARS-CoV-1_PC4-127_PC04
+  - SARS-CoV-1_PC4-13_PC04
+  - SARS-CoV-1_PC4-137_PC04
+  - SARS-CoV-1_GD03T0013_HP04
+  - SARS-CoV-1_GZ0402_HP04
+  - SARS-CoV-1_SZ1_PC03
+  - LYRa11
+  - WIV1
+  - Rs7327
+  - Rs4231
+  - RsSHC014
+  - Rs4084
+
+Clade2_extant:
+  - Rf4092
+  - RmYN02
+  - YN2013
+  - ZC45
+  - ZXC21
+  - Rf1
+  - JL2012
+  - 273-2005
+  - HeB2013
+  - HuB2013
+  - Rs4247
+  - Longquan-140
+  - HKU3-8
+  - HKU3-1
+  - GX2013
+  - Shaanxi2011
+  - 279-2005
+  - As6526
+  - Yunnan2011
+  - Rs4237
+  - Rs4081
+  - Rp3
+
+ancestors_MAP:
+  - AncSarbecovirus_MAP
+  - AncAsia_MAP
+  - AncSARS2a_MAP
+  - GD-Pangolin
+  - AncSARS2c_MAP
+  - AncSARS1a_MAP
+  - Rs7327
+  - AncSARS1c_MAP
+  - AncSARS-CoV-1_MAP
+  - AncClade2_MAP
+  - AncClade2_alt1_subs-only
+  - AncClade2_alt2_del1-only
+  - AncClade2_alt3_del2-only
+  - AncClade2_alt4_dels-only
+  
+ancestors_MAP_v_alt:
+  - AncSarbecovirus_MAP
+  - AncSarbecovirus_alt
+  - AncSarbecovirus_alt1_ins117ins118
+  - AncSarbecovirus_tree1
+  - AncEurAf_alt
+  - AncEurAf_tree1
+  - AncAsia_MAP
+  - AncAsia_alt
+  - AncAsia_tree1
+  - AncAsia_tree2
+  - AncSARS2a_MAP
+  - AncSARS2a_alt
+  - AncSARS1a_MAP
+  - AncSARS1a_alt
+  - AncSARS1a_tree1
+  - AncSARS1a_tree2
+  - AncSARS-CoV-1_MAP
+  - AncSARS-CoV-1_alt
+  - AncClade2_MAP
+  - AncClade2_alt
+  - AncClade2_tree2
+  - AncClade2_alt1_subs-only
+  - AncClade2_alt2_del1-only
+  - AncClade2_alt3_del2-only
+  - AncClade2_alt4_dels-only
+
 #indexing of mutated sites for mutated targets
 mutant_indexing_file: data/mutated_target_indexing.csv  
   

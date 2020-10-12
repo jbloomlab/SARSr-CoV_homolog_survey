@@ -188,8 +188,8 @@ fit.titration <- function(y.vals,x.vals,count.vals,min.cfu=cutoff,
   }else{
     fit <- nls(y ~ a*(x/(x+Kd))+b,
                start=list(a=a.start,b=b.start,Kd=Kd.start),
-               lower=list(a=a.lower,b=b.lower,Kd=min(x.vals[x.vals>0])/100), #constrain Kd to be no lower than 100x the lowest concentration value
-               upper=list(a=a.upper,b=b.upper,Kd=max(x.vals[x.vals>0])), #constrain Kd to be no higher than the highest concentration value
+               lower=list(a=a.lower,b=b.lower,Kd=min(x.vals[x.vals>0])/100), #constrain Kd to be no lower than 1/100x the lowest concentration value
+               upper=list(a=a.upper,b=b.upper,Kd=max(x.vals[x.vals>0])*10), #constrain Kd to be no higher than the 10x highest concentration value
                algorithm="port")  
     return(list(as.numeric(summary(fit)$coefficients["Kd","Estimate"]),
                 as.numeric(summary(fit)$coefficients["Kd","Std. Error"]),
@@ -266,36 +266,6 @@ dt[,c("Kd_RsACE2","Kd_SE_RsACE2","response_RsACE2","baseline_RsACE2","RSE_RsACE2
 We will do some QC to make sure we got good titration curves for most of our library barcodes. We will also spot check titration curves from across our measurement range, and spot check curves whose fit parameters hit the different boundary conditions of the fit variables.
 
 We successfully generated *K*<sub>D,app</sub> estimates for `r sum(!is.na(dt$Kd_huACE2))` of our lib1 barcodes (`r round(sum(!is.na(dt$Kd_huACE2))/nrow(dt)*100,digits=2)`%) of our lib1+lib2 huACE2 titrations, `r round(sum(!is.na(dt[library=="lib1",Kd_RaACE2]))/nrow(dt[library=="lib1",])*100,digits=2)`%) of the RaACE2 titrations, `r round(sum(!is.na(dt[library=="lib1",Kd_RpACE2]))/nrow(dt[library=="lib1",])*100,digits=2)`%) of the RpACE2 titrations, and `r round(sum(!is.na(dt[library=="lib1",Kd_RsACE2]))/nrow(dt[library=="lib1",])*100,digits=2)`%) of the RsACE2 titrations.
-
-Why were estimates not returned for some barcodes? The histograms below show that many barcodes with unsuccessful titration fits have lower average cell counts and more concentrations with fewer than the minimum cutoff number of cells (cutoff=`r cutoff`) than those that were fit. Therefore, we can see the the majority of unfit barcodes come from our minimum read cutoffs, meaning there weren't too many curves that failed to be fit for issues such as nls convergence.
-
-```{r avgcount, fig.width=12, fig.height=6, fig.align="center",dpi=300,dev="png"}
-par(mfrow=c(2,4))
-hist(log10(dt[!is.na(Kd_huACE2),huACE2_avgcount]+0.5),breaks=20,xlim=c(0,5),main="huACE2",col="gray50",xlab="average cell count across concentration samples")
-hist(log10(dt[is.na(Kd_huACE2),huACE2_avgcount]+0.5),breaks=30,add=T,col="red")
-
-hist(log10(dt[!is.na(Kd_RaACE2),RaACE2_avgcount]+0.5),breaks=20,xlim=c(0,5),main="RaACE2",col="gray50",xlab="average cell count across concentration samples")
-hist(log10(dt[is.na(Kd_RaACE2),RaACE2_avgcount]+0.5),breaks=30,add=T,col="red")
-
-hist(log10(dt[!is.na(Kd_RpACE2),RpACE2_avgcount]+0.5),breaks=20,xlim=c(0,5),main="RpACE2",col="gray50",xlab="average cell count across concentration samples")
-hist(log10(dt[is.na(Kd_RpACE2),RpACE2_avgcount]+0.5),breaks=30,add=T,col="red")
-
-hist(log10(dt[!is.na(Kd_RsACE2),RsACE2_avgcount]+0.5),breaks=20,xlim=c(0,5),main="RsACE2",col="gray50",xlab="average cell count across concentration samples")
-hist(log10(dt[is.na(Kd_RsACE2),RsACE2_avgcount]+0.5),breaks=30,add=T,col="red")
-
-hist(dt[!is.na(Kd_huACE2),huACE2_min_cell_filtered],breaks=2,main="huACE2",col="gray50",xlab="number of sample concentrations below cutoff cell number",xlim=c(0,9))
-hist(dt[is.na(Kd_huACE2),huACE2_min_cell_filtered],breaks=10,add=T,col="red")
-
-hist(dt[!is.na(Kd_RaACE2),RaACE2_min_cell_filtered],breaks=2,main="RaACE2",col="gray50",xlab="number of sample concentrations below cutoff cell number",xlim=c(0,9))
-hist(dt[is.na(Kd_RaACE2),RaACE2_min_cell_filtered],breaks=10,add=T,col="red")
-
-hist(dt[!is.na(Kd_RpACE2),RpACE2_min_cell_filtered],breaks=2,main="RpACE2",col="gray50",xlab="number of sample concentrations below cutoff cell number",xlim=c(0,9))
-hist(dt[is.na(Kd_RpACE2),RpACE2_min_cell_filtered],breaks=10,add=T,col="red")
-
-hist(dt[!is.na(Kd_RsACE2),RsACE2_min_cell_filtered],breaks=2,main="RsACE2",col="gray50",xlab="number of sample concentrations below cutoff cell number",xlim=c(0,9))
-hist(dt[is.na(Kd_RsACE2),RsACE2_min_cell_filtered],breaks=10,add=T,col="red")
-
-```
 
 To allow manual checks of what the data looks like for different curve fits, I define functions that take a row from the dt table and the corresponding table of fits, and plots the meanbin estimates and the fit titration curve (if converged). This allows for quick and easy troubleshooting and spot-checking of curves.
 
@@ -401,9 +371,9 @@ invisible(dev.print(pdf, paste(config$Titeseq_Kds_dir,"/hist_Kd-per-barcode.pdf"
 
 Let's take a look at some of the curves with *K*<sub>D,app</sub> values across this distribution to get a broad sense of how things look.
 
-First, curves with *K*<sub>D,app</sub> fixed at the 10<sup>-4</sup> maximum. We can see these are all flat-lined curves with no response.
+First, curves with *K*<sub>D,app</sub> fixed at the 10<sup>-5</sup> maximum (RpACE2 at 10<sup>-6</sup>). We can see these are all flat-lined curves with no response.
 
-```{r 1e-4_Kd, fig.width=8, fig.height=8, fig.align="center",dpi=300, warning=FALSE, results=FALSE,dev="png"}
+```{r 1e-5_Kd, fig.width=8, fig.height=8, fig.align="center",dpi=300, warning=FALSE, results=FALSE,dev="png"}
 par(mfrow=c(2,2))
 plot.titration.huACE2(which(dt$Kd_huACE2==max(dt$Kd_huACE2,na.rm=T))[1])
 plot.titration.RaACE2(which(dt$Kd_RaACE2==max(dt$Kd_RaACE2,na.rm=T))[1])
@@ -411,15 +381,6 @@ plot.titration.RpACE2(which(dt$Kd_RpACE2==max(dt$Kd_RpACE2,na.rm=T))[1])
 plot.titration.RsACE2(which(dt$Kd_RsACE2==max(dt$Kd_RsACE2,na.rm=T))[1])
 ```
 
-Next, with *K*<sub>D,app</sub> around 10<sup>-5</sup>. These 10<sup>-5</sup> curves are honestly probably not any different than those censored to 10<sup>-4</sup> -- the curve just decides to begin to turn right at the end, perhaps sometimes with genuine signal but perhaps often because of noise.
-
-```{r 1e-5_Kd, fig.width=8, fig.height=8, fig.align="center",dpi=300, warning=FALSE, results=FALSE,dev="png"}
-par(mfrow=c(2,2))
-plot.titration.huACE2(which(dt$Kd_huACE2 > 1e-5 & dt$Kd_huACE2 < 1.2e-5)[1])
-plot.titration.RaACE2(which(dt$Kd_RaACE2 > 1e-5 & dt$Kd_RaACE2 < 1.2e-5)[1])
-plot.titration.RpACE2(which(dt$Kd_RpACE2 > 9e-6 & dt$Kd_RpACE2 < 1.2e-5)[1])
-plot.titration.RsACE2(which(dt$Kd_RsACE2 > 1e-5 & dt$Kd_RsACE2 < 1.2e-5)[1])
-```
 
 Next, with *K*<sub>D,app</sub> around 10<sup>-6</sup>. These 10<sup>-6</sup> curves are similar to the 10<sup>-5</sup>, though perhaps a bit more belieivable that the curve is bending at the highest concentration. Overall, I think that differences in *K*<sub>D,app</sub> within this large mode in the distribution of all variant *K*<sub>D,app</sub>s probably isn't reporting on much meaningful variation.
 
@@ -427,7 +388,7 @@ Next, with *K*<sub>D,app</sub> around 10<sup>-6</sup>. These 10<sup>-6</sup> cur
 par(mfrow=c(2,2))
 plot.titration.huACE2(which(dt$Kd_huACE2 > 1e-6 & dt$Kd_huACE2 < 1.2e-6)[1])
 plot.titration.RaACE2(which(dt$Kd_RaACE2 > 1e-6 & dt$Kd_RaACE2 < 1.2e-6)[1])
-plot.titration.RpACE2(which(dt$Kd_RpACE2 > 1e-6 & dt$Kd_RpACE2 < 1.2e-6)[1])
+plot.titration.RpACE2(which(dt$Kd_RpACE2 > 9e-7 & dt$Kd_RpACE2 < 1.2e-6)[1])
 plot.titration.RsACE2(which(dt$Kd_RsACE2 > 1e-6 & dt$Kd_RsACE2 < 1.2e-6)[1])
 ```
 
@@ -549,7 +510,7 @@ hist(dt$nMSR_RsACE2,main="RsACE2",xlab="Response-normalized mean squared residua
 ```
 
 As we would expect, the MSR stat decreases with cell count, indicating that higher cell counts leads to better curve fits
-```{r nMSR_distribution, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
+```{r nMSR_v_cell_count, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
 plot(log10(dt$huACE2_avgcount),dt$nMSR_huACE2,pch=19,col="#00000010",xlab="average cell count (log10)",ylab="nMSR",xlim=c(1,3))
 ```
 Let's see what titration curves look like in different nMSR regimes. First, let's see titrations from each experiment at the median nMSR. (Iterate the sample to illustrate an actual responsive curve, since nonresponseive curves with little noise are hard to judge) Suggests that the 'typical' curve looks quite nice.
@@ -600,25 +561,28 @@ dt[,log10Ka_RsACE2 := -log10Kd_RsACE2,by=c("barcode","library")]
 Let's visualize the final binding measurements as violin plots for the different wildtype targets
 
 ```{r final_pheno_DFE, fig.width=9, fig.height=18, fig.align="center",dpi=300,dev="png"}
+#set target as factor variable with levels in order specified in config file targets_ordered object
+dt[,target := factor(dt$target,levels=config$targets_ordered)]
+
 p1 <- ggplot(dt[!is.na(log10Ka_huACE2) & variant_class=="wildtype",],aes(x=target,y=log10Ka_huACE2))+
   geom_violin(scale="width")+stat_summary(fun=median,geom="point",size=1)+
   ggtitle("huACE2")+xlab("homolog")+theme(axis.text.x=element_text(angle=-90,hjust=0))+
-  scale_y_continuous(limits=c(6,12))
+  scale_y_continuous(limits=c(4.99,12))
 
 p2 <- ggplot(dt[!is.na(log10Ka_RaACE2) & variant_class=="wildtype",],aes(x=target,y=log10Ka_RaACE2))+
   geom_violin(scale="width")+stat_summary(fun=median,geom="point",size=1)+
   ggtitle("RaACE2")+xlab("homolog")+theme(axis.text.x=element_text(angle=-90,hjust=0))+
-  scale_y_continuous(limits=c(6,12))
+  scale_y_continuous(limits=c(4.99,12))
 
 p3 <- ggplot(dt[!is.na(log10Ka_RpACE2) & variant_class=="wildtype",],aes(x=target,y=log10Ka_RpACE2))+
   geom_violin(scale="width")+stat_summary(fun=median,geom="point",size=1)+
   ggtitle("RpACE2")+xlab("homolog")+theme(axis.text.x=element_text(angle=-90,hjust=0))+
-  scale_y_continuous(limits=c(6,12))
+  scale_y_continuous(limits=c(5.99,12))
 
 p4 <- ggplot(dt[!is.na(log10Ka_RsACE2) & variant_class=="wildtype",],aes(x=target,y=log10Ka_RsACE2))+
   geom_violin(scale="width")+stat_summary(fun=median,geom="point",size=1)+
   ggtitle("RsACE2")+xlab("homolog")+theme(axis.text.x=element_text(angle=-90,hjust=0))+
-  scale_y_continuous(limits=c(6,12))
+  scale_y_continuous(limits=c(4.99,12))
 
 grid.arrange(p1,p2,p3,p4,ncol=1)
 
