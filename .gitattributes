@@ -1,2 +1,4 @@
 results/variants/nucleotide_variant_table.csv filter=lfs diff=lfs merge=lfs -text
 results/counts/variant_counts.csv filter=lfs diff=lfs merge=lfs -text
+results/binding_Kds/binding_Kds.csv filter=lfs diff=lfs merge=lfs -text
+results/expression_meanFs/expression_meanFs.csv filter=lfs diff=lfs merge=lfs -text

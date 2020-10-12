@@ -48,16 +48,20 @@ sessionInfo()
 
 Read in tables from processed sequencing data. The `dt_pacbio` table gives the barcode, RBD background, and any nucleotide mutations found for each variant in each background. The `dt_illumina` table gives counts of each barcode in each FACS bin.
 
+In this PacBio sequencing, we have two backgrounds currently present for SARS-CoV-1_Urbani and SARS-CoV-2. For SARS-CoV-1, we created our own "in-house" SSM libraries in the 2693 background coding sequence due to delay in shipment of the product from Genscript. The Genscript product did arrive in time for PacBio sequencing, so we included it for barcode attribution in case there were problems with our "in-house" assembly, but because the "in-house" assembly looks good, we will move forward just that background (_2693, but we will rename it to the full _Urbani_HP03L name below). On the SARS-CoV-2 side, the tube from Genscript corresponding to the SSM library for position S494 had zero volume, and it does not appear that DNA was deposited in any of the other tubes inadvertently since I do not see these mutated positions present in this background. In expectation that this was the case, we performed SSM at position S494 in our 2649 background SARS-CoV-2 sequence, so we pool the mutants across these two backgrounds to get our final set of mini-mutant scanning mutants for this background.
+
 ```{r data_input, fig.width=6,fig.height=9,fig.align="center", dpi=300,dev="png", echo=F}
 dt_pacbio <- data.table(read.csv(file=config$nt_variant_table_file,stringsAsFactors = F))
 dt_illumina <- data.table(read.csv(file=config$variant_counts_file,stringsAsFactors = F))
+
+dt_pacbio[target=="SARS-CoV-2_2649",target:="SARS-CoV-2"]
+dt_pacbio <- dt_pacbio[target!="SARS-CoV-1_Urbani_HP03L"]
+dt_pacbio[target=="SARS-CoV-1_2693",target:="SARS-CoV-1_Urbani_HP03L"]
 ```
 
 ## Process PacBio sequencing: variant parsing, library coverage
 
 First, let's assess how well we got all of the desired site-saturation mutagenesis positions covered in our variants coming off of the PacBio sequencing. We need to parse nucleotide mutations to their amino acid mutations, and flag as invalid double mutants or mutants at unintended positions/backgrounds. To do this, we create a function that checks whether a background should be mutated, and if so, indexes the positions that should be mutated as targeted positiosn differ in index across backgrounds due to variations in length over evolutionary time. We then output the variant_class as wildtype, mutant, invalid (unintended mutation), indel (also unintended), synonymous, or stop mutant.
-
-Also note -- we have two backgrounds currently present for SARS-CoV-1_Urbani and SARS-CoV-2. For SARS-CoV-1, we created our own "in-house" SSM libraries in the 2693 background coding sequence due to delay in shipment of the product from Genscript. The Genscript product did arrive in time for PacBio sequencing, so we included it for barcode attribution in case there were problems with our "in-house" assembly, but if the "in-house" assembly looks good, we will move forward with just that background as it is what was included in our first round of ACE2 titrations. On the SARS-CoV-2 side, the tube from Genscript corresponding to the SSM library for position S494 had zero volume, and it does not appear that DNA was deposited in any of the other tubes inadvertently since I do not see these mutated positions present in this background. In expectation that this was the case, we performed SSM at position S494 in our 2649 background SARS-CoV-2 sequence, meaning we will pool the mutants across these two backgrounds to get our final set of mini-mutant scanning mutants.
 
 ```{r process_aa_muts}
 #load a table giving the indexing of nucleotide numbers for sites targeted in each mutated background
@@ -244,15 +248,10 @@ ggplot(temp, aes(x=target,y=count,fill=variant_class))+
 ```
 
 
-Let's look at coverage of mutants at each position across each background. For assessing coverage of mutants in the different backgrounds, let's pool together the SARS-CoV-2 (genscript mutants) and SARS-CoV-2_2649 sequence (my in-house mutagenesis to add the missing mutants at position 494). Let's also only consider the SARS-CoV-1_2693 sequences, as these are what are actually pooled in our libraries for the titration experiments, as SARS-CoV-1_Urbani SSM library from Genscript arrived late for experiments, and I only pooled it here for PacBio sequencing in case my in-house mutagenesis was unsuccessful. (And it should therefore have zero counts in the Illumina sequencing, anyway, so fine to purge now for downstream counts management.)
-
-```{r merge_SARS2_SARS1}
-dt_pacbio[target=="SARS-CoV-2_2649",target:="SARS-CoV-2"]
-dt_pacbio <- dt_pacbio[target!="SARS-CoV-1_Urbani_HP03L"]
-```
+Let's look at coverage of mutants at each position across each background. 
 
 ```{r variant_fractions, fig.width=12,fig.height=8,fig.align="center", dpi=500,dev="png",echo=FALSE}
-aa_coverage <- expand.grid(target=config$mutated_targets[!config$mutated_targets%in%c("SARS-CoV-2_2649","SARS-CoV-1_Urbani_HP03L")][order(config$mutated_targets[!config$mutated_targets%in%c("SARS-CoV-2_2649","SARS-CoV-1_Urbani_HP03L")])], site=c(455,486,493,494,498,501),mutant=c("A","C","D","E","F","G","H","I","K","L","M","N","P","Q","R","S","T","V","W","Y"))
+aa_coverage <- expand.grid(target=config$mutated_targets[!config$mutated_targets%in%c("SARS-CoV-2_2649","SARS-CoV-1_2693")][order(config$mutated_targets[!config$mutated_targets%in%c("SARS-CoV-2_2649","SARS-CoV-1_2693")])], site=c(455,486,493,494,498,501),mutant=c("A","C","D","E","F","G","H","I","K","L","M","N","P","Q","R","S","T","V","W","Y"))
 aa_coverage$count <- NA
 for(i in 1:nrow(aa_coverage)){
   aa_coverage[i,"count"] <- nrow(dt_pacbio[target==aa_coverage[i,"target"] & position==aa_coverage[i,"site"] & mutant==aa_coverage[i,"mutant"],])
@@ -331,7 +330,7 @@ dt <- dcast.data.table(dt, library+barcode+target+variant_class+wildtype+positio
 Last, we remove variants that are invalid (unintended mutation or indel). This removes `r nrow(dt[variant_class=="indel",])` indel and `r nrow(dt[variant_class=="invalid",])` invalidly mutated variants across the two libraries, leaving `r nrow(dt[variant_class %in% c("wildtype","mutant","synonymous","stop") & library=="lib1",])` valid variants from lib1 and `r nrow(dt[variant_class %in% c("wildtype","mutant","synonymous","stop") & library=="lib2",])` from lib2.
 
 ```{r remove_invalid}
-dt <- dt[variant_class %in% c("wildtype","mutant","synonymous","stop"),]
+dt <- dt[variant_class %in% c("wildtype","mutant","synonymous"),]
 ```
 
 Save table of processed and merged sequencing information.

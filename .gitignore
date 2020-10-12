@@ -22,3 +22,11 @@ results/variants/*
 !results/counts
 results/counts/*
 !results/counts/variant_counts.csv
+
+!results/binding_Kds
+results/binding_Kds/*
+!results/binding_Kds/binding_Kds.csv
+
+!results/expression_meanFs
+results/expression_meanFs/*
+!results/expression_meanFs/expression_meanFs.csv

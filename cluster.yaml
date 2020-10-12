@@ -5,6 +5,7 @@ __default__:
   time: 0-4
   mem: 32000
   name: "{rule}"
+  constraint: '"gizmof|gizmog|gizmoh|gizmoj|gizmok"'
 
 build_ccs:
   cpus: 16
@@ -23,12 +24,14 @@ count_variants:
 merge_sequencing:
   cpus: 16
   mem: 100000
+  constraint: gizmok
 
-
-compute_Titeseq_Kds:
+fit_titrations:
   cpus: 16
   mem: 100000
+  constraint: gizmok
 
-compute_expression_meanFs:
+calculate_expression:
   cpus: 16
   mem: 100000
+  constraint: gizmok
