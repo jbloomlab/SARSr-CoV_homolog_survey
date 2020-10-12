@@ -19,3 +19,5 @@ workflow:
    giving counts of each barcoded variant in each condition.
 
 3. [Parse amino acid mutants and merge PacBio and Illumina sequencing data](merge_sequencing.md).
+
+4. [Fit titration curves](compute_binding_Kd.md) to calculate per-barcode K<sub>D</sub>, recorded in [this file](../binding_Kds/binding_Kds.csv)

@@ -428,7 +428,7 @@ indel). This removes 6312 indel and 14741 invalidly mutated variants
 across the two libraries, leaving 70342 valid variants from lib1 and
 74107 from lib2.
 
-    dt <- dt[variant_class %in% c("wildtype","mutant","synonymous","stop"),]
+    dt <- dt[variant_class %in% c("wildtype","mutant","synonymous"),]
 
 Save table of processed and merged sequencing information.
 
