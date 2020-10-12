@@ -90,7 +90,7 @@ save(dt,file=paste(config$expression_sortseq_dir,"/dt.temp.Rda",sep=""))
 
 Let's look at the distibution of expression scores for each wildtype target.
 
-```{r unfiltered_expression_distribution, echo=T, fig.width=13, fig.height=5, fig.align="center", dpi=300,dev="png"}
+```{r unfiltered_expression_distribution_wildtypes, echo=T, fig.width=13, fig.height=5, fig.align="center", dpi=300,dev="png"}
 dt[,target := factor(dt$target,levels=config$targets_ordered)]
 
 p1 <- ggplot(dt[!is.na(ML_meanF) & variant_class=="wildtype",],aes(x=target,y=ML_meanF))+
@@ -105,7 +105,17 @@ invisible(dev.print(pdf, paste(config$expression_sortseq_dir,"/violin-plot_meanF
 
 And for mutated versions of the mini-MS targets:
 
-xxx
+```{r unfiltered_expression_distribution_mutants, echo=T, fig.width=13, fig.height=5, fig.align="center", dpi=300,dev="png"}
+p1 <- ggplot(dt[!is.na(ML_meanF) & variant_class=="mutant" & target %in% config$mutated_targets,],aes(x=target,y=ML_meanF))+
+  geom_violin(scale="width")+stat_summary(fun=median,geom="point",size=1)+
+  ggtitle("expression")+xlab("homolog")+theme(axis.text.x=element_text(angle=-90,hjust=0))
+
+grid.arrange(p1,ncol=1)
+
+#save pdf
+invisible(dev.print(pdf, paste(config$expression_sortseq_dir,"/violin-plot_meanF-by-target_mutated.pdf",sep="")))
+```
+
 
 Next let's look at the distributon of cell counts across the four bins for each barcode. 
 ```{r cell_count_coverage, echo=T, fig.width=13, fig.height=5, fig.align="center", dpi=300,dev="png"}
@@ -115,13 +125,24 @@ hist(log10(dt[library=="lib1",total_count]+0.1),xlab="cell count (log10, plus 0.
 hist(log10(dt[library=="lib2",total_count]+0.1),xlab="cell count (log10, plus 0.1 pseudocount)",main="lib2",col="gray50")
 ```
 
-Filter based on cell counts:
+Filter meanF estimates generated from fewer than 20 cell counts across the four bins.
 
-xxx
+```{r filter_cell_counts}
+dt[total_count<20,c("ML_meanF","ML_sdF") := list(NA,NA)]
+
+```
+
+We have generated expression measurements for `r round(nrow(dt[!is.na(ML_meanF)])/nrow(dt)*100,digits=2)`% of the barcodes in our libraries.
 
 ## Data Output
 
 Finally, let's output our measurements for downstream analyses.
 
-xxx
+```{r output_data}
+dt[,.(library,barcode,target,variant_class,wildtype,position,mutant,
+     total_count,ML_meanF)] %>%
+  mutate_if(is.numeric, round, digits=5) %>%
+  write.csv(file=config$expression_sortseq_file, row.names=F)
+
+```
 
