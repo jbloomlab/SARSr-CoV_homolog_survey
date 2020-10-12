@@ -31,7 +31,7 @@ fit_titrations:
   mem: 100000
   constraint: gizmok
 
-compute_expression_meanFs:
+calculate_expression:
   cpus: 16
   mem: 100000
   constraint: gizmok

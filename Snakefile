@@ -104,6 +104,26 @@ rule fit_titrations:
         mv {params.md_files} {output.md_files}
         """
 
+rule calculate_expression:
+    input:
+        config['merged_sequencing_file']
+    output:
+        config['expression_sortseq_file'],
+        md='results/summary/compute_expression_meanF.md',
+        md_files=directory('results/summary/compute_expression_meanF_files')
+    envmodules:
+        'R/3.6.2-foss-2019b'
+    params:
+        nb='compute_expression_meanF.Rmd',
+        md='compute_expression_meanF.md',
+        md_files='compute_expression_meanF_files'
+    shell:
+        """
+        R -e \"rmarkdown::render(input=\'{params.nb}\')\";
+        mv {params.md} {output.md};
+        mv {params.md_files} {output.md_files}
+        """
+
 rule merge_sequencing:
     input:
         config['nt_variant_table_file'],
