@@ -184,7 +184,7 @@ the four bins.
 
     dt[total_count<20,c("ML_meanF","ML_sdF") := list(NA,NA)]
 
-We have generated expression measurements for 84.78% of the barcodes in
+We have generated expression measurements for 84.43% of the barcodes in
 our libraries.
 
 Data Output

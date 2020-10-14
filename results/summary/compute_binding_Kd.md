@@ -322,9 +322,9 @@ our library barcodes. We will also spot check titration curves from
 across our measurement range, and spot check curves whose fit parameters
 hit the different boundary conditions of the fit variables.
 
-We successfully generated *K*<sub>D,app</sub> estimates for 113250 of
-our lib1 barcodes (78.65%) of our lib1+lib2 huACE2 titrations, 82.41%)
-of the RaACE2 titrations, 85.19%) of the RpACE2 titrations, and 83.38%)
+We successfully generated *K*<sub>D,app</sub> estimates for 111756 of
+our lib1 barcodes (78.33%) of our lib1+lib2 huACE2 titrations, 82.09%)
+of the RaACE2 titrations, 84.86%) of the RpACE2 titrations, and 83.04%)
 of the RsACE2 titrations.
 
 To allow manual checks of what the data looks like for different curve
@@ -633,9 +633,9 @@ worst 2.5% of curves on this metric.
     dt[nMSR_RpACE2 > quantile(dt$nMSR_RpACE2,0.95,na.rm=T),c("Kd_RpACE2","Kd_SE_RpACE2","response_RpACE2","baseline_RpACE2","RSE_RpACE2","fit_RpACE2") := list(as.numeric(NA),as.numeric(NA),as.numeric(NA),as.numeric(NA),as.numeric(NA),as.list(NA))]
     dt[nMSR_RsACE2 > quantile(dt$nMSR_RsACE2,0.95,na.rm=T),c("Kd_RsACE2","Kd_SE_RsACE2","response_RsACE2","baseline_RsACE2","RSE_RsACE2","fit_RsACE2") := list(as.numeric(NA),as.numeric(NA),as.numeric(NA),as.numeric(NA),as.numeric(NA),as.list(NA))]
 
-This leaves us with filtered *K*<sub>D,app</sub> estimates for 74.72% of
-our lib1+lib2 huACE2 titrations, 78.29%) of the RaACE2 titrations,
-80.93%) of the RpACE2 titrations, and 79.21%) of the RsACE2 titrations.
+This leaves us with filtered *K*<sub>D,app</sub> estimates for 74.42% of
+our lib1+lib2 huACE2 titrations, 77.98%) of the RaACE2 titrations,
+80.61%) of the RpACE2 titrations, and 78.89%) of the RsACE2 titrations.
 
 Last, let’s convert our *K*<sub>D,app</sub> to 1) a
 log<sub>10</sub>-scale, and 2) *K*<sub>A,app</sub>, the inverse of
