@@ -48,15 +48,9 @@ sessionInfo()
 
 Read in tables from processed sequencing data. The `dt_pacbio` table gives the barcode, RBD background, and any nucleotide mutations found for each variant in each background. The `dt_illumina` table gives counts of each barcode in each FACS bin.
 
-In this PacBio sequencing, we have two backgrounds currently present for SARS-CoV-1_Urbani and SARS-CoV-2. For SARS-CoV-1, we created our own "in-house" SSM libraries in the 2693 background coding sequence due to delay in shipment of the product from Genscript. The Genscript product did arrive in time for PacBio sequencing, so we included it for barcode attribution in case there were problems with our "in-house" assembly, but because the "in-house" assembly looks good, we will move forward just that background (_2693, but we will rename it to the full _Urbani_HP03L name below). On the SARS-CoV-2 side, the tube from Genscript corresponding to the SSM library for position S494 had zero volume, and it does not appear that DNA was deposited in any of the other tubes inadvertently since I do not see these mutated positions present in this background. In expectation that this was the case, we performed SSM at position S494 in our 2649 background SARS-CoV-2 sequence, so we pool the mutants across these two backgrounds to get our final set of mini-mutant scanning mutants for this background.
-
 ```{r data_input, fig.width=6,fig.height=9,fig.align="center", dpi=300,dev="png", echo=F}
 dt_pacbio <- data.table(read.csv(file=config$nt_variant_table_file,stringsAsFactors = F))
 dt_illumina <- data.table(read.csv(file=config$variant_counts_file,stringsAsFactors = F))
-
-dt_pacbio[target=="SARS-CoV-2_2649",target:="SARS-CoV-2"]
-dt_pacbio <- dt_pacbio[target!="SARS-CoV-1_Urbani_HP03L"]
-dt_pacbio[target=="SARS-CoV-1_2693",target:="SARS-CoV-1_Urbani_HP03L"]
 ```
 
 ## Process PacBio sequencing: variant parsing, library coverage
@@ -211,7 +205,9 @@ dt_pacbio[number_of_indels>0,variant_class:="indel"]
 
 ```
 
-For the mutated backgrounds, let's look at the fraction of variants in each class. We can see there is perhaps a slightly higher proportion of invalid mutants in the GD-Pangolin and RaTG13 backgrounds (which we see below is attributable to Genscript targeting the wrong mutation with their SSM!). Can see our SARS-CoV-2_2649 assembly has virtually only mutants, consistent with the fact that we introduced mutations only at a single position here and didn't really pool in extra wildtype of this sequence (since we have the Genscript SARS-CoV-2 wildtype).
+For the mutated backgrounds, let's look at the fraction of variants in each class. In this PacBio sequencing, we have two backgrounds currently present for SARS-CoV-1_Urbani and SARS-CoV-2. For SARS-CoV-1, we created our own "in-house" SSM libraries in the 2693 background coding sequence due to delay in shipment of the product from Genscript. The Genscript product did arrive in time for PacBio sequencing, so we included it for barcode attribution in case there were problems with our "in-house" assembly, but because the "in-house" assembly looks good, we will move forward just that background (_2693, but we will rename it to the full _Urbani_HP03L name further below). On the SARS-CoV-2 side, the tube from Genscript corresponding to the SSM library for position S494 had zero volume, and it does not appear that DNA was deposited in any of the other tubes inadvertently since I do not see these mutated positions present in this background. In expectation that this was the case, we performed SSM at position S494 in our 2649 background SARS-CoV-2 sequence, so further below we will pool the mutants across these two backgrounds to get our final set of mini-mutant scanning mutants for this background.
+
+We can see there is perhaps a slightly higher proportion of invalid mutants in the GD-Pangolin and RaTG13 backgrounds (which we see below is attributable to Genscript targeting the wrong mutation with their SSM!). Can see our SARS-CoV-2_2649 assembly has virtually only mutants, consistent with the fact that we introduced mutations only at a single position here and didn't really pool in extra wildtype of this sequence (since we have the Genscript SARS-CoV-2 wildtype).
 
 ```{r variant_fractions_mutated, fig.width=12,fig.height=4,fig.align="center", dpi=500,dev="png",echo=FALSE}
 temp <- data.frame(target=NA, variant_class=NA, count=NA)
@@ -247,6 +243,13 @@ ggplot(temp, aes(x=target,y=count,fill=variant_class))+
 
 ```
 
+Let's collapse the SARS-CoV-1_Urbani and SARS-CoV-2 information, as described above. For SARS-CoV-1_Urbani, we will remove the "SARS-CoV-1_Urbani_HP03L" mutant variants -- these were pooled into the PacBio but were not part of the titrations. (The wildtype of this background is, though, as it was pooled separately from the delayed mutants shipment.) For SARS-CoV-2, we can simply pool the _2649 mutants into the remaining SARS-CoV-2 mutants from Genscript.
+
+```{r collapse_SARS1_SARS2}
+dt_pacbio[target=="SARS-CoV-2_2649",target:="SARS-CoV-2"]
+dt_pacbio <- dt_pacbio[target!="SARS-CoV-1_Urbani_HP03L" | variant_class=="wildtype"]
+dt_pacbio[target=="SARS-CoV-1_2693",target:="SARS-CoV-1_Urbani_HP03L"]
+```
 
 Let's look at coverage of mutants at each position across each background. 
 
@@ -278,7 +281,7 @@ ggplot(aa_coverage, aes(x=as.factor(site),y=count,fill=mutant))+
 
 ```
 
-Check out if we are missing any mutants at our intended positions. Apart from the missing 455 mutations in RaTG13 and GD-Pangolin due to Genscript targeting L452 mistakenly, we are only missing one mutation! N501K
+Check out if we are missing any mutants at our intended positions. Apart from the missing 455 mutations in RaTG13 and GD-Pangolin due to Genscript targeting L452 mistakenly, we are only missing one mutation! N501K in AncSARS1a.
 
 ```{r missing_mutants}
 kable(aa_coverage[aa_coverage$count==0 & !is.na(aa_coverage$count),])
@@ -327,10 +330,10 @@ dt <- merge(dt_pacbio[,.(library,barcode,target,variant_class,wildtype,position,
 dt <- dcast.data.table(dt, library+barcode+target+variant_class+wildtype+position+mutant ~ sample, value.var="count.norm")
 ```
 
-Last, we remove variants that are invalid (unintended mutation or indel). This removes `r nrow(dt[variant_class=="indel",])` indel and `r nrow(dt[variant_class=="invalid",])` invalidly mutated variants across the two libraries, leaving `r nrow(dt[variant_class %in% c("wildtype","mutant","synonymous","stop") & library=="lib1",])` valid variants from lib1 and `r nrow(dt[variant_class %in% c("wildtype","mutant","synonymous","stop") & library=="lib2",])` from lib2.
+We remove variants that are invalid (unintended mutation or indel). This removes `r nrow(dt[variant_class=="indel",])` indel and `r nrow(dt[variant_class=="invalid",])` invalidly mutated variants across the two libraries, leaving `r nrow(dt[variant_class %in% c("wildtype","mutant","synonymous","stop") & library=="lib1",])` valid variants from lib1 and `r nrow(dt[variant_class %in% c("wildtype","mutant","synonymous","stop") & library=="lib2",])` from lib2.
 
 ```{r remove_invalid}
-dt <- dt[variant_class %in% c("wildtype","mutant","synonymous"),]
+dt <- dt[variant_class %in% c("wildtype","mutant"),]
 ```
 
 Save table of processed and merged sequencing information.

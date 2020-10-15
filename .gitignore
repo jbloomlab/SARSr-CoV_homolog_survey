@@ -30,3 +30,8 @@ results/binding_Kds/*
 !results/expression_meanFs
 results/expression_meanFs/*
 !results/expression_meanFs/expression_meanFs.csv
+
+!results/final_variant_scores/
+results/final_variant_scores/*
+!results/final_variant_scores/wt_variant_scores.csv
+!results/final_variant_scores/mut_variant_scores.csv

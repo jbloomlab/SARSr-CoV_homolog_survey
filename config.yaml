@@ -25,6 +25,22 @@ mutated_targets:
   - BM48-31
 
 # groups and orders of targets for plotting
+mutated_targets_ordered:
+  - AncSarbecovirus_MAP
+  - BM48-31
+  - AncAsia_MAP
+  - AncSARS2a_MAP
+  - GD-Pangolin
+  - AncSARS2c_MAP
+  - SARS-CoV-2
+  - RaTG13
+  - AncSARS1a_MAP
+  - Rs7327
+  - SARS-CoV-1_Urbani_HP03L
+  - SARS-CoV-1_PC4-137_PC04
+  - AncClade2_MAP
+
+
 targets_ordered:
   - AncSarbecovirus_MAP
   - AncSarbecovirus_alt
@@ -233,6 +249,9 @@ Titeseq_Kds_dir: results/binding_Kds
 Titeseq_Kds_file: results/binding_Kds/binding_Kds.csv
 expression_sortseq_dir: results/expression_meanFs
 expression_sortseq_file: results/expression_meanFs/expression_meanFs.csv
+final_variant_scores_dir: results/final_variant_scores
+final_variant_scores_wt_file: results/final_variant_scores/wt_variant_scores.csv
+final_variant_scores_mut_file: results/final_variant_scores/mut_variant_scores.csv
 
 
 # parameters for running PacBio `ccs` program

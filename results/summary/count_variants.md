@@ -49,7 +49,7 @@ print(f"Using dms_variants version {dms_variants.__version__}")
 ```
 
     Using alignparse version 0.1.3
-    Using dms_variants version 0.8.5
+    Using dms_variants version 0.8.4
 
 
 Ignore warnings that clutter output:
@@ -2101,12 +2101,12 @@ display(HTML(
   </thead>
   <tbody>
     <tr>
-      <td>lib2</td>
-      <td>90170</td>
-    </tr>
-    <tr>
       <td>lib1</td>
       <td>84808</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>90170</td>
     </tr>
   </tbody>
 </table>
@@ -3796,7 +3796,9 @@ _ = barcode_fate_plot.draw()
 ```
 
 
+    
 ![png](count_variants_files/count_variants_40_0.png)
+    
 
 
 ## Output csv of barcode counts
