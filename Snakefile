@@ -42,6 +42,9 @@ rule make_summary:
         variant_Kds_file=config['Titeseq_Kds_file'],
         calculate_expression='results/summary/compute_expression_meanF.md',
         variant_expression_file=config['expression_sortseq_file'],
+        barcode_to_geno_pheno='results/summary/barcode_to_genotype_phenotypes.md',
+        wt_phenos_file=config['final_variant_counts_wt_file'],
+        mut_phenos_file=config['final_variant_counts_mut_file'],
     output:
         summary = os.path.join(config['summary_dir'], 'summary.md')
     run:
@@ -76,6 +79,9 @@ rule make_summary:
             
             5. [Analyze Sort-seq]({path(input.calculate_expression)}) to calculate per-barcode RBD expression, recorded in [this file]({path(input.variant_expression_file)}).
 
+            6. [Derive final genotype-level phenotypes from replicate barcoded sequences]({path(input.barcode_to_geno_pheno)}).
+               Generates final phenotypes, recorded in [this file for wildtype backgrounds]({path(input.wt_phenos_file)}) and [this file for mutants]({path(input.mut_phenos_file)}).
+
             """
             ).strip())
 
@@ -87,6 +93,28 @@ rule make_dag:
         os.path.join(config['summary_dir'], 'dag.svg')
     shell:
         "snakemake --forceall --dag | dot -Tsvg > {output}"
+
+rule barcode_to_geno_phenos:
+    input:
+        config['Titeseq_Kds_file'],
+        config['expression_sortseq_file']
+    output:
+        config['final_variant_counts_wt_file'],
+        config['final_variant_counts_mut_file'],
+        md='results/summary/barcode_to_genotype_phenotypes.md',
+        md_files=directory('results/summary/barcode_to_genotype_phenotypes_files')
+    envmodules:
+        'R/3.6.2-foss-2019b'
+    params:
+        nb='barcode_to_genotype_phenotypes.Rmd',
+        md='barcode_to_genotype_phenotypes.md',
+        md_files='barcode_to_genotype_phenotypes_files'
+    shell:
+        """
+        R -e \"rmarkdown::render(input=\'{params.nb}\')\";
+        mv {params.md} {output.md};
+        mv {params.md_files} {output.md_files}
+        """
 
 rule fit_titrations:
     input:

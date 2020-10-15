@@ -35,3 +35,8 @@ calculate_expression:
   cpus: 16
   mem: 100000
   constraint: gizmok
+
+barcode_to_geno_phenos:
+  cpus: 16
+  mem: 100000
+  constraint: gizmok
