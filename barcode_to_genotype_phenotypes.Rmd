@@ -437,11 +437,11 @@ Save output files.
 ```{r outputs}
 dt_wildtype %>%
   mutate_if(is.numeric, round, digits=4) %>%
-  write.csv(file=config$final_variant_counts_wt_file, row.names=F,quote=F)
+  write.csv(file=config$final_variant_scores_wt_file, row.names=F,quote=F)
 
 dt_mutant %>%
   mutate_if(is.numeric, round, digits=4) %>%
-  write.csv(file=config$final_variant_counts_mut_file, row.names=F,quote=F)
+  write.csv(file=config$final_variant_scores_mut_file, row.names=F,quote=F)
 ```
 
 

@@ -43,8 +43,8 @@ rule make_summary:
         calculate_expression='results/summary/compute_expression_meanF.md',
         variant_expression_file=config['expression_sortseq_file'],
         barcode_to_geno_pheno='results/summary/barcode_to_genotype_phenotypes.md',
-        wt_phenos_file=config['final_variant_counts_wt_file'],
-        mut_phenos_file=config['final_variant_counts_mut_file'],
+        wt_phenos_file=config['final_variant_scores_wt_file'],
+        mut_phenos_file=config['final_variant_scores_mut_file'],
     output:
         summary = os.path.join(config['summary_dir'], 'summary.md')
     run:
@@ -99,8 +99,8 @@ rule barcode_to_geno_phenos:
         config['Titeseq_Kds_file'],
         config['expression_sortseq_file']
     output:
-        config['final_variant_counts_wt_file'],
-        config['final_variant_counts_mut_file'],
+        config['final_variant_scores_wt_file'],
+        config['final_variant_scores_mut_file'],
         md='results/summary/barcode_to_genotype_phenotypes.md',
         md_files=directory('results/summary/barcode_to_genotype_phenotypes_files')
     envmodules:
