@@ -321,12 +321,80 @@ pooled measurements.
 Heatmaps! Output heatmaps illustrating all wildtype variants with
 separate columns for each ACE2.
 
+    #make temp long-form data frame
+    temp1 <- data.table::melt(dt_wildtype[,.(target,huACE2,RaACE2,RsACE2,RpACE2)],id.vars=c("target"),measure.vars=c("huACE2","RaACE2","RsACE2","RpACE2"),variable.name="ACE2",value.name="log10Ka")
+
+    temp2 <- dt_wildtype[,.(target,expression)]
+
+    p1 <- ggplot(temp1,aes(target,ACE2))+geom_tile(aes(fill=log10Ka),color="black",lwd=0.1)+
+      scale_fill_gradientn(colours=c("#FFFFFF","#FFFFFF","#003366"),limits=c(5,12),values=c(0,1/7,7/7),na.value="gray")+
+      #scale_x_continuous(expand=c(0,0),breaks=c(331,seq(335,430,by=5)))+
+      labs(x="RBD homolog",y="")+theme_classic(base_size=9)+
+      coord_equal()+theme(axis.text.x=element_text(angle=90,hjust=1,face="bold"))
+
+    p2 <- ggplot(temp2,aes(target,y=1))+geom_tile(aes(fill=expression),color="black",lwd=0.1)+
+      scale_fill_gradientn(colours=c("#FFFFFF","#06C528"),limits=c(5,11),values=c(0,1),na.value="gray")+
+      labs(x="",y="expression")+theme_classic(base_size=9)+
+      coord_equal()+theme(axis.text.x=element_blank(),axis.text.y=element_blank(),axis.ticks.y = element_blank())
+
+    ggarrange(p2,p1,nrow=2)
+
 <img src="barcode_to_genotype_phenotypes_files/figure-gfm/heatmap_wildtypes_all-1.png" style="display: block; margin: auto;" />
+
+    invisible(dev.print(pdf, paste(config$final_variant_scores_dir,"/heatmap_all_wildtypes.pdf",sep="")))
+
+    #make temp long-form data frame
+    extant <- c(config$EurAf_extant,config$SARS2_extant,config$SARS1_extant,config$Clade2_extant)
+
+    temp1 <- temp1[target %in% extant,];temp1$target <- factor(temp1$target,levels=extant)
+
+    p1 <- ggplot(temp1,aes(target,ACE2))+geom_tile(aes(fill=log10Ka),color="black",lwd=0.2)+
+      scale_fill_gradientn(colours=c("#FFFFFF","#FFFFFF","#003366"),limits=c(5,12),values=c(0,1/7,7/7),na.value="gray")+
+      #scale_x_continuous(expand=c(0,0),breaks=c(331,seq(335,430,by=5)))+
+      labs(x="RBD homolog",y="")+theme_classic(base_size=9)+
+      coord_equal()+theme(axis.text.x=element_text(angle=90,hjust=1,face="bold",size=10),axis.text.y=element_text(face="bold",size=10))
+
+    p1
+
 <img src="barcode_to_genotype_phenotypes_files/figure-gfm/heatmap_wildtypes_phylogeny-1.png" style="display: block; margin: auto;" />
+
+    invisible(dev.print(pdf, paste(config$final_variant_scores_dir,"/heatmap_extant_wildtypes.pdf",sep="")))
+
+    #make temp long-form data frame
+    ancestors <- c(config$ancestors_MAP)
+
+    temp1 <- data.table::melt(dt_wildtype[target %in% ancestors, .(target,huACE2,RaACE2,RsACE2,RpACE2)],id.vars=c("target"),measure.vars=c("huACE2","RaACE2","RsACE2","RpACE2"),variable.name="ACE2",value.name="log10Ka")
+    temp1$target <- factor(temp1$target,levels=ancestors)
+
+    p1 <- ggplot(temp1,aes(target,ACE2))+geom_tile(aes(fill=log10Ka),color="black",lwd=0.2)+
+      scale_fill_gradientn(colours=c("#FFFFFF","#FFFFFF","#003366"),limits=c(5,12),values=c(0,1/7,7/7),na.value="gray")+
+      #scale_x_continuous(expand=c(0,0),breaks=c(331,seq(335,430,by=5)))+
+      labs(x="RBD homolog",y="measurement")+theme_classic(base_size=9)+
+      coord_equal()+theme(axis.text.x=element_text(angle=90,hjust=1,face="bold",size=10),axis.text.y=element_text(face="bold",size=10))
+
+    p1
 
 <img src="barcode_to_genotype_phenotypes_files/figure-gfm/heatmap_wildtypes_MAP-ancestors-1.png" style="display: block; margin: auto;" />
 
+    invisible(dev.print(pdf, paste(config$final_variant_scores_dir,"/heatmap_MAP-ancestors_wildtypes.pdf",sep="")))
+
+    #make temp long-form data frame
+    ancestors <- c(config$ancestors_MAP_v_alt)
+
+    temp1 <- data.table::melt(dt_wildtype[target %in% ancestors, .(target,huACE2,RaACE2,RsACE2,RpACE2)],id.vars=c("target"),measure.vars=c("huACE2","RaACE2","RsACE2","RpACE2"),variable.name="ACE2",value.name="log10Ka")
+    temp1$target <- factor(temp1$target,levels=ancestors)
+
+    p1 <- ggplot(temp1,aes(target,ACE2))+geom_tile(aes(fill=log10Ka),color="black",lwd=0.2)+
+      scale_fill_gradientn(colours=c("#FFFFFF","#FFFFFF","#003366"),limits=c(5,12),values=c(0,1/7,7/7),na.value="gray")+
+      #scale_x_continuous(expand=c(0,0),breaks=c(331,seq(335,430,by=5)))+
+      labs(x="RBD homolog",y="measurement")+theme_classic(base_size=9)+
+      coord_equal()+theme(axis.text.x=element_text(angle=90,hjust=1,face="bold",size=10),axis.text.y=element_text(face="bold",size=10))
+
+    p1
+
 <img src="barcode_to_genotype_phenotypes_files/figure-gfm/heatmap_wildtypes_MAP-and-alt-ancestors-1.png" style="display: block; margin: auto;" />
+
+    invisible(dev.print(pdf, paste(config$final_variant_scores_dir,"/heatmap_MAP-and-alt-ancestors_wildtypes.pdf",sep="")))
 
 Next, for the SSM libraries. Two ways of looking at these:
 
@@ -370,11 +438,41 @@ genotype, and computing the delta metric in addition to the raw log10Ka.
 
 First, illustrating log10Ka grouped by RBD background.
 
+    #make temp long-form data frame
+    temp <- data.table::melt(dt_mutant[, .(target,position,mutant,huACE2,RaACE2,RsACE2,wildtype_indicator)],id.vars=c("target","position","mutant","wildtype_indicator"),measure.vars=c("huACE2","RaACE2","RsACE2"),variable.name="ACE2",value.name="log10Ka")
+
+    p1 <- ggplot(temp,aes(ACE2,mutant))+geom_tile(aes(fill=log10Ka),color="black",lwd=0.1)+
+      scale_fill_gradientn(colours=c("#FFFFFF","#003366"),limits=c(5,12),values=c(0,1),na.value="gray70")+
+      labs(x="",y="")+theme_classic(base_size=9)+
+      coord_equal()+theme(axis.text.x=element_text(angle=90,hjust=1,face="bold",size=10),axis.text.y=element_text(face="bold",size=10))+
+      facet_wrap(target~position,nrow=7)+
+      geom_text(aes(label=wildtype_indicator),size=2,color="gray10")
+
+    p1
+
 <img src="barcode_to_genotype_phenotypes_files/figure-gfm/heatmap_SSM_log10Ka-by-target-1.png" style="display: block; margin: auto;" />
+
+    invisible(dev.print(pdf, paste(config$final_variant_scores_dir,"/heatmap_SSM_log10Ka-by-target.pdf",sep="")))
 
 Second, illustrating delta\_log10Ka grouped by SSM position.
 
+    #make temp long-form data frame
+    temp <- data.table::melt(dt_mutant[, .(target,position,mutant,huACE2_delta,RaACE2_delta,RsACE2_delta,wildtype_indicator)],id.vars=c("target","position","mutant","wildtype_indicator"),measure.vars=c("huACE2_delta","RaACE2_delta","RsACE2_delta"),variable.name="ACE2",value.name="delta_log10Ka")
+
+    p1 <- ggplot(temp,aes(ACE2,mutant))+geom_tile(aes(fill=delta_log10Ka),color="black",lwd=0.1)+
+      #scale_fill_gradientn(colours=c("#A94E35","#A94E35","#F48365","#FFFFFF","#7378B9","#7378B9","#383C6C"),limits=c(-7,7),values=c(0,3/14,5/14,7/14,9/14,11/14,14/14),na.value="gray")+
+      scale_fill_gradientn(colours=c("#A94E35","#F48365","#FFFFFF","#7378B9","#383C6C"),limits=c(-7,7),values=c(0,3.5/14,7/14,10.5/14,14/14),na.value="gray")+
+      labs(x="",y="")+theme_classic(base_size=9)+
+      coord_equal()+theme(axis.text.x=element_text(angle=90,hjust=1,face="bold",size=10),axis.text.y=element_text(face="bold",size=10))+
+      facet_wrap(position~target,nrow=6)+
+      geom_text(aes(label=wildtype_indicator),size=2,color="gray10")
+
+    p1
+
 <img src="barcode_to_genotype_phenotypes_files/figure-gfm/heatmap_SSM_delta-log10Ka-by-position-1.png" style="display: block; margin: auto;" />
+
+    invisible(dev.print(pdf, paste(config$final_variant_scores_dir,"/heatmap_SSM_deltalog10Ka-by-position.pdf",sep="")))
+
 Ok that looks really cool but also horribly overwhelming. Going to take
 a lot of staring to get some intuition for the data. To compare
 similarity in profiles, I’ll need to do logoplots, or at least normalize
