@@ -278,7 +278,7 @@ dt_mutant <- dt_mutant[,.(target,wildtype,position,mutant,huACE2,RaACE2,RsACE2,R
 
 Heatmaps! Output heatmaps illustrating all wildtype variants with separate columns for each ACE2.
 
-```{r heatmap_wildtypes_all, fig.width=12,fig.height=4,fig.align="center", dpi=500,dev="png",echo=FALSE}
+```{r heatmap_wildtypes_all, fig.width=12,fig.height=4,fig.align="center", dpi=500,dev="png",echo=T}
 #make temp long-form data frame
 temp1 <- data.table::melt(dt_wildtype[,.(target,huACE2,RaACE2,RsACE2,RpACE2)],id.vars=c("target"),measure.vars=c("huACE2","RaACE2","RsACE2","RpACE2"),variable.name="ACE2",value.name="log10Ka")
 
@@ -300,7 +300,7 @@ ggarrange(p2,p1,nrow=2)
 invisible(dev.print(pdf, paste(config$final_variant_scores_dir,"/heatmap_all_wildtypes.pdf",sep="")))
 
 ```
-```{r heatmap_wildtypes_phylogeny, fig.width=12,fig.height=4,fig.align="center", dpi=500,dev="png",echo=FALSE}
+```{r heatmap_wildtypes_phylogeny, fig.width=12,fig.height=4,fig.align="center", dpi=500,dev="png",echo=T}
 #make temp long-form data frame
 extant <- c(config$EurAf_extant,config$SARS2_extant,config$SARS1_extant,config$Clade2_extant)
 
@@ -318,7 +318,7 @@ invisible(dev.print(pdf, paste(config$final_variant_scores_dir,"/heatmap_extant_
 
 ```
 
-```{r heatmap_wildtypes_MAP-ancestors, fig.width=12,fig.height=4,fig.align="center", dpi=500,dev="png",echo=FALSE}
+```{r heatmap_wildtypes_MAP-ancestors, fig.width=12,fig.height=4,fig.align="center", dpi=500,dev="png",echo=T}
 #make temp long-form data frame
 ancestors <- c(config$ancestors_MAP)
 
@@ -336,7 +336,7 @@ p1
 invisible(dev.print(pdf, paste(config$final_variant_scores_dir,"/heatmap_MAP-ancestors_wildtypes.pdf",sep="")))
 ```
 
-```{r heatmap_wildtypes_MAP-and-alt-ancestors, fig.width=12,fig.height=4,fig.align="center", dpi=500,dev="png",echo=FALSE}
+```{r heatmap_wildtypes_MAP-and-alt-ancestors, fig.width=12,fig.height=4,fig.align="center", dpi=500,dev="png",echo=T}
 #make temp long-form data frame
 ancestors <- c(config$ancestors_MAP_v_alt)
 
@@ -393,7 +393,7 @@ dt_mutant[as.character(mutant)==as.character(wildtype),wildtype_indicator := "x"
 ```
 First, illustrating log10Ka grouped by RBD background.
 
-```{r heatmap_SSM_log10Ka-by-target, fig.width=15,fig.height=25,fig.align="center", dpi=500,dev="png",echo=FALSE}
+```{r heatmap_SSM_log10Ka-by-target, fig.width=15,fig.height=25,fig.align="center", dpi=500,dev="png",echo=T}
 #make temp long-form data frame
 temp <- data.table::melt(dt_mutant[, .(target,position,mutant,huACE2,RaACE2,RsACE2,wildtype_indicator)],id.vars=c("target","position","mutant","wildtype_indicator"),measure.vars=c("huACE2","RaACE2","RsACE2"),variable.name="ACE2",value.name="log10Ka")
 
@@ -411,7 +411,7 @@ invisible(dev.print(pdf, paste(config$final_variant_scores_dir,"/heatmap_SSM_log
 
 Second, illustrating delta_log10Ka grouped by SSM position.
 
-```{r heatmap_SSM_delta-log10Ka-by-position, fig.width=15,fig.height=25,fig.align="center", dpi=500,dev="png",echo=FALSE}
+```{r heatmap_SSM_delta-log10Ka-by-position, fig.width=15,fig.height=25,fig.align="center", dpi=500,dev="png",echo=T}
 #make temp long-form data frame
 temp <- data.table::melt(dt_mutant[, .(target,position,mutant,huACE2_delta,RaACE2_delta,RsACE2_delta,wildtype_indicator)],id.vars=c("target","position","mutant","wildtype_indicator"),measure.vars=c("huACE2_delta","RaACE2_delta","RsACE2_delta"),variable.name="ACE2",value.name="delta_log10Ka")
 
