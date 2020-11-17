@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = T)
 knitr::opts_chunk$set(dev.args = list(png = list(type = "cairo")))
 
 #list of packages to install/load
-packages = c("yaml","data.table","tidyverse","fitdistrplus","gridExtra","egg")
+packages = c("yaml","data.table","tidyverse","gridExtra","egg")
 #install any packages not already installed
 installed_packages <- packages %in% rownames(installed.packages())
 if(any(installed_packages == F)){
@@ -398,7 +398,8 @@ First, illustrating log10Ka grouped by RBD background.
 temp <- data.table::melt(dt_mutant[, .(target,position,mutant,huACE2,RaACE2,RsACE2,wildtype_indicator)],id.vars=c("target","position","mutant","wildtype_indicator"),measure.vars=c("huACE2","RaACE2","RsACE2"),variable.name="ACE2",value.name="log10Ka")
 
 p1 <- ggplot(temp,aes(ACE2,mutant))+geom_tile(aes(fill=log10Ka),color="black",lwd=0.1)+
-  scale_fill_gradientn(colours=c("#FFFFFF","#003366"),limits=c(5,12),values=c(0,1),na.value="gray70")+
+  #scale_fill_gradientn(colours=c("#FFFFFF","#003366"),limits=c(5,12),values=c(0,1),na.value="gray70")+
+  scale_fill_gradientn(colours=c("#FFFFFF","#FFFFFF","#003366"),limits=c(5,12),values=c(0,1/7,7/7),na.value="gray")+
   labs(x="",y="")+theme_classic(base_size=9)+
   coord_equal()+theme(axis.text.x=element_text(angle=90,hjust=1,face="bold",size=10),axis.text.y=element_text(face="bold",size=10))+
   facet_wrap(target~position,nrow=7)+
