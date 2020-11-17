@@ -23,11 +23,13 @@ mutated_targets:
   - SARS-CoV-1_PC4-137_PC04
   - AncClade2_MAP
   - BM48-31
+  - BtKY72
 
 # groups and orders of targets for plotting
 mutated_targets_ordered:
   - AncSarbecovirus_MAP
   - BM48-31
+  - BtKY72
   - AncAsia_MAP
   - AncSARS2a_MAP
   - GD-Pangolin
