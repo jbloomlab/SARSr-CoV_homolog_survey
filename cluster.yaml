@@ -8,35 +8,35 @@ __default__:
   constraint: '"gizmof|gizmog|gizmoh|gizmoj|gizmok"'
 
 build_ccs:
-  cpus: 16
+  cpus: 8
   time: 4-0
   mem: 100000
 
 process_ccs:
-  cpus: 16
+  cpus: 8
   time: 1-0
   mem: 250000
 
 count_variants:
-  cpus: 16
+  cpus: 8
   mem: 100000
 
 merge_sequencing:
-  cpus: 16
+  cpus: 8
   mem: 100000
   constraint: gizmok
 
 fit_titrations:
-  cpus: 16
+  cpus: 8
   mem: 100000
   constraint: gizmok
 
 calculate_expression:
-  cpus: 16
+  cpus: 8
   mem: 100000
   constraint: gizmok
 
 barcode_to_geno_phenos:
-  cpus: 16
+  cpus: 8
   mem: 100000
   constraint: gizmok
