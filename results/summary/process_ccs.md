@@ -59,7 +59,7 @@ print(f"Using alignparse version {alignparse.__version__}")
 print(f"Using dms_variants version {dms_variants.__version__}")
 ```
 
-    Using alignparse version 0.1.3
+    Using alignparse version 0.1.6
     Using dms_variants version 0.8.5
 
 
@@ -123,7 +123,9 @@ fig.savefig(plotfile, bbox_inches='tight')
 
 
 
+    
 ![png](process_ccs_files/process_ccs_17_1.png)
+    
 
 
 Write out the specs used to parse the features (these are the same specs provided as `feature_parse_specs` when initializing `targets`, but with defaults filled in):
@@ -320,6 +322,20 @@ display(HTML(pacbio_runs.to_html(index=False)))
       <td>results/ccs/lib2_200916_2_ccs.fastq.gz</td>
       <td>results/ccs/lib2_200916_2_report.txt</td>
     </tr>
+    <tr>
+      <td>lib1</td>
+      <td>201110</td>
+      <td>lib1_201110</td>
+      <td>results/ccs/lib1_201110_ccs.fastq.gz</td>
+      <td>results/ccs/lib1_201110_report.txt</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>201110</td>
+      <td>lib2_201110</td>
+      <td>results/ccs/lib2_201110_ccs.fastq.gz</td>
+      <td>results/ccs/lib2_201110_report.txt</td>
+    </tr>
   </tbody>
 </table>
 
@@ -328,36 +344,60 @@ Create an object that summarizes the `ccs` runs:
 
 
 ```python
-#ccs_summaries = alignparse.ccs.Summaries(pacbio_runs,
-#                                         report_col=report_col,
-#                                         ncpus=config['max_cpus'],
-#                                         )
+ccs_summaries = alignparse.ccs.Summaries(pacbio_runs,
+                                         report_col=report_col,
+                                         ncpus=config['max_cpus'],
+                                         )
 ```
 
 If available, plot statistics on the number of ZMWs for each run:
 
 
 ```python
-#if ccs_summaries.has_zmw_stats():
-#    p = ccs_summaries.plot_zmw_stats()
-#    p = p + theme(panel_grid_major_x=element_blank())  # no vertical grid lines
-#    _ = p.draw()
-#else:
-#    print('No ZMW stats available.')
+if ccs_summaries.has_zmw_stats():
+    p = ccs_summaries.plot_zmw_stats()
+    p = p + theme(panel_grid_major_x=element_blank())  # no vertical grid lines
+    _ = p.draw()
+else:
+    print('No ZMW stats available.')
 ```
+
+
+    
+![png](process_ccs_files/process_ccs_25_0.png)
+    
+
 
 Plot statistics on generated CCSs: their length, number of subread passes, and accuracy (as reported by the `ccs` program):
 
 
 ```python
-#for variable in ['length', 'passes', 'accuracy']:
-#    if ccs_summaries.has_stat(variable):
-#        p = ccs_summaries.plot_ccs_stats(variable, maxcol=7, bins=25)
-#        p = p + theme(panel_grid_major_x=element_blank())  # no vertical grid lines
-#        _ = p.draw()
-#    else:
-#        print(f"No {variable} statistics available.")
+for variable in ['length', 'passes', 'accuracy']:
+    if ccs_summaries.has_stat(variable):
+        p = ccs_summaries.plot_ccs_stats(variable, maxcol=7, bins=25)
+        p = p + theme(panel_grid_major_x=element_blank())  # no vertical grid lines
+        _ = p.draw()
+    else:
+        print(f"No {variable} statistics available.")
 ```
+
+
+    
+![png](process_ccs_files/process_ccs_27_0.png)
+    
+
+
+
+    
+![png](process_ccs_files/process_ccs_27_1.png)
+    
+
+
+
+    
+![png](process_ccs_files/process_ccs_27_2.png)
+    
+
 
 ## Align CCSs to amplicons
 We now align the CCSs to the amplicon and parse features from the resulting alignments using the specs above.
@@ -429,7 +469,9 @@ _ = p.draw()
 ```
 
 
+    
 ![png](process_ccs_files/process_ccs_35_0.png)
+    
 
 
 And the read stats by library (combining all targets and runs within a library):
@@ -455,7 +497,9 @@ _ = p.draw()
 ```
 
 
+    
 ![png](process_ccs_files/process_ccs_37_0.png)
+    
 
 
 And the number of reads by target (combining all libraries and runs for a target):
@@ -479,7 +523,9 @@ _ = p.draw()
 ```
 
 
+    
 ![png](process_ccs_files/process_ccs_39_0.png)
+    
 
 
 And read stats by target (combining all libraries and runs for a target):
@@ -506,7 +552,9 @@ _ = p.draw()
 ```
 
 
+    
 ![png](process_ccs_files/process_ccs_41_0.png)
+    
 
 
 Now let's see **why** we filtered the reads.
@@ -554,7 +602,9 @@ _ = p.draw()
 ```
 
 
+    
 ![png](process_ccs_files/process_ccs_45_0.png)
+    
 
 
 Now make a similar plot to above, but combine all the runs for each library:
@@ -578,7 +628,9 @@ _ = p.draw()
 ```
 
 
+    
 ![png](process_ccs_files/process_ccs_47_0.png)
+    
 
 
 Finally, we take the successfully parsed alignments and read them into a data frame, keeping track of the target that each CCS aligns to.
@@ -697,7 +749,7 @@ ntargets = processed_ccs['target'].nunique()  # number of unique targets
 print(f"Read {len(processed_ccs)} CCSs from {nlibs} libraries and {ntargets} targets.")
 ```
 
-    Read 493227 CCSs from 2 libraries and 75 targets.
+    Read 609812 CCSs from 2 libraries and 75 targets.
 
 
 Overall statistics on number of total CCSs and number of unique barcodes:
@@ -1140,28 +1192,28 @@ display(HTML(
     <tr>
       <th rowspan="2" valign="top">BtKY72</th>
       <th>lib1</th>
-      <td>1003</td>
-      <td>347</td>
-      <td>2.89</td>
+      <td>38226</td>
+      <td>6215</td>
+      <td>6.15</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>861</td>
-      <td>289</td>
-      <td>2.98</td>
+      <td>60200</td>
+      <td>6123</td>
+      <td>9.83</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">GD-Pangolin</th>
       <th>lib1</th>
-      <td>9336</td>
-      <td>3946</td>
-      <td>2.37</td>
+      <td>13048</td>
+      <td>4583</td>
+      <td>2.85</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>10172</td>
-      <td>4432</td>
-      <td>2.30</td>
+      <td>16226</td>
+      <td>5085</td>
+      <td>3.19</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">GX-Pangolin</th>
@@ -1283,15 +1335,15 @@ display(HTML(
     <tr>
       <th rowspan="2" valign="top">RaTG13</th>
       <th>lib1</th>
-      <td>8473</td>
-      <td>3583</td>
-      <td>2.36</td>
+      <td>12354</td>
+      <td>4305</td>
+      <td>2.87</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>9042</td>
-      <td>3992</td>
-      <td>2.27</td>
+      <td>15409</td>
+      <td>4688</td>
+      <td>3.29</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">Rf1</th>
@@ -1621,9 +1673,9 @@ display(HTML(
     <tr>
       <th rowspan="2" valign="top">SARS-CoV-2_2649</th>
       <th>lib1</th>
-      <td>2966</td>
-      <td>890</td>
-      <td>3.33</td>
+      <td>2975</td>
+      <td>891</td>
+      <td>3.34</td>
     </tr>
     <tr>
       <th>lib2</th>
@@ -1758,7 +1810,9 @@ _ = (
 ```
 
 
+    
 ![png](process_ccs_files/process_ccs_60_0.png)
+    
 
 
 Flag the CCSs to retain, and indicate how many we are retaining and purging due to the accuracy filter:
@@ -1796,7 +1850,9 @@ _ = (
 ```
 
 
+    
 ![png](process_ccs_files/process_ccs_64_0.png)
+    
 
 
 ### Sequences per barcode
@@ -1832,7 +1888,9 @@ _ = p.draw()
 ```
 
 
+    
 ![png](process_ccs_files/process_ccs_66_0.png)
+    
 
 
 Now we plot the distribution of the number of **sequences** with barcodes that are observed a given number of time (again among retained CCSs).
@@ -1858,7 +1916,9 @@ _ = (
 ```
 
 
+    
 ![png](process_ccs_files/process_ccs_68_0.png)
+    
 
 
 ### Empirical accuracy of CCSs
@@ -1908,7 +1968,9 @@ _ = (
 ```
 
 
+    
 ![png](process_ccs_files/process_ccs_72_0.png)
+    
 
 
 Now get the empirical accuracy for each of the CCS groups mentioned above:
@@ -1976,58 +2038,58 @@ display(HTML(empirical_acc.to_html(index=False)))
   <tbody>
     <tr>
       <td>lib1</td>
-      <td>0.984167</td>
+      <td>0.964674</td>
       <td>retained</td>
-      <td>231786</td>
+      <td>270628</td>
       <td>False</td>
     </tr>
     <tr>
       <td>lib2</td>
-      <td>0.981568</td>
+      <td>0.945673</td>
       <td>retained</td>
-      <td>235631</td>
+      <td>297307</td>
       <td>False</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>0.995896</td>
+      <td>0.989649</td>
       <td>retained, no indel</td>
-      <td>221053</td>
+      <td>254618</td>
       <td>True</td>
     </tr>
     <tr>
       <td>lib2</td>
-      <td>0.996143</td>
+      <td>0.984235</td>
       <td>retained, no indel</td>
-      <td>224426</td>
+      <td>277747</td>
       <td>True</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>0.988745</td>
+      <td>0.974819</td>
       <td>10X accuracy</td>
-      <td>222883</td>
+      <td>258535</td>
       <td>False</td>
     </tr>
     <tr>
       <td>lib2</td>
-      <td>0.986516</td>
+      <td>0.960845</td>
       <td>10X accuracy</td>
-      <td>227641</td>
+      <td>283966</td>
       <td>False</td>
     </tr>
     <tr>
       <td>lib1</td>
-      <td>0.995932</td>
+      <td>0.990588</td>
       <td>10X accuracy, no indel</td>
-      <td>213531</td>
+      <td>245003</td>
       <td>False</td>
     </tr>
     <tr>
       <td>lib2</td>
-      <td>0.996166</td>
+      <td>0.986500</td>
       <td>10X accuracy, no indel</td>
-      <td>217934</td>
+      <td>267727</td>
       <td>False</td>
     </tr>
   </tbody>
@@ -2063,7 +2125,9 @@ _ = p.draw()
 
 
 
+    
 ![png](process_ccs_files/process_ccs_78_1.png)
+    
 
 
 The above analysis shows that if we exclude sequences with indels (which we plan to do among our consensus sequences), then the accuracy of each CCS is around 99%. 
@@ -2126,6 +2190,13 @@ display(HTML(consensus.head().to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
+      <td>AAAAAAAAAATAGACA</td>
+      <td>BtKY72</td>
+      <td>T464C G465C</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
       <td>AAAAAAAAAATCATCA</td>
       <td>SARS-CoV-1_Urbani_HP03L</td>
       <td>T463G T464A A465T</td>
@@ -2133,17 +2204,10 @@ display(HTML(consensus.head().to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>AAAAAAAAACGAAATC</td>
-      <td>SARS-CoV-1_PC4-137_PC04</td>
-      <td>C186T T373G</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>AAAAAAAAAGAATCGT</td>
-      <td>BM48-31</td>
-      <td>G365A A366T</td>
-      <td>3</td>
+      <td>AAAAAAAAACAACGCT</td>
+      <td>GD-Pangolin</td>
+      <td>C373A T374C A375G</td>
+      <td>4</td>
     </tr>
   </tbody>
 </table>
@@ -2197,6 +2261,15 @@ display(HTML(consensus.head().to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
+      <td>AAAAAAAAAATAGACA</td>
+      <td>BtKY72</td>
+      <td>T464C G465C</td>
+      <td>6</td>
+      <td>T464C G465C</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
       <td>AAAAAAAAAATCATCA</td>
       <td>SARS-CoV-1_Urbani_HP03L</td>
       <td>T463G T464A A465T</td>
@@ -2206,20 +2279,11 @@ display(HTML(consensus.head().to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>AAAAAAAAACGAAATC</td>
-      <td>SARS-CoV-1_PC4-137_PC04</td>
-      <td>C186T T373G</td>
-      <td>2</td>
-      <td>C186T T373G</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>AAAAAAAAAGAATCGT</td>
-      <td>BM48-31</td>
-      <td>G365A A366T</td>
-      <td>3</td>
-      <td>G365A A366T</td>
+      <td>AAAAAAAAACAACGCT</td>
+      <td>GD-Pangolin</td>
+      <td>C373A T374C A375G</td>
+      <td>4</td>
+      <td>C373A T374C A375G</td>
       <td>0</td>
     </tr>
   </tbody>
@@ -2251,7 +2315,9 @@ _ = (
 ```
 
 
+    
 ![png](process_ccs_files/process_ccs_86_0.png)
+    
 
 
 We see that most variant consensus sequences do **not** have indels, especially if we limit to the more "accurate" ones that have multiple CCSs supporting them.
@@ -2458,12 +2524,12 @@ _ = p.draw()
     <tr>
       <td>lib1</td>
       <td>BtKY72</td>
-      <td>338</td>
+      <td>4703</td>
     </tr>
     <tr>
       <td>lib1</td>
       <td>GD-Pangolin</td>
-      <td>3843</td>
+      <td>4369</td>
     </tr>
     <tr>
       <td>lib1</td>
@@ -2513,7 +2579,7 @@ _ = p.draw()
     <tr>
       <td>lib1</td>
       <td>RaTG13</td>
-      <td>3482</td>
+      <td>4111</td>
     </tr>
     <tr>
       <td>lib1</td>
@@ -2643,7 +2709,7 @@ _ = p.draw()
     <tr>
       <td>lib1</td>
       <td>SARS-CoV-2_2649</td>
-      <td>823</td>
+      <td>824</td>
     </tr>
     <tr>
       <td>lib1</td>
@@ -2833,12 +2899,12 @@ _ = p.draw()
     <tr>
       <td>lib2</td>
       <td>BtKY72</td>
-      <td>283</td>
+      <td>3894</td>
     </tr>
     <tr>
       <td>lib2</td>
       <td>GD-Pangolin</td>
-      <td>4308</td>
+      <td>4808</td>
     </tr>
     <tr>
       <td>lib2</td>
@@ -2888,7 +2954,7 @@ _ = p.draw()
     <tr>
       <td>lib2</td>
       <td>RaTG13</td>
-      <td>3874</td>
+      <td>4410</td>
     </tr>
     <tr>
       <td>lib2</td>
@@ -3055,7 +3121,9 @@ _ = p.draw()
 
 
 
+    
 ![png](process_ccs_files/process_ccs_88_1.png)
+    
 
 
 For the non-primary targets, we want to drop all barcodes with mutations:
@@ -3458,24 +3526,24 @@ _ = p.draw()
     <tr>
       <th rowspan="2" valign="top">BtKY72</th>
       <th>lib1</th>
-      <td>321</td>
-      <td>17</td>
+      <td>739</td>
+      <td>3964</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>264</td>
-      <td>19</td>
+      <td>672</td>
+      <td>3222</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">GD-Pangolin</th>
       <th>lib1</th>
       <td>592</td>
-      <td>3251</td>
+      <td>3777</td>
     </tr>
     <tr>
       <th>lib2</th>
-      <td>622</td>
-      <td>3686</td>
+      <td>624</td>
+      <td>4184</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">GX-Pangolin</th>
@@ -3579,13 +3647,13 @@ _ = p.draw()
     <tr>
       <th rowspan="2" valign="top">RaTG13</th>
       <th>lib1</th>
-      <td>634</td>
-      <td>2848</td>
+      <td>635</td>
+      <td>3476</td>
     </tr>
     <tr>
       <th>lib2</th>
       <td>621</td>
-      <td>3253</td>
+      <td>3789</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">Rf1</th>
@@ -3865,7 +3933,7 @@ _ = p.draw()
     <tr>
       <th rowspan="2" valign="top">SARS-CoV-2_2649</th>
       <th>lib1</th>
-      <td>10</td>
+      <td>11</td>
       <td>813</td>
     </tr>
     <tr>
@@ -3944,7 +4012,9 @@ _ = p.draw()
 
 
 
+    
 ![png](process_ccs_files/process_ccs_90_1.png)
+    
 
 
 Print most common non-primary targets with mutations (useful for debugging):
@@ -4018,15 +4088,9 @@ display(HTML(
       <td>10</td>
     </tr>
     <tr>
-      <td>Rs4247</td>
-      <td>lib1</td>
-      <td>G31T</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <td>GX2013</td>
-      <td>lib1</td>
-      <td>G78T</td>
+      <td>SARS-CoV-1_Sino1-11_HP03L</td>
+      <td>lib2</td>
+      <td>C3T T12C G21T A30G T39C T42G</td>
       <td>9</td>
     </tr>
     <tr>
@@ -4036,15 +4100,15 @@ display(HTML(
       <td>9</td>
     </tr>
     <tr>
-      <td>279-2005</td>
+      <td>Rs4247</td>
       <td>lib1</td>
-      <td>C494A</td>
+      <td>G31T</td>
       <td>9</td>
     </tr>
     <tr>
-      <td>SARS-CoV-1_Sino1-11_HP03L</td>
-      <td>lib2</td>
-      <td>C3T T12C G21T A30G T39C T42G</td>
+      <td>279-2005</td>
+      <td>lib1</td>
+      <td>C494A</td>
       <td>9</td>
     </tr>
     <tr>
@@ -4054,9 +4118,21 @@ display(HTML(
       <td>9</td>
     </tr>
     <tr>
-      <td>AncSARS2a_alt</td>
+      <td>GX2013</td>
       <td>lib1</td>
-      <td>A75G</td>
+      <td>G78T</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>Rs4084</td>
+      <td>lib2</td>
+      <td>C582T</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>Rs4081</td>
+      <td>lib2</td>
+      <td>C20A</td>
       <td>8</td>
     </tr>
     <tr>
@@ -4066,9 +4142,9 @@ display(HTML(
       <td>8</td>
     </tr>
     <tr>
-      <td>SARS-CoV-1_GZ-C_HP03L</td>
+      <td>SARS-CoV-1_GD03T0013_HP04</td>
       <td>lib1</td>
-      <td>G257T</td>
+      <td>C564A</td>
       <td>8</td>
     </tr>
     <tr>
@@ -4078,21 +4154,15 @@ display(HTML(
       <td>8</td>
     </tr>
     <tr>
-      <td>Rs4084</td>
-      <td>lib2</td>
-      <td>C582T</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>AncEurAf_alt</td>
+      <td>AncSARS2a_alt</td>
       <td>lib1</td>
-      <td>C602T</td>
+      <td>A75G</td>
       <td>8</td>
     </tr>
     <tr>
-      <td>Rs4081</td>
-      <td>lib2</td>
-      <td>C20A</td>
+      <td>AncSARS1a_tree1</td>
+      <td>lib1</td>
+      <td>C207T</td>
       <td>8</td>
     </tr>
   </tbody>
@@ -4181,8 +4251,8 @@ print(f"After removing duplicates, there are {len(consensus)} barcodes.")
 
 
     
-    Removing the 945 duplicated barcodes.Started with 176869 barcodes:
-    After removing duplicates, there are 174978 barcodes.
+    Removing the 1003 duplicated barcodes.Started with 187037 barcodes:
+    After removing duplicates, there are 185030 barcodes.
 
 
 Below we write the retained consensus sequences to a CSV file that links the nucleotide mutations to the barcodes:
@@ -4238,6 +4308,14 @@ display(HTML(
       <td>0</td>
     </tr>
     <tr>
+      <td>BtKY72</td>
+      <td>lib1</td>
+      <td>AAAAAAAAAATAGACA</td>
+      <td>T464C G465C</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
       <td>SARS-CoV-1_Urbani_HP03L</td>
       <td>lib1</td>
       <td>AAAAAAAAAATCATCA</td>
@@ -4246,19 +4324,11 @@ display(HTML(
       <td>0</td>
     </tr>
     <tr>
-      <td>SARS-CoV-1_PC4-137_PC04</td>
+      <td>GD-Pangolin</td>
       <td>lib1</td>
-      <td>AAAAAAAAACGAAATC</td>
-      <td>C186T T373G</td>
-      <td>2</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>BM48-31</td>
-      <td>lib1</td>
-      <td>AAAAAAAAAGAATCGT</td>
-      <td>G365A A366T</td>
-      <td>3</td>
+      <td>AAAAAAAAACAACGCT</td>
+      <td>C373A T374C A375G</td>
+      <td>4</td>
       <td>0</td>
     </tr>
   </tbody>
@@ -4301,6 +4371,13 @@ display(HTML(dropped.head().to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
+      <td>AAAAAAACGCTCAGGA</td>
+      <td>BtKY72</td>
+      <td>subs diff too large</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
       <td>AAAAACAAATTATTAG</td>
       <td>SARS-CoV-1_Urbani_HP03L</td>
       <td>subs diff too large</td>
@@ -4312,13 +4389,6 @@ display(HTML(dropped.head().to_html(index=False)))
       <td>AncSarbecovirus_MAP</td>
       <td>subs diff too large</td>
       <td>3</td>
-    </tr>
-    <tr>
-      <td>lib1</td>
-      <td>AAAAAGGACAAAAACA</td>
-      <td>SARS-CoV-1_Urbani_HP03L</td>
-      <td>minor subs too frequent</td>
-      <td>4</td>
     </tr>
   </tbody>
 </table>
@@ -4350,5 +4420,7 @@ _ = (
 ```
 
 
+    
 ![png](process_ccs_files/process_ccs_102_0.png)
+    
 

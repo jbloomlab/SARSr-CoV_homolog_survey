@@ -22,34 +22,38 @@ coverage of the targeted SSM positions, and merges the Illumina barcode
 counts from FACS bins with PacBio reads linking barcodes to RBD variants
 for downstream computation.
 
-    require("knitr")
-    knitr::opts_chunk$set(echo = T)
-    knitr::opts_chunk$set(dev.args = list(png = list(type = "cairo")))
+``` r
+require("knitr")
+knitr::opts_chunk$set(echo = T)
+knitr::opts_chunk$set(dev.args = list(png = list(type = "cairo")))
 
-    #list of packages to install/load
-    packages = c("yaml","data.table","tidyverse","gridExtra","seqinr")
-    #install any packages not already installed
-    installed_packages <- packages %in% rownames(installed.packages())
-    if(any(installed_packages == F)){
-      install.packages(packages[!installed_packages])
-    }
-    #load packages
-    invisible(lapply(packages, library, character.only=T))
+#list of packages to install/load
+packages = c("yaml","data.table","tidyverse","gridExtra","seqinr")
+#install any packages not already installed
+installed_packages <- packages %in% rownames(installed.packages())
+if(any(installed_packages == F)){
+  install.packages(packages[!installed_packages])
+}
+#load packages
+invisible(lapply(packages, library, character.only=T))
 
-    #read in config file
-    config <- read_yaml("config.yaml")
+#read in config file
+config <- read_yaml("config.yaml")
 
-    #read in file giving concordance between RBD numbering and SARS-CoV-2 Spike numbering
-    RBD_sites <- read.csv(file=config$RBD_annotation_file,stringsAsFactors=F)
+#read in file giving concordance between RBD numbering and SARS-CoV-2 Spike numbering
+RBD_sites <- read.csv(file=config$RBD_annotation_file,stringsAsFactors=F)
 
-    #make output directory
-    if(!file.exists(config$merged_sequencing_dir)){
-     dir.create(file.path(config$merged_sequencing_dir))
-    }
+#make output directory
+if(!file.exists(config$merged_sequencing_dir)){
+ dir.create(file.path(config$merged_sequencing_dir))
+}
+```
 
 Session info for reproducing environment:
 
-    sessionInfo()
+``` r
+sessionInfo()
+```
 
     ## R version 3.6.2 (2019-12-12)
     ## Platform: x86_64-pc-linux-gnu (64-bit)
@@ -112,150 +116,152 @@ backgrounds due to variations in length over evolutionary time. We then
 output the variant\_class as wildtype, mutant, invalid (unintended
 mutation), indel (also unintended), synonymous, or stop mutant.
 
-    #load a table giving the indexing of nucleotide numbers for sites targeted in each mutated background
-    index <- read.csv(file=config$mutant_indexing_file,stringsAsFactors=F)
+``` r
+#load a table giving the indexing of nucleotide numbers for sites targeted in each mutated background
+index <- read.csv(file=config$mutant_indexing_file,stringsAsFactors=F)
 
-    #set empty columns for filling with mutant information
-    dt_pacbio[,variant_class:=as.character(NA)];dt_pacbio[,wildtype:=as.character(NA)];dt_pacbio[,position:=as.numeric(NA)];dt_pacbio[,mutant:=as.character(NA)]
+#set empty columns for filling with mutant information
+dt_pacbio[,variant_class:=as.character(NA)];dt_pacbio[,wildtype:=as.character(NA)];dt_pacbio[,position:=as.numeric(NA)];dt_pacbio[,mutant:=as.character(NA)]
 
-    #set a function that returns variant_class, wildtype aa, SARS2 indexed position, and mutant aa for each single nt barcode
-    parse_aamut <- function(nt_substitutions,background){
-      variant_class_return <- as.character(NA)
-      wildtype_return <- as.character(NA)
-      position_return <- as.numeric(NA)
-      mutant_return <- as.character(NA)
-      subs <- strsplit(as.character(nt_substitutions),split=" ")[[1]]
-      if(length(subs)==0){ #if wildtype
-        variant_class_return <- "wildtype"
-      }else{ #if mutations
-        if(background %in% config$mutated_targets){ #if background with mutation intended
-          positions <- vector(length=length(subs), mode="numeric")
-          for(k in 1:length(subs)){
-            positions[k] <- as.numeric(paste(strsplit(subs[k],split="")[[1]][2:(length(strsplit(subs[k],split="")[[1]])-1)],collapse=""))
-          }
-          aa_pos <- unique(ceiling(positions/3))
-          if(length(aa_pos)>1){ #if multiple codon mutations
-            variant_class_return <- "invalid"
-          }
-          if(length(aa_pos)==1){ #if single codon mutation, assign site in SARS-CoV-2 numbering, wildtype AA, and mutant AA
-            if(aa_pos==index[index$target==background,"index_455"]){ #if mutant at site 455
-              variant_class_return <- "mutant"
-              wildtype_return <- index[index$target==background,"aa_455"]
-              position_return <- 455
-              codon <- strsplit(index[index$target==background,"codon_455"],split="")[[1]]
-              for(j in 1:length(positions)){ #iterate through positions in codon and mutate nt in codon string if needed
-                if(positions[j]==index[index$target==background,"nt_455"]){ #if first position of codon is mutated
-                  codon[1] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
-                }
-                if(positions[j]==index[index$target==background,"nt_455"]+1){ #if second position of codon is mutated
-                  codon[2] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
-                }
-                if(positions[j]==index[index$target==background,"nt_455"]+2){ #if third position of codon is mutated
-                  codon[3] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
-                }
-              }
-              mutant_return <- translate(tolower(codon))
-            }else if(aa_pos==index[index$target==background,"index_486"]){ #if mutant at site 486
-              variant_class_return <- "mutant"
-              wildtype_return <- index[index$target==background,"aa_486"]
-              position_return <- 486
-              codon <- strsplit(index[index$target==background,"codon_486"],split="")[[1]]
-              for(j in 1:length(positions)){ #iterate through positions in codon and mutate nt in codon string if needed
-                if(positions[j]==index[index$target==background,"nt_486"]){ #if first position of codon is mutated
-                  codon[1] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
-                }
-                if(positions[j]==index[index$target==background,"nt_486"]+1){ #if second position of codon is mutated
-                  codon[2] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
-                }
-                if(positions[j]==index[index$target==background,"nt_486"]+2){ #if third position of codon is mutated
-                  codon[3] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
-                }
-              }
-              mutant_return <- translate(tolower(codon))
-            }else if(aa_pos==index[index$target==background,"index_493"]){ #if mutant at site 493
-              variant_class_return <- "mutant"
-              wildtype_return <- index[index$target==background,"aa_493"]
-              position_return <- 493
-              codon <- strsplit(index[index$target==background,"codon_493"],split="")[[1]]
-              for(j in 1:length(positions)){ #iterate through positions in codon and mutate nt in codon string if needed
-                if(positions[j]==index[index$target==background,"nt_493"]){ #if first position of codon is mutated
-                  codon[1] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
-                }
-                if(positions[j]==index[index$target==background,"nt_493"]+1){ #if second position of codon is mutated
-                  codon[2] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
-                }
-                if(positions[j]==index[index$target==background,"nt_493"]+2){ #if third position of codon is mutated
-                  codon[3] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
-                }
-              }
-              mutant_return <- translate(tolower(codon))
-            }else if(aa_pos==index[index$target==background,"index_494"]){ #if mutant at site 494
-              variant_class_return <- "mutant"
-              wildtype_return <- index[index$target==background,"aa_494"]
-              position_return <- 494
-              codon <- strsplit(index[index$target==background,"codon_494"],split="")[[1]]
-              for(j in 1:length(positions)){ #iterate through positions in codon and mutate nt in codon string if needed
-                if(positions[j]==index[index$target==background,"nt_494"]){ #if first position of codon is mutated
-                  codon[1] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
-                }
-                if(positions[j]==index[index$target==background,"nt_494"]+1){ #if second position of codon is mutated
-                  codon[2] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
-                }
-                if(positions[j]==index[index$target==background,"nt_494"]+2){ #if third position of codon is mutated
-                  codon[3] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
-                }
-              }
-              mutant_return <- translate(tolower(codon))
-            }else if(aa_pos==index[index$target==background,"index_498"]){ #if mutant at site 498
-              variant_class_return <- "mutant"
-              wildtype_return <- index[index$target==background,"aa_498"]
-              position_return <- 498
-              codon <- strsplit(index[index$target==background,"codon_498"],split="")[[1]]
-              for(j in 1:length(positions)){ #iterate through positions in codon and mutate nt in codon string if needed
-                if(positions[j]==index[index$target==background,"nt_498"]){ #if first position of codon is mutated
-                  codon[1] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
-                }
-                if(positions[j]==index[index$target==background,"nt_498"]+1){ #if second position of codon is mutated
-                  codon[2] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
-                }
-                if(positions[j]==index[index$target==background,"nt_498"]+2){ #if third position of codon is mutated
-                  codon[3] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
-                }
-              }
-              mutant_return <- translate(tolower(codon))
-            }else if(aa_pos==index[index$target==background,"index_501"]){ #if mutant at site 501
-              variant_class_return <- "mutant"
-              wildtype_return <- index[index$target==background,"aa_501"]
-              position_return <- 501
-              codon <- strsplit(index[index$target==background,"codon_501"],split="")[[1]]
-              for(j in 1:length(positions)){ #iterate through positions in codon and mutate nt in codon string if needed
-                if(positions[j]==index[index$target==background,"nt_501"]){ #if first position of codon is mutated
-                  codon[1] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
-                }
-                if(positions[j]==index[index$target==background,"nt_501"]+1){ #if second position of codon is mutated
-                  codon[2] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
-                }
-                if(positions[j]==index[index$target==background,"nt_501"]+2){ #if third position of codon is mutated
-                  codon[3] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
-                }
-              }
-              mutant_return <- translate(tolower(codon))
-            }else{ #if mutant at other (unintended) position
-              variant_class_return <- "invalid"
+#set a function that returns variant_class, wildtype aa, SARS2 indexed position, and mutant aa for each single nt barcode
+parse_aamut <- function(nt_substitutions,background){
+  variant_class_return <- as.character(NA)
+  wildtype_return <- as.character(NA)
+  position_return <- as.numeric(NA)
+  mutant_return <- as.character(NA)
+  subs <- strsplit(as.character(nt_substitutions),split=" ")[[1]]
+  if(length(subs)==0){ #if wildtype
+    variant_class_return <- "wildtype"
+  }else{ #if mutations
+    if(background %in% config$mutated_targets){ #if background with mutation intended
+      positions <- vector(length=length(subs), mode="numeric")
+      for(k in 1:length(subs)){
+        positions[k] <- as.numeric(paste(strsplit(subs[k],split="")[[1]][2:(length(strsplit(subs[k],split="")[[1]])-1)],collapse=""))
+      }
+      aa_pos <- unique(ceiling(positions/3))
+      if(length(aa_pos)>1){ #if multiple codon mutations
+        variant_class_return <- "invalid"
+      }
+      if(length(aa_pos)==1){ #if single codon mutation, assign site in SARS-CoV-2 numbering, wildtype AA, and mutant AA
+        if(aa_pos==index[index$target==background,"index_455"]){ #if mutant at site 455
+          variant_class_return <- "mutant"
+          wildtype_return <- index[index$target==background,"aa_455"]
+          position_return <- 455
+          codon <- strsplit(index[index$target==background,"codon_455"],split="")[[1]]
+          for(j in 1:length(positions)){ #iterate through positions in codon and mutate nt in codon string if needed
+            if(positions[j]==index[index$target==background,"nt_455"]){ #if first position of codon is mutated
+              codon[1] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
+            }
+            if(positions[j]==index[index$target==background,"nt_455"]+1){ #if second position of codon is mutated
+              codon[2] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
+            }
+            if(positions[j]==index[index$target==background,"nt_455"]+2){ #if third position of codon is mutated
+              codon[3] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
             }
           }
-        }else{ #if background with mutation unintended
+          mutant_return <- translate(tolower(codon))
+        }else if(aa_pos==index[index$target==background,"index_486"]){ #if mutant at site 486
+          variant_class_return <- "mutant"
+          wildtype_return <- index[index$target==background,"aa_486"]
+          position_return <- 486
+          codon <- strsplit(index[index$target==background,"codon_486"],split="")[[1]]
+          for(j in 1:length(positions)){ #iterate through positions in codon and mutate nt in codon string if needed
+            if(positions[j]==index[index$target==background,"nt_486"]){ #if first position of codon is mutated
+              codon[1] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
+            }
+            if(positions[j]==index[index$target==background,"nt_486"]+1){ #if second position of codon is mutated
+              codon[2] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
+            }
+            if(positions[j]==index[index$target==background,"nt_486"]+2){ #if third position of codon is mutated
+              codon[3] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
+            }
+          }
+          mutant_return <- translate(tolower(codon))
+        }else if(aa_pos==index[index$target==background,"index_493"]){ #if mutant at site 493
+          variant_class_return <- "mutant"
+          wildtype_return <- index[index$target==background,"aa_493"]
+          position_return <- 493
+          codon <- strsplit(index[index$target==background,"codon_493"],split="")[[1]]
+          for(j in 1:length(positions)){ #iterate through positions in codon and mutate nt in codon string if needed
+            if(positions[j]==index[index$target==background,"nt_493"]){ #if first position of codon is mutated
+              codon[1] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
+            }
+            if(positions[j]==index[index$target==background,"nt_493"]+1){ #if second position of codon is mutated
+              codon[2] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
+            }
+            if(positions[j]==index[index$target==background,"nt_493"]+2){ #if third position of codon is mutated
+              codon[3] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
+            }
+          }
+          mutant_return <- translate(tolower(codon))
+        }else if(aa_pos==index[index$target==background,"index_494"]){ #if mutant at site 494
+          variant_class_return <- "mutant"
+          wildtype_return <- index[index$target==background,"aa_494"]
+          position_return <- 494
+          codon <- strsplit(index[index$target==background,"codon_494"],split="")[[1]]
+          for(j in 1:length(positions)){ #iterate through positions in codon and mutate nt in codon string if needed
+            if(positions[j]==index[index$target==background,"nt_494"]){ #if first position of codon is mutated
+              codon[1] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
+            }
+            if(positions[j]==index[index$target==background,"nt_494"]+1){ #if second position of codon is mutated
+              codon[2] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
+            }
+            if(positions[j]==index[index$target==background,"nt_494"]+2){ #if third position of codon is mutated
+              codon[3] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
+            }
+          }
+          mutant_return <- translate(tolower(codon))
+        }else if(aa_pos==index[index$target==background,"index_498"]){ #if mutant at site 498
+          variant_class_return <- "mutant"
+          wildtype_return <- index[index$target==background,"aa_498"]
+          position_return <- 498
+          codon <- strsplit(index[index$target==background,"codon_498"],split="")[[1]]
+          for(j in 1:length(positions)){ #iterate through positions in codon and mutate nt in codon string if needed
+            if(positions[j]==index[index$target==background,"nt_498"]){ #if first position of codon is mutated
+              codon[1] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
+            }
+            if(positions[j]==index[index$target==background,"nt_498"]+1){ #if second position of codon is mutated
+              codon[2] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
+            }
+            if(positions[j]==index[index$target==background,"nt_498"]+2){ #if third position of codon is mutated
+              codon[3] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
+            }
+          }
+          mutant_return <- translate(tolower(codon))
+        }else if(aa_pos==index[index$target==background,"index_501"]){ #if mutant at site 501
+          variant_class_return <- "mutant"
+          wildtype_return <- index[index$target==background,"aa_501"]
+          position_return <- 501
+          codon <- strsplit(index[index$target==background,"codon_501"],split="")[[1]]
+          for(j in 1:length(positions)){ #iterate through positions in codon and mutate nt in codon string if needed
+            if(positions[j]==index[index$target==background,"nt_501"]){ #if first position of codon is mutated
+              codon[1] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
+            }
+            if(positions[j]==index[index$target==background,"nt_501"]+1){ #if second position of codon is mutated
+              codon[2] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
+            }
+            if(positions[j]==index[index$target==background,"nt_501"]+2){ #if third position of codon is mutated
+              codon[3] <- strsplit(subs[j],split="")[[1]][length(strsplit(subs[j],split="")[[1]])]
+            }
+          }
+          mutant_return <- translate(tolower(codon))
+        }else{ #if mutant at other (unintended) position
           variant_class_return <- "invalid"
         }
       }
-      return(list(variant_class_return, wildtype_return, position_return, mutant_return))
+    }else{ #if background with mutation unintended
+      variant_class_return <- "invalid"
     }
+  }
+  return(list(variant_class_return, wildtype_return, position_return, mutant_return))
+}
 
-    dt_pacbio[,c("variant_class", "wildtype", "position", "mutant") := parse_aamut(nt_substitutions=substitutions,background=target),by=c("library","barcode")]
+dt_pacbio[,c("variant_class", "wildtype", "position", "mutant") := parse_aamut(nt_substitutions=substitutions,background=target),by=c("library","barcode")]
 
-    dt_pacbio[variant_class=="mutant" & mutant==wildtype,variant_class:="synonymous"]
-    dt_pacbio[mutant=="*",variant_class:="stop"]
-    dt_pacbio[number_of_indels>0,variant_class:="indel"]
+dt_pacbio[variant_class=="mutant" & mutant==wildtype,variant_class:="synonymous"]
+dt_pacbio[mutant=="*",variant_class:="stop"]
+dt_pacbio[number_of_indels>0,variant_class:="indel"]
+```
 
 For the mutated backgrounds, let’s look at the fraction of variants in
 each class. In this PacBio sequencing, we have two backgrounds currently
@@ -301,14 +307,16 @@ background is, though, as it was pooled separately from the delayed
 mutants shipment.) For SARS-CoV-2, we can simply pool the \_2649 mutants
 into the remaining SARS-CoV-2 mutants from Genscript.
 
-    dt_pacbio[target=="SARS-CoV-2_2649",target:="SARS-CoV-2"]
-    dt_pacbio <- dt_pacbio[target!="SARS-CoV-1_Urbani_HP03L" | variant_class=="wildtype"]
-    dt_pacbio[target=="SARS-CoV-1_2693",target:="SARS-CoV-1_Urbani_HP03L"]
+``` r
+dt_pacbio[target=="SARS-CoV-2_2649",target:="SARS-CoV-2"]
+dt_pacbio <- dt_pacbio[target!="SARS-CoV-1_Urbani_HP03L" | variant_class=="wildtype"]
+dt_pacbio[target=="SARS-CoV-1_2693",target:="SARS-CoV-1_Urbani_HP03L"]
+```
 
 Let’s look at coverage of mutants at each position across each
 background.
 
-    ## Warning: Removed 78 rows containing missing values (position_stack).
+    ## Warning: Removed 84 rows containing missing values (position_stack).
 
 <img src="merge_sequencing_files/figure-gfm/variant_fractions-1.png" style="display: block; margin: auto;" />
 
@@ -317,51 +325,16 @@ from the missing 455 mutations in RaTG13 and GD-Pangolin due to
 Genscript targeting L452 mistakenly, we are only missing one mutation!
 N501K in AncSARS1a.
 
-    kable(aa_coverage[aa_coverage$count==0 & !is.na(aa_coverage$count),])
+``` r
+kable(aa_coverage[aa_coverage$count==0 & !is.na(aa_coverage$count),])
+```
 
-|      | target         | site | mutant | count |
-|------|:---------------|-----:|:-------|------:|
-| 8    | GD-Pangolin    |  455 | A      |     0 |
-| 9    | RaTG13         |  455 | A      |     0 |
-| 86   | GD-Pangolin    |  455 | C      |     0 |
-| 87   | RaTG13         |  455 | C      |     0 |
-| 164  | GD-Pangolin    |  455 | D      |     0 |
-| 165  | RaTG13         |  455 | D      |     0 |
-| 242  | GD-Pangolin    |  455 | E      |     0 |
-| 243  | RaTG13         |  455 | E      |     0 |
-| 320  | GD-Pangolin    |  455 | F      |     0 |
-| 321  | RaTG13         |  455 | F      |     0 |
-| 398  | GD-Pangolin    |  455 | G      |     0 |
-| 399  | RaTG13         |  455 | G      |     0 |
-| 476  | GD-Pangolin    |  455 | H      |     0 |
-| 477  | RaTG13         |  455 | H      |     0 |
-| 554  | GD-Pangolin    |  455 | I      |     0 |
-| 555  | RaTG13         |  455 | I      |     0 |
-| 632  | GD-Pangolin    |  455 | K      |     0 |
-| 633  | RaTG13         |  455 | K      |     0 |
-| 693  | AncSARS1a\_MAP |  501 | K      |     0 |
-| 788  | GD-Pangolin    |  455 | M      |     0 |
-| 789  | RaTG13         |  455 | M      |     0 |
-| 866  | GD-Pangolin    |  455 | N      |     0 |
-| 867  | RaTG13         |  455 | N      |     0 |
-| 944  | GD-Pangolin    |  455 | P      |     0 |
-| 1022 | GD-Pangolin    |  455 | Q      |     0 |
-| 1023 | RaTG13         |  455 | Q      |     0 |
-| 1100 | GD-Pangolin    |  455 | R      |     0 |
-| 1101 | RaTG13         |  455 | R      |     0 |
-| 1178 | GD-Pangolin    |  455 | S      |     0 |
-| 1179 | RaTG13         |  455 | S      |     0 |
-| 1256 | GD-Pangolin    |  455 | T      |     0 |
-| 1257 | RaTG13         |  455 | T      |     0 |
-| 1334 | GD-Pangolin    |  455 | V      |     0 |
-| 1335 | RaTG13         |  455 | V      |     0 |
-| 1412 | GD-Pangolin    |  455 | W      |     0 |
-| 1413 | RaTG13         |  455 | W      |     0 |
-| 1490 | GD-Pangolin    |  455 | Y      |     0 |
-| 1491 | RaTG13         |  455 | Y      |     0 |
+|     | target         | site | mutant | count |
+|-----|:---------------|-----:|:-------|------:|
+| 746 | AncSARS1a\_MAP |  501 | K      |     0 |
 
 Check out some other coverage statistics: average (median) \# barcodes
-for a mutant across the two libraries is 59, minimum is 9. The
+for a mutant across the two libraries is 58, minimum is 9. The
 distribution of bc number per mutant is shown in the histogram below.
 
 <img src="merge_sequencing_files/figure-gfm/coverage_stats-1.png" style="display: block; margin: auto;" />
@@ -378,29 +351,31 @@ read:cell ratio and bin 4 has a 10:1 read:cell ratio, our estimates of
 the binding for that variant would be biased based on the actual
 distribution of sorted cells across these bins.
 
-    barcode_runs <- read.csv(file=config$barcode_runs,stringsAsFactors=F); barcode_runs <- subset(barcode_runs, select=-c(R1))
+``` r
+barcode_runs <- read.csv(file=config$barcode_runs,stringsAsFactors=F); barcode_runs <- subset(barcode_runs, select=-c(R1))
 
-    #for each bin, normalize the read counts to the observed ratio of cell recovery among bins
-    for(i in 1:nrow(barcode_runs)){
-      lib <- as.character(barcode_runs$library[i])
-      bin <- as.character(barcode_runs$sample[i])
-      if(sum(dt_illumina[library==lib & sample==bin,"count"]) < barcode_runs$number_cells[i]){ #if there are fewer reads from a sortseq bin than cells sorted
-        dt_illumina[library==lib & sample==bin, count.norm := as.numeric(count)] #don't normalize cell counts, make count.norm the same as count
-        print(paste("reads < cells for",lib,bin,", un-normalized")) #print to console to inform of undersampled bins
-      }else{
-        ratio <- sum(dt_illumina[library==lib & sample==bin,"count"])/barcode_runs$number_cells[i]
-        dt_illumina[library==lib & sample==bin, count.norm := as.numeric(count/ratio)] #normalize read counts by the average read:cell ratio, report in new "count.norm" column
-      }
-    }
+#for each bin, normalize the read counts to the observed ratio of cell recovery among bins
+for(i in 1:nrow(barcode_runs)){
+  lib <- as.character(barcode_runs$library[i])
+  bin <- as.character(barcode_runs$sample[i])
+  if(sum(dt_illumina[library==lib & sample==bin,"count"]) < barcode_runs$number_cells[i]){ #if there are fewer reads from a sortseq bin than cells sorted
+    dt_illumina[library==lib & sample==bin, count.norm := as.numeric(count)] #don't normalize cell counts, make count.norm the same as count
+    print(paste("reads < cells for",lib,bin,", un-normalized")) #print to console to inform of undersampled bins
+  }else{
+    ratio <- sum(dt_illumina[library==lib & sample==bin,"count"])/barcode_runs$number_cells[i]
+    dt_illumina[library==lib & sample==bin, count.norm := as.numeric(count/ratio)] #normalize read counts by the average read:cell ratio, report in new "count.norm" column
+  }
+}
+```
 
-    ## [1] "reads < cells for lib1 RsACE2_01_bin3 , un-normalized"
-    ## [1] "reads < cells for lib1 RsACE2_02_bin1 , un-normalized"
-    ## [1] "reads < cells for lib1 RsACE2_03_bin1 , un-normalized"
-    ## [1] "reads < cells for lib1 RsACE2_04_bin1 , un-normalized"
-    ## [1] "reads < cells for lib1 RsACE2_05_bin1 , un-normalized"
-    ## [1] "reads < cells for lib1 RsACE2_06_bin1 , un-normalized"
-    ## [1] "reads < cells for lib1 RsACE2_07_bin1 , un-normalized"
-    ## [1] "reads < cells for lib1 RsACE2_09_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 RsACE2old_01_bin3 , un-normalized"
+    ## [1] "reads < cells for lib1 RsACE2old_02_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 RsACE2old_03_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 RsACE2old_04_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 RsACE2old_05_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 RsACE2old_06_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 RsACE2old_07_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 RsACE2old_09_bin1 , un-normalized"
     ## [1] "reads < cells for lib1 RpACE2_02_bin1 , un-normalized"
     ## [1] "reads < cells for lib1 RpACE2_03_bin1 , un-normalized"
     ## [1] "reads < cells for lib1 RpACE2_04_bin1 , un-normalized"
@@ -411,6 +386,55 @@ distribution of sorted cells across these bins.
     ## [1] "reads < cells for lib1 RaACE2_06_bin1 , un-normalized"
     ## [1] "reads < cells for lib1 RaACE2_07_bin1 , un-normalized"
     ## [1] "reads < cells for lib1 RaACE2_09_bin1 , un-normalized"
+    ## [1] "reads < cells for lib2 RaACE2_05_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 RsACE2_01_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 RsACE2_01_bin2 , un-normalized"
+    ## [1] "reads < cells for lib1 RsACE2_02_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 RsACE2_02_bin2 , un-normalized"
+    ## [1] "reads < cells for lib1 RsACE2_03_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 RsACE2_04_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 RsACE2_05_bin4 , un-normalized"
+    ## [1] "reads < cells for lib1 RsACE2_06_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 RsACE2_06_bin3 , un-normalized"
+    ## [1] "reads < cells for lib1 RaACE2pool6_01_bin4 , un-normalized"
+    ## [1] "reads < cells for lib1 RaACE2pool6_02_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 RaACE2pool6_02_bin2 , un-normalized"
+    ## [1] "reads < cells for lib1 RaACE2pool6_02_bin4 , un-normalized"
+    ## [1] "reads < cells for lib1 RaACE2pool6_03_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 RaACE2pool6_03_bin2 , un-normalized"
+    ## [1] "reads < cells for lib1 RaACE2pool6_03_bin3 , un-normalized"
+    ## [1] "reads < cells for lib1 RaACE2pool6_03_bin4 , un-normalized"
+    ## [1] "reads < cells for lib1 RaACE2pool6_04_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 RaACE2pool6_04_bin2 , un-normalized"
+    ## [1] "reads < cells for lib1 RaACE2pool6_04_bin3 , un-normalized"
+    ## [1] "reads < cells for lib1 RaACE2pool6_04_bin4 , un-normalized"
+    ## [1] "reads < cells for lib1 RaACE2pool6_05_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 RaACE2pool6_05_bin2 , un-normalized"
+    ## [1] "reads < cells for lib1 RaACE2pool6_06_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 RaACE2pool6_06_bin2 , un-normalized"
+    ## [1] "reads < cells for lib1 RaACE2pool6_07_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 RaACE2pool6_07_bin2 , un-normalized"
+    ## [1] "reads < cells for lib1 RaACE2pool6_08_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 RaACE2pool6_08_bin2 , un-normalized"
+    ## [1] "reads < cells for lib1 RaACE2pool6_09_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 RaACE2pool6_09_bin2 , un-normalized"
+    ## [1] "reads < cells for lib1 huACE2pool6_01_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 huACE2pool6_02_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 huACE2pool6_02_bin2 , un-normalized"
+    ## [1] "reads < cells for lib1 huACE2pool6_02_bin3 , un-normalized"
+    ## [1] "reads < cells for lib1 huACE2pool6_02_bin4 , un-normalized"
+    ## [1] "reads < cells for lib1 huACE2pool6_03_bin1 , un-normalized"
+    ## [1] "reads < cells for lib1 huACE2pool6_03_bin2 , un-normalized"
+    ## [1] "reads < cells for lib1 huACE2pool6_03_bin3 , un-normalized"
+    ## [1] "reads < cells for lib1 huACE2pool6_04_bin2 , un-normalized"
+    ## [1] "reads < cells for lib1 huACE2pool6_04_bin3 , un-normalized"
+    ## [1] "reads < cells for lib1 huACE2pool6_05_bin2 , un-normalized"
+    ## [1] "reads < cells for lib1 huACE2pool6_05_bin3 , un-normalized"
+    ## [1] "reads < cells for lib1 huACE2pool6_05_bin4 , un-normalized"
+    ## [1] "reads < cells for lib1 huACE2pool6_06_bin4 , un-normalized"
+    ## [1] "reads < cells for lib1 huACE2pool6_07_bin4 , un-normalized"
+    ## [1] "reads < cells for lib1 huACE2pool6_09_bin4 , un-normalized"
+    ## [1] "reads < cells for lib2 cvACE2_06_bin1 , un-normalized"
 
 Merge barcode sequencing from FACS experiments
 ----------------------------------------------
@@ -418,18 +442,24 @@ Merge barcode sequencing from FACS experiments
 Next, let’s merge in the Illumina read counts into our variant barcode
 tables.
 
-    #merge
-    dt <- merge(dt_pacbio[,.(library,barcode,target,variant_class,wildtype,position,mutant)],dt_illumina,by=c("library","barcode"))
+``` r
+#merge
+dt <- merge(dt_pacbio[,.(library,barcode,target,variant_class,wildtype,position,mutant)],dt_illumina,by=c("library","barcode"))
 
-    #cast to wide table
-    dt <- dcast.data.table(dt, library+barcode+target+variant_class+wildtype+position+mutant ~ sample, value.var="count.norm")
+#cast to wide table
+dt <- dcast.data.table(dt, library+barcode+target+variant_class+wildtype+position+mutant ~ sample, value.var="count.norm")
+```
 
 We remove variants that are invalid (unintended mutation or indel). This
-removes 6312 indel and 14741 invalidly mutated variants across the two
-libraries, leaving 70803 valid variants from lib1 and 74628 from lib2.
+removes 7265 indel and 15375 invalidly mutated variants across the two
+libraries, leaving 75421 valid variants from lib1 and 78475 from lib2.
 
-    dt <- dt[variant_class %in% c("wildtype","mutant"),]
+``` r
+dt <- dt[variant_class %in% c("wildtype","mutant"),]
+```
 
 Save table of processed and merged sequencing information.
 
-    write.csv(dt, file=config$merged_sequencing_file, quote=F, row.names=F)
+``` r
+write.csv(dt, file=config$merged_sequencing_file, quote=F, row.names=F)
+```

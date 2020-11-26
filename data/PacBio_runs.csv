@@ -3,3 +3,5 @@ lib1,200916_1,/fh/fast/bloom_j/SR/ngs/pacbio/200924_TylerStarr/r54228_20200925_1
 lib2,200916_1,/fh/fast/bloom_j/SR/ngs/pacbio/200924_TylerStarr/r54228_20200925_181123/2_B01/m54228_200926_145940.subreads.bam
 lib1,200916_2,/fh/fast/bloom_j/SR/ngs/pacbio/200929_TylerStarr/r54228_20200929_173939/1_A01/m54228_200929_181125.subreads.bam
 lib2,200916_2,/fh/fast/bloom_j/SR/ngs/pacbio/200929_TylerStarr/r54228_20200929_173939/2_B01/m54228_200930_142948.subreads.bam
+lib1,201110,/fh/fast/bloom_j/computational_notebooks/tstarr/2020/2020_11_24_PacBio_demultiplex/demux.bc1016_BAK8B_OA--bc1016_BAK8B_OA.bam
+lib2,201110,/fh/fast/bloom_j/computational_notebooks/tstarr/2020/2020_11_24_PacBio_demultiplex/demux.bc1017_BAK8B_OA--bc1017_BAK8B_OA.bam
