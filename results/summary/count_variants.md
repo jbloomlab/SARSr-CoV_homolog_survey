@@ -48,8 +48,8 @@ print(f"Using alignparse version {alignparse.__version__}")
 print(f"Using dms_variants version {dms_variants.__version__}")
 ```
 
-    Using alignparse version 0.1.3
-    Using dms_variants version 0.8.4
+    Using alignparse version 0.1.6
+    Using dms_variants version 0.8.5
 
 
 Ignore warnings that clutter output:
@@ -116,6 +116,14 @@ display(HTML(variants.head().to_html(index=False)))
       <td>0</td>
     </tr>
     <tr>
+      <td>BtKY72</td>
+      <td>lib1</td>
+      <td>AAAAAAAAAATAGACA</td>
+      <td>T464C G465C</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
       <td>SARS-CoV-1_Urbani_HP03L</td>
       <td>lib1</td>
       <td>AAAAAAAAAATCATCA</td>
@@ -124,19 +132,11 @@ display(HTML(variants.head().to_html(index=False)))
       <td>0</td>
     </tr>
     <tr>
-      <td>SARS-CoV-1_PC4-137_PC04</td>
+      <td>GD-Pangolin</td>
       <td>lib1</td>
-      <td>AAAAAAAAACGAAATC</td>
-      <td>C186T T373G</td>
-      <td>2</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>BM48-31</td>
-      <td>lib1</td>
-      <td>AAAAAAAAAGAATCGT</td>
-      <td>G365A A366T</td>
-      <td>3</td>
+      <td>AAAAAAAAACAACGCT</td>
+      <td>C373A T374C A375G</td>
+      <td>4</td>
       <td>0</td>
     </tr>
   </tbody>
@@ -987,8 +987,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_01_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_01_bin1</td>
+      <td>RsACE2old</td>
       <td>1</td>
       <td>1.0</td>
       <td>200914</td>
@@ -997,8 +997,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_01_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_01_bin2</td>
+      <td>RsACE2old</td>
       <td>2</td>
       <td>1.0</td>
       <td>200914</td>
@@ -1007,8 +1007,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_01_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_01_bin3</td>
+      <td>RsACE2old</td>
       <td>3</td>
       <td>1.0</td>
       <td>200914</td>
@@ -1017,8 +1017,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_01_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_01_bin4</td>
+      <td>RsACE2old</td>
       <td>4</td>
       <td>1.0</td>
       <td>200914</td>
@@ -1027,8 +1027,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_02_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_02_bin1</td>
+      <td>RsACE2old</td>
       <td>1</td>
       <td>2.0</td>
       <td>200914</td>
@@ -1037,8 +1037,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_02_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_02_bin2</td>
+      <td>RsACE2old</td>
       <td>2</td>
       <td>2.0</td>
       <td>200914</td>
@@ -1047,8 +1047,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_02_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_02_bin3</td>
+      <td>RsACE2old</td>
       <td>3</td>
       <td>2.0</td>
       <td>200914</td>
@@ -1057,8 +1057,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_02_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_02_bin4</td>
+      <td>RsACE2old</td>
       <td>4</td>
       <td>2.0</td>
       <td>200914</td>
@@ -1067,8 +1067,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_03_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_03_bin1</td>
+      <td>RsACE2old</td>
       <td>1</td>
       <td>3.0</td>
       <td>200914</td>
@@ -1077,8 +1077,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_03_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_03_bin2</td>
+      <td>RsACE2old</td>
       <td>2</td>
       <td>3.0</td>
       <td>200914</td>
@@ -1087,8 +1087,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_03_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_03_bin3</td>
+      <td>RsACE2old</td>
       <td>3</td>
       <td>3.0</td>
       <td>200914</td>
@@ -1097,8 +1097,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_03_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_03_bin4</td>
+      <td>RsACE2old</td>
       <td>4</td>
       <td>3.0</td>
       <td>200914</td>
@@ -1107,8 +1107,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_04_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_04_bin1</td>
+      <td>RsACE2old</td>
       <td>1</td>
       <td>4.0</td>
       <td>200914</td>
@@ -1117,8 +1117,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_04_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_04_bin2</td>
+      <td>RsACE2old</td>
       <td>2</td>
       <td>4.0</td>
       <td>200914</td>
@@ -1127,8 +1127,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_04_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_04_bin3</td>
+      <td>RsACE2old</td>
       <td>3</td>
       <td>4.0</td>
       <td>200914</td>
@@ -1137,8 +1137,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_04_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_04_bin4</td>
+      <td>RsACE2old</td>
       <td>4</td>
       <td>4.0</td>
       <td>200914</td>
@@ -1147,8 +1147,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_05_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_05_bin1</td>
+      <td>RsACE2old</td>
       <td>1</td>
       <td>5.0</td>
       <td>200914</td>
@@ -1157,8 +1157,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_05_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_05_bin2</td>
+      <td>RsACE2old</td>
       <td>2</td>
       <td>5.0</td>
       <td>200914</td>
@@ -1167,8 +1167,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_05_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_05_bin3</td>
+      <td>RsACE2old</td>
       <td>3</td>
       <td>5.0</td>
       <td>200914</td>
@@ -1177,8 +1177,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_05_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_05_bin4</td>
+      <td>RsACE2old</td>
       <td>4</td>
       <td>5.0</td>
       <td>200914</td>
@@ -1187,8 +1187,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_06_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_06_bin1</td>
+      <td>RsACE2old</td>
       <td>1</td>
       <td>6.0</td>
       <td>200914</td>
@@ -1197,8 +1197,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_06_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_06_bin2</td>
+      <td>RsACE2old</td>
       <td>2</td>
       <td>6.0</td>
       <td>200914</td>
@@ -1207,8 +1207,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_06_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_06_bin3</td>
+      <td>RsACE2old</td>
       <td>3</td>
       <td>6.0</td>
       <td>200914</td>
@@ -1217,8 +1217,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_06_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_06_bin4</td>
+      <td>RsACE2old</td>
       <td>4</td>
       <td>6.0</td>
       <td>200914</td>
@@ -1227,8 +1227,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_07_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_07_bin1</td>
+      <td>RsACE2old</td>
       <td>1</td>
       <td>7.0</td>
       <td>200914</td>
@@ -1237,8 +1237,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_07_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_07_bin2</td>
+      <td>RsACE2old</td>
       <td>2</td>
       <td>7.0</td>
       <td>200914</td>
@@ -1247,8 +1247,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_07_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_07_bin3</td>
+      <td>RsACE2old</td>
       <td>3</td>
       <td>7.0</td>
       <td>200914</td>
@@ -1257,8 +1257,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_07_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_07_bin4</td>
+      <td>RsACE2old</td>
       <td>4</td>
       <td>7.0</td>
       <td>200914</td>
@@ -1267,8 +1267,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_08_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_08_bin1</td>
+      <td>RsACE2old</td>
       <td>1</td>
       <td>8.0</td>
       <td>200914</td>
@@ -1277,8 +1277,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_08_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_08_bin2</td>
+      <td>RsACE2old</td>
       <td>2</td>
       <td>8.0</td>
       <td>200914</td>
@@ -1287,8 +1287,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_08_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_08_bin3</td>
+      <td>RsACE2old</td>
       <td>3</td>
       <td>8.0</td>
       <td>200914</td>
@@ -1297,8 +1297,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_08_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_08_bin4</td>
+      <td>RsACE2old</td>
       <td>4</td>
       <td>8.0</td>
       <td>200914</td>
@@ -1307,8 +1307,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_09_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_09_bin1</td>
+      <td>RsACE2old</td>
       <td>1</td>
       <td>9.0</td>
       <td>200914</td>
@@ -1317,8 +1317,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_09_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_09_bin2</td>
+      <td>RsACE2old</td>
       <td>2</td>
       <td>9.0</td>
       <td>200914</td>
@@ -1327,8 +1327,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_09_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_09_bin3</td>
+      <td>RsACE2old</td>
       <td>3</td>
       <td>9.0</td>
       <td>200914</td>
@@ -1337,8 +1337,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_09_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2old_09_bin4</td>
+      <td>RsACE2old</td>
       <td>4</td>
       <td>9.0</td>
       <td>200914</td>
@@ -1985,6 +1985,2526 @@ display(HTML(barcode_runs.to_html(index=False)))
       <td>4</td>
       <td>[/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s09-b4_S36_R1_001.fastq.gz]</td>
     </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_01_bin1</td>
+      <td>RsACE2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>201029</td>
+      <td>4062636</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s01-b1_S1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_01_bin2</td>
+      <td>RsACE2</td>
+      <td>2</td>
+      <td>1.0</td>
+      <td>201029</td>
+      <td>2364224</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s01-b2_S2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_01_bin3</td>
+      <td>RsACE2</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>201029</td>
+      <td>641264</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s01-b3_S3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_01_bin4</td>
+      <td>RsACE2</td>
+      <td>4</td>
+      <td>1.0</td>
+      <td>201029</td>
+      <td>923966</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s01-b4_S4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_02_bin1</td>
+      <td>RsACE2</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>201029</td>
+      <td>5994598</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s02-b1_S5_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_02_bin2</td>
+      <td>RsACE2</td>
+      <td>2</td>
+      <td>2.0</td>
+      <td>201029</td>
+      <td>987998</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s02-b2_S6_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_02_bin3</td>
+      <td>RsACE2</td>
+      <td>3</td>
+      <td>2.0</td>
+      <td>201029</td>
+      <td>302360</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s02-b3_S7_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_02_bin4</td>
+      <td>RsACE2</td>
+      <td>4</td>
+      <td>2.0</td>
+      <td>201029</td>
+      <td>711289</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s02-b4_S8_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_03_bin1</td>
+      <td>RsACE2</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>201029</td>
+      <td>6860058</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s03-b1_S9_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_03_bin2</td>
+      <td>RsACE2</td>
+      <td>2</td>
+      <td>3.0</td>
+      <td>201029</td>
+      <td>424291</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s03-b2_S10_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_03_bin3</td>
+      <td>RsACE2</td>
+      <td>3</td>
+      <td>3.0</td>
+      <td>201029</td>
+      <td>399036</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s03-b3_S11_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_03_bin4</td>
+      <td>RsACE2</td>
+      <td>4</td>
+      <td>3.0</td>
+      <td>201029</td>
+      <td>274673</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s03-b4_S12_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_04_bin1</td>
+      <td>RsACE2</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>201029</td>
+      <td>7023029</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s04-b1_S13_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_04_bin2</td>
+      <td>RsACE2</td>
+      <td>2</td>
+      <td>4.0</td>
+      <td>201029</td>
+      <td>449138</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s04-b2_S14_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_04_bin3</td>
+      <td>RsACE2</td>
+      <td>3</td>
+      <td>4.0</td>
+      <td>201029</td>
+      <td>299749</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s04-b3_S15_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_04_bin4</td>
+      <td>RsACE2</td>
+      <td>4</td>
+      <td>4.0</td>
+      <td>201029</td>
+      <td>47792</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s04-b4_S16_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_05_bin1</td>
+      <td>RsACE2</td>
+      <td>1</td>
+      <td>5.0</td>
+      <td>201029</td>
+      <td>7302545</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s05-b1_S17_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_05_bin2</td>
+      <td>RsACE2</td>
+      <td>2</td>
+      <td>5.0</td>
+      <td>201029</td>
+      <td>382262</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s05-b2_S18_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_05_bin3</td>
+      <td>RsACE2</td>
+      <td>3</td>
+      <td>5.0</td>
+      <td>201029</td>
+      <td>72071</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s05-b3_S19_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_05_bin4</td>
+      <td>RsACE2</td>
+      <td>4</td>
+      <td>5.0</td>
+      <td>201029</td>
+      <td>7015</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s05-b4_S20_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_06_bin1</td>
+      <td>RsACE2</td>
+      <td>1</td>
+      <td>6.0</td>
+      <td>201029</td>
+      <td>7152650</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s06-b1_S21_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_06_bin2</td>
+      <td>RsACE2</td>
+      <td>2</td>
+      <td>6.0</td>
+      <td>201029</td>
+      <td>245702</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s06-b2_S22_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_06_bin3</td>
+      <td>RsACE2</td>
+      <td>3</td>
+      <td>6.0</td>
+      <td>201029</td>
+      <td>8533</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s06-b3_S23_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_06_bin4</td>
+      <td>RsACE2</td>
+      <td>4</td>
+      <td>6.0</td>
+      <td>201029</td>
+      <td>35</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s06-b4_S24_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_07_bin1</td>
+      <td>RsACE2</td>
+      <td>1</td>
+      <td>7.0</td>
+      <td>201029</td>
+      <td>7232247</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s07-b1_S25_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_07_bin2</td>
+      <td>RsACE2</td>
+      <td>2</td>
+      <td>7.0</td>
+      <td>201029</td>
+      <td>158976</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s07-b2_S26_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_07_bin3</td>
+      <td>RsACE2</td>
+      <td>3</td>
+      <td>7.0</td>
+      <td>201029</td>
+      <td>80</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s07-b3_S27_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_07_bin4</td>
+      <td>RsACE2</td>
+      <td>4</td>
+      <td>7.0</td>
+      <td>201029</td>
+      <td>2</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s07-b4_S28_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_08_bin1</td>
+      <td>RsACE2</td>
+      <td>1</td>
+      <td>8.0</td>
+      <td>201029</td>
+      <td>6114147</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s08-b1_S29_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_08_bin2</td>
+      <td>RsACE2</td>
+      <td>2</td>
+      <td>8.0</td>
+      <td>201029</td>
+      <td>111015</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s08-b2_S30_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_08_bin3</td>
+      <td>RsACE2</td>
+      <td>3</td>
+      <td>8.0</td>
+      <td>201029</td>
+      <td>12</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s08-b3_S31_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_08_bin4</td>
+      <td>RsACE2</td>
+      <td>4</td>
+      <td>8.0</td>
+      <td>201029</td>
+      <td>1</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s08-b4_S32_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_09_bin1</td>
+      <td>RsACE2</td>
+      <td>1</td>
+      <td>9.0</td>
+      <td>201029</td>
+      <td>7012466</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s09-b1_S33_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_09_bin2</td>
+      <td>RsACE2</td>
+      <td>2</td>
+      <td>9.0</td>
+      <td>201029</td>
+      <td>102278</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s09-b2_S34_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_09_bin3</td>
+      <td>RsACE2</td>
+      <td>3</td>
+      <td>9.0</td>
+      <td>201029</td>
+      <td>6</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s09-b3_S35_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RsACE2_09_bin4</td>
+      <td>RsACE2</td>
+      <td>4</td>
+      <td>9.0</td>
+      <td>201029</td>
+      <td>3</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s09-b4_S36_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_01_bin1</td>
+      <td>RaACE2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>201029</td>
+      <td>4215396</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s10-b1_S37_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_01_bin2</td>
+      <td>RaACE2</td>
+      <td>2</td>
+      <td>1.0</td>
+      <td>201029</td>
+      <td>1150919</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s10-b2_S38_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_01_bin3</td>
+      <td>RaACE2</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>201029</td>
+      <td>601049</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s10-b3_S39_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_01_bin4</td>
+      <td>RaACE2</td>
+      <td>4</td>
+      <td>1.0</td>
+      <td>201029</td>
+      <td>1912227</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s10-b4_S40_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_02_bin1</td>
+      <td>RaACE2</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>201029</td>
+      <td>4918673</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s11-b1_S41_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_02_bin2</td>
+      <td>RaACE2</td>
+      <td>2</td>
+      <td>2.0</td>
+      <td>201029</td>
+      <td>846255</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s11-b2_S42_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_02_bin3</td>
+      <td>RaACE2</td>
+      <td>3</td>
+      <td>2.0</td>
+      <td>201029</td>
+      <td>533560</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s11-b3_S43_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_02_bin4</td>
+      <td>RaACE2</td>
+      <td>4</td>
+      <td>2.0</td>
+      <td>201029</td>
+      <td>1682175</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s11-b4_S44_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_03_bin1</td>
+      <td>RaACE2</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>201029</td>
+      <td>5436670</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s12-b1_S45_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_03_bin2</td>
+      <td>RaACE2</td>
+      <td>2</td>
+      <td>3.0</td>
+      <td>201029</td>
+      <td>634602</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s12-b2_S46_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_03_bin3</td>
+      <td>RaACE2</td>
+      <td>3</td>
+      <td>3.0</td>
+      <td>201029</td>
+      <td>580919</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s12-b3_S47_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_03_bin4</td>
+      <td>RaACE2</td>
+      <td>4</td>
+      <td>3.0</td>
+      <td>201029</td>
+      <td>1496761</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s12-b4_S48_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_04_bin1</td>
+      <td>RaACE2</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>201029</td>
+      <td>5107740</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s13-b1_S49_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_04_bin2</td>
+      <td>RaACE2</td>
+      <td>2</td>
+      <td>4.0</td>
+      <td>201029</td>
+      <td>586161</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s13-b2_S50_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_04_bin3</td>
+      <td>RaACE2</td>
+      <td>3</td>
+      <td>4.0</td>
+      <td>201029</td>
+      <td>724775</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s13-b3_S51_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_04_bin4</td>
+      <td>RaACE2</td>
+      <td>4</td>
+      <td>4.0</td>
+      <td>201029</td>
+      <td>1118385</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s13-b4_S52_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_05_bin1</td>
+      <td>RaACE2</td>
+      <td>1</td>
+      <td>5.0</td>
+      <td>201029</td>
+      <td>5474607</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s14-b1_S53_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_05_bin2</td>
+      <td>RaACE2</td>
+      <td>2</td>
+      <td>5.0</td>
+      <td>201029</td>
+      <td>693044</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s14-b2_S54_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_05_bin3</td>
+      <td>RaACE2</td>
+      <td>3</td>
+      <td>5.0</td>
+      <td>201029</td>
+      <td>920332</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s14-b3_S55_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_05_bin4</td>
+      <td>RaACE2</td>
+      <td>4</td>
+      <td>5.0</td>
+      <td>201029</td>
+      <td>568182</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s14-b4_S56_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_06_bin1</td>
+      <td>RaACE2</td>
+      <td>1</td>
+      <td>6.0</td>
+      <td>201029</td>
+      <td>5873144</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s15-b1_S57_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_06_bin2</td>
+      <td>RaACE2</td>
+      <td>2</td>
+      <td>6.0</td>
+      <td>201029</td>
+      <td>1151354</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s15-b2_S58_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_06_bin3</td>
+      <td>RaACE2</td>
+      <td>3</td>
+      <td>6.0</td>
+      <td>201029</td>
+      <td>723997</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s15-b3_S59_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_06_bin4</td>
+      <td>RaACE2</td>
+      <td>4</td>
+      <td>6.0</td>
+      <td>201029</td>
+      <td>13404</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s15-b4_S60_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_07_bin1</td>
+      <td>RaACE2</td>
+      <td>1</td>
+      <td>7.0</td>
+      <td>201029</td>
+      <td>6519484</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s16-b1_S61_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_07_bin2</td>
+      <td>RaACE2</td>
+      <td>2</td>
+      <td>7.0</td>
+      <td>201029</td>
+      <td>857594</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s16-b2_S62_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_07_bin3</td>
+      <td>RaACE2</td>
+      <td>3</td>
+      <td>7.0</td>
+      <td>201029</td>
+      <td>32956</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s16-b3_S63_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_07_bin4</td>
+      <td>RaACE2</td>
+      <td>4</td>
+      <td>7.0</td>
+      <td>201029</td>
+      <td>2</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s16-b4_S64_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_08_bin1</td>
+      <td>RaACE2</td>
+      <td>1</td>
+      <td>8.0</td>
+      <td>201029</td>
+      <td>6737750</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s17-b1_S65_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_08_bin2</td>
+      <td>RaACE2</td>
+      <td>2</td>
+      <td>8.0</td>
+      <td>201029</td>
+      <td>272816</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s17-b2_S66_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_08_bin3</td>
+      <td>RaACE2</td>
+      <td>3</td>
+      <td>8.0</td>
+      <td>201029</td>
+      <td>51</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s17-b3_S67_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_08_bin4</td>
+      <td>RaACE2</td>
+      <td>4</td>
+      <td>8.0</td>
+      <td>201029</td>
+      <td>0</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s17-b4_S68_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_09_bin1</td>
+      <td>RaACE2</td>
+      <td>1</td>
+      <td>9.0</td>
+      <td>201029</td>
+      <td>7012466</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s09-b1_S33_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_09_bin2</td>
+      <td>RaACE2</td>
+      <td>2</td>
+      <td>9.0</td>
+      <td>201029</td>
+      <td>102278</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s09-b2_S34_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_09_bin3</td>
+      <td>RaACE2</td>
+      <td>3</td>
+      <td>9.0</td>
+      <td>201029</td>
+      <td>6</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s09-b3_S35_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>RaACE2_09_bin4</td>
+      <td>RaACE2</td>
+      <td>4</td>
+      <td>9.0</td>
+      <td>201029</td>
+      <td>3</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s09-b4_S36_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_01_bin1</td>
+      <td>RsACE2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>201104</td>
+      <td>3116004</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s01-b1_S1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_01_bin2</td>
+      <td>RsACE2</td>
+      <td>2</td>
+      <td>1.0</td>
+      <td>201104</td>
+      <td>2353327</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s01-b2_S2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_01_bin3</td>
+      <td>RsACE2</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>201104</td>
+      <td>486342</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s01-b3_S3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_01_bin4</td>
+      <td>RsACE2</td>
+      <td>4</td>
+      <td>1.0</td>
+      <td>201104</td>
+      <td>695569</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s01-b4_S4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_02_bin1</td>
+      <td>RsACE2</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>201104</td>
+      <td>5184232</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s02-b1_S5_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_02_bin2</td>
+      <td>RsACE2</td>
+      <td>2</td>
+      <td>2.0</td>
+      <td>201104</td>
+      <td>996475</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s02-b2_S6_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_02_bin3</td>
+      <td>RsACE2</td>
+      <td>3</td>
+      <td>2.0</td>
+      <td>201104</td>
+      <td>210101</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s02-b3_S7_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_02_bin4</td>
+      <td>RsACE2</td>
+      <td>4</td>
+      <td>2.0</td>
+      <td>201104</td>
+      <td>555049</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s02-b4_S8_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_03_bin1</td>
+      <td>RsACE2</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>201104</td>
+      <td>5862091</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s03-b1_S9_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_03_bin2</td>
+      <td>RsACE2</td>
+      <td>2</td>
+      <td>3.0</td>
+      <td>201104</td>
+      <td>398601</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s03-b2_S10_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_03_bin3</td>
+      <td>RsACE2</td>
+      <td>3</td>
+      <td>3.0</td>
+      <td>201104</td>
+      <td>278976</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s03-b3_S11_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_03_bin4</td>
+      <td>RsACE2</td>
+      <td>4</td>
+      <td>3.0</td>
+      <td>201104</td>
+      <td>254498</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s03-b4_S12_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_04_bin1</td>
+      <td>RsACE2</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>201104</td>
+      <td>6055311</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s04-b1_S13_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_04_bin2</td>
+      <td>RsACE2</td>
+      <td>2</td>
+      <td>4.0</td>
+      <td>201104</td>
+      <td>486000</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s04-b2_S14_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_04_bin3</td>
+      <td>RsACE2</td>
+      <td>3</td>
+      <td>4.0</td>
+      <td>201104</td>
+      <td>248465</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s04-b3_S15_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_04_bin4</td>
+      <td>RsACE2</td>
+      <td>4</td>
+      <td>4.0</td>
+      <td>201104</td>
+      <td>46408</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s04-b4_S16_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_05_bin1</td>
+      <td>RsACE2</td>
+      <td>1</td>
+      <td>5.0</td>
+      <td>201104</td>
+      <td>5027559</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s05-b1_S17_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_05_bin2</td>
+      <td>RsACE2</td>
+      <td>2</td>
+      <td>5.0</td>
+      <td>201104</td>
+      <td>186487</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s05-b2_S18_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_05_bin3</td>
+      <td>RsACE2</td>
+      <td>3</td>
+      <td>5.0</td>
+      <td>201104</td>
+      <td>83844</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s05-b3_S19_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_05_bin4</td>
+      <td>RsACE2</td>
+      <td>4</td>
+      <td>5.0</td>
+      <td>201104</td>
+      <td>14744</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s05-b4_S20_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_06_bin1</td>
+      <td>RsACE2</td>
+      <td>1</td>
+      <td>6.0</td>
+      <td>201104</td>
+      <td>6407725</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s06-b1_S21_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_06_bin2</td>
+      <td>RsACE2</td>
+      <td>2</td>
+      <td>6.0</td>
+      <td>201104</td>
+      <td>362706</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s06-b2_S22_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_06_bin3</td>
+      <td>RsACE2</td>
+      <td>3</td>
+      <td>6.0</td>
+      <td>201104</td>
+      <td>23571</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s06-b3_S23_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_06_bin4</td>
+      <td>RsACE2</td>
+      <td>4</td>
+      <td>6.0</td>
+      <td>201104</td>
+      <td>88</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s06-b4_S24_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_07_bin1</td>
+      <td>RsACE2</td>
+      <td>1</td>
+      <td>7.0</td>
+      <td>201104</td>
+      <td>5956481</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s07-b1_S25_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_07_bin2</td>
+      <td>RsACE2</td>
+      <td>2</td>
+      <td>7.0</td>
+      <td>201104</td>
+      <td>267685</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s07-b2_S26_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_07_bin3</td>
+      <td>RsACE2</td>
+      <td>3</td>
+      <td>7.0</td>
+      <td>201104</td>
+      <td>296</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s07-b3_S27_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_07_bin4</td>
+      <td>RsACE2</td>
+      <td>4</td>
+      <td>7.0</td>
+      <td>201104</td>
+      <td>37</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s07-b4_S28_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_08_bin1</td>
+      <td>RsACE2</td>
+      <td>1</td>
+      <td>8.0</td>
+      <td>201104</td>
+      <td>5186808</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s08-b1_S29_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_08_bin2</td>
+      <td>RsACE2</td>
+      <td>2</td>
+      <td>8.0</td>
+      <td>201104</td>
+      <td>158052</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s08-b2_S30_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_08_bin3</td>
+      <td>RsACE2</td>
+      <td>3</td>
+      <td>8.0</td>
+      <td>201104</td>
+      <td>151</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s08-b3_S31_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_08_bin4</td>
+      <td>RsACE2</td>
+      <td>4</td>
+      <td>8.0</td>
+      <td>201104</td>
+      <td>25</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s08-b4_S32_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_09_bin1</td>
+      <td>RsACE2</td>
+      <td>1</td>
+      <td>9.0</td>
+      <td>201104</td>
+      <td>5872533</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s09-b1_S33_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_09_bin2</td>
+      <td>RsACE2</td>
+      <td>2</td>
+      <td>9.0</td>
+      <td>201104</td>
+      <td>236090</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s09-b2_S34_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_09_bin3</td>
+      <td>RsACE2</td>
+      <td>3</td>
+      <td>9.0</td>
+      <td>201104</td>
+      <td>68</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s09-b3_S35_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RsACE2_09_bin4</td>
+      <td>RsACE2</td>
+      <td>4</td>
+      <td>9.0</td>
+      <td>201104</td>
+      <td>17</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s09-b4_S36_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_01_bin1</td>
+      <td>RaACE2pool6</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>201104</td>
+      <td>403894</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s10-b1_S37_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_01_bin2</td>
+      <td>RaACE2pool6</td>
+      <td>2</td>
+      <td>1.0</td>
+      <td>201104</td>
+      <td>339418</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s10-b2_S38_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_01_bin3</td>
+      <td>RaACE2pool6</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>201104</td>
+      <td>210986</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s10-b3_S39_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_01_bin4</td>
+      <td>RaACE2pool6</td>
+      <td>4</td>
+      <td>1.0</td>
+      <td>201104</td>
+      <td>112148</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s10-b4_S40_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_02_bin1</td>
+      <td>RaACE2pool6</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>201104</td>
+      <td>804420</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s11-b1_S41_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_02_bin2</td>
+      <td>RaACE2pool6</td>
+      <td>2</td>
+      <td>2.0</td>
+      <td>201104</td>
+      <td>323742</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s11-b2_S42_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_02_bin3</td>
+      <td>RaACE2pool6</td>
+      <td>3</td>
+      <td>2.0</td>
+      <td>201104</td>
+      <td>125704</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s11-b3_S43_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_02_bin4</td>
+      <td>RaACE2pool6</td>
+      <td>4</td>
+      <td>2.0</td>
+      <td>201104</td>
+      <td>45877</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s11-b4_S44_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_03_bin1</td>
+      <td>RaACE2pool6</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>201104</td>
+      <td>910268</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s12-b1_S45_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_03_bin2</td>
+      <td>RaACE2pool6</td>
+      <td>2</td>
+      <td>3.0</td>
+      <td>201104</td>
+      <td>318806</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s12-b2_S46_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_03_bin3</td>
+      <td>RaACE2pool6</td>
+      <td>3</td>
+      <td>3.0</td>
+      <td>201104</td>
+      <td>92512</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s12-b3_S47_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_03_bin4</td>
+      <td>RaACE2pool6</td>
+      <td>4</td>
+      <td>3.0</td>
+      <td>201104</td>
+      <td>23095</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s12-b4_S48_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_04_bin1</td>
+      <td>RaACE2pool6</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>201104</td>
+      <td>1178384</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s13-b1_S49_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_04_bin2</td>
+      <td>RaACE2pool6</td>
+      <td>2</td>
+      <td>4.0</td>
+      <td>201104</td>
+      <td>220543</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s13-b2_S50_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_04_bin3</td>
+      <td>RaACE2pool6</td>
+      <td>3</td>
+      <td>4.0</td>
+      <td>201104</td>
+      <td>46755</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s13-b3_S51_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_04_bin4</td>
+      <td>RaACE2pool6</td>
+      <td>4</td>
+      <td>4.0</td>
+      <td>201104</td>
+      <td>2257</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s13-b4_S52_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_05_bin1</td>
+      <td>RaACE2pool6</td>
+      <td>1</td>
+      <td>5.0</td>
+      <td>201104</td>
+      <td>1213761</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s14-b1_S53_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_05_bin2</td>
+      <td>RaACE2pool6</td>
+      <td>2</td>
+      <td>5.0</td>
+      <td>201104</td>
+      <td>91554</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s14-b2_S54_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_05_bin3</td>
+      <td>RaACE2pool6</td>
+      <td>3</td>
+      <td>5.0</td>
+      <td>201104</td>
+      <td>2431</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s14-b3_S55_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_05_bin4</td>
+      <td>RaACE2pool6</td>
+      <td>4</td>
+      <td>5.0</td>
+      <td>201104</td>
+      <td>7</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s14-b4_S56_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_06_bin1</td>
+      <td>RaACE2pool6</td>
+      <td>1</td>
+      <td>6.0</td>
+      <td>201104</td>
+      <td>1129362</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s15-b1_S57_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_06_bin2</td>
+      <td>RaACE2pool6</td>
+      <td>2</td>
+      <td>6.0</td>
+      <td>201104</td>
+      <td>45076</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s15-b2_S58_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_06_bin3</td>
+      <td>RaACE2pool6</td>
+      <td>3</td>
+      <td>6.0</td>
+      <td>201104</td>
+      <td>2196</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s15-b3_S59_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_06_bin4</td>
+      <td>RaACE2pool6</td>
+      <td>4</td>
+      <td>6.0</td>
+      <td>201104</td>
+      <td>8</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s15-b4_S60_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_07_bin1</td>
+      <td>RaACE2pool6</td>
+      <td>1</td>
+      <td>7.0</td>
+      <td>201104</td>
+      <td>1407727</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s16-b1_S61_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_07_bin2</td>
+      <td>RaACE2pool6</td>
+      <td>2</td>
+      <td>7.0</td>
+      <td>201104</td>
+      <td>33938</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s16-b2_S62_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_07_bin3</td>
+      <td>RaACE2pool6</td>
+      <td>3</td>
+      <td>7.0</td>
+      <td>201104</td>
+      <td>61</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s16-b3_S63_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_07_bin4</td>
+      <td>RaACE2pool6</td>
+      <td>4</td>
+      <td>7.0</td>
+      <td>201104</td>
+      <td>18</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s16-b4_S64_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_08_bin1</td>
+      <td>RaACE2pool6</td>
+      <td>1</td>
+      <td>8.0</td>
+      <td>201104</td>
+      <td>1326101</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s17-b1_S65_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_08_bin2</td>
+      <td>RaACE2pool6</td>
+      <td>2</td>
+      <td>8.0</td>
+      <td>201104</td>
+      <td>26731</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s17-b2_S66_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_08_bin3</td>
+      <td>RaACE2pool6</td>
+      <td>3</td>
+      <td>8.0</td>
+      <td>201104</td>
+      <td>28</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s17-b3_S67_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_08_bin4</td>
+      <td>RaACE2pool6</td>
+      <td>4</td>
+      <td>8.0</td>
+      <td>201104</td>
+      <td>15</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s17-b4_S68_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_09_bin1</td>
+      <td>RaACE2pool6</td>
+      <td>1</td>
+      <td>9.0</td>
+      <td>201104</td>
+      <td>1394397</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s18-b1_S69_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_09_bin2</td>
+      <td>RaACE2pool6</td>
+      <td>2</td>
+      <td>9.0</td>
+      <td>201104</td>
+      <td>34749</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s18-b2_S70_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_09_bin3</td>
+      <td>RaACE2pool6</td>
+      <td>3</td>
+      <td>9.0</td>
+      <td>201104</td>
+      <td>65</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s18-b3_S71_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>RaACE2pool6_09_bin4</td>
+      <td>RaACE2pool6</td>
+      <td>4</td>
+      <td>9.0</td>
+      <td>201104</td>
+      <td>8</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s18-b4_S72_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_01_bin1</td>
+      <td>huACE2pool6</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>201104</td>
+      <td>1084038</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s19-b1_S73_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_01_bin2</td>
+      <td>huACE2pool6</td>
+      <td>2</td>
+      <td>1.0</td>
+      <td>201104</td>
+      <td>123372</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s19-b2_S74_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_01_bin3</td>
+      <td>huACE2pool6</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>201104</td>
+      <td>19466</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s19-b3_S75_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_01_bin4</td>
+      <td>huACE2pool6</td>
+      <td>4</td>
+      <td>1.0</td>
+      <td>201104</td>
+      <td>113530</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s19-b4_S76_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_02_bin1</td>
+      <td>huACE2pool6</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>201104</td>
+      <td>1110460</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s20-b1_S77_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_02_bin2</td>
+      <td>huACE2pool6</td>
+      <td>2</td>
+      <td>2.0</td>
+      <td>201104</td>
+      <td>109811</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s20-b2_S78_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_02_bin3</td>
+      <td>huACE2pool6</td>
+      <td>3</td>
+      <td>2.0</td>
+      <td>201104</td>
+      <td>22455</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s20-b3_S79_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_02_bin4</td>
+      <td>huACE2pool6</td>
+      <td>4</td>
+      <td>2.0</td>
+      <td>201104</td>
+      <td>107045</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s20-b4_S80_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_03_bin1</td>
+      <td>huACE2pool6</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>201104</td>
+      <td>1182679</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s21-b1_S81_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_03_bin2</td>
+      <td>huACE2pool6</td>
+      <td>2</td>
+      <td>3.0</td>
+      <td>201104</td>
+      <td>96920</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s21-b2_S82_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_03_bin3</td>
+      <td>huACE2pool6</td>
+      <td>3</td>
+      <td>3.0</td>
+      <td>201104</td>
+      <td>15888</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s21-b3_S83_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_03_bin4</td>
+      <td>huACE2pool6</td>
+      <td>4</td>
+      <td>3.0</td>
+      <td>201104</td>
+      <td>123143</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s21-b4_S84_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_04_bin1</td>
+      <td>huACE2pool6</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>201104</td>
+      <td>1112028</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s22-b1_S85_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_04_bin2</td>
+      <td>huACE2pool6</td>
+      <td>2</td>
+      <td>4.0</td>
+      <td>201104</td>
+      <td>99783</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s22-b2_S86_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_04_bin3</td>
+      <td>huACE2pool6</td>
+      <td>3</td>
+      <td>4.0</td>
+      <td>201104</td>
+      <td>37243</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s22-b3_S87_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_04_bin4</td>
+      <td>huACE2pool6</td>
+      <td>4</td>
+      <td>4.0</td>
+      <td>201104</td>
+      <td>43604</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s22-b4_S88_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_05_bin1</td>
+      <td>huACE2pool6</td>
+      <td>1</td>
+      <td>5.0</td>
+      <td>201104</td>
+      <td>1114483</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s23-b1_S89_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_05_bin2</td>
+      <td>huACE2pool6</td>
+      <td>2</td>
+      <td>5.0</td>
+      <td>201104</td>
+      <td>102755</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s23-b2_S90_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_05_bin3</td>
+      <td>huACE2pool6</td>
+      <td>3</td>
+      <td>5.0</td>
+      <td>201104</td>
+      <td>25697</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s23-b3_S91_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_05_bin4</td>
+      <td>huACE2pool6</td>
+      <td>4</td>
+      <td>5.0</td>
+      <td>201104</td>
+      <td>7085</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s23-b4_S92_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_06_bin1</td>
+      <td>huACE2pool6</td>
+      <td>1</td>
+      <td>6.0</td>
+      <td>201104</td>
+      <td>1269846</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s24-b1_S93_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_06_bin2</td>
+      <td>huACE2pool6</td>
+      <td>2</td>
+      <td>6.0</td>
+      <td>201104</td>
+      <td>96804</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s24-b2_S94_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_06_bin3</td>
+      <td>huACE2pool6</td>
+      <td>3</td>
+      <td>6.0</td>
+      <td>201104</td>
+      <td>1460</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s24-b3_S95_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_06_bin4</td>
+      <td>huACE2pool6</td>
+      <td>4</td>
+      <td>6.0</td>
+      <td>201104</td>
+      <td>240</td>
+      <td>[/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s24-b4_S96_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_07_bin1</td>
+      <td>huACE2pool6</td>
+      <td>1</td>
+      <td>7.0</td>
+      <td>201104</td>
+      <td>1281599</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s25-b1_S69_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_07_bin2</td>
+      <td>huACE2pool6</td>
+      <td>2</td>
+      <td>7.0</td>
+      <td>201104</td>
+      <td>77084</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s25-b2_S70_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_07_bin3</td>
+      <td>huACE2pool6</td>
+      <td>3</td>
+      <td>7.0</td>
+      <td>201104</td>
+      <td>315</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s25-b3_S71_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_07_bin4</td>
+      <td>huACE2pool6</td>
+      <td>4</td>
+      <td>7.0</td>
+      <td>201104</td>
+      <td>217</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s25-b4_S72_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_08_bin1</td>
+      <td>huACE2pool6</td>
+      <td>1</td>
+      <td>8.0</td>
+      <td>201104</td>
+      <td>1215556</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s26-b1_S73_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_08_bin2</td>
+      <td>huACE2pool6</td>
+      <td>2</td>
+      <td>8.0</td>
+      <td>201104</td>
+      <td>69725</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s26-b2_S74_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_08_bin3</td>
+      <td>huACE2pool6</td>
+      <td>3</td>
+      <td>8.0</td>
+      <td>201104</td>
+      <td>315</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s26-b3_S75_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_08_bin4</td>
+      <td>huACE2pool6</td>
+      <td>4</td>
+      <td>8.0</td>
+      <td>201104</td>
+      <td>260</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s26-b4_S76_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_09_bin1</td>
+      <td>huACE2pool6</td>
+      <td>1</td>
+      <td>9.0</td>
+      <td>201104</td>
+      <td>1014539</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s27-b1_S77_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_09_bin2</td>
+      <td>huACE2pool6</td>
+      <td>2</td>
+      <td>9.0</td>
+      <td>201104</td>
+      <td>74528</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s27-b2_S78_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_09_bin3</td>
+      <td>huACE2pool6</td>
+      <td>3</td>
+      <td>9.0</td>
+      <td>201104</td>
+      <td>268</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s27-b3_S79_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>huACE2pool6_09_bin4</td>
+      <td>huACE2pool6</td>
+      <td>4</td>
+      <td>9.0</td>
+      <td>201104</td>
+      <td>205</td>
+      <td>[/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s27-b4_S80_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_01_bin1</td>
+      <td>cvACE2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>201112</td>
+      <td>5228630</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s01-b1_S1_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_01_bin2</td>
+      <td>cvACE2</td>
+      <td>2</td>
+      <td>1.0</td>
+      <td>201112</td>
+      <td>278448</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s01-b2_S2_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_01_bin3</td>
+      <td>cvACE2</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>201112</td>
+      <td>220823</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s01-b3_S3_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_01_bin4</td>
+      <td>cvACE2</td>
+      <td>4</td>
+      <td>1.0</td>
+      <td>201112</td>
+      <td>1120780</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s01-b4_S4_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_02_bin1</td>
+      <td>cvACE2</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>201112</td>
+      <td>5859291</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s02-b1_S5_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_02_bin2</td>
+      <td>cvACE2</td>
+      <td>2</td>
+      <td>2.0</td>
+      <td>201112</td>
+      <td>474742</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s02-b2_S6_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_02_bin3</td>
+      <td>cvACE2</td>
+      <td>3</td>
+      <td>2.0</td>
+      <td>201112</td>
+      <td>654470</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s02-b3_S7_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_02_bin4</td>
+      <td>cvACE2</td>
+      <td>4</td>
+      <td>2.0</td>
+      <td>201112</td>
+      <td>171440</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s02-b4_S8_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_03_bin1</td>
+      <td>cvACE2</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>201112</td>
+      <td>5867862</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s03-b1_S9_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_03_bin2</td>
+      <td>cvACE2</td>
+      <td>2</td>
+      <td>3.0</td>
+      <td>201112</td>
+      <td>406196</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s03-b2_S10_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_03_bin3</td>
+      <td>cvACE2</td>
+      <td>3</td>
+      <td>3.0</td>
+      <td>201112</td>
+      <td>260429</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s03-b3_S11_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_03_bin4</td>
+      <td>cvACE2</td>
+      <td>4</td>
+      <td>3.0</td>
+      <td>201112</td>
+      <td>685059</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s03-b4_S12_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_04_bin1</td>
+      <td>cvACE2</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>201112</td>
+      <td>5978737</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s04-b1_S13_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_04_bin2</td>
+      <td>cvACE2</td>
+      <td>2</td>
+      <td>4.0</td>
+      <td>201112</td>
+      <td>384332</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s04-b2_S14_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_04_bin3</td>
+      <td>cvACE2</td>
+      <td>3</td>
+      <td>4.0</td>
+      <td>201112</td>
+      <td>63364</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s04-b3_S15_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_04_bin4</td>
+      <td>cvACE2</td>
+      <td>4</td>
+      <td>4.0</td>
+      <td>201112</td>
+      <td>6938</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s04-b4_S16_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_05_bin1</td>
+      <td>cvACE2</td>
+      <td>1</td>
+      <td>5.0</td>
+      <td>201112</td>
+      <td>6027326</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s05-b1_S17_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_05_bin2</td>
+      <td>cvACE2</td>
+      <td>2</td>
+      <td>5.0</td>
+      <td>201112</td>
+      <td>353603</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s05-b2_S18_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_05_bin3</td>
+      <td>cvACE2</td>
+      <td>3</td>
+      <td>5.0</td>
+      <td>201112</td>
+      <td>33943</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s05-b3_S19_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_05_bin4</td>
+      <td>cvACE2</td>
+      <td>4</td>
+      <td>5.0</td>
+      <td>201112</td>
+      <td>26228</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s05-b4_S20_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_06_bin1</td>
+      <td>cvACE2</td>
+      <td>1</td>
+      <td>6.0</td>
+      <td>201112</td>
+      <td>6491640</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s06-b1_S21_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_06_bin2</td>
+      <td>cvACE2</td>
+      <td>2</td>
+      <td>6.0</td>
+      <td>201112</td>
+      <td>338351</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s06-b2_S22_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_06_bin3</td>
+      <td>cvACE2</td>
+      <td>3</td>
+      <td>6.0</td>
+      <td>201112</td>
+      <td>28838</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s06-b3_S23_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_06_bin4</td>
+      <td>cvACE2</td>
+      <td>4</td>
+      <td>6.0</td>
+      <td>201112</td>
+      <td>29190</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s06-b4_S24_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_07_bin1</td>
+      <td>cvACE2</td>
+      <td>1</td>
+      <td>7.0</td>
+      <td>201112</td>
+      <td>6104068</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s07-b1_S25_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_07_bin2</td>
+      <td>cvACE2</td>
+      <td>2</td>
+      <td>7.0</td>
+      <td>201112</td>
+      <td>313068</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s07-b2_S26_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_07_bin3</td>
+      <td>cvACE2</td>
+      <td>3</td>
+      <td>7.0</td>
+      <td>201112</td>
+      <td>40594</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s07-b3_S27_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_07_bin4</td>
+      <td>cvACE2</td>
+      <td>4</td>
+      <td>7.0</td>
+      <td>201112</td>
+      <td>32484</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s07-b4_S28_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_08_bin1</td>
+      <td>cvACE2</td>
+      <td>1</td>
+      <td>8.0</td>
+      <td>201112</td>
+      <td>6163189</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s08-b1_S29_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_08_bin2</td>
+      <td>cvACE2</td>
+      <td>2</td>
+      <td>8.0</td>
+      <td>201112</td>
+      <td>312063</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s08-b2_S30_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_08_bin3</td>
+      <td>cvACE2</td>
+      <td>3</td>
+      <td>8.0</td>
+      <td>201112</td>
+      <td>51711</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s08-b3_S31_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_08_bin4</td>
+      <td>cvACE2</td>
+      <td>4</td>
+      <td>8.0</td>
+      <td>201112</td>
+      <td>40649</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s08-b4_S32_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_09_bin1</td>
+      <td>cvACE2</td>
+      <td>1</td>
+      <td>9.0</td>
+      <td>201112</td>
+      <td>6168475</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s09-b1_S33_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_09_bin2</td>
+      <td>cvACE2</td>
+      <td>2</td>
+      <td>9.0</td>
+      <td>201112</td>
+      <td>143758</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s09-b2_S34_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_09_bin3</td>
+      <td>cvACE2</td>
+      <td>3</td>
+      <td>9.0</td>
+      <td>201112</td>
+      <td>2943</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s09-b3_S35_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib1</td>
+      <td>cvACE2_09_bin4</td>
+      <td>cvACE2</td>
+      <td>4</td>
+      <td>9.0</td>
+      <td>201112</td>
+      <td>2770</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s09-b4_S36_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_01_bin1</td>
+      <td>cvACE2</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>201112</td>
+      <td>6077757</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s10-b1_S37_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_01_bin2</td>
+      <td>cvACE2</td>
+      <td>2</td>
+      <td>1.0</td>
+      <td>201112</td>
+      <td>317999</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s10-b2_S38_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_01_bin3</td>
+      <td>cvACE2</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>201112</td>
+      <td>253686</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s10-b3_S39_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_01_bin4</td>
+      <td>cvACE2</td>
+      <td>4</td>
+      <td>1.0</td>
+      <td>201112</td>
+      <td>1308572</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s10-b4_S40_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_02_bin1</td>
+      <td>cvACE2</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>201112</td>
+      <td>6096688</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s11-b1_S41_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_02_bin2</td>
+      <td>cvACE2</td>
+      <td>2</td>
+      <td>2.0</td>
+      <td>201112</td>
+      <td>486728</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s11-b2_S42_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_02_bin3</td>
+      <td>cvACE2</td>
+      <td>3</td>
+      <td>2.0</td>
+      <td>201112</td>
+      <td>666993</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s11-b3_S43_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_02_bin4</td>
+      <td>cvACE2</td>
+      <td>4</td>
+      <td>2.0</td>
+      <td>201112</td>
+      <td>246623</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s11-b4_S44_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_03_bin1</td>
+      <td>cvACE2</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>201112</td>
+      <td>5800886</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s12-b1_S45_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_03_bin2</td>
+      <td>cvACE2</td>
+      <td>2</td>
+      <td>3.0</td>
+      <td>201112</td>
+      <td>383282</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s12-b2_S46_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_03_bin3</td>
+      <td>cvACE2</td>
+      <td>3</td>
+      <td>3.0</td>
+      <td>201112</td>
+      <td>255976</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s12-b3_S47_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_03_bin4</td>
+      <td>cvACE2</td>
+      <td>4</td>
+      <td>3.0</td>
+      <td>201112</td>
+      <td>668979</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s12-b4_S48_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_04_bin1</td>
+      <td>cvACE2</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>201112</td>
+      <td>6103406</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s13-b1_S49_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_04_bin2</td>
+      <td>cvACE2</td>
+      <td>2</td>
+      <td>4.0</td>
+      <td>201112</td>
+      <td>377827</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s13-b2_S50_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_04_bin3</td>
+      <td>cvACE2</td>
+      <td>3</td>
+      <td>4.0</td>
+      <td>201112</td>
+      <td>62565</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s13-b3_S51_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_04_bin4</td>
+      <td>cvACE2</td>
+      <td>4</td>
+      <td>4.0</td>
+      <td>201112</td>
+      <td>6980</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s13-b4_S52_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_05_bin1</td>
+      <td>cvACE2</td>
+      <td>1</td>
+      <td>5.0</td>
+      <td>201112</td>
+      <td>6015235</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s14-b1_S53_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_05_bin2</td>
+      <td>cvACE2</td>
+      <td>2</td>
+      <td>5.0</td>
+      <td>201112</td>
+      <td>283186</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s14-b2_S54_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_05_bin3</td>
+      <td>cvACE2</td>
+      <td>3</td>
+      <td>5.0</td>
+      <td>201112</td>
+      <td>6360</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s14-b3_S55_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_05_bin4</td>
+      <td>cvACE2</td>
+      <td>4</td>
+      <td>5.0</td>
+      <td>201112</td>
+      <td>4423</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s14-b4_S56_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_06_bin1</td>
+      <td>cvACE2</td>
+      <td>1</td>
+      <td>6.0</td>
+      <td>201112</td>
+      <td>6116322</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s15-b1_S57_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_06_bin2</td>
+      <td>cvACE2</td>
+      <td>2</td>
+      <td>6.0</td>
+      <td>201112</td>
+      <td>261754</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s15-b2_S58_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_06_bin3</td>
+      <td>cvACE2</td>
+      <td>3</td>
+      <td>6.0</td>
+      <td>201112</td>
+      <td>30070</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s15-b3_S59_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_06_bin4</td>
+      <td>cvACE2</td>
+      <td>4</td>
+      <td>6.0</td>
+      <td>201112</td>
+      <td>21252</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s15-b4_S60_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_07_bin1</td>
+      <td>cvACE2</td>
+      <td>1</td>
+      <td>7.0</td>
+      <td>201112</td>
+      <td>5979478</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s16-b1_S61_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_07_bin2</td>
+      <td>cvACE2</td>
+      <td>2</td>
+      <td>7.0</td>
+      <td>201112</td>
+      <td>261533</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s16-b2_S62_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_07_bin3</td>
+      <td>cvACE2</td>
+      <td>3</td>
+      <td>7.0</td>
+      <td>201112</td>
+      <td>21187</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s16-b3_S63_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_07_bin4</td>
+      <td>cvACE2</td>
+      <td>4</td>
+      <td>7.0</td>
+      <td>201112</td>
+      <td>15423</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s16-b4_S64_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_08_bin1</td>
+      <td>cvACE2</td>
+      <td>1</td>
+      <td>8.0</td>
+      <td>201112</td>
+      <td>6072478</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s17-b1_S65_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_08_bin2</td>
+      <td>cvACE2</td>
+      <td>2</td>
+      <td>8.0</td>
+      <td>201112</td>
+      <td>257307</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s17-b2_S66_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_08_bin3</td>
+      <td>cvACE2</td>
+      <td>3</td>
+      <td>8.0</td>
+      <td>201112</td>
+      <td>25676</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s17-b3_S67_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_08_bin4</td>
+      <td>cvACE2</td>
+      <td>4</td>
+      <td>8.0</td>
+      <td>201112</td>
+      <td>22000</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s17-b4_S68_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_09_bin1</td>
+      <td>cvACE2</td>
+      <td>1</td>
+      <td>9.0</td>
+      <td>201112</td>
+      <td>6190432</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s18-b1_S69_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_09_bin2</td>
+      <td>cvACE2</td>
+      <td>2</td>
+      <td>9.0</td>
+      <td>201112</td>
+      <td>199297</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s18-b2_S70_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_09_bin3</td>
+      <td>cvACE2</td>
+      <td>3</td>
+      <td>9.0</td>
+      <td>201112</td>
+      <td>2749</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s18-b3_S71_R1_001.fastq.gz]</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>cvACE2_09_bin4</td>
+      <td>cvACE2</td>
+      <td>4</td>
+      <td>9.0</td>
+      <td>201112</td>
+      <td>3119</td>
+      <td>[/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s18-b4_S72_R1_001.fastq.gz]</td>
+    </tr>
   </tbody>
 </table>
 
@@ -2101,12 +4621,12 @@ display(HTML(
   </thead>
   <tbody>
     <tr>
-      <td>lib1</td>
-      <td>84808</td>
+      <td>lib2</td>
+      <td>94745</td>
     </tr>
     <tr>
-      <td>lib2</td>
-      <td>90170</td>
+      <td>lib1</td>
+      <td>90285</td>
     </tr>
   </tbody>
 </table>
@@ -2317,7 +4837,7 @@ display(HTML(fates
   </thead>
   <tbody>
     <tr>
-      <th rowspan="140" valign="top">lib1</th>
+      <th rowspan="284" valign="top">lib1</th>
       <th>RaACE2_01_bin1</th>
       <td>441076</td>
       <td>1317015</td>
@@ -2606,6 +5126,294 @@ display(HTML(fates
       <td>21799</td>
     </tr>
     <tr>
+      <th>RaACE2pool6_01_bin1</th>
+      <td>8128</td>
+      <td>266396</td>
+      <td>29062</td>
+      <td>9304</td>
+      <td>653324</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_01_bin2</th>
+      <td>5588</td>
+      <td>190446</td>
+      <td>19408</td>
+      <td>7565</td>
+      <td>426803</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_01_bin3</th>
+      <td>3104</td>
+      <td>101687</td>
+      <td>10256</td>
+      <td>5245</td>
+      <td>222355</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_01_bin4</th>
+      <td>941</td>
+      <td>36632</td>
+      <td>3268</td>
+      <td>3241</td>
+      <td>68454</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_02_bin1</th>
+      <td>7933</td>
+      <td>278290</td>
+      <td>29463</td>
+      <td>9148</td>
+      <td>653985</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_02_bin2</th>
+      <td>3398</td>
+      <td>108799</td>
+      <td>11043</td>
+      <td>4636</td>
+      <td>242676</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_02_bin3</th>
+      <td>1838</td>
+      <td>63343</td>
+      <td>6149</td>
+      <td>3711</td>
+      <td>140785</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_02_bin4</th>
+      <td>472</td>
+      <td>10556</td>
+      <td>864</td>
+      <td>2070</td>
+      <td>14874</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_03_bin1</th>
+      <td>10060</td>
+      <td>343326</td>
+      <td>35712</td>
+      <td>12480</td>
+      <td>796000</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_03_bin2</th>
+      <td>2505</td>
+      <td>89493</td>
+      <td>8879</td>
+      <td>4071</td>
+      <td>201284</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_03_bin3</th>
+      <td>902</td>
+      <td>32960</td>
+      <td>2840</td>
+      <td>2917</td>
+      <td>59869</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_03_bin4</th>
+      <td>166</td>
+      <td>5879</td>
+      <td>445</td>
+      <td>1372</td>
+      <td>8246</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_04_bin1</th>
+      <td>12470</td>
+      <td>415148</td>
+      <td>42352</td>
+      <td>17727</td>
+      <td>969241</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_04_bin2</th>
+      <td>2758</td>
+      <td>90623</td>
+      <td>9222</td>
+      <td>6256</td>
+      <td>203638</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_04_bin3</th>
+      <td>458</td>
+      <td>15484</td>
+      <td>1184</td>
+      <td>7570</td>
+      <td>21634</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_04_bin4</th>
+      <td>80</td>
+      <td>358</td>
+      <td>36</td>
+      <td>2099</td>
+      <td>410</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_05_bin1</th>
+      <td>11622</td>
+      <td>406400</td>
+      <td>42037</td>
+      <td>16152</td>
+      <td>936601</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_05_bin2</th>
+      <td>1705</td>
+      <td>41330</td>
+      <td>3565</td>
+      <td>7169</td>
+      <td>73083</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_05_bin3</th>
+      <td>4297</td>
+      <td>220142</td>
+      <td>15646</td>
+      <td>27551</td>
+      <td>268135</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_05_bin4</th>
+      <td>216</td>
+      <td>716</td>
+      <td>63</td>
+      <td>3794</td>
+      <td>1344</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_06_bin1</th>
+      <td>9265</td>
+      <td>328983</td>
+      <td>33785</td>
+      <td>13391</td>
+      <td>748024</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_06_bin2</th>
+      <td>175</td>
+      <td>5894</td>
+      <td>577</td>
+      <td>650</td>
+      <td>12253</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_06_bin3</th>
+      <td>55</td>
+      <td>1091</td>
+      <td>117</td>
+      <td>766</td>
+      <td>2398</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_06_bin4</th>
+      <td>106</td>
+      <td>35</td>
+      <td>8</td>
+      <td>1220</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_07_bin1</th>
+      <td>14532</td>
+      <td>509926</td>
+      <td>50175</td>
+      <td>22585</td>
+      <td>1134617</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_07_bin2</th>
+      <td>109</td>
+      <td>2455</td>
+      <td>266</td>
+      <td>653</td>
+      <td>5504</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_07_bin3</th>
+      <td>52</td>
+      <td>374</td>
+      <td>37</td>
+      <td>1193</td>
+      <td>597</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_07_bin4</th>
+      <td>2286</td>
+      <td>74</td>
+      <td>16</td>
+      <td>7516</td>
+      <td>63</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_08_bin1</th>
+      <td>18746</td>
+      <td>572603</td>
+      <td>56589</td>
+      <td>33591</td>
+      <td>1270908</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_08_bin2</th>
+      <td>125</td>
+      <td>3340</td>
+      <td>360</td>
+      <td>595</td>
+      <td>7520</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_08_bin3</th>
+      <td>98</td>
+      <td>241</td>
+      <td>20</td>
+      <td>1630</td>
+      <td>400</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_08_bin4</th>
+      <td>141</td>
+      <td>807</td>
+      <td>205</td>
+      <td>1071</td>
+      <td>5851</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_09_bin1</th>
+      <td>17110</td>
+      <td>591060</td>
+      <td>60792</td>
+      <td>25154</td>
+      <td>1314453</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_09_bin2</th>
+      <td>492</td>
+      <td>14194</td>
+      <td>1388</td>
+      <td>1422</td>
+      <td>30808</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_09_bin3</th>
+      <td>539</td>
+      <td>12900</td>
+      <td>1409</td>
+      <td>3702</td>
+      <td>32942</td>
+    </tr>
+    <tr>
+      <th>RaACE2pool6_09_bin4</th>
+      <td>32</td>
+      <td>1411</td>
+      <td>56</td>
+      <td>217</td>
+      <td>575</td>
+    </tr>
+    <tr>
       <th>RpACE2_02_bin1</th>
       <td>537028</td>
       <td>1535019</td>
@@ -2831,6 +5639,294 @@ display(HTML(fates
     </tr>
     <tr>
       <th>RsACE2_01_bin1</th>
+      <td>32407</td>
+      <td>694554</td>
+      <td>112593</td>
+      <td>42857</td>
+      <td>2997712</td>
+    </tr>
+    <tr>
+      <th>RsACE2_01_bin2</th>
+      <td>23700</td>
+      <td>479875</td>
+      <td>79346</td>
+      <td>33549</td>
+      <td>2137446</td>
+    </tr>
+    <tr>
+      <th>RsACE2_01_bin3</th>
+      <td>6775</td>
+      <td>127461</td>
+      <td>23368</td>
+      <td>10430</td>
+      <td>625616</td>
+    </tr>
+    <tr>
+      <th>RsACE2_01_bin4</th>
+      <td>8124</td>
+      <td>146394</td>
+      <td>27734</td>
+      <td>9890</td>
+      <td>738034</td>
+    </tr>
+    <tr>
+      <th>RsACE2_02_bin1</th>
+      <td>52729</td>
+      <td>1084856</td>
+      <td>181502</td>
+      <td>70050</td>
+      <td>4777948</td>
+    </tr>
+    <tr>
+      <th>RsACE2_02_bin2</th>
+      <td>8592</td>
+      <td>159473</td>
+      <td>30027</td>
+      <td>10935</td>
+      <td>729098</td>
+    </tr>
+    <tr>
+      <th>RsACE2_02_bin3</th>
+      <td>2800</td>
+      <td>57431</td>
+      <td>9828</td>
+      <td>4911</td>
+      <td>260633</td>
+    </tr>
+    <tr>
+      <th>RsACE2_02_bin4</th>
+      <td>10629</td>
+      <td>182759</td>
+      <td>34296</td>
+      <td>14400</td>
+      <td>950871</td>
+    </tr>
+    <tr>
+      <th>RsACE2_03_bin1</th>
+      <td>57452</td>
+      <td>1181450</td>
+      <td>206496</td>
+      <td>80200</td>
+      <td>5232735</td>
+    </tr>
+    <tr>
+      <th>RsACE2_03_bin2</th>
+      <td>4333</td>
+      <td>87872</td>
+      <td>14782</td>
+      <td>6476</td>
+      <td>398620</td>
+    </tr>
+    <tr>
+      <th>RsACE2_03_bin3</th>
+      <td>3951</td>
+      <td>72963</td>
+      <td>13625</td>
+      <td>5816</td>
+      <td>349074</td>
+    </tr>
+    <tr>
+      <th>RsACE2_03_bin4</th>
+      <td>3238</td>
+      <td>52276</td>
+      <td>10573</td>
+      <td>5692</td>
+      <td>289744</td>
+    </tr>
+    <tr>
+      <th>RsACE2_04_bin1</th>
+      <td>65195</td>
+      <td>1282991</td>
+      <td>212724</td>
+      <td>86371</td>
+      <td>5631464</td>
+    </tr>
+    <tr>
+      <th>RsACE2_04_bin2</th>
+      <td>8649</td>
+      <td>164697</td>
+      <td>28893</td>
+      <td>11782</td>
+      <td>763400</td>
+    </tr>
+    <tr>
+      <th>RsACE2_04_bin3</th>
+      <td>3345</td>
+      <td>54961</td>
+      <td>10984</td>
+      <td>3859</td>
+      <td>300398</td>
+    </tr>
+    <tr>
+      <th>RsACE2_04_bin4</th>
+      <td>1655</td>
+      <td>21925</td>
+      <td>4700</td>
+      <td>3199</td>
+      <td>121507</td>
+    </tr>
+    <tr>
+      <th>RsACE2_05_bin1</th>
+      <td>80045</td>
+      <td>1640328</td>
+      <td>274172</td>
+      <td>105430</td>
+      <td>7278413</td>
+    </tr>
+    <tr>
+      <th>RsACE2_05_bin2</th>
+      <td>2490</td>
+      <td>36893</td>
+      <td>7095</td>
+      <td>6211</td>
+      <td>190360</td>
+    </tr>
+    <tr>
+      <th>RsACE2_05_bin3</th>
+      <td>3383</td>
+      <td>61003</td>
+      <td>11055</td>
+      <td>5083</td>
+      <td>303284</td>
+    </tr>
+    <tr>
+      <th>RsACE2_05_bin4</th>
+      <td>297</td>
+      <td>1434</td>
+      <td>297</td>
+      <td>2656</td>
+      <td>6939</td>
+    </tr>
+    <tr>
+      <th>RsACE2_06_bin1</th>
+      <td>61667</td>
+      <td>1269957</td>
+      <td>216797</td>
+      <td>79794</td>
+      <td>5654577</td>
+    </tr>
+    <tr>
+      <th>RsACE2_06_bin2</th>
+      <td>6387</td>
+      <td>119052</td>
+      <td>21247</td>
+      <td>7791</td>
+      <td>563064</td>
+    </tr>
+    <tr>
+      <th>RsACE2_06_bin3</th>
+      <td>278</td>
+      <td>4475</td>
+      <td>760</td>
+      <td>517</td>
+      <td>20793</td>
+    </tr>
+    <tr>
+      <th>RsACE2_06_bin4</th>
+      <td>186</td>
+      <td>1230</td>
+      <td>231</td>
+      <td>799</td>
+      <td>5250</td>
+    </tr>
+    <tr>
+      <th>RsACE2_07_bin1</th>
+      <td>74925</td>
+      <td>1498478</td>
+      <td>257946</td>
+      <td>95176</td>
+      <td>6735101</td>
+    </tr>
+    <tr>
+      <th>RsACE2_07_bin2</th>
+      <td>3400</td>
+      <td>62402</td>
+      <td>10806</td>
+      <td>5626</td>
+      <td>285228</td>
+    </tr>
+    <tr>
+      <th>RsACE2_07_bin3</th>
+      <td>10124</td>
+      <td>197247</td>
+      <td>34852</td>
+      <td>11104</td>
+      <td>928459</td>
+    </tr>
+    <tr>
+      <th>RsACE2_07_bin4</th>
+      <td>1684</td>
+      <td>29535</td>
+      <td>5561</td>
+      <td>6252</td>
+      <td>152263</td>
+    </tr>
+    <tr>
+      <th>RsACE2_08_bin1</th>
+      <td>55474</td>
+      <td>1157706</td>
+      <td>194024</td>
+      <td>73132</td>
+      <td>5237384</td>
+    </tr>
+    <tr>
+      <th>RsACE2_08_bin2</th>
+      <td>2803</td>
+      <td>42412</td>
+      <td>7360</td>
+      <td>10043</td>
+      <td>194066</td>
+    </tr>
+    <tr>
+      <th>RsACE2_08_bin3</th>
+      <td>8811</td>
+      <td>184051</td>
+      <td>31092</td>
+      <td>14241</td>
+      <td>827188</td>
+    </tr>
+    <tr>
+      <th>RsACE2_08_bin4</th>
+      <td>1361</td>
+      <td>21744</td>
+      <td>4712</td>
+      <td>1958</td>
+      <td>130172</td>
+    </tr>
+    <tr>
+      <th>RsACE2_09_bin1</th>
+      <td>70159</td>
+      <td>1390024</td>
+      <td>235422</td>
+      <td>90852</td>
+      <td>6280838</td>
+    </tr>
+    <tr>
+      <th>RsACE2_09_bin2</th>
+      <td>3996</td>
+      <td>74645</td>
+      <td>13132</td>
+      <td>5254</td>
+      <td>346623</td>
+    </tr>
+    <tr>
+      <th>RsACE2_09_bin3</th>
+      <td>1071</td>
+      <td>18998</td>
+      <td>3366</td>
+      <td>2098</td>
+      <td>91388</td>
+    </tr>
+    <tr>
+      <th>RsACE2_09_bin4</th>
+      <td>108</td>
+      <td>2474</td>
+      <td>297</td>
+      <td>224</td>
+      <td>7861</td>
+    </tr>
+    <tr>
+      <th>RsACE2old_01_bin1</th>
       <td>302112</td>
       <td>900938</td>
       <td>291594</td>
@@ -2838,7 +5934,7 @@ display(HTML(fates
       <td>4147687</td>
     </tr>
     <tr>
-      <th>RsACE2_01_bin2</th>
+      <th>RsACE2old_01_bin2</th>
       <td>190280</td>
       <td>557552</td>
       <td>181268</td>
@@ -2846,7 +5942,7 @@ display(HTML(fates
       <td>2625892</td>
     </tr>
     <tr>
-      <th>RsACE2_01_bin3</th>
+      <th>RsACE2old_01_bin3</th>
       <td>52637</td>
       <td>148406</td>
       <td>51569</td>
@@ -2854,7 +5950,7 @@ display(HTML(fates
       <td>738078</td>
     </tr>
     <tr>
-      <th>RsACE2_01_bin4</th>
+      <th>RsACE2old_01_bin4</th>
       <td>92068</td>
       <td>252711</td>
       <td>92310</td>
@@ -2862,7 +5958,7 @@ display(HTML(fates
       <td>1300015</td>
     </tr>
     <tr>
-      <th>RsACE2_02_bin1</th>
+      <th>RsACE2old_02_bin1</th>
       <td>437733</td>
       <td>1292457</td>
       <td>426194</td>
@@ -2870,7 +5966,7 @@ display(HTML(fates
       <td>6038222</td>
     </tr>
     <tr>
-      <th>RsACE2_02_bin2</th>
+      <th>RsACE2old_02_bin2</th>
       <td>91461</td>
       <td>255872</td>
       <td>92361</td>
@@ -2878,7 +5974,7 @@ display(HTML(fates
       <td>1239687</td>
     </tr>
     <tr>
-      <th>RsACE2_02_bin3</th>
+      <th>RsACE2old_02_bin3</th>
       <td>45787</td>
       <td>125810</td>
       <td>44261</td>
@@ -2886,7 +5982,7 @@ display(HTML(fates
       <td>644829</td>
     </tr>
     <tr>
-      <th>RsACE2_02_bin4</th>
+      <th>RsACE2old_02_bin4</th>
       <td>68571</td>
       <td>186502</td>
       <td>66122</td>
@@ -2894,7 +5990,7 @@ display(HTML(fates
       <td>971262</td>
     </tr>
     <tr>
-      <th>RsACE2_03_bin1</th>
+      <th>RsACE2old_03_bin1</th>
       <td>452146</td>
       <td>1321208</td>
       <td>453393</td>
@@ -2902,7 +5998,7 @@ display(HTML(fates
       <td>6206634</td>
     </tr>
     <tr>
-      <th>RsACE2_03_bin2</th>
+      <th>RsACE2old_03_bin2</th>
       <td>45105</td>
       <td>124742</td>
       <td>42402</td>
@@ -2910,7 +6006,7 @@ display(HTML(fates
       <td>620728</td>
     </tr>
     <tr>
-      <th>RsACE2_03_bin3</th>
+      <th>RsACE2old_03_bin3</th>
       <td>36306</td>
       <td>100185</td>
       <td>35803</td>
@@ -2918,7 +6014,7 @@ display(HTML(fates
       <td>500431</td>
     </tr>
     <tr>
-      <th>RsACE2_03_bin4</th>
+      <th>RsACE2old_03_bin4</th>
       <td>43174</td>
       <td>109839</td>
       <td>41358</td>
@@ -2926,7 +6022,7 @@ display(HTML(fates
       <td>598272</td>
     </tr>
     <tr>
-      <th>RsACE2_04_bin1</th>
+      <th>RsACE2old_04_bin1</th>
       <td>414126</td>
       <td>1190626</td>
       <td>392919</td>
@@ -2934,7 +6030,7 @@ display(HTML(fates
       <td>5639911</td>
     </tr>
     <tr>
-      <th>RsACE2_04_bin2</th>
+      <th>RsACE2old_04_bin2</th>
       <td>39077</td>
       <td>107934</td>
       <td>37228</td>
@@ -2942,7 +6038,7 @@ display(HTML(fates
       <td>531815</td>
     </tr>
     <tr>
-      <th>RsACE2_04_bin3</th>
+      <th>RsACE2old_04_bin3</th>
       <td>32714</td>
       <td>86278</td>
       <td>31718</td>
@@ -2950,7 +6046,7 @@ display(HTML(fates
       <td>454570</td>
     </tr>
     <tr>
-      <th>RsACE2_04_bin4</th>
+      <th>RsACE2old_04_bin4</th>
       <td>7849</td>
       <td>19341</td>
       <td>7518</td>
@@ -2958,15 +6054,15 @@ display(HTML(fates
       <td>105348</td>
     </tr>
     <tr>
-      <th>RsACE2_05_bin1</th>
+      <th>RsACE2old_05_bin1</th>
       <td>608666</td>
-      <td>1782941</td>
+      <td>1782940</td>
       <td>587311</td>
       <td>154235</td>
-      <td>8425498</td>
+      <td>8425499</td>
     </tr>
     <tr>
-      <th>RsACE2_05_bin2</th>
+      <th>RsACE2old_05_bin2</th>
       <td>41456</td>
       <td>107399</td>
       <td>38883</td>
@@ -2974,7 +6070,7 @@ display(HTML(fates
       <td>565816</td>
     </tr>
     <tr>
-      <th>RsACE2_05_bin3</th>
+      <th>RsACE2old_05_bin3</th>
       <td>7821</td>
       <td>18812</td>
       <td>7108</td>
@@ -2982,7 +6078,7 @@ display(HTML(fates
       <td>107384</td>
     </tr>
     <tr>
-      <th>RsACE2_05_bin4</th>
+      <th>RsACE2old_05_bin4</th>
       <td>2684</td>
       <td>4376</td>
       <td>1639</td>
@@ -2990,7 +6086,7 @@ display(HTML(fates
       <td>22709</td>
     </tr>
     <tr>
-      <th>RsACE2_06_bin1</th>
+      <th>RsACE2old_06_bin1</th>
       <td>549775</td>
       <td>1589637</td>
       <td>537950</td>
@@ -2998,7 +6094,7 @@ display(HTML(fates
       <td>7592770</td>
     </tr>
     <tr>
-      <th>RsACE2_06_bin2</th>
+      <th>RsACE2old_06_bin2</th>
       <td>17726</td>
       <td>46494</td>
       <td>16625</td>
@@ -3006,7 +6102,7 @@ display(HTML(fates
       <td>242565</td>
     </tr>
     <tr>
-      <th>RsACE2_06_bin3</th>
+      <th>RsACE2old_06_bin3</th>
       <td>10684</td>
       <td>26473</td>
       <td>9578</td>
@@ -3014,7 +6110,7 @@ display(HTML(fates
       <td>142595</td>
     </tr>
     <tr>
-      <th>RsACE2_06_bin4</th>
+      <th>RsACE2old_06_bin4</th>
       <td>24041</td>
       <td>57140</td>
       <td>22696</td>
@@ -3022,7 +6118,7 @@ display(HTML(fates
       <td>337126</td>
     </tr>
     <tr>
-      <th>RsACE2_07_bin1</th>
+      <th>RsACE2old_07_bin1</th>
       <td>647808</td>
       <td>1867067</td>
       <td>632644</td>
@@ -3030,7 +6126,7 @@ display(HTML(fates
       <td>8913923</td>
     </tr>
     <tr>
-      <th>RsACE2_07_bin2</th>
+      <th>RsACE2old_07_bin2</th>
       <td>12356</td>
       <td>33577</td>
       <td>11631</td>
@@ -3038,7 +6134,7 @@ display(HTML(fates
       <td>164333</td>
     </tr>
     <tr>
-      <th>RsACE2_07_bin3</th>
+      <th>RsACE2old_07_bin3</th>
       <td>23809</td>
       <td>48765</td>
       <td>23204</td>
@@ -3046,7 +6142,7 @@ display(HTML(fates
       <td>351412</td>
     </tr>
     <tr>
-      <th>RsACE2_07_bin4</th>
+      <th>RsACE2old_07_bin4</th>
       <td>2685</td>
       <td>7793</td>
       <td>2645</td>
@@ -3054,7 +6150,7 @@ display(HTML(fates
       <td>35798</td>
     </tr>
     <tr>
-      <th>RsACE2_08_bin1</th>
+      <th>RsACE2old_08_bin1</th>
       <td>575179</td>
       <td>1704102</td>
       <td>560622</td>
@@ -3062,7 +6158,7 @@ display(HTML(fates
       <td>8153222</td>
     </tr>
     <tr>
-      <th>RsACE2_08_bin2</th>
+      <th>RsACE2old_08_bin2</th>
       <td>7564</td>
       <td>17419</td>
       <td>6022</td>
@@ -3070,7 +6166,7 @@ display(HTML(fates
       <td>85354</td>
     </tr>
     <tr>
-      <th>RsACE2_08_bin3</th>
+      <th>RsACE2old_08_bin3</th>
       <td>35948</td>
       <td>103747</td>
       <td>35382</td>
@@ -3078,7 +6174,7 @@ display(HTML(fates
       <td>509440</td>
     </tr>
     <tr>
-      <th>RsACE2_08_bin4</th>
+      <th>RsACE2old_08_bin4</th>
       <td>2608</td>
       <td>6559</td>
       <td>2330</td>
@@ -3086,7 +6182,7 @@ display(HTML(fates
       <td>33302</td>
     </tr>
     <tr>
-      <th>RsACE2_09_bin1</th>
+      <th>RsACE2old_09_bin1</th>
       <td>619320</td>
       <td>1787333</td>
       <td>597493</td>
@@ -3094,7 +6190,7 @@ display(HTML(fates
       <td>8537635</td>
     </tr>
     <tr>
-      <th>RsACE2_09_bin2</th>
+      <th>RsACE2old_09_bin2</th>
       <td>11650</td>
       <td>32923</td>
       <td>11312</td>
@@ -3102,7 +6198,7 @@ display(HTML(fates
       <td>159167</td>
     </tr>
     <tr>
-      <th>RsACE2_09_bin3</th>
+      <th>RsACE2old_09_bin3</th>
       <td>10257</td>
       <td>20671</td>
       <td>9099</td>
@@ -3110,7 +6206,7 @@ display(HTML(fates
       <td>137148</td>
     </tr>
     <tr>
-      <th>RsACE2_09_bin4</th>
+      <th>RsACE2old_09_bin4</th>
       <td>1967</td>
       <td>9207</td>
       <td>1836</td>
@@ -3148,6 +6244,294 @@ display(HTML(fates
       <td>253634</td>
       <td>81269</td>
       <td>2763315</td>
+    </tr>
+    <tr>
+      <th>cvACE2_01_bin1</th>
+      <td>3455947</td>
+      <td>1650660</td>
+      <td>578953</td>
+      <td>124943</td>
+      <td>6858923</td>
+    </tr>
+    <tr>
+      <th>cvACE2_01_bin2</th>
+      <td>350695</td>
+      <td>160091</td>
+      <td>57972</td>
+      <td>21947</td>
+      <td>703180</td>
+    </tr>
+    <tr>
+      <th>cvACE2_01_bin3</th>
+      <td>235379</td>
+      <td>96760</td>
+      <td>39668</td>
+      <td>10790</td>
+      <td>479485</td>
+    </tr>
+    <tr>
+      <th>cvACE2_01_bin4</th>
+      <td>733692</td>
+      <td>258686</td>
+      <td>127969</td>
+      <td>24162</td>
+      <td>1561451</td>
+    </tr>
+    <tr>
+      <th>cvACE2_02_bin1</th>
+      <td>3449541</td>
+      <td>1637778</td>
+      <td>585808</td>
+      <td>130536</td>
+      <td>6878146</td>
+    </tr>
+    <tr>
+      <th>cvACE2_02_bin2</th>
+      <td>377173</td>
+      <td>161424</td>
+      <td>68185</td>
+      <td>15523</td>
+      <td>792110</td>
+    </tr>
+    <tr>
+      <th>cvACE2_02_bin3</th>
+      <td>472945</td>
+      <td>166568</td>
+      <td>79808</td>
+      <td>16820</td>
+      <td>1015873</td>
+    </tr>
+    <tr>
+      <th>cvACE2_02_bin4</th>
+      <td>178559</td>
+      <td>59574</td>
+      <td>29903</td>
+      <td>7680</td>
+      <td>382912</td>
+    </tr>
+    <tr>
+      <th>cvACE2_03_bin1</th>
+      <td>3910430</td>
+      <td>1849800</td>
+      <td>690301</td>
+      <td>141999</td>
+      <td>7732939</td>
+    </tr>
+    <tr>
+      <th>cvACE2_03_bin2</th>
+      <td>335391</td>
+      <td>149172</td>
+      <td>55309</td>
+      <td>14594</td>
+      <td>677337</td>
+    </tr>
+    <tr>
+      <th>cvACE2_03_bin3</th>
+      <td>222436</td>
+      <td>81065</td>
+      <td>39390</td>
+      <td>8922</td>
+      <td>466666</td>
+    </tr>
+    <tr>
+      <th>cvACE2_03_bin4</th>
+      <td>520617</td>
+      <td>178767</td>
+      <td>87299</td>
+      <td>23768</td>
+      <td>1110932</td>
+    </tr>
+    <tr>
+      <th>cvACE2_04_bin1</th>
+      <td>4106799</td>
+      <td>1880814</td>
+      <td>685606</td>
+      <td>152339</td>
+      <td>8206452</td>
+    </tr>
+    <tr>
+      <th>cvACE2_04_bin2</th>
+      <td>347048</td>
+      <td>136078</td>
+      <td>58750</td>
+      <td>11606</td>
+      <td>717599</td>
+    </tr>
+    <tr>
+      <th>cvACE2_04_bin3</th>
+      <td>71929</td>
+      <td>25784</td>
+      <td>12249</td>
+      <td>3476</td>
+      <td>149596</td>
+    </tr>
+    <tr>
+      <th>cvACE2_04_bin4</th>
+      <td>9929</td>
+      <td>3847</td>
+      <td>1598</td>
+      <td>1767</td>
+      <td>18916</td>
+    </tr>
+    <tr>
+      <th>cvACE2_05_bin1</th>
+      <td>3988749</td>
+      <td>1817695</td>
+      <td>672785</td>
+      <td>137778</td>
+      <td>8073802</td>
+    </tr>
+    <tr>
+      <th>cvACE2_05_bin2</th>
+      <td>304368</td>
+      <td>129011</td>
+      <td>50170</td>
+      <td>19357</td>
+      <td>609778</td>
+    </tr>
+    <tr>
+      <th>cvACE2_05_bin3</th>
+      <td>26778</td>
+      <td>12343</td>
+      <td>4427</td>
+      <td>3769</td>
+      <td>54569</td>
+    </tr>
+    <tr>
+      <th>cvACE2_05_bin4</th>
+      <td>29796</td>
+      <td>12152</td>
+      <td>4665</td>
+      <td>5424</td>
+      <td>53402</td>
+    </tr>
+    <tr>
+      <th>cvACE2_06_bin1</th>
+      <td>4254949</td>
+      <td>1915066</td>
+      <td>728153</td>
+      <td>150113</td>
+      <td>8558568</td>
+    </tr>
+    <tr>
+      <th>cvACE2_06_bin2</th>
+      <td>307777</td>
+      <td>134953</td>
+      <td>50871</td>
+      <td>11441</td>
+      <td>608248</td>
+    </tr>
+    <tr>
+      <th>cvACE2_06_bin3</th>
+      <td>28011</td>
+      <td>12143</td>
+      <td>4662</td>
+      <td>1338</td>
+      <td>54639</td>
+    </tr>
+    <tr>
+      <th>cvACE2_06_bin4</th>
+      <td>36595</td>
+      <td>15370</td>
+      <td>5863</td>
+      <td>5912</td>
+      <td>70603</td>
+    </tr>
+    <tr>
+      <th>cvACE2_07_bin1</th>
+      <td>4064165</td>
+      <td>1836515</td>
+      <td>702332</td>
+      <td>140490</td>
+      <td>8222843</td>
+    </tr>
+    <tr>
+      <th>cvACE2_07_bin2</th>
+      <td>228318</td>
+      <td>102889</td>
+      <td>39464</td>
+      <td>9733</td>
+      <td>460290</td>
+    </tr>
+    <tr>
+      <th>cvACE2_07_bin3</th>
+      <td>47605</td>
+      <td>20247</td>
+      <td>8098</td>
+      <td>2334</td>
+      <td>96958</td>
+    </tr>
+    <tr>
+      <th>cvACE2_07_bin4</th>
+      <td>34773</td>
+      <td>15516</td>
+      <td>5854</td>
+      <td>1408</td>
+      <td>69151</td>
+    </tr>
+    <tr>
+      <th>cvACE2_08_bin1</th>
+      <td>3925282</td>
+      <td>1796112</td>
+      <td>662578</td>
+      <td>132307</td>
+      <td>8064147</td>
+    </tr>
+    <tr>
+      <th>cvACE2_08_bin2</th>
+      <td>233483</td>
+      <td>102581</td>
+      <td>38923</td>
+      <td>14662</td>
+      <td>460382</td>
+    </tr>
+    <tr>
+      <th>cvACE2_08_bin3</th>
+      <td>59960</td>
+      <td>27090</td>
+      <td>10202</td>
+      <td>2265</td>
+      <td>119918</td>
+    </tr>
+    <tr>
+      <th>cvACE2_08_bin4</th>
+      <td>37920</td>
+      <td>40044</td>
+      <td>6242</td>
+      <td>3367</td>
+      <td>52555</td>
+    </tr>
+    <tr>
+      <th>cvACE2_09_bin1</th>
+      <td>4460123</td>
+      <td>2014766</td>
+      <td>754889</td>
+      <td>151479</td>
+      <td>9032989</td>
+    </tr>
+    <tr>
+      <th>cvACE2_09_bin2</th>
+      <td>93123</td>
+      <td>43053</td>
+      <td>16090</td>
+      <td>4307</td>
+      <td>184773</td>
+    </tr>
+    <tr>
+      <th>cvACE2_09_bin3</th>
+      <td>178735</td>
+      <td>77964</td>
+      <td>29543</td>
+      <td>7526</td>
+      <td>358983</td>
+    </tr>
+    <tr>
+      <th>cvACE2_09_bin4</th>
+      <td>93940</td>
+      <td>39547</td>
+      <td>16528</td>
+      <td>3464</td>
+      <td>190875</td>
     </tr>
     <tr>
       <th>huACE2_01_bin1</th>
@@ -3208,10 +6592,10 @@ display(HTML(fates
     <tr>
       <th>huACE2_02_bin4</th>
       <td>223321</td>
-      <td>1201455</td>
+      <td>1201454</td>
       <td>505893</td>
       <td>128005</td>
-      <td>5582641</td>
+      <td>5582642</td>
     </tr>
     <tr>
       <th>huACE2_03_bin1</th>
@@ -3438,7 +6822,871 @@ display(HTML(fates
       <td>260492</td>
     </tr>
     <tr>
-      <th rowspan="40" valign="top">lib2</th>
+      <th>huACE2pool6_01_bin1</th>
+      <td>12508</td>
+      <td>433522</td>
+      <td>43160</td>
+      <td>17079</td>
+      <td>954685</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_01_bin2</th>
+      <td>2900</td>
+      <td>99634</td>
+      <td>9352</td>
+      <td>7973</td>
+      <td>195182</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_01_bin3</th>
+      <td>425</td>
+      <td>16538</td>
+      <td>1448</td>
+      <td>1536</td>
+      <td>31078</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_01_bin4</th>
+      <td>1536</td>
+      <td>42404</td>
+      <td>5025</td>
+      <td>5848</td>
+      <td>123474</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_02_bin1</th>
+      <td>11484</td>
+      <td>419484</td>
+      <td>42633</td>
+      <td>17606</td>
+      <td>924518</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_02_bin2</th>
+      <td>1237</td>
+      <td>45001</td>
+      <td>4272</td>
+      <td>1737</td>
+      <td>89059</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_02_bin3</th>
+      <td>71</td>
+      <td>654</td>
+      <td>47</td>
+      <td>1128</td>
+      <td>1166</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_02_bin4</th>
+      <td>1217</td>
+      <td>36040</td>
+      <td>4480</td>
+      <td>3942</td>
+      <td>104194</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_03_bin1</th>
+      <td>14077</td>
+      <td>500579</td>
+      <td>49461</td>
+      <td>19259</td>
+      <td>1103417</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_03_bin2</th>
+      <td>944</td>
+      <td>33378</td>
+      <td>3150</td>
+      <td>2102</td>
+      <td>71484</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_03_bin3</th>
+      <td>80</td>
+      <td>503</td>
+      <td>64</td>
+      <td>1579</td>
+      <td>1238</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_03_bin4</th>
+      <td>1923</td>
+      <td>53626</td>
+      <td>6333</td>
+      <td>4438</td>
+      <td>153074</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_04_bin1</th>
+      <td>18037</td>
+      <td>666627</td>
+      <td>66837</td>
+      <td>33215</td>
+      <td>1453488</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_04_bin2</th>
+      <td>1282</td>
+      <td>31286</td>
+      <td>3201</td>
+      <td>12527</td>
+      <td>71390</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_04_bin3</th>
+      <td>203</td>
+      <td>5075</td>
+      <td>526</td>
+      <td>2211</td>
+      <td>12734</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_04_bin4</th>
+      <td>569</td>
+      <td>14662</td>
+      <td>1797</td>
+      <td>4132</td>
+      <td>44212</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_05_bin1</th>
+      <td>17254</td>
+      <td>573640</td>
+      <td>57447</td>
+      <td>37079</td>
+      <td>1253436</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_05_bin2</th>
+      <td>1270</td>
+      <td>41068</td>
+      <td>4403</td>
+      <td>1991</td>
+      <td>95553</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_05_bin3</th>
+      <td>122</td>
+      <td>2275</td>
+      <td>328</td>
+      <td>2421</td>
+      <td>6821</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_05_bin4</th>
+      <td>45</td>
+      <td>107</td>
+      <td>18</td>
+      <td>774</td>
+      <td>359</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_06_bin1</th>
+      <td>19496</td>
+      <td>693513</td>
+      <td>69651</td>
+      <td>30645</td>
+      <td>1532466</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_06_bin2</th>
+      <td>2763</td>
+      <td>89408</td>
+      <td>9750</td>
+      <td>3533</td>
+      <td>214311</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_06_bin3</th>
+      <td>185</td>
+      <td>3391</td>
+      <td>379</td>
+      <td>3478</td>
+      <td>9395</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_06_bin4</th>
+      <td>131</td>
+      <td>72</td>
+      <td>4</td>
+      <td>4740</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_07_bin1</th>
+      <td>149108</td>
+      <td>1048442</td>
+      <td>208474</td>
+      <td>59606</td>
+      <td>2334905</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_07_bin2</th>
+      <td>11753</td>
+      <td>81102</td>
+      <td>15935</td>
+      <td>5744</td>
+      <td>185395</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_07_bin3</th>
+      <td>2041</td>
+      <td>10220</td>
+      <td>1130</td>
+      <td>9124</td>
+      <td>7848</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_07_bin4</th>
+      <td>218</td>
+      <td>493</td>
+      <td>50</td>
+      <td>1401</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_08_bin1</th>
+      <td>144585</td>
+      <td>1033735</td>
+      <td>197666</td>
+      <td>48300</td>
+      <td>2296294</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_08_bin2</th>
+      <td>7085</td>
+      <td>46040</td>
+      <td>8697</td>
+      <td>12315</td>
+      <td>97111</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_08_bin3</th>
+      <td>342</td>
+      <td>315</td>
+      <td>67</td>
+      <td>3973</td>
+      <td>617</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_08_bin4</th>
+      <td>2806</td>
+      <td>2139</td>
+      <td>85</td>
+      <td>46262</td>
+      <td>324</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_09_bin1</th>
+      <td>73495</td>
+      <td>540131</td>
+      <td>105565</td>
+      <td>25880</td>
+      <td>1203826</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_09_bin2</th>
+      <td>9280</td>
+      <td>64970</td>
+      <td>12853</td>
+      <td>3810</td>
+      <td>146361</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_09_bin3</th>
+      <td>316</td>
+      <td>646</td>
+      <td>85</td>
+      <td>2254</td>
+      <td>960</td>
+    </tr>
+    <tr>
+      <th>huACE2pool6_09_bin4</th>
+      <td>782</td>
+      <td>534</td>
+      <td>28</td>
+      <td>10555</td>
+      <td>197</td>
+    </tr>
+    <tr>
+      <th rowspan="148" valign="top">lib2</th>
+      <th>RaACE2_01_bin1</th>
+      <td>412729</td>
+      <td>1788346</td>
+      <td>561819</td>
+      <td>121012</td>
+      <td>7547193</td>
+    </tr>
+    <tr>
+      <th>RaACE2_01_bin2</th>
+      <td>116636</td>
+      <td>505895</td>
+      <td>159626</td>
+      <td>34486</td>
+      <td>2138699</td>
+    </tr>
+    <tr>
+      <th>RaACE2_01_bin3</th>
+      <td>59994</td>
+      <td>258907</td>
+      <td>80437</td>
+      <td>18139</td>
+      <td>1097075</td>
+    </tr>
+    <tr>
+      <th>RaACE2_01_bin4</th>
+      <td>169292</td>
+      <td>608111</td>
+      <td>227443</td>
+      <td>57352</td>
+      <td>3278423</td>
+    </tr>
+    <tr>
+      <th>RaACE2_02_bin1</th>
+      <td>509300</td>
+      <td>2233403</td>
+      <td>702780</td>
+      <td>144698</td>
+      <td>9485078</td>
+    </tr>
+    <tr>
+      <th>RaACE2_02_bin2</th>
+      <td>85317</td>
+      <td>367029</td>
+      <td>113072</td>
+      <td>24478</td>
+      <td>1551910</td>
+    </tr>
+    <tr>
+      <th>RaACE2_02_bin3</th>
+      <td>53476</td>
+      <td>206875</td>
+      <td>69758</td>
+      <td>15616</td>
+      <td>1006481</td>
+    </tr>
+    <tr>
+      <th>RaACE2_02_bin4</th>
+      <td>159404</td>
+      <td>550628</td>
+      <td>220741</td>
+      <td>51781</td>
+      <td>3055100</td>
+    </tr>
+    <tr>
+      <th>RaACE2_03_bin1</th>
+      <td>493203</td>
+      <td>2153322</td>
+      <td>670913</td>
+      <td>143495</td>
+      <td>9024825</td>
+    </tr>
+    <tr>
+      <th>RaACE2_03_bin2</th>
+      <td>69609</td>
+      <td>294040</td>
+      <td>93899</td>
+      <td>20938</td>
+      <td>1332860</td>
+    </tr>
+    <tr>
+      <th>RaACE2_03_bin3</th>
+      <td>51168</td>
+      <td>194540</td>
+      <td>68871</td>
+      <td>15680</td>
+      <td>978579</td>
+    </tr>
+    <tr>
+      <th>RaACE2_03_bin4</th>
+      <td>110574</td>
+      <td>382380</td>
+      <td>148593</td>
+      <td>37766</td>
+      <td>2136427</td>
+    </tr>
+    <tr>
+      <th>RaACE2_04_bin1</th>
+      <td>490022</td>
+      <td>2140886</td>
+      <td>663131</td>
+      <td>146810</td>
+      <td>9128945</td>
+    </tr>
+    <tr>
+      <th>RaACE2_04_bin2</th>
+      <td>39403</td>
+      <td>151099</td>
+      <td>51869</td>
+      <td>12554</td>
+      <td>724362</td>
+    </tr>
+    <tr>
+      <th>RaACE2_04_bin3</th>
+      <td>54571</td>
+      <td>195516</td>
+      <td>72836</td>
+      <td>31497</td>
+      <td>1024734</td>
+    </tr>
+    <tr>
+      <th>RaACE2_04_bin4</th>
+      <td>127863</td>
+      <td>433560</td>
+      <td>172512</td>
+      <td>43916</td>
+      <td>2509354</td>
+    </tr>
+    <tr>
+      <th>RaACE2_05_bin1</th>
+      <td>268685</td>
+      <td>1171337</td>
+      <td>372028</td>
+      <td>78716</td>
+      <td>5008422</td>
+    </tr>
+    <tr>
+      <th>RaACE2_05_bin2</th>
+      <td>41438</td>
+      <td>150992</td>
+      <td>54785</td>
+      <td>16918</td>
+      <td>759212</td>
+    </tr>
+    <tr>
+      <th>RaACE2_05_bin3</th>
+      <td>82023</td>
+      <td>310517</td>
+      <td>116729</td>
+      <td>30918</td>
+      <td>1609385</td>
+    </tr>
+    <tr>
+      <th>RaACE2_05_bin4</th>
+      <td>41205</td>
+      <td>129855</td>
+      <td>55017</td>
+      <td>19710</td>
+      <td>795499</td>
+    </tr>
+    <tr>
+      <th>RaACE2_06_bin1</th>
+      <td>476897</td>
+      <td>2023936</td>
+      <td>654138</td>
+      <td>138893</td>
+      <td>8903192</td>
+    </tr>
+    <tr>
+      <th>RaACE2_06_bin2</th>
+      <td>112927</td>
+      <td>443523</td>
+      <td>155652</td>
+      <td>39788</td>
+      <td>2153026</td>
+    </tr>
+    <tr>
+      <th>RaACE2_06_bin3</th>
+      <td>38950</td>
+      <td>133773</td>
+      <td>53517</td>
+      <td>12851</td>
+      <td>779280</td>
+    </tr>
+    <tr>
+      <th>RaACE2_06_bin4</th>
+      <td>1400</td>
+      <td>3309</td>
+      <td>1387</td>
+      <td>1169</td>
+      <td>19781</td>
+    </tr>
+    <tr>
+      <th>RaACE2_07_bin1</th>
+      <td>605601</td>
+      <td>2556848</td>
+      <td>814972</td>
+      <td>181022</td>
+      <td>11361781</td>
+    </tr>
+    <tr>
+      <th>RaACE2_07_bin2</th>
+      <td>93864</td>
+      <td>337198</td>
+      <td>129507</td>
+      <td>30166</td>
+      <td>1824649</td>
+    </tr>
+    <tr>
+      <th>RaACE2_07_bin3</th>
+      <td>3207</td>
+      <td>10835</td>
+      <td>4314</td>
+      <td>1851</td>
+      <td>58886</td>
+    </tr>
+    <tr>
+      <th>RaACE2_07_bin4</th>
+      <td>1775</td>
+      <td>192</td>
+      <td>128</td>
+      <td>4092</td>
+      <td>1760</td>
+    </tr>
+    <tr>
+      <th>RaACE2_08_bin1</th>
+      <td>619129</td>
+      <td>2534489</td>
+      <td>837958</td>
+      <td>198928</td>
+      <td>11561199</td>
+    </tr>
+    <tr>
+      <th>RaACE2_08_bin2</th>
+      <td>30406</td>
+      <td>108153</td>
+      <td>41852</td>
+      <td>9244</td>
+      <td>583984</td>
+    </tr>
+    <tr>
+      <th>RaACE2_08_bin3</th>
+      <td>2703</td>
+      <td>10608</td>
+      <td>3399</td>
+      <td>2215</td>
+      <td>46484</td>
+    </tr>
+    <tr>
+      <th>RaACE2_08_bin4</th>
+      <td>93</td>
+      <td>174</td>
+      <td>31</td>
+      <td>357</td>
+      <td>279</td>
+    </tr>
+    <tr>
+      <th>RaACE2_09_bin1</th>
+      <td>540534</td>
+      <td>2189297</td>
+      <td>724488</td>
+      <td>156797</td>
+      <td>10064631</td>
+    </tr>
+    <tr>
+      <th>RaACE2_09_bin2</th>
+      <td>10875</td>
+      <td>44122</td>
+      <td>14575</td>
+      <td>3999</td>
+      <td>200590</td>
+    </tr>
+    <tr>
+      <th>RaACE2_09_bin3</th>
+      <td>4502</td>
+      <td>19310</td>
+      <td>5710</td>
+      <td>2921</td>
+      <td>79020</td>
+    </tr>
+    <tr>
+      <th>RaACE2_09_bin4</th>
+      <td>164</td>
+      <td>898</td>
+      <td>132</td>
+      <td>371</td>
+      <td>1210</td>
+    </tr>
+    <tr>
+      <th>RsACE2_01_bin1</th>
+      <td>307276</td>
+      <td>1309582</td>
+      <td>414671</td>
+      <td>98081</td>
+      <td>5731700</td>
+    </tr>
+    <tr>
+      <th>RsACE2_01_bin2</th>
+      <td>172569</td>
+      <td>704780</td>
+      <td>227266</td>
+      <td>66532</td>
+      <td>3213923</td>
+    </tr>
+    <tr>
+      <th>RsACE2_01_bin3</th>
+      <td>48437</td>
+      <td>186957</td>
+      <td>65792</td>
+      <td>15140</td>
+      <td>927133</td>
+    </tr>
+    <tr>
+      <th>RsACE2_01_bin4</th>
+      <td>73657</td>
+      <td>269293</td>
+      <td>101376</td>
+      <td>22152</td>
+      <td>1386613</td>
+    </tr>
+    <tr>
+      <th>RsACE2_02_bin1</th>
+      <td>501706</td>
+      <td>2096631</td>
+      <td>680336</td>
+      <td>164926</td>
+      <td>9370151</td>
+    </tr>
+    <tr>
+      <th>RsACE2_02_bin2</th>
+      <td>110550</td>
+      <td>431492</td>
+      <td>151928</td>
+      <td>34888</td>
+      <td>2040459</td>
+    </tr>
+    <tr>
+      <th>RsACE2_02_bin3</th>
+      <td>26310</td>
+      <td>96301</td>
+      <td>34643</td>
+      <td>9991</td>
+      <td>490120</td>
+    </tr>
+    <tr>
+      <th>RsACE2_02_bin4</th>
+      <td>88015</td>
+      <td>318878</td>
+      <td>117250</td>
+      <td>28960</td>
+      <td>1682589</td>
+    </tr>
+    <tr>
+      <th>RsACE2_03_bin1</th>
+      <td>518247</td>
+      <td>2128307</td>
+      <td>722436</td>
+      <td>171571</td>
+      <td>9596867</td>
+    </tr>
+    <tr>
+      <th>RsACE2_03_bin2</th>
+      <td>39926</td>
+      <td>156630</td>
+      <td>52964</td>
+      <td>13174</td>
+      <td>751384</td>
+    </tr>
+    <tr>
+      <th>RsACE2_03_bin3</th>
+      <td>34332</td>
+      <td>129229</td>
+      <td>47179</td>
+      <td>12074</td>
+      <td>646306</td>
+    </tr>
+    <tr>
+      <th>RsACE2_03_bin4</th>
+      <td>24403</td>
+      <td>80927</td>
+      <td>31755</td>
+      <td>12162</td>
+      <td>452799</td>
+    </tr>
+    <tr>
+      <th>RsACE2_04_bin1</th>
+      <td>568027</td>
+      <td>2316463</td>
+      <td>748416</td>
+      <td>174458</td>
+      <td>10416853</td>
+    </tr>
+    <tr>
+      <th>RsACE2_04_bin2</th>
+      <td>33223</td>
+      <td>130375</td>
+      <td>45262</td>
+      <td>10714</td>
+      <td>631131</td>
+    </tr>
+    <tr>
+      <th>RsACE2_04_bin3</th>
+      <td>33302</td>
+      <td>112103</td>
+      <td>44675</td>
+      <td>10465</td>
+      <td>638268</td>
+    </tr>
+    <tr>
+      <th>RsACE2_04_bin4</th>
+      <td>4563</td>
+      <td>15941</td>
+      <td>5581</td>
+      <td>1761</td>
+      <td>75066</td>
+    </tr>
+    <tr>
+      <th>RsACE2_05_bin1</th>
+      <td>573209</td>
+      <td>2353635</td>
+      <td>771706</td>
+      <td>170142</td>
+      <td>10777609</td>
+    </tr>
+    <tr>
+      <th>RsACE2_05_bin2</th>
+      <td>31937</td>
+      <td>110239</td>
+      <td>41237</td>
+      <td>15322</td>
+      <td>588551</td>
+    </tr>
+    <tr>
+      <th>RsACE2_05_bin3</th>
+      <td>4532</td>
+      <td>16394</td>
+      <td>5433</td>
+      <td>3409</td>
+      <td>77533</td>
+    </tr>
+    <tr>
+      <th>RsACE2_05_bin4</th>
+      <td>1314</td>
+      <td>3540</td>
+      <td>943</td>
+      <td>4031</td>
+      <td>11942</td>
+    </tr>
+    <tr>
+      <th>RsACE2_06_bin1</th>
+      <td>533118</td>
+      <td>2179831</td>
+      <td>726808</td>
+      <td>155575</td>
+      <td>9994948</td>
+    </tr>
+    <tr>
+      <th>RsACE2_06_bin2</th>
+      <td>32016</td>
+      <td>118525</td>
+      <td>41614</td>
+      <td>9800</td>
+      <td>584894</td>
+    </tr>
+    <tr>
+      <th>RsACE2_06_bin3</th>
+      <td>927</td>
+      <td>3678</td>
+      <td>953</td>
+      <td>401</td>
+      <td>12630</td>
+    </tr>
+    <tr>
+      <th>RsACE2_06_bin4</th>
+      <td>1075</td>
+      <td>2319</td>
+      <td>899</td>
+      <td>2542</td>
+      <td>12629</td>
+    </tr>
+    <tr>
+      <th>RsACE2_07_bin1</th>
+      <td>586884</td>
+      <td>2355995</td>
+      <td>797719</td>
+      <td>176536</td>
+      <td>10895191</td>
+    </tr>
+    <tr>
+      <th>RsACE2_07_bin2</th>
+      <td>15672</td>
+      <td>62323</td>
+      <td>20331</td>
+      <td>6303</td>
+      <td>279996</td>
+    </tr>
+    <tr>
+      <th>RsACE2_07_bin3</th>
+      <td>43539</td>
+      <td>173386</td>
+      <td>58907</td>
+      <td>12782</td>
+      <td>819093</td>
+    </tr>
+    <tr>
+      <th>RsACE2_07_bin4</th>
+      <td>2134</td>
+      <td>8576</td>
+      <td>2843</td>
+      <td>700</td>
+      <td>39310</td>
+    </tr>
+    <tr>
+      <th>RsACE2_08_bin1</th>
+      <td>545805</td>
+      <td>2284407</td>
+      <td>742433</td>
+      <td>161642</td>
+      <td>10533653</td>
+    </tr>
+    <tr>
+      <th>RsACE2_08_bin2</th>
+      <td>12639</td>
+      <td>45973</td>
+      <td>15479</td>
+      <td>9647</td>
+      <td>210143</td>
+    </tr>
+    <tr>
+      <th>RsACE2_08_bin3</th>
+      <td>14640</td>
+      <td>60218</td>
+      <td>20123</td>
+      <td>4955</td>
+      <td>282382</td>
+    </tr>
+    <tr>
+      <th>RsACE2_08_bin4</th>
+      <td>1751</td>
+      <td>6875</td>
+      <td>2115</td>
+      <td>2332</td>
+      <td>28571</td>
+    </tr>
+    <tr>
+      <th>RsACE2_09_bin1</th>
+      <td>540534</td>
+      <td>2189297</td>
+      <td>724488</td>
+      <td>156797</td>
+      <td>10064631</td>
+    </tr>
+    <tr>
+      <th>RsACE2_09_bin2</th>
+      <td>10875</td>
+      <td>44122</td>
+      <td>14575</td>
+      <td>3999</td>
+      <td>200590</td>
+    </tr>
+    <tr>
+      <th>RsACE2_09_bin3</th>
+      <td>4502</td>
+      <td>19310</td>
+      <td>5710</td>
+      <td>2921</td>
+      <td>79020</td>
+    </tr>
+    <tr>
+      <th>RsACE2_09_bin4</th>
+      <td>164</td>
+      <td>898</td>
+      <td>132</td>
+      <td>371</td>
+      <td>1210</td>
+    </tr>
+    <tr>
       <th>SortSeq_bin1</th>
       <td>76232</td>
       <td>480225</td>
@@ -3469,6 +7717,294 @@ display(HTML(fates
       <td>335802</td>
       <td>90095</td>
       <td>3609902</td>
+    </tr>
+    <tr>
+      <th>cvACE2_01_bin1</th>
+      <td>4035523</td>
+      <td>2103136</td>
+      <td>697994</td>
+      <td>142123</td>
+      <td>7853581</td>
+    </tr>
+    <tr>
+      <th>cvACE2_01_bin2</th>
+      <td>361086</td>
+      <td>170682</td>
+      <td>62247</td>
+      <td>15426</td>
+      <td>716414</td>
+    </tr>
+    <tr>
+      <th>cvACE2_01_bin3</th>
+      <td>275514</td>
+      <td>117526</td>
+      <td>46787</td>
+      <td>11972</td>
+      <td>559577</td>
+    </tr>
+    <tr>
+      <th>cvACE2_01_bin4</th>
+      <td>896904</td>
+      <td>303383</td>
+      <td>150571</td>
+      <td>38543</td>
+      <td>1915493</td>
+    </tr>
+    <tr>
+      <th>cvACE2_02_bin1</th>
+      <td>4100210</td>
+      <td>2126655</td>
+      <td>703865</td>
+      <td>142816</td>
+      <td>8097756</td>
+    </tr>
+    <tr>
+      <th>cvACE2_02_bin2</th>
+      <td>363557</td>
+      <td>157161</td>
+      <td>62459</td>
+      <td>14173</td>
+      <td>758504</td>
+    </tr>
+    <tr>
+      <th>cvACE2_02_bin3</th>
+      <td>508727</td>
+      <td>170731</td>
+      <td>83955</td>
+      <td>20618</td>
+      <td>1084318</td>
+    </tr>
+    <tr>
+      <th>cvACE2_02_bin4</th>
+      <td>209439</td>
+      <td>67332</td>
+      <td>36986</td>
+      <td>9244</td>
+      <td>447077</td>
+    </tr>
+    <tr>
+      <th>cvACE2_03_bin1</th>
+      <td>4248435</td>
+      <td>2201982</td>
+      <td>734017</td>
+      <td>155414</td>
+      <td>8406392</td>
+    </tr>
+    <tr>
+      <th>cvACE2_03_bin2</th>
+      <td>280007</td>
+      <td>128756</td>
+      <td>46168</td>
+      <td>11688</td>
+      <td>559124</td>
+    </tr>
+    <tr>
+      <th>cvACE2_03_bin3</th>
+      <td>186428</td>
+      <td>67130</td>
+      <td>31654</td>
+      <td>8627</td>
+      <td>396901</td>
+    </tr>
+    <tr>
+      <th>cvACE2_03_bin4</th>
+      <td>500736</td>
+      <td>164959</td>
+      <td>83895</td>
+      <td>20312</td>
+      <td>1065197</td>
+    </tr>
+    <tr>
+      <th>cvACE2_04_bin1</th>
+      <td>3828806</td>
+      <td>1864635</td>
+      <td>644352</td>
+      <td>140504</td>
+      <td>7613042</td>
+    </tr>
+    <tr>
+      <th>cvACE2_04_bin2</th>
+      <td>306624</td>
+      <td>124300</td>
+      <td>51817</td>
+      <td>14283</td>
+      <td>623854</td>
+    </tr>
+    <tr>
+      <th>cvACE2_04_bin3</th>
+      <td>63169</td>
+      <td>21487</td>
+      <td>9939</td>
+      <td>13087</td>
+      <td>123441</td>
+    </tr>
+    <tr>
+      <th>cvACE2_04_bin4</th>
+      <td>5574</td>
+      <td>1648</td>
+      <td>670</td>
+      <td>3486</td>
+      <td>8380</td>
+    </tr>
+    <tr>
+      <th>cvACE2_05_bin1</th>
+      <td>3754523</td>
+      <td>1804222</td>
+      <td>650038</td>
+      <td>135444</td>
+      <td>7498112</td>
+    </tr>
+    <tr>
+      <th>cvACE2_05_bin2</th>
+      <td>201624</td>
+      <td>84343</td>
+      <td>34100</td>
+      <td>14833</td>
+      <td>396112</td>
+    </tr>
+    <tr>
+      <th>cvACE2_05_bin3</th>
+      <td>4612</td>
+      <td>1981</td>
+      <td>706</td>
+      <td>1738</td>
+      <td>7811</td>
+    </tr>
+    <tr>
+      <th>cvACE2_05_bin4</th>
+      <td>7145</td>
+      <td>1589</td>
+      <td>519</td>
+      <td>9048</td>
+      <td>5890</td>
+    </tr>
+    <tr>
+      <th>cvACE2_06_bin1</th>
+      <td>2619438</td>
+      <td>1258964</td>
+      <td>451603</td>
+      <td>93851</td>
+      <td>5233770</td>
+    </tr>
+    <tr>
+      <th>cvACE2_06_bin2</th>
+      <td>195907</td>
+      <td>92860</td>
+      <td>33647</td>
+      <td>8311</td>
+      <td>389533</td>
+    </tr>
+    <tr>
+      <th>cvACE2_06_bin3</th>
+      <td>22917</td>
+      <td>10520</td>
+      <td>3816</td>
+      <td>2116</td>
+      <td>44666</td>
+    </tr>
+    <tr>
+      <th>cvACE2_06_bin4</th>
+      <td>13383</td>
+      <td>5746</td>
+      <td>2143</td>
+      <td>2091</td>
+      <td>26184</td>
+    </tr>
+    <tr>
+      <th>cvACE2_07_bin1</th>
+      <td>4275488</td>
+      <td>2048224</td>
+      <td>712497</td>
+      <td>153791</td>
+      <td>8523542</td>
+    </tr>
+    <tr>
+      <th>cvACE2_07_bin2</th>
+      <td>162832</td>
+      <td>76888</td>
+      <td>27852</td>
+      <td>6305</td>
+      <td>322553</td>
+    </tr>
+    <tr>
+      <th>cvACE2_07_bin3</th>
+      <td>17121</td>
+      <td>7949</td>
+      <td>2876</td>
+      <td>1852</td>
+      <td>33890</td>
+    </tr>
+    <tr>
+      <th>cvACE2_07_bin4</th>
+      <td>18530</td>
+      <td>5965</td>
+      <td>2210</td>
+      <td>6708</td>
+      <td>26371</td>
+    </tr>
+    <tr>
+      <th>cvACE2_08_bin1</th>
+      <td>3986567</td>
+      <td>1899308</td>
+      <td>675209</td>
+      <td>161045</td>
+      <td>7902791</td>
+    </tr>
+    <tr>
+      <th>cvACE2_08_bin2</th>
+      <td>192871</td>
+      <td>91933</td>
+      <td>33499</td>
+      <td>7570</td>
+      <td>385753</td>
+    </tr>
+    <tr>
+      <th>cvACE2_08_bin3</th>
+      <td>18497</td>
+      <td>8416</td>
+      <td>3127</td>
+      <td>1690</td>
+      <td>35818</td>
+    </tr>
+    <tr>
+      <th>cvACE2_08_bin4</th>
+      <td>16490</td>
+      <td>7633</td>
+      <td>2829</td>
+      <td>1088</td>
+      <td>32874</td>
+    </tr>
+    <tr>
+      <th>cvACE2_09_bin1</th>
+      <td>3451553</td>
+      <td>1639728</td>
+      <td>596742</td>
+      <td>138103</td>
+      <td>6866060</td>
+    </tr>
+    <tr>
+      <th>cvACE2_09_bin2</th>
+      <td>155525</td>
+      <td>76192</td>
+      <td>26786</td>
+      <td>8431</td>
+      <td>307054</td>
+    </tr>
+    <tr>
+      <th>cvACE2_09_bin3</th>
+      <td>143653</td>
+      <td>65951</td>
+      <td>23889</td>
+      <td>17707</td>
+      <td>271534</td>
+    </tr>
+    <tr>
+      <th>cvACE2_09_bin4</th>
+      <td>162062</td>
+      <td>76088</td>
+      <td>26183</td>
+      <td>6444</td>
+      <td>304847</td>
     </tr>
     <tr>
       <th>huACE2_01_bin1</th>
@@ -3529,10 +8065,10 @@ display(HTML(fates
     <tr>
       <th>huACE2_02_bin4</th>
       <td>240972</td>
-      <td>1222315</td>
+      <td>1222314</td>
       <td>546585</td>
       <td>128502</td>
-      <td>5799190</td>
+      <td>5799191</td>
     </tr>
     <tr>
       <th>huACE2_03_bin1</th>
