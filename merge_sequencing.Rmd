@@ -203,6 +203,12 @@ dt_pacbio[variant_class=="mutant" & mutant==wildtype,variant_class:="synonymous"
 dt_pacbio[mutant=="*",variant_class:="stop"]
 dt_pacbio[number_of_indels>0,variant_class:="indel"]
 
+#side thing -- for position 455, we introduced a secondary pool of variants ("pool 6") replacing missed mutations at positions 455 in GD-Pangolin and RaTG13
+#the NNS mutagenesis should reintroduce wildtype for comparison within the pool-6-only experiments (because we need to normalize mutants to wildtype within the experiment), but it appears the wildtype that is reintroduced is a synonymous mut.
+#(This is not a problem for BtKY72, becasue apparently between the 6 positiosn in pool 6 in this background, there are sufficient true-wildtype representatives, even if we are discarding some additional synonymous variants)
+#because we filter out synonymous mutations below for simplicity, let's recode specifically 455 synonymous muts in these two backgrounds so the proper wt comparitors in the pool-6-only experiments make it through to the phenotyping script where they are needed.
+dt_pacbio[variant_class=="synonymous" & target %in% c("RaTG13","GD-Pangolin") & position==455,variant_class:="wildtype"]
+
 ```
 
 For the mutated backgrounds, let's look at the fraction of variants in each class. In this PacBio sequencing, we have two backgrounds currently present for SARS-CoV-1_Urbani and SARS-CoV-2. For SARS-CoV-1, we created our own "in-house" SSM libraries in the 2693 background coding sequence due to delay in shipment of the product from Genscript. The Genscript product did arrive in time for PacBio sequencing, so we included it for barcode attribution in case there were problems with our "in-house" assembly, but because the "in-house" assembly looks good, we will move forward just that background (_2693, but we will rename it to the full _Urbani_HP03L name further below). On the SARS-CoV-2 side, the tube from Genscript corresponding to the SSM library for position S494 had zero volume, and it does not appear that DNA was deposited in any of the other tubes inadvertently since I do not see these mutated positions present in this background. In expectation that this was the case, we performed SSM at position S494 in our 2649 background SARS-CoV-2 sequence, so further below we will pool the mutants across these two backgrounds to get our final set of mini-mutant scanning mutants for this background.

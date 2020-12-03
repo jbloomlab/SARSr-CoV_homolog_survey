@@ -1627,8 +1627,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_01_bin1</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_01_bin1</td>
+      <td>RaACE2.787</td>
       <td>1</td>
       <td>1.0</td>
       <td>200914</td>
@@ -1637,8 +1637,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_01_bin2</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_01_bin2</td>
+      <td>RaACE2.787</td>
       <td>2</td>
       <td>1.0</td>
       <td>200914</td>
@@ -1647,8 +1647,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_01_bin3</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_01_bin3</td>
+      <td>RaACE2.787</td>
       <td>3</td>
       <td>1.0</td>
       <td>200914</td>
@@ -1657,8 +1657,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_01_bin4</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_01_bin4</td>
+      <td>RaACE2.787</td>
       <td>4</td>
       <td>1.0</td>
       <td>200914</td>
@@ -1667,8 +1667,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_02_bin1</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_02_bin1</td>
+      <td>RaACE2.787</td>
       <td>1</td>
       <td>2.0</td>
       <td>200914</td>
@@ -1677,8 +1677,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_02_bin2</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_02_bin2</td>
+      <td>RaACE2.787</td>
       <td>2</td>
       <td>2.0</td>
       <td>200914</td>
@@ -1687,8 +1687,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_02_bin3</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_02_bin3</td>
+      <td>RaACE2.787</td>
       <td>3</td>
       <td>2.0</td>
       <td>200914</td>
@@ -1697,8 +1697,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_02_bin4</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_02_bin4</td>
+      <td>RaACE2.787</td>
       <td>4</td>
       <td>2.0</td>
       <td>200914</td>
@@ -1707,8 +1707,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_03_bin1</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_03_bin1</td>
+      <td>RaACE2.787</td>
       <td>1</td>
       <td>3.0</td>
       <td>200914</td>
@@ -1717,8 +1717,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_03_bin2</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_03_bin2</td>
+      <td>RaACE2.787</td>
       <td>2</td>
       <td>3.0</td>
       <td>200914</td>
@@ -1727,8 +1727,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_03_bin3</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_03_bin3</td>
+      <td>RaACE2.787</td>
       <td>3</td>
       <td>3.0</td>
       <td>200914</td>
@@ -1737,8 +1737,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_03_bin4</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_03_bin4</td>
+      <td>RaACE2.787</td>
       <td>4</td>
       <td>3.0</td>
       <td>200914</td>
@@ -1747,8 +1747,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_04_bin1</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_04_bin1</td>
+      <td>RaACE2.787</td>
       <td>1</td>
       <td>4.0</td>
       <td>200914</td>
@@ -1757,8 +1757,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_04_bin2</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_04_bin2</td>
+      <td>RaACE2.787</td>
       <td>2</td>
       <td>4.0</td>
       <td>200914</td>
@@ -1767,8 +1767,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_04_bin3</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_04_bin3</td>
+      <td>RaACE2.787</td>
       <td>3</td>
       <td>4.0</td>
       <td>200914</td>
@@ -1777,8 +1777,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_04_bin4</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_04_bin4</td>
+      <td>RaACE2.787</td>
       <td>4</td>
       <td>4.0</td>
       <td>200914</td>
@@ -1787,8 +1787,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_05_bin1</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_05_bin1</td>
+      <td>RaACE2.787</td>
       <td>1</td>
       <td>5.0</td>
       <td>200914</td>
@@ -1797,8 +1797,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_05_bin2</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_05_bin2</td>
+      <td>RaACE2.787</td>
       <td>2</td>
       <td>5.0</td>
       <td>200914</td>
@@ -1807,8 +1807,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_05_bin3</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_05_bin3</td>
+      <td>RaACE2.787</td>
       <td>3</td>
       <td>5.0</td>
       <td>200914</td>
@@ -1817,8 +1817,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_05_bin4</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_05_bin4</td>
+      <td>RaACE2.787</td>
       <td>4</td>
       <td>5.0</td>
       <td>200914</td>
@@ -1827,8 +1827,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_06_bin1</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_06_bin1</td>
+      <td>RaACE2.787</td>
       <td>1</td>
       <td>6.0</td>
       <td>200914</td>
@@ -1837,8 +1837,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_06_bin2</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_06_bin2</td>
+      <td>RaACE2.787</td>
       <td>2</td>
       <td>6.0</td>
       <td>200914</td>
@@ -1847,8 +1847,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_06_bin3</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_06_bin3</td>
+      <td>RaACE2.787</td>
       <td>3</td>
       <td>6.0</td>
       <td>200914</td>
@@ -1857,8 +1857,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_06_bin4</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_06_bin4</td>
+      <td>RaACE2.787</td>
       <td>4</td>
       <td>6.0</td>
       <td>200914</td>
@@ -1867,8 +1867,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_07_bin1</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_07_bin1</td>
+      <td>RaACE2.787</td>
       <td>1</td>
       <td>7.0</td>
       <td>200914</td>
@@ -1877,8 +1877,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_07_bin2</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_07_bin2</td>
+      <td>RaACE2.787</td>
       <td>2</td>
       <td>7.0</td>
       <td>200914</td>
@@ -1887,8 +1887,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_07_bin3</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_07_bin3</td>
+      <td>RaACE2.787</td>
       <td>3</td>
       <td>7.0</td>
       <td>200914</td>
@@ -1897,8 +1897,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_07_bin4</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_07_bin4</td>
+      <td>RaACE2.787</td>
       <td>4</td>
       <td>7.0</td>
       <td>200914</td>
@@ -1907,8 +1907,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_08_bin1</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_08_bin1</td>
+      <td>RaACE2.787</td>
       <td>1</td>
       <td>8.0</td>
       <td>200914</td>
@@ -1917,8 +1917,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_08_bin2</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_08_bin2</td>
+      <td>RaACE2.787</td>
       <td>2</td>
       <td>8.0</td>
       <td>200914</td>
@@ -1927,8 +1927,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_08_bin3</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_08_bin3</td>
+      <td>RaACE2.787</td>
       <td>3</td>
       <td>8.0</td>
       <td>200914</td>
@@ -1937,8 +1937,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_08_bin4</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_08_bin4</td>
+      <td>RaACE2.787</td>
       <td>4</td>
       <td>8.0</td>
       <td>200914</td>
@@ -1947,8 +1947,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_09_bin1</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_09_bin1</td>
+      <td>RaACE2.787</td>
       <td>1</td>
       <td>9.0</td>
       <td>200914</td>
@@ -1957,8 +1957,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_09_bin2</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_09_bin2</td>
+      <td>RaACE2.787</td>
       <td>2</td>
       <td>9.0</td>
       <td>200914</td>
@@ -1967,8 +1967,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_09_bin3</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_09_bin3</td>
+      <td>RaACE2.787</td>
       <td>3</td>
       <td>9.0</td>
       <td>200914</td>
@@ -1977,8 +1977,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2_09_bin4</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_09_bin4</td>
+      <td>RaACE2.787</td>
       <td>4</td>
       <td>9.0</td>
       <td>200914</td>
@@ -1987,8 +1987,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_01_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_01_bin1</td>
+      <td>RsACE2.3364</td>
       <td>1</td>
       <td>1.0</td>
       <td>201029</td>
@@ -1997,8 +1997,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_01_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_01_bin2</td>
+      <td>RsACE2.3364</td>
       <td>2</td>
       <td>1.0</td>
       <td>201029</td>
@@ -2007,8 +2007,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_01_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_01_bin3</td>
+      <td>RsACE2.3364</td>
       <td>3</td>
       <td>1.0</td>
       <td>201029</td>
@@ -2017,8 +2017,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_01_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_01_bin4</td>
+      <td>RsACE2.3364</td>
       <td>4</td>
       <td>1.0</td>
       <td>201029</td>
@@ -2027,8 +2027,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_02_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_02_bin1</td>
+      <td>RsACE2.3364</td>
       <td>1</td>
       <td>2.0</td>
       <td>201029</td>
@@ -2037,8 +2037,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_02_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_02_bin2</td>
+      <td>RsACE2.3364</td>
       <td>2</td>
       <td>2.0</td>
       <td>201029</td>
@@ -2047,8 +2047,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_02_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_02_bin3</td>
+      <td>RsACE2.3364</td>
       <td>3</td>
       <td>2.0</td>
       <td>201029</td>
@@ -2057,8 +2057,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_02_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_02_bin4</td>
+      <td>RsACE2.3364</td>
       <td>4</td>
       <td>2.0</td>
       <td>201029</td>
@@ -2067,8 +2067,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_03_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_03_bin1</td>
+      <td>RsACE2.3364</td>
       <td>1</td>
       <td>3.0</td>
       <td>201029</td>
@@ -2077,8 +2077,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_03_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_03_bin2</td>
+      <td>RsACE2.3364</td>
       <td>2</td>
       <td>3.0</td>
       <td>201029</td>
@@ -2087,8 +2087,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_03_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_03_bin3</td>
+      <td>RsACE2.3364</td>
       <td>3</td>
       <td>3.0</td>
       <td>201029</td>
@@ -2097,8 +2097,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_03_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_03_bin4</td>
+      <td>RsACE2.3364</td>
       <td>4</td>
       <td>3.0</td>
       <td>201029</td>
@@ -2107,8 +2107,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_04_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_04_bin1</td>
+      <td>RsACE2.3364</td>
       <td>1</td>
       <td>4.0</td>
       <td>201029</td>
@@ -2117,8 +2117,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_04_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_04_bin2</td>
+      <td>RsACE2.3364</td>
       <td>2</td>
       <td>4.0</td>
       <td>201029</td>
@@ -2127,8 +2127,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_04_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_04_bin3</td>
+      <td>RsACE2.3364</td>
       <td>3</td>
       <td>4.0</td>
       <td>201029</td>
@@ -2137,8 +2137,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_04_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_04_bin4</td>
+      <td>RsACE2.3364</td>
       <td>4</td>
       <td>4.0</td>
       <td>201029</td>
@@ -2147,8 +2147,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_05_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_05_bin1</td>
+      <td>RsACE2.3364</td>
       <td>1</td>
       <td>5.0</td>
       <td>201029</td>
@@ -2157,8 +2157,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_05_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_05_bin2</td>
+      <td>RsACE2.3364</td>
       <td>2</td>
       <td>5.0</td>
       <td>201029</td>
@@ -2167,8 +2167,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_05_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_05_bin3</td>
+      <td>RsACE2.3364</td>
       <td>3</td>
       <td>5.0</td>
       <td>201029</td>
@@ -2177,8 +2177,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_05_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_05_bin4</td>
+      <td>RsACE2.3364</td>
       <td>4</td>
       <td>5.0</td>
       <td>201029</td>
@@ -2187,8 +2187,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_06_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_06_bin1</td>
+      <td>RsACE2.3364</td>
       <td>1</td>
       <td>6.0</td>
       <td>201029</td>
@@ -2197,8 +2197,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_06_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_06_bin2</td>
+      <td>RsACE2.3364</td>
       <td>2</td>
       <td>6.0</td>
       <td>201029</td>
@@ -2207,8 +2207,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_06_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_06_bin3</td>
+      <td>RsACE2.3364</td>
       <td>3</td>
       <td>6.0</td>
       <td>201029</td>
@@ -2217,8 +2217,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_06_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_06_bin4</td>
+      <td>RsACE2.3364</td>
       <td>4</td>
       <td>6.0</td>
       <td>201029</td>
@@ -2227,8 +2227,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_07_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_07_bin1</td>
+      <td>RsACE2.3364</td>
       <td>1</td>
       <td>7.0</td>
       <td>201029</td>
@@ -2237,8 +2237,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_07_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_07_bin2</td>
+      <td>RsACE2.3364</td>
       <td>2</td>
       <td>7.0</td>
       <td>201029</td>
@@ -2247,8 +2247,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_07_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_07_bin3</td>
+      <td>RsACE2.3364</td>
       <td>3</td>
       <td>7.0</td>
       <td>201029</td>
@@ -2257,8 +2257,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_07_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_07_bin4</td>
+      <td>RsACE2.3364</td>
       <td>4</td>
       <td>7.0</td>
       <td>201029</td>
@@ -2267,8 +2267,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_08_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_08_bin1</td>
+      <td>RsACE2.3364</td>
       <td>1</td>
       <td>8.0</td>
       <td>201029</td>
@@ -2277,8 +2277,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_08_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_08_bin2</td>
+      <td>RsACE2.3364</td>
       <td>2</td>
       <td>8.0</td>
       <td>201029</td>
@@ -2287,8 +2287,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_08_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_08_bin3</td>
+      <td>RsACE2.3364</td>
       <td>3</td>
       <td>8.0</td>
       <td>201029</td>
@@ -2297,8 +2297,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_08_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_08_bin4</td>
+      <td>RsACE2.3364</td>
       <td>4</td>
       <td>8.0</td>
       <td>201029</td>
@@ -2307,8 +2307,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_09_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_09_bin1</td>
+      <td>RsACE2.3364</td>
       <td>1</td>
       <td>9.0</td>
       <td>201029</td>
@@ -2317,8 +2317,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_09_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_09_bin2</td>
+      <td>RsACE2.3364</td>
       <td>2</td>
       <td>9.0</td>
       <td>201029</td>
@@ -2327,8 +2327,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_09_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_09_bin3</td>
+      <td>RsACE2.3364</td>
       <td>3</td>
       <td>9.0</td>
       <td>201029</td>
@@ -2337,8 +2337,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RsACE2_09_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_09_bin4</td>
+      <td>RsACE2.3364</td>
       <td>4</td>
       <td>9.0</td>
       <td>201029</td>
@@ -2347,8 +2347,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_01_bin1</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_01_bin1</td>
+      <td>RaACE2.787</td>
       <td>1</td>
       <td>1.0</td>
       <td>201029</td>
@@ -2357,8 +2357,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_01_bin2</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_01_bin2</td>
+      <td>RaACE2.787</td>
       <td>2</td>
       <td>1.0</td>
       <td>201029</td>
@@ -2367,8 +2367,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_01_bin3</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_01_bin3</td>
+      <td>RaACE2.787</td>
       <td>3</td>
       <td>1.0</td>
       <td>201029</td>
@@ -2377,8 +2377,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_01_bin4</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_01_bin4</td>
+      <td>RaACE2.787</td>
       <td>4</td>
       <td>1.0</td>
       <td>201029</td>
@@ -2387,8 +2387,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_02_bin1</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_02_bin1</td>
+      <td>RaACE2.787</td>
       <td>1</td>
       <td>2.0</td>
       <td>201029</td>
@@ -2397,8 +2397,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_02_bin2</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_02_bin2</td>
+      <td>RaACE2.787</td>
       <td>2</td>
       <td>2.0</td>
       <td>201029</td>
@@ -2407,8 +2407,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_02_bin3</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_02_bin3</td>
+      <td>RaACE2.787</td>
       <td>3</td>
       <td>2.0</td>
       <td>201029</td>
@@ -2417,8 +2417,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_02_bin4</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_02_bin4</td>
+      <td>RaACE2.787</td>
       <td>4</td>
       <td>2.0</td>
       <td>201029</td>
@@ -2427,8 +2427,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_03_bin1</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_03_bin1</td>
+      <td>RaACE2.787</td>
       <td>1</td>
       <td>3.0</td>
       <td>201029</td>
@@ -2437,8 +2437,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_03_bin2</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_03_bin2</td>
+      <td>RaACE2.787</td>
       <td>2</td>
       <td>3.0</td>
       <td>201029</td>
@@ -2447,8 +2447,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_03_bin3</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_03_bin3</td>
+      <td>RaACE2.787</td>
       <td>3</td>
       <td>3.0</td>
       <td>201029</td>
@@ -2457,8 +2457,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_03_bin4</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_03_bin4</td>
+      <td>RaACE2.787</td>
       <td>4</td>
       <td>3.0</td>
       <td>201029</td>
@@ -2467,8 +2467,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_04_bin1</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_04_bin1</td>
+      <td>RaACE2.787</td>
       <td>1</td>
       <td>4.0</td>
       <td>201029</td>
@@ -2477,8 +2477,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_04_bin2</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_04_bin2</td>
+      <td>RaACE2.787</td>
       <td>2</td>
       <td>4.0</td>
       <td>201029</td>
@@ -2487,8 +2487,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_04_bin3</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_04_bin3</td>
+      <td>RaACE2.787</td>
       <td>3</td>
       <td>4.0</td>
       <td>201029</td>
@@ -2497,8 +2497,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_04_bin4</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_04_bin4</td>
+      <td>RaACE2.787</td>
       <td>4</td>
       <td>4.0</td>
       <td>201029</td>
@@ -2507,8 +2507,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_05_bin1</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_05_bin1</td>
+      <td>RaACE2.787</td>
       <td>1</td>
       <td>5.0</td>
       <td>201029</td>
@@ -2517,8 +2517,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_05_bin2</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_05_bin2</td>
+      <td>RaACE2.787</td>
       <td>2</td>
       <td>5.0</td>
       <td>201029</td>
@@ -2527,8 +2527,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_05_bin3</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_05_bin3</td>
+      <td>RaACE2.787</td>
       <td>3</td>
       <td>5.0</td>
       <td>201029</td>
@@ -2537,8 +2537,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_05_bin4</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_05_bin4</td>
+      <td>RaACE2.787</td>
       <td>4</td>
       <td>5.0</td>
       <td>201029</td>
@@ -2547,8 +2547,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_06_bin1</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_06_bin1</td>
+      <td>RaACE2.787</td>
       <td>1</td>
       <td>6.0</td>
       <td>201029</td>
@@ -2557,8 +2557,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_06_bin2</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_06_bin2</td>
+      <td>RaACE2.787</td>
       <td>2</td>
       <td>6.0</td>
       <td>201029</td>
@@ -2567,8 +2567,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_06_bin3</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_06_bin3</td>
+      <td>RaACE2.787</td>
       <td>3</td>
       <td>6.0</td>
       <td>201029</td>
@@ -2577,8 +2577,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_06_bin4</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_06_bin4</td>
+      <td>RaACE2.787</td>
       <td>4</td>
       <td>6.0</td>
       <td>201029</td>
@@ -2587,8 +2587,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_07_bin1</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_07_bin1</td>
+      <td>RaACE2.787</td>
       <td>1</td>
       <td>7.0</td>
       <td>201029</td>
@@ -2597,8 +2597,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_07_bin2</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_07_bin2</td>
+      <td>RaACE2.787</td>
       <td>2</td>
       <td>7.0</td>
       <td>201029</td>
@@ -2607,8 +2607,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_07_bin3</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_07_bin3</td>
+      <td>RaACE2.787</td>
       <td>3</td>
       <td>7.0</td>
       <td>201029</td>
@@ -2617,8 +2617,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_07_bin4</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_07_bin4</td>
+      <td>RaACE2.787</td>
       <td>4</td>
       <td>7.0</td>
       <td>201029</td>
@@ -2627,8 +2627,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_08_bin1</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_08_bin1</td>
+      <td>RaACE2.787</td>
       <td>1</td>
       <td>8.0</td>
       <td>201029</td>
@@ -2637,8 +2637,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_08_bin2</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_08_bin2</td>
+      <td>RaACE2.787</td>
       <td>2</td>
       <td>8.0</td>
       <td>201029</td>
@@ -2647,8 +2647,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_08_bin3</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_08_bin3</td>
+      <td>RaACE2.787</td>
       <td>3</td>
       <td>8.0</td>
       <td>201029</td>
@@ -2657,8 +2657,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_08_bin4</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_08_bin4</td>
+      <td>RaACE2.787</td>
       <td>4</td>
       <td>8.0</td>
       <td>201029</td>
@@ -2667,8 +2667,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_09_bin1</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_09_bin1</td>
+      <td>RaACE2.787</td>
       <td>1</td>
       <td>9.0</td>
       <td>201029</td>
@@ -2677,8 +2677,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_09_bin2</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_09_bin2</td>
+      <td>RaACE2.787</td>
       <td>2</td>
       <td>9.0</td>
       <td>201029</td>
@@ -2687,8 +2687,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_09_bin3</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_09_bin3</td>
+      <td>RaACE2.787</td>
       <td>3</td>
       <td>9.0</td>
       <td>201029</td>
@@ -2697,8 +2697,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib2</td>
-      <td>RaACE2_09_bin4</td>
-      <td>RaACE2</td>
+      <td>RaACE2.787_09_bin4</td>
+      <td>RaACE2.787</td>
       <td>4</td>
       <td>9.0</td>
       <td>201029</td>
@@ -2707,8 +2707,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_01_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_01_bin1</td>
+      <td>RsACE2.3364</td>
       <td>1</td>
       <td>1.0</td>
       <td>201104</td>
@@ -2717,8 +2717,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_01_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_01_bin2</td>
+      <td>RsACE2.3364</td>
       <td>2</td>
       <td>1.0</td>
       <td>201104</td>
@@ -2727,8 +2727,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_01_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_01_bin3</td>
+      <td>RsACE2.3364</td>
       <td>3</td>
       <td>1.0</td>
       <td>201104</td>
@@ -2737,8 +2737,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_01_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_01_bin4</td>
+      <td>RsACE2.3364</td>
       <td>4</td>
       <td>1.0</td>
       <td>201104</td>
@@ -2747,8 +2747,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_02_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_02_bin1</td>
+      <td>RsACE2.3364</td>
       <td>1</td>
       <td>2.0</td>
       <td>201104</td>
@@ -2757,8 +2757,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_02_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_02_bin2</td>
+      <td>RsACE2.3364</td>
       <td>2</td>
       <td>2.0</td>
       <td>201104</td>
@@ -2767,8 +2767,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_02_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_02_bin3</td>
+      <td>RsACE2.3364</td>
       <td>3</td>
       <td>2.0</td>
       <td>201104</td>
@@ -2777,8 +2777,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_02_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_02_bin4</td>
+      <td>RsACE2.3364</td>
       <td>4</td>
       <td>2.0</td>
       <td>201104</td>
@@ -2787,8 +2787,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_03_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_03_bin1</td>
+      <td>RsACE2.3364</td>
       <td>1</td>
       <td>3.0</td>
       <td>201104</td>
@@ -2797,8 +2797,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_03_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_03_bin2</td>
+      <td>RsACE2.3364</td>
       <td>2</td>
       <td>3.0</td>
       <td>201104</td>
@@ -2807,8 +2807,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_03_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_03_bin3</td>
+      <td>RsACE2.3364</td>
       <td>3</td>
       <td>3.0</td>
       <td>201104</td>
@@ -2817,8 +2817,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_03_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_03_bin4</td>
+      <td>RsACE2.3364</td>
       <td>4</td>
       <td>3.0</td>
       <td>201104</td>
@@ -2827,8 +2827,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_04_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_04_bin1</td>
+      <td>RsACE2.3364</td>
       <td>1</td>
       <td>4.0</td>
       <td>201104</td>
@@ -2837,8 +2837,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_04_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_04_bin2</td>
+      <td>RsACE2.3364</td>
       <td>2</td>
       <td>4.0</td>
       <td>201104</td>
@@ -2847,8 +2847,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_04_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_04_bin3</td>
+      <td>RsACE2.3364</td>
       <td>3</td>
       <td>4.0</td>
       <td>201104</td>
@@ -2857,8 +2857,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_04_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_04_bin4</td>
+      <td>RsACE2.3364</td>
       <td>4</td>
       <td>4.0</td>
       <td>201104</td>
@@ -2867,8 +2867,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_05_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_05_bin1</td>
+      <td>RsACE2.3364</td>
       <td>1</td>
       <td>5.0</td>
       <td>201104</td>
@@ -2877,8 +2877,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_05_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_05_bin2</td>
+      <td>RsACE2.3364</td>
       <td>2</td>
       <td>5.0</td>
       <td>201104</td>
@@ -2887,8 +2887,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_05_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_05_bin3</td>
+      <td>RsACE2.3364</td>
       <td>3</td>
       <td>5.0</td>
       <td>201104</td>
@@ -2897,8 +2897,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_05_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_05_bin4</td>
+      <td>RsACE2.3364</td>
       <td>4</td>
       <td>5.0</td>
       <td>201104</td>
@@ -2907,8 +2907,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_06_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_06_bin1</td>
+      <td>RsACE2.3364</td>
       <td>1</td>
       <td>6.0</td>
       <td>201104</td>
@@ -2917,8 +2917,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_06_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_06_bin2</td>
+      <td>RsACE2.3364</td>
       <td>2</td>
       <td>6.0</td>
       <td>201104</td>
@@ -2927,8 +2927,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_06_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_06_bin3</td>
+      <td>RsACE2.3364</td>
       <td>3</td>
       <td>6.0</td>
       <td>201104</td>
@@ -2937,8 +2937,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_06_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_06_bin4</td>
+      <td>RsACE2.3364</td>
       <td>4</td>
       <td>6.0</td>
       <td>201104</td>
@@ -2947,8 +2947,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_07_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_07_bin1</td>
+      <td>RsACE2.3364</td>
       <td>1</td>
       <td>7.0</td>
       <td>201104</td>
@@ -2957,8 +2957,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_07_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_07_bin2</td>
+      <td>RsACE2.3364</td>
       <td>2</td>
       <td>7.0</td>
       <td>201104</td>
@@ -2967,8 +2967,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_07_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_07_bin3</td>
+      <td>RsACE2.3364</td>
       <td>3</td>
       <td>7.0</td>
       <td>201104</td>
@@ -2977,8 +2977,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_07_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_07_bin4</td>
+      <td>RsACE2.3364</td>
       <td>4</td>
       <td>7.0</td>
       <td>201104</td>
@@ -2987,8 +2987,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_08_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_08_bin1</td>
+      <td>RsACE2.3364</td>
       <td>1</td>
       <td>8.0</td>
       <td>201104</td>
@@ -2997,8 +2997,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_08_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_08_bin2</td>
+      <td>RsACE2.3364</td>
       <td>2</td>
       <td>8.0</td>
       <td>201104</td>
@@ -3007,8 +3007,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_08_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_08_bin3</td>
+      <td>RsACE2.3364</td>
       <td>3</td>
       <td>8.0</td>
       <td>201104</td>
@@ -3017,8 +3017,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_08_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_08_bin4</td>
+      <td>RsACE2.3364</td>
       <td>4</td>
       <td>8.0</td>
       <td>201104</td>
@@ -3027,8 +3027,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_09_bin1</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_09_bin1</td>
+      <td>RsACE2.3364</td>
       <td>1</td>
       <td>9.0</td>
       <td>201104</td>
@@ -3037,8 +3037,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_09_bin2</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_09_bin2</td>
+      <td>RsACE2.3364</td>
       <td>2</td>
       <td>9.0</td>
       <td>201104</td>
@@ -3047,8 +3047,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_09_bin3</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_09_bin3</td>
+      <td>RsACE2.3364</td>
       <td>3</td>
       <td>9.0</td>
       <td>201104</td>
@@ -3057,8 +3057,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RsACE2_09_bin4</td>
-      <td>RsACE2</td>
+      <td>RsACE2.3364_09_bin4</td>
+      <td>RsACE2.3364</td>
       <td>4</td>
       <td>9.0</td>
       <td>201104</td>
@@ -3067,8 +3067,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_01_bin1</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_01_bin1</td>
+      <td>RaACE2.787.pool6</td>
       <td>1</td>
       <td>1.0</td>
       <td>201104</td>
@@ -3077,8 +3077,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_01_bin2</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_01_bin2</td>
+      <td>RaACE2.787.pool6</td>
       <td>2</td>
       <td>1.0</td>
       <td>201104</td>
@@ -3087,8 +3087,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_01_bin3</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_01_bin3</td>
+      <td>RaACE2.787.pool6</td>
       <td>3</td>
       <td>1.0</td>
       <td>201104</td>
@@ -3097,8 +3097,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_01_bin4</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_01_bin4</td>
+      <td>RaACE2.787.pool6</td>
       <td>4</td>
       <td>1.0</td>
       <td>201104</td>
@@ -3107,8 +3107,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_02_bin1</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_02_bin1</td>
+      <td>RaACE2.787.pool6</td>
       <td>1</td>
       <td>2.0</td>
       <td>201104</td>
@@ -3117,8 +3117,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_02_bin2</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_02_bin2</td>
+      <td>RaACE2.787.pool6</td>
       <td>2</td>
       <td>2.0</td>
       <td>201104</td>
@@ -3127,8 +3127,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_02_bin3</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_02_bin3</td>
+      <td>RaACE2.787.pool6</td>
       <td>3</td>
       <td>2.0</td>
       <td>201104</td>
@@ -3137,8 +3137,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_02_bin4</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_02_bin4</td>
+      <td>RaACE2.787.pool6</td>
       <td>4</td>
       <td>2.0</td>
       <td>201104</td>
@@ -3147,8 +3147,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_03_bin1</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_03_bin1</td>
+      <td>RaACE2.787.pool6</td>
       <td>1</td>
       <td>3.0</td>
       <td>201104</td>
@@ -3157,8 +3157,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_03_bin2</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_03_bin2</td>
+      <td>RaACE2.787.pool6</td>
       <td>2</td>
       <td>3.0</td>
       <td>201104</td>
@@ -3167,8 +3167,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_03_bin3</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_03_bin3</td>
+      <td>RaACE2.787.pool6</td>
       <td>3</td>
       <td>3.0</td>
       <td>201104</td>
@@ -3177,8 +3177,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_03_bin4</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_03_bin4</td>
+      <td>RaACE2.787.pool6</td>
       <td>4</td>
       <td>3.0</td>
       <td>201104</td>
@@ -3187,8 +3187,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_04_bin1</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_04_bin1</td>
+      <td>RaACE2.787.pool6</td>
       <td>1</td>
       <td>4.0</td>
       <td>201104</td>
@@ -3197,8 +3197,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_04_bin2</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_04_bin2</td>
+      <td>RaACE2.787.pool6</td>
       <td>2</td>
       <td>4.0</td>
       <td>201104</td>
@@ -3207,8 +3207,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_04_bin3</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_04_bin3</td>
+      <td>RaACE2.787.pool6</td>
       <td>3</td>
       <td>4.0</td>
       <td>201104</td>
@@ -3217,8 +3217,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_04_bin4</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_04_bin4</td>
+      <td>RaACE2.787.pool6</td>
       <td>4</td>
       <td>4.0</td>
       <td>201104</td>
@@ -3227,8 +3227,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_05_bin1</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_05_bin1</td>
+      <td>RaACE2.787.pool6</td>
       <td>1</td>
       <td>5.0</td>
       <td>201104</td>
@@ -3237,8 +3237,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_05_bin2</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_05_bin2</td>
+      <td>RaACE2.787.pool6</td>
       <td>2</td>
       <td>5.0</td>
       <td>201104</td>
@@ -3247,8 +3247,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_05_bin3</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_05_bin3</td>
+      <td>RaACE2.787.pool6</td>
       <td>3</td>
       <td>5.0</td>
       <td>201104</td>
@@ -3257,8 +3257,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_05_bin4</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_05_bin4</td>
+      <td>RaACE2.787.pool6</td>
       <td>4</td>
       <td>5.0</td>
       <td>201104</td>
@@ -3267,8 +3267,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_06_bin1</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_06_bin1</td>
+      <td>RaACE2.787.pool6</td>
       <td>1</td>
       <td>6.0</td>
       <td>201104</td>
@@ -3277,8 +3277,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_06_bin2</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_06_bin2</td>
+      <td>RaACE2.787.pool6</td>
       <td>2</td>
       <td>6.0</td>
       <td>201104</td>
@@ -3287,8 +3287,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_06_bin3</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_06_bin3</td>
+      <td>RaACE2.787.pool6</td>
       <td>3</td>
       <td>6.0</td>
       <td>201104</td>
@@ -3297,8 +3297,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_06_bin4</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_06_bin4</td>
+      <td>RaACE2.787.pool6</td>
       <td>4</td>
       <td>6.0</td>
       <td>201104</td>
@@ -3307,8 +3307,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_07_bin1</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_07_bin1</td>
+      <td>RaACE2.787.pool6</td>
       <td>1</td>
       <td>7.0</td>
       <td>201104</td>
@@ -3317,8 +3317,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_07_bin2</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_07_bin2</td>
+      <td>RaACE2.787.pool6</td>
       <td>2</td>
       <td>7.0</td>
       <td>201104</td>
@@ -3327,8 +3327,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_07_bin3</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_07_bin3</td>
+      <td>RaACE2.787.pool6</td>
       <td>3</td>
       <td>7.0</td>
       <td>201104</td>
@@ -3337,8 +3337,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_07_bin4</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_07_bin4</td>
+      <td>RaACE2.787.pool6</td>
       <td>4</td>
       <td>7.0</td>
       <td>201104</td>
@@ -3347,8 +3347,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_08_bin1</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_08_bin1</td>
+      <td>RaACE2.787.pool6</td>
       <td>1</td>
       <td>8.0</td>
       <td>201104</td>
@@ -3357,8 +3357,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_08_bin2</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_08_bin2</td>
+      <td>RaACE2.787.pool6</td>
       <td>2</td>
       <td>8.0</td>
       <td>201104</td>
@@ -3367,8 +3367,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_08_bin3</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_08_bin3</td>
+      <td>RaACE2.787.pool6</td>
       <td>3</td>
       <td>8.0</td>
       <td>201104</td>
@@ -3377,8 +3377,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_08_bin4</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_08_bin4</td>
+      <td>RaACE2.787.pool6</td>
       <td>4</td>
       <td>8.0</td>
       <td>201104</td>
@@ -3387,8 +3387,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_09_bin1</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_09_bin1</td>
+      <td>RaACE2.787.pool6</td>
       <td>1</td>
       <td>9.0</td>
       <td>201104</td>
@@ -3397,8 +3397,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_09_bin2</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_09_bin2</td>
+      <td>RaACE2.787.pool6</td>
       <td>2</td>
       <td>9.0</td>
       <td>201104</td>
@@ -3407,8 +3407,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_09_bin3</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_09_bin3</td>
+      <td>RaACE2.787.pool6</td>
       <td>3</td>
       <td>9.0</td>
       <td>201104</td>
@@ -3417,8 +3417,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>RaACE2pool6_09_bin4</td>
-      <td>RaACE2pool6</td>
+      <td>RaACE2.787.pool6_09_bin4</td>
+      <td>RaACE2.787.pool6</td>
       <td>4</td>
       <td>9.0</td>
       <td>201104</td>
@@ -3427,8 +3427,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_01_bin1</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_01_bin1</td>
+      <td>huACE2.pool6</td>
       <td>1</td>
       <td>1.0</td>
       <td>201104</td>
@@ -3437,8 +3437,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_01_bin2</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_01_bin2</td>
+      <td>huACE2.pool6</td>
       <td>2</td>
       <td>1.0</td>
       <td>201104</td>
@@ -3447,8 +3447,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_01_bin3</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_01_bin3</td>
+      <td>huACE2.pool6</td>
       <td>3</td>
       <td>1.0</td>
       <td>201104</td>
@@ -3457,8 +3457,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_01_bin4</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_01_bin4</td>
+      <td>huACE2.pool6</td>
       <td>4</td>
       <td>1.0</td>
       <td>201104</td>
@@ -3467,8 +3467,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_02_bin1</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_02_bin1</td>
+      <td>huACE2.pool6</td>
       <td>1</td>
       <td>2.0</td>
       <td>201104</td>
@@ -3477,8 +3477,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_02_bin2</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_02_bin2</td>
+      <td>huACE2.pool6</td>
       <td>2</td>
       <td>2.0</td>
       <td>201104</td>
@@ -3487,8 +3487,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_02_bin3</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_02_bin3</td>
+      <td>huACE2.pool6</td>
       <td>3</td>
       <td>2.0</td>
       <td>201104</td>
@@ -3497,8 +3497,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_02_bin4</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_02_bin4</td>
+      <td>huACE2.pool6</td>
       <td>4</td>
       <td>2.0</td>
       <td>201104</td>
@@ -3507,8 +3507,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_03_bin1</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_03_bin1</td>
+      <td>huACE2.pool6</td>
       <td>1</td>
       <td>3.0</td>
       <td>201104</td>
@@ -3517,8 +3517,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_03_bin2</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_03_bin2</td>
+      <td>huACE2.pool6</td>
       <td>2</td>
       <td>3.0</td>
       <td>201104</td>
@@ -3527,8 +3527,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_03_bin3</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_03_bin3</td>
+      <td>huACE2.pool6</td>
       <td>3</td>
       <td>3.0</td>
       <td>201104</td>
@@ -3537,8 +3537,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_03_bin4</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_03_bin4</td>
+      <td>huACE2.pool6</td>
       <td>4</td>
       <td>3.0</td>
       <td>201104</td>
@@ -3547,8 +3547,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_04_bin1</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_04_bin1</td>
+      <td>huACE2.pool6</td>
       <td>1</td>
       <td>4.0</td>
       <td>201104</td>
@@ -3557,8 +3557,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_04_bin2</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_04_bin2</td>
+      <td>huACE2.pool6</td>
       <td>2</td>
       <td>4.0</td>
       <td>201104</td>
@@ -3567,8 +3567,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_04_bin3</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_04_bin3</td>
+      <td>huACE2.pool6</td>
       <td>3</td>
       <td>4.0</td>
       <td>201104</td>
@@ -3577,8 +3577,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_04_bin4</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_04_bin4</td>
+      <td>huACE2.pool6</td>
       <td>4</td>
       <td>4.0</td>
       <td>201104</td>
@@ -3587,8 +3587,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_05_bin1</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_05_bin1</td>
+      <td>huACE2.pool6</td>
       <td>1</td>
       <td>5.0</td>
       <td>201104</td>
@@ -3597,8 +3597,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_05_bin2</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_05_bin2</td>
+      <td>huACE2.pool6</td>
       <td>2</td>
       <td>5.0</td>
       <td>201104</td>
@@ -3607,8 +3607,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_05_bin3</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_05_bin3</td>
+      <td>huACE2.pool6</td>
       <td>3</td>
       <td>5.0</td>
       <td>201104</td>
@@ -3617,8 +3617,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_05_bin4</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_05_bin4</td>
+      <td>huACE2.pool6</td>
       <td>4</td>
       <td>5.0</td>
       <td>201104</td>
@@ -3627,8 +3627,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_06_bin1</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_06_bin1</td>
+      <td>huACE2.pool6</td>
       <td>1</td>
       <td>6.0</td>
       <td>201104</td>
@@ -3637,8 +3637,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_06_bin2</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_06_bin2</td>
+      <td>huACE2.pool6</td>
       <td>2</td>
       <td>6.0</td>
       <td>201104</td>
@@ -3647,8 +3647,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_06_bin3</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_06_bin3</td>
+      <td>huACE2.pool6</td>
       <td>3</td>
       <td>6.0</td>
       <td>201104</td>
@@ -3657,8 +3657,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_06_bin4</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_06_bin4</td>
+      <td>huACE2.pool6</td>
       <td>4</td>
       <td>6.0</td>
       <td>201104</td>
@@ -3667,8 +3667,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_07_bin1</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_07_bin1</td>
+      <td>huACE2.pool6</td>
       <td>1</td>
       <td>7.0</td>
       <td>201104</td>
@@ -3677,8 +3677,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_07_bin2</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_07_bin2</td>
+      <td>huACE2.pool6</td>
       <td>2</td>
       <td>7.0</td>
       <td>201104</td>
@@ -3687,8 +3687,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_07_bin3</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_07_bin3</td>
+      <td>huACE2.pool6</td>
       <td>3</td>
       <td>7.0</td>
       <td>201104</td>
@@ -3697,8 +3697,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_07_bin4</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_07_bin4</td>
+      <td>huACE2.pool6</td>
       <td>4</td>
       <td>7.0</td>
       <td>201104</td>
@@ -3707,8 +3707,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_08_bin1</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_08_bin1</td>
+      <td>huACE2.pool6</td>
       <td>1</td>
       <td>8.0</td>
       <td>201104</td>
@@ -3717,8 +3717,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_08_bin2</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_08_bin2</td>
+      <td>huACE2.pool6</td>
       <td>2</td>
       <td>8.0</td>
       <td>201104</td>
@@ -3727,8 +3727,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_08_bin3</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_08_bin3</td>
+      <td>huACE2.pool6</td>
       <td>3</td>
       <td>8.0</td>
       <td>201104</td>
@@ -3737,8 +3737,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_08_bin4</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_08_bin4</td>
+      <td>huACE2.pool6</td>
       <td>4</td>
       <td>8.0</td>
       <td>201104</td>
@@ -3747,8 +3747,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_09_bin1</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_09_bin1</td>
+      <td>huACE2.pool6</td>
       <td>1</td>
       <td>9.0</td>
       <td>201104</td>
@@ -3757,8 +3757,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_09_bin2</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_09_bin2</td>
+      <td>huACE2.pool6</td>
       <td>2</td>
       <td>9.0</td>
       <td>201104</td>
@@ -3767,8 +3767,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_09_bin3</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_09_bin3</td>
+      <td>huACE2.pool6</td>
       <td>3</td>
       <td>9.0</td>
       <td>201104</td>
@@ -3777,8 +3777,8 @@ display(HTML(barcode_runs.to_html(index=False)))
     </tr>
     <tr>
       <td>lib1</td>
-      <td>huACE2pool6_09_bin4</td>
-      <td>huACE2pool6</td>
+      <td>huACE2.pool6_09_bin4</td>
+      <td>huACE2.pool6</td>
       <td>4</td>
       <td>9.0</td>
       <td>201104</td>
@@ -4621,12 +4621,12 @@ display(HTML(
   </thead>
   <tbody>
     <tr>
-      <td>lib2</td>
-      <td>94745</td>
-    </tr>
-    <tr>
       <td>lib1</td>
       <td>90285</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>94745</td>
     </tr>
   </tbody>
 </table>
@@ -4838,295 +4838,7 @@ display(HTML(fates
   <tbody>
     <tr>
       <th rowspan="284" valign="top">lib1</th>
-      <th>RaACE2_01_bin1</th>
-      <td>441076</td>
-      <td>1317015</td>
-      <td>427157</td>
-      <td>121550</td>
-      <td>6151251</td>
-    </tr>
-    <tr>
-      <th>RaACE2_01_bin2</th>
-      <td>90628</td>
-      <td>281881</td>
-      <td>88237</td>
-      <td>23012</td>
-      <td>1233224</td>
-    </tr>
-    <tr>
-      <th>RaACE2_01_bin3</th>
-      <td>44448</td>
-      <td>137801</td>
-      <td>43180</td>
-      <td>13959</td>
-      <td>596655</td>
-    </tr>
-    <tr>
-      <th>RaACE2_01_bin4</th>
-      <td>147498</td>
-      <td>395154</td>
-      <td>141892</td>
-      <td>45923</td>
-      <td>2083085</td>
-    </tr>
-    <tr>
-      <th>RaACE2_02_bin1</th>
-      <td>366141</td>
-      <td>1088663</td>
-      <td>352776</td>
-      <td>127977</td>
-      <td>4968348</td>
-    </tr>
-    <tr>
-      <th>RaACE2_02_bin2</th>
-      <td>70826</td>
-      <td>216651</td>
-      <td>70771</td>
-      <td>19186</td>
-      <td>978617</td>
-    </tr>
-    <tr>
-      <th>RaACE2_02_bin3</th>
-      <td>43306</td>
-      <td>126704</td>
-      <td>42415</td>
-      <td>16423</td>
-      <td>591040</td>
-    </tr>
-    <tr>
-      <th>RaACE2_02_bin4</th>
-      <td>141581</td>
-      <td>368166</td>
-      <td>138288</td>
-      <td>37748</td>
-      <td>1999041</td>
-    </tr>
-    <tr>
-      <th>RaACE2_03_bin1</th>
-      <td>622398</td>
-      <td>1869409</td>
-      <td>618971</td>
-      <td>171086</td>
-      <td>8516098</td>
-    </tr>
-    <tr>
-      <th>RaACE2_03_bin2</th>
-      <td>51306</td>
-      <td>152940</td>
-      <td>50146</td>
-      <td>15724</td>
-      <td>699874</td>
-    </tr>
-    <tr>
-      <th>RaACE2_03_bin3</th>
-      <td>43721</td>
-      <td>121204</td>
-      <td>41004</td>
-      <td>22029</td>
-      <td>582889</td>
-    </tr>
-    <tr>
-      <th>RaACE2_03_bin4</th>
-      <td>136555</td>
-      <td>338967</td>
-      <td>129201</td>
-      <td>34254</td>
-      <td>1883870</td>
-    </tr>
-    <tr>
-      <th>RaACE2_04_bin1</th>
-      <td>592410</td>
-      <td>1810616</td>
-      <td>581635</td>
-      <td>154034</td>
-      <td>8201133</td>
-    </tr>
-    <tr>
-      <th>RaACE2_04_bin2</th>
-      <td>42896</td>
-      <td>123214</td>
-      <td>41446</td>
-      <td>15637</td>
-      <td>575351</td>
-    </tr>
-    <tr>
-      <th>RaACE2_04_bin3</th>
-      <td>60106</td>
-      <td>167276</td>
-      <td>59611</td>
-      <td>17495</td>
-      <td>854310</td>
-    </tr>
-    <tr>
-      <th>RaACE2_04_bin4</th>
-      <td>105670</td>
-      <td>262579</td>
-      <td>101815</td>
-      <td>45395</td>
-      <td>1467888</td>
-    </tr>
-    <tr>
-      <th>RaACE2_05_bin1</th>
-      <td>410625</td>
-      <td>1276206</td>
-      <td>419233</td>
-      <td>108339</td>
-      <td>5806588</td>
-    </tr>
-    <tr>
-      <th>RaACE2_05_bin2</th>
-      <td>63201</td>
-      <td>175830</td>
-      <td>62212</td>
-      <td>16896</td>
-      <td>879900</td>
-    </tr>
-    <tr>
-      <th>RaACE2_05_bin3</th>
-      <td>66559</td>
-      <td>174000</td>
-      <td>65954</td>
-      <td>17734</td>
-      <td>955862</td>
-    </tr>
-    <tr>
-      <th>RaACE2_05_bin4</th>
-      <td>52982</td>
-      <td>127658</td>
-      <td>52422</td>
-      <td>19825</td>
-      <td>764125</td>
-    </tr>
-    <tr>
-      <th>RaACE2_06_bin1</th>
-      <td>517875</td>
-      <td>1563431</td>
-      <td>506675</td>
-      <td>132895</td>
-      <td>7211166</td>
-    </tr>
-    <tr>
-      <th>RaACE2_06_bin2</th>
-      <td>77284</td>
-      <td>211664</td>
-      <td>77450</td>
-      <td>19685</td>
-      <td>1115279</td>
-    </tr>
-    <tr>
-      <th>RaACE2_06_bin3</th>
-      <td>63791</td>
-      <td>155748</td>
-      <td>63440</td>
-      <td>20090</td>
-      <td>905230</td>
-    </tr>
-    <tr>
-      <th>RaACE2_06_bin4</th>
-      <td>4650</td>
-      <td>9468</td>
-      <td>3915</td>
-      <td>4987</td>
-      <td>56513</td>
-    </tr>
-    <tr>
-      <th>RaACE2_07_bin1</th>
-      <td>510966</td>
-      <td>1544806</td>
-      <td>517390</td>
-      <td>148003</td>
-      <td>7226584</td>
-    </tr>
-    <tr>
-      <th>RaACE2_07_bin2</th>
-      <td>76194</td>
-      <td>186016</td>
-      <td>72658</td>
-      <td>35036</td>
-      <td>1039098</td>
-    </tr>
-    <tr>
-      <th>RaACE2_07_bin3</th>
-      <td>3854</td>
-      <td>8554</td>
-      <td>3527</td>
-      <td>3900</td>
-      <td>51169</td>
-    </tr>
-    <tr>
-      <th>RaACE2_07_bin4</th>
-      <td>652</td>
-      <td>2663</td>
-      <td>473</td>
-      <td>1475</td>
-      <td>5805</td>
-    </tr>
-    <tr>
-      <th>RaACE2_08_bin1</th>
-      <td>762546</td>
-      <td>2141860</td>
-      <td>726471</td>
-      <td>250547</td>
-      <td>10205246</td>
-    </tr>
-    <tr>
-      <th>RaACE2_08_bin2</th>
-      <td>24790</td>
-      <td>65781</td>
-      <td>24905</td>
-      <td>7584</td>
-      <td>348560</td>
-    </tr>
-    <tr>
-      <th>RaACE2_08_bin3</th>
-      <td>24346</td>
-      <td>57317</td>
-      <td>24872</td>
-      <td>5937</td>
-      <td>362014</td>
-    </tr>
-    <tr>
-      <th>RaACE2_08_bin4</th>
-      <td>1369</td>
-      <td>3754</td>
-      <td>1233</td>
-      <td>3098</td>
-      <td>14331</td>
-    </tr>
-    <tr>
-      <th>RaACE2_09_bin1</th>
-      <td>619320</td>
-      <td>1787333</td>
-      <td>597493</td>
-      <td>153877</td>
-      <td>8537635</td>
-    </tr>
-    <tr>
-      <th>RaACE2_09_bin2</th>
-      <td>11650</td>
-      <td>32923</td>
-      <td>11312</td>
-      <td>3940</td>
-      <td>159167</td>
-    </tr>
-    <tr>
-      <th>RaACE2_09_bin3</th>
-      <td>10257</td>
-      <td>20671</td>
-      <td>9099</td>
-      <td>6208</td>
-      <td>137148</td>
-    </tr>
-    <tr>
-      <th>RaACE2_09_bin4</th>
-      <td>1967</td>
-      <td>9207</td>
-      <td>1836</td>
-      <td>2051</td>
-      <td>21799</td>
-    </tr>
-    <tr>
-      <th>RaACE2pool6_01_bin1</th>
+      <th>RaACE2.787.pool6_01_bin1</th>
       <td>8128</td>
       <td>266396</td>
       <td>29062</td>
@@ -5134,7 +4846,7 @@ display(HTML(fates
       <td>653324</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_01_bin2</th>
+      <th>RaACE2.787.pool6_01_bin2</th>
       <td>5588</td>
       <td>190446</td>
       <td>19408</td>
@@ -5142,7 +4854,7 @@ display(HTML(fates
       <td>426803</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_01_bin3</th>
+      <th>RaACE2.787.pool6_01_bin3</th>
       <td>3104</td>
       <td>101687</td>
       <td>10256</td>
@@ -5150,7 +4862,7 @@ display(HTML(fates
       <td>222355</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_01_bin4</th>
+      <th>RaACE2.787.pool6_01_bin4</th>
       <td>941</td>
       <td>36632</td>
       <td>3268</td>
@@ -5158,7 +4870,7 @@ display(HTML(fates
       <td>68454</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_02_bin1</th>
+      <th>RaACE2.787.pool6_02_bin1</th>
       <td>7933</td>
       <td>278290</td>
       <td>29463</td>
@@ -5166,7 +4878,7 @@ display(HTML(fates
       <td>653985</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_02_bin2</th>
+      <th>RaACE2.787.pool6_02_bin2</th>
       <td>3398</td>
       <td>108799</td>
       <td>11043</td>
@@ -5174,7 +4886,7 @@ display(HTML(fates
       <td>242676</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_02_bin3</th>
+      <th>RaACE2.787.pool6_02_bin3</th>
       <td>1838</td>
       <td>63343</td>
       <td>6149</td>
@@ -5182,7 +4894,7 @@ display(HTML(fates
       <td>140785</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_02_bin4</th>
+      <th>RaACE2.787.pool6_02_bin4</th>
       <td>472</td>
       <td>10556</td>
       <td>864</td>
@@ -5190,7 +4902,7 @@ display(HTML(fates
       <td>14874</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_03_bin1</th>
+      <th>RaACE2.787.pool6_03_bin1</th>
       <td>10060</td>
       <td>343326</td>
       <td>35712</td>
@@ -5198,7 +4910,7 @@ display(HTML(fates
       <td>796000</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_03_bin2</th>
+      <th>RaACE2.787.pool6_03_bin2</th>
       <td>2505</td>
       <td>89493</td>
       <td>8879</td>
@@ -5206,7 +4918,7 @@ display(HTML(fates
       <td>201284</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_03_bin3</th>
+      <th>RaACE2.787.pool6_03_bin3</th>
       <td>902</td>
       <td>32960</td>
       <td>2840</td>
@@ -5214,7 +4926,7 @@ display(HTML(fates
       <td>59869</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_03_bin4</th>
+      <th>RaACE2.787.pool6_03_bin4</th>
       <td>166</td>
       <td>5879</td>
       <td>445</td>
@@ -5222,7 +4934,7 @@ display(HTML(fates
       <td>8246</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_04_bin1</th>
+      <th>RaACE2.787.pool6_04_bin1</th>
       <td>12470</td>
       <td>415148</td>
       <td>42352</td>
@@ -5230,7 +4942,7 @@ display(HTML(fates
       <td>969241</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_04_bin2</th>
+      <th>RaACE2.787.pool6_04_bin2</th>
       <td>2758</td>
       <td>90623</td>
       <td>9222</td>
@@ -5238,7 +4950,7 @@ display(HTML(fates
       <td>203638</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_04_bin3</th>
+      <th>RaACE2.787.pool6_04_bin3</th>
       <td>458</td>
       <td>15484</td>
       <td>1184</td>
@@ -5246,7 +4958,7 @@ display(HTML(fates
       <td>21634</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_04_bin4</th>
+      <th>RaACE2.787.pool6_04_bin4</th>
       <td>80</td>
       <td>358</td>
       <td>36</td>
@@ -5254,7 +4966,7 @@ display(HTML(fates
       <td>410</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_05_bin1</th>
+      <th>RaACE2.787.pool6_05_bin1</th>
       <td>11622</td>
       <td>406400</td>
       <td>42037</td>
@@ -5262,7 +4974,7 @@ display(HTML(fates
       <td>936601</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_05_bin2</th>
+      <th>RaACE2.787.pool6_05_bin2</th>
       <td>1705</td>
       <td>41330</td>
       <td>3565</td>
@@ -5270,7 +4982,7 @@ display(HTML(fates
       <td>73083</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_05_bin3</th>
+      <th>RaACE2.787.pool6_05_bin3</th>
       <td>4297</td>
       <td>220142</td>
       <td>15646</td>
@@ -5278,7 +4990,7 @@ display(HTML(fates
       <td>268135</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_05_bin4</th>
+      <th>RaACE2.787.pool6_05_bin4</th>
       <td>216</td>
       <td>716</td>
       <td>63</td>
@@ -5286,7 +4998,7 @@ display(HTML(fates
       <td>1344</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_06_bin1</th>
+      <th>RaACE2.787.pool6_06_bin1</th>
       <td>9265</td>
       <td>328983</td>
       <td>33785</td>
@@ -5294,7 +5006,7 @@ display(HTML(fates
       <td>748024</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_06_bin2</th>
+      <th>RaACE2.787.pool6_06_bin2</th>
       <td>175</td>
       <td>5894</td>
       <td>577</td>
@@ -5302,7 +5014,7 @@ display(HTML(fates
       <td>12253</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_06_bin3</th>
+      <th>RaACE2.787.pool6_06_bin3</th>
       <td>55</td>
       <td>1091</td>
       <td>117</td>
@@ -5310,7 +5022,7 @@ display(HTML(fates
       <td>2398</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_06_bin4</th>
+      <th>RaACE2.787.pool6_06_bin4</th>
       <td>106</td>
       <td>35</td>
       <td>8</td>
@@ -5318,7 +5030,7 @@ display(HTML(fates
       <td>78</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_07_bin1</th>
+      <th>RaACE2.787.pool6_07_bin1</th>
       <td>14532</td>
       <td>509926</td>
       <td>50175</td>
@@ -5326,7 +5038,7 @@ display(HTML(fates
       <td>1134617</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_07_bin2</th>
+      <th>RaACE2.787.pool6_07_bin2</th>
       <td>109</td>
       <td>2455</td>
       <td>266</td>
@@ -5334,7 +5046,7 @@ display(HTML(fates
       <td>5504</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_07_bin3</th>
+      <th>RaACE2.787.pool6_07_bin3</th>
       <td>52</td>
       <td>374</td>
       <td>37</td>
@@ -5342,7 +5054,7 @@ display(HTML(fates
       <td>597</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_07_bin4</th>
+      <th>RaACE2.787.pool6_07_bin4</th>
       <td>2286</td>
       <td>74</td>
       <td>16</td>
@@ -5350,7 +5062,7 @@ display(HTML(fates
       <td>63</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_08_bin1</th>
+      <th>RaACE2.787.pool6_08_bin1</th>
       <td>18746</td>
       <td>572603</td>
       <td>56589</td>
@@ -5358,7 +5070,7 @@ display(HTML(fates
       <td>1270908</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_08_bin2</th>
+      <th>RaACE2.787.pool6_08_bin2</th>
       <td>125</td>
       <td>3340</td>
       <td>360</td>
@@ -5366,7 +5078,7 @@ display(HTML(fates
       <td>7520</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_08_bin3</th>
+      <th>RaACE2.787.pool6_08_bin3</th>
       <td>98</td>
       <td>241</td>
       <td>20</td>
@@ -5374,7 +5086,7 @@ display(HTML(fates
       <td>400</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_08_bin4</th>
+      <th>RaACE2.787.pool6_08_bin4</th>
       <td>141</td>
       <td>807</td>
       <td>205</td>
@@ -5382,7 +5094,7 @@ display(HTML(fates
       <td>5851</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_09_bin1</th>
+      <th>RaACE2.787.pool6_09_bin1</th>
       <td>17110</td>
       <td>591060</td>
       <td>60792</td>
@@ -5390,7 +5102,7 @@ display(HTML(fates
       <td>1314453</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_09_bin2</th>
+      <th>RaACE2.787.pool6_09_bin2</th>
       <td>492</td>
       <td>14194</td>
       <td>1388</td>
@@ -5398,7 +5110,7 @@ display(HTML(fates
       <td>30808</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_09_bin3</th>
+      <th>RaACE2.787.pool6_09_bin3</th>
       <td>539</td>
       <td>12900</td>
       <td>1409</td>
@@ -5406,12 +5118,300 @@ display(HTML(fates
       <td>32942</td>
     </tr>
     <tr>
-      <th>RaACE2pool6_09_bin4</th>
+      <th>RaACE2.787.pool6_09_bin4</th>
       <td>32</td>
       <td>1411</td>
       <td>56</td>
       <td>217</td>
       <td>575</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_01_bin1</th>
+      <td>441076</td>
+      <td>1317015</td>
+      <td>427157</td>
+      <td>121550</td>
+      <td>6151251</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_01_bin2</th>
+      <td>90628</td>
+      <td>281881</td>
+      <td>88237</td>
+      <td>23012</td>
+      <td>1233224</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_01_bin3</th>
+      <td>44448</td>
+      <td>137801</td>
+      <td>43180</td>
+      <td>13959</td>
+      <td>596655</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_01_bin4</th>
+      <td>147498</td>
+      <td>395154</td>
+      <td>141892</td>
+      <td>45923</td>
+      <td>2083085</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_02_bin1</th>
+      <td>366141</td>
+      <td>1088663</td>
+      <td>352776</td>
+      <td>127977</td>
+      <td>4968348</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_02_bin2</th>
+      <td>70826</td>
+      <td>216651</td>
+      <td>70771</td>
+      <td>19186</td>
+      <td>978617</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_02_bin3</th>
+      <td>43306</td>
+      <td>126704</td>
+      <td>42415</td>
+      <td>16423</td>
+      <td>591040</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_02_bin4</th>
+      <td>141581</td>
+      <td>368166</td>
+      <td>138288</td>
+      <td>37748</td>
+      <td>1999041</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_03_bin1</th>
+      <td>622398</td>
+      <td>1869409</td>
+      <td>618971</td>
+      <td>171086</td>
+      <td>8516098</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_03_bin2</th>
+      <td>51306</td>
+      <td>152940</td>
+      <td>50146</td>
+      <td>15724</td>
+      <td>699874</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_03_bin3</th>
+      <td>43721</td>
+      <td>121204</td>
+      <td>41004</td>
+      <td>22029</td>
+      <td>582889</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_03_bin4</th>
+      <td>136555</td>
+      <td>338967</td>
+      <td>129201</td>
+      <td>34254</td>
+      <td>1883870</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_04_bin1</th>
+      <td>592410</td>
+      <td>1810616</td>
+      <td>581635</td>
+      <td>154034</td>
+      <td>8201133</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_04_bin2</th>
+      <td>42896</td>
+      <td>123214</td>
+      <td>41446</td>
+      <td>15637</td>
+      <td>575351</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_04_bin3</th>
+      <td>60106</td>
+      <td>167276</td>
+      <td>59611</td>
+      <td>17495</td>
+      <td>854310</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_04_bin4</th>
+      <td>105670</td>
+      <td>262579</td>
+      <td>101815</td>
+      <td>45395</td>
+      <td>1467888</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_05_bin1</th>
+      <td>410625</td>
+      <td>1276206</td>
+      <td>419233</td>
+      <td>108339</td>
+      <td>5806588</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_05_bin2</th>
+      <td>63201</td>
+      <td>175830</td>
+      <td>62212</td>
+      <td>16896</td>
+      <td>879900</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_05_bin3</th>
+      <td>66559</td>
+      <td>174000</td>
+      <td>65954</td>
+      <td>17734</td>
+      <td>955862</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_05_bin4</th>
+      <td>52982</td>
+      <td>127658</td>
+      <td>52422</td>
+      <td>19825</td>
+      <td>764125</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_06_bin1</th>
+      <td>517875</td>
+      <td>1563431</td>
+      <td>506675</td>
+      <td>132895</td>
+      <td>7211166</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_06_bin2</th>
+      <td>77284</td>
+      <td>211664</td>
+      <td>77450</td>
+      <td>19685</td>
+      <td>1115279</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_06_bin3</th>
+      <td>63791</td>
+      <td>155748</td>
+      <td>63440</td>
+      <td>20090</td>
+      <td>905230</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_06_bin4</th>
+      <td>4650</td>
+      <td>9468</td>
+      <td>3915</td>
+      <td>4987</td>
+      <td>56513</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_07_bin1</th>
+      <td>510966</td>
+      <td>1544806</td>
+      <td>517390</td>
+      <td>148003</td>
+      <td>7226584</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_07_bin2</th>
+      <td>76194</td>
+      <td>186016</td>
+      <td>72658</td>
+      <td>35036</td>
+      <td>1039098</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_07_bin3</th>
+      <td>3854</td>
+      <td>8554</td>
+      <td>3527</td>
+      <td>3900</td>
+      <td>51169</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_07_bin4</th>
+      <td>652</td>
+      <td>2663</td>
+      <td>473</td>
+      <td>1475</td>
+      <td>5805</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_08_bin1</th>
+      <td>762546</td>
+      <td>2141860</td>
+      <td>726471</td>
+      <td>250547</td>
+      <td>10205246</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_08_bin2</th>
+      <td>24790</td>
+      <td>65781</td>
+      <td>24905</td>
+      <td>7584</td>
+      <td>348560</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_08_bin3</th>
+      <td>24346</td>
+      <td>57317</td>
+      <td>24872</td>
+      <td>5937</td>
+      <td>362014</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_08_bin4</th>
+      <td>1369</td>
+      <td>3754</td>
+      <td>1233</td>
+      <td>3098</td>
+      <td>14331</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_09_bin1</th>
+      <td>619320</td>
+      <td>1787333</td>
+      <td>597493</td>
+      <td>153877</td>
+      <td>8537635</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_09_bin2</th>
+      <td>11650</td>
+      <td>32923</td>
+      <td>11312</td>
+      <td>3940</td>
+      <td>159167</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_09_bin3</th>
+      <td>10257</td>
+      <td>20671</td>
+      <td>9099</td>
+      <td>6208</td>
+      <td>137148</td>
+    </tr>
+    <tr>
+      <th>RaACE2.787_09_bin4</th>
+      <td>1967</td>
+      <td>9207</td>
+      <td>1836</td>
+      <td>2051</td>
+      <td>21799</td>
     </tr>
     <tr>
       <th>RpACE2_02_bin1</th>
@@ -5638,7 +5638,7 @@ display(HTML(fates
       <td>21799</td>
     </tr>
     <tr>
-      <th>RsACE2_01_bin1</th>
+      <th>RsACE2.3364_01_bin1</th>
       <td>32407</td>
       <td>694554</td>
       <td>112593</td>
@@ -5646,7 +5646,7 @@ display(HTML(fates
       <td>2997712</td>
     </tr>
     <tr>
-      <th>RsACE2_01_bin2</th>
+      <th>RsACE2.3364_01_bin2</th>
       <td>23700</td>
       <td>479875</td>
       <td>79346</td>
@@ -5654,7 +5654,7 @@ display(HTML(fates
       <td>2137446</td>
     </tr>
     <tr>
-      <th>RsACE2_01_bin3</th>
+      <th>RsACE2.3364_01_bin3</th>
       <td>6775</td>
       <td>127461</td>
       <td>23368</td>
@@ -5662,7 +5662,7 @@ display(HTML(fates
       <td>625616</td>
     </tr>
     <tr>
-      <th>RsACE2_01_bin4</th>
+      <th>RsACE2.3364_01_bin4</th>
       <td>8124</td>
       <td>146394</td>
       <td>27734</td>
@@ -5670,7 +5670,7 @@ display(HTML(fates
       <td>738034</td>
     </tr>
     <tr>
-      <th>RsACE2_02_bin1</th>
+      <th>RsACE2.3364_02_bin1</th>
       <td>52729</td>
       <td>1084856</td>
       <td>181502</td>
@@ -5678,7 +5678,7 @@ display(HTML(fates
       <td>4777948</td>
     </tr>
     <tr>
-      <th>RsACE2_02_bin2</th>
+      <th>RsACE2.3364_02_bin2</th>
       <td>8592</td>
       <td>159473</td>
       <td>30027</td>
@@ -5686,7 +5686,7 @@ display(HTML(fates
       <td>729098</td>
     </tr>
     <tr>
-      <th>RsACE2_02_bin3</th>
+      <th>RsACE2.3364_02_bin3</th>
       <td>2800</td>
       <td>57431</td>
       <td>9828</td>
@@ -5694,7 +5694,7 @@ display(HTML(fates
       <td>260633</td>
     </tr>
     <tr>
-      <th>RsACE2_02_bin4</th>
+      <th>RsACE2.3364_02_bin4</th>
       <td>10629</td>
       <td>182759</td>
       <td>34296</td>
@@ -5702,7 +5702,7 @@ display(HTML(fates
       <td>950871</td>
     </tr>
     <tr>
-      <th>RsACE2_03_bin1</th>
+      <th>RsACE2.3364_03_bin1</th>
       <td>57452</td>
       <td>1181450</td>
       <td>206496</td>
@@ -5710,7 +5710,7 @@ display(HTML(fates
       <td>5232735</td>
     </tr>
     <tr>
-      <th>RsACE2_03_bin2</th>
+      <th>RsACE2.3364_03_bin2</th>
       <td>4333</td>
       <td>87872</td>
       <td>14782</td>
@@ -5718,7 +5718,7 @@ display(HTML(fates
       <td>398620</td>
     </tr>
     <tr>
-      <th>RsACE2_03_bin3</th>
+      <th>RsACE2.3364_03_bin3</th>
       <td>3951</td>
       <td>72963</td>
       <td>13625</td>
@@ -5726,7 +5726,7 @@ display(HTML(fates
       <td>349074</td>
     </tr>
     <tr>
-      <th>RsACE2_03_bin4</th>
+      <th>RsACE2.3364_03_bin4</th>
       <td>3238</td>
       <td>52276</td>
       <td>10573</td>
@@ -5734,7 +5734,7 @@ display(HTML(fates
       <td>289744</td>
     </tr>
     <tr>
-      <th>RsACE2_04_bin1</th>
+      <th>RsACE2.3364_04_bin1</th>
       <td>65195</td>
       <td>1282991</td>
       <td>212724</td>
@@ -5742,7 +5742,7 @@ display(HTML(fates
       <td>5631464</td>
     </tr>
     <tr>
-      <th>RsACE2_04_bin2</th>
+      <th>RsACE2.3364_04_bin2</th>
       <td>8649</td>
       <td>164697</td>
       <td>28893</td>
@@ -5750,7 +5750,7 @@ display(HTML(fates
       <td>763400</td>
     </tr>
     <tr>
-      <th>RsACE2_04_bin3</th>
+      <th>RsACE2.3364_04_bin3</th>
       <td>3345</td>
       <td>54961</td>
       <td>10984</td>
@@ -5758,7 +5758,7 @@ display(HTML(fates
       <td>300398</td>
     </tr>
     <tr>
-      <th>RsACE2_04_bin4</th>
+      <th>RsACE2.3364_04_bin4</th>
       <td>1655</td>
       <td>21925</td>
       <td>4700</td>
@@ -5766,7 +5766,7 @@ display(HTML(fates
       <td>121507</td>
     </tr>
     <tr>
-      <th>RsACE2_05_bin1</th>
+      <th>RsACE2.3364_05_bin1</th>
       <td>80045</td>
       <td>1640328</td>
       <td>274172</td>
@@ -5774,7 +5774,7 @@ display(HTML(fates
       <td>7278413</td>
     </tr>
     <tr>
-      <th>RsACE2_05_bin2</th>
+      <th>RsACE2.3364_05_bin2</th>
       <td>2490</td>
       <td>36893</td>
       <td>7095</td>
@@ -5782,7 +5782,7 @@ display(HTML(fates
       <td>190360</td>
     </tr>
     <tr>
-      <th>RsACE2_05_bin3</th>
+      <th>RsACE2.3364_05_bin3</th>
       <td>3383</td>
       <td>61003</td>
       <td>11055</td>
@@ -5790,7 +5790,7 @@ display(HTML(fates
       <td>303284</td>
     </tr>
     <tr>
-      <th>RsACE2_05_bin4</th>
+      <th>RsACE2.3364_05_bin4</th>
       <td>297</td>
       <td>1434</td>
       <td>297</td>
@@ -5798,7 +5798,7 @@ display(HTML(fates
       <td>6939</td>
     </tr>
     <tr>
-      <th>RsACE2_06_bin1</th>
+      <th>RsACE2.3364_06_bin1</th>
       <td>61667</td>
       <td>1269957</td>
       <td>216797</td>
@@ -5806,7 +5806,7 @@ display(HTML(fates
       <td>5654577</td>
     </tr>
     <tr>
-      <th>RsACE2_06_bin2</th>
+      <th>RsACE2.3364_06_bin2</th>
       <td>6387</td>
       <td>119052</td>
       <td>21247</td>
@@ -5814,7 +5814,7 @@ display(HTML(fates
       <td>563064</td>
     </tr>
     <tr>
-      <th>RsACE2_06_bin3</th>
+      <th>RsACE2.3364_06_bin3</th>
       <td>278</td>
       <td>4475</td>
       <td>760</td>
@@ -5822,7 +5822,7 @@ display(HTML(fates
       <td>20793</td>
     </tr>
     <tr>
-      <th>RsACE2_06_bin4</th>
+      <th>RsACE2.3364_06_bin4</th>
       <td>186</td>
       <td>1230</td>
       <td>231</td>
@@ -5830,7 +5830,7 @@ display(HTML(fates
       <td>5250</td>
     </tr>
     <tr>
-      <th>RsACE2_07_bin1</th>
+      <th>RsACE2.3364_07_bin1</th>
       <td>74925</td>
       <td>1498478</td>
       <td>257946</td>
@@ -5838,7 +5838,7 @@ display(HTML(fates
       <td>6735101</td>
     </tr>
     <tr>
-      <th>RsACE2_07_bin2</th>
+      <th>RsACE2.3364_07_bin2</th>
       <td>3400</td>
       <td>62402</td>
       <td>10806</td>
@@ -5846,7 +5846,7 @@ display(HTML(fates
       <td>285228</td>
     </tr>
     <tr>
-      <th>RsACE2_07_bin3</th>
+      <th>RsACE2.3364_07_bin3</th>
       <td>10124</td>
       <td>197247</td>
       <td>34852</td>
@@ -5854,7 +5854,7 @@ display(HTML(fates
       <td>928459</td>
     </tr>
     <tr>
-      <th>RsACE2_07_bin4</th>
+      <th>RsACE2.3364_07_bin4</th>
       <td>1684</td>
       <td>29535</td>
       <td>5561</td>
@@ -5862,7 +5862,7 @@ display(HTML(fates
       <td>152263</td>
     </tr>
     <tr>
-      <th>RsACE2_08_bin1</th>
+      <th>RsACE2.3364_08_bin1</th>
       <td>55474</td>
       <td>1157706</td>
       <td>194024</td>
@@ -5870,7 +5870,7 @@ display(HTML(fates
       <td>5237384</td>
     </tr>
     <tr>
-      <th>RsACE2_08_bin2</th>
+      <th>RsACE2.3364_08_bin2</th>
       <td>2803</td>
       <td>42412</td>
       <td>7360</td>
@@ -5878,7 +5878,7 @@ display(HTML(fates
       <td>194066</td>
     </tr>
     <tr>
-      <th>RsACE2_08_bin3</th>
+      <th>RsACE2.3364_08_bin3</th>
       <td>8811</td>
       <td>184051</td>
       <td>31092</td>
@@ -5886,7 +5886,7 @@ display(HTML(fates
       <td>827188</td>
     </tr>
     <tr>
-      <th>RsACE2_08_bin4</th>
+      <th>RsACE2.3364_08_bin4</th>
       <td>1361</td>
       <td>21744</td>
       <td>4712</td>
@@ -5894,7 +5894,7 @@ display(HTML(fates
       <td>130172</td>
     </tr>
     <tr>
-      <th>RsACE2_09_bin1</th>
+      <th>RsACE2.3364_09_bin1</th>
       <td>70159</td>
       <td>1390024</td>
       <td>235422</td>
@@ -5902,7 +5902,7 @@ display(HTML(fates
       <td>6280838</td>
     </tr>
     <tr>
-      <th>RsACE2_09_bin2</th>
+      <th>RsACE2.3364_09_bin2</th>
       <td>3996</td>
       <td>74645</td>
       <td>13132</td>
@@ -5910,7 +5910,7 @@ display(HTML(fates
       <td>346623</td>
     </tr>
     <tr>
-      <th>RsACE2_09_bin3</th>
+      <th>RsACE2.3364_09_bin3</th>
       <td>1071</td>
       <td>18998</td>
       <td>3366</td>
@@ -5918,7 +5918,7 @@ display(HTML(fates
       <td>91388</td>
     </tr>
     <tr>
-      <th>RsACE2_09_bin4</th>
+      <th>RsACE2.3364_09_bin4</th>
       <td>108</td>
       <td>2474</td>
       <td>297</td>
@@ -6534,6 +6534,294 @@ display(HTML(fates
       <td>190875</td>
     </tr>
     <tr>
+      <th>huACE2.pool6_01_bin1</th>
+      <td>12508</td>
+      <td>433522</td>
+      <td>43160</td>
+      <td>17079</td>
+      <td>954685</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_01_bin2</th>
+      <td>2900</td>
+      <td>99634</td>
+      <td>9352</td>
+      <td>7973</td>
+      <td>195182</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_01_bin3</th>
+      <td>425</td>
+      <td>16538</td>
+      <td>1448</td>
+      <td>1536</td>
+      <td>31078</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_01_bin4</th>
+      <td>1536</td>
+      <td>42404</td>
+      <td>5025</td>
+      <td>5848</td>
+      <td>123474</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_02_bin1</th>
+      <td>11484</td>
+      <td>419484</td>
+      <td>42633</td>
+      <td>17606</td>
+      <td>924518</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_02_bin2</th>
+      <td>1237</td>
+      <td>45001</td>
+      <td>4272</td>
+      <td>1737</td>
+      <td>89059</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_02_bin3</th>
+      <td>71</td>
+      <td>654</td>
+      <td>47</td>
+      <td>1128</td>
+      <td>1166</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_02_bin4</th>
+      <td>1217</td>
+      <td>36040</td>
+      <td>4480</td>
+      <td>3942</td>
+      <td>104194</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_03_bin1</th>
+      <td>14077</td>
+      <td>500579</td>
+      <td>49461</td>
+      <td>19259</td>
+      <td>1103417</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_03_bin2</th>
+      <td>944</td>
+      <td>33378</td>
+      <td>3150</td>
+      <td>2102</td>
+      <td>71484</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_03_bin3</th>
+      <td>80</td>
+      <td>503</td>
+      <td>64</td>
+      <td>1579</td>
+      <td>1238</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_03_bin4</th>
+      <td>1923</td>
+      <td>53626</td>
+      <td>6333</td>
+      <td>4438</td>
+      <td>153074</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_04_bin1</th>
+      <td>18037</td>
+      <td>666627</td>
+      <td>66837</td>
+      <td>33215</td>
+      <td>1453488</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_04_bin2</th>
+      <td>1282</td>
+      <td>31286</td>
+      <td>3201</td>
+      <td>12527</td>
+      <td>71390</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_04_bin3</th>
+      <td>203</td>
+      <td>5075</td>
+      <td>526</td>
+      <td>2211</td>
+      <td>12734</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_04_bin4</th>
+      <td>569</td>
+      <td>14662</td>
+      <td>1797</td>
+      <td>4132</td>
+      <td>44212</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_05_bin1</th>
+      <td>17254</td>
+      <td>573640</td>
+      <td>57447</td>
+      <td>37079</td>
+      <td>1253436</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_05_bin2</th>
+      <td>1270</td>
+      <td>41068</td>
+      <td>4403</td>
+      <td>1991</td>
+      <td>95553</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_05_bin3</th>
+      <td>122</td>
+      <td>2275</td>
+      <td>328</td>
+      <td>2421</td>
+      <td>6821</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_05_bin4</th>
+      <td>45</td>
+      <td>107</td>
+      <td>18</td>
+      <td>774</td>
+      <td>359</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_06_bin1</th>
+      <td>19496</td>
+      <td>693513</td>
+      <td>69651</td>
+      <td>30645</td>
+      <td>1532466</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_06_bin2</th>
+      <td>2763</td>
+      <td>89408</td>
+      <td>9750</td>
+      <td>3533</td>
+      <td>214311</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_06_bin3</th>
+      <td>185</td>
+      <td>3391</td>
+      <td>379</td>
+      <td>3478</td>
+      <td>9395</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_06_bin4</th>
+      <td>131</td>
+      <td>72</td>
+      <td>4</td>
+      <td>4740</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_07_bin1</th>
+      <td>149108</td>
+      <td>1048442</td>
+      <td>208474</td>
+      <td>59606</td>
+      <td>2334905</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_07_bin2</th>
+      <td>11753</td>
+      <td>81102</td>
+      <td>15935</td>
+      <td>5744</td>
+      <td>185395</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_07_bin3</th>
+      <td>2041</td>
+      <td>10220</td>
+      <td>1130</td>
+      <td>9124</td>
+      <td>7848</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_07_bin4</th>
+      <td>218</td>
+      <td>493</td>
+      <td>50</td>
+      <td>1401</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_08_bin1</th>
+      <td>144585</td>
+      <td>1033735</td>
+      <td>197666</td>
+      <td>48300</td>
+      <td>2296294</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_08_bin2</th>
+      <td>7085</td>
+      <td>46040</td>
+      <td>8697</td>
+      <td>12315</td>
+      <td>97111</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_08_bin3</th>
+      <td>342</td>
+      <td>315</td>
+      <td>67</td>
+      <td>3973</td>
+      <td>617</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_08_bin4</th>
+      <td>2806</td>
+      <td>2139</td>
+      <td>85</td>
+      <td>46262</td>
+      <td>324</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_09_bin1</th>
+      <td>73495</td>
+      <td>540131</td>
+      <td>105565</td>
+      <td>25880</td>
+      <td>1203826</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_09_bin2</th>
+      <td>9280</td>
+      <td>64970</td>
+      <td>12853</td>
+      <td>3810</td>
+      <td>146361</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_09_bin3</th>
+      <td>316</td>
+      <td>646</td>
+      <td>85</td>
+      <td>2254</td>
+      <td>960</td>
+    </tr>
+    <tr>
+      <th>huACE2.pool6_09_bin4</th>
+      <td>782</td>
+      <td>534</td>
+      <td>28</td>
+      <td>10555</td>
+      <td>197</td>
+    </tr>
+    <tr>
       <th>huACE2_01_bin1</th>
       <td>138057</td>
       <td>709683</td>
@@ -6822,296 +7110,8 @@ display(HTML(fates
       <td>260492</td>
     </tr>
     <tr>
-      <th>huACE2pool6_01_bin1</th>
-      <td>12508</td>
-      <td>433522</td>
-      <td>43160</td>
-      <td>17079</td>
-      <td>954685</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_01_bin2</th>
-      <td>2900</td>
-      <td>99634</td>
-      <td>9352</td>
-      <td>7973</td>
-      <td>195182</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_01_bin3</th>
-      <td>425</td>
-      <td>16538</td>
-      <td>1448</td>
-      <td>1536</td>
-      <td>31078</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_01_bin4</th>
-      <td>1536</td>
-      <td>42404</td>
-      <td>5025</td>
-      <td>5848</td>
-      <td>123474</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_02_bin1</th>
-      <td>11484</td>
-      <td>419484</td>
-      <td>42633</td>
-      <td>17606</td>
-      <td>924518</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_02_bin2</th>
-      <td>1237</td>
-      <td>45001</td>
-      <td>4272</td>
-      <td>1737</td>
-      <td>89059</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_02_bin3</th>
-      <td>71</td>
-      <td>654</td>
-      <td>47</td>
-      <td>1128</td>
-      <td>1166</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_02_bin4</th>
-      <td>1217</td>
-      <td>36040</td>
-      <td>4480</td>
-      <td>3942</td>
-      <td>104194</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_03_bin1</th>
-      <td>14077</td>
-      <td>500579</td>
-      <td>49461</td>
-      <td>19259</td>
-      <td>1103417</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_03_bin2</th>
-      <td>944</td>
-      <td>33378</td>
-      <td>3150</td>
-      <td>2102</td>
-      <td>71484</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_03_bin3</th>
-      <td>80</td>
-      <td>503</td>
-      <td>64</td>
-      <td>1579</td>
-      <td>1238</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_03_bin4</th>
-      <td>1923</td>
-      <td>53626</td>
-      <td>6333</td>
-      <td>4438</td>
-      <td>153074</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_04_bin1</th>
-      <td>18037</td>
-      <td>666627</td>
-      <td>66837</td>
-      <td>33215</td>
-      <td>1453488</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_04_bin2</th>
-      <td>1282</td>
-      <td>31286</td>
-      <td>3201</td>
-      <td>12527</td>
-      <td>71390</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_04_bin3</th>
-      <td>203</td>
-      <td>5075</td>
-      <td>526</td>
-      <td>2211</td>
-      <td>12734</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_04_bin4</th>
-      <td>569</td>
-      <td>14662</td>
-      <td>1797</td>
-      <td>4132</td>
-      <td>44212</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_05_bin1</th>
-      <td>17254</td>
-      <td>573640</td>
-      <td>57447</td>
-      <td>37079</td>
-      <td>1253436</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_05_bin2</th>
-      <td>1270</td>
-      <td>41068</td>
-      <td>4403</td>
-      <td>1991</td>
-      <td>95553</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_05_bin3</th>
-      <td>122</td>
-      <td>2275</td>
-      <td>328</td>
-      <td>2421</td>
-      <td>6821</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_05_bin4</th>
-      <td>45</td>
-      <td>107</td>
-      <td>18</td>
-      <td>774</td>
-      <td>359</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_06_bin1</th>
-      <td>19496</td>
-      <td>693513</td>
-      <td>69651</td>
-      <td>30645</td>
-      <td>1532466</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_06_bin2</th>
-      <td>2763</td>
-      <td>89408</td>
-      <td>9750</td>
-      <td>3533</td>
-      <td>214311</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_06_bin3</th>
-      <td>185</td>
-      <td>3391</td>
-      <td>379</td>
-      <td>3478</td>
-      <td>9395</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_06_bin4</th>
-      <td>131</td>
-      <td>72</td>
-      <td>4</td>
-      <td>4740</td>
-      <td>80</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_07_bin1</th>
-      <td>149108</td>
-      <td>1048442</td>
-      <td>208474</td>
-      <td>59606</td>
-      <td>2334905</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_07_bin2</th>
-      <td>11753</td>
-      <td>81102</td>
-      <td>15935</td>
-      <td>5744</td>
-      <td>185395</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_07_bin3</th>
-      <td>2041</td>
-      <td>10220</td>
-      <td>1130</td>
-      <td>9124</td>
-      <td>7848</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_07_bin4</th>
-      <td>218</td>
-      <td>493</td>
-      <td>50</td>
-      <td>1401</td>
-      <td>99</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_08_bin1</th>
-      <td>144585</td>
-      <td>1033735</td>
-      <td>197666</td>
-      <td>48300</td>
-      <td>2296294</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_08_bin2</th>
-      <td>7085</td>
-      <td>46040</td>
-      <td>8697</td>
-      <td>12315</td>
-      <td>97111</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_08_bin3</th>
-      <td>342</td>
-      <td>315</td>
-      <td>67</td>
-      <td>3973</td>
-      <td>617</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_08_bin4</th>
-      <td>2806</td>
-      <td>2139</td>
-      <td>85</td>
-      <td>46262</td>
-      <td>324</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_09_bin1</th>
-      <td>73495</td>
-      <td>540131</td>
-      <td>105565</td>
-      <td>25880</td>
-      <td>1203826</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_09_bin2</th>
-      <td>9280</td>
-      <td>64970</td>
-      <td>12853</td>
-      <td>3810</td>
-      <td>146361</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_09_bin3</th>
-      <td>316</td>
-      <td>646</td>
-      <td>85</td>
-      <td>2254</td>
-      <td>960</td>
-    </tr>
-    <tr>
-      <th>huACE2pool6_09_bin4</th>
-      <td>782</td>
-      <td>534</td>
-      <td>28</td>
-      <td>10555</td>
-      <td>197</td>
-    </tr>
-    <tr>
       <th rowspan="148" valign="top">lib2</th>
-      <th>RaACE2_01_bin1</th>
+      <th>RaACE2.787_01_bin1</th>
       <td>412729</td>
       <td>1788346</td>
       <td>561819</td>
@@ -7119,7 +7119,7 @@ display(HTML(fates
       <td>7547193</td>
     </tr>
     <tr>
-      <th>RaACE2_01_bin2</th>
+      <th>RaACE2.787_01_bin2</th>
       <td>116636</td>
       <td>505895</td>
       <td>159626</td>
@@ -7127,7 +7127,7 @@ display(HTML(fates
       <td>2138699</td>
     </tr>
     <tr>
-      <th>RaACE2_01_bin3</th>
+      <th>RaACE2.787_01_bin3</th>
       <td>59994</td>
       <td>258907</td>
       <td>80437</td>
@@ -7135,7 +7135,7 @@ display(HTML(fates
       <td>1097075</td>
     </tr>
     <tr>
-      <th>RaACE2_01_bin4</th>
+      <th>RaACE2.787_01_bin4</th>
       <td>169292</td>
       <td>608111</td>
       <td>227443</td>
@@ -7143,7 +7143,7 @@ display(HTML(fates
       <td>3278423</td>
     </tr>
     <tr>
-      <th>RaACE2_02_bin1</th>
+      <th>RaACE2.787_02_bin1</th>
       <td>509300</td>
       <td>2233403</td>
       <td>702780</td>
@@ -7151,7 +7151,7 @@ display(HTML(fates
       <td>9485078</td>
     </tr>
     <tr>
-      <th>RaACE2_02_bin2</th>
+      <th>RaACE2.787_02_bin2</th>
       <td>85317</td>
       <td>367029</td>
       <td>113072</td>
@@ -7159,7 +7159,7 @@ display(HTML(fates
       <td>1551910</td>
     </tr>
     <tr>
-      <th>RaACE2_02_bin3</th>
+      <th>RaACE2.787_02_bin3</th>
       <td>53476</td>
       <td>206875</td>
       <td>69758</td>
@@ -7167,7 +7167,7 @@ display(HTML(fates
       <td>1006481</td>
     </tr>
     <tr>
-      <th>RaACE2_02_bin4</th>
+      <th>RaACE2.787_02_bin4</th>
       <td>159404</td>
       <td>550628</td>
       <td>220741</td>
@@ -7175,7 +7175,7 @@ display(HTML(fates
       <td>3055100</td>
     </tr>
     <tr>
-      <th>RaACE2_03_bin1</th>
+      <th>RaACE2.787_03_bin1</th>
       <td>493203</td>
       <td>2153322</td>
       <td>670913</td>
@@ -7183,7 +7183,7 @@ display(HTML(fates
       <td>9024825</td>
     </tr>
     <tr>
-      <th>RaACE2_03_bin2</th>
+      <th>RaACE2.787_03_bin2</th>
       <td>69609</td>
       <td>294040</td>
       <td>93899</td>
@@ -7191,7 +7191,7 @@ display(HTML(fates
       <td>1332860</td>
     </tr>
     <tr>
-      <th>RaACE2_03_bin3</th>
+      <th>RaACE2.787_03_bin3</th>
       <td>51168</td>
       <td>194540</td>
       <td>68871</td>
@@ -7199,7 +7199,7 @@ display(HTML(fates
       <td>978579</td>
     </tr>
     <tr>
-      <th>RaACE2_03_bin4</th>
+      <th>RaACE2.787_03_bin4</th>
       <td>110574</td>
       <td>382380</td>
       <td>148593</td>
@@ -7207,7 +7207,7 @@ display(HTML(fates
       <td>2136427</td>
     </tr>
     <tr>
-      <th>RaACE2_04_bin1</th>
+      <th>RaACE2.787_04_bin1</th>
       <td>490022</td>
       <td>2140886</td>
       <td>663131</td>
@@ -7215,7 +7215,7 @@ display(HTML(fates
       <td>9128945</td>
     </tr>
     <tr>
-      <th>RaACE2_04_bin2</th>
+      <th>RaACE2.787_04_bin2</th>
       <td>39403</td>
       <td>151099</td>
       <td>51869</td>
@@ -7223,7 +7223,7 @@ display(HTML(fates
       <td>724362</td>
     </tr>
     <tr>
-      <th>RaACE2_04_bin3</th>
+      <th>RaACE2.787_04_bin3</th>
       <td>54571</td>
       <td>195516</td>
       <td>72836</td>
@@ -7231,7 +7231,7 @@ display(HTML(fates
       <td>1024734</td>
     </tr>
     <tr>
-      <th>RaACE2_04_bin4</th>
+      <th>RaACE2.787_04_bin4</th>
       <td>127863</td>
       <td>433560</td>
       <td>172512</td>
@@ -7239,7 +7239,7 @@ display(HTML(fates
       <td>2509354</td>
     </tr>
     <tr>
-      <th>RaACE2_05_bin1</th>
+      <th>RaACE2.787_05_bin1</th>
       <td>268685</td>
       <td>1171337</td>
       <td>372028</td>
@@ -7247,7 +7247,7 @@ display(HTML(fates
       <td>5008422</td>
     </tr>
     <tr>
-      <th>RaACE2_05_bin2</th>
+      <th>RaACE2.787_05_bin2</th>
       <td>41438</td>
       <td>150992</td>
       <td>54785</td>
@@ -7255,7 +7255,7 @@ display(HTML(fates
       <td>759212</td>
     </tr>
     <tr>
-      <th>RaACE2_05_bin3</th>
+      <th>RaACE2.787_05_bin3</th>
       <td>82023</td>
       <td>310517</td>
       <td>116729</td>
@@ -7263,7 +7263,7 @@ display(HTML(fates
       <td>1609385</td>
     </tr>
     <tr>
-      <th>RaACE2_05_bin4</th>
+      <th>RaACE2.787_05_bin4</th>
       <td>41205</td>
       <td>129855</td>
       <td>55017</td>
@@ -7271,7 +7271,7 @@ display(HTML(fates
       <td>795499</td>
     </tr>
     <tr>
-      <th>RaACE2_06_bin1</th>
+      <th>RaACE2.787_06_bin1</th>
       <td>476897</td>
       <td>2023936</td>
       <td>654138</td>
@@ -7279,7 +7279,7 @@ display(HTML(fates
       <td>8903192</td>
     </tr>
     <tr>
-      <th>RaACE2_06_bin2</th>
+      <th>RaACE2.787_06_bin2</th>
       <td>112927</td>
       <td>443523</td>
       <td>155652</td>
@@ -7287,7 +7287,7 @@ display(HTML(fates
       <td>2153026</td>
     </tr>
     <tr>
-      <th>RaACE2_06_bin3</th>
+      <th>RaACE2.787_06_bin3</th>
       <td>38950</td>
       <td>133773</td>
       <td>53517</td>
@@ -7295,7 +7295,7 @@ display(HTML(fates
       <td>779280</td>
     </tr>
     <tr>
-      <th>RaACE2_06_bin4</th>
+      <th>RaACE2.787_06_bin4</th>
       <td>1400</td>
       <td>3309</td>
       <td>1387</td>
@@ -7303,7 +7303,7 @@ display(HTML(fates
       <td>19781</td>
     </tr>
     <tr>
-      <th>RaACE2_07_bin1</th>
+      <th>RaACE2.787_07_bin1</th>
       <td>605601</td>
       <td>2556848</td>
       <td>814972</td>
@@ -7311,7 +7311,7 @@ display(HTML(fates
       <td>11361781</td>
     </tr>
     <tr>
-      <th>RaACE2_07_bin2</th>
+      <th>RaACE2.787_07_bin2</th>
       <td>93864</td>
       <td>337198</td>
       <td>129507</td>
@@ -7319,7 +7319,7 @@ display(HTML(fates
       <td>1824649</td>
     </tr>
     <tr>
-      <th>RaACE2_07_bin3</th>
+      <th>RaACE2.787_07_bin3</th>
       <td>3207</td>
       <td>10835</td>
       <td>4314</td>
@@ -7327,7 +7327,7 @@ display(HTML(fates
       <td>58886</td>
     </tr>
     <tr>
-      <th>RaACE2_07_bin4</th>
+      <th>RaACE2.787_07_bin4</th>
       <td>1775</td>
       <td>192</td>
       <td>128</td>
@@ -7335,7 +7335,7 @@ display(HTML(fates
       <td>1760</td>
     </tr>
     <tr>
-      <th>RaACE2_08_bin1</th>
+      <th>RaACE2.787_08_bin1</th>
       <td>619129</td>
       <td>2534489</td>
       <td>837958</td>
@@ -7343,7 +7343,7 @@ display(HTML(fates
       <td>11561199</td>
     </tr>
     <tr>
-      <th>RaACE2_08_bin2</th>
+      <th>RaACE2.787_08_bin2</th>
       <td>30406</td>
       <td>108153</td>
       <td>41852</td>
@@ -7351,7 +7351,7 @@ display(HTML(fates
       <td>583984</td>
     </tr>
     <tr>
-      <th>RaACE2_08_bin3</th>
+      <th>RaACE2.787_08_bin3</th>
       <td>2703</td>
       <td>10608</td>
       <td>3399</td>
@@ -7359,7 +7359,7 @@ display(HTML(fates
       <td>46484</td>
     </tr>
     <tr>
-      <th>RaACE2_08_bin4</th>
+      <th>RaACE2.787_08_bin4</th>
       <td>93</td>
       <td>174</td>
       <td>31</td>
@@ -7367,7 +7367,7 @@ display(HTML(fates
       <td>279</td>
     </tr>
     <tr>
-      <th>RaACE2_09_bin1</th>
+      <th>RaACE2.787_09_bin1</th>
       <td>540534</td>
       <td>2189297</td>
       <td>724488</td>
@@ -7375,7 +7375,7 @@ display(HTML(fates
       <td>10064631</td>
     </tr>
     <tr>
-      <th>RaACE2_09_bin2</th>
+      <th>RaACE2.787_09_bin2</th>
       <td>10875</td>
       <td>44122</td>
       <td>14575</td>
@@ -7383,7 +7383,7 @@ display(HTML(fates
       <td>200590</td>
     </tr>
     <tr>
-      <th>RaACE2_09_bin3</th>
+      <th>RaACE2.787_09_bin3</th>
       <td>4502</td>
       <td>19310</td>
       <td>5710</td>
@@ -7391,7 +7391,7 @@ display(HTML(fates
       <td>79020</td>
     </tr>
     <tr>
-      <th>RaACE2_09_bin4</th>
+      <th>RaACE2.787_09_bin4</th>
       <td>164</td>
       <td>898</td>
       <td>132</td>
@@ -7399,7 +7399,7 @@ display(HTML(fates
       <td>1210</td>
     </tr>
     <tr>
-      <th>RsACE2_01_bin1</th>
+      <th>RsACE2.3364_01_bin1</th>
       <td>307276</td>
       <td>1309582</td>
       <td>414671</td>
@@ -7407,7 +7407,7 @@ display(HTML(fates
       <td>5731700</td>
     </tr>
     <tr>
-      <th>RsACE2_01_bin2</th>
+      <th>RsACE2.3364_01_bin2</th>
       <td>172569</td>
       <td>704780</td>
       <td>227266</td>
@@ -7415,7 +7415,7 @@ display(HTML(fates
       <td>3213923</td>
     </tr>
     <tr>
-      <th>RsACE2_01_bin3</th>
+      <th>RsACE2.3364_01_bin3</th>
       <td>48437</td>
       <td>186957</td>
       <td>65792</td>
@@ -7423,7 +7423,7 @@ display(HTML(fates
       <td>927133</td>
     </tr>
     <tr>
-      <th>RsACE2_01_bin4</th>
+      <th>RsACE2.3364_01_bin4</th>
       <td>73657</td>
       <td>269293</td>
       <td>101376</td>
@@ -7431,7 +7431,7 @@ display(HTML(fates
       <td>1386613</td>
     </tr>
     <tr>
-      <th>RsACE2_02_bin1</th>
+      <th>RsACE2.3364_02_bin1</th>
       <td>501706</td>
       <td>2096631</td>
       <td>680336</td>
@@ -7439,7 +7439,7 @@ display(HTML(fates
       <td>9370151</td>
     </tr>
     <tr>
-      <th>RsACE2_02_bin2</th>
+      <th>RsACE2.3364_02_bin2</th>
       <td>110550</td>
       <td>431492</td>
       <td>151928</td>
@@ -7447,7 +7447,7 @@ display(HTML(fates
       <td>2040459</td>
     </tr>
     <tr>
-      <th>RsACE2_02_bin3</th>
+      <th>RsACE2.3364_02_bin3</th>
       <td>26310</td>
       <td>96301</td>
       <td>34643</td>
@@ -7455,7 +7455,7 @@ display(HTML(fates
       <td>490120</td>
     </tr>
     <tr>
-      <th>RsACE2_02_bin4</th>
+      <th>RsACE2.3364_02_bin4</th>
       <td>88015</td>
       <td>318878</td>
       <td>117250</td>
@@ -7463,7 +7463,7 @@ display(HTML(fates
       <td>1682589</td>
     </tr>
     <tr>
-      <th>RsACE2_03_bin1</th>
+      <th>RsACE2.3364_03_bin1</th>
       <td>518247</td>
       <td>2128307</td>
       <td>722436</td>
@@ -7471,7 +7471,7 @@ display(HTML(fates
       <td>9596867</td>
     </tr>
     <tr>
-      <th>RsACE2_03_bin2</th>
+      <th>RsACE2.3364_03_bin2</th>
       <td>39926</td>
       <td>156630</td>
       <td>52964</td>
@@ -7479,7 +7479,7 @@ display(HTML(fates
       <td>751384</td>
     </tr>
     <tr>
-      <th>RsACE2_03_bin3</th>
+      <th>RsACE2.3364_03_bin3</th>
       <td>34332</td>
       <td>129229</td>
       <td>47179</td>
@@ -7487,7 +7487,7 @@ display(HTML(fates
       <td>646306</td>
     </tr>
     <tr>
-      <th>RsACE2_03_bin4</th>
+      <th>RsACE2.3364_03_bin4</th>
       <td>24403</td>
       <td>80927</td>
       <td>31755</td>
@@ -7495,7 +7495,7 @@ display(HTML(fates
       <td>452799</td>
     </tr>
     <tr>
-      <th>RsACE2_04_bin1</th>
+      <th>RsACE2.3364_04_bin1</th>
       <td>568027</td>
       <td>2316463</td>
       <td>748416</td>
@@ -7503,7 +7503,7 @@ display(HTML(fates
       <td>10416853</td>
     </tr>
     <tr>
-      <th>RsACE2_04_bin2</th>
+      <th>RsACE2.3364_04_bin2</th>
       <td>33223</td>
       <td>130375</td>
       <td>45262</td>
@@ -7511,7 +7511,7 @@ display(HTML(fates
       <td>631131</td>
     </tr>
     <tr>
-      <th>RsACE2_04_bin3</th>
+      <th>RsACE2.3364_04_bin3</th>
       <td>33302</td>
       <td>112103</td>
       <td>44675</td>
@@ -7519,7 +7519,7 @@ display(HTML(fates
       <td>638268</td>
     </tr>
     <tr>
-      <th>RsACE2_04_bin4</th>
+      <th>RsACE2.3364_04_bin4</th>
       <td>4563</td>
       <td>15941</td>
       <td>5581</td>
@@ -7527,7 +7527,7 @@ display(HTML(fates
       <td>75066</td>
     </tr>
     <tr>
-      <th>RsACE2_05_bin1</th>
+      <th>RsACE2.3364_05_bin1</th>
       <td>573209</td>
       <td>2353635</td>
       <td>771706</td>
@@ -7535,7 +7535,7 @@ display(HTML(fates
       <td>10777609</td>
     </tr>
     <tr>
-      <th>RsACE2_05_bin2</th>
+      <th>RsACE2.3364_05_bin2</th>
       <td>31937</td>
       <td>110239</td>
       <td>41237</td>
@@ -7543,7 +7543,7 @@ display(HTML(fates
       <td>588551</td>
     </tr>
     <tr>
-      <th>RsACE2_05_bin3</th>
+      <th>RsACE2.3364_05_bin3</th>
       <td>4532</td>
       <td>16394</td>
       <td>5433</td>
@@ -7551,7 +7551,7 @@ display(HTML(fates
       <td>77533</td>
     </tr>
     <tr>
-      <th>RsACE2_05_bin4</th>
+      <th>RsACE2.3364_05_bin4</th>
       <td>1314</td>
       <td>3540</td>
       <td>943</td>
@@ -7559,7 +7559,7 @@ display(HTML(fates
       <td>11942</td>
     </tr>
     <tr>
-      <th>RsACE2_06_bin1</th>
+      <th>RsACE2.3364_06_bin1</th>
       <td>533118</td>
       <td>2179831</td>
       <td>726808</td>
@@ -7567,7 +7567,7 @@ display(HTML(fates
       <td>9994948</td>
     </tr>
     <tr>
-      <th>RsACE2_06_bin2</th>
+      <th>RsACE2.3364_06_bin2</th>
       <td>32016</td>
       <td>118525</td>
       <td>41614</td>
@@ -7575,7 +7575,7 @@ display(HTML(fates
       <td>584894</td>
     </tr>
     <tr>
-      <th>RsACE2_06_bin3</th>
+      <th>RsACE2.3364_06_bin3</th>
       <td>927</td>
       <td>3678</td>
       <td>953</td>
@@ -7583,7 +7583,7 @@ display(HTML(fates
       <td>12630</td>
     </tr>
     <tr>
-      <th>RsACE2_06_bin4</th>
+      <th>RsACE2.3364_06_bin4</th>
       <td>1075</td>
       <td>2319</td>
       <td>899</td>
@@ -7591,7 +7591,7 @@ display(HTML(fates
       <td>12629</td>
     </tr>
     <tr>
-      <th>RsACE2_07_bin1</th>
+      <th>RsACE2.3364_07_bin1</th>
       <td>586884</td>
       <td>2355995</td>
       <td>797719</td>
@@ -7599,7 +7599,7 @@ display(HTML(fates
       <td>10895191</td>
     </tr>
     <tr>
-      <th>RsACE2_07_bin2</th>
+      <th>RsACE2.3364_07_bin2</th>
       <td>15672</td>
       <td>62323</td>
       <td>20331</td>
@@ -7607,7 +7607,7 @@ display(HTML(fates
       <td>279996</td>
     </tr>
     <tr>
-      <th>RsACE2_07_bin3</th>
+      <th>RsACE2.3364_07_bin3</th>
       <td>43539</td>
       <td>173386</td>
       <td>58907</td>
@@ -7615,7 +7615,7 @@ display(HTML(fates
       <td>819093</td>
     </tr>
     <tr>
-      <th>RsACE2_07_bin4</th>
+      <th>RsACE2.3364_07_bin4</th>
       <td>2134</td>
       <td>8576</td>
       <td>2843</td>
@@ -7623,7 +7623,7 @@ display(HTML(fates
       <td>39310</td>
     </tr>
     <tr>
-      <th>RsACE2_08_bin1</th>
+      <th>RsACE2.3364_08_bin1</th>
       <td>545805</td>
       <td>2284407</td>
       <td>742433</td>
@@ -7631,7 +7631,7 @@ display(HTML(fates
       <td>10533653</td>
     </tr>
     <tr>
-      <th>RsACE2_08_bin2</th>
+      <th>RsACE2.3364_08_bin2</th>
       <td>12639</td>
       <td>45973</td>
       <td>15479</td>
@@ -7639,7 +7639,7 @@ display(HTML(fates
       <td>210143</td>
     </tr>
     <tr>
-      <th>RsACE2_08_bin3</th>
+      <th>RsACE2.3364_08_bin3</th>
       <td>14640</td>
       <td>60218</td>
       <td>20123</td>
@@ -7647,7 +7647,7 @@ display(HTML(fates
       <td>282382</td>
     </tr>
     <tr>
-      <th>RsACE2_08_bin4</th>
+      <th>RsACE2.3364_08_bin4</th>
       <td>1751</td>
       <td>6875</td>
       <td>2115</td>
@@ -7655,7 +7655,7 @@ display(HTML(fates
       <td>28571</td>
     </tr>
     <tr>
-      <th>RsACE2_09_bin1</th>
+      <th>RsACE2.3364_09_bin1</th>
       <td>540534</td>
       <td>2189297</td>
       <td>724488</td>
@@ -7663,7 +7663,7 @@ display(HTML(fates
       <td>10064631</td>
     </tr>
     <tr>
-      <th>RsACE2_09_bin2</th>
+      <th>RsACE2.3364_09_bin2</th>
       <td>10875</td>
       <td>44122</td>
       <td>14575</td>
@@ -7671,7 +7671,7 @@ display(HTML(fates
       <td>200590</td>
     </tr>
     <tr>
-      <th>RsACE2_09_bin3</th>
+      <th>RsACE2.3364_09_bin3</th>
       <td>4502</td>
       <td>19310</td>
       <td>5710</td>
@@ -7679,7 +7679,7 @@ display(HTML(fates
       <td>79020</td>
     </tr>
     <tr>
-      <th>RsACE2_09_bin4</th>
+      <th>RsACE2.3364_09_bin4</th>
       <td>164</td>
       <td>898</td>
       <td>132</td>
