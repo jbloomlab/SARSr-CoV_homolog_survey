@@ -844,6 +844,86 @@ the white to purple heatmap showing affinities.
 
     invisible(dev.print(pdf, paste(config$final_variant_scores_dir,"/heatmap_SSM_RpACE2-by-target.pdf",sep="")))
 
+I think this faceting is my preferred way of seeing the data. So, to
+continue the heatmap explosion – let’s make these same views, but with
+the delta\_Ka measure. Normalized to independent WT states, for now…
+
+    p1 <- ggplot(dt_mutant,aes(position,mutant))+geom_tile(aes(fill=huACE2_delta),color="black",lwd=0.1)+
+        #scale_fill_gradientn(colours=c("#A94E35","#A94E35","#F48365","#FFFFFF","#7378B9","#7378B9","#383C6C"),limits=c(-7,7),values=c(0,3/14,5/14,7/14,9/14,11/14,14/14),na.value="yellow")+
+      scale_fill_gradientn(colours=c("#A94E35","#F48365","#FFFFFF","#7378B9","#383C6C"),limits=c(-7,7),values=c(0,3.5/14,7/14,10.5/14,14/14),na.value="yellow")+
+
+      labs(x="",y="")+theme_classic(base_size=9)+
+      coord_equal()+theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.6,face="bold",size=10),axis.text.y=element_text(face="bold",size=10))+
+      facet_wrap(~target,nrow=1)+
+      guides(y.sec=guide_axis_label_trans())+
+      geom_text(aes(label=wildtype_indicator),size=2,color="gray10")
+
+    p1
+
+<img src="barcode_to_genotype_phenotypes_files/figure-gfm/heatmap_SSM_huACE2_delta-1.png" style="display: block; margin: auto;" />
+
+    invisible(dev.print(pdf, paste(config$final_variant_scores_dir,"/heatmap_SSM_huACE2_delta-by-target.pdf",sep="")))
+
+    p1 <- ggplot(dt_mutant,aes(position,mutant))+geom_tile(aes(fill=cvACE2_delta),color="black",lwd=0.1)+
+        #scale_fill_gradientn(colours=c("#A94E35","#A94E35","#F48365","#FFFFFF","#7378B9","#7378B9","#383C6C"),limits=c(-7,7),values=c(0,3/14,5/14,7/14,9/14,11/14,14/14),na.value="yellow")+
+      scale_fill_gradientn(colours=c("#A94E35","#F48365","#FFFFFF","#7378B9","#383C6C"),limits=c(-7,7),values=c(0,3.5/14,7/14,10.5/14,14/14),na.value="yellow")+
+      labs(x="",y="")+theme_classic(base_size=9)+
+      coord_equal()+theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.6,face="bold",size=10),axis.text.y=element_text(face="bold",size=10))+
+      facet_wrap(~target,nrow=1)+
+      guides(y.sec=guide_axis_label_trans())+
+      geom_text(aes(label=wildtype_indicator),size=2,color="gray10")
+
+    p1
+
+<img src="barcode_to_genotype_phenotypes_files/figure-gfm/heatmap_SSM_cvACE2_delta-1.png" style="display: block; margin: auto;" />
+
+    invisible(dev.print(pdf, paste(config$final_variant_scores_dir,"/heatmap_SSM_cvACE2_delta-by-target.pdf",sep="")))
+
+    p1 <- ggplot(dt_mutant,aes(position,mutant))+geom_tile(aes(fill=RaACE2.787_delta),color="black",lwd=0.1)+
+      #scale_fill_gradientn(colours=c("#A94E35","#A94E35","#F48365","#FFFFFF","#7378B9","#7378B9","#383C6C"),limits=c(-7,7),values=c(0,3/14,5/14,7/14,9/14,11/14,14/14),na.value="yellow")+
+      scale_fill_gradientn(colours=c("#A94E35","#F48365","#FFFFFF","#7378B9","#383C6C"),limits=c(-7,7),values=c(0,3.5/14,7/14,10.5/14,14/14),na.value="yellow")+
+      labs(x="",y="")+theme_classic(base_size=9)+
+      coord_equal()+theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.6,face="bold",size=10),axis.text.y=element_text(face="bold",size=10))+
+      facet_wrap(~target,nrow=1)+
+      guides(y.sec=guide_axis_label_trans())+
+      geom_text(aes(label=wildtype_indicator),size=2,color="gray10")
+
+    p1
+
+<img src="barcode_to_genotype_phenotypes_files/figure-gfm/heatmap_SSM_RaACE2.787_delta-1.png" style="display: block; margin: auto;" />
+
+    invisible(dev.print(pdf, paste(config$final_variant_scores_dir,"/heatmap_SSM_RaACE2.787_delta-by-target.pdf",sep="")))
+
+    p1 <- ggplot(dt_mutant,aes(position,mutant))+geom_tile(aes(fill=RsACE2.3364_delta),color="black",lwd=0.1)+
+      #scale_fill_gradientn(colours=c("#A94E35","#A94E35","#F48365","#FFFFFF","#7378B9","#7378B9","#383C6C"),limits=c(-7,7),values=c(0,3/14,5/14,7/14,9/14,11/14,14/14),na.value="yellow")+
+      scale_fill_gradientn(colours=c("#A94E35","#F48365","#FFFFFF","#7378B9","#383C6C"),limits=c(-7,7),values=c(0,3.5/14,7/14,10.5/14,14/14),na.value="yellow")+
+      labs(x="",y="")+theme_classic(base_size=9)+
+      coord_equal()+theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.6,face="bold",size=10),axis.text.y=element_text(face="bold",size=10))+
+      facet_wrap(~target,nrow=1)+
+      guides(y.sec=guide_axis_label_trans())+
+      geom_text(aes(label=wildtype_indicator),size=2,color="gray10")
+
+    p1
+
+<img src="barcode_to_genotype_phenotypes_files/figure-gfm/heatmap_SSM_RsACE2.3364_delta-1.png" style="display: block; margin: auto;" />
+
+    invisible(dev.print(pdf, paste(config$final_variant_scores_dir,"/heatmap_SSM_RsACE2.3364_delta-by-target.pdf",sep="")))
+
+    p1 <- ggplot(dt_mutant,aes(position,mutant))+geom_tile(aes(fill=RpACE2_delta),color="black",lwd=0.1)+
+      #scale_fill_gradientn(colours=c("#A94E35","#A94E35","#F48365","#FFFFFF","#7378B9","#7378B9","#383C6C"),limits=c(-7,7),values=c(0,3/14,5/14,7/14,9/14,11/14,14/14),na.value="yellow")+
+      scale_fill_gradientn(colours=c("#A94E35","#F48365","#FFFFFF","#7378B9","#383C6C"),limits=c(-7,7),values=c(0,3.5/14,7/14,10.5/14,14/14),na.value="yellow")+
+      labs(x="",y="")+theme_classic(base_size=9)+
+      coord_equal()+theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.6,face="bold",size=10),axis.text.y=element_text(face="bold",size=10))+
+      facet_wrap(~target,nrow=1)+
+      guides(y.sec=guide_axis_label_trans())+
+      geom_text(aes(label=wildtype_indicator),size=2,color="gray10")
+
+    p1
+
+<img src="barcode_to_genotype_phenotypes_files/figure-gfm/heatmap_SSM_RpACE2_delta-1.png" style="display: block; margin: auto;" />
+
+    invisible(dev.print(pdf, paste(config$final_variant_scores_dir,"/heatmap_SSM_RpACE2_delta-by-target.pdf",sep="")))
+
 That’s my data! Now, to think…
 
 Save output files.

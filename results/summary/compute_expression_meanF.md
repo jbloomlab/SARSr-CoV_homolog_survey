@@ -12,39 +12,35 @@ This notebook reads in per-barcode counts for expression Sort-seq
 experiments, computes functional scores for RBD expression levels, and
 does some basic QC on variant expression functional scores.
 
-``` r
-require("knitr")
-knitr::opts_chunk$set(echo = T)
-knitr::opts_chunk$set(dev.args = list(png = list(type = "cairo")))
+    require("knitr")
+    knitr::opts_chunk$set(echo = T)
+    knitr::opts_chunk$set(dev.args = list(png = list(type = "cairo")))
 
-#list of packages to install/load
-packages = c("yaml","data.table","tidyverse","fitdistrplus","gridExtra")
-#install any packages not already installed
-installed_packages <- packages %in% rownames(installed.packages())
-if(any(installed_packages == F)){
-  install.packages(packages[!installed_packages])
-}
-#load packages
-invisible(lapply(packages, library, character.only=T))
+    #list of packages to install/load
+    packages = c("yaml","data.table","tidyverse","fitdistrplus","gridExtra")
+    #install any packages not already installed
+    installed_packages <- packages %in% rownames(installed.packages())
+    if(any(installed_packages == F)){
+      install.packages(packages[!installed_packages])
+    }
+    #load packages
+    invisible(lapply(packages, library, character.only=T))
 
-#read in config file
-config <- read_yaml("config.yaml")
+    #read in config file
+    config <- read_yaml("config.yaml")
 
-#make output directory
-if(!file.exists(config$expression_sortseq_dir)){
-  dir.create(file.path(config$expression_sortseq_dir))
-}
-```
+    #make output directory
+    if(!file.exists(config$expression_sortseq_dir)){
+      dir.create(file.path(config$expression_sortseq_dir))
+    }
 
 Session info for reproducing environment:
 
-``` r
-sessionInfo()
-```
+    sessionInfo()
 
     ## R version 3.6.2 (2019-12-12)
     ## Platform: x86_64-pc-linux-gnu (64-bit)
-    ## Running under: Ubuntu 18.04.5 LTS
+    ## Running under: Ubuntu 18.04.4 LTS
     ## 
     ## Matrix products: default
     ## BLAS/LAPACK: /app/software/OpenBLAS/0.3.7-GCC-8.3.0/lib/libopenblas_haswellp-r0.3.7.so
@@ -89,17 +85,15 @@ Setup
 First, we will read in info on our sort samples and the table giving
 number of reads of each barcode in each of the sort bins.
 
-``` r
-#read dataframe with list of barcode runs
-barcode_runs <- read.csv(file=config$barcode_runs,stringsAsFactors=F); barcode_runs <- subset(barcode_runs, select=-c(R1))
+    #read dataframe with list of barcode runs
+    barcode_runs <- read.csv(file=config$barcode_runs,stringsAsFactors=F); barcode_runs <- subset(barcode_runs, select=-c(R1))
 
-#eliminate rows from barcode_runs that are not from an expression sort-seq experiment
-barcode_runs <- barcode_runs[barcode_runs$sample_type == "SortSeq",]
+    #eliminate rows from barcode_runs that are not from an expression sort-seq experiment
+    barcode_runs <- barcode_runs[barcode_runs$sample_type == "SortSeq",]
 
-#read file giving count of each barcode in each sort partition, keep only the SortSeq counts
-dt <- data.table(read.csv(file=config$merged_sequencing_file,stringsAsFactors = F)); dt <- dt[,.(library,barcode,target,variant_class,wildtype,position,mutant,
-                                                                                                 SortSeq_bin1,SortSeq_bin2,SortSeq_bin3,SortSeq_bin4)]
-```
+    #read file giving count of each barcode in each sort partition, keep only the SortSeq counts
+    dt <- data.table(read.csv(file=config$merged_sequencing_file,stringsAsFactors = F)); dt <- dt[,.(library,barcode,target,variant_class,wildtype,position,mutant,
+                                                                                                     SortSeq_bin1,SortSeq_bin2,SortSeq_bin3,SortSeq_bin4)]
 
 Calculating mean fluorescence
 -----------------------------
@@ -115,35 +109,33 @@ fluorescence interval but do not know the exact fluorescence value
 attributed to that observation. The counts are multiplied by 20 so that
 there is not a large rounding effect when they are rounded to integers.
 
-``` r
-#define function to calculate ML meanF
-calc.MLmean <- function(b1,b2,b3,b4,min.b1,min.b2,min.b3,min.b4,max.b4,min.count=1){ #b1-4 gives observed cell counts in bins 1-4; remaining arguments give fluorescence boundaries of the respective bins; min.count gives minimum number of total observations needed across bins in order to calculate meanF (default 1)
-  data <- data.frame(left=c(rep(min.b1,round(b1)),rep(min.b2,round(b2)),rep(min.b3,round(b3)),rep(min.b4,round(b4))),
-                     right=c(rep(min.b2,round(b1)),rep(min.b3,round(b2)),rep(min.b4,round(b3)),rep(max.b4,round(b4)))) #define data input in format required for fitdistcens
-  if(nrow(unique(data))>1 & nrow(data)>min.count){ #only fits if above user-specified min.count, and if the data satisfies the fitdistcens requirement that cells are observed in at least two of the censored partitions to enable ML estimation of identifiable parameters
-    fit <- fitdistcens(data,"norm")
-    return(list(as.numeric(summary(fit)$estimate["mean"]),as.numeric(summary(fit)$estimate["sd"])))
-  } else {
-    return(list(as.numeric(NA),as.numeric(NA)))
-  }
-}
+    #define function to calculate ML meanF
+    calc.MLmean <- function(b1,b2,b3,b4,min.b1,min.b2,min.b3,min.b4,max.b4,min.count=1){ #b1-4 gives observed cell counts in bins 1-4; remaining arguments give fluorescence boundaries of the respective bins; min.count gives minimum number of total observations needed across bins in order to calculate meanF (default 1)
+      data <- data.frame(left=c(rep(min.b1,round(b1)),rep(min.b2,round(b2)),rep(min.b3,round(b3)),rep(min.b4,round(b4))),
+                         right=c(rep(min.b2,round(b1)),rep(min.b3,round(b2)),rep(min.b4,round(b3)),rep(max.b4,round(b4)))) #define data input in format required for fitdistcens
+      if(nrow(unique(data))>1 & nrow(data)>min.count){ #only fits if above user-specified min.count, and if the data satisfies the fitdistcens requirement that cells are observed in at least two of the censored partitions to enable ML estimation of identifiable parameters
+        fit <- fitdistcens(data,"norm")
+        return(list(as.numeric(summary(fit)$estimate["mean"]),as.numeric(summary(fit)$estimate["sd"])))
+      } else {
+        return(list(as.numeric(NA),as.numeric(NA)))
+      }
+    }
 
-#fit ML mean and sd fluorescence for each barcode, and calculate total cell count as the sum across the four bins. Multiply cell counts by a factor of 20 to minimize rounding errors since fitdistcens requires rounding to integer inputs
-invisible(dt[library=="lib1",c("ML_meanF","ML_sdF") := tryCatch(calc.MLmean(b1=SortSeq_bin1*20,b2=SortSeq_bin2*20,
-                                                                      b3=SortSeq_bin3*20,b4=SortSeq_bin4*20,
-                                                                      min.b1=log(20),min.b2=log(944.5),min.b3=log(23342.5),
-                                                                      min.b4=log(47884.5),max.b4=log(229000)),
-                                                          error=function(e){return(list(as.numeric(NA),as.numeric(NA)))}),by=c("library","barcode")])
-invisible(dt[library=="lib2",c("ML_meanF","ML_sdF") := tryCatch(calc.MLmean(b1=SortSeq_bin1*20,b2=SortSeq_bin2*20,
-                                                                      b3=SortSeq_bin3*20,b4=SortSeq_bin4*20,
-                                                                      min.b1=log(20),min.b2=log(944.5),min.b3=log(23962.5),
-                                                                      min.b4=log(47466.5),max.b4=log(229000)),
-                                                          error=function(e){return(list(as.numeric(NA),as.numeric(NA)))}),by=c("library","barcode")])
-dt[,total_count := sum(SortSeq_bin1,SortSeq_bin2,SortSeq_bin3,SortSeq_bin4),by=c("library","barcode")]
+    #fit ML mean and sd fluorescence for each barcode, and calculate total cell count as the sum across the four bins. Multiply cell counts by a factor of 20 to minimize rounding errors since fitdistcens requires rounding to integer inputs
+    invisible(dt[library=="lib1",c("ML_meanF","ML_sdF") := tryCatch(calc.MLmean(b1=SortSeq_bin1*20,b2=SortSeq_bin2*20,
+                                                                          b3=SortSeq_bin3*20,b4=SortSeq_bin4*20,
+                                                                          min.b1=log(20),min.b2=log(944.5),min.b3=log(23342.5),
+                                                                          min.b4=log(47884.5),max.b4=log(229000)),
+                                                              error=function(e){return(list(as.numeric(NA),as.numeric(NA)))}),by=c("library","barcode")])
+    invisible(dt[library=="lib2",c("ML_meanF","ML_sdF") := tryCatch(calc.MLmean(b1=SortSeq_bin1*20,b2=SortSeq_bin2*20,
+                                                                          b3=SortSeq_bin3*20,b4=SortSeq_bin4*20,
+                                                                          min.b1=log(20),min.b2=log(944.5),min.b3=log(23962.5),
+                                                                          min.b4=log(47466.5),max.b4=log(229000)),
+                                                              error=function(e){return(list(as.numeric(NA),as.numeric(NA)))}),by=c("library","barcode")])
+    dt[,total_count := sum(SortSeq_bin1,SortSeq_bin2,SortSeq_bin3,SortSeq_bin4),by=c("library","barcode")]
 
-#save temp data file for downstream troubleshooting since the ML meanF took >1hr to calculate -- don't use these for final anlaysis though for reproducibility!
-save(dt,file=paste(config$expression_sortseq_dir,"/dt.temp.Rda",sep=""))
-```
+    #save temp data file for downstream troubleshooting since the ML meanF took >1hr to calculate -- don't use these for final anlaysis though for reproducibility!
+    save(dt,file=paste(config$expression_sortseq_dir,"/dt.temp.Rda",sep=""))
 
 Basic plotting and QC
 ---------------------
@@ -151,58 +143,46 @@ Basic plotting and QC
 Let’s look at the distibution of expression scores for each wildtype
 target.
 
-``` r
-dt[,target := factor(dt$target,levels=config$targets_ordered)]
+    dt[,target := factor(dt$target,levels=config$targets_ordered)]
 
-p1 <- ggplot(dt[!is.na(ML_meanF) & variant_class=="wildtype",],aes(x=target,y=ML_meanF))+
-  geom_violin(scale="width")+stat_summary(fun=median,geom="point",size=1)+
-  ggtitle("expression")+xlab("homolog")+theme(axis.text.x=element_text(angle=-90,hjust=0))
+    p1 <- ggplot(dt[!is.na(ML_meanF) & variant_class=="wildtype",],aes(x=target,y=ML_meanF))+
+      geom_violin(scale="width")+stat_summary(fun=median,geom="point",size=1)+
+      ggtitle("expression")+xlab("homolog")+theme(axis.text.x=element_text(angle=-90,hjust=0))
 
-grid.arrange(p1,ncol=1)
-```
+    grid.arrange(p1,ncol=1)
 
 <img src="compute_expression_meanF_files/figure-gfm/unfiltered_expression_distribution_wildtypes-1.png" style="display: block; margin: auto;" />
 
-``` r
-#save pdf
-invisible(dev.print(pdf, paste(config$expression_sortseq_dir,"/violin-plot_meanF-by-target.pdf",sep="")))
-```
+    #save pdf
+    invisible(dev.print(pdf, paste(config$expression_sortseq_dir,"/violin-plot_meanF-by-target.pdf",sep="")))
 
 And for mutated versions of the mini-MS targets:
 
-``` r
-p1 <- ggplot(dt[!is.na(ML_meanF) & variant_class=="mutant" & target %in% config$mutated_targets,],aes(x=target,y=ML_meanF))+
-  geom_violin(scale="width")+stat_summary(fun=median,geom="point",size=1)+
-  ggtitle("expression")+xlab("homolog")+theme(axis.text.x=element_text(angle=-90,hjust=0))
+    p1 <- ggplot(dt[!is.na(ML_meanF) & variant_class=="mutant" & target %in% config$mutated_targets,],aes(x=target,y=ML_meanF))+
+      geom_violin(scale="width")+stat_summary(fun=median,geom="point",size=1)+
+      ggtitle("expression")+xlab("homolog")+theme(axis.text.x=element_text(angle=-90,hjust=0))
 
-grid.arrange(p1,ncol=1)
-```
+    grid.arrange(p1,ncol=1)
 
 <img src="compute_expression_meanF_files/figure-gfm/unfiltered_expression_distribution_mutants-1.png" style="display: block; margin: auto;" />
 
-``` r
-#save pdf
-invisible(dev.print(pdf, paste(config$expression_sortseq_dir,"/violin-plot_meanF-by-target_mutated.pdf",sep="")))
-```
+    #save pdf
+    invisible(dev.print(pdf, paste(config$expression_sortseq_dir,"/violin-plot_meanF-by-target_mutated.pdf",sep="")))
 
 Next let’s look at the distributon of cell counts across the four bins
 for each barcode.
 
-``` r
-#histograms
-par(mfrow=c(1,2))
-hist(log10(dt[library=="lib1",total_count]+0.1),xlab="cell count (log10, plus 0.1 pseudocount)",main="lib1",col="gray50")
-hist(log10(dt[library=="lib2",total_count]+0.1),xlab="cell count (log10, plus 0.1 pseudocount)",main="lib2",col="gray50")
-```
+    #histograms
+    par(mfrow=c(1,2))
+    hist(log10(dt[library=="lib1",total_count]+0.1),xlab="cell count (log10, plus 0.1 pseudocount)",main="lib1",col="gray50")
+    hist(log10(dt[library=="lib2",total_count]+0.1),xlab="cell count (log10, plus 0.1 pseudocount)",main="lib2",col="gray50")
 
 <img src="compute_expression_meanF_files/figure-gfm/cell_count_coverage-1.png" style="display: block; margin: auto;" />
 
 Filter meanF estimates generated from fewer than 20 cell counts across
 the four bins.
 
-``` r
-dt[total_count<20,c("ML_meanF","ML_sdF") := list(NA,NA)]
-```
+    dt[total_count<20,c("ML_meanF","ML_sdF") := list(NA,NA)]
 
 We have generated expression measurements for 80.05% of the barcodes in
 our libraries.
@@ -212,9 +192,7 @@ Data Output
 
 Finally, let’s output our measurements for downstream analyses.
 
-``` r
-dt[,.(library,barcode,target,variant_class,wildtype,position,mutant,
-     total_count,ML_meanF)] %>%
-  mutate_if(is.numeric, round, digits=5) %>%
-  write.csv(file=config$expression_sortseq_file, row.names=F)
-```
+    dt[,.(library,barcode,target,variant_class,wildtype,position,mutant,
+         total_count,ML_meanF)] %>%
+      mutate_if(is.numeric, round, digits=5) %>%
+      write.csv(file=config$expression_sortseq_file, row.names=F)
