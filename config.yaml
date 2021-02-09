@@ -256,6 +256,7 @@ final_variant_scores_dir: results/final_variant_scores
 final_variant_scores_wt_file: results/final_variant_scores/wt_variant_scores.csv
 final_variant_scores_mut_file: results/final_variant_scores/mut_variant_scores.csv
 logoplots_dir: results/logoplots
+titration_curves_dir: results/titration_curves
 
 
 # parameters for running PacBio `ccs` program
