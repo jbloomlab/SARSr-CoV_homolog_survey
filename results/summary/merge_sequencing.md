@@ -374,14 +374,6 @@ for(i in 1:nrow(barcode_runs)){
 }
 ```
 
-    ## [1] "reads < cells for lib1 RsACE2old_01_bin3 , un-normalized"
-    ## [1] "reads < cells for lib1 RsACE2old_02_bin1 , un-normalized"
-    ## [1] "reads < cells for lib1 RsACE2old_03_bin1 , un-normalized"
-    ## [1] "reads < cells for lib1 RsACE2old_04_bin1 , un-normalized"
-    ## [1] "reads < cells for lib1 RsACE2old_05_bin1 , un-normalized"
-    ## [1] "reads < cells for lib1 RsACE2old_06_bin1 , un-normalized"
-    ## [1] "reads < cells for lib1 RsACE2old_07_bin1 , un-normalized"
-    ## [1] "reads < cells for lib1 RsACE2old_09_bin1 , un-normalized"
     ## [1] "reads < cells for lib1 RpACE2_02_bin1 , un-normalized"
     ## [1] "reads < cells for lib1 RpACE2_03_bin1 , un-normalized"
     ## [1] "reads < cells for lib1 RpACE2_04_bin1 , un-normalized"
