@@ -1,0 +1,5 @@
+# print count over countCutOffLow=0.1 to countCutOffHigh=0.9 with increment=0.05
+POS	prob01	prob10	exp01	exp10	prob01_Rec	prob10_Rec	exp01_Rec	exp10_Rec	prob01_Anc	prob10_Anc	exp01_Anc	exp10_Anc	count01_0.1	count10_0.1	count01_0.15	count10_0.15	count01_0.2	count10_0.2	count01_0.25	count10_0.25	count01_0.3	count10_0.3	count01_0.35	count10_0.35	count01_0.4	count10_0.4	count01_0.45	count10_0.45	count01_0.5	count10_0.5	count01_0.55	count10_0.55	count01_0.6	count10_0.6	count01_0.65	count10_0.65	count01_0.7	count10_0.7	count01_0.75	count10_0.75	count01_0.8	count10_0.8	count01_0.85	count10_0.85	count01_0.9	count10_0.9	
+1	2.064	0.4999	2.16	0.5199	0.945	0.2741	1.029	0.2798	1.119	0.2258	1.13	0.2401	3	2	3	1	2	1	2	0	2	0	2	0	2	0	2	0	2	0	2	0	2	0	2	0	2	0	2	0	2	0	2	0	2	0	
+2	1.274	0.3972	1.286	0.4203	1.129	0.195	1.135	0.2065	0.1448	0.2022	0.1506	0.2137	3	2	1	2	1	0	1	0	1	0	1	0	1	0	1	0	1	0	1	0	1	0	1	0	1	0	1	0	1	0	1	0	1	0	
+3	1.275	0.5451	1.287	0.5683	1.003	0.205	1.009	0.2166	0.2717	0.34	0.2776	0.3516	4	3	1	2	1	0	1	0	1	0	1	0	1	0	1	0	1	0	1	0	1	0	1	0	1	0	1	0	1	0	1	0	0	0	

@@ -1,0 +1,139 @@
+# each character is listing all included gaps.
+# Character: Start position relative to MSA (first pos of gap, count from 0); End position relative to MSA (+1);  length.
+# Gap: seqID(num start from 0); coord5Abs (relative to genome. not by MSA,first pos of gap, count from 0); length.
+character number: 0
+Start position relative to MSA: 21
+End position relative to MSA: 22
+Length: 1
+Found in species: S2 Start position relative to genome: 21 Length: 1
+NOT FOUND in species: S1,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15,S16,S17,S18,S19,S20,S21,S22,S23,S24,S25,S26,S27,S28,S29,S30,S31,S32,S33,S34,S35,S36,S37,S38,S39,S40,S41,S42,S43,S44,S45,S46,S47,S48,S49,S50,S51,S52,
+ENDCHARACTER
+
+character number: 1
+Start position relative to MSA: 46
+End position relative to MSA: 50
+Length: 4
+Found in species: S27 Start position relative to genome: 46 Length: 4
+NOT FOUND in species: S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15,S16,S17,S18,S19,S20,S21,S22,S23,S24,S25,S26,S28,S29,S30,S31,S32,S33,S34,S35,S36,S37,S38,S39,S40,S41,S42,S43,S44,S45,S46,S47,S48,S49,S50,S51,S52,
+ENDCHARACTER
+
+character number: 2
+Start position relative to MSA: 47
+End position relative to MSA: 49
+Length: 2
+Found in species: S28 Start position relative to genome: 47 Length: 2
+NOT FOUND in species: S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15,S16,S17,S18,S19,S20,S21,S22,S23,S24,S25,S26,S52,
+ENDCHARACTER
+
+character number: 3
+Start position relative to MSA: 47
+End position relative to MSA: 52
+Length: 5
+Found in species: S51 Start position relative to genome: 47 Length: 5
+Found in species: S50 Start position relative to genome: 47 Length: 5
+Found in species: S49 Start position relative to genome: 47 Length: 5
+Found in species: S48 Start position relative to genome: 47 Length: 5
+Found in species: S47 Start position relative to genome: 47 Length: 5
+Found in species: S46 Start position relative to genome: 47 Length: 5
+Found in species: S45 Start position relative to genome: 47 Length: 5
+Found in species: S44 Start position relative to genome: 47 Length: 5
+Found in species: S43 Start position relative to genome: 47 Length: 5
+Found in species: S42 Start position relative to genome: 47 Length: 5
+Found in species: S41 Start position relative to genome: 47 Length: 5
+Found in species: S40 Start position relative to genome: 47 Length: 5
+Found in species: S39 Start position relative to genome: 47 Length: 5
+Found in species: S38 Start position relative to genome: 47 Length: 5
+Found in species: S37 Start position relative to genome: 47 Length: 5
+Found in species: S36 Start position relative to genome: 47 Length: 5
+Found in species: S35 Start position relative to genome: 47 Length: 5
+Found in species: S34 Start position relative to genome: 47 Length: 5
+Found in species: S33 Start position relative to genome: 47 Length: 5
+Found in species: S32 Start position relative to genome: 47 Length: 5
+Found in species: S31 Start position relative to genome: 47 Length: 5
+Found in species: S30 Start position relative to genome: 47 Length: 5
+Found in species: S29 Start position relative to genome: 47 Length: 5
+NOT FOUND in species: S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15,S16,S17,S18,S19,S20,S21,S22,S23,S24,S25,S26,S27,S28,S52,
+ENDCHARACTER
+
+character number: 4
+Start position relative to MSA: 74
+End position relative to MSA: 88
+Length: 14
+Found in species: S44 Start position relative to genome: 69 Length: 14
+Found in species: S43 Start position relative to genome: 69 Length: 14
+Found in species: S42 Start position relative to genome: 69 Length: 14
+Found in species: S41 Start position relative to genome: 69 Length: 14
+Found in species: S40 Start position relative to genome: 69 Length: 14
+Found in species: S39 Start position relative to genome: 69 Length: 14
+Found in species: S38 Start position relative to genome: 69 Length: 14
+Found in species: S37 Start position relative to genome: 69 Length: 14
+Found in species: S36 Start position relative to genome: 69 Length: 14
+Found in species: S35 Start position relative to genome: 69 Length: 14
+Found in species: S34 Start position relative to genome: 69 Length: 14
+Found in species: S33 Start position relative to genome: 69 Length: 14
+Found in species: S32 Start position relative to genome: 69 Length: 14
+Found in species: S31 Start position relative to genome: 69 Length: 14
+Found in species: S30 Start position relative to genome: 69 Length: 14
+Found in species: S29 Start position relative to genome: 69 Length: 14
+NOT FOUND in species: S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15,S16,S17,S18,S19,S20,S21,S22,S23,S24,S25,S26,S27,S28,S45,S46,S47,S48,S49,S50,S51,S52,
+ENDCHARACTER
+
+character number: 5
+Start position relative to MSA: 75
+End position relative to MSA: 88
+Length: 13
+Found in species: S51 Start position relative to genome: 70 Length: 13
+Found in species: S50 Start position relative to genome: 70 Length: 13
+Found in species: S49 Start position relative to genome: 70 Length: 13
+Found in species: S48 Start position relative to genome: 70 Length: 13
+Found in species: S47 Start position relative to genome: 70 Length: 13
+Found in species: S46 Start position relative to genome: 70 Length: 13
+Found in species: S45 Start position relative to genome: 70 Length: 13
+NOT FOUND in species: S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15,S16,S17,S18,S19,S20,S21,S22,S23,S24,S25,S26,S27,S28,S52,
+ENDCHARACTER
+
+character number: 6
+Start position relative to MSA: 83
+End position relative to MSA: 84
+Length: 1
+Found in species: S26 Start position relative to genome: 83 Length: 1
+Found in species: S25 Start position relative to genome: 83 Length: 1
+Found in species: S24 Start position relative to genome: 83 Length: 1
+Found in species: S23 Start position relative to genome: 83 Length: 1
+Found in species: S22 Start position relative to genome: 83 Length: 1
+Found in species: S21 Start position relative to genome: 83 Length: 1
+Found in species: S20 Start position relative to genome: 83 Length: 1
+Found in species: S19 Start position relative to genome: 83 Length: 1
+Found in species: S18 Start position relative to genome: 83 Length: 1
+Found in species: S17 Start position relative to genome: 83 Length: 1
+Found in species: S16 Start position relative to genome: 83 Length: 1
+Found in species: S15 Start position relative to genome: 83 Length: 1
+Found in species: S14 Start position relative to genome: 83 Length: 1
+Found in species: S13 Start position relative to genome: 83 Length: 1
+Found in species: S12 Start position relative to genome: 83 Length: 1
+Found in species: S11 Start position relative to genome: 83 Length: 1
+Found in species: S10 Start position relative to genome: 83 Length: 1
+Found in species: S9 Start position relative to genome: 83 Length: 1
+Found in species: S8 Start position relative to genome: 83 Length: 1
+Found in species: S7 Start position relative to genome: 83 Length: 1
+Found in species: S6 Start position relative to genome: 83 Length: 1
+Found in species: S5 Start position relative to genome: 83 Length: 1
+NOT FOUND in species: S1,S2,S3,S4,S27,S28,
+ENDCHARACTER
+
+character number: 7
+Start position relative to MSA: 83
+End position relative to MSA: 85
+Length: 2
+Found in species: S52 Start position relative to genome: 83 Length: 2
+NOT FOUND in species: S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15,S16,S17,S18,S19,S20,S21,S22,S23,S24,S25,S26,S27,S28,
+ENDCHARACTER
+
+character number: 8
+Start position relative to MSA: 84
+End position relative to MSA: 85
+Length: 1
+Found in species: S27 Start position relative to genome: 80 Length: 1
+NOT FOUND in species: S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15,S16,S17,S18,S19,S20,S21,S22,S23,S24,S25,S26,S28,
+ENDCHARACTER
+

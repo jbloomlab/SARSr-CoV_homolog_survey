@@ -1,0 +1,41 @@
+
+Analysis Description
+--------------------
+GARD : Genetic Algorithms for Recombination Detection. Implements a
+heuristic approach to screening alignments of sequences for
+recombination, by using the CHC genetic algorithm to search for
+phylogenetic incongruence among different partitions of the data. The
+number of partitions is determined using a step-up procedure, while the
+placement of breakpoints is searched for with the GA. The best fitting
+model (based on c-AIC) is returned; and additional post-hoc tests run to
+distinguish topological incongruence from rate-variation. v0.2 adds and
+spooling results to JSON after each breakpoint search conclusion
+
+- __Requirements__: A sequence alignment.
+
+- __Citation__: **Automated Phylogenetic Detection of Recombination Using a Genetic
+Algorithm**, _Mol Biol Evol 23(10), 1891–1901
+
+- __Written by__: Sergei L Kosakovsky Pond
+
+- __Contact Information__: spond@temple.edu
+
+- __Analysis Version__: 0.2
+
+type: nucleotide
+rv: Gamma
+>How many site rate classes to use (permissible range = [2,10], default value = 4, integer): rate-classes: 4
+mode: Normal
+>Loaded a nucleotide multiple sequence alignment with **52** sequences, **606** sites (474 of which are variable) from `/home/datamonkey/datamonkey-js-server/production/app/gard/output/604568048528de3ba1156780`
+>Minimum size of a partition is set to be 101 sites
+
+
+### Fitting the baseline (single-partition; no breakpoints) model
+* Log(L) = -8431.41, AIC-c = 17132.16 (110 estimated parameters)
+
+### Performing an exhaustive single breakpoint analysis
+Done with single breakpoint analysis.
+   Best sinlge break point location: 264
+   c-AIC  = 17046.99692121508
+
+### Performing multi breakpoint analysis using a genetic algorithm

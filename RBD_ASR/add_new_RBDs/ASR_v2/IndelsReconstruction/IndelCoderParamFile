@@ -1,0 +1,8 @@
+_seqFile /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/add_new_RBDs/ASR_v2/RBD_aa_aligned_v2.fasta
+_indelOutputInfoFile /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/add_new_RBDs/ASR_v2/IndelsReconstruction//RBD_aa_aligned_v2.fasta.indelOutputInfoFile
+_indelOutputFastaFile /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/add_new_RBDs/ASR_v2/IndelsReconstruction//RBD_aa_aligned_v2.fasta.indelOutputFastaFile
+_nexusFileName /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/add_new_RBDs/ASR_v2/IndelsReconstruction//RBD_aa_aligned_v2.fasta.indel_nexusFile
+_logFile /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/add_new_RBDs/ASR_v2/IndelsReconstruction//RBD_aa_aligned_v2.fastaIndelCoder.log
+_logValue 9
+_codingType SIC
+_isOmitLeadingAndEndingGaps 0

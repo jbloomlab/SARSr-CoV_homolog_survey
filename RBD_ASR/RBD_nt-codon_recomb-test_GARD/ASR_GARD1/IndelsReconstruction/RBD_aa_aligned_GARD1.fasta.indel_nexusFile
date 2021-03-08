@@ -1,0 +1,97 @@
+#NEXUS
+
+[!matrix with indels coded according to SIC coding]
+[! Version: 1.72 last updated: 03/12/2012 ]
+
+BEGIN CHARACTERS;
+DIMENSIONS newtaxa ntax=52 NCHAR=89;
+
+FORMAT 
+	DATATYPE = standard
+	GAP = - 
+	MISSING = ?
+	SYMBOLS="0123456789A#C$EFG.IJ&L%>OPQ/'TU:*X<Z"
+	EQUATE="R={AG} Y={CT} M={AC} K={GT} S={CG} W={AT} H={ACT} B={CGT} V={ACG} D={AGT} N={ACGT} r={AG} y={CT} m={AC} k={GT} s={CG} w={AT} h={ACT} b={CGT} v={ACG} d={AGT} n={ACGT}"
+INTERLEAVE;
+CHARSTATELABELS
+	89 ind_pos_43_to_43 /absent  indel_1 indel_2 indel_3 indel_4 indel_5 indel_6 indel_7 indel_8 indel_9 indel_10 indel_11 indel_12 indel_13 indel_14 indel_15 indel_16 indel_17 indel_18 indel_19 indel_20 indel_21 indel_22 indel_23 indel_24 indel_25 indel_26 indel_27 indel_28 indel_29 indel_30 indel_31 indel_32 indel_33 indel_34 indel_35 indel_36 indel_37 indel_38 indel_39 indel_40 indel_41 indel_42 indel_43 indel_44 indel_45 indel_46 indel_47 indel_48 indel_49 indel_50
+MATRIX
+
+S11
+S21
+S31
+S41
+S51
+S61
+S71
+S81
+S91
+S101
+S111
+S121
+S131
+S141
+S151
+S161
+S171
+S181
+S191
+S201
+S211
+S221
+S231
+S241
+S251
+S261
+S270
+S280
+S291
+S301
+S311
+S321
+S331
+S341
+S351
+S361
+S371
+S381
+S391
+S401
+S411
+S421
+S431
+S441
+S451
+S461
+S471
+S481
+S491
+S501
+S511
+S521
+;
+
+END;
+
+
+BEGIN ASSUMPTIONS; [below are the cost matrices of character change between the indel character state, these matrix exist only for characters that have more than two states]
+
+
+
+BEGIN SETS;
+
+CHARSET indels = 1-1;
+
+END;
+
+
+BEGIN PAUP;
+
+assume typeset=complexIndelCoding;
+
+END;
+
+[Indels:
+No.	extension
+1	43-43
+]

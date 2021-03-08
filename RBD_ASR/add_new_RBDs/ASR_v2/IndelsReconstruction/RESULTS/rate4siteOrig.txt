@@ -1,0 +1,25 @@
+# Rates were calculated using the expectation of the posterior rate distribution
+# Prior distribution is Gamma with 4 discrete categories
+# The alpha parameter 4.546
+# sp.rates(j)  j= 0	0.4821	0.25
+# sp.rates(j)  j= 1	0.7922	0.25
+# sp.rates(j)  j= 2	1.084	0.25
+# sp.rates(j)  j= 3	1.642	0.25
+
+=========================================================================================================================================================
+# POS	RATE
+1	0.8024
+2	1.15
+3	1.165
+4	1.14
+5	0.9651
+6	1.172
+7	1.162
+8	1.255
+9	1.115
+10	1.335
+11	0.9889
+12	1.178
+13	1.144
+# Average = 1.121
+# Standard Deviation = 0.1348

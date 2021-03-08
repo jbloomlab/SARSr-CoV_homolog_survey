@@ -1,0 +1,8 @@
+# print values over probCutOff 0.05
+G/L	POS	branch	branchLength	distance2root	distance2NearestOTU	numOfNodes2NearestOTU	probability	expectation
+gain	1	N2	0.4075	0.4075	0.01475	2	0.1348	0.139
+loss	1	N2	0.4075	0.4075	0.01475	2	0.4298	0.4483
+loss	1	N3	0.008006	0.4156	0.009016	1	0.4787	0.4787
+gain	1	N4	0.009483	0.417	0.005271	2	0.5131	0.5131
+gain	1	S52	0.4075	0.4075	0	0	0.287	0.2985
+loss	1	S52	0.4075	0.4075	0	0	0.08879	0.09075

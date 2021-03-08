@@ -1,0 +1,349 @@
+Joint log likelihood of position 1: -8.73074
+Joint log likelihood of position 2: -4.3794
+Joint log likelihood of position 3: -8.8695
+Joint log likelihood of position 4: -4.99186
+Joint log likelihood of position 5: -5.06985
+Joint log likelihood of position 6: -4.99186
+Joint log likelihood of position 7: -12.5331
+Joint log likelihood of position 8: -3.95471
+Joint log likelihood of position 9: -4.48121
+Joint log likelihood of position 10: -8.30708
+Joint log likelihood of position 11: -11.781
+Joint log likelihood of position 12: -4.84489
+Joint log likelihood of position 13: -35.1925
+Joint log likelihood of position 14: -4.3043
+Joint log likelihood of position 15: -6.09031
+Joint log likelihood of position 16: -8.25694
+Joint log likelihood of position 17: -20.2864
+Joint log likelihood of position 18: -7.62953
+Joint log likelihood of position 19: -8.83972
+Joint log likelihood of position 20: -8.70776
+Joint log likelihood of position 21: -24.5342
+Joint log likelihood of position 22: -31.3031
+Joint log likelihood of position 23: -57.6217
+Joint log likelihood of position 24: -39.69
+Joint log likelihood of position 25: -9.0269
+Joint log likelihood of position 26: -58.0904
+Joint log likelihood of position 27: -34.3166
+Joint log likelihood of position 28: -64.8648
+Joint log likelihood of position 29: -22.2037
+Joint log likelihood of position 30: -7.40482
+Joint log likelihood of position 31: -11.3189
+Joint log likelihood of position 32: -31.3785
+Joint log likelihood of position 33: -21.3313
+Joint log likelihood of position 34: -13.7046
+Joint log likelihood of position 35: -29.5214
+Joint log likelihood of position 36: -9.00493
+Joint log likelihood of position 37: -9.49769
+Joint log likelihood of position 38: -39.9762
+Joint log likelihood of position 39: -37.0169
+Joint log likelihood of position 40: -8.78309
+Joint log likelihood of position 41: -30.6625
+Joint log likelihood of position 42: -42.2081
+Joint log likelihood of position 43: -16.0533
+Joint log likelihood of position 44: -10.1289
+Joint log likelihood of position 45: -16.7952
+Joint log likelihood of position 46: -8.73261
+Joint log likelihood of position 47: -11.9371
+Joint log likelihood of position 48: -14.9377
+Joint log likelihood of position 49: -10.0368
+Joint log likelihood of position 50: -11.9325
+Joint log likelihood of position 51: -18.3665
+Joint log likelihood of position 52: -13.2286
+Joint log likelihood of position 53: -16.4346
+Joint log likelihood of position 54: -37.1317
+Joint log likelihood of position 55: -28.9923
+Joint log likelihood of position 56: -21.0827
+Joint log likelihood of position 57: -17.7916
+Joint log likelihood of position 58: -28.4787
+Joint log likelihood of position 59: -20.6911
+Joint log likelihood of position 60: -14.2426
+Joint log likelihood of position 61: -29.4739
+Joint log likelihood of position 62: -18.4869
+Joint log likelihood of position 63: -9.37041
+Joint log likelihood of position 64: -16.3784
+Joint log likelihood of position 65: -14.0411
+Joint log likelihood of position 66: -28.283
+Joint log likelihood of position 67: -40.0799
+Joint log likelihood of position 68: -20.3372
+Joint log likelihood of position 69: -35.5924
+Joint log likelihood of position 70: -24.2108
+Joint log likelihood of position 71: -22.604
+Joint log likelihood of position 72: -24.5516
+Joint log likelihood of position 73: -55.6626
+Joint log likelihood of position 74: -10.795
+Joint log likelihood of position 75: -8.73595
+Joint log likelihood of position 76: -52.3904
+Joint log likelihood of position 77: -40.9549
+Joint log likelihood of position 78: -4.99186
+Joint log likelihood of position 79: -13.4307
+Joint log likelihood of position 80: -10.3881
+Joint log likelihood of position 81: -45.9245
+Joint log likelihood of position 82: -37.4518
+Joint log likelihood of position 83: -42.4175
+Joint log likelihood of position 84: -48.2226
+Joint log likelihood of position 85: -14.1434
+Joint log likelihood of position 86: -35.6731
+Joint log likelihood of position 87: -40.1555
+Joint log likelihood of position 88: -23.0279
+Joint log likelihood of position 89: -5.12984
+Joint log likelihood of position 90: -9.72426
+Joint log likelihood of position 91: -20.5743
+Joint log likelihood of position 92: -8.59046
+Joint log likelihood of position 93: -7.70035
+Joint log likelihood of position 94: -8.96745
+Joint log likelihood of position 95: -7.70035
+Joint log likelihood of position 96: -6.55572
+Joint log likelihood of position 97: -7.50193
+Joint log likelihood of position 98: -15.0362
+Joint log likelihood of position 99: -7.62487
+Joint log likelihood of position 100: -8.86431
+Joint log likelihood of position 101: -8.41249
+Joint log likelihood of position 102: -15.5524
+Joint log likelihood of position 103: -14.8125
+Joint log likelihood of position 104: -7.82917
+Joint log likelihood of position 105: -4.3794
+Joint log likelihood of position 106: -4.84947
+Joint log likelihood of position 107: -4.60329
+Joint log likelihood of position 108: -6.09031
+Joint log likelihood of position 109: -4.3043
+Joint log likelihood of position 110: -10.006
+Joint log likelihood of position 111: -4.51581
+Joint log likelihood of position 112: -35.3547
+Joint log likelihood of position 113: -7.50193
+Joint log likelihood of position 114: -4.84947
+total log likelihood of joint reconstruction: -2147.5
+
+++++++++++++++++++++++++ joing log likelihood +++++++++++++++++++++++++++++++
+
+1,-8.73074
+2,-4.3794
+3,-8.8695
+4,-4.99186
+5,-5.06985
+6,-4.99186
+7,-12.5331
+8,-3.95471
+9,-4.48121
+10,-8.30708
+11,-11.781
+12,-4.84489
+13,-35.1925
+14,-4.3043
+15,-6.09031
+16,-8.25694
+17,-20.2864
+18,-7.62953
+19,-8.83972
+20,-8.70776
+21,-24.5342
+22,-31.3031
+23,-57.6217
+24,-39.69
+25,-9.0269
+26,-58.0904
+27,-34.3166
+28,-64.8648
+29,-22.2037
+30,-7.40482
+31,-11.3189
+32,-31.3785
+33,-21.3313
+34,-13.7046
+35,-29.5214
+36,-9.00493
+37,-9.49769
+38,-39.9762
+39,-37.0169
+40,-8.78309
+41,-30.6625
+42,-42.2081
+43,-16.0533
+44,-10.1289
+45,-16.7952
+46,-8.73261
+47,-11.9371
+48,-14.9377
+49,-10.0368
+50,-11.9325
+51,-18.3665
+52,-13.2286
+53,-16.4346
+54,-37.1317
+55,-28.9923
+56,-21.0827
+57,-17.7916
+58,-28.4787
+59,-20.6911
+60,-14.2426
+61,-29.4739
+62,-18.4869
+63,-9.37041
+64,-16.3784
+65,-14.0411
+66,-28.283
+67,-40.0799
+68,-20.3372
+69,-35.5924
+70,-24.2108
+71,-22.604
+72,-24.5516
+73,-55.6626
+74,-10.795
+75,-8.73595
+76,-52.3904
+77,-40.9549
+78,-4.99186
+79,-13.4307
+80,-10.3881
+81,-45.9245
+82,-37.4518
+83,-42.4175
+84,-48.2226
+85,-14.1434
+86,-35.6731
+87,-40.1555
+88,-23.0279
+89,-5.12984
+90,-9.72426
+91,-20.5743
+92,-8.59046
+93,-7.70035
+94,-8.96745
+95,-7.70035
+96,-6.55572
+97,-7.50193
+98,-15.0362
+99,-7.62487
+100,-8.86431
+101,-8.41249
+102,-15.5524
+103,-14.8125
+104,-7.82917
+105,-4.3794
+106,-4.84947
+107,-4.60329
+108,-6.09031
+109,-4.3043
+110,-10.006
+111,-4.51581
+112,-35.3547
+113,-7.50193
+114,-4.84947
+
+++++++++++++++++++++++++ joint probs +++++++++++++++++++++++++++++++
+
+1,0.000161543
+2,0.0125329
+3,0.000140613
+4,0.00679299
+5,0.00628335
+6,0.00679299
+7,3.60531e-06
+8,0.0191643
+9,0.0113198
+10,0.000246764
+11,7.64815e-06
+12,0.00786845
+13,5.20115e-16
+14,0.0135104
+15,0.0022647
+16,0.000259451
+17,1.54786e-09
+18,0.000485887
+19,0.000144864
+20,0.000165298
+21,2.21275e-11
+22,2.54231e-14
+23,9.44493e-26
+24,5.79237e-18
+25,0.000120134
+26,5.91076e-26
+27,1.24876e-15
+28,6.75432e-29
+29,2.27536e-10
+30,0.000608316
+31,1.21416e-05
+32,2.35774e-14
+33,5.44428e-10
+34,1.11734e-06
+35,1.5101e-13
+36,0.000122803
+37,7.50252e-05
+38,4.35087e-18
+39,8.39018e-17
+40,0.000153303
+41,4.82461e-14
+42,4.66922e-19
+43,1.06697e-07
+44,3.99086e-05
+45,5.08106e-08
+46,0.000161241
+47,6.54282e-06
+48,3.25571e-07
+49,4.37584e-05
+50,6.57315e-06
+51,1.0557e-08
+52,1.79842e-06
+53,7.28713e-08
+54,7.48024e-17
+55,2.56328e-13
+56,6.98095e-10
+57,1.87594e-08
+58,4.28418e-13
+59,1.03274e-09
+60,6.52424e-07
+61,1.58353e-13
+62,9.35923e-09
+63,8.52088e-05
+64,7.70837e-08
+65,7.98032e-07
+66,5.20997e-13
+67,3.92214e-18
+68,1.47114e-09
+69,3.48665e-16
+70,3.05753e-11
+71,1.52478e-10
+72,2.17468e-11
+73,6.69915e-25
+74,2.05018e-05
+75,0.000160703
+76,1.76657e-23
+77,1.63493e-18
+78,0.00679299
+79,1.46937e-06
+80,3.07978e-05
+81,1.1357e-20
+82,5.43099e-17
+83,3.78722e-19
+84,1.14079e-21
+85,7.2045e-07
+86,3.21649e-16
+87,3.63658e-18
+88,9.97929e-11
+89,0.00591749
+90,5.98148e-05
+91,1.16067e-09
+92,0.000185871
+93,0.000452669
+94,0.000127494
+95,0.000452669
+96,0.00142196
+97,0.000552018
+98,2.95028e-07
+99,0.00048816
+100,0.000141345
+101,0.000222077
+102,1.7607e-07
+103,3.68981e-07
+104,0.000397957
+105,0.0125329
+106,0.00783251
+107,0.0100188
+108,0.0022647
+109,0.0135104
+110,4.51267e-05
+111,0.0109347
+112,4.42222e-16
+113,0.000552018
+114,0.00783251

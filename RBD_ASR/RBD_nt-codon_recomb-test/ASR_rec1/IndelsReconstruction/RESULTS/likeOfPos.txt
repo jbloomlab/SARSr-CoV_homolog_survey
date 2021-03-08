@@ -1,0 +1,5 @@
+# log Likelihood of tree (entire data)=	-17.01
+POS	logLofPos
+1	-7.415
+2	-3.815
+3	-5.776

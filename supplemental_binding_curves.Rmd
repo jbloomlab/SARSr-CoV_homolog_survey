@@ -65,11 +65,20 @@ samples_cvACE2 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sampl
 #note from FACS was that samples 2 in both replicates did not have proper cloud. Unclear why, but am going to fit without this sample
 samples_cvACE2 <- samples_cvACE2[samples_cvACE2$sample != "cvACE2_02",]
 
+samples_pgACE2 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="pgACE2","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="pgACE2","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-6, 10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12, 10^-13,0))
+
+
 samples_RaACE2.787 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="RaACE2.787","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="RaACE2.787","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-6, 10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12, 10^-13,0))
+
+samples_RaACE2.9479 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="RaACE2.9479","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="RaACE2.9479","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-6, 10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12, 10^-13,0))
+
 
 samples_RaACE2.787.pool6 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="RaACE2.787.pool6","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="RaACE2.787.pool6","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-6, 10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12, 10^-13,0))
 
 samples_RsACE2.3364 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="RsACE2.3364","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="RsACE2.3364","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-6, 10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12, 10^-13,0))
+
+samples_RsACE2.1434 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="RsACE2.1434","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="RsACE2.1434","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-6, 10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12, 10^-13,0))
+
 
 samples_RpACE2 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="RpACE2","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="RpACE2","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12,0))
 
@@ -181,6 +190,26 @@ Output some mutants of interest for visualization of BtKY72 / Ra_787 binding. Co
 
 ```{r RaTG13_huACE2, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
 homolog <- "RaTG13";ACE2 <- "huACE2";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep="")))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep="")))
+}
+```
+```{r RaTG13_RaACE2.9479, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
+homolog <- "RaTG13";ACE2 <- "RaACE2.9479";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep="")))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep="")))
+}
+```
+```{r RaTG13_RaACE2.787, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
+homolog <- "RaTG13";ACE2 <- "RaACE2.787";mutation <- NA
 plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
 #save pdf
 if(is.na(mutation)){

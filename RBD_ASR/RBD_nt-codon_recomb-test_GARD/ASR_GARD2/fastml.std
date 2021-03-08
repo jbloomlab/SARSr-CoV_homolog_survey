@@ -1,0 +1,259 @@
+START OF LOG FILE
+END OF LOG FILE
+Using a Gamma model with: 8 discrete categories 
+Amino acid replacement matrix is LG
+Optimizing branch lengths and alpha (Gamma model) ...
+Optimized bbl & alpha no model parametrs need to be optimaized
+The tree in 'Newick tree format' (with the internal nodes labeled)
+was written to a file name called tree.newick.txt
+The tree in 'ANCESTOR tree format' was written to a file name called tree.ancestor.txt
+in bbAlg
+no codon model
+after bbNodeOrderAlg
+after bbfindBestAVDynProg
+after resize
+after _internalSequences resize
+afetr _bestReconstruction resize
+after bbAlg in findAncestralSequencesGammaJoint()
+in bbAlg::bbReconstructAllPositions
+Gamma model. Branch and Bound.
+Reconstructing position: bbl report size = 0
+tmp = 0.000161543
+bbl report size = 0
+tmp = 0.0125329
+bbl report size = 0
+tmp = 0.000140613
+bbl report size = 0
+tmp = 0.00679299
+bbl report size = 0
+tmp = 0.00628335
+bbl report size = 0
+tmp = 0.00679299
+bbl report size = 0
+tmp = 3.60531e-06
+bbl report size = 0
+tmp = 0.0191643
+bbl report size = 0
+tmp = 0.0113198
+bbl report size = 0
+tmp = 0.000246764
+bbl report size = 0
+tmp = 7.64815e-06
+bbl report size = 0
+tmp = 0.00786845
+bbl report size = 0
+tmp = 5.20115e-16
+bbl report size = 0
+tmp = 0.0135104
+bbl report size = 0
+tmp = 0.0022647
+bbl report size = 0
+tmp = 0.000259451
+bbl report size = 0
+tmp = 1.54786e-09
+bbl report size = 0
+tmp = 0.000485887
+bbl report size = 0
+tmp = 0.000144864
+bbl report size = 0
+tmp = 0.000165298
+bbl report size = 0
+tmp = 2.21275e-11
+bbl report size = 0
+tmp = 2.54231e-14
+bbl report size = 0
+tmp = 9.44493e-26
+106051
+bbl report size = 0
+tmp = 5.79237e-18
+bbl report size = 0
+tmp = 0.000120134
+bbl report size = 0
+tmp = 5.91076e-26
+108051
+bbl report size = 0
+tmp = 1.24876e-15
+114051
+bbl report size = 0
+tmp = 6.75432e-29
+bbl report size = 0
+tmp = 2.27536e-10
+bbl report size = 0
+tmp = 0.000608316
+bbl report size = 0
+tmp = 1.21416e-05
+bbl report size = 0
+tmp = 2.35774e-14
+bbl report size = 0
+tmp = 5.44428e-10
+bbl report size = 0
+tmp = 1.11734e-06
+bbl report size = 0
+tmp = 1.5101e-13
+bbl report size = 0
+tmp = 0.000122803
+bbl report size = 0
+tmp = 7.50252e-05
+bbl report size = 0
+tmp = 4.35087e-18
+bbl report size = 0
+tmp = 8.39018e-17
+bbl report size = 0
+tmp = 0.000153303
+bbl report size = 0
+tmp = 4.82461e-14
+bbl report size = 0
+tmp = 4.66922e-19
+bbl report size = 0
+tmp = 1.06697e-07
+bbl report size = 0
+tmp = 3.99086e-05
+bbl report size = 0
+tmp = 5.08106e-08
+bbl report size = 0
+tmp = 0.000161241
+bbl report size = 0
+tmp = 6.54282e-06
+bbl report size = 0
+tmp = 3.25571e-07
+bbl report size = 0
+tmp = 4.37584e-05
+bbl report size = 0
+tmp = 6.57315e-06
+bbl report size = 0
+tmp = 1.0557e-08
+bbl report size = 0
+tmp = 1.79842e-06
+bbl report size = 0
+tmp = 7.28713e-08
+bbl report size = 0
+tmp = 7.48024e-17
+bbl report size = 0
+tmp = 2.56328e-13
+bbl report size = 0
+tmp = 6.98095e-10
+bbl report size = 0
+tmp = 1.87594e-08
+bbl report size = 0
+tmp = 4.28418e-13
+bbl report size = 0
+tmp = 1.03274e-09
+bbl report size = 0
+tmp = 6.52424e-07
+bbl report size = 0
+tmp = 1.58353e-13
+106051
+bbl report size = 0
+tmp = 9.35923e-09
+bbl report size = 0
+tmp = 8.52088e-05
+bbl report size = 0
+tmp = 7.70837e-08
+bbl report size = 0
+tmp = 7.98032e-07
+bbl report size = 0
+tmp = 5.20997e-13
+bbl report size = 0
+tmp = 3.92214e-18
+252051
+bbl report size = 0
+tmp = 1.47114e-09
+bbl report size = 0
+tmp = 3.48665e-16
+bbl report size = 0
+tmp = 3.05753e-11
+bbl report size = 0
+tmp = 1.52478e-10
+bbl report size = 0
+tmp = 2.17468e-11
+bbl report size = 0
+tmp = 6.69915e-25
+110051
+bbl report size = 0
+tmp = 2.05018e-05
+bbl report size = 0
+tmp = 0.000160703
+bbl report size = 0
+tmp = 1.76657e-23
+104051
+bbl report size = 0
+tmp = 1.63493e-18
+108051
+bbl report size = 0
+tmp = 0.00679299
+bbl report size = 0
+tmp = 1.46937e-06
+bbl report size = 0
+tmp = 3.07978e-05
+bbl report size = 0
+tmp = 1.1357e-20
+108051
+bbl report size = 0
+tmp = 5.43099e-17
+114051
+bbl report size = 0
+tmp = 3.78722e-19
+bbl report size = 0
+tmp = 1.14079e-21
+bbl report size = 0
+tmp = 7.2045e-07
+bbl report size = 0
+tmp = 3.21649e-16
+bbl report size = 0
+tmp = 3.63658e-18
+bbl report size = 0
+tmp = 9.97929e-11
+bbl report size = 0
+tmp = 0.00591749
+bbl report size = 0
+tmp = 5.98148e-05
+bbl report size = 0
+tmp = 1.16067e-09
+bbl report size = 0
+tmp = 0.000185871
+bbl report size = 0
+tmp = 0.000452669
+bbl report size = 0
+tmp = 0.000127494
+bbl report size = 0
+tmp = 0.000452669
+bbl report size = 0
+tmp = 0.00142196
+bbl report size = 0
+tmp = 0.000552018
+bbl report size = 0
+tmp = 2.95028e-07
+bbl report size = 0
+tmp = 0.00048816
+bbl report size = 0
+tmp = 0.000141345
+bbl report size = 0
+tmp = 0.000222077
+bbl report size = 0
+tmp = 1.7607e-07
+bbl report size = 0
+tmp = 3.68981e-07
+bbl report size = 0
+tmp = 0.000397957
+bbl report size = 0
+tmp = 0.0125329
+bbl report size = 0
+tmp = 0.00783251
+bbl report size = 0
+tmp = 0.0100188
+bbl report size = 0
+tmp = 0.0022647
+bbl report size = 0
+tmp = 0.0135104
+bbl report size = 0
+tmp = 4.51267e-05
+bbl report size = 0
+tmp = 0.0109347
+bbl report size = 0
+tmp = 4.42222e-16
+bbl report size = 0
+tmp = 0.000552018
+bbl report size = 0
+tmp = 0.00783251
+ the likelihood of this reconstruction is: -2147.5
+doing position (marginal): 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 

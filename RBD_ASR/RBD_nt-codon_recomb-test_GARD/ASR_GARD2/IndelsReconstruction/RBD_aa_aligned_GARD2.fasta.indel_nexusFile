@@ -1,0 +1,117 @@
+#NEXUS
+
+[!matrix with indels coded according to SIC coding]
+[! Version: 1.72 last updated: 03/12/2012 ]
+
+BEGIN CHARACTERS;
+DIMENSIONS newtaxa ntax=52 NCHAR=125;
+
+FORMAT 
+	DATATYPE = standard
+	GAP = - 
+	MISSING = ?
+	SYMBOLS="0123456789A#C$EFG.IJ&L%>OPQ/'TU:*X<Z"
+	EQUATE="R={AG} Y={CT} M={AC} K={GT} S={CG} W={AT} H={ACT} B={CGT} V={ACG} D={AGT} N={ACGT} r={AG} y={CT} m={AC} k={GT} s={CG} w={AT} h={ACT} b={CGT} v={ACG} d={AGT} n={ACGT}"
+INTERLEAVE;
+CHARSTATELABELS
+	115 ind_pos_3_to_3 /absent  indel_1
+	116 ind_pos_28_to_31 /absent  indel_2
+	117 ind_pos_29_to_30 /absent  indel_3
+	118 ind_pos_29_to_33 /absent  indel_4 indel_5 indel_6 indel_7 indel_8 indel_9 indel_10 indel_11 indel_12 indel_13 indel_14 indel_15 indel_16 indel_17 indel_18 indel_19 indel_20 indel_21 indel_22 indel_23 indel_24 indel_25 indel_26
+	119 ind_pos_56_to_69 /absent  indel_27 indel_28 indel_29 indel_30 indel_31 indel_32 indel_33 indel_34 indel_35 indel_36 indel_37 indel_38 indel_39 indel_40 indel_41 indel_42
+	120 ind_pos_57_to_69 /absent  indel_43 indel_44 indel_45 indel_46 indel_47 indel_48 indel_49
+	121 ind_pos_65_to_65 /absent  indel_50 indel_51 indel_52 indel_53 indel_54 indel_55 indel_56 indel_57 indel_58 indel_59 indel_60 indel_61 indel_62 indel_63 indel_64 indel_65 indel_66 indel_67 indel_68 indel_69 indel_70 indel_71
+	122 ind_pos_65_to_66 /absent  indel_72
+	123 ind_pos_66_to_66 /absent  indel_73
+	124 ind_pos_98_to_98 /absent  indel_74
+	125 ind_pos_102_to_102 /absent  indel_75
+MATRIX
+
+S100000000000
+S210000000001
+S300000000000
+S400000000010
+S500000010000
+S600000010000
+S700000010000
+S800000010000
+S900000010000
+S1000000010000
+S1100000010000
+S1200000010000
+S1300000010000
+S1400000010000
+S1500000010000
+S1600000010000
+S1700000010000
+S1800000010000
+S1900000010000
+S2000000010000
+S2100000010000
+S2200000010000
+S2300000010000
+S2400000010000
+S2500000010000
+S2600000010000
+S2701?00000100
+S2800100000000
+S2900?11????00
+S3000?11????00
+S3100?11????00
+S3200?11????00
+S3300?11????00
+S3400?11????00
+S3500?11????00
+S3600?11????00
+S3700?11????00
+S3800?11????00
+S3900?11????00
+S4000?11????00
+S4100?11????00
+S4200?11????00
+S4300?11????00
+S4400?11????00
+S4500?101???00
+S4600?101???00
+S4700?101???00
+S4800?101???00
+S4900?101???00
+S5000?101???00
+S5100?101???00
+S52000000?1?00
+;
+
+END;
+
+
+BEGIN ASSUMPTIONS; [below are the cost matrices of character change between the indel character state, these matrix exist only for characters that have more than two states]
+
+
+
+BEGIN SETS;
+
+CHARSET indels = 1-11;
+
+END;
+
+
+BEGIN PAUP;
+
+assume typeset=complexIndelCoding;
+
+END;
+
+[Indels:
+No.	extension
+1	3-3
+2	28-31
+3	29-30
+4	29-33
+5	56-69
+6	57-69
+7	65-65
+8	65-66
+9	66-66
+10	98-98
+11	102-102
+]

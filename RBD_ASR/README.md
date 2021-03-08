@@ -99,7 +99,7 @@ I converted our `.clustal` format nt alignment to `.fasta` using [this tool](htt
 
 ## Phylogenetic inference with `RAxML`
 
-I next used `RAxML` to infer the ML tree. We want to use a codon-aware nt substitution model -- there is not enough amino acid diversity for some of the fine-grained resolution (i.e. the SARS-CoV-1 sequences and their nearest bat relatives), so we want to use a nt-aware model which gives us the extra information available in synonymous codon positions to gain additional resolution into relationships. So, we fit GTRGAMMA nt models with spearate data partitions (i.e. separate model parameters) fit to the first, second, and third codon positions -- this is how the RAxML manual suggests inference on codon-aligned protein-coding sequences.
+I next used `RAxML` to infer the ML tree. We want to use a codon-aware nt substitution model -- there is not enough amino acid diversity for some of the fine-grained resolution (i.e. the SARS-CoV-1 sequences and their nearest bat relatives), so we want to use a nt-aware model which gives us the extra information available in synonymous codon positions to gain additional resolution into relationships. So, we fit GTRGAMMA nt models with separate data partitions (i.e. separate model parameters) fit to the first, second, and third codon positions -- this is how the RAxML manual suggests inference on codon-aligned protein-coding sequences.
 
 
 ```
@@ -109,37 +109,6 @@ nohup raxmlHPC-PTHREADS -s ../RBD_nt-codon_aligned.fasta -n RBD_codon_tree.txt -
 ```
 
 Open up the tree `./RBD_codon_tree/RAxML_bestTree.RBD_codon_tree.txt` in FigTree, root on the Hp-BCoV\_Zhejiang outgrpus sequence, output tree as `RAxML_besttree_RBD_codon_rooted.txt` in Newick format. This will polarize the direction of nodes for ASR (not necessary, but some of the annotations that come out from ASR software are easier to interpret if polarized in the proper direction).
-
-## Recombination analysis with `3SEQ`
-
-We may be concerned about doing ASR on this tree if there is clear evidence for recombination, especially if it is between the four major clades of lineages. To test for recombination, I downloaded the `3seq` package from [here](https://mol.ax/software/3seq/) and installed per the instructions. I generated a p-value table within the ``../programs/3seq` directory by executing:
-
-```
-./3seq -g my3seqTable700 700
-```
-
-Next, to test for recombination within our nt/codon alignment, within the `RBD_nt-codon_3seq` subdirectory I executed:
-
-```
-../../programs/3seq/3seq -f ../RBD_nt-codon_aligned.fasta -L50
-```
-
-The main thing that crops up looking through the results of this analysis, is that there is putative recombination involving Rs4231, LYRa11, and the 02-03 SARS-CoV-1 isolates (though not the 03-04 isolates, interesting?). In looking at the stats from the run, there are ~30 unique shared states between SARS-CoV-1 sequences and Rs4231, and 83 informative characters linking LYRa11 and SARS-CoV-1 -- so it's lopsided, and then these are organized such that the maximum run suggestive of recombinant origins (the 'k' statistic) is 66. This leads to predicted breakpoints 208-519. (It seems the LYRa11 similarity is projected as being more similar to SARS-CoV-1 within this 210-519 stretch) -- though even outside of this window, it doesn't seem glaringly obvious to me that these SARS-CoV-1 isolates are closer to Rs4231 than LYRa11? And the places where the SARS-CoV-1 does share the Rs4231 state seems to be places where LYRa11 has lineage-specific mutations. It also seems to me that if there is true recombination, wouldn't we expect the hits to be significant with multiple genotypes within the originating clade? LYRa11 is a rather unique sequence, but Rs4231 has several closely related sequences that could further hammer down recombinant origins, if real. So, I think this might not be genuine?
-
-To see if there is anything particular going on here, I took the RBD\_nt-codon alignment, and split it into two partitions: `RBD_nt-codon_aligned_rec1.fasta` contains nucleotides 1-207 and 520-606, while `RBD_nt-codon_aligned_rec2.fasta` contains nucleotides 208-519.
-
-I then inferred phylogenies separate for these two putative recombinant regions:
-
-```
-mkdir RBD_nt-codon_recomb-test
-cd RBD_nt-codon_recomb-test
-nohup raxmlHPC-PTHREADS -s ./RBD_nt-codon_aligned_rec1.fasta -n RBD_codon_tree_rec1.txt -m GTRGAMMA -f a -p 10 -N autoMRE -x 10 -T 8 -q ../codon_partitions.txt &
-
-nohup raxmlHPC-PTHREADS -s ./RBD_nt-codon_aligned_rec2.fasta -n RBD_codon_tree_rec2.txt -m GTRGAMMA -f a -p 10 -N autoMRE -x 10 -T 8 -q ../codon_partitions.txt &> nohup2.out &
-
-```
-
-Looking at the trees built from these two different sections -- there are differences from the full-length ML tree, but any differences have incredibly low bootstrap support. I do *not* take this as indication of strong support for a specific recombination history here. I will keep these analyses here in case we want to revisit -- might still be worth reconstructing e.g. the SARS-CoV-1 or SARS-CoV-1-clade ancestral sequence under the full length versus chunked ML trees, to ensure there is no major difference in sequence or function. But I am not compelled to use this chunked sequence at face value as I don't think it points to any clear signal of recombination.
 
 ## Ancestral sequence reconstruction with `FastML`
 
@@ -203,6 +172,95 @@ For gene synthesis and downstream -- I also made `_unique` versions of the align
 codon_harmony --input  ./RBD-set_aa-seq.fasta --output ./RBD-set_codon-opt.fasta --host 4932 --verbose 2 --local-homopolymer-threshold 4 --restriction-enzymes NotI NdeI XhoI SacI EcoRI --max-relax 0.2
 ```
 
+## Recombination analysis with `3SEQ`
+
+We may be concerned about doing ASR on this tree if there is clear evidence for recombination, especially if it is between the four major clades of lineages. To test for recombination, I downloaded the `3seq` package from [here](https://mol.ax/software/3seq/) and installed per the instructions. I generated a p-value table within the ``../programs/3seq` directory by executing:
+
+```
+./3seq -g my3seqTable700 700
+```
+
+Next, to test for recombination within our nt/codon alignment, within the `RBD_nt-codon_3seq` subdirectory I executed:
+
+```
+../../programs/3seq/3seq -f ../RBD_nt-codon_aligned.fasta -L50
+```
+
+The main thing that crops up looking through the results of this analysis, is that there is putative recombination involving Rs4231, LYRa11, and the 02-03 SARS-CoV-1 isolates (though not the 03-04 isolates, interesting?). In looking at the stats from the run, there are ~30 unique shared states between SARS-CoV-1 sequences and Rs4231, and 83 informative characters linking LYRa11 and SARS-CoV-1 -- so it's lopsided, and then these are organized such that the maximum run suggestive of recombinant origins (the 'k' statistic) is 66. This leads to predicted breakpoints 208-519. (It seems the LYRa11 similarity is projected as being more similar to SARS-CoV-1 within this 210-519 stretch) -- though even outside of this window, it doesn't seem glaringly obvious to me that these SARS-CoV-1 isolates are closer to Rs4231 than LYRa11? And the places where the SARS-CoV-1 does share the Rs4231 state seems to be places where LYRa11 has lineage-specific mutations. It also seems to me that if there is true recombination, wouldn't we expect the hits to be significant with multiple genotypes within the originating clade? LYRa11 is a rather unique sequence, but Rs4231 has several closely related sequences that could further hammer down recombinant origins, if real. So, I think this might not be genuine?
+
+To see if there is anything particular going on here, I took the RBD\_nt-codon alignment, and split it into two partitions: `RBD_nt-codon_aligned_rec1.fasta` contains nucleotides 1-207 and 520-606, while `RBD_nt-codon_aligned_rec2.fasta` contains nucleotides 208-519.
+
+I then inferred phylogenies separate for these two putative recombinant regions:
+
+```
+mkdir RBD_nt-codon_recomb-test
+cd RBD_nt-codon_recomb-test
+nohup raxmlHPC-PTHREADS -s ./RBD_nt-codon_aligned_rec1.fasta -n RBD_codon_tree_rec1.txt -m GTRGAMMA -f a -p 10 -N autoMRE -x 10 -T 4 -q ../codon_partitions.txt -g constraint.txt &
+
+nohup raxmlHPC-PTHREADS -s ./RBD_nt-codon_aligned_rec2.fasta -n RBD_codon_tree_rec2.txt -m GTRGAMMA -f a -p 10 -N autoMRE -x 10 -T 4 -q ../codon_partitions.txt -g constraint.txt &> nohup2.out &
+
+```
+
+Looking at the trees built from these two different sections -- there are differences from the full-length ML tree, but any differences have incredibly low bootstrap support. I do *not* take this as indication of strong support for a specific recombination history here, but rather that we just nuked our phylogenetic signal by taking a small alignment and cutting it half. However, for completeness sake, we might want to do ASR on a recombination-aware tree. However, I want to try the GARD method as well for breakpoint detection. Instead of 3SEQ, which I believe requires something resembling the parental sequences to be present, the GARD approach based on determining likelihood of alternate topologies, seems more straighforward. While I'm here I'll run the FastML, but I will likely roll with the GARD version of this below.
+
+Output "bestTree" as rooted by outgroup hibecovirus sequence as `RAxML_besttree_RBD_codon_rec1_rooted.txt` in Newick format. This will polarize the direction of nodes for ASR.
+
+Infer ancestors:
+
+```
+mkdir ./ASR_rec1
+cd ./ASR_rec1
+nohup perl ../../../programs/FastML.v3.11/www/fastml/FastML_Wrapper.pl --MSA_file ../RBD_aa_aligned_rec1.fasta --seqType AA --Tree ../RAxML_besttree_RBD_codon_rec1_rooted.txt --SubMatrix LG --OptimizeBL yes --jointReconstruction yes --indelReconstruction BOTH --outDir /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/RBD_nt-codon_recomb-test/ASR_rec1 &
+
+mkdir ../ASR_rec2
+cd ../ASR_rec2
+nohup perl ../../../programs/FastML.v3.11/www/fastml/FastML_Wrapper.pl --MSA_file ../RBD_aa_aligned_rec2.fasta --seqType AA --Tree ../RAxML_besttree_RBD_codon_rec2_rooted.txt --SubMatrix LG --OptimizeBL yes --jointReconstruction yes --indelReconstruction BOTH --outDir /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/RBD_nt-codon_recomb-test/ASR_rec2 &
+```
+
+XXXXXXX
+
+## Recombination analysis with `GARD`
+The recombination analysis of 3SEQ gave results that were hard to interpret in terms of exact breakpoints and their reliability -- my by-eye checking of the breakpoints was less than convinced, though of course that's the point of an algorithm. Let's try an alternative algorithm in GARD using it's "Datamonkey" server. Ran the nt alignment through this algorithm, and saved files in `./RBD_nt-codon_recomb-test_GARD`. This analysis supports with small AIC 85.16 a breakpoint between positions 264 and 265. So, let's do the same as above, but with this single breakpoint, breaking the alignment into sub-segments: `RBD_nt-codon_aligned_GARD1.fasta` contains nucleotides 1-264, and `RBD_nt-codon_aligned_GARD2.fasta` contains nucleotides 265-606. Also translated the corresponding aa alignments for ASR.
+
+I then inferred phylogenies separate for these two putative recombinant regions:
+
+```
+mkdir RBD_codon_GARD1_tree
+cd RBD_codon_GARD1_tree
+nohup raxmlHPC-PTHREADS -s ../RBD_nt-codon_aligned_GARD1.fasta -n RBD_codon_tree_GARD1.txt -m GTRGAMMA -f a -p 10 -N autoMRE -x 10 -T 6 -q ../../codon_partitions.txt -g ../constraint.txt &
+
+mkdir ../RBD_codon_GARD2_tree
+cd ../RBD_codon_GARD2_tree
+nohup raxmlHPC-PTHREADS -s ../RBD_nt-codon_aligned_GARD2.fasta -n RBD_codon_tree_GARD2.txt -m GTRGAMMA -f a -p 10 -N autoMRE -x 10 -T 6 -q ../../codon_partitions.txt -g ../constraint.txt &
+```
+
+Same as with 3seq, the changes that are made don't really make sense -- the RsSHC014-sub-clade of SARS1-like RBDs gets moved outside as an entirely new ingroup Asia sarbecovirus clade, and GX-Pangolin becomes sister to clade to deletions/clade 2. Neither has that strong of bootstrap support. The RsSHC014 movement in particular, I feel it is likely hard to disentagle recombination from the fact that the "GARD2" segment corresponds to teh RBM, which is under elevated evolution in these Rs bats for both receptor binding evolution, and likely also antigenic evolution. Therefore, it is possible elevated evolutionary rate could end up looking similar to tree disconcordance between these two regions? The only other defining feature is that the SARS1 clade has a clade-specific 1-aa deletion relative to SARS2 clade in the "receptor binding ridge" -- and the RsSHC014 sequecnes share the exact same deletion, and other similar features within this ridge (e.g. prolines). I do therefore believe these are still "SARS1-clade" sequences, but we will see how AncSarbecovirus and AncAsia reconstructions chagne, anyway, because this will of course be a major concern of not only mine but also reviewers.
+
+Output "bestTree" as rooted by outgroup hibecovirus sequence as `RAxML_besttree_RBD_codon_GARD1_rooted.txt` in Newick format. This will polarize the direction of nodes for ASR.
+
+Infer ancestors:
+
+```
+mkdir ../ASR_GARD1
+cd ../ASR_GARD1
+nohup perl ../../../programs/FastML.v3.11/www/fastml/FastML_Wrapper.pl --MSA_file ../RBD_aa_aligned_GARD1.fasta --seqType AA --Tree ../RBD_codon_GARD1_tree/RAxML_besttree_RBD_codon_GARD1_rooted.txt --SubMatrix LG --OptimizeBL yes --jointReconstruction yes --indelReconstruction BOTH --outDir /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/RBD_nt-codon_recomb-test_GARD/ASR_GARD1 &
+
+mkdir ../ASR_GARD2
+cd ../ASR_GARD2
+nohup perl ../../../programs/FastML.v3.11/www/fastml/FastML_Wrapper.pl --MSA_file ../RBD_aa_aligned_GARD2.fasta --seqType AA --Tree ../RBD_codon_GARD2_tree/RAxML_besttree_RBD_codon_GARD2_rooted.txt --SubMatrix LG --OptimizeBL yes --jointReconstruction yes --indelReconstruction BOTH --outDir /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/RBD_nt-codon_recomb-test_GARD/ASR_GARD2 &
+```
+
+Parsed sequences with the `.Rmd` script in this directory, and the `ancestors_input.csv` table which lists the matched nodes for concatenating ancestors.
+
+How do these differ from the v1 non-recombining phylogeny?
+
+AncSarbecovirus: differs at four positions in the GARD-segmented reconstruction: S346T, delS372a, I434L, E484S
+
+AncAsia differs at more, consistent with the RsSHC014 clade breaking out and making things more "SARS1-like" in the receptor-binding ridge, even though i think that my by-eye parsimony (e.g. the 482 deletion) says RsSHC014 shoudl still be in the SARS1 clade. Differences include: I434L, N440S, S445T, S459G, F464Y, E471V, P479S, delG482, V483A, E484V, F486L, Y490N, Q493K, H498Y, P499T, T501S
+
+AncSARS2a: S443A, V483Q, E484V, F486L, H498Y
+
+
 ## What about RaTG13 and possible recombination?
 
 There is a suggestion that the RBM of RaTG13 was acquired via recombination with some unsampled, more distantly related strain. Without identification of this originating strain, it is hard to define the breakpoints (or know whether it's truly recombination, vs for example branch-specific positive selection focused on this interaction interface). Therefore, in lieu of trying to disentagle recombinant features, I simply want to remove RaTG13 from the alignment, and see how that impacts e.g. the GD- and GX-pangolin and deeper ancestors. If substantial, I can simply include these in the RBD panel for additional robustness considerations.
@@ -228,3 +286,64 @@ Added new sequences from AncSarbecovirus down to lineage of SARS-CoV-2 in the ta
  * AncAsia same MAP and rmRaTG13
  * AncSARS2a same MAP and rmRaTG13
  * AncSARS2b: only difference relative to MAP is N519H. This was previously inferred to be a substitution between AncSARS2c and SARS-CoV-2. This is not expected to be a consequential mutation, and beyond that, this is not the region where we expect RaTG13 may have a recombinant portion (that is, it is outside the RBM). Therefore, I don't think it demands synthesis of another gene to test for robustness, as it is pretty easy to dismiss.
+ 
+## Addition of new sarbecovirus RBD sequences
+As of 7 March, 2021, there have been new sarbecovirus RBD sequences reported, originally isolated from Japan, Cambodia, Thailand, Rwanda, adn Uganda. I want to incorporate these sequences into my alignment and tree, and also see if their inclusion alters the sequecnes of some key ancestors.
+
+Started new subdirectory, copy in working RBD alignments
+```
+mkdir add_new_RBDs
+cd add_new_RBDs
+cp ../RBD_aa_aligned.fasta ./
+cp ../unaligned-sequences/RBDs_nt.fasta ./RBDs_nt_unaligned_v2.fasta
+```
+
+Downloaded new sequences, in file `RBDs_new_aa.fasta`. Added nt sequences to  and `RBDs_nt_unaligned_v2.fasta`: 
+  - Rc-o319 (Japan, R. cornutus): Genbank LC556375
+  - RacCS203 (Thailand, R. acuminatus): Genbank MW251308
+  - RshSTT182 (Cambodia, R. shameli): GISAID EPI\_ISL\_852604
+  - PDF-2370 (Uganda, R. spp [close to ferrumequinum], same RBD seq as PDF-2386): Genbank accession not yet available, got from supplement from Wells et al. preprint
+  - PRD-0038 (Rwanda, R. clivosus): Genbank not yet available, got from Wells et al. supplement
+
+Use mafft to align new sequences in with the prior set:
+
+```
+mafft --add ./RBDs_new_aa.fasta --reorder ./RBD_aa_aligned.fasta > ./RBD_aa_aligned_v2.fasta
+```
+
+Nonparismonious double gap in the Japan sequence relative to the single-aa deletion in the SARS1 clade, I manually updated this to make it a single deletion instead of duplicate. Convert clustal to fasta
+
+Make nt alignment:
+
+```
+pal2nal.pl ./RBD_aa_aligned_v2.fasta RBDs_nt_unaligned_v2.fasta > ./RBD_nt_aligned_v2.clustal
+```
+
+
+Infer phylogeny in RAxML:
+
+```
+mkdir RBD_codon_tree_v2
+cd ./RBD_codon_tree_v2
+nohup raxmlHPC-PTHREADS -s ../RBD_nt_aligned_v2.fasta -n RBD_codon_tree_v2.txt -m GTRGAMMA -f a -p 20 -N autoMRE -x 20 -T 4 -q ../../codon_partitions.txt -g ../constraint.txt &
+```
+
+Open up the tree `./RBD_codon_tree_v2/RAxML_bestTree.RBD_codon_tree_v2.txt` in FigTree, root on the Hp-BCoV\_Zhejiang outgroup sequence, output tree as `RAxML_besttree_RBD_codon_v2_rooted.txt` in Newick format. This will polarize the direction of nodes for ASR.
+
+Infer ancestors:
+
+```
+mkdir ../ASR_v2
+cd ../ASR_v2
+nohup perl ../../../programs/FastML.v3.11/www/fastml/FastML_Wrapper.pl --MSA_file ../RBD_aa_aligned_v2.fasta --seqType AA --Tree ../RBD_codon_tree_v2/RAxML_besttree_RBD_codon_v2_rooted.txt --SubMatrix LG --OptimizeBL yes --jointReconstruction yes --indelReconstruction BOTH --outDir /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/add_new_RBDs/ASR_v2 &
+```
+Parsed sequences with the `.Rmd` script in this directory. Compared the "v1" sequences to these:
+  - AncSarbecovirus v2 reconstruciton has mutations I434L, F452Y, K490E, S501A compared to the v1. S501A probably slightly enhances the Ra.9479 affinity, others probably don't matter
+  - AncAsia v2 has mutaitons N394S, I434L, L441Q, L452Y, G482S, Q493K, H498Y, T501A rleative to v1. From SSM data in v1 AncAsia, the three contact sites still compatible with binding (at least individually)
+  - AncSARS2a v2 has mutations L441Q, S443A, K444S, G446S, L452Y, T470N, T478Q, N481S, G482S, Q493K, H498Y, T501A. Again, probably the indiviudal mutations compatible with binding, but there are many, so ti might be worth binding. (Might show binding for e.g. cvACE2 binding whihc the v1 didn't)
+  - Note that the v2 AncSARS2b is closer to the v1 AncSARS1a (only differs K403R, L441Q, S443A, K444S), consistent with those having the same ingroup sequecnes (plus cambodia for v2)
+
+Might be worth ordering a couple of these alongside the Cambodia and Japan sequences themselves just for testing any robustness of key conclusions (Ra binding of AncSarb, hu binding of AncAsia)
+
+
+
