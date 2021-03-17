@@ -186,6 +186,17 @@ plot.titration <- function(homolog,mutation=NA,ACE2,cutoff=10){
 }
 ```
 
+```{r SARS2_huACE2, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
+homolog <- "SARS-CoV-2";ACE2 <- "huACE2";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep="")))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep="")))
+}
+```
+
 Output some mutants of interest for visualization of BtKY72 / Ra_787 binding. Compare T498W affinity to RaTG13/huACE2
 
 ```{r RaTG13_huACE2, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}

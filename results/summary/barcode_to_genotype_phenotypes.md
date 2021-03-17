@@ -652,7 +652,8 @@ temp1 <- data.table::melt(dt_wildtype[,.(target,huACE2,cvACE2,pgACE2,RaACE2.787,
 temp2 <- dt_wildtype[,.(target,expression)]
 
 p1 <- ggplot(temp1,aes(target,ACE2))+geom_tile(aes(fill=log10Ka),color="black",lwd=0.1)+
-  scale_fill_gradientn(colours=c("#FFFFFF","#FFFFFF","#003366"),limits=c(5,12),values=c(0,1/7,7/7),na.value="yellow")+
+  #scale_fill_gradientn(colours=c("#FFFFFF","#FFFFFF","#003366"),limits=c(5,12),values=c(0,1/7,7/7),na.value="yellow")+
+  scale_fill_gradientn(colours=c("#FFFFFF","#003366"),limits=c(5,12),values=c(0,1),na.value="yellow")+
   #scale_x_continuous(expand=c(0,0),breaks=c(331,seq(335,430,by=5)))+
   labs(x="RBD homolog",y="")+theme_classic(base_size=9)+
   coord_equal()+theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.6,face="bold"))
@@ -678,7 +679,8 @@ extant <- c(config$EurAf_extant,config$SARS2_extant,config$SARS1_extant,config$C
 temp1 <- temp1[target %in% extant,];temp1$target <- factor(temp1$target,levels=extant)
 
 p1 <- ggplot(temp1,aes(target,ACE2))+geom_tile(aes(fill=log10Ka),color="black",lwd=0.2)+
-  scale_fill_gradientn(colours=c("#FFFFFF","#FFFFFF","#003366"),limits=c(5,12),values=c(0,1/7,7/7),na.value="yellow")+
+  #scale_fill_gradientn(colours=c("#FFFFFF","#FFFFFF","#003366"),limits=c(5,12),values=c(0,1/7,7/7),na.value="yellow")+
+  scale_fill_gradientn(colours=c("#FFFFFF","#003366"),limits=c(5,12),values=c(0,1),na.value="yellow")+
   #scale_x_continuous(expand=c(0,0),breaks=c(331,seq(335,430,by=5)))+
   labs(x="RBD homolog",y="")+theme_classic(base_size=9)+
   coord_equal()+theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.6,face="bold",size=10),axis.text.y=element_text(face="bold",size=10))
@@ -700,7 +702,8 @@ temp1 <- data.table::melt(dt_wildtype[target %in% ancestors, .(target,huACE2,cvA
 temp1$target <- factor(temp1$target,levels=ancestors)
 
 p1 <- ggplot(temp1,aes(target,ACE2))+geom_tile(aes(fill=log10Ka),color="black",lwd=0.2)+
-  scale_fill_gradientn(colours=c("#FFFFFF","#FFFFFF","#003366"),limits=c(5,12),values=c(0,1/7,7/7),na.value="yellow")+
+  #scale_fill_gradientn(colours=c("#FFFFFF","#FFFFFF","#003366"),limits=c(5,12),values=c(0,1/7,7/7),na.value="yellow")+
+  scale_fill_gradientn(colours=c("#FFFFFF","#003366"),limits=c(5,12),values=c(0,1),na.value="yellow")+
   #scale_x_continuous(expand=c(0,0),breaks=c(331,seq(335,430,by=5)))+
   labs(x="RBD homolog",y="measurement")+theme_classic(base_size=9)+
   coord_equal()+theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.6,face="bold",size=10),axis.text.y=element_text(face="bold",size=10))
@@ -722,7 +725,8 @@ temp1 <- data.table::melt(dt_wildtype[target %in% ancestors, .(target,huACE2,cvA
 temp1$target <- factor(temp1$target,levels=ancestors)
 
 p1 <- ggplot(temp1,aes(target,ACE2))+geom_tile(aes(fill=log10Ka),color="black",lwd=0.2)+
-  scale_fill_gradientn(colours=c("#FFFFFF","#FFFFFF","#003366"),limits=c(5,12),values=c(0,1/7,7/7),na.value="yellow")+
+  #scale_fill_gradientn(colours=c("#FFFFFF","#FFFFFF","#003366"),limits=c(5,12),values=c(0,1/7,7/7),na.value="yellow")+
+  scale_fill_gradientn(colours=c("#FFFFFF","#003366"),limits=c(5,12),values=c(0,1),na.value="yellow")+
   #scale_x_continuous(expand=c(0,0),breaks=c(331,seq(335,430,by=5)))+
   labs(x="RBD homolog",y="measurement")+theme_classic(base_size=9)+
   coord_equal()+theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.6,face="bold",size=10),axis.text.y=element_text(face="bold",size=10))
