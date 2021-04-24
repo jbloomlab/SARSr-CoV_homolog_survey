@@ -289,6 +289,7 @@ Added new sequences from AncSarbecovirus down to lineage of SARS-CoV-2 in the ta
  
 ## Addition of new sarbecovirus RBD sequences
 As of 7 March, 2021, there have been new sarbecovirus RBD sequences reported, originally isolated from Japan, Cambodia, Thailand, Rwanda, adn Uganda. I want to incorporate these sequences into my alignment and tree, and also see if their inclusion alters the sequecnes of some key ancestors.
+Update 23 April 2021, interesting new sequence just added to GISAID from Zhou et al. preprint, RsYN04, that might be a unique phylogenetic position according to Stephen Goldstein's virological post, also want to add this and perhaps functionally characterize.
 
 Started new subdirectory, copy in working RBD alignments
 ```
@@ -298,12 +299,13 @@ cp ../RBD_aa_aligned.fasta ./
 cp ../unaligned-sequences/RBDs_nt.fasta ./RBDs_nt_unaligned_v2.fasta
 ```
 
-Downloaded new sequences, in file `RBDs_new_aa.fasta`. Added nt sequences to  and `RBDs_nt_unaligned_v2.fasta`: 
+Downloaded new sequences, in file `RBDs_new_aa.fasta`. Added nt sequences to `RBDs_nt_unaligned_v2.fasta`: 
   - Rc-o319 (Japan, R. cornutus): Genbank LC556375
   - RacCS203 (Thailand, R. acuminatus): Genbank MW251308
   - RshSTT182 (Cambodia, R. shameli): GISAID EPI\_ISL\_852604
   - PDF-2370 (Uganda, R. spp [close to ferrumequinum], same RBD seq as PDF-2386): Genbank accession not yet available, got from supplement from Wells et al. preprint
   - PRD-0038 (Rwanda, R. clivosus): Genbank not yet available, got from Wells et al. supplement
+  - RsYN04 (Yunnan, R. stheno): GISAID EPI\_ISL\_1699444
 
 Use mafft to align new sequences in with the prior set:
 
@@ -311,26 +313,26 @@ Use mafft to align new sequences in with the prior set:
 mafft --add ./RBDs_new_aa.fasta --reorder ./RBD_aa_aligned.fasta > ./RBD_aa_aligned_v2.fasta
 ```
 
-Nonparismonious double gap in the Japan sequence relative to the single-aa deletion in the SARS1 clade, I manually updated this to make it a single deletion instead of duplicate. Convert clustal to fasta
+Nonparismonious double gap in the Japan sequence relative to the single-aa deletion in the SARS1 clade, I manually updated this to make it a single deletion instead of duplicate. 
 
 Make nt alignment:
 
 ```
 pal2nal.pl ./RBD_aa_aligned_v2.fasta RBDs_nt_unaligned_v2.fasta > ./RBD_nt_aligned_v2.clustal
 ```
-
+Convert clustal to fasta
 
 Infer phylogeny in RAxML:
 
 ```
 mkdir RBD_codon_tree_v2
 cd ./RBD_codon_tree_v2
-nohup raxmlHPC-PTHREADS -s ../RBD_nt_aligned_v2.fasta -n RBD_codon_tree_v2.txt -m GTRGAMMA -f a -p 20 -N autoMRE -x 20 -T 4 -q ../../codon_partitions.txt -g ../constraint.txt &
+nohup raxmlHPC-PTHREADS -s ../RBD_nt_aligned_v2.fasta -n RBD_codon_tree_v2.txt -m GTRGAMMA -f a -p 20 -N autoMRE -x 20 -T 4 -q ../codon_partitions.txt &
 ```
 
 Open up the tree `./RBD_codon_tree_v2/RAxML_bestTree.RBD_codon_tree_v2.txt` in FigTree, root on the Hp-BCoV\_Zhejiang outgroup sequence, output tree as `RAxML_besttree_RBD_codon_v2_rooted.txt` in Newick format. This will polarize the direction of nodes for ASR.
 
-Infer ancestors:
+Infer ancestors (note, haven't redone since adding RsYN04):
 
 ```
 mkdir ../ASR_v2
