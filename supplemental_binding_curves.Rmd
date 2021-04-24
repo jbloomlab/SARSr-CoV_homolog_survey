@@ -136,7 +136,7 @@ plot.titration <- function(homolog,mutation=NA,ACE2,cutoff=10){
                algorithm="port")
     lines(10^c(seq(-13,-6,0.25)),predict(fit,newdata=list(x.vals=10^c(seq(-13,-6,0.25)))),lwd=2)
     points(x.vals,y.vals,pch=19)
-    legend("topleft",bty="n",cex=1,legend=paste("log10(Ka)\n",format(Kd_final,digits=4)))
+    legend("topleft",bty="n",cex=1,legend=paste("-log10(Kd,app)\n",format(Kd_final,digits=4)))
   }
   #if a mutant, have to do a bit more referencing
   if(!is.na(mutation)){
@@ -181,7 +181,7 @@ plot.titration <- function(homolog,mutation=NA,ACE2,cutoff=10){
                algorithm="port")
     lines(10^c(seq(-13,-6,0.25)),predict(fit,newdata=list(x.vals=10^c(seq(-13,-6,0.25)))),lwd=2)
     points(x.vals,y.vals,pch=19)
-    legend("topleft",bty="n",cex=1,legend=paste("log10(Ka)\n",format(Kd_final,digits=4)))
+    legend("topleft",bty="n",cex=1,legend=paste("-log10(Kd,app)\n",format(Kd_final,digits=4)))
   }
 }
 ```
@@ -191,9 +191,20 @@ homolog <- "SARS-CoV-2";ACE2 <- "huACE2";mutation <- NA
 plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
 #save pdf
 if(is.na(mutation)){
-  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep="")))
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }else{
-  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep="")))
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+```{r SARS2_huACE2, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
+homolog <- "SARS-CoV-2";ACE2 <- "huACE2";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }
 ```
 
@@ -204,19 +215,30 @@ homolog <- "RaTG13";ACE2 <- "huACE2";mutation <- NA
 plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
 #save pdf
 if(is.na(mutation)){
-  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep="")))
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }else{
-  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep="")))
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }
 ```
+```{r RaTG13_huACE2_D501T, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
+homolog <- "RaTG13";ACE2 <- "huACE2";mutation <- "D501T"
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
 ```{r RaTG13_RaACE2.9479, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
 homolog <- "RaTG13";ACE2 <- "RaACE2.9479";mutation <- NA
 plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
 #save pdf
 if(is.na(mutation)){
-  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep="")))
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }else{
-  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep="")))
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }
 ```
 ```{r RaTG13_RaACE2.787, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
@@ -224,9 +246,9 @@ homolog <- "RaTG13";ACE2 <- "RaACE2.787";mutation <- NA
 plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
 #save pdf
 if(is.na(mutation)){
-  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep="")))
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }else{
-  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep="")))
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }
 ```
 
@@ -235,9 +257,20 @@ homolog <- "BtKY72";ACE2 <- "RaACE2.787";mutation <- NA
 plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
 #save pdf
 if(is.na(mutation)){
-  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep="")))
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }else{
-  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep="")))
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+```{r BtKY72_Ra.9479, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
+homolog <- "BtKY72";ACE2 <- "RaACE2.9479";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }
 ```
 
@@ -246,9 +279,9 @@ homolog <- "BtKY72";ACE2 <- "huACE2";mutation <- NA
 plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
 #save pdf
 if(is.na(mutation)){
-  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep="")))
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }else{
-  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep="")))
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }
 ```
 ```{r BtKY72_T498W_Ra.787, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
@@ -256,9 +289,9 @@ homolog <- "BtKY72";ACE2 <- "RaACE2.787.pool6";mutation <- "T498W"
 plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
 #save pdf
 if(is.na(mutation)){
-  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep="")))
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }else{
-  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep="")))
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }
 ```
 
@@ -267,9 +300,9 @@ homolog <- "BtKY72";ACE2 <- "huACE2.pool6";mutation <- "T498W"
 plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
 #save pdf
 if(is.na(mutation)){
-  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep="")))
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }else{
-  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep="")))
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }
 ```
 
@@ -279,9 +312,20 @@ homolog <- "BtKY72";ACE2 <- "huACE2.pool6";mutation <- "K493Y"
 plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
 #save pdf
 if(is.na(mutation)){
-  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep="")))
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }else{
-  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep="")))
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+```{r BtKY72_V501Y_huACE2, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
+homolog <- "BtKY72";ACE2 <- "huACE2.pool6";mutation <- "V501Y"
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }
 ```
 
@@ -290,9 +334,9 @@ homolog <- "AncSarbecovirus_MAP";ACE2 <- "huACE2";mutation <- "K493Y"
 plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
 #save pdf
 if(is.na(mutation)){
-  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep="")))
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }else{
-  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep="")))
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }
 ```
 
@@ -301,8 +345,29 @@ homolog <- "AncSarbecovirus_MAP";ACE2 <- "huACE2"; mutation <- NA
 plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
 #save pdf
 if(is.na(mutation)){
-  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep="")))
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }else{
-  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep="")))
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+```{r AncSarbecovirus_RaACE2.9479, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
+homolog <- "AncSarbecovirus_MAP";ACE2 <- "RaACE2.9479"; mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+```{r AncAsia_huACE2, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
+homolog <- "AncAsia_MAP";ACE2 <- "huACE2"; mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }
 ```
