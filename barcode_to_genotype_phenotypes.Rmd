@@ -330,44 +330,44 @@ setkey(dt_mutant,library,target,position,mutant)
 
 We have duplicates for each measurement. Let's look at correlations!
 
-```{r plot_correlations, echo=T, fig.width=8, fig.height=32, fig.align="center", dpi=300,dev="png"}
-par(mfrow=c(8,2))
+```{r plot_correlations, echo=T, fig.width=20, fig.height=5, fig.align="center", dpi=300,dev="png"}
+par(mfrow=c(2,8))
 x <- dt_wildtype[library=="lib1",mean_expression]; y <- dt_wildtype[library=="lib2",mean_expression]; plot(x,y,pch=19,col="#00000090",xlab="replicate 1",ylab="replicate 2",main="expression, wildtype backgrounds");model <- lm(y~x);abline(model,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
-
-x <- dt_mutant[library=="lib1",mean_expression]; y <- dt_mutant[library=="lib2",mean_expression]; plot(x,y,pch=19,col="#00000090",xlab="replicate 1",ylab="replicate 2",main="expression, miniMS muts");model <- lm(y~x);abline(model,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
 
 #huACE2
 x <- dt_wildtype[library=="lib1" & mean_expression > 7, mean_huACE2_log10Ka]; y <- dt_wildtype[library=="lib2"& mean_expression > 7,mean_huACE2_log10Ka]; plot(x,y,pch=19,col="#00000090",xlab="replicate 1",ylab="replicate 2",main="huACE2 log10Ka, wildtype backgrounds");model <- lm(y~x);abline(model,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n"); points(dt_wildtype[library=="lib1" & mean_expression < 7, mean_huACE2_log10Ka],dt_wildtype[library=="lib2" & mean_expression < 7, mean_huACE2_log10Ka],pch=19,col="green")
 
-x <- dt_mutant[library=="lib1",mean_huACE2_log10Ka]; y <- dt_mutant[library=="lib2",mean_huACE2_log10Ka]; plot(x,y,pch=19,col="#00000090",xlab="replicate 1",ylab="replicate 2",main="huACE2 log10Ka, miniMS muts");model <- lm(y~x);abline(model,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
-
 #cvACE2
 x <- dt_wildtype[library=="lib1" & mean_expression > 7, mean_cvACE2_log10Ka]; y <- dt_wildtype[library=="lib2"& mean_expression > 7,mean_cvACE2_log10Ka]; plot(x,y,pch=19,col="#00000090",xlab="replicate 1",ylab="replicate 2",main="cvACE2 log10Ka, wildtype backgrounds");model <- lm(y~x);abline(model,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n"); points(dt_wildtype[library=="lib1" & mean_expression < 7, mean_cvACE2_log10Ka],dt_wildtype[library=="lib2" & mean_expression < 7, mean_cvACE2_log10Ka],pch=19,col="green")
-
-x <- dt_mutant[library=="lib1",mean_cvACE2_log10Ka]; y <- dt_mutant[library=="lib2",mean_cvACE2_log10Ka]; plot(x,y,pch=19,col="#00000090",xlab="replicate 1",ylab="replicate 2",main="cvACE2 log10Ka, miniMS muts");model <- lm(y~x);abline(model,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
 
 #pgACE2
 x <- dt_wildtype[library=="lib1" & mean_expression > 7, mean_pgACE2_log10Ka]; y <- dt_wildtype[library=="lib2"& mean_expression > 7,mean_pgACE2_log10Ka]; plot(x,y,pch=19,col="#00000090",xlab="replicate 1",ylab="replicate 2",main="pgACE2 log10Ka, wildtype backgrounds");model <- lm(y~x);abline(model,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n"); points(dt_wildtype[library=="lib1" & mean_expression < 7, mean_pgACE2_log10Ka],dt_wildtype[library=="lib2" & mean_expression < 7, mean_pgACE2_log10Ka],pch=19,col="green")
 
-x <- dt_mutant[library=="lib1",mean_pgACE2_log10Ka]; y <- dt_mutant[library=="lib2",mean_pgACE2_log10Ka]; plot(x,y,pch=19,col="#00000090",xlab="replicate 1",ylab="replicate 2",main="pgACE2 log10Ka, miniMS muts");model <- lm(y~x);abline(model,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
-
 #RaACE2.787
 x <- dt_wildtype[library=="lib1" & mean_expression > 7, mean_RaACE2.787_log10Ka]; y <- dt_wildtype[library=="lib2"& mean_expression > 7,mean_RaACE2.787_log10Ka]; plot(x,y,pch=19,col="#00000090",xlab="replicate 1",ylab="replicate 2",main="RaACE2.787 log10Ka, wildtype backgrounds");model <- lm(y~x);abline(model,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n"); points(dt_wildtype[library=="lib1" & mean_expression < 7, mean_RaACE2.787_log10Ka],dt_wildtype[library=="lib2" & mean_expression < 7, mean_RaACE2.787_log10Ka],pch=19,col="green")
-
-x <- dt_mutant[library=="lib1",mean_RaACE2.787_log10Ka]; y <- dt_mutant[library=="lib2",mean_RaACE2.787_log10Ka]; plot(x,y,pch=19,col="#00000090",xlab="replicate 1",ylab="replicate 2",main="RaACE2.787 log10Ka, miniMS muts");model <- lm(y~x);abline(model,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
 
 #RaACE2.9479
 x <- dt_wildtype[library=="lib1" & mean_expression > 7, mean_RaACE2.9479_log10Ka]; y <- dt_wildtype[library=="lib2"& mean_expression > 7,mean_RaACE2.9479_log10Ka]; plot(x,y,pch=19,col="#00000090",xlab="replicate 1",ylab="replicate 2",main="RaACE2.9479 log10Ka, wildtype backgrounds");model <- lm(y~x);abline(model,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n"); points(dt_wildtype[library=="lib1" & mean_expression < 7, mean_RaACE2.9479_log10Ka],dt_wildtype[library=="lib2" & mean_expression < 7, mean_RaACE2.9479_log10Ka],pch=19,col="green")
 
-x <- dt_mutant[library=="lib1",mean_RaACE2.9479_log10Ka]; y <- dt_mutant[library=="lib2",mean_RaACE2.9479_log10Ka]; plot(x,y,pch=19,col="#00000090",xlab="replicate 1",ylab="replicate 2",main="RaACE2.9479 log10Ka, miniMS muts");model <- lm(y~x);abline(model,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
-
 #RsACE2.3364
 x <- dt_wildtype[library=="lib1" & mean_expression > 7, mean_RsACE2.3364_log10Ka]; y <- dt_wildtype[library=="lib2"& mean_expression > 7,mean_RsACE2.3364_log10Ka]; plot(x,y,pch=19,col="#00000090",xlab="replicate 1",ylab="replicate 2",main="RsACE2.3364 log10Ka, wildtype backgrounds");model <- lm(y~x);abline(model,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n"); points(dt_wildtype[library=="lib1" & mean_expression < 7, mean_RsACE2.3364_log10Ka],dt_wildtype[library=="lib2" & mean_expression < 7, mean_RsACE2.3364_log10Ka],pch=19,col="green")
 
-x <- dt_mutant[library=="lib1",mean_RsACE2.3364_log10Ka]; y <- dt_mutant[library=="lib2",mean_RsACE2.3364_log10Ka]; plot(x,y,pch=19,col="#00000090",xlab="replicate 1",ylab="replicate 2",main="RsACE2.3364 log10Ka, miniMS muts");model <- lm(y~x);abline(model,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
-
 #RsACE2.1434
 x <- dt_wildtype[library=="lib1" & mean_expression > 7, mean_RsACE2.1434_log10Ka]; y <- dt_wildtype[library=="lib2"& mean_expression > 7,mean_RsACE2.1434_log10Ka]; plot(x,y,pch=19,col="#00000090",xlab="replicate 1",ylab="replicate 2",main="RsACE2.1434 log10Ka, wildtype backgrounds");model <- lm(y~x);abline(model,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n"); points(dt_wildtype[library=="lib1" & mean_expression < 7, mean_RsACE2.1434_log10Ka],dt_wildtype[library=="lib2" & mean_expression < 7, mean_RsACE2.1434_log10Ka],pch=19,col="green")
+
+x <- dt_mutant[library=="lib1",mean_expression]; y <- dt_mutant[library=="lib2",mean_expression]; plot(x,y,pch=19,col="#00000090",xlab="replicate 1",ylab="replicate 2",main="expression, miniMS muts");model <- lm(y~x);abline(model,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
+
+x <- dt_mutant[library=="lib1",mean_huACE2_log10Ka]; y <- dt_mutant[library=="lib2",mean_huACE2_log10Ka]; plot(x,y,pch=19,col="#00000090",xlab="replicate 1",ylab="replicate 2",main="huACE2 log10Ka, miniMS muts");model <- lm(y~x);abline(model,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
+
+x <- dt_mutant[library=="lib1",mean_cvACE2_log10Ka]; y <- dt_mutant[library=="lib2",mean_cvACE2_log10Ka]; plot(x,y,pch=19,col="#00000090",xlab="replicate 1",ylab="replicate 2",main="cvACE2 log10Ka, miniMS muts");model <- lm(y~x);abline(model,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
+
+x <- dt_mutant[library=="lib1",mean_pgACE2_log10Ka]; y <- dt_mutant[library=="lib2",mean_pgACE2_log10Ka]; plot(x,y,pch=19,col="#00000090",xlab="replicate 1",ylab="replicate 2",main="pgACE2 log10Ka, miniMS muts");model <- lm(y~x);abline(model,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
+
+x <- dt_mutant[library=="lib1",mean_RaACE2.787_log10Ka]; y <- dt_mutant[library=="lib2",mean_RaACE2.787_log10Ka]; plot(x,y,pch=19,col="#00000090",xlab="replicate 1",ylab="replicate 2",main="RaACE2.787 log10Ka, miniMS muts");model <- lm(y~x);abline(model,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
+
+x <- dt_mutant[library=="lib1",mean_RaACE2.9479_log10Ka]; y <- dt_mutant[library=="lib2",mean_RaACE2.9479_log10Ka]; plot(x,y,pch=19,col="#00000090",xlab="replicate 1",ylab="replicate 2",main="RaACE2.9479 log10Ka, miniMS muts");model <- lm(y~x);abline(model,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
+
+x <- dt_mutant[library=="lib1",mean_RsACE2.3364_log10Ka]; y <- dt_mutant[library=="lib2",mean_RsACE2.3364_log10Ka]; plot(x,y,pch=19,col="#00000090",xlab="replicate 1",ylab="replicate 2",main="RsACE2.3364 log10Ka, miniMS muts");model <- lm(y~x);abline(model,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
 
 x <- dt_mutant[library=="lib1",mean_RsACE2.1434_log10Ka]; y <- dt_mutant[library=="lib2",mean_RsACE2.1434_log10Ka]; plot(x,y,pch=19,col="#00000090",xlab="replicate 1",ylab="replicate 2",main="RsACE2.1434 log10Ka, miniMS muts");model <- lm(y~x);abline(model,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
 
