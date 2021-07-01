@@ -112,6 +112,8 @@ samples_cvACE2 <- samples_cvACE2[samples_cvACE2$sample != "cvACE2_02",]
 
 samples_pgACE2 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="pgACE2","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="pgACE2","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-6, 10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12, 10^-13,0))
 
+samples_mACE2 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="mACE2","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="mACE2","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-6, 10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12, 10^-13,0))
+
 samples_RaACE2.787 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="RaACE2.787","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="RaACE2.787","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-6, 10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12, 10^-13,0))
 
 samples_RaACE2.787.pool6 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="RaACE2.787.pool6","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="RaACE2.787.pool6","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-6, 10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12, 10^-13,0))
@@ -200,6 +202,16 @@ for(i in 1:nrow(samples_pgACE2)){ #iterate through titeseq sample (concentration
   dt[,c(meanbin_out,totalcount_out) := calc.meanbin(c(get(bin1_in),get(bin2_in),get(bin3_in),get(bin4_in))),by=c("barcode","library")]
 }
 
+for(i in 1:nrow(samples_mACE2)){ #iterate through titeseq sample (concentration)
+  meanbin_out <- paste(samples_mACE2[i,"sample"],"_meanbin",sep="") #define the header name for the meanbin output for the given concentration sample
+  totalcount_out <- paste(samples_mACE2[i,"sample"],"_totalcount",sep="") #define the header name for the total cell count output for the given concentration sample
+  bin1_in <- paste(samples_mACE2[i,"sample"],"_bin1",sep="") #define the header names for the input cell counts for bins1-4 of the given concnetration sample
+  bin2_in <- paste(samples_mACE2[i,"sample"],"_bin2",sep="")
+  bin3_in <- paste(samples_mACE2[i,"sample"],"_bin3",sep="")
+  bin4_in <- paste(samples_mACE2[i,"sample"],"_bin4",sep="")
+  dt[,c(meanbin_out,totalcount_out) := calc.meanbin(c(get(bin1_in),get(bin2_in),get(bin3_in),get(bin4_in))),by=c("barcode","library")]
+}
+
 for(i in 1:nrow(samples_RaACE2.787)){ #iterate through titeseq sample (concentration)
   meanbin_out <- paste(samples_RaACE2.787[i,"sample"],"_meanbin",sep="") #define the header name for the meanbin output for the given concentration sample
   totalcount_out <- paste(samples_RaACE2.787[i,"sample"],"_totalcount",sep="") #define the header name for the total cell count output for the given concentration sample
@@ -285,6 +297,9 @@ dt[,cvACE2_avgcount := mean(c(cvACE2_01_totalcount,cvACE2_03_totalcount,cvACE2_0
 dt[,pgACE2_avgcount := mean(c(pgACE2_01_totalcount,pgACE2_02_totalcount,pgACE2_03_totalcount,pgACE2_04_totalcount,
                                 pgACE2_05_totalcount,pgACE2_06_totalcount,pgACE2_07_totalcount,pgACE2_08_totalcount,
                                 pgACE2_09_totalcount),na.rm=T),by=c("library","barcode")]
+dt[,mACE2_avgcount := mean(c(mACE2_01_totalcount,mACE2_02_totalcount,mACE2_03_totalcount,mACE2_04_totalcount,
+                                mACE2_05_totalcount,mACE2_06_totalcount,mACE2_07_totalcount,mACE2_08_totalcount,
+                                mACE2_09_totalcount),na.rm=T),by=c("library","barcode")]
 dt[,RaACE2.787_avgcount := mean(c(RaACE2.787_01_totalcount,RaACE2.787_02_totalcount,RaACE2.787_03_totalcount,RaACE2.787_04_totalcount,
                                 RaACE2.787_05_totalcount,RaACE2.787_06_totalcount,RaACE2.787_07_totalcount,RaACE2.787_08_totalcount,
                                 RaACE2.787_09_totalcount),na.rm=T),by=c("library","barcode")]
@@ -325,6 +340,11 @@ dt[,pgACE2_min_cell_filtered := sum(c(c(pgACE2_01_totalcount,pgACE2_02_totalcoun
                                         pgACE2_09_totalcount)<cutoff,is.na(c(pgACE2_01_totalcount,pgACE2_02_totalcount,pgACE2_03_totalcount,pgACE2_04_totalcount,
                                                                              pgACE2_05_totalcount,pgACE2_06_totalcount,pgACE2_07_totalcount,pgACE2_08_totalcount,
                                                                              pgACE2_09_totalcount))),na.rm=T),by=c("library","barcode")]
+dt[,mACE2_min_cell_filtered := sum(c(c(mACE2_01_totalcount,mACE2_02_totalcount,mACE2_03_totalcount,mACE2_04_totalcount,
+                                        mACE2_05_totalcount,mACE2_06_totalcount,mACE2_07_totalcount,mACE2_08_totalcount,
+                                        mACE2_09_totalcount)<cutoff,is.na(c(mACE2_01_totalcount,mACE2_02_totalcount,mACE2_03_totalcount,mACE2_04_totalcount,
+                                                                             mACE2_05_totalcount,mACE2_06_totalcount,mACE2_07_totalcount,mACE2_08_totalcount,
+                                                                             mACE2_09_totalcount))),na.rm=T),by=c("library","barcode")]
 dt[,RaACE2.787_min_cell_filtered := sum(c(c(RaACE2.787_01_totalcount,RaACE2.787_02_totalcount,RaACE2.787_03_totalcount,RaACE2.787_04_totalcount,
                                         RaACE2.787_05_totalcount,RaACE2.787_06_totalcount,RaACE2.787_07_totalcount,RaACE2.787_08_totalcount,
                                         RaACE2.787_09_totalcount)<cutoff,is.na(c(RaACE2.787_01_totalcount,RaACE2.787_02_totalcount,RaACE2.787_03_totalcount,RaACE2.787_04_totalcount,
@@ -424,6 +444,16 @@ dt[,c("Kd_pgACE2","Kd_SE_pgACE2","response_pgACE2","baseline_pgACE2","nMSR_pgACE
                                          pgACE2_05_totalcount,pgACE2_06_totalcount,pgACE2_07_totalcount,pgACE2_08_totalcount,pgACE2_09_totalcount)),
               error=function(e){list(as.numeric(NA),as.numeric(NA),as.numeric(NA),as.numeric(NA),as.numeric(NA))}),by=c("library","barcode")]
 
+#fit titration to mACE2 Titeseq data for each barcode
+dt[,c("Kd_mACE2","Kd_SE_mACE2","response_mACE2","baseline_mACE2","nMSR_mACE2") :=
+     tryCatch(fit.titration(y.vals=c(mACE2_01_meanbin,mACE2_02_meanbin,mACE2_03_meanbin,mACE2_04_meanbin,
+                                     mACE2_05_meanbin,mACE2_06_meanbin,mACE2_07_meanbin,mACE2_08_meanbin,
+                                     mACE2_09_meanbin),
+                            x.vals=samples_mACE2$conc,
+                            count.vals=c(mACE2_01_totalcount,mACE2_02_totalcount,mACE2_03_totalcount,mACE2_04_totalcount,
+                                         mACE2_05_totalcount,mACE2_06_totalcount,mACE2_07_totalcount,mACE2_08_totalcount,mACE2_09_totalcount)),
+              error=function(e){list(as.numeric(NA),as.numeric(NA),as.numeric(NA),as.numeric(NA),as.numeric(NA))}),by=c("library","barcode")]
+
 #fit titration to RaACE2.787 Titeseq data for each barcode
 dt[,c("Kd_RaACE2.787","Kd_SE_RaACE2.787","response_RaACE2.787","baseline_RaACE2.787","nMSR_RaACE2.787") :=
      tryCatch(fit.titration(y.vals=c(RaACE2.787_01_meanbin,RaACE2.787_02_meanbin,RaACE2.787_03_meanbin,RaACE2.787_04_meanbin,
@@ -496,15 +526,15 @@ hit the different boundary conditions of the fit variables.
 
 We successfully generated *K*<sub>D,app</sub> estimates for 74.27% of
 our lib1+lib2 huACE2 titrations, 76.23% of our lib1+lib2 cvACE2
-titrations, 64.33% of our lib1+lib2 pgACE2 titrations, 75.33% of our
-lib1+lib2 RaACE2.787 titrations, 71.69% of our lib1+lib2 RaACE2.9479
-titrations, 74.42% of our lib1+lib2 RsACE2.3364 titrations, and 67.29%
-of our lib1+lib2 RsACE2.1434 titrations. To allow manual checks of what
-the data looks like for different curve fits, I define functions that
-take a row from the dt table and the corresponding table of fits, and
-plots the meanbin estimates and the fit titration curve (if converged).
-This allows for quick and easy troubleshooting and spot-checking of
-curves.
+titrations, 64.33% of our lib1+lib2 pgACE2 titrations, 68.72% of our
+lib1+lib2 mACE2 titrations, 75.33% of our lib1+lib2 RaACE2.787
+titrations, 71.69% of our lib1+lib2 RaACE2.9479 titrations, 74.42% of
+our lib1+lib2 RsACE2.3364 titrations, and 67.29% of our lib1+lib2
+RsACE2.1434 titrations. To allow manual checks of what the data looks
+like for different curve fits, I define functions that take a row from
+the dt table and the corresponding table of fits, and plots the meanbin
+estimates and the fit titration curve (if converged). This allows for
+quick and easy troubleshooting and spot-checking of curves.
 
 ``` r
 #make functions that allow me to plot a titration for any given row from the counts data frames, for spot checking curves
@@ -542,11 +572,12 @@ plot.titration <- function(row,ACE2,output.text=F){
 Let’s look at our distribution of *K*<sub>D,app</sub> estimates.
 
 ``` r
-par(mfrow=c(10,1))
+par(mfrow=c(11,1))
 hist(log10(dt$Kd_huACE2),col="gray40",breaks=60,xlab="log10(K_D,app), huACE2 (M)",main="",xlim=c(-13,-5))
 hist(log10(dt$Kd_huACE2.pool6),col="gray40",breaks=60,xlab="log10(K_D,app), huACE2.pool6 (M)",main="",xlim=c(-13,-5))
 hist(log10(dt$Kd_cvACE2),col="gray40",breaks=60,xlab="log10(K_D,app), cvACE2 (M)",main="",xlim=c(-13,-5))
 hist(log10(dt$Kd_pgACE2),col="gray40",breaks=60,xlab="log10(K_D,app), pgACE2 (M)",main="",xlim=c(-13,-5))
+hist(log10(dt$Kd_mACE2),col="gray40",breaks=60,xlab="log10(K_D,app), mACE2 (M)",main="",xlim=c(-13,-5))
 hist(log10(dt$Kd_RaACE2.787),col="gray40",breaks=60,xlab="log10(K_D,app), RaACE2.787 (M)",main="",xlim=c(-13,-5))
 hist(log10(dt$Kd_RaACE2.787.pool6),col="gray40",breaks=60,xlab="log10(K_D,app), RaACE2.787.pool6 (M)",main="",xlim=c(-13,-5))
 hist(log10(dt$Kd_RaACE2.9479),col="gray40",breaks=60,xlab="log10(K_D,app), RaACE2.9479 (M)",main="",xlim=c(-13,-5))
@@ -574,8 +605,9 @@ plot.titration(which(dt$Kd_huACE2==max(dt$Kd_huACE2,na.rm=T))[1],"huACE2")
 plot.titration(which(dt$Kd_huACE2.pool6==max(dt$Kd_huACE2.pool6,na.rm=T))[1],"huACE2.pool6")
 plot.titration(which(dt$Kd_cvACE2==max(dt$Kd_cvACE2,na.rm=T))[1],"cvACE2")
 plot.titration(which(dt$Kd_pgACE2==max(dt$Kd_pgACE2,na.rm=T))[1],"pgACE2")
+plot.titration(which(dt$Kd_mACE2==max(dt$Kd_mACE2,na.rm=T))[1],"mACE2")
 plot.titration(which(dt$Kd_RaACE2.787==max(dt$Kd_RaACE2.787,na.rm=T))[1],"RaACE2.787")
-plot.titration(which(dt$Kd_RaACE2.787.pool6==max(dt$Kd_RaACE2.787.pool6,na.rm=T))[1],"RaACE2.787.pool6")
+#plot.titration(which(dt$Kd_RaACE2.787.pool6==max(dt$Kd_RaACE2.787.pool6,na.rm=T))[1],"RaACE2.787.pool6")
 plot.titration(which(dt$Kd_RaACE2.9479==max(dt$Kd_RaACE2.9479,na.rm=T))[1],"RaACE2.9479")
 plot.titration(which(dt$Kd_RsACE2.3364==max(dt$Kd_RsACE2.3364,na.rm=T))[1],"RsACE2.3364")
 plot.titration(which(dt$Kd_RsACE2.1434==max(dt$Kd_RsACE2.1434,na.rm=T))[1],"RsACE2.1434")
@@ -595,8 +627,9 @@ plot.titration(which(dt$Kd_huACE2 > 1e-6 & dt$Kd_huACE2 < 1.2e-6)[1],"huACE2")
 plot.titration(which(dt$Kd_huACE2.pool6 > 1e-6 & dt$Kd_huACE2.pool6 < 1.2e-6)[1],"huACE2.pool6")
 plot.titration(which(dt$Kd_cvACE2 > 1e-6 & dt$Kd_cvACE2 < 1.2e-6)[1],"cvACE2")
 plot.titration(which(dt$Kd_pgACE2 > 1e-6 & dt$Kd_pgACE2 < 1.2e-6)[1],"pgACE2")
+plot.titration(which(dt$Kd_mACE2 > 1e-6 & dt$Kd_mACE2 < 1.2e-6)[1],"mACE2")
 plot.titration(which(dt$Kd_RaACE2.787 > 1e-6 & dt$Kd_RaACE2.787 < 1.2e-6)[1],"RaACE2.787")
-plot.titration(which(dt$Kd_RaACE2.787.pool6 > 1e-6 & dt$Kd_RaACE2.787.pool6 < 1.2e-6)[1],"RaACE2.787.pool6")
+#plot.titration(which(dt$Kd_RaACE2.787.pool6 > 1e-6 & dt$Kd_RaACE2.787.pool6 < 1.2e-6)[1],"RaACE2.787.pool6")
 plot.titration(which(dt$Kd_RaACE2.9479 > 1e-6 & dt$Kd_RaACE2.9479 < 1.2e-6)[1],"RaACE2.9479")
 plot.titration(which(dt$Kd_RsACE2.3364 > 1e-6 & dt$Kd_RsACE2.3364 < 1.2e-6)[1],"RsACE2.3364")
 plot.titration(which(dt$Kd_RsACE2.1434 > 1e-6 & dt$Kd_RsACE2.1434 < 1.2e-6)[1],"RsACE2.1434")
@@ -612,8 +645,9 @@ plot.titration(which(dt$Kd_huACE2 > 1e-7 & dt$Kd_huACE2 < 1.2e-7)[1],"huACE2")
 plot.titration(which(dt$Kd_huACE2.pool6 > 1e-7 & dt$Kd_huACE2.pool6 < 1.2e-7)[1],"huACE2.pool6")
 plot.titration(which(dt$Kd_cvACE2 > 1e-7 & dt$Kd_cvACE2 < 1.2e-7)[1],"cvACE2")
 plot.titration(which(dt$Kd_pgACE2 > 1e-7 & dt$Kd_pgACE2 < 1.2e-7)[1],"pgACE2")
+plot.titration(which(dt$Kd_mACE2 > 1e-7 & dt$Kd_mACE2 < 1.2e-7)[1],"mACE2")
 plot.titration(which(dt$Kd_RaACE2.787 > 1e-7 & dt$Kd_RaACE2.787 < 1.2e-7)[1],"RaACE2.787")
-plot.titration(which(dt$Kd_RaACE2.787.pool6 > 1e-7 & dt$Kd_RaACE2.787.pool6 < 1.2e-7)[1],"RaACE2.787.pool6")
+#plot.titration(which(dt$Kd_RaACE2.787.pool6 > 1e-7 & dt$Kd_RaACE2.787.pool6 < 1.2e-7)[1],"RaACE2.787.pool6")
 plot.titration(which(dt$Kd_RaACE2.9479 > 1e-7 & dt$Kd_RaACE2.9479 < 1.2e-7)[1],"RaACE2.9479")
 plot.titration(which(dt$Kd_RsACE2.3364 > 1e-7 & dt$Kd_RsACE2.3364 < 1.2e-7)[1],"RsACE2.3364")
 plot.titration(which(dt$Kd_RsACE2.1434 > 1e-7 & dt$Kd_RsACE2.1434 < 1.2e-7)[1],"RsACE2.1434")
@@ -629,8 +663,9 @@ plot.titration(which(dt$Kd_huACE2 > 1e-8 & dt$Kd_huACE2 < 1.3e-8)[1],"huACE2")
 plot.titration(which(dt$Kd_huACE2.pool6 > 1e-8 & dt$Kd_huACE2.pool6 < 1.2e-8)[1],"huACE2.pool6")
 plot.titration(which(dt$Kd_cvACE2 > 1e-8 & dt$Kd_cvACE2 < 1.2e-8)[1],"cvACE2")
 plot.titration(which(dt$Kd_pgACE2 > 1e-8 & dt$Kd_pgACE2 < 1.2e-8)[1],"pgACE2")
+plot.titration(which(dt$Kd_mACE2 > 1e-8 & dt$Kd_mACE2 < 1.2e-8)[1],"mACE2")
 plot.titration(which(dt$Kd_RaACE2.787 > 1e-8 & dt$Kd_RaACE2.787 < 1.2e-8)[1],"RaACE2.787")
-plot.titration(which(dt$Kd_RaACE2.787.pool6 > 1e-8 & dt$Kd_RaACE2.787.pool6 < 1.2e-8)[1],"RaACE2.787.pool6")
+#plot.titration(which(dt$Kd_RaACE2.787.pool6 > 1e-8 & dt$Kd_RaACE2.787.pool6 < 1.2e-8)[1],"RaACE2.787.pool6")
 plot.titration(which(dt$Kd_RaACE2.9479 > 1e-8 & dt$Kd_RaACE2.9479 < 1.2e-8)[1],"RaACE2.9479")
 plot.titration(which(dt$Kd_RsACE2.3364 > 1e-8 & dt$Kd_RsACE2.3364 < 1.2e-8)[1],"RsACE2.3364")
 plot.titration(which(dt$Kd_RsACE2.1434 > 1e-8 & dt$Kd_RsACE2.1434 < 1.2e-8)[1],"RsACE2.1434")
@@ -646,8 +681,9 @@ plot.titration(which(dt$Kd_huACE2 > 1e-9 & dt$Kd_huACE2 < 1.2e-9)[1],"huACE2")
 plot.titration(which(dt$Kd_huACE2.pool6 > 1e-9 & dt$Kd_huACE2.pool6 < 1.2e-9)[1],"huACE2.pool6")
 plot.titration(which(dt$Kd_cvACE2 > 1e-9 & dt$Kd_cvACE2 < 1.2e-9)[1],"cvACE2")
 plot.titration(which(dt$Kd_pgACE2 > 1e-9 & dt$Kd_pgACE2 < 1.2e-9)[1],"pgACE2")
+plot.titration(which(dt$Kd_mACE2 > 1e-9 & dt$Kd_mACE2 < 1.2e-9)[1],"mACE2")
 plot.titration(which(dt$Kd_RaACE2.787 > 1e-9 & dt$Kd_RaACE2.787 < 1.3e-9)[1],"RaACE2.787")
-plot.titration(which(dt$Kd_RaACE2.787.pool6 > 1e-9 & dt$Kd_RaACE2.787.pool6 < 1.2e-9)[1],"RaACE2.787.pool6")
+#plot.titration(which(dt$Kd_RaACE2.787.pool6 > 1e-9 & dt$Kd_RaACE2.787.pool6 < 1.2e-9)[1],"RaACE2.787.pool6")
 plot.titration(which(dt$Kd_RaACE2.9479 > 1e-9 & dt$Kd_RaACE2.9479 < 1.3e-9)[1],"RaACE2.9479")
 plot.titration(which(dt$Kd_RsACE2.3364 > 9e-10 & dt$Kd_RsACE2.3364 < 1.4e-9)[1],"RsACE2.3364")
 plot.titration(which(dt$Kd_RsACE2.1434 > 9e-10 & dt$Kd_RsACE2.1434 < 1.4e-9)[1],"RsACE2.1434")
@@ -663,8 +699,9 @@ plot.titration(which(dt$Kd_huACE2 > 10^-10.5 & dt$Kd_huACE2 < 10^-9.5)[1],"huACE
 plot.titration(which(dt$Kd_huACE2.pool6 > 1e-10 & dt$Kd_huACE2.pool6 < 1.2e-10)[1],"huACE2.pool6")
 plot.titration(which(dt$Kd_cvACE2 > 1e-10 & dt$Kd_cvACE2 < 1.2e-10)[1],"cvACE2")
 plot.titration(which(dt$Kd_pgACE2 > 1e-10 & dt$Kd_pgACE2 < 1.2e-10)[1],"pgACE2")
+plot.titration(which(dt$Kd_mACE2 > 1e-10 & dt$Kd_mACE2 < 1.2e-10)[1],"mACE2")
 plot.titration(which(dt$Kd_RaACE2.787 > 1e-10 & dt$Kd_RaACE2.787 < 1.3e-10)[1],"RaACE2.787")
-plot.titration(which(dt$Kd_RaACE2.787.pool6 > 1e-10 & dt$Kd_RaACE2.787.pool6 < 1.2e-10)[1],"RaACE2.787.pool6")
+#plot.titration(which(dt$Kd_RaACE2.787.pool6 > 1e-10 & dt$Kd_RaACE2.787.pool6 < 1.2e-10)[1],"RaACE2.787.pool6")
 plot.titration(which(dt$Kd_RaACE2.9479 > 1e-10 & dt$Kd_RaACE2.9479 < 1.3e-10)[1],"RaACE2.9479")
 plot.titration(which(dt$Kd_RsACE2.3364 > 1e-10 & dt$Kd_RsACE2.3364 < 1.4e-10)[1],"RsACE2.3364")
 plot.titration(which(dt$Kd_RsACE2.1434 > 1e-10 & dt$Kd_RsACE2.1434 < 1.4e-10)[1],"RsACE2.1434")
@@ -691,6 +728,7 @@ hist(dt$nMSR_huACE2,main="huACE2",xlab="Response-normalized mean squared residua
 hist(dt$nMSR_huACE2.pool6,main="huACE2.pool6",xlab="Response-normalized mean squared residual",col="gray50",breaks=40,xlim=c(0,0.6))
 hist(dt$nMSR_cvACE2,main="cvACE2",xlab="Response-normalized mean squared residual",col="gray50",breaks=40,xlim=c(0,0.6))
 hist(dt$nMSR_pgACE2,main="pgACE2",xlab="Response-normalized mean squared residual",col="gray50",breaks=40,xlim=c(0,0.6))
+hist(dt$nMSR_mACE2,main="mACE2",xlab="Response-normalized mean squared residual",col="gray50",breaks=40,xlim=c(0,0.6))
 hist(dt$nMSR_RaACE2.787,main="RaACE2.787",xlab="Response-normalized mean squared residual",col="gray50",breaks=40,xlim=c(0,0.6))
 hist(dt$nMSR_RaACE2.787.pool6,main="RaACE2.787.pool6",xlab="Response-normalized mean squared residual",col="gray50",breaks=40,xlim=c(0,0.6))
 hist(dt$nMSR_RaACE2.9479,main="RaACE2.9479",xlab="Response-normalized mean squared residual",col="gray50",breaks=40,xlim=c(0,0.6))
@@ -725,6 +763,10 @@ legend("topleft",bty="n",cex=1,legend=paste(format(100*nrow(dt[nMSR_cvACE2 > 10*
 plot(log10(dt$pgACE2_avgcount),dt$nMSR_pgACE2,main="pgACE2",pch=19,col="#00000010",xlab="average cell count (log10)",ylab="nMSR",xlim=c(1,3),ylim=c(0,0.6))
 abline(h=10*median.nMSR,col="red",lty=2)
 legend("topleft",bty="n",cex=1,legend=paste(format(100*nrow(dt[nMSR_pgACE2 > 10*median.nMSR & !is.na(nMSR_pgACE2),])/nrow(dt[!is.na(nMSR_pgACE2),]),digits=3),"%"))
+
+plot(log10(dt$mACE2_avgcount),dt$nMSR_mACE2,main="mACE2",pch=19,col="#00000010",xlab="average cell count (log10)",ylab="nMSR",xlim=c(1,3),ylim=c(0,0.6))
+abline(h=10*median.nMSR,col="red",lty=2)
+legend("topleft",bty="n",cex=1,legend=paste(format(100*nrow(dt[nMSR_mACE2 > 10*median.nMSR & !is.na(nMSR_mACE2),])/nrow(dt[!is.na(nMSR_mACE2),]),digits=3),"%"))
 
 plot(log10(dt$RaACE2.787_avgcount),dt$nMSR_RaACE2.787,main="RaACE2.787",pch=19,col="#00000010",xlab="average cell count (log10)",ylab="nMSR",xlim=c(1,3),ylim=c(0,0.6))
 abline(h=10*median.nMSR,col="red",lty=2)
@@ -761,6 +803,7 @@ dt[nMSR_huACE2 > 10*median.nMSR,c("Kd_huACE2","Kd_SE_huACE2","response_huACE2","
 dt[nMSR_huACE2.pool6 > 10*median.nMSR,c("Kd_huACE2.pool6","Kd_SE_huACE2.pool6","response_huACE2.pool6","baseline_huACE2.pool6") := list(as.numeric(NA),as.numeric(NA),as.numeric(NA),as.numeric(NA))]
 dt[nMSR_cvACE2 > 10*median.nMSR,c("Kd_cvACE2","Kd_SE_cvACE2","response_cvACE2","baseline_cvACE2") := list(as.numeric(NA),as.numeric(NA),as.numeric(NA),as.numeric(NA))]
 dt[nMSR_pgACE2 > 10*median.nMSR,c("Kd_pgACE2","Kd_SE_pgACE2","response_pgACE2","baseline_pgACE2") := list(as.numeric(NA),as.numeric(NA),as.numeric(NA),as.numeric(NA))]
+dt[nMSR_mACE2 > 10*median.nMSR,c("Kd_mACE2","Kd_SE_mACE2","response_mACE2","baseline_mACE2") := list(as.numeric(NA),as.numeric(NA),as.numeric(NA),as.numeric(NA))]
 dt[nMSR_RaACE2.787 > 10*median.nMSR,c("Kd_RaACE2.787","Kd_SE_RaACE2.787","response_RaACE2.787","baseline_RaACE2.787") := list(as.numeric(NA),as.numeric(NA),as.numeric(NA),as.numeric(NA))]
 dt[nMSR_RaACE2.787.pool6 > 10*median.nMSR,c("Kd_RaACE2.787.pool6","Kd_SE_RaACE2.787.pool6","response_RaACE2.787.pool6","baseline_RaACE2.787.pool6") := list(as.numeric(NA),as.numeric(NA),as.numeric(NA),as.numeric(NA))]
 dt[nMSR_RaACE2.9479 > 10*median.nMSR,c("Kd_RaACE2.9479","Kd_SE_RaACE2.9479","response_RaACE2.9479","baseline_RaACE2.9479") := list(as.numeric(NA),as.numeric(NA),as.numeric(NA),as.numeric(NA))]
@@ -783,6 +826,7 @@ dt[,log10Kd_huACE2 := log10(Kd_huACE2),by=c("barcode","library")]
 dt[,log10Kd_huACE2.pool6 := log10(Kd_huACE2.pool6),by=c("barcode","library")]
 dt[,log10Kd_cvACE2 := log10(Kd_cvACE2),by=c("barcode","library")]
 dt[,log10Kd_pgACE2 := log10(Kd_pgACE2),by=c("barcode","library")]
+dt[,log10Kd_mACE2 := log10(Kd_mACE2),by=c("barcode","library")]
 dt[,log10Kd_RaACE2.787 := log10(Kd_RaACE2.787),by=c("barcode","library")]
 dt[,log10Kd_RaACE2.787.pool6 := log10(Kd_RaACE2.787.pool6),by=c("barcode","library")]
 dt[,log10Kd_RaACE2.9479 := log10(Kd_RaACE2.9479),by=c("barcode","library")]
@@ -794,6 +838,7 @@ dt[,log10Ka_huACE2 := -log10Kd_huACE2,by=c("barcode","library")]
 dt[,log10Ka_huACE2.pool6 := -log10Kd_huACE2.pool6,by=c("barcode","library")]
 dt[,log10Ka_cvACE2 := -log10Kd_cvACE2,by=c("barcode","library")]
 dt[,log10Ka_pgACE2 := -log10Kd_pgACE2,by=c("barcode","library")]
+dt[,log10Ka_mACE2 := -log10Kd_mACE2,by=c("barcode","library")]
 dt[,log10Ka_RaACE2.787 := -log10Kd_RaACE2.787,by=c("barcode","library")]
 dt[,log10Ka_RaACE2.787.pool6 := -log10Kd_RaACE2.787.pool6,by=c("barcode","library")]
 dt[,log10Ka_RaACE2.9479:= -log10Kd_RaACE2.9479,by=c("barcode","library")]
@@ -824,32 +869,37 @@ p3 <- ggplot(dt[!is.na(log10Ka_pgACE2) & variant_class=="wildtype",],aes(x=targe
   ggtitle("pgACE2")+xlab("homolog")+theme(axis.text.x=element_text(angle=-90,hjust=0))+
   scale_y_continuous(limits=c(4.99,12))
 
-p4 <- ggplot(dt[!is.na(log10Ka_RaACE2.787) & variant_class=="wildtype",],aes(x=target,y=log10Ka_RaACE2.787))+
+p4 <- ggplot(dt[!is.na(log10Ka_mACE2) & variant_class=="wildtype",],aes(x=target,y=log10Ka_mACE2))+
+  geom_violin(scale="width")+stat_summary(fun=median,geom="point",size=1)+
+  ggtitle("mACE2")+xlab("homolog")+theme(axis.text.x=element_text(angle=-90,hjust=0))+
+  scale_y_continuous(limits=c(4.99,12))
+
+p5 <- ggplot(dt[!is.na(log10Ka_RaACE2.787) & variant_class=="wildtype",],aes(x=target,y=log10Ka_RaACE2.787))+
   geom_violin(scale="width")+stat_summary(fun=median,geom="point",size=1)+
   ggtitle("RaACE2.787")+xlab("homolog")+theme(axis.text.x=element_text(angle=-90,hjust=0))+
   scale_y_continuous(limits=c(4.99,12))
 
-p5 <- ggplot(dt[!is.na(log10Ka_RaACE2.9479) & variant_class=="wildtype",],aes(x=target,y=log10Ka_RaACE2.9479))+
+p6 <- ggplot(dt[!is.na(log10Ka_RaACE2.9479) & variant_class=="wildtype",],aes(x=target,y=log10Ka_RaACE2.9479))+
   geom_violin(scale="width")+stat_summary(fun=median,geom="point",size=1)+
   ggtitle("RaACE2.9479")+xlab("homolog")+theme(axis.text.x=element_text(angle=-90,hjust=0))+
   scale_y_continuous(limits=c(4.99,12))
 
-p6 <- ggplot(dt[!is.na(log10Ka_RsACE2.3364) & variant_class=="wildtype",],aes(x=target,y=log10Ka_RsACE2.3364))+
+p7 <- ggplot(dt[!is.na(log10Ka_RsACE2.3364) & variant_class=="wildtype",],aes(x=target,y=log10Ka_RsACE2.3364))+
   geom_violin(scale="width")+stat_summary(fun=median,geom="point",size=1)+
   ggtitle("RsACE2.3364")+xlab("homolog")+theme(axis.text.x=element_text(angle=-90,hjust=0))+
   scale_y_continuous(limits=c(4.99,12))
 
-p7 <- ggplot(dt[!is.na(log10Ka_RsACE2.1434) & variant_class=="wildtype",],aes(x=target,y=log10Ka_RsACE2.1434))+
+p8 <- ggplot(dt[!is.na(log10Ka_RsACE2.1434) & variant_class=="wildtype",],aes(x=target,y=log10Ka_RsACE2.1434))+
   geom_violin(scale="width")+stat_summary(fun=median,geom="point",size=1)+
   ggtitle("RsACE2.1434")+xlab("homolog")+theme(axis.text.x=element_text(angle=-90,hjust=0))+
   scale_y_continuous(limits=c(4.99,12))
 
-p8 <- ggplot(dt[!is.na(log10Ka_RpACE2) & variant_class=="wildtype",],aes(x=target,y=log10Ka_RpACE2))+
+p9 <- ggplot(dt[!is.na(log10Ka_RpACE2) & variant_class=="wildtype",],aes(x=target,y=log10Ka_RpACE2))+
   geom_violin(scale="width")+stat_summary(fun=median,geom="point",size=1)+
   ggtitle("RpACE2")+xlab("homolog")+theme(axis.text.x=element_text(angle=-90,hjust=0))+
   scale_y_continuous(limits=c(5.99,12))
 
-grid.arrange(p1,p2,p3,p4,p5,p6,p7,p8,ncol=1)
+grid.arrange(p1,p2,p3,p4,p5,p6,p7,p8,p9,ncol=1)
 ```
 
     ## Warning: Removed 3 rows containing non-finite values (stat_ydensity).
@@ -883,6 +933,7 @@ dt[,.(library,barcode,target,variant_class,wildtype,position,mutant,
      huACE2.pool6_avgcount,log10Kd_huACE2.pool6,log10Ka_huACE2.pool6,nMSR_huACE2.pool6,
      cvACE2_avgcount,log10Kd_cvACE2,log10Ka_cvACE2,nMSR_cvACE2,
      pgACE2_avgcount,log10Kd_pgACE2,log10Ka_pgACE2,nMSR_pgACE2,
+     mACE2_avgcount,log10Kd_mACE2,log10Ka_mACE2,nMSR_mACE2,
      RaACE2.787_avgcount,log10Kd_RaACE2.787,log10Ka_RaACE2.787,nMSR_RaACE2.787,
      RaACE2.787.pool6_avgcount,log10Kd_RaACE2.787.pool6,log10Ka_RaACE2.787.pool6,nMSR_RaACE2.787.pool6,
      RaACE2.9479_avgcount,log10Kd_RaACE2.9479,log10Ka_RaACE2.9479,nMSR_RaACE2.9479,

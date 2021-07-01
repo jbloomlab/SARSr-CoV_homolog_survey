@@ -67,6 +67,8 @@ samples_cvACE2 <- samples_cvACE2[samples_cvACE2$sample != "cvACE2_02",]
 
 samples_pgACE2 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="pgACE2","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="pgACE2","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-6, 10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12, 10^-13,0))
 
+samples_mACE2 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="mACE2","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="mACE2","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-6, 10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12, 10^-13,0))
+
 
 samples_RaACE2.787 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="RaACE2.787","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="RaACE2.787","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-6, 10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12, 10^-13,0))
 
@@ -197,8 +199,51 @@ if(is.na(mutation)){
 }
 ```
 
-```{r SARS2_huACE2, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
-homolog <- "SARS-CoV-2";ACE2 <- "huACE2";mutation <- NA
+```{r SARS2_huACE2_N501Y, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
+homolog <- "SARS-CoV-2";ACE2 <- "huACE2";mutation <- "N501Y"
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+```{r SARS1_huACE2, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
+homolog <- "SARS-CoV-1_Urbani_HP03L";ACE2 <- "huACE2";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+
+```{r SARS1_huACE2_T501Y, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
+homolog <- "SARS-CoV-1_Urbani_HP03L";ACE2 <- "huACE2";mutation <- "T501Y"
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+```{r GDPang_huACE2, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
+homolog <- "GD-Pangolin";ACE2 <- "huACE2";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+```{r GDPang_huACE2_N501Y, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
+homolog <- "GD-Pangolin";ACE2 <- "huACE2";mutation <- "N501Y"
 plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
 #save pdf
 if(is.na(mutation)){

@@ -57,162 +57,94 @@ dt_wt <- data.table(read.csv(config$final_variant_scores_wt_file),stringsAsFacto
 dt_wt[,target := factor(dt_wt$target,levels=config$targets_ordered)]
 ```
 
-## Calculate "preferences" at each site for binding
+## Compute correlations in mutant binding constants between background and across ACE2s
 
-Calculate preference by exponentiating an alpha-multiplied delta_log10Ka, and normalizing values at each site to sum to one. 
+First, just illustrate correlations with SARS2 for huACE2 binding
 
-```{r calculate_prefs}
-alpha <- 3.5
-dt_mutant[,pref_huACE2:=as.numeric(NA)]
-for(i in 1:nrow(dt_mutant)){
-  dt_mutant[i,"pref_huACE2"] <- exp(alpha*dt_mutant[i,huACE2])/sum(exp(alpha*dt_mutant[target==dt_mutant[i,target] & position==dt_mutant[i,position],huACE2]),na.rm=T)
+```{r correlation_plots_v_SARS2_huACE2, fig.width=18, fig.height=40, fig.align="center", dpi=300,dev="png"}
+par(mfrow=c(13, 6))
+for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-2"]){
+  for(site in c(455, 486, 493, 494, 498, 501)){
+    plot(dt_mutant[target=="SARS-CoV-2" & position==site,huACE2],dt_mutant[target==RBD2 & position==site,huACE2], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
+    legend("topleft",bty="n",cex=1,legend=format(summary(lm(dt_mutant[target==RBD2 & position==site,huACE2] ~ dt_mutant[target=="SARS-CoV-2" & position==site,huACE2]))$r.squared,digits=2))
+  }
 }
 
-for(i in 1:nrow(dt_mutant)){
-  dt_mutant[i,"pref_cvACE2"] <- exp(alpha*dt_mutant[i,cvACE2])/sum(exp(alpha*dt_mutant[target==dt_mutant[i,target] & position==dt_mutant[i,position],cvACE2]),na.rm=T)
-}
-
-for(i in 1:nrow(dt_mutant)){
-  dt_mutant[i,"pref_pgACE2"] <- exp(alpha*dt_mutant[i,pgACE2])/sum(exp(alpha*dt_mutant[target==dt_mutant[i,target] & position==dt_mutant[i,position],pgACE2]),na.rm=T)
-}
-
-for(i in 1:nrow(dt_mutant)){
-  dt_mutant[i,"pref_RaACE2.787"] <- exp(alpha*dt_mutant[i,RaACE2.787])/sum(exp(alpha*dt_mutant[target==dt_mutant[i,target] & position==dt_mutant[i,position],RaACE2.787]),na.rm=T)
-}
-
-for(i in 1:nrow(dt_mutant)){
-  dt_mutant[i,"pref_RaACE2.9479"] <- exp(alpha*dt_mutant[i,RaACE2.9479])/sum(exp(alpha*dt_mutant[target==dt_mutant[i,target] & position==dt_mutant[i,position],RaACE2.9479]),na.rm=T)
-}
-
-for(i in 1:nrow(dt_mutant)){
-  dt_mutant[i,"pref_RsACE2.3364"] <- exp(alpha*dt_mutant[i,RsACE2.3364])/sum(exp(alpha*dt_mutant[target==dt_mutant[i,target] & position==dt_mutant[i,position],RsACE2.3364]),na.rm=T)
-}
-
-for(i in 1:nrow(dt_mutant)){
-  dt_mutant[i,"pref_RsACE2.1434"] <- exp(alpha*dt_mutant[i,RsACE2.1434])/sum(exp(alpha*dt_mutant[target==dt_mutant[i,target] & position==dt_mutant[i,position],RsACE2.1434]),na.rm=T)
-}
-```
-
-Use `ggseqlogo` to draw logoplots from preferences.
-
-First, define color scheme for letters
-```{r ggseq_colors}
-cs1 <- make_col_scheme(chars=c("A","C","D","E","F","G","H","I","K","L","M","N","P","Q","R","S","T","V","W","Y"),
-                       groups=c("small","small","acidic","acidic","nonpolar","small","basic","nonpolar","basic","nonpolar","nonpolar","polar","small","polar","basic","polar","polar","nonpolar","nonpolar","nonpolar"),
-                       cols=c("gray40","gray40","#D52939","#D52939","black","gray40","#275D9A","black","#275D9A","black","black","#139648","gray40","#139648","#275D9A","#139648","#139648","black","black","black"))
-
+invisible(dev.print(pdf, paste(config$preferences_dir,"/correlations-by-site_SARS2_huACE2.pdf",sep="")))
 
 ```
 
-```{r draw_logos_huACE2, fig.width=15, fig.height=10, fig.align="center", dpi=600,dev="png"}
-list <- vector("list",length(levels(dt_mutant$target)));names(list) <- levels(dt_mutant$target)
-#make a named list of matrices for facet wrap drawing of custom logoplots
-for(seq in levels(dt_mutant$target)){
-  mat <- as.matrix(pivot_wider(dt_mutant[target==seq,c("position","mutant","pref_huACE2")], names_from=position, values_from=pref_huACE2)[,-1])
-  row.names(mat) <- unique(dt_mutant$mutant)
-  list[[seq]] <- mat
+```{r correlation_plots_v_SARS1_huACE2, fig.width=18, fig.height=40, fig.align="center", dpi=300,dev="png"}
+par(mfrow=c(13, 6))
+for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-1_Urbani_HP03L"]){
+  for(site in c(455, 486, 493, 494, 498, 501)){
+    plot(dt_mutant[target=="SARS-CoV-1_Urbani_HP03L" & position==site,huACE2],dt_mutant[target==RBD2 & position==site,huACE2], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-1_Urbani_HP03L" & position==site, mutant]), xlab="", ylab=RBD2, main="")
+    legend("topleft",bty="n",cex=1,legend=format(summary(lm(dt_mutant[target==RBD2 & position==site,huACE2] ~ dt_mutant[target=="SARS-CoV-1_Urbani_HP03L" & position==site,huACE2]))$r.squared,digits=2))
+  }
 }
 
-ggseqlogo(list, method="custom", seq_type="aa", col_scheme=cs1)
+invisible(dev.print(pdf, paste(config$preferences_dir,"/correlations-by-site_SARS1_huACE2.pdf",sep="")))
 
-invisible(dev.print(pdf, paste(config$preferences_dir,"/huACE2_logoplot-by-background.pdf",sep="")))
 ```
 
-```{r draw_logos_cvACE2, fig.width=15, fig.height=10, fig.align="center", dpi=600,dev="png"}
-list <- vector("list",length(levels(dt_mutant$target)));names(list) <- levels(dt_mutant$target)
-#make a named list of matrices for facet wrap drawing of custom logoplots
-for(seq in levels(dt_mutant$target)){
-  mat <- as.matrix(pivot_wider(dt_mutant[target==seq,c("position","mutant","pref_cvACE2")], names_from=position, values_from=pref_cvACE2)[,-1])
-  row.names(mat) <- unique(dt_mutant$mutant)
-  list[[seq]] <- mat
+```{r correlation_plots_v_SARS2_pgACE2, fig.width=18, fig.height=40, fig.align="center", dpi=300,dev="png"}
+par(mfrow=c(13, 6))
+for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-2"]){
+  for(site in c(455, 486, 493, 494, 498, 501)){
+    plot(dt_mutant[target=="SARS-CoV-2" & position==site,pgACE2],dt_mutant[target==RBD2 & position==site,pgACE2], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
+    legend("topleft",bty="n",cex=1,legend=format(summary(lm(dt_mutant[target==RBD2 & position==site,pgACE2] ~ dt_mutant[target=="SARS-CoV-2" & position==site,pgACE2]))$r.squared,digits=2))
+  }
 }
 
-ggseqlogo(list, method="custom", seq_type="aa", col_scheme=cs1)
+invisible(dev.print(pdf, paste(config$preferences_dir,"/correlations-by-site_SARS2_pgACE2.pdf",sep="")))
 
-invisible(dev.print(pdf, paste(config$preferences_dir,"/cvACE2_logoplot-by-background.pdf",sep="")))
 ```
 
-```{r draw_logos_pgACE2, fig.width=15, fig.height=10, fig.align="center", dpi=600,dev="png"}
-list <- vector("list",length(levels(dt_mutant$target)));names(list) <- levels(dt_mutant$target)
-#make a named list of matrices for facet wrap drawing of custom logoplots
-for(seq in levels(dt_mutant$target)){
-  mat <- as.matrix(pivot_wider(dt_mutant[target==seq,c("position","mutant","pref_pgACE2")], names_from=position, values_from=pref_pgACE2)[,-1])
-  row.names(mat) <- unique(dt_mutant$mutant)
-  list[[seq]] <- mat
+```{r correlation_plots_v_SARS2_RaACE2.9479, fig.width=18, fig.height=40, fig.align="center", dpi=300,dev="png"}
+par(mfrow=c(13, 6))
+for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-2"]){
+  for(site in c(455, 486, 493, 494, 498, 501)){
+    plot(dt_mutant[target=="SARS-CoV-2" & position==site,RaACE2.9479],dt_mutant[target==RBD2 & position==site,RaACE2.9479], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
+    legend("topleft",bty="n",cex=1,legend=format(summary(lm(dt_mutant[target==RBD2 & position==site,RaACE2.9479] ~ dt_mutant[target=="SARS-CoV-2" & position==site,RaACE2.9479]))$r.squared,digits=2))
+  }
 }
 
-ggseqlogo(list, method="custom", seq_type="aa", col_scheme=cs1)
+invisible(dev.print(pdf, paste(config$preferences_dir,"/correlations-by-site_SARS2_RaACE2.9479.pdf",sep="")))
 
-invisible(dev.print(pdf, paste(config$preferences_dir,"/pgACE2_logoplot-by-background.pdf",sep="")))
 ```
 
-```{r draw_logos_RaACE2.787, fig.width=15, fig.height=10, fig.align="center", dpi=300,dev="png"}
-list <- vector("list",length(levels(dt_mutant$target)));names(list) <- levels(dt_mutant$target)
-#make a named list of matrices for facet wrap drawing of custom logoplots
-for(seq in levels(dt_mutant$target)){
-  mat <- as.matrix(pivot_wider(dt_mutant[target==seq,c("position","mutant","pref_RaACE2.787")], names_from=position, values_from=pref_RaACE2.787)[,-1])
-  row.names(mat) <- unique(dt_mutant$mutant)
-  list[[seq]] <- mat
+```{r correlation_plots_v_SARS2_RaACE2.787, fig.width=18, fig.height=40, fig.align="center", dpi=300,dev="png"}
+par(mfrow=c(13, 6))
+for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-2"]){
+  for(site in c(455, 486, 493, 494, 498, 501)){
+    plot(dt_mutant[target=="SARS-CoV-2" & position==site,RaACE2.787],dt_mutant[target==RBD2 & position==site,RaACE2.787], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
+    legend("topleft",bty="n",cex=1,legend=format(summary(lm(dt_mutant[target==RBD2 & position==site,RaACE2.787] ~ dt_mutant[target=="SARS-CoV-2" & position==site,RaACE2.787]))$r.squared,digits=2))
+  }
 }
 
-ggseqlogo(list, method="custom", seq_type="aa", col_scheme=cs1)
+invisible(dev.print(pdf, paste(config$preferences_dir,"/correlations-by-site_SARS2_RaACE2.787.pdf",sep="")))
 
-invisible(dev.print(pdf, paste(config$preferences_dir,"/RaACE2_787_logoplot-by-background.pdf",sep="")))
 ```
 
-```{r draw_logos_RaACE2.9479, fig.width=15, fig.height=10, fig.align="center", dpi=300,dev="png"}
-list <- vector("list",length(levels(dt_mutant$target)));names(list) <- levels(dt_mutant$target)
-#make a named list of matrices for facet wrap drawing of custom logoplots
-for(seq in levels(dt_mutant$target)){
-  mat <- as.matrix(pivot_wider(dt_mutant[target==seq,c("position","mutant","pref_RaACE2.9479")], names_from=position, values_from=pref_RaACE2.9479)[,-1])
-  row.names(mat) <- unique(dt_mutant$mutant)
-  list[[seq]] <- mat
+```{r correlation_plots_v_SARS2_RsACE2.1434, fig.width=18, fig.height=40, fig.align="center", dpi=300,dev="png"}
+par(mfrow=c(13, 6))
+for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-2"]){
+  for(site in c(455, 486, 493, 494, 498, 501)){
+    plot(dt_mutant[target=="SARS-CoV-2" & position==site,RsACE2.1434],dt_mutant[target==RBD2 & position==site,RsACE2.1434], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
+    legend("topleft",bty="n",cex=1,legend=format(summary(lm(dt_mutant[target==RBD2 & position==site,RsACE2.1434] ~ dt_mutant[target=="SARS-CoV-2" & position==site,RsACE2.1434]))$r.squared,digits=2))
+  }
 }
 
-ggseqlogo(list, method="custom", seq_type="aa", col_scheme=cs1)
+invisible(dev.print(pdf, paste(config$preferences_dir,"/correlations-by-site_SARS2_RsACE2.1434.pdf",sep="")))
 
-invisible(dev.print(pdf, paste(config$preferences_dir,"/RaACE2_9479_logoplot-by-background.pdf",sep="")))
 ```
 
-```{r draw_logos_RsACE2.3364, fig.width=15, fig.height=10, fig.align="center", dpi=300,dev="png"}
-list <- vector("list",length(levels(dt_mutant$target)));names(list) <- levels(dt_mutant$target)
-#make a named list of matrices for facet wrap drawing of custom logoplots
-for(seq in levels(dt_mutant$target)){
-  mat <- as.matrix(pivot_wider(dt_mutant[target==seq,c("position","mutant","pref_RsACE2.3364")], names_from=position, values_from=pref_RsACE2.3364)[,-1])
-  row.names(mat) <- unique(dt_mutant$mutant)
-  list[[seq]] <- mat
-}
 
-ggseqlogo(list, method="custom", seq_type="aa", col_scheme=cs1)
+To summarize these plots, I want to make 'reaction coordinate' plots that visualize R-squared in mut binding affinites as a function of pairwise sequence divergence. Want to require an RBD-site set to have some minimum number of amino acids (let's say, 5?) above an affinity threshold (say, 7?)
 
-invisible(dev.print(pdf, paste(config$preferences_dir,"/RsACE2_3364_logoplot-by-background.pdf",sep="")))
-```
-```{r draw_logos_RsACE2.1434, fig.width=15, fig.height=10, fig.align="center", dpi=300,dev="png"}
-list <- vector("list",length(levels(dt_mutant$target)));names(list) <- levels(dt_mutant$target)
-#make a named list of matrices for facet wrap drawing of custom logoplots
-for(seq in levels(dt_mutant$target)){
-  mat <- as.matrix(pivot_wider(dt_mutant[target==seq,c("position","mutant","pref_RsACE2.1434")], names_from=position, values_from=pref_RsACE2.1434)[,-1])
-  row.names(mat) <- unique(dt_mutant$mutant)
-  list[[seq]] <- mat
-}
-
-ggseqlogo(list, method="custom", seq_type="aa", col_scheme=cs1)
-
-invisible(dev.print(pdf, paste(config$preferences_dir,"/RsACE2_1434_logoplot-by-background.pdf",sep="")))
-```
-
-## Identify sites whose preferences differ most dramatically among ACE2 ligands or RBD backgrounds -- can I statistically identify which ACE2/RBD sites induce the change? Do I have enough combinatorial breakup of sites, or are the amino acid variants too correlated?
-
-First, setup to compute distances in preferences.
-
-The first table will be for calculating, within an RBD background and at a site, profile divergences for each pair of ACE2s
-
-The second table will be for calculating, within an ACE2 ligand and at a site, profile divergences for each pair of RBDs
-
-Only do for RBD-sites where at least one mutation has >x binding (so it's not just flat) -- do x=7 
 
 ```{r setup differences tables}
-#data table for storing, for each RBD, its pairwise ACE2 profile differences. To this later, I can add the independent variables (ACE2 states) to test for association with divergence
+#data table for storing, for each RBD, its correlation in binding for pairs of ACE2s
 #generate table with all combinations of ACE2_1 and ACE2_2 for each RBD+site
 diffs_ACE2 <- data.table(expand.grid(site=c(455,486,493,494,498,501),ACE2_2=c("huACE2","cvACE2","pgACE2","RaACE2.787","RaACE2.9479","RsACE2.3364","RsACE2.1434"),ACE2_1=c("huACE2","cvACE2","pgACE2","RaACE2.787","RaACE2.9479","RsACE2.3364","RsACE2.1434"),RBD=as.character(unique(dt_mutant$target))))
 
@@ -221,16 +153,17 @@ diffs_ACE2 <- diffs_ACE2[ACE2_1!=ACE2_2,]
 diffs_ACE2 <- diffs_ACE2[ACE2_2!="huACE2",]
 diffs_ACE2 <- diffs_ACE2[ACE2_1=="huACE2" | (ACE2_1=="cvACE2" & ACE2_2 %in% c("pgACE2","RaACE2.787","RaACE2.9479","RsACE2.3364","RsACE2.1434")) | (ACE2_1=="pgACE2" & ACE2_2 %in% c("RaACE2.787","RaACE2.9479","RsACE2.3364","RsACE2.1434")) | (ACE2_1=="RaACE2.787" & ACE2_2 %in% c("RaACE2.9479","RsACE2.3364","RsACE2.1434")) | (ACE2_1=="RaACE2.9479" & ACE2_2 %in% c("RsACE2.3364","RsACE2.1434")) | (ACE2_1=="RsACE2.3364" & ACE2_2 %in% c("RsACE2.1434")),]
 
-#remove RBD-sites where no mut has >7 binding
+#remove RBD-sites where there's not a minimum number of muts with >7 binding
+min_n <- 4
 diffs_ACE2[,keep:=as.logical(NA)]
 for(i in 1:nrow(diffs_ACE2)){
   ACE2_1 <- as.character(diffs_ACE2[i,ACE2_1])
   ACE2_2 <- as.character(diffs_ACE2[i,ACE2_2])
   binds_1 <- dt_mutant[target==as.character(diffs_ACE2[i,RBD]) & position==diffs_ACE2[i,site],get(ACE2_1)]
   binds_2 <- dt_mutant[target==as.character(diffs_ACE2[i,RBD]) & position==diffs_ACE2[i,site],get(ACE2_2)]
-  if(sum(binds_1 > 7, na.rm=T) == 0 | sum(binds_2 > 7,na.rm=T) == 0){
+  if(sum(binds_1 > 7, na.rm=T) < min_n | sum(binds_2 > 7,na.rm=T) < min_n){
     diffs_ACE2[i,keep := F]
-  }else if(sum(binds_1 > 7, na.rm=T) > 0 & sum(binds_2 > 7, na.rm=T) > 0){
+  }else if(sum(binds_1 > 7, na.rm=T) >= min_n & sum(binds_2 > 7, na.rm=T) >= min_n){
     diffs_ACE2[i,keep := T]
   }
 }
@@ -246,83 +179,20 @@ diffs_RBD <- diffs_RBD[RBD_2!="AncSarbecovirus_MAP",]
 diffs_RBD <- diffs_RBD[RBD_1=="AncSarbecovirus_MAP" | (RBD_1=="BM48-31" & RBD_2 %in% c("BtKY72","AncAsia_MAP","AncSARS2a_MAP","AncSARS2c_MAP","SARS-CoV-2","RaTG13","GD-Pangolin","AncSARS1a_MAP","SARS-CoV-1_Urbani_HP03L","SARS-CoV-1_PC4-137_PC04","Rs7327","AncClade2_MAP")) | (RBD_1=="BtKY72" & RBD_2 %in% c("AncAsia_MAP","AncSARS2a_MAP","AncSARS2c_MAP","SARS-CoV-2","RaTG13","GD-Pangolin","AncSARS1a_MAP","SARS-CoV-1_Urbani_HP03L","SARS-CoV-1_PC4-137_PC04","Rs7327","AncClade2_MAP")) | (RBD_1=="AncAsia_MAP" & RBD_2 %in% c("AncSARS2a_MAP","AncSARS2c_MAP","SARS-CoV-2","RaTG13","GD-Pangolin","AncSARS1a_MAP","SARS-CoV-1_Urbani_HP03L","SARS-CoV-1_PC4-137_PC04","Rs7327","AncClade2_MAP")) | (RBD_1=="AncSARS2a_MAP" & RBD_2 %in% c("AncSARS2c_MAP","SARS-CoV-2","RaTG13","GD-Pangolin","AncSARS1a_MAP","SARS-CoV-1_Urbani_HP03L","SARS-CoV-1_PC4-137_PC04","Rs7327","AncClade2_MAP")) | (RBD_1=="AncSARS2c_MAP" & RBD_2 %in% c("SARS-CoV-2","RaTG13","GD-Pangolin","AncSARS1a_MAP","SARS-CoV-1_Urbani_HP03L","SARS-CoV-1_PC4-137_PC04","Rs7327","AncClade2_MAP")) | (RBD_1=="SARS-CoV-2" & RBD_2 %in% c("RaTG13","GD-Pangolin","AncSARS1a_MAP","SARS-CoV-1_Urbani_HP03L","SARS-CoV-1_PC4-137_PC04","Rs7327","AncClade2_MAP")) | (RBD_1=="RaTG13" & RBD_2 %in% c("GD-Pangolin","AncSARS1a_MAP","SARS-CoV-1_Urbani_HP03L","SARS-CoV-1_PC4-137_PC04","Rs7327","AncClade2_MAP")) | (RBD_1=="GD-Pangolin" & RBD_2 %in% c("AncSARS1a_MAP","SARS-CoV-1_Urbani_HP03L","SARS-CoV-1_PC4-137_PC04","Rs7327","AncClade2_MAP")) | (RBD_1=="AncSARS1a_MAP" & RBD_2 %in% c("SARS-CoV-1_Urbani_HP03L","SARS-CoV-1_PC4-137_PC04","Rs7327","AncClade2_MAP")) | (RBD_1=="SARS-CoV-1_Urbani_HP03L" & RBD_2 %in% c("SARS-CoV-1_PC4-137_PC04","Rs7327","AncClade2_MAP")) | (RBD_1=="SARS-CoV-1_PC4-137_PC04" & RBD_2 %in% c("Rs7327","AncClade2_MAP")) | (RBD_1=="Rs7327" & RBD_2 %in% c("AncClade2_MAP")),]
 
 
-#remove RBD-site pairs where no mut has >7 binding
+#remove RBD-site pairs where there's not a minimum number of muts with >7 binding
 diffs_RBD[,keep:=as.logical(NA)]
 for(i in 1:nrow(diffs_RBD)){
   RBD_1 <- as.character(diffs_RBD[i,RBD_1])
   RBD_2 <- as.character(diffs_RBD[i,RBD_2])
   binds_1 <- dt_mutant[target==RBD_1 & position==diffs_RBD[i,site],get(as.character(diffs_RBD[i,ACE2]))]
   binds_2 <- dt_mutant[target==RBD_2 & position==diffs_RBD[i,site],get(as.character(diffs_RBD[i,ACE2]))]
-  if(sum(binds_1 > 7, na.rm=T) == 0 | sum(binds_2 > 7,na.rm=T) == 0){
+  if(sum(binds_1 > 7, na.rm=T) < min_n | sum(binds_2 > 7,na.rm=T) < min_n){
     diffs_RBD[i,keep := F]
-  }else if(sum(binds_1 > 7, na.rm=T) > 0 & sum(binds_2 > 7, na.rm=T) > 0){
+  }else if(sum(binds_1 > 7, na.rm=T) >= min_n & sum(binds_2 > 7, na.rm=T) >= min_n){
     diffs_RBD[i,keep := T]
   }
 }
 diffs_RBD <- diffs_RBD[keep==T,.(ACE2, RBD_1, RBD_2, site)]
 
 ```
-
-Calculate JS-dist between profile pairs. Use equation from Doud et al. MBE 2015
-
-```{r calculate JS}
-#set any NA prefs to the minimum
-dt_mutant[is.na(pref_huACE2),pref_huACE2:=min(dt_mutant$pref_huACE2,na.rm=T)]
-dt_mutant[is.na(pref_cvACE2),pref_cvACE2:=min(dt_mutant$pref_cvACE2,na.rm=T)]
-dt_mutant[is.na(pref_pgACE2),pref_pgACE2:=min(dt_mutant$pref_pgACE2,na.rm=T)]
-dt_mutant[is.na(pref_RaACE2.787),pref_RaACE2.787:=min(dt_mutant$pref_RaACE2.787,na.rm=T)]
-dt_mutant[is.na(pref_RaACE2.9479),pref_RaACE2.9479:=min(dt_mutant$pref_RaACE2.9479,na.rm=T)]
-dt_mutant[is.na(pref_RsACE2.3364),pref_RsACE2.3364:=min(dt_mutant$pref_RsACE2.3364,na.rm=T)]
-dt_mutant[is.na(pref_RsACE2.1434),pref_RsACE2.1434:=min(dt_mutant$pref_RsACE2.1434,na.rm=T)]
-
-#function for shannon entropy
-H <- function(v){
-  return(-sum(v*log(v,base=2)))
-}
-#function that takes two vectors of preferences, returns JS distance
-JS.dist <- function(query1,query2){
-  if(length(query1)==length(query2)){
-    return(sqrt(H((query1+query2)/2)-(H(query1)+H(query2))/2))
-  }else{
-    return(as.numeric(NA))
-  }
-}
-
-diffs_ACE2[,JS_dist := JS.dist(query1=dt_mutant[target==RBD & position==site,get(paste("pref_",as.character(ACE2_1),sep=""))], query2=dt_mutant[target==RBD & position==site,get(paste("pref_",as.character(ACE2_2),sep=""))]),by=.(RBD, ACE2_1, ACE2_2, site)]
-
-diffs_RBD[,JS_dist := JS.dist(query1=dt_mutant[target==RBD_1 & position==site,get(paste("pref_",as.character(ACE2),sep=""))], query2=dt_mutant[target==RBD_2 & position==site,get(paste("pref_",as.character(ACE2),sep=""))]),by=.(ACE2, RBD_1, RBD_2, site)]
-
-```
-
-Next, build in explanatory variables being the RBD and ACE2 differences between RBD/ACE2 pairs. Could do it as a binary thing (yes/no, this pair differs at a site), but I'll start with it being the full amino acid identities. Will have to test for identifiability.
-
-```{r build_genotype_variables}
-#read in tables giving RBD and ACE2 states at key residues
-ACE2_states <- data.table(read.csv(file="data/ACE2_determinants.csv"))
-RBD_states <- data.table(read.csv(file="data/RBD_determinants.csv"))
-
-#function that takes two amino acids and a site and returns the "mutation", with amino acids in alphabetical order (b/c I want to ignore _1 _2 directionality)
-get_mut <- function(AA1, AA2, site){
-  paste(sort(c(AA1,AA2))[1],as.character(site),sort(c(AA1,AA2))[2],sep="")
-}
-
-#get all amino acid differences within these tables for populating column names for model matrix
-ACE2_vars <- vector(mode="character")
-for(col in names(ACE2_states)[2:length(names(ACE2_states))]){
-  
-  AAs <- ACE2_states[,as.numeric(col)]
-}
-
-
-```
-
-
-
-
-
-
-## Identify backgrounds whose preferences at RBD sites vary most dramatically -- can I statistically identify which RBD sites alter other sites' preferences? Do I have enough independence in states?
-
-
-
 
