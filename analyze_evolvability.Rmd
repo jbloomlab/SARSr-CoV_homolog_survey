@@ -60,7 +60,7 @@ dt_wt[,target := factor(dt_wt$target,levels=config$targets_ordered)]
 
 ## Mutation effect jitter plots
 
-Want to make plots that have a bar at the WT binding affinity, and jitter plot for the binding of single-mutant variants. Make separately for each ACE2 for now? Can also make it separately for each RBD.
+Want to make plots that have a bar at the WT binding affinity, and jitter plot for the binding of single-mutant variants.
 
 ```{r jitter_huACE2, fig.width=5, fig.height=4, fig.align="center",dpi=300,dev="png"}
 
@@ -78,7 +78,7 @@ invisible(dev.print(pdf, paste(config$evolvability_dir,"/huACE2_mutant-jitter.pd
 
 Put all together in one faceted plot
 
-```{r jitter_facet_by_ACE2, fig.width=10, fig.height=6, fig.align="center",dpi=300,dev="png"}
+```{r jitter_facet_by_ACE2, fig.width=10, fig.height=5, fig.align="center",dpi=300,dev="png"}
 #mutate to longform
 temp <- data.table::melt(dt_mutant[, .(target,position,mutant,huACE2,cvACE2,pgACE2,mACE2,RaACE2.787,RaACE2.9479,RsACE2.3364,RsACE2.1434,wildtype_indicator)],id.vars=c("target","position","mutant","wildtype_indicator"),measure.vars=c("huACE2","cvACE2","pgACE2","mACE2","RaACE2.787","RaACE2.9479","RsACE2.3364","RsACE2.1434"),variable.name="ACE2",value.name="log10Ka")
 
@@ -127,57 +127,4 @@ ggplot(donut_dt, aes(ymax=ymax, ymin=ymin, xmax=4, xmin=3, fill=category))+
   
 
 invisible(dev.print(pdf, paste(config$evolvability_dir,"/donut_binds_by_ACE2.pdf",sep=""),useDingbats=F))
-```
-
-Flip the facet/y-axis ticks to be RBDs and ACE2s
-
-```{r jitter_facet_by_RBD, fig.width=15, fig.height=4, fig.align="center",dpi=300,dev="png"}
-#mutate to longform
-temp <- data.table::melt(dt_mutant[, .(target,position,mutant,huACE2,cvACE2,pgACE2,RaACE2.787,RaACE2.9479,RsACE2.3364,RsACE2.1434,wildtype_indicator)],id.vars=c("target","position","mutant","wildtype_indicator"),measure.vars=c("huACE2","cvACE2","pgACE2","RaACE2.787","RaACE2.9479","RsACE2.3364","RsACE2.1434"),variable.name="ACE2",value.name="log10Ka")
-
-p1 <- ggplot(temp,aes(x=ACE2,y=log10Ka))+
-  geom_jitter(width=0.1, height=0, alpha=0.3, shape=16)+
-  xlab("ACE2")+ylab("-log10KD,app")+
-  geom_crossbar(aes(ymin=log10Ka,ymax=log10Ka,width=0.6,fatten=4), data=temp[position==493 & wildtype_indicator=="x",],color="red")+
-  theme_classic()+
-  theme(axis.text.x = element_text(angle=90,vjust=0.5,hjust=1))+
-  facet_wrap(~target,nrow=1)+coord_flip()+
-  scale_x_discrete(limits = rev(levels(temp$ACE2)))
-  
-p1
-
-invisible(dev.print(pdf, paste(config$evolvability_dir,"/jitters_facet_by_RBD.pdf",sep=""),useDingbats=F))
-```
-
-Make donut charts to show the fraction of RBDs that bind as WT, bind only as mutant, or no observed binding
-
-```{r donut_binding_by_RBD, fig.width=20, fig.height=5, fig.align="center",dpi=300,dev="png"}
-donut_dt <- data.table(category=c("WT binds","only mut binds","no mut binds"), AncSarbecovirus=c(1/7,4/7,2/7), BM4831=c(0/7,0/7,7/7), BtKY72=c(2/7,2/7,3/7), AncAsia=c(4/7,2/7,1/7), AncSARS2a=c(6/7,1/7,0/7), GDPangolin=c(4/7,2/7,1/7), AncSARS2c=c(5/7,2/7,0/7), SARS2=c(4/7,3/7,0/7), RaTG13=c(2/7,5/7,0/7), AncSARS1a=c(1/7,5/7,1/7), Rs7327=c(4/7,3/7,0/7), SARS1Urbani=c(7/7,0/7,0/7), SARS1PC4_137=c(5/7,1/7,1/7), AncClade2=c(0/7,0/7,7/7))
-
-#RBD <- "SARS-CoV-1_PC4-137_PC04"
-#sum(dt_mutant[target==RBD & position==493 & wildtype_indicator=="x",.(huACE2,cvACE2,pgACE2,RaACE2.787,RaACE2.9479,RsACE2.3364,RsACE2.1434)]>6)
-#temp[temp[target==RBD & mutant!="C", .I[which.max(log10Ka)], by=.(ACE2)]$V1]
-
-#mutate to long
-donut_dt <- data.table::melt(donut_dt,id.vars=c("category"),measure.vars=c("AncSarbecovirus","BM4831","BtKY72","AncAsia","AncSARS2a","GDPangolin","AncSARS2c","SARS2", "RaTG13", "AncSARS1a", "Rs7327", "SARS1Urbani", "SARS1PC4_137", "AncClade2"),variable.name="RBD",value.name="fraction")
-
-donut_dt[,ymax:=cumsum(fraction),by=.(RBD)]
-
-donut_dt[,ymin:=0]
-for(i in 1:nrow(donut_dt)){
-  if(donut_dt[i,category]!="WT binds"){
-    donut_dt[i,"ymin"] <- donut_dt[i-1,ymax]
-  }
-}
-
-ggplot(donut_dt, aes(ymax=ymax, ymin=ymin, xmax=4, xmin=3, fill=category))+
-  geom_rect()+
-  coord_polar(theta="y")+
-  facet_wrap(~RBD,nrow=1)+
-  xlim(c(2,4))+
-  theme_void()+
-  scale_fill_brewer(palette=1)
-  
-
-invisible(dev.print(pdf, paste(config$evolvability_dir,"/donut_binds_by_RBD.pdf",sep=""),useDingbats=F))
 ```
