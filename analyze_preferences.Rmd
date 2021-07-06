@@ -1,5 +1,5 @@
 ---
-title: "Analyze preferences and the architecture of their variation"
+title: "Analyze mutant effects and their epistatic turnover"
 author: "Tyler Starr"
 date: "10/27/2020"
 output:
@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = T)
 knitr::opts_chunk$set(dev.args = list(png = list(type = "cairo")))
 
 #list of packages to install/load
-packages = c("yaml","data.table","tidyverse","gridExtra","egg","ggseqlogo")
+packages = c("yaml","data.table","tidyverse","gridExtra","egg","ggseqlogo","bio3d","viridis")
 #install any packages not already installed
 installed_packages <- packages %in% rownames(installed.packages())
 if(any(installed_packages == F)){
@@ -59,27 +59,29 @@ dt_wt[,target := factor(dt_wt$target,levels=config$targets_ordered)]
 
 ## Compute correlations in mutant binding constants between background and across ACE2s
 
-First, just illustrate correlations with SARS2 for huACE2 binding
+First, just illustrate correlations with SARS2 for mutations in each other RBD, for binding to huACE2
 
-```{r correlation_plots_v_SARS2_huACE2, fig.width=18, fig.height=40, fig.align="center", dpi=300,dev="png"}
+```{r correlation_plots_v_SARS2_huACE2, fig.width=13.5, fig.height=30, fig.align="center", dpi=300,dev="png"}
 par(mfrow=c(13, 6))
 for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-2"]){
   for(site in c(455, 486, 493, 494, 498, 501)){
     plot(dt_mutant[target=="SARS-CoV-2" & position==site,huACE2],dt_mutant[target==RBD2 & position==site,huACE2], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
-    legend("topleft",bty="n",cex=1,legend=format(summary(lm(dt_mutant[target==RBD2 & position==site,huACE2] ~ dt_mutant[target=="SARS-CoV-2" & position==site,huACE2]))$r.squared,digits=2))
+    legend("topleft",bty="n",cex=1,legend=format(cor(dt_mutant[target==RBD2 & position==site,huACE2], dt_mutant[target=="SARS-CoV-2" & position==site,huACE2], use="complete.obs",method="spearman"),digits=3))
   }
 }
 
 invisible(dev.print(pdf, paste(config$preferences_dir,"/correlations-by-site_SARS2_huACE2.pdf",sep="")))
-
 ```
 
-```{r correlation_plots_v_SARS1_huACE2, fig.width=18, fig.height=40, fig.align="center", dpi=300,dev="png"}
+RBDs versus SARS1, huACE2
+
+```{r correlation_plots_v_SARS1_huACE2, fig.width=13.5, fig.height=30, fig.align="center", dpi=300,dev="png"}
 par(mfrow=c(13, 6))
 for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-1_Urbani_HP03L"]){
   for(site in c(455, 486, 493, 494, 498, 501)){
     plot(dt_mutant[target=="SARS-CoV-1_Urbani_HP03L" & position==site,huACE2],dt_mutant[target==RBD2 & position==site,huACE2], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-1_Urbani_HP03L" & position==site, mutant]), xlab="", ylab=RBD2, main="")
-    legend("topleft",bty="n",cex=1,legend=format(summary(lm(dt_mutant[target==RBD2 & position==site,huACE2] ~ dt_mutant[target=="SARS-CoV-1_Urbani_HP03L" & position==site,huACE2]))$r.squared,digits=2))
+    legend("topleft",bty="n",cex=1,legend=format(cor(dt_mutant[target==RBD2 & position==site,huACE2], dt_mutant[target=="SARS-CoV-1_Urbani_HP03L" & position==site,huACE2], use="complete.obs",method="spearman"),digits=3))
+    
   }
 }
 
@@ -87,12 +89,27 @@ invisible(dev.print(pdf, paste(config$preferences_dir,"/correlations-by-site_SAR
 
 ```
 
-```{r correlation_plots_v_SARS2_pgACE2, fig.width=18, fig.height=40, fig.align="center", dpi=300,dev="png"}
+And, vs. SARS2 for the rest of the ACE2s
+
+```{r correlation_plots_v_SARS2_cvACE2, fig.width=13.5, fig.height=30, fig.align="center", dpi=300,dev="png"}
+par(mfrow=c(13, 6))
+for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-2"]){
+  for(site in c(455, 486, 493, 494, 498, 501)){
+    plot(dt_mutant[target=="SARS-CoV-2" & position==site,cvACE2],dt_mutant[target==RBD2 & position==site,cvACE2], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
+    legend("topleft",bty="n",cex=1,legend=format(cor(dt_mutant[target==RBD2 & position==site,cvACE2], dt_mutant[target=="SARS-CoV-2" & position==site,cvACE2], use="complete.obs",method="spearman"),digits=3))
+  }
+}
+
+invisible(dev.print(pdf, paste(config$preferences_dir,"/correlations-by-site_SARS2_cvACE2.pdf",sep="")))
+
+```
+
+```{r correlation_plots_v_SARS2_pgACE2, fig.width=13.5, fig.height=30, fig.align="center", dpi=300,dev="png"}
 par(mfrow=c(13, 6))
 for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-2"]){
   for(site in c(455, 486, 493, 494, 498, 501)){
     plot(dt_mutant[target=="SARS-CoV-2" & position==site,pgACE2],dt_mutant[target==RBD2 & position==site,pgACE2], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
-    legend("topleft",bty="n",cex=1,legend=format(summary(lm(dt_mutant[target==RBD2 & position==site,pgACE2] ~ dt_mutant[target=="SARS-CoV-2" & position==site,pgACE2]))$r.squared,digits=2))
+    legend("topleft",bty="n",cex=1,legend=format(cor(dt_mutant[target==RBD2 & position==site,pgACE2], dt_mutant[target=="SARS-CoV-2" & position==site,pgACE2], use="complete.obs",method="spearman"),digits=3))
   }
 }
 
@@ -100,12 +117,25 @@ invisible(dev.print(pdf, paste(config$preferences_dir,"/correlations-by-site_SAR
 
 ```
 
-```{r correlation_plots_v_SARS2_RaACE2.9479, fig.width=18, fig.height=40, fig.align="center", dpi=300,dev="png"}
+```{r correlation_plots_v_SARS2_mACE2, fig.width=13.5, fig.height=30, fig.align="center", dpi=300,dev="png"}
+par(mfrow=c(13, 6))
+for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-2"]){
+  for(site in c(455, 486, 493, 494, 498, 501)){
+    plot(dt_mutant[target=="SARS-CoV-2" & position==site,mACE2],dt_mutant[target==RBD2 & position==site,mACE2], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
+    legend("topleft",bty="n",cex=1,legend=format(cor(dt_mutant[target==RBD2 & position==site,mACE2], dt_mutant[target=="SARS-CoV-2" & position==site,mACE2], use="complete.obs",method="spearman"),digits=3))
+  }
+}
+
+invisible(dev.print(pdf, paste(config$preferences_dir,"/correlations-by-site_SARS2_mACE2.pdf",sep="")))
+
+```
+
+```{r correlation_plots_v_SARS2_RaACE2.9479, fig.width=13.5, fig.height=30, fig.align="center", dpi=300,dev="png"}
 par(mfrow=c(13, 6))
 for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-2"]){
   for(site in c(455, 486, 493, 494, 498, 501)){
     plot(dt_mutant[target=="SARS-CoV-2" & position==site,RaACE2.9479],dt_mutant[target==RBD2 & position==site,RaACE2.9479], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
-    legend("topleft",bty="n",cex=1,legend=format(summary(lm(dt_mutant[target==RBD2 & position==site,RaACE2.9479] ~ dt_mutant[target=="SARS-CoV-2" & position==site,RaACE2.9479]))$r.squared,digits=2))
+    legend("topleft",bty="n",cex=1,legend=format(cor(dt_mutant[target==RBD2 & position==site,RaACE2.9479], dt_mutant[target=="SARS-CoV-2" & position==site,RaACE2.9479], use="complete.obs",method="spearman"),digits=3))
   }
 }
 
@@ -113,12 +143,12 @@ invisible(dev.print(pdf, paste(config$preferences_dir,"/correlations-by-site_SAR
 
 ```
 
-```{r correlation_plots_v_SARS2_RaACE2.787, fig.width=18, fig.height=40, fig.align="center", dpi=300,dev="png"}
+```{r correlation_plots_v_SARS2_RaACE2.787, fig.width=13.5, fig.height=30, fig.align="center", dpi=300,dev="png"}
 par(mfrow=c(13, 6))
 for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-2"]){
   for(site in c(455, 486, 493, 494, 498, 501)){
     plot(dt_mutant[target=="SARS-CoV-2" & position==site,RaACE2.787],dt_mutant[target==RBD2 & position==site,RaACE2.787], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
-    legend("topleft",bty="n",cex=1,legend=format(summary(lm(dt_mutant[target==RBD2 & position==site,RaACE2.787] ~ dt_mutant[target=="SARS-CoV-2" & position==site,RaACE2.787]))$r.squared,digits=2))
+    legend("topleft",bty="n",cex=1,legend=format(cor(dt_mutant[target==RBD2 & position==site,RaACE2.787], dt_mutant[target=="SARS-CoV-2" & position==site,RaACE2.787], use="complete.obs",method="spearman"),digits=3))
   }
 }
 
@@ -126,35 +156,48 @@ invisible(dev.print(pdf, paste(config$preferences_dir,"/correlations-by-site_SAR
 
 ```
 
-```{r correlation_plots_v_SARS2_RsACE2.1434, fig.width=18, fig.height=40, fig.align="center", dpi=300,dev="png"}
+```{r correlation_plots_v_SARS2_RsACE2.1434, fig.width=13.5, fig.height=30, fig.align="center", dpi=300,dev="png"}
 par(mfrow=c(13, 6))
 for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-2"]){
   for(site in c(455, 486, 493, 494, 498, 501)){
     plot(dt_mutant[target=="SARS-CoV-2" & position==site,RsACE2.1434],dt_mutant[target==RBD2 & position==site,RsACE2.1434], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
-    legend("topleft",bty="n",cex=1,legend=format(summary(lm(dt_mutant[target==RBD2 & position==site,RsACE2.1434] ~ dt_mutant[target=="SARS-CoV-2" & position==site,RsACE2.1434]))$r.squared,digits=2))
+    legend("topleft",bty="n",cex=1,legend=format(cor(dt_mutant[target==RBD2 & position==site,RsACE2.1434], dt_mutant[target=="SARS-CoV-2" & position==site,RsACE2.1434], use="complete.obs",method="spearman"),digits=3))
   }
 }
 
 invisible(dev.print(pdf, paste(config$preferences_dir,"/correlations-by-site_SARS2_RsACE2.1434.pdf",sep="")))
 
 ```
+```{r correlation_plots_v_SARS2_RsACE2.3364, fig.width=13.5, fig.height=30, fig.align="center", dpi=300,dev="png"}
+par(mfrow=c(13, 6))
+for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-2"]){
+  for(site in c(455, 486, 493, 494, 498, 501)){
+    plot(dt_mutant[target=="SARS-CoV-2" & position==site,RsACE2.3364],dt_mutant[target==RBD2 & position==site,RsACE2.3364], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
+    legend("topleft",bty="n",cex=1,legend=format(cor(dt_mutant[target==RBD2 & position==site,RsACE2.3364], dt_mutant[target=="SARS-CoV-2" & position==site,RsACE2.3364], use="complete.obs",method="spearman"),digits=3))
+  }
+}
 
+invisible(dev.print(pdf, paste(config$preferences_dir,"/correlations-by-site_SARS2_RsACE2.3364.pdf",sep="")))
 
-To summarize these plots, I want to make 'reaction coordinate' plots that visualize R-squared in mut binding affinites as a function of pairwise sequence divergence. Want to require an RBD-site set to have some minimum number of amino acids (let's say, 5?) above an affinity threshold (say, 7?)
+```
 
+To summarize these plots, I want to make 'reaction coordinate' plots that visualize R-squared in mut binding affinites as a function of pairwise sequence divergence. Want to require an RBD-site set to have some minimum number of amino acids (5) with reasonable affinity (>7) so that there aren't non-correlated samples simply because nothing is binding (no variation to correlate)
+
+Set up tables for storing correlations and identities for all ACE2- and RBD-pairs
 
 ```{r setup differences tables}
 #data table for storing, for each RBD, its correlation in binding for pairs of ACE2s
 #generate table with all combinations of ACE2_1 and ACE2_2 for each RBD+site
-diffs_ACE2 <- data.table(expand.grid(site=c(455,486,493,494,498,501),ACE2_2=c("huACE2","cvACE2","pgACE2","RaACE2.787","RaACE2.9479","RsACE2.3364","RsACE2.1434"),ACE2_1=c("huACE2","cvACE2","pgACE2","RaACE2.787","RaACE2.9479","RsACE2.3364","RsACE2.1434"),RBD=as.character(unique(dt_mutant$target))))
+diffs_ACE2 <- data.table(expand.grid(site=c(455,486,493,494,498,501),ACE2_2=c("huACE2","cvACE2","pgACE2","mACE2","RaACE2.787","RaACE2.9479","RsACE2.3364","RsACE2.1434"),ACE2_1=c("huACE2","cvACE2","pgACE2","mACE2","RaACE2.787","RaACE2.9479","RsACE2.3364","RsACE2.1434"),RBD=as.character(unique(dt_mutant$target))))
 
 #remove duplicates -- either ACE2_1 and _2 the same, or combinations where the _2 _1 combo is already present in the _1 _2 orientation
 diffs_ACE2 <- diffs_ACE2[ACE2_1!=ACE2_2,]
 diffs_ACE2 <- diffs_ACE2[ACE2_2!="huACE2",]
-diffs_ACE2 <- diffs_ACE2[ACE2_1=="huACE2" | (ACE2_1=="cvACE2" & ACE2_2 %in% c("pgACE2","RaACE2.787","RaACE2.9479","RsACE2.3364","RsACE2.1434")) | (ACE2_1=="pgACE2" & ACE2_2 %in% c("RaACE2.787","RaACE2.9479","RsACE2.3364","RsACE2.1434")) | (ACE2_1=="RaACE2.787" & ACE2_2 %in% c("RaACE2.9479","RsACE2.3364","RsACE2.1434")) | (ACE2_1=="RaACE2.9479" & ACE2_2 %in% c("RsACE2.3364","RsACE2.1434")) | (ACE2_1=="RsACE2.3364" & ACE2_2 %in% c("RsACE2.1434")),]
+diffs_ACE2 <- diffs_ACE2[ACE2_1=="huACE2" | (ACE2_1=="cvACE2" & ACE2_2 %in% c("pgACE2","mACE2","RaACE2.787","RaACE2.9479","RsACE2.3364","RsACE2.1434")) | (ACE2_1=="pgACE2" & ACE2_2 %in% c("mACE2","RaACE2.787","RaACE2.9479","RsACE2.3364","RsACE2.1434")) | (ACE2_1=="mACE2" & ACE2_2 %in% c("RaACE2.787","RaACE2.9479","RsACE2.3364","RsACE2.1434")) | (ACE2_1=="RaACE2.787" & ACE2_2 %in% c("RaACE2.9479","RsACE2.3364","RsACE2.1434")) | (ACE2_1=="RaACE2.9479" & ACE2_2 %in% c("RsACE2.3364","RsACE2.1434")) | (ACE2_1=="RsACE2.3364" & ACE2_2 %in% c("RsACE2.1434")),]
 
 #remove RBD-sites where there's not a minimum number of muts with >7 binding
-min_n <- 4
+#for ACE2 comparisons, make this low (2?)
+min_n <- 2
 diffs_ACE2[,keep:=as.logical(NA)]
 for(i in 1:nrow(diffs_ACE2)){
   ACE2_1 <- as.character(diffs_ACE2[i,ACE2_1])
@@ -169,9 +212,9 @@ for(i in 1:nrow(diffs_ACE2)){
 }
 diffs_ACE2 <- diffs_ACE2[keep==T,.(RBD, ACE2_1, ACE2_2, site)]
 
-#data table for storing, for each ACE2, its pairwise RBD profile differences. To this later, I can add the independent variables (RBD states) to test for association with divergence
+#data table for storing, for each ACE2, its difference in correlation in profiles between RBD pairs at each site. 
 #generate table with all combinations of RBD_1 and RBD_2 for each ACE2+site
-diffs_RBD <- data.table(expand.grid(site=c(455,486,493,494,498,501),RBD_2=as.character(unique(dt_mutant$target)),RBD_1=as.character(unique(dt_mutant$target)),ACE2=c("huACE2","cvACE2","pgACE2","RaACE2.787","RaACE2.9479","RsACE2.3364","RsACE2.1434")))
+diffs_RBD <- data.table(expand.grid(site=c(455,486,493,494,498,501),RBD_2=as.character(unique(dt_mutant$target)),RBD_1=as.character(unique(dt_mutant$target)),ACE2=c("huACE2","cvACE2","pgACE2","mACE2","RaACE2.787","RaACE2.9479","RsACE2.3364","RsACE2.1434")))
 
 #remove duplicates -- either RBD_1 and _2 the same, or combinations where the _2 _1 combo is already present in the _1 _2 orientation
 diffs_RBD <- diffs_RBD[RBD_1!=RBD_2,]
@@ -180,6 +223,8 @@ diffs_RBD <- diffs_RBD[RBD_1=="AncSarbecovirus_MAP" | (RBD_1=="BM48-31" & RBD_2 
 
 
 #remove RBD-site pairs where there's not a minimum number of muts with >7 binding
+#for RBD pairs, make this more stringent than in ACE2s above where I'm not looking at individual points downstream)
+min_n <- 5
 diffs_RBD[,keep:=as.logical(NA)]
 for(i in 1:nrow(diffs_RBD)){
   RBD_1 <- as.character(diffs_RBD[i,RBD_1])
@@ -195,4 +240,83 @@ for(i in 1:nrow(diffs_RBD)){
 diffs_RBD <- diffs_RBD[keep==T,.(ACE2, RBD_1, RBD_2, site)]
 
 ```
+
+Loop through to compute spearman's rho in muts at each site for each ACE2/RBD pair. Using spearman's rho because there are sometimes apparnet "threshold-y" looking relationships where the order of muts might be similar but not "linear" like in a pearson's r. That is, pearson's r can be  misled by some potential nonspecific epistatic differences between backgrounds, whereas spearman's rho should be more attuned to specific changes in mutation effects across backgrounds.
+
+```{r compute_correlations}
+diffs_ACE2$cor <- as.numeric(NA)
+for(i in 1:nrow(diffs_ACE2)){
+  x <- dt_mutant[target==diffs_ACE2[i,RBD] & position==diffs_ACE2[i,site],get(as.character(diffs_ACE2[i,ACE2_1]))]
+  y <- dt_mutant[target==diffs_ACE2[i,RBD] & position==diffs_ACE2[i,site],get(as.character(diffs_ACE2[i,ACE2_2]))]
+  diffs_ACE2[i,cor:=cor(x,y,use="complete.obs", method="spearman")]  
+}
+
+diffs_RBD$cor <- as.numeric(NA)
+for(i in 1:nrow(diffs_RBD)){
+  x <- dt_mutant[target==diffs_RBD[i,RBD_1] & position==diffs_RBD[i,site],get(as.character(diffs_RBD[i,ACE2]))]
+  y <- dt_mutant[target==diffs_RBD[i,RBD_2] & position==diffs_RBD[i,site],get(as.character(diffs_RBD[i,ACE2]))]
+  diffs_RBD[i,cor:=cor(x,y,use="complete.obs", method="spearman")]  
+}
+
+```
+
+For RBD pairs, compare r versus pairwise RBD sequence identity across comparisons.
+
+First, read in alignment and add new column to table indicating % identity
+
+```{r compute_pair_seq_identity}
+alignment <- bio3d::read.fasta(file="data/RBD_align_SSM-backgrounds.fasta")
+ids <- seqidentity(alignment)
+
+diffs_RBD[,percent_ID:=ids[as.character(RBD_1),as.character(RBD_2)],by=c("RBD_1","RBD_2")]
+```
+And do plots -- for just human ACE2 binding, and then including all ACE2s
+
+```{r RBD-correlations-versus-percent-ID_huACE2, fig.width=6, fig.height=4, fig.align="center", dpi=300,dev="png"}
+p_hu<- ggplot(data=diffs_RBD[ACE2=="huACE2",],aes(x=percent_ID, y=cor))+
+  geom_point(pch=16,alpha=0.25)+
+  geom_smooth(method="loess",span=1.3)+
+  facet_wrap(~site,nrow=2)+
+  theme_classic()+
+  xlim(1,0.7)+
+  xlab("RBD pairwise sequence identity")+
+  ylab("Spearman's rho")
+  
+p_hu
+
+invisible(dev.print(pdf, paste(config$preferences_dir,"/rho-v-percent-id_by-site_all-huACE2.pdf",sep=""),useDingbats=F))
+```
+
+```{r RBD-correlations-versus-percent-ID_all-ACE2, fig.width=6, fig.height=4, fig.align="center", dpi=300,dev="png"}
+p_all <- ggplot(data=diffs_RBD,aes(x=percent_ID, y=cor))+
+  geom_point(pch=16,alpha=0.25)+
+  geom_smooth(method="loess",span=1)+
+  facet_wrap(~site,nrow=2)+
+  theme_classic()+xlim(1,0.7)+
+  xlab("RBD pairwise sequence identity")+
+  ylab("Spearman's rho")
+  
+p_all
+
+invisible(dev.print(pdf, paste(config$preferences_dir,"/rho-v-percent-id_by-site_all-ACE2.pdf",sep=""),useDingbats=F))
+
+```
+
+For ACE2 pairs, let's take the median spearman's rho of each RBDs ACE2-pair correlation in mut effects per site
+
+```{r ACE2_correlations, fig.width=6, fig.height=4, fig.align="center", dpi=300,dev="png"}
+diffs_ACE2[,median_cor:=median(cor),by=c("ACE2_1","ACE2_2","site")]
+diffs_ACE2_collapse <- unique(diffs_ACE2[,.(ACE2_1,ACE2_2,site,median_cor)])
+
+pACE2 <- ggplot(diffs_ACE2,aes(ACE2_2,ACE2_1))+geom_tile(aes(fill=median_cor),color="black",lwd=0.1)+
+  #scale_fill_gradientn(colours=c("#A94E35","#A94E35","#F48365","#FFFFFF","#7378B9","#7378B9","#383C6C"),limits=c(-7,7),values=c(0,3/14,5/14,7/14,9/14,11/14,14/14),na.value="yellow")+
+  scale_fill_viridis(na.value="white")+
+  labs(x="",y="")+theme_classic(base_size=9)+
+  coord_equal()+theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.6,face="bold",size=10),axis.text.y=element_text(face="bold",size=10))+
+  facet_wrap(~site,nrow=2)
+  #guides(y.sec=guide_axis_label_trans())+
+
+pACE2
+```
+
 
