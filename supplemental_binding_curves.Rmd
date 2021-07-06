@@ -188,6 +188,8 @@ plot.titration <- function(homolog,mutation=NA,ACE2,cutoff=10){
 }
 ```
 
+Plot the curves that I want to illustrate.
+
 ```{r SARS2_huACE2, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
 homolog <- "SARS-CoV-2";ACE2 <- "huACE2";mutation <- NA
 plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
@@ -265,6 +267,9 @@ if(is.na(mutation)){
   invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }
 ```
+
+
+
 ```{r RaTG13_huACE2_D501T, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
 homolog <- "RaTG13";ACE2 <- "huACE2";mutation <- "D501T"
 plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
@@ -286,6 +291,8 @@ if(is.na(mutation)){
   invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }
 ```
+
+
 ```{r RaTG13_RaACE2.787, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
 homolog <- "RaTG13";ACE2 <- "RaACE2.787";mutation <- NA
 plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
@@ -296,6 +303,7 @@ if(is.na(mutation)){
   invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
 }
 ```
+
 
 ```{r BtKY72_Ra.787, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
 homolog <- "BtKY72";ACE2 <- "RaACE2.787";mutation <- NA
@@ -408,6 +416,100 @@ if(is.na(mutation)){
 
 ```{r AncAsia_huACE2, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
 homolog <- "AncAsia_MAP";ACE2 <- "huACE2"; mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+Look at curves for viruses that have been shown to infect mouse (or mouse adaptive mutations in strains that couldn't initially infect in vivo)
+
+Menachery 2015 Nat. Med and 2016 PNAS involve SARS-CoV Urbani, an RBD mutant of SARS-CoV (a site not in our panel), RsSHC014, and WIV1
+
+```{r SARS1_mACE2, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
+homolog <- "SARS-CoV-1_Urbani_HP03L";ACE2 <- "mACE2";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+```{r RsSHC014_mACE2, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
+homolog <- "RsSHC014";ACE2 <- "mACE2";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+```{r WIV1_mACE2, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
+homolog <- "WIV1";ACE2 <- "mACE2";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+Dinnon et al. Nature 2020, Gu et al. Science 2020, and Huang EBioMedicien 2021 derive SARS-CoV-2 mouse-adapted strains. Involves mutants at position 493, 498 (and 499, which we didn't mutate), and N501. Also note that variant strains with N501Y can infect mouse without adaptation (B.1.1.7 inefficient, P.1 and B.1.351 more efficient -- 484 and K417 perhaps also involved, it suggests?)
+
+```{r SARS2_mACE2, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
+homolog <- "SARS-CoV-2";ACE2 <- "mACE2";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+```{r SARS2_mACE2_Q498Y, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
+homolog <- "SARS-CoV-2";ACE2 <- "mACE2";mutation <- "Q498Y"
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+```{r SARS2_mACE2_N501Y, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
+homolog <- "SARS-CoV-2";ACE2 <- "mACE2";mutation <- "N501Y"
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+```{r SARS2_mACE2_Q493K, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
+homolog <- "SARS-CoV-2";ACE2 <- "mACE2";mutation <- "Q493K"
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+```{r SARS2_mACE2_Q498H, fig.width=4, fig.height=4, fig.align="center",dpi=300,dev="png"}
+homolog <- "SARS-CoV-2";ACE2 <- "mACE2";mutation <- "Q498H"
 plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
 #save pdf
 if(is.na(mutation)){
