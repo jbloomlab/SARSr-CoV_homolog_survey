@@ -50,7 +50,7 @@ cd ./outgroup-rooting/spike_nt_tree
 nohup raxmlHPC-PTHREADS -s ../outgroups_spike_nt_aligned_cleaned.fasta -n spike_nt_tree.txt -m GTRGAMMA -f a -p 10 -N autoMRE -x 10 -T 8 -q codon_partitions.txt &
 ```
 
-In either of these full spike phylogenies, rooting on these outgroups puts the Europe/Africa sequences as first to diverge. Let's see if we can get these incorporated now into the RBD only trees? Both to further support this rooting, but also to enable reconstruction of the ancestral sarbecovirus. 
+In either of these full spike phylogenies, rooting on these outgroups puts the Europe/Africa sequences as first to diverge. Let's see if this holds with the RBD only trees? Both to further support this rooting, but also to enable reconstruction of the ancestral sarbecovirus. 
 
 First, truncated the uncleaned/full alignment to just the RBD sequences. in the alignments `./outgroup-rooting/outgroups_RBD_aa_aligned.fasta` and `_nt` equivalent, and then removed outgroup-specific inserted sequences. I then removed any gaps (that is, unaligned the sequences), added back in the SARS-CoV-1 sequences that I curated above, and saved the files in `./outgroup-rooting/unaligned-sequences/`
 
