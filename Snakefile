@@ -45,6 +45,9 @@ rule make_summary:
         barcode_to_geno_pheno='results/summary/barcode_to_genotype_phenotypes.md',
         wt_phenos_file=config['final_variant_scores_wt_file'],
         mut_phenos_file=config['final_variant_scores_mut_file'],
+        analyze_evolvability='results/summary/analyze_evolvability.md',
+        analyze_preferences='results/summary/analyze_preferences.md',
+        supplemental_binding_curves='results/summary/supplemental_binding_curves.md',
     output:
         summary = os.path.join(config['summary_dir'], 'summary.md')
     run:
@@ -82,6 +85,11 @@ rule make_summary:
             6. [Derive final genotype-level phenotypes from replicate barcoded sequences]({path(input.barcode_to_geno_pheno)}).
                Generates final phenotypes, recorded in [this file for wildtype backgrounds]({path(input.wt_phenos_file)}) and [this file for mutants]({path(input.mut_phenos_file)}).
 
+            7. [Analyze evolvability of new ACE2 binding capabilities]({path(input.analyze_evolvability)}).
+            
+            8. [Analyze mutation effects and their epistatic turnover]({path(input.analyze_preferences)}).
+            
+            9. [Generate titration curve figures from Sort-seq measurements for select genotype/ACE2 illustrations]({path(input.supplemental_binding_curves)}).
             """
             ).strip())
 
@@ -93,6 +101,66 @@ rule make_dag:
         os.path.join(config['summary_dir'], 'dag.svg')
     shell:
         "snakemake --forceall --dag | dot -Tsvg > {output}"
+
+rule supplemental_binding_curves:
+    input:
+        config['final_variant_scores_mut_file'],
+        config['final_variant_scores_wt_file'],
+    output:
+        md='results/summary/supplemental_binding_curves.md',
+        md_files=directory('results/summary/supplemental_binding_curves_files')
+    envmodules:
+        'R/3.6.2-foss-2019b'
+    params:
+        nb='supplemental_binding_curves.Rmd',
+        md='supplemental_binding_curves.md',
+        md_files='supplemental_binding_curves_files'
+    shell:
+        """
+        R -e \"rmarkdown::render(input=\'{params.nb}\')\";
+        mv {params.md} {output.md};
+        mv {params.md_files} {output.md_files}
+        """
+
+rule analyze_preferences:
+    input:
+        config['final_variant_scores_mut_file'],
+        config['final_variant_scores_wt_file'],
+    output:
+        md='results/summary/analyze_preferences.md',
+        md_files=directory('results/summary/analyze_preferences_files')
+    envmodules:
+        'R/3.6.2-foss-2019b'
+    params:
+        nb='analyze_preferences.Rmd',
+        md='analyze_preferences.md',
+        md_files='analyze_preferences_files'
+    shell:
+        """
+        R -e \"rmarkdown::render(input=\'{params.nb}\')\";
+        mv {params.md} {output.md};
+        mv {params.md_files} {output.md_files}
+        """
+
+rule analyze_evolvability:
+    input:
+        config['final_variant_scores_mut_file'],
+        config['final_variant_scores_wt_file'],
+    output:
+        md='results/summary/analyze_evolvability.md',
+        md_files=directory('results/summary/analyze_evolvability_files')
+    envmodules:
+        'R/3.6.2-foss-2019b'
+    params:
+        nb='analyze_evolvability.Rmd',
+        md='analyze_evolvability.md',
+        md_files='analyze_evolvability_files'
+    shell:
+        """
+        R -e \"rmarkdown::render(input=\'{params.nb}\')\";
+        mv {params.md} {output.md};
+        mv {params.md_files} {output.md_files}
+        """
 
 rule barcode_to_geno_phenos:
     input:

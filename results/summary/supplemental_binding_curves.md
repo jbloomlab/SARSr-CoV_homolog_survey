@@ -1,0 +1,712 @@
+Plot bulk titration curves
+================
+Tyler Starr
+12/10/2020
+
+-   [Setup](#setup)
+
+This notebook plots barcode-composite titration curves for
+supplemental/variant-specific displays.
+
+``` r
+require("knitr")
+knitr::opts_chunk$set(echo = T)
+knitr::opts_chunk$set(dev.args = list(png = list(type = "cairo")))
+
+#list of packages to install/load
+packages = c("yaml","data.table","tidyverse","gridExtra")
+#install any packages not already installed
+installed_packages <- packages %in% rownames(installed.packages())
+if(any(installed_packages == F)){
+  install.packages(packages[!installed_packages])
+}
+#load packages
+invisible(lapply(packages, library, character.only=T))
+
+#read in config file
+config <- read_yaml("config.yaml")
+
+#make output directory
+if(!file.exists(config$titration_curves_dir)){
+  dir.create(file.path(config$titration_curves_dir))
+}
+```
+
+Session info for reproducing environment:
+
+``` r
+sessionInfo()
+```
+
+    ## R version 3.6.2 (2019-12-12)
+    ## Platform: x86_64-pc-linux-gnu (64-bit)
+    ## Running under: Ubuntu 18.04.4 LTS
+    ## 
+    ## Matrix products: default
+    ## BLAS/LAPACK: /app/software/OpenBLAS/0.3.7-GCC-8.3.0/lib/libopenblas_haswellp-r0.3.7.so
+    ## 
+    ## locale:
+    ##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+    ##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+    ##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+    ##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+    ##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+    ## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+    ## 
+    ## attached base packages:
+    ## [1] stats     graphics  grDevices utils     datasets  methods   base     
+    ## 
+    ## other attached packages:
+    ##  [1] gridExtra_2.3     forcats_0.4.0     stringr_1.4.0     dplyr_0.8.3      
+    ##  [5] purrr_0.3.3       readr_1.3.1       tidyr_1.0.0       tibble_3.0.2     
+    ##  [9] ggplot2_3.3.0     tidyverse_1.3.0   data.table_1.12.8 yaml_2.2.0       
+    ## [13] knitr_1.26       
+    ## 
+    ## loaded via a namespace (and not attached):
+    ##  [1] Rcpp_1.0.3       cellranger_1.1.0 pillar_1.4.5     compiler_3.6.2  
+    ##  [5] dbplyr_1.4.2     tools_3.6.2      digest_0.6.23    lubridate_1.7.4 
+    ##  [9] jsonlite_1.6     evaluate_0.14    lifecycle_0.2.0  gtable_0.3.0    
+    ## [13] pkgconfig_2.0.3  rlang_0.4.7      reprex_0.3.0     cli_2.0.0       
+    ## [17] rstudioapi_0.10  DBI_1.1.0        haven_2.2.0      xfun_0.11       
+    ## [21] withr_2.1.2      xml2_1.2.2       httr_1.4.1       fs_1.3.1        
+    ## [25] hms_0.5.2        generics_0.0.2   vctrs_0.3.1      grid_3.6.2      
+    ## [29] tidyselect_1.1.0 glue_1.3.1       R6_2.4.1         fansi_0.4.0     
+    ## [33] readxl_1.3.1     rmarkdown_2.0    modelr_0.1.5     magrittr_1.5    
+    ## [37] backports_1.1.5  scales_1.1.0     ellipsis_0.3.0   htmltools_0.4.0 
+    ## [41] rvest_0.3.5      assertthat_0.2.1 colorspace_1.4-1 stringi_1.4.3   
+    ## [45] munsell_0.5.0    broom_0.7.0      crayon_1.3.4
+
+Setup
+-----
+
+Read in table of containing all of the bin/counts information needed to
+fit titration curves. Also read in the barcode-collapsed mutant and wt
+Kds that our actual ‘final’ values for each genotype, and construct
+“samples” tables giving concentrations.
+
+``` r
+dt <- data.table(read.csv(file=config$Titeseq_Kds_full_file,stringsAsFactors = F))
+
+dt_wt <- data.table(read.csv(file=config$final_variant_scores_wt_file,stringsAsFactors=F))
+dt_mut <- data.table(read.csv(file=config$final_variant_scores_mut_file,stringsAsFactors=F))
+
+#read dataframe with list of barcode runs
+barcode_runs <- read.csv(file=config$barcode_runs,stringsAsFactors=F); barcode_runs <- subset(barcode_runs, select=-c(R1))
+
+#eliminate rows from barcode_runs that are not from a binding Tite-seq experiment
+barcode_runs <- barcode_runs[barcode_runs$sample_type != "SortSeq",]
+
+#make tables giving names of Titeseq samples and the corresponding ACE2 incubation concentrations
+samples_huACE2 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="huACE2","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="huACE2","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-6, 10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12, 10^-13,0))
+
+samples_huACE2.pool6 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="huACE2.pool6","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="huACE2.pool6","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-6, 10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12, 10^-13,0))
+
+samples_cvACE2 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="cvACE2","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="cvACE2","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-6, 10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12, 10^-13,0))
+#note from FACS was that samples 2 in both replicates did not have proper cloud. Unclear why, but am going to fit without this sample
+samples_cvACE2 <- samples_cvACE2[samples_cvACE2$sample != "cvACE2_02",]
+
+samples_pgACE2 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="pgACE2","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="pgACE2","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-6, 10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12, 10^-13,0))
+
+samples_mACE2 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="mACE2","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="mACE2","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-6, 10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12, 10^-13,0))
+
+
+samples_RaACE2.787 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="RaACE2.787","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="RaACE2.787","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-6, 10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12, 10^-13,0))
+
+samples_RaACE2.9479 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="RaACE2.9479","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="RaACE2.9479","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-6, 10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12, 10^-13,0))
+
+
+samples_RaACE2.787.pool6 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="RaACE2.787.pool6","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="RaACE2.787.pool6","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-6, 10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12, 10^-13,0))
+
+samples_RsACE2.3364 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="RsACE2.3364","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="RsACE2.3364","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-6, 10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12, 10^-13,0))
+
+samples_RsACE2.1434 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="RsACE2.1434","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="RsACE2.1434","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-6, 10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12, 10^-13,0))
+
+
+samples_RpACE2 <- data.frame(sample=unique(paste(barcode_runs[barcode_runs$sample_type=="RpACE2","sample_type"],formatC(barcode_runs[barcode_runs$sample_type=="RpACE2","concentration"], width=2,flag="0"),sep="_")),conc=c(10^-7, 10^-8, 10^-9, 10^-10, 10^-11, 10^-12,0))
+```
+
+Create a function that takes a genotype and ACE2, and plots with
+transparency each per-barcode curve, in addition to the “average” curve.
+
+``` r
+plot.titration <- function(homolog,mutation=NA,ACE2,cutoff=10){
+  #get title for plot
+  if(is.na(mutation)){
+    title <- paste(homolog,",\n", ACE2,sep="")
+  }else{
+    title <- paste(homolog," + ",mutation,",\n", ACE2,sep="")
+  }
+  #set empty plotting window with dimensions, titles, etc.
+  plot(NULL,NULL,xlim=c(1e-13,1e-6),ylim=c(1,4),log="x",main=title,ylab="mean bin",xlab=paste("[",ACE2,"] (M)",sep=""))
+  #if a wildtype, only need to pull out matching target wt rows
+  if(is.na(mutation)){
+    dt.temp <- dt[target==homolog & variant_class=="wildtype",]
+    #iterate through rows, plot per-barcode titrations...
+    for(row in 1:nrow(dt.temp)){
+      y.vals <- c();for(sample in get(paste("samples_",ACE2,sep=""))$sample){y.vals <- c(y.vals,paste(sample,"_meanbin",sep=""))};y.vals <- unlist(dt.temp[row,y.vals,with=F])
+      x.vals <- get(paste("samples_",ACE2,sep=""))$conc
+      count.vals <- c();for(sample in get(paste("samples_",ACE2,sep=""))$sample){count.vals <- c(count.vals,paste(sample,"_totalcount",sep=""))};count.vals <- unlist(dt.temp[row,count.vals,with=F])
+      indices <- count.vals>cutoff & !is.na(count.vals)
+      y.vals <- y.vals[indices]
+      x.vals <- x.vals[indices]
+      points(x.vals,y.vals,pch=19,col="#7f7f7f05",cex=0.6)
+      Kd_var <- paste("log10Kd_",ACE2,sep="")
+      if(!is.na(dt.temp[row,get(Kd_var)])){
+        fit <- nls(y.vals ~ a*(x.vals/(x.vals+Kd))+b,
+               start=list(a=3,b=1,Kd=10^dt.temp[row,get(Kd_var)]),
+               lower=list(a=2,b=1,Kd=1e-15),
+               upper=list(a=3,b=1.5,Kd=1e-5), #constrain Kd to be no higher than the 10x highest concentration value
+               algorithm="port") 
+        lines(10^c(seq(-13,-6,0.25)),predict(fit,newdata=list(x.vals=10^c(seq(-13,-6,0.25)))),col="#7f7f7f03")
+      }
+    }
+    #get the average mean bin and fit
+    y.vals <- c();for(sample in get(paste("samples_",ACE2,sep=""))$sample){y.vals <- c(y.vals,paste(sample,"_meanbin",sep=""))};y.vals <- apply(dt.temp[,y.vals,with=F], 2, median, na.rm=T)
+    x.vals <- get(paste("samples_",ACE2,sep=""))$conc
+    #get actual Kd
+    if(ACE2=="RaACE2.787.pool6"){
+      Kd_final <- dt_wt[target==homolog,RaACE2.787]
+    }else if(ACE2=="huACE2.pool6"){
+      Kd_final <- dt_wt[target==homolog,huACE2]
+    }else{
+      Kd_final <- dt_wt[target==homolog,get(ACE2)]
+    }
+    fit <- nls(y.vals ~ a*(x.vals/(x.vals+Kd))+b,
+               start=list(a=3,b=1,Kd=10^-Kd_final),
+               lower=list(a=2,b=1,Kd=1e-15),
+               upper=list(a=3,b=1.5,Kd=1e-5),
+               algorithm="port")
+    lines(10^c(seq(-13,-6,0.25)),predict(fit,newdata=list(x.vals=10^c(seq(-13,-6,0.25)))),lwd=2)
+    points(x.vals,y.vals,pch=19)
+    legend("topleft",bty="n",cex=1,legend=paste("-log10(Kd,app)\n",format(Kd_final,digits=4)))
+  }
+  #if a mutant, have to do a bit more referencing
+  if(!is.na(mutation)){
+    wt <- strsplit(mutation,split="")[[1]][1]
+    mut <- strsplit(mutation,split="")[[1]][5]
+    pos <- as.numeric(paste(strsplit(mutation,split="")[[1]][2:4],collapse=""))
+    dt.temp <- dt[target==homolog & variant_class=="mutant" & wildtype==wt & mutant==mut & position==pos,]
+    #iterate through rows, plot per-barcode titrations...
+    for(row in 1:nrow(dt.temp)){
+      y.vals <- c();for(sample in get(paste("samples_",ACE2,sep=""))$sample){y.vals <- c(y.vals,paste(sample,"_meanbin",sep=""))};y.vals <- unlist(dt.temp[row,y.vals,with=F])
+      x.vals <- get(paste("samples_",ACE2,sep=""))$conc
+      count.vals <- c();for(sample in get(paste("samples_",ACE2,sep=""))$sample){count.vals <- c(count.vals,paste(sample,"_totalcount",sep=""))};count.vals <- unlist(dt.temp[row,count.vals,with=F])
+      indices <- count.vals>cutoff & !is.na(count.vals)
+      y.vals <- y.vals[indices]
+      x.vals <- x.vals[indices]
+      points(x.vals,y.vals,pch=19,col="#7f7f7f20",cex=0.6)
+      Kd_var <- paste("log10Kd_",ACE2,sep="")
+      if(!is.na(dt.temp[row,get(Kd_var)])){
+        fit <- nls(y.vals ~ a*(x.vals/(x.vals+Kd))+b,
+               start=list(a=3,b=1,Kd=10^dt.temp[row,get(Kd_var)]),
+               lower=list(a=2,b=1,Kd=1e-15),
+               upper=list(a=3,b=1.5,Kd=1e-5), #constrain Kd to be no higher than the 10x highest concentration value
+               algorithm="port") 
+        lines(10^c(seq(-13,-6,0.25)),predict(fit,newdata=list(x.vals=10^c(seq(-13,-6,0.25)))),col="#7f7f7f20")
+      }
+    }
+    #get the average mean bin and fit
+    y.vals <- c();for(sample in get(paste("samples_",ACE2,sep=""))$sample){y.vals <- c(y.vals,paste(sample,"_meanbin",sep=""))};y.vals <- apply(dt.temp[,y.vals,with=F], 2, median, na.rm=T)
+    x.vals <- get(paste("samples_",ACE2,sep=""))$conc
+    #get actual Kd
+    if(ACE2=="RaACE2.787.pool6"){
+      Kd_final <- dt_mut[target==homolog & wildtype==wt & position==pos & mutant==mut,RaACE2.787]
+    }else if(ACE2=="huACE2.pool6"){
+      Kd_final <- dt_mut[target==homolog & wildtype==wt & position==pos & mutant==mut,huACE2]
+    }else{
+      Kd_final <- dt_mut[target==homolog & wildtype==wt & position==pos & mutant==mut,get(ACE2)]
+    }
+    fit <- nls(y.vals ~ a*(x.vals/(x.vals+Kd))+b,
+               start=list(a=3,b=1,Kd=10^-Kd_final),
+               lower=list(a=2,b=1,Kd=1e-15),
+               upper=list(a=3,b=1.5,Kd=1e-5),
+               algorithm="port")
+    lines(10^c(seq(-13,-6,0.25)),predict(fit,newdata=list(x.vals=10^c(seq(-13,-6,0.25)))),lwd=2)
+    points(x.vals,y.vals,pch=19)
+    legend("topleft",bty="n",cex=1,legend=paste("-log10(Kd,app)\n",format(Kd_final,digits=4)))
+  }
+}
+```
+
+Plot the curves that I want to illustrate.
+
+``` r
+homolog <- "SARS-CoV-2";ACE2 <- "huACE2";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/SARS2_huACE2-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "SARS-CoV-2";ACE2 <- "huACE2";mutation <- "N501Y"
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/SARS2_huACE2_N501Y-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "SARS-CoV-1_Urbani_HP03L";ACE2 <- "huACE2";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/SARS1_huACE2-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "SARS-CoV-1_Urbani_HP03L";ACE2 <- "huACE2";mutation <- "T501Y"
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/SARS1_huACE2_T501Y-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "GD-Pangolin";ACE2 <- "huACE2";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/GDPang_huACE2-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "GD-Pangolin";ACE2 <- "huACE2";mutation <- "N501Y"
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/GDPang_huACE2_N501Y-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+Output some mutants of interest for visualization of BtKY72 / Ra\_787
+binding. Compare T498W affinity to RaTG13/huACE2
+
+``` r
+homolog <- "RaTG13";ACE2 <- "huACE2";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/RaTG13_huACE2-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "RaTG13";ACE2 <- "huACE2";mutation <- "D501T"
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/RaTG13_huACE2_D501T-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "RaTG13";ACE2 <- "RaACE2.9479";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/RaTG13_RaACE2.9479-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "RaTG13";ACE2 <- "RaACE2.787";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/RaTG13_RaACE2.787-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "BtKY72";ACE2 <- "RaACE2.787";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/BtKY72_Ra.787-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "BtKY72";ACE2 <- "RaACE2.9479";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/BtKY72_Ra.9479-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "BtKY72";ACE2 <- "huACE2";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/BtKY72_huACE2-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "BtKY72";ACE2 <- "RaACE2.787.pool6";mutation <- "T498W"
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/BtKY72_T498W_Ra.787-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "BtKY72";ACE2 <- "huACE2.pool6";mutation <- "T498W"
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/BtKY72_T498W_huACE2-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "BtKY72";ACE2 <- "huACE2.pool6";mutation <- "K493Y"
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/BtKY72_K493Y_huACE2-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "BtKY72";ACE2 <- "huACE2.pool6";mutation <- "V501Y"
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/BtKY72_V501Y_huACE2-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "AncSarbecovirus_MAP";ACE2 <- "huACE2";mutation <- "K493Y"
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/AncSarbecovirus_K493Y_huACE2-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "AncSarbecovirus_MAP";ACE2 <- "huACE2"; mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/AncSarbecovirus_huACE2-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "AncSarbecovirus_MAP";ACE2 <- "RaACE2.9479"; mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/AncSarbecovirus_RaACE2.9479-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "AncAsia_MAP";ACE2 <- "huACE2"; mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/AncAsia_huACE2-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+Look at curves for viruses that have been shown to infect mouse (or
+mouse adaptive mutations in strains that couldn’t initially infect in
+vivo)
+
+Menachery 2015 Nat. Med and 2016 PNAS involve SARS-CoV Urbani, an RBD
+mutant of SARS-CoV (a site not in our panel), RsSHC014, and WIV1
+
+``` r
+homolog <- "SARS-CoV-1_Urbani_HP03L";ACE2 <- "mACE2";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/SARS1_mACE2-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "RsSHC014";ACE2 <- "mACE2";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/RsSHC014_mACE2-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "WIV1";ACE2 <- "mACE2";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/WIV1_mACE2-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+Dinnon et al. Nature 2020, Gu et al. Science 2020, and Huang
+EBioMedicien 2021 derive SARS-CoV-2 mouse-adapted strains. Involves
+mutants at position 493, 498 (and 499, which we didn’t mutate), and
+N501. Also note that variant strains with N501Y can infect mouse without
+adaptation (B.1.1.7 inefficient, P.1 and B.1.351 more efficient – 484
+and K417 perhaps also involved, it suggests?)
+
+``` r
+homolog <- "SARS-CoV-2";ACE2 <- "mACE2";mutation <- NA
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/SARS2_mACE2-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "SARS-CoV-2";ACE2 <- "mACE2";mutation <- "Q498Y"
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/SARS2_mACE2_Q498Y-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "SARS-CoV-2";ACE2 <- "mACE2";mutation <- "N501Y"
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/SARS2_mACE2_N501Y-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "SARS-CoV-2";ACE2 <- "mACE2";mutation <- "Q493K"
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/SARS2_mACE2_Q493K-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```
+
+``` r
+homolog <- "SARS-CoV-2";ACE2 <- "mACE2";mutation <- "Q498H"
+plot.titration(homolog=homolog,mutation=mutation,ACE2=ACE2)
+```
+
+<img src="supplemental_binding_curves_files/figure-gfm/SARS2_mACE2_Q498H-1.png" style="display: block; margin: auto;" />
+
+``` r
+#save pdf
+if(is.na(mutation)){
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}else{
+  invisible(dev.print(pdf, paste(config$titration_curves_dir,"/",homolog,"_",mutation,"_",ACE2,".pdf",sep=""),useDingbats=F))
+}
+```

@@ -26,3 +26,9 @@ workflow:
 
 6. [Derive final genotype-level phenotypes from replicate barcoded sequences](barcode_to_genotype_phenotypes.md).
    Generates final phenotypes, recorded in [this file for wildtype backgrounds](../final_variant_scores/wt_variant_scores.csv) and [this file for mutants](../final_variant_scores/mut_variant_scores.csv).
+
+7. [Analyze evolvability of new ACE2 binding capabilities](analyze_evolvability.md).
+
+8. [Analyze mutation effects and their epistatic turnover](analyze_preferences.md).
+
+9. [Generate titration curve figures from Sort-seq measurements for select genotype/ACE2 illustrations](supplemental_binding_curves.md).
