@@ -14,7 +14,7 @@ I concatenated this expanded SARS-CoV-1 set with the SARS-related CoV sequences 
 
 Finally, we may want to try using non-sarbecovirus outgroup sequences. I initially tried including adding the non-sarbecovirus sequence from the Hibecovirus strain Bat Hp-BCoV Zhejiang 2013 (GenBank KF636752) to use as an outgroup for the sarbecovirus clade. This is the closest outgroup sequence I've seen in larger phylogenies of betaCoVs.
 
-We could also try more distant betaCoV outgroups: Rousettus CoV HKU9 (Genbank HKU9); Bat CoV GCCDC1 (MT350598); OC43 (KX344031); HKU1 (KF686346); MERS-CoV (NC_019843). A recent [preprint](https://www.biorxiv.org/content/10.1101/2020.07.07.190546v1) illustrates that the positioning of the root may be very important (and I think they may actually get it wrong for the RBD tree? It differs from what e.g. Boni et al. report, and their RBD tree differs in other respects from what I've seen in other papers.) So, instead of doing just at the level of RBD, we may want to assess robustness of rooting by comparing both spike and RBD. These do not align well when using just RBD -- we may want to extend our consideration of rooting and alignment to be the whole spike before parsing back down to RBD.
+We could also try more distant betaCoV outgroups: Rousettus CoV HKU9 (Genbank HKU9); Bat CoV GCCDC1 (MT350598); OC43 (KX344031); HKU1 (KF686346); MERS-CoV (NC_019843). A recent [preprint](https://www.biorxiv.org/content/10.1101/2020.07.07.190546v1) illustrates that the positioning of the root may be very important (and their RBD tree differs in other respects from what I've seen in other papers.) So, instead of doing just at the level of RBD, we may want to assess robustness of rooting by comparing both spike and RBD. These do not align well when using just RBD -- we may want to extend our consideration of rooting and alignment to be the whole spike before parsing back down to RBD to better identify boundaries, particularly in divergent outgroups.
 
 ## Rooting
 
@@ -50,7 +50,7 @@ cd ./outgroup-rooting/spike_nt_tree
 nohup raxmlHPC-PTHREADS -s ../outgroups_spike_nt_aligned_cleaned.fasta -n spike_nt_tree.txt -m GTRGAMMA -f a -p 10 -N autoMRE -x 10 -T 8 -q codon_partitions.txt &
 ```
 
-In either of these full spike phylogenies, rooting on these outgroups puts the Europe/Africa sequences as first to diverge. Let's see if we can get these incorporated now into the RBD only trees? Both to further support this rooting, but also to enable reconstruction of the ancestral sarbecovirus. 
+In either of these full spike phylogenies, rooting on these outgroups puts the Europe/Africa sequences as first to diverge. Let's see if this holds with the RBD only trees?
 
 First, truncated the uncleaned/full alignment to just the RBD sequences. in the alignments `./outgroup-rooting/outgroups_RBD_aa_aligned.fasta` and `_nt` equivalent, and then removed outgroup-specific inserted sequences. I then removed any gaps (that is, unaligned the sequences), added back in the SARS-CoV-1 sequences that I curated above, and saved the files in `./outgroup-rooting/unaligned-sequences/`
 
@@ -78,7 +78,7 @@ cd ./outgroup-rooting/RBD_nt_tree
 nohup raxmlHPC-PTHREADS -s ../outgroups_RBD_nt_aligned.fasta -n RBDo_nt_tree.txt -m GTRGAMMA -f a -p 10 -N autoMRE -x 10 -T 8 -q codon_partitions.txt &
 ```
 
-These trees also put the first split between the non-Asian and SE-Asian sarbecoviruses, as I had been operating under! So, that's good to see (and differs from the recent paper on bioRxiv that we had been discussing). The outgroup branches though are *incredibly* long, and it would probably look better if we pared back to just the Hibecovirus outgroup? Therefore, I add only the Hibecovirus sequence into our "main" unaligned sequences, to be used below.
+These trees also put the first split between the non-Asian and SE-Asian sarbecoviruses, as I had been operating under! So, that's good to see (and differs from the recent paper on bioRxiv linked above). The outgroup branches though are *incredibly* long, and it would probably look better if we pared back to just the Hibecovirus outgroup? Therefore, I add only the Hibecovirus sequence into our "main" unaligned sequences, to be used below.
 
 
 ## Alignment with `mafft` and `PAL2NAL`
@@ -201,7 +201,7 @@ nohup raxmlHPC-PTHREADS -s ./RBD_nt-codon_aligned_rec2.fasta -n RBD_codon_tree_r
 
 ```
 
-Looking at the trees built from these two different sections -- there are differences from the full-length ML tree, but any differences have incredibly low bootstrap support. I do *not* take this as indication of strong support for a specific recombination history here, but rather that we just nuked our phylogenetic signal by taking a small alignment and cutting it half. However, for completeness sake, we might want to do ASR on a recombination-aware tree. However, I want to try the GARD method as well for breakpoint detection. Instead of 3SEQ, which I believe requires something resembling the parental sequences to be present, the GARD approach based on determining likelihood of alternate topologies, seems more straighforward. While I'm here I'll run the FastML, but I will likely roll with the GARD version of this below.
+Looking at the trees built from these two different sections -- there are differences from the full-length ML tree, but any differences have incredibly low bootstrap support. I do *not* take this as indication of strong support for a specific recombination history here, but rather that we just nuked our phylogenetic signal by taking a small alignment and cutting it half. However, for completeness sake, we might want to do ASR on a recombination-aware tree. However, I want to try the GARD method as well for breakpoint detection. Instead of 3SEQ, which I believe requires something resembling the parental sequences to be present, the GARD approach based on determining likelihood support for alternate topologies, seems more straighforward. While I'm here I'll run the FastML, but I will likely roll with the GARD version of this below.
 
 Output "bestTree" as rooted by outgroup hibecovirus sequence as `RAxML_besttree_RBD_codon_rec1_rooted.txt` in Newick format. This will polarize the direction of nodes for ASR.
 
@@ -217,7 +217,6 @@ cd ../ASR_rec2
 nohup perl ../../../programs/FastML.v3.11/www/fastml/FastML_Wrapper.pl --MSA_file ../RBD_aa_aligned_rec2.fasta --seqType AA --Tree ../RAxML_besttree_RBD_codon_rec2_rooted.txt --SubMatrix LG --OptimizeBL yes --jointReconstruction yes --indelReconstruction BOTH --outDir /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/RBD_nt-codon_recomb-test/ASR_rec2 &
 ```
 
-XXXXXXX
 
 ## Recombination analysis with `GARD`
 The recombination analysis of 3SEQ gave results that were hard to interpret in terms of exact breakpoints and their reliability -- my by-eye checking of the breakpoints was less than convinced, though of course that's the point of an algorithm. Let's try an alternative algorithm in GARD using it's "Datamonkey" server. Ran the nt alignment through this algorithm, and saved files in `./RBD_nt-codon_recomb-test_GARD`. This analysis supports with small AIC 85.16 a breakpoint between positions 264 and 265. So, let's do the same as above, but with this single breakpoint, breaking the alignment into sub-segments: `RBD_nt-codon_aligned_GARD1.fasta` contains nucleotides 1-264, and `RBD_nt-codon_aligned_GARD2.fasta` contains nucleotides 265-606. Also translated the corresponding aa alignments for ASR.
@@ -345,7 +344,6 @@ Parsed sequences with the `.Rmd` script in this directory. Compared the "v1" seq
   - AncSARS2a v2 has mutations L441Q, S443A, K444S, G446S, L452Y, T470N, T478Q, N481S, G482S, Q493K, H498Y, T501A. Again, probably the indiviudal mutations compatible with binding, but there are many, so ti might be worth binding. (Might show binding for e.g. cvACE2 binding whihc the v1 didn't)
   - Note that the v2 AncSARS2b is closer to the v1 AncSARS1a (only differs K403R, L441Q, S443A, K444S), consistent with those having the same ingroup sequecnes (plus cambodia for v2)
 
-Might be worth ordering a couple of these alongside the Cambodia and Japan sequences themselves just for testing any robustness of key conclusions (Ra binding of AncSarb, hu binding of AncAsia)
 
 
 
