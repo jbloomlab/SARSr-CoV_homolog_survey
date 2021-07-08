@@ -40,7 +40,7 @@ sessionInfo()
 
     ## R version 3.6.2 (2019-12-12)
     ## Platform: x86_64-pc-linux-gnu (64-bit)
-    ## Running under: Ubuntu 18.04.4 LTS
+    ## Running under: Ubuntu 18.04.5 LTS
     ## 
     ## Matrix products: default
     ## BLAS/LAPACK: /app/software/OpenBLAS/0.3.7-GCC-8.3.0/lib/libopenblas_haswellp-r0.3.7.so
@@ -101,20 +101,22 @@ Compute correlations in mutant binding constants between background and across A
 ------------------------------------------------------------------------------------
 
 First, just illustrate correlations with SARS2 for mutations in each
-other RBD, for binding to huACE2
+other RBD, for binding to huACE2. Want to report the RMSE, not just the
+r/r-squared – because we are interested in the absolute magnitude of
+deviation between backgrounds, not just the relative variance that’s
+normalized in an r-squared value!
 
 ``` r
 par(mfrow=c(13, 6))
 for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-2"]){
   for(site in c(455, 486, 493, 494, 498, 501)){
-    plot(dt_mutant[target=="SARS-CoV-2" & position==site,huACE2],dt_mutant[target==RBD2 & position==site,huACE2], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
-    legend("topleft",bty="n",cex=1,legend=format(cor(dt_mutant[target==RBD2 & position==site,huACE2], dt_mutant[target=="SARS-CoV-2" & position==site,huACE2], use="complete.obs",method="spearman"),digits=3))
+    x <- dt_mutant[target=="SARS-CoV-2" & position==site,huACE2]
+    y <- dt_mutant[target==RBD2 & position==site,huACE2]
+    plot(x,y, xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
+    legend("topleft",bty="n",cex=1,legend=format(mean(abs(lm(y~x)$residuals),na.rm=T),digits=3))
   }
 }
 ```
-
-    ## Warning in cor(dt_mutant[target == RBD2 & position == site, huACE2],
-    ## dt_mutant[target == : the standard deviation is zero
 
 <img src="analyze_preferences_files/figure-gfm/correlation_plots_v_SARS2_huACE2-1.png" style="display: block; margin: auto;" />
 
@@ -128,15 +130,13 @@ RBDs versus SARS1, huACE2
 par(mfrow=c(13, 6))
 for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-1_Urbani_HP03L"]){
   for(site in c(455, 486, 493, 494, 498, 501)){
-    plot(dt_mutant[target=="SARS-CoV-1_Urbani_HP03L" & position==site,huACE2],dt_mutant[target==RBD2 & position==site,huACE2], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-1_Urbani_HP03L" & position==site, mutant]), xlab="", ylab=RBD2, main="")
-    legend("topleft",bty="n",cex=1,legend=format(cor(dt_mutant[target==RBD2 & position==site,huACE2], dt_mutant[target=="SARS-CoV-1_Urbani_HP03L" & position==site,huACE2], use="complete.obs",method="spearman"),digits=3))
-    
+    x <- dt_mutant[target=="SARS-CoV-1_Urbani_HP03L" & position==site,huACE2]
+    y <- dt_mutant[target==RBD2 & position==site,huACE2]
+    plot(x,y, xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-1_Urbani_HP03L" & position==site, mutant]), xlab="", ylab=RBD2, main="")
+    legend("topleft",bty="n",cex=1,legend=format(mean(abs(lm(y~x)$residuals),na.rm=T),digits=3))
   }
 }
 ```
-
-    ## Warning in cor(dt_mutant[target == RBD2 & position == site, huACE2],
-    ## dt_mutant[target == : the standard deviation is zero
 
 <img src="analyze_preferences_files/figure-gfm/correlation_plots_v_SARS1_huACE2-1.png" style="display: block; margin: auto;" />
 
@@ -150,8 +150,10 @@ And, vs. SARS2 for the rest of the ACE2s
 par(mfrow=c(13, 6))
 for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-2"]){
   for(site in c(455, 486, 493, 494, 498, 501)){
-    plot(dt_mutant[target=="SARS-CoV-2" & position==site,cvACE2],dt_mutant[target==RBD2 & position==site,cvACE2], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
-    legend("topleft",bty="n",cex=1,legend=format(cor(dt_mutant[target==RBD2 & position==site,cvACE2], dt_mutant[target=="SARS-CoV-2" & position==site,cvACE2], use="complete.obs",method="spearman"),digits=3))
+    x <- dt_mutant[target=="SARS-CoV-2" & position==site,cvACE2]
+    y <- dt_mutant[target==RBD2 & position==site,cvACE2]
+    plot(x,y, xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
+    legend("topleft",bty="n",cex=1,legend=format(mean(abs(lm(y~x)$residuals),na.rm=T),digits=3))
   }
 }
 ```
@@ -166,8 +168,10 @@ invisible(dev.print(pdf, paste(config$preferences_dir,"/correlations-by-site_SAR
 par(mfrow=c(13, 6))
 for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-2"]){
   for(site in c(455, 486, 493, 494, 498, 501)){
-    plot(dt_mutant[target=="SARS-CoV-2" & position==site,pgACE2],dt_mutant[target==RBD2 & position==site,pgACE2], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
-    legend("topleft",bty="n",cex=1,legend=format(cor(dt_mutant[target==RBD2 & position==site,pgACE2], dt_mutant[target=="SARS-CoV-2" & position==site,pgACE2], use="complete.obs",method="spearman"),digits=3))
+    x <- dt_mutant[target=="SARS-CoV-2" & position==site,pgACE2]
+    y <- dt_mutant[target==RBD2 & position==site,pgACE2]
+    plot(x,y, xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
+    legend("topleft",bty="n",cex=1,legend=format(mean(abs(lm(y~x)$residuals),na.rm=T),digits=3))
   }
 }
 ```
@@ -182,8 +186,10 @@ invisible(dev.print(pdf, paste(config$preferences_dir,"/correlations-by-site_SAR
 par(mfrow=c(13, 6))
 for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-2"]){
   for(site in c(455, 486, 493, 494, 498, 501)){
-    plot(dt_mutant[target=="SARS-CoV-2" & position==site,mACE2],dt_mutant[target==RBD2 & position==site,mACE2], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
-    legend("topleft",bty="n",cex=1,legend=format(cor(dt_mutant[target==RBD2 & position==site,mACE2], dt_mutant[target=="SARS-CoV-2" & position==site,mACE2], use="complete.obs",method="spearman"),digits=3))
+    x <- dt_mutant[target=="SARS-CoV-2" & position==site,mACE2]
+    y <- dt_mutant[target==RBD2 & position==site,mACE2]
+    plot(x,y, xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
+    legend("topleft",bty="n",cex=1,legend=format(mean(abs(lm(y~x)$residuals),na.rm=T),digits=3))
   }
 }
 ```
@@ -198,8 +204,10 @@ invisible(dev.print(pdf, paste(config$preferences_dir,"/correlations-by-site_SAR
 par(mfrow=c(13, 6))
 for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-2"]){
   for(site in c(455, 486, 493, 494, 498, 501)){
-    plot(dt_mutant[target=="SARS-CoV-2" & position==site,RaACE2.9479],dt_mutant[target==RBD2 & position==site,RaACE2.9479], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
-    legend("topleft",bty="n",cex=1,legend=format(cor(dt_mutant[target==RBD2 & position==site,RaACE2.9479], dt_mutant[target=="SARS-CoV-2" & position==site,RaACE2.9479], use="complete.obs",method="spearman"),digits=3))
+    x <- dt_mutant[target=="SARS-CoV-2" & position==site,RaACE2.9479]
+    y <- dt_mutant[target==RBD2 & position==site,RaACE2.9479]
+    plot(x,y, xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
+    legend("topleft",bty="n",cex=1,legend=format(mean(abs(lm(y~x)$residuals),na.rm=T),digits=3))
   }
 }
 ```
@@ -214,8 +222,10 @@ invisible(dev.print(pdf, paste(config$preferences_dir,"/correlations-by-site_SAR
 par(mfrow=c(13, 6))
 for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-2"]){
   for(site in c(455, 486, 493, 494, 498, 501)){
-    plot(dt_mutant[target=="SARS-CoV-2" & position==site,RaACE2.787],dt_mutant[target==RBD2 & position==site,RaACE2.787], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
-    legend("topleft",bty="n",cex=1,legend=format(cor(dt_mutant[target==RBD2 & position==site,RaACE2.787], dt_mutant[target=="SARS-CoV-2" & position==site,RaACE2.787], use="complete.obs",method="spearman"),digits=3))
+    x <- dt_mutant[target=="SARS-CoV-2" & position==site,RaACE2.787]
+    y <- dt_mutant[target==RBD2 & position==site,RaACE2.787]
+    plot(x,y, xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
+    legend("topleft",bty="n",cex=1,legend=format(mean(abs(lm(y~x)$residuals),na.rm=T),digits=3))
   }
 }
 ```
@@ -230,8 +240,10 @@ invisible(dev.print(pdf, paste(config$preferences_dir,"/correlations-by-site_SAR
 par(mfrow=c(13, 6))
 for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-2"]){
   for(site in c(455, 486, 493, 494, 498, 501)){
-    plot(dt_mutant[target=="SARS-CoV-2" & position==site,RsACE2.1434],dt_mutant[target==RBD2 & position==site,RsACE2.1434], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
-    legend("topleft",bty="n",cex=1,legend=format(cor(dt_mutant[target==RBD2 & position==site,RsACE2.1434], dt_mutant[target=="SARS-CoV-2" & position==site,RsACE2.1434], use="complete.obs",method="spearman"),digits=3))
+    x <- dt_mutant[target=="SARS-CoV-2" & position==site,RsACE2.1434]
+    y <- dt_mutant[target==RBD2 & position==site,RsACE2.1434]
+    plot(x,y, xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
+    legend("topleft",bty="n",cex=1,legend=format(mean(abs(lm(y~x)$residuals),na.rm=T),digits=3))
   }
 }
 ```
@@ -246,8 +258,10 @@ invisible(dev.print(pdf, paste(config$preferences_dir,"/correlations-by-site_SAR
 par(mfrow=c(13, 6))
 for(RBD2 in levels(dt_mutant$target)[levels(dt_mutant$target)!="SARS-CoV-2"]){
   for(site in c(455, 486, 493, 494, 498, 501)){
-    plot(dt_mutant[target=="SARS-CoV-2" & position==site,RsACE2.3364],dt_mutant[target==RBD2 & position==site,RsACE2.3364], xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
-    legend("topleft",bty="n",cex=1,legend=format(cor(dt_mutant[target==RBD2 & position==site,RsACE2.3364], dt_mutant[target=="SARS-CoV-2" & position==site,RsACE2.3364], use="complete.obs",method="spearman"),digits=3))
+    x <- dt_mutant[target=="SARS-CoV-2" & position==site,RsACE2.3364]
+    y <- dt_mutant[target==RBD2 & position==site,RsACE2.3364]
+    plot(x,y, xlim=c(5,12),ylim=c(5,12), pch=as.character(dt_mutant[target=="SARS-CoV-2" & position==site, mutant]), xlab="", ylab=RBD2, main="")
+    legend("topleft",bty="n",cex=1,legend=format(mean(abs(lm(y~x)$residuals),na.rm=T),digits=3))
   }
 }
 ```
@@ -260,10 +274,9 @@ invisible(dev.print(pdf, paste(config$preferences_dir,"/correlations-by-site_SAR
 
 To summarize these plots, I want to make ‘reaction coordinate’ plots
 that visualize R-squared in mut binding affinites as a function of
-pairwise sequence divergence. Want to require an RBD-site set to have
-some minimum number of amino acids (5) with reasonable affinity (&gt;7)
-so that there aren’t non-correlated samples simply because nothing is
-binding (no variation to correlate)
+pairwise sequence divergence. Want to only use RBD-ACE2s if the wildtype
+binds wiht &gt;7 binding constant, so that there aren’t non-correlated
+samples simply because nothing is binding (no variation to correlate)
 
 Set up tables for storing correlations and identities for all ACE2- and
 RBD-pairs
@@ -278,18 +291,17 @@ diffs_ACE2 <- diffs_ACE2[ACE2_1!=ACE2_2,]
 diffs_ACE2 <- diffs_ACE2[ACE2_2!="huACE2",]
 diffs_ACE2 <- diffs_ACE2[ACE2_1=="huACE2" | (ACE2_1=="cvACE2" & ACE2_2 %in% c("pgACE2","mACE2","RaACE2.787","RaACE2.9479","RsACE2.3364","RsACE2.1434")) | (ACE2_1=="pgACE2" & ACE2_2 %in% c("mACE2","RaACE2.787","RaACE2.9479","RsACE2.3364","RsACE2.1434")) | (ACE2_1=="mACE2" & ACE2_2 %in% c("RaACE2.787","RaACE2.9479","RsACE2.3364","RsACE2.1434")) | (ACE2_1=="RaACE2.787" & ACE2_2 %in% c("RaACE2.9479","RsACE2.3364","RsACE2.1434")) | (ACE2_1=="RaACE2.9479" & ACE2_2 %in% c("RsACE2.3364","RsACE2.1434")) | (ACE2_1=="RsACE2.3364" & ACE2_2 %in% c("RsACE2.1434")),]
 
-#remove RBD-sites where there's not a minimum number of muts with >7 binding
-#for ACE2 comparisons, make this low (2?)
-min_n <- 2
+#remove RBD-sites where one of the ACE2s isn't bound with minimum Kd for the wildtype RBD
+min_Kd <- 7
 diffs_ACE2[,keep:=as.logical(NA)]
 for(i in 1:nrow(diffs_ACE2)){
   ACE2_1 <- as.character(diffs_ACE2[i,ACE2_1])
   ACE2_2 <- as.character(diffs_ACE2[i,ACE2_2])
-  binds_1 <- dt_mutant[target==as.character(diffs_ACE2[i,RBD]) & position==diffs_ACE2[i,site],get(ACE2_1)]
-  binds_2 <- dt_mutant[target==as.character(diffs_ACE2[i,RBD]) & position==diffs_ACE2[i,site],get(ACE2_2)]
-  if(sum(binds_1 > 7, na.rm=T) < min_n | sum(binds_2 > 7,na.rm=T) < min_n){
+  bind_1 <- dt_wt[target==as.character(diffs_ACE2[i,RBD]),get(ACE2_1)]
+  bind_2 <- dt_wt[target==as.character(diffs_ACE2[i,RBD]),get(ACE2_2)]
+  if(bind_1 < min_Kd | bind_2 < min_Kd){
     diffs_ACE2[i,keep := F]
-  }else if(sum(binds_1 > 7, na.rm=T) >= min_n & sum(binds_2 > 7, na.rm=T) >= min_n){
+  }else if(bind_1 >= min_Kd & bind_2 >= min_Kd){
     diffs_ACE2[i,keep := T]
   }
 }
@@ -305,49 +317,48 @@ diffs_RBD <- diffs_RBD[RBD_2!="AncSarbecovirus_MAP",]
 diffs_RBD <- diffs_RBD[RBD_1=="AncSarbecovirus_MAP" | (RBD_1=="BM48-31" & RBD_2 %in% c("BtKY72","AncAsia_MAP","AncSARS2a_MAP","AncSARS2c_MAP","SARS-CoV-2","RaTG13","GD-Pangolin","AncSARS1a_MAP","SARS-CoV-1_Urbani_HP03L","SARS-CoV-1_PC4-137_PC04","Rs7327","AncClade2_MAP")) | (RBD_1=="BtKY72" & RBD_2 %in% c("AncAsia_MAP","AncSARS2a_MAP","AncSARS2c_MAP","SARS-CoV-2","RaTG13","GD-Pangolin","AncSARS1a_MAP","SARS-CoV-1_Urbani_HP03L","SARS-CoV-1_PC4-137_PC04","Rs7327","AncClade2_MAP")) | (RBD_1=="AncAsia_MAP" & RBD_2 %in% c("AncSARS2a_MAP","AncSARS2c_MAP","SARS-CoV-2","RaTG13","GD-Pangolin","AncSARS1a_MAP","SARS-CoV-1_Urbani_HP03L","SARS-CoV-1_PC4-137_PC04","Rs7327","AncClade2_MAP")) | (RBD_1=="AncSARS2a_MAP" & RBD_2 %in% c("AncSARS2c_MAP","SARS-CoV-2","RaTG13","GD-Pangolin","AncSARS1a_MAP","SARS-CoV-1_Urbani_HP03L","SARS-CoV-1_PC4-137_PC04","Rs7327","AncClade2_MAP")) | (RBD_1=="AncSARS2c_MAP" & RBD_2 %in% c("SARS-CoV-2","RaTG13","GD-Pangolin","AncSARS1a_MAP","SARS-CoV-1_Urbani_HP03L","SARS-CoV-1_PC4-137_PC04","Rs7327","AncClade2_MAP")) | (RBD_1=="SARS-CoV-2" & RBD_2 %in% c("RaTG13","GD-Pangolin","AncSARS1a_MAP","SARS-CoV-1_Urbani_HP03L","SARS-CoV-1_PC4-137_PC04","Rs7327","AncClade2_MAP")) | (RBD_1=="RaTG13" & RBD_2 %in% c("GD-Pangolin","AncSARS1a_MAP","SARS-CoV-1_Urbani_HP03L","SARS-CoV-1_PC4-137_PC04","Rs7327","AncClade2_MAP")) | (RBD_1=="GD-Pangolin" & RBD_2 %in% c("AncSARS1a_MAP","SARS-CoV-1_Urbani_HP03L","SARS-CoV-1_PC4-137_PC04","Rs7327","AncClade2_MAP")) | (RBD_1=="AncSARS1a_MAP" & RBD_2 %in% c("SARS-CoV-1_Urbani_HP03L","SARS-CoV-1_PC4-137_PC04","Rs7327","AncClade2_MAP")) | (RBD_1=="SARS-CoV-1_Urbani_HP03L" & RBD_2 %in% c("SARS-CoV-1_PC4-137_PC04","Rs7327","AncClade2_MAP")) | (RBD_1=="SARS-CoV-1_PC4-137_PC04" & RBD_2 %in% c("Rs7327","AncClade2_MAP")) | (RBD_1=="Rs7327" & RBD_2 %in% c("AncClade2_MAP")),]
 
 
-#remove RBD-site pairs where there's not a minimum number of muts with >7 binding
-#for RBD pairs, make this more stringent than in ACE2s above where I'm not looking at individual points downstream)
-min_n <- 5
+#remove RBD-sites where one of the ACE2s isn't bound with minimum Kd for the wildtype RBD
+min_Kd <- 7
 diffs_RBD[,keep:=as.logical(NA)]
 for(i in 1:nrow(diffs_RBD)){
   RBD_1 <- as.character(diffs_RBD[i,RBD_1])
   RBD_2 <- as.character(diffs_RBD[i,RBD_2])
-  binds_1 <- dt_mutant[target==RBD_1 & position==diffs_RBD[i,site],get(as.character(diffs_RBD[i,ACE2]))]
-  binds_2 <- dt_mutant[target==RBD_2 & position==diffs_RBD[i,site],get(as.character(diffs_RBD[i,ACE2]))]
-  if(sum(binds_1 > 7, na.rm=T) < min_n | sum(binds_2 > 7,na.rm=T) < min_n){
+  bind_1 <- dt_wt[target==RBD_1,get(as.character(diffs_RBD[i,ACE2]))]
+  bind_2 <- dt_wt[target==RBD_2,get(as.character(diffs_RBD[i,ACE2]))]
+  if(bind_1 < min_Kd | bind_2 < min_Kd){
     diffs_RBD[i,keep := F]
-  }else if(sum(binds_1 > 7, na.rm=T) >= min_n & sum(binds_2 > 7, na.rm=T) >= min_n){
+  }else if(bind_1 >= min_Kd & bind_2 >= min_Kd){
     diffs_RBD[i,keep := T]
   }
 }
 diffs_RBD <- diffs_RBD[keep==T,.(ACE2, RBD_1, RBD_2, site)]
 ```
 
-Loop through to compute spearman’s rho in muts at each site for each
-ACE2/RBD pair. Using spearman’s rho because there are sometimes apparnet
-“threshold-y” looking relationships where the order of muts might be
-similar but not “linear” like in a pearson’s r. That is, pearson’s r can
-be misled by some potential nonspecific epistatic differences between
-backgrounds, whereas spearman’s rho should be more attuned to specific
-changes in mutation effects across backgrounds.
+Loop through to compute residual mean square error, mean absolute error,
+and r in correlations of affinities for each state at each site in each
+RBD-pair.
 
 ``` r
 diffs_ACE2$cor <- as.numeric(NA)
 for(i in 1:nrow(diffs_ACE2)){
   x <- dt_mutant[target==diffs_ACE2[i,RBD] & position==diffs_ACE2[i,site],get(as.character(diffs_ACE2[i,ACE2_1]))]
   y <- dt_mutant[target==diffs_ACE2[i,RBD] & position==diffs_ACE2[i,site],get(as.character(diffs_ACE2[i,ACE2_2]))]
-  diffs_ACE2[i,cor:=cor(x,y,use="complete.obs", method="spearman")]  
+  diffs_ACE2[i,cor:=cor(x,y,use="complete.obs", method="pearson")]
 }
 
 diffs_RBD$cor <- as.numeric(NA)
+diffs_RBD$RMSE <- as.numeric(NA)
+diffs_ACE2$MAE <- as.numeric(NA)
 for(i in 1:nrow(diffs_RBD)){
   x <- dt_mutant[target==diffs_RBD[i,RBD_1] & position==diffs_RBD[i,site],get(as.character(diffs_RBD[i,ACE2]))]
   y <- dt_mutant[target==diffs_RBD[i,RBD_2] & position==diffs_RBD[i,site],get(as.character(diffs_RBD[i,ACE2]))]
-  diffs_RBD[i,cor:=cor(x,y,use="complete.obs", method="spearman")]  
+  diffs_RBD[i,cor:=cor(x,y,use="complete.obs", method="pearson")]
+  diffs_RBD[i,RMSE:=sqrt(mean(lm(y~x)$residuals^2,na.rm=T))]
+  diffs_RBD[i,MAE:=mean(abs(lm(y~x)$residuals),na.rm=T)]
 }
 ```
 
-For RBD pairs, compare r versus pairwise RBD sequence identity across
+For RBD pairs, compare MAE versus pairwise RBD sequence identity across
 comparisons.
 
 First, read in alignment and add new column to table indicating %
@@ -363,6 +374,49 @@ diffs_RBD[,percent_ID:=ids[as.character(RBD_1),as.character(RBD_2)],by=c("RBD_1"
 And do plots – for just human ACE2 binding, and then including all ACE2s
 
 ``` r
+p_hu<- ggplot(data=diffs_RBD[ACE2=="huACE2",],aes(x=percent_ID, y=MAE))+
+  geom_point(pch=16,alpha=0.25)+
+  geom_smooth(method="loess",span=1)+
+  facet_wrap(~site,nrow=2)+
+  theme_classic()+
+  xlim(1,0.7)+
+  xlab("RBD pairwise sequence identity")+
+  ylab("Mean absolute error")
+  
+p_hu
+```
+
+    ## `geom_smooth()` using formula 'y ~ x'
+
+<img src="analyze_preferences_files/figure-gfm/RBD-MAE-versus-percent-ID_huACE2-1.png" style="display: block; margin: auto;" />
+
+``` r
+invisible(dev.print(pdf, paste(config$preferences_dir,"/mae-v-percent-id_by-site_all-huACE2.pdf",sep=""),useDingbats=F))
+```
+
+``` r
+p_all <- ggplot(data=diffs_RBD,aes(x=percent_ID, y=MAE))+
+  geom_point(pch=16,alpha=0.25)+
+  geom_smooth(method="loess",span=1)+
+  facet_wrap(~site,nrow=2)+
+  theme_classic()+xlim(1,0.7)+
+  xlab("RBD pairwise sequence identity")+
+  ylab("Mean absolute error")
+  
+p_all
+```
+
+    ## `geom_smooth()` using formula 'y ~ x'
+
+<img src="analyze_preferences_files/figure-gfm/RBD-MAE-versus-percent-ID_all-ACE2-1.png" style="display: block; margin: auto;" />
+
+``` r
+invisible(dev.print(pdf, paste(config$preferences_dir,"/mae-v-percent-id_by-site_all-ACE2.pdf",sep=""),useDingbats=F))
+```
+
+And, change in actual correlation constants:
+
+``` r
 p_hu<- ggplot(data=diffs_RBD[ACE2=="huACE2",],aes(x=percent_ID, y=cor))+
   geom_point(pch=16,alpha=0.25)+
   geom_smooth(method="loess",span=1.3)+
@@ -370,17 +424,17 @@ p_hu<- ggplot(data=diffs_RBD[ACE2=="huACE2",],aes(x=percent_ID, y=cor))+
   theme_classic()+
   xlim(1,0.7)+
   xlab("RBD pairwise sequence identity")+
-  ylab("Spearman's rho")
+  ylab("Pearson's r")
   
 p_hu
 ```
 
     ## `geom_smooth()` using formula 'y ~ x'
 
-<img src="analyze_preferences_files/figure-gfm/RBD-correlations-versus-percent-ID_huACE2-1.png" style="display: block; margin: auto;" />
+<img src="analyze_preferences_files/figure-gfm/RBD-cor-versus-percent-ID_huACE2-1.png" style="display: block; margin: auto;" />
 
 ``` r
-invisible(dev.print(pdf, paste(config$preferences_dir,"/rho-v-percent-id_by-site_all-huACE2.pdf",sep=""),useDingbats=F))
+invisible(dev.print(pdf, paste(config$preferences_dir,"/r-v-percent-id_by-site_all-huACE2.pdf",sep=""),useDingbats=F))
 ```
 
 ``` r
@@ -390,21 +444,21 @@ p_all <- ggplot(data=diffs_RBD,aes(x=percent_ID, y=cor))+
   facet_wrap(~site,nrow=2)+
   theme_classic()+xlim(1,0.7)+
   xlab("RBD pairwise sequence identity")+
-  ylab("Spearman's rho")
+  ylab("Pearson's r")
   
 p_all
 ```
 
     ## `geom_smooth()` using formula 'y ~ x'
 
-<img src="analyze_preferences_files/figure-gfm/RBD-correlations-versus-percent-ID_all-ACE2-1.png" style="display: block; margin: auto;" />
+<img src="analyze_preferences_files/figure-gfm/RBD-cor-versus-percent-ID_all-ACE2-1.png" style="display: block; margin: auto;" />
 
 ``` r
-invisible(dev.print(pdf, paste(config$preferences_dir,"/rho-v-percent-id_by-site_all-ACE2.pdf",sep=""),useDingbats=F))
+invisible(dev.print(pdf, paste(config$preferences_dir,"/r-v-percent-id_by-site_all-ACE2.pdf",sep=""),useDingbats=F))
 ```
 
-For ACE2 pairs, let’s take the median spearman’s rho of each RBDs
-ACE2-pair correlation in mut effects per site
+For ACE2 pairs, let’s take the median scorrelation coefficient of each
+RBDs ACE2-pair correlation in mut effects per site
 
 ``` r
 diffs_ACE2[,median_cor:=median(cor),by=c("ACE2_1","ACE2_2","site")]
