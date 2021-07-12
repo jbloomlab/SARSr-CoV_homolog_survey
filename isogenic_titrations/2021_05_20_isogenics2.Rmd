@@ -151,35 +151,9 @@ ggsave(
 ```
 
 Make individual subpanels with desired overlapping curves for each genotype across all ACE2s:
-```{r plot_titrations_multi1, fig.width=10,fig.height=10,fig.align="center", dpi=500,dev="png",message=FALSE,error=FALSE,warning=FALSE}
+```{r plot_titrations_multi1, fig.width=10,fig.height=5,fig.align="center", dpi=500,dev="png",message=FALSE,error=FALSE,warning=FALSE}
 
-p1 <- ggplot(dt %>% filter(genotype %in% c("Rc-o319")), aes(conc_nM, mean_PE)) +
-  geom_point(aes(color=protein)) +
-  geom_line(data = nls_predictions %>% filter(genotype %in% c("Rc-o319")),
-            aes(conc_nM, mean_PE, color=protein),
-            ) + 
-  ggtitle("Rc-o319") +
-  scale_x_log10(lim=c(1e-6,1e3)) +
-  scale_y_continuous(lim=c(2.75,12)) +
-  xlab("[ACE2] (nM)") +
-  ylab("PE MFI") +
-  scale_color_manual(values=cbPalette) +
-  theme_bw()
-
-p2 <- ggplot(dt %>% filter(genotype %in% c("RshSTT182")), aes(conc_nM, mean_PE)) +
-  geom_point(aes(color=protein)) +
-  geom_line(data = nls_predictions %>% filter(genotype %in% c("RshSTT182")),
-            aes(conc_nM, mean_PE, color=protein),
-            ) +  
-  ggtitle("RshSTT182") +
-  scale_x_log10(lim=c(1e-6,1e3)) +
-  scale_y_continuous(lim=c(2.75,12)) +
-  xlab("[ACE2] (nM)") +
-  ylab("PE MFI") +
-  scale_color_manual(values=cbPalette) +
-  theme_bw()
-
-p3 <- ggplot(dt %>% filter(genotype %in% c("RsYN04")), aes(conc_nM, mean_PE)) +
+p1 <- ggplot(dt %>% filter(genotype %in% c("RsYN04")), aes(conc_nM, mean_PE)) +
   geom_point(aes(color=protein)) +
   geom_line(data = nls_predictions %>% filter(genotype %in% c("RsYN04")),
             aes(conc_nM, mean_PE, color=protein),
@@ -192,7 +166,7 @@ p3 <- ggplot(dt %>% filter(genotype %in% c("RsYN04")), aes(conc_nM, mean_PE)) +
   scale_color_manual(values=cbPalette) +
   theme_bw()
 
-p4 <- ggplot(dt %>% filter(genotype %in% c("RsYN04+T498W")), aes(conc_nM, mean_PE)) +
+p2 <- ggplot(dt %>% filter(genotype %in% c("RsYN04+T498W")), aes(conc_nM, mean_PE)) +
   geom_point(aes(color=protein)) +
   geom_line(data = nls_predictions %>% filter(genotype %in% c("RsYN04+T498W")),
             aes(conc_nM, mean_PE, color=protein),
@@ -205,7 +179,7 @@ p4 <- ggplot(dt %>% filter(genotype %in% c("RsYN04+T498W")), aes(conc_nM, mean_P
   scale_color_manual(values=cbPalette) +
   theme_bw()
 
-g <- arrangeGrob(p1, p2, p3, p4, ncol=2, widths=c(3.75,3.75), heights=c(2.5,2.5))
+g <- arrangeGrob(p1, p2, ncol=2, widths=c(3.75,3.75), heights=c(2.5,2.5))
 
 ggsave(
   "./results/isogenics2_multi1.pdf",
