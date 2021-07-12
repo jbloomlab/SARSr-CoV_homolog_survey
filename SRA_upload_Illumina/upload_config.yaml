@@ -1,12 +1,12 @@
 # the BioSample accession
-biosample_accession: SAMN18316011
+biosample_accession: SAMN20174027
 
 # name of CSV file listing barcode runs to uploade
-barcode_runs: ../data/barcode_runs.csv
+barcode_runs: ./barcode_runs_upload.csv
 
 # the following come from the SRA FTP upload instructions
 ftp_username: subftp
 ftp_account_folder: uploads/tyler.n.starr_gmail.com_JS1IV8bi
 
 # Meaningful name for this sample's FTP folder:
-ftp_subfolder: Vir_antibody_breadth_barcodes
+ftp_subfolder: sarbecovirus_ACE2_profiling

@@ -1,0 +1,669 @@
+library,sample,sample_type,sort_bin,concentration,date,number_cells,R1
+lib1,SortSeq_bin1,SortSeq,1,,200908,1440000,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200908_lib1_RBDbin1_S73_R1_001.fastq.gz
+lib1,SortSeq_bin2,SortSeq,2,,200908,2625000,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200908_lib1_RBDbin2_S74_R1_001.fastq.gz
+lib1,SortSeq_bin3,SortSeq,3,,200908,2370000,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200908_lib1_RBDbin3_S75_R1_001.fastq.gz
+lib1,SortSeq_bin4,SortSeq,4,,200908,2047000,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200908_lib1_RBDbin4_S76_R1_001.fastq.gz
+lib2,SortSeq_bin1,SortSeq,1,,200908,1430000,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200908_lib2_RBDbin1_S77_R1_001.fastq.gz
+lib2,SortSeq_bin2,SortSeq,2,,200908,2450000,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200908_lib2_RBDbin2_S78_R1_001.fastq.gz
+lib2,SortSeq_bin3,SortSeq,3,,200908,1710000,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200908_lib2_RBDbin3_S79_R1_001.fastq.gz
+lib2,SortSeq_bin4,SortSeq,4,,200908,2369000,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200908_lib2_RBDbin4_S80_R1_001.fastq.gz
+lib1,huACE2_01_bin1,huACE2,1,1,200911,2129875,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s01-b1_S1_R1_001.fastq.gz
+lib1,huACE2_01_bin2,huACE2,2,1,200911,352153,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s01-b2_S2_R1_001.fastq.gz
+lib1,huACE2_01_bin3,huACE2,3,1,200911,423237,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s01-b3_S3_R1_001.fastq.gz
+lib1,huACE2_01_bin4,huACE2,4,1,200911,3696270,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s01-b4_S4_R1_001.fastq.gz
+lib1,huACE2_02_bin1,huACE2,1,2,200911,2435118,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s02-b1_S5_R1_001.fastq.gz
+lib1,huACE2_02_bin2,huACE2,2,2,200911,497644,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s02-b2_S6_R1_001.fastq.gz
+lib1,huACE2_02_bin3,huACE2,3,2,200911,696418,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s02-b3_S7_R1_001.fastq.gz
+lib1,huACE2_02_bin4,huACE2,4,2,200911,3767597,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s02-b4_S8_R1_001.fastq.gz
+lib1,huACE2_03_bin1,huACE2,1,3,200911,2518115,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s03-b1_S9_R1_001.fastq.gz
+lib1,huACE2_03_bin2,huACE2,2,3,200911,250794,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s03-b2_S10_R1_001.fastq.gz
+lib1,huACE2_03_bin3,huACE2,3,3,200911,610083,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s03-b3_S11_R1_001.fastq.gz
+lib1,huACE2_03_bin4,huACE2,4,3,200911,3408833,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s03-b4_S12_R1_001.fastq.gz
+lib1,huACE2_04_bin1,huACE2,1,4,200911,3279356,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s04-b1_S13_R1_001.fastq.gz
+lib1,huACE2_04_bin2,huACE2,2,4,200911,524075,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s04-b2_S14_R1_001.fastq.gz
+lib1,huACE2_04_bin3,huACE2,3,4,200911,1107706,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s04-b3_S15_R1_001.fastq.gz
+lib1,huACE2_04_bin4,huACE2,4,4,200911,2119232,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s04-b4_S16_R1_001.fastq.gz
+lib1,huACE2_05_bin1,huACE2,1,5,200911,3758443,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s05-b1_S17_R1_001.fastq.gz
+lib1,huACE2_05_bin2,huACE2,2,5,200911,818255,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s05-b2_S18_R1_001.fastq.gz
+lib1,huACE2_05_bin3,huACE2,3,5,200911,1540055,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s05-b3_S19_R1_001.fastq.gz
+lib1,huACE2_05_bin4,huACE2,4,5,200911,664599,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s05-b4_S20_R1_001.fastq.gz
+lib1,huACE2_06_bin1,huACE2,1,6,200911,4170058,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s06-b1_S21_R1_001.fastq.gz
+lib1,huACE2_06_bin2,huACE2,2,6,200911,1650950,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s06-b2_S22_R1_001.fastq.gz
+lib1,huACE2_06_bin3,huACE2,3,6,200911,658294,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s06-b3_S23_R1_001.fastq.gz
+lib1,huACE2_06_bin4,huACE2,4,6,200911,1659,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s06-b4_S24_R1_001.fastq.gz
+lib1,huACE2_07_bin1,huACE2,1,7,200911,6000353,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s07-b1_S25_R1_001.fastq.gz
+lib1,huACE2_07_bin2,huACE2,2,7,200911,1356209,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s07-b2_S26_R1_001.fastq.gz
+lib1,huACE2_07_bin3,huACE2,3,7,200911,8886,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s07-b3_S27_R1_001.fastq.gz
+lib1,huACE2_07_bin4,huACE2,4,7,200911,933,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s07-b4_S28_R1_001.fastq.gz
+lib1,huACE2_08_bin1,huACE2,1,8,200911,6156518,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s08-b1_S29_R1_001.fastq.gz
+lib1,huACE2_08_bin2,huACE2,2,8,200911,595972,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s08-b2_S30_R1_001.fastq.gz
+lib1,huACE2_08_bin3,huACE2,3,8,200911,1248,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s08-b3_S31_R1_001.fastq.gz
+lib1,huACE2_08_bin4,huACE2,4,8,200911,834,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s08-b4_S32_R1_001.fastq.gz
+lib1,huACE2_09_bin1,huACE2,1,9,200911,6343931,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s09-b1_S33_R1_001.fastq.gz
+lib1,huACE2_09_bin2,huACE2,2,9,200911,333778,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s09-b2_S34_R1_001.fastq.gz
+lib1,huACE2_09_bin3,huACE2,3,9,200911,1386,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s09-b3_S35_R1_001.fastq.gz
+lib1,huACE2_09_bin4,huACE2,4,9,200911,902,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s09-b4_S36_R1_001.fastq.gz
+lib2,huACE2_01_bin1,huACE2,1,1,200911,2345731,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s10-b1_S37_R1_001.fastq.gz
+lib2,huACE2_01_bin2,huACE2,2,1,200911,448382,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s10-b2_S38_R1_001.fastq.gz
+lib2,huACE2_01_bin3,huACE2,3,1,200911,507611,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s10-b3_S39_R1_001.fastq.gz
+lib2,huACE2_01_bin4,huACE2,4,1,200911,4026568,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s10-b4_S40_R1_001.fastq.gz
+lib2,huACE2_02_bin1,huACE2,1,2,200911,2533803,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s11-b1_S41_R1_001.fastq.gz
+lib2,huACE2_02_bin2,huACE2,2,2,200911,266004,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s11-b2_S42_R1_001.fastq.gz
+lib2,huACE2_02_bin3,huACE2,3,2,200911,658297,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s11-b3_S43_R1_001.fastq.gz
+lib2,huACE2_02_bin4,huACE2,4,2,200911,3708289,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s11-b4_S44_R1_001.fastq.gz
+lib2,huACE2_03_bin1,huACE2,1,3,200911,2581761,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s12-b1_S45_R1_001.fastq.gz
+lib2,huACE2_03_bin2,huACE2,2,3,200911,264421,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s12-b2_S46_R1_001.fastq.gz
+lib2,huACE2_03_bin3,huACE2,3,3,200911,609369,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s12-b3_S47_R1_001.fastq.gz
+lib2,huACE2_03_bin4,huACE2,4,3,200911,3435915,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s12-b4_S48_R1_001.fastq.gz
+lib2,huACE2_04_bin1,huACE2,1,4,200911,3328043,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s13-b1_S49_R1_001.fastq.gz
+lib2,huACE2_04_bin2,huACE2,2,4,200911,559672,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s13-b2_S50_R1_001.fastq.gz
+lib2,huACE2_04_bin3,huACE2,3,4,200911,1060415,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s13-b3_S51_R1_001.fastq.gz
+lib2,huACE2_04_bin4,huACE2,4,4,200911,2049796,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s13-b4_S52_R1_001.fastq.gz
+lib2,huACE2_05_bin1,huACE2,1,5,200911,3860650,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s14-b1_S53_R1_001.fastq.gz
+lib2,huACE2_05_bin2,huACE2,2,5,200911,848483,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s14-b2_S54_R1_001.fastq.gz
+lib2,huACE2_05_bin3,huACE2,3,5,200911,1565429,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s14-b3_S55_R1_001.fastq.gz
+lib2,huACE2_05_bin4,huACE2,4,5,200911,647022,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s14-b4_S56_R1_001.fastq.gz
+lib2,huACE2_06_bin1,huACE2,1,6,200911,4546290,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s15-b1_S57_R1_001.fastq.gz
+lib2,huACE2_06_bin2,huACE2,2,6,200911,1785209,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s15-b2_S58_R1_001.fastq.gz
+lib2,huACE2_06_bin3,huACE2,3,6,200911,706373,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s15-b3_S59_R1_001.fastq.gz
+lib2,huACE2_06_bin4,huACE2,4,6,200911,2531,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s15-b4_S60_R1_001.fastq.gz
+lib2,huACE2_07_bin1,huACE2,1,7,200911,5827502,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s16-b1_S61_R1_001.fastq.gz
+lib2,huACE2_07_bin2,huACE2,2,7,200911,1297675,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s16-b2_S62_R1_001.fastq.gz
+lib2,huACE2_07_bin3,huACE2,3,7,200911,7657,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s16-b3_S63_R1_001.fastq.gz
+lib2,huACE2_07_bin4,huACE2,4,7,200911,843,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s16-b4_S64_R1_001.fastq.gz
+lib2,huACE2_08_bin1,huACE2,1,8,200911,5675650,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s17-b1_S65_R1_001.fastq.gz
+lib2,huACE2_08_bin2,huACE2,2,8,200911,652221,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s17-b2_S66_R1_001.fastq.gz
+lib2,huACE2_08_bin3,huACE2,3,8,200911,1516,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s17-b3_S67_R1_001.fastq.gz
+lib2,huACE2_08_bin4,huACE2,4,8,200911,810,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s17-b4_S68_R1_001.fastq.gz
+lib2,huACE2_09_bin1,huACE2,1,9,200911,5478948,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s18-b1_S69_R1_001.fastq.gz
+lib2,huACE2_09_bin2,huACE2,2,9,200911,275423,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s18-b2_S70_R1_001.fastq.gz
+lib2,huACE2_09_bin3,huACE2,3,9,200911,1365,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s18-b3_S71_R1_001.fastq.gz
+lib2,huACE2_09_bin4,huACE2,4,9,200911,669,/shared/ngs/illumina/tstarr/200917_D00300_1054_AHH332BCX3/Unaligned/Project_tstarr/200911_s18-b4_S72_R1_001.fastq.gz
+lib1,RpACE2_02_bin1,RpACE2,1,2,200914,8371074,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s11-b1_S37_R1_001.fastq.gz
+lib1,RpACE2_02_bin2,RpACE2,2,2,200914,1111486,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s11-b2_S38_R1_001.fastq.gz
+lib1,RpACE2_02_bin3,RpACE2,3,2,200914,16353,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s11-b3_S39_R1_001.fastq.gz
+lib1,RpACE2_02_bin4,RpACE2,4,2,200914,1881,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s11-b4_S40_R1_001.fastq.gz
+lib1,RpACE2_03_bin1,RpACE2,1,3,200914,9052695,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s12-b1_S41_R1_001.fastq.gz
+lib1,RpACE2_03_bin2,RpACE2,2,3,200914,113320,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s12-b2_S42_R1_001.fastq.gz
+lib1,RpACE2_03_bin3,RpACE2,3,3,200914,4360,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s12-b3_S43_R1_001.fastq.gz
+lib1,RpACE2_03_bin4,RpACE2,4,3,200914,2521,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s12-b4_S44_R1_001.fastq.gz
+lib1,RpACE2_04_bin1,RpACE2,1,4,200914,8967537,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s13-b1_S45_R1_001.fastq.gz
+lib1,RpACE2_04_bin2,RpACE2,2,4,200914,144057,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s13-b2_S46_R1_001.fastq.gz
+lib1,RpACE2_04_bin3,RpACE2,3,4,200914,41231,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s13-b3_S47_R1_001.fastq.gz
+lib1,RpACE2_04_bin4,RpACE2,4,4,200914,15641,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s13-b4_S48_R1_001.fastq.gz
+lib1,RpACE2_05_bin1,RpACE2,1,5,200914,9240340,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s14-b1_S49_R1_001.fastq.gz
+lib1,RpACE2_05_bin2,RpACE2,2,5,200914,123973,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s14-b2_S50_R1_001.fastq.gz
+lib1,RpACE2_05_bin3,RpACE2,3,5,200914,18524,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s14-b3_S51_R1_001.fastq.gz
+lib1,RpACE2_05_bin4,RpACE2,4,5,200914,1154,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s14-b4_S52_R1_001.fastq.gz
+lib1,RpACE2_06_bin1,RpACE2,1,6,200914,8918280,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s15-b1_S53_R1_001.fastq.gz
+lib1,RpACE2_06_bin2,RpACE2,2,6,200914,86703,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s15-b2_S54_R1_001.fastq.gz
+lib1,RpACE2_06_bin3,RpACE2,3,6,200914,590,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s15-b3_S55_R1_001.fastq.gz
+lib1,RpACE2_06_bin4,RpACE2,4,6,200914,7,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s15-b4_S56_R1_001.fastq.gz
+lib1,RpACE2_07_bin1,RpACE2,1,7,200914,8943370,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s16-b1_S57_R1_001.fastq.gz
+lib1,RpACE2_07_bin2,RpACE2,2,7,200914,85765,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s16-b2_S58_R1_001.fastq.gz
+lib1,RpACE2_07_bin3,RpACE2,3,7,200914,17,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s16-b3_S59_R1_001.fastq.gz
+lib1,RpACE2_07_bin4,RpACE2,4,7,200914,5,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s16-b4_S60_R1_001.fastq.gz
+lib1,RaACE2.787_01_bin1,RaACE2.787,1,1,200914,4274285,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s19-b1_S61_R1_001.fastq.gz
+lib1,RaACE2.787_01_bin2,RaACE2.787,2,1,200914,1162189,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s19-b2_S62_R1_001.fastq.gz
+lib1,RaACE2.787_01_bin3,RaACE2.787,3,1,200914,520104,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s19-b3_S63_R1_001.fastq.gz
+lib1,RaACE2.787_01_bin4,RaACE2.787,4,1,200914,1987146,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s19-b4_S64_R1_001.fastq.gz
+lib1,RaACE2.787_02_bin1,RaACE2.787,1,2,200914,5158996,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s20-b1_S65_R1_001.fastq.gz
+lib1,RaACE2.787_02_bin2,RaACE2.787,2,2,200914,952009,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s20-b2_S66_R1_001.fastq.gz
+lib1,RaACE2.787_02_bin3,RaACE2.787,3,2,200914,502295,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s20-b3_S67_R1_001.fastq.gz
+lib1,RaACE2.787_02_bin4,RaACE2.787,4,2,200914,1926430,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s20-b4_S68_R1_001.fastq.gz
+lib1,RaACE2.787_03_bin1,RaACE2.787,1,3,200914,6096733,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s21-b1_S69_R1_001.fastq.gz
+lib1,RaACE2.787_03_bin2,RaACE2.787,2,3,200914,643578,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s21-b2_S70_R1_001.fastq.gz
+lib1,RaACE2.787_03_bin3,RaACE2.787,3,3,200914,552632,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s21-b3_S71_R1_001.fastq.gz
+lib1,RaACE2.787_03_bin4,RaACE2.787,4,3,200914,1850698,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s21-b4_S72_R1_001.fastq.gz
+lib1,RaACE2.787_04_bin1,RaACE2.787,1,4,200914,5793038,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s22-b1_S73_R1_001.fastq.gz
+lib1,RaACE2.787_04_bin2,RaACE2.787,2,4,200914,439515,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s22-b2_S74_R1_001.fastq.gz
+lib1,RaACE2.787_04_bin3,RaACE2.787,3,4,200914,695816,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s22-b3_S75_R1_001.fastq.gz
+lib1,RaACE2.787_04_bin4,RaACE2.787,4,4,200914,1351314,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s22-b4_S76_R1_001.fastq.gz
+lib1,RaACE2.787_05_bin1,RaACE2.787,1,5,200914,6453029,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s23-b1_S77_R1_001.fastq.gz
+lib1,RaACE2.787_05_bin2,RaACE2.787,2,5,200914,779191,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s23-b2_S78_R1_001.fastq.gz
+lib1,RaACE2.787_05_bin3,RaACE2.787,3,5,200914,848437,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s23-b3_S79_R1_001.fastq.gz
+lib1,RaACE2.787_05_bin4,RaACE2.787,4,5,200914,706778,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s23-b4_S80_R1_001.fastq.gz
+lib1,RaACE2.787_06_bin1,RaACE2.787,1,6,200914,7613101,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s24-b1_S81_R1_001.fastq.gz
+lib1,RaACE2.787_06_bin2,RaACE2.787,2,6,200914,891387,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s24-b2_S82_R1_001.fastq.gz
+lib1,RaACE2.787_06_bin3,RaACE2.787,3,6,200914,742824,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s24-b3_S83_R1_001.fastq.gz
+lib1,RaACE2.787_06_bin4,RaACE2.787,4,6,200914,12206,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s24-b4_S84_R1_001.fastq.gz
+lib1,RaACE2.787_07_bin1,RaACE2.787,1,7,200914,8169693,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s25-b1_S85_R1_001.fastq.gz
+lib1,RaACE2.787_07_bin2,RaACE2.787,2,7,200914,811841,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s25-b2_S86_R1_001.fastq.gz
+lib1,RaACE2.787_07_bin3,RaACE2.787,3,7,200914,15325,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s25-b3_S87_R1_001.fastq.gz
+lib1,RaACE2.787_07_bin4,RaACE2.787,4,7,200914,18,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s25-b4_S88_R1_001.fastq.gz
+lib1,RaACE2.787_08_bin1,RaACE2.787,1,8,200914,9310647,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s26-b1_S89_R1_001.fastq.gz
+lib1,RaACE2.787_08_bin2,RaACE2.787,2,8,200914,193707,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s26-b2_S90_R1_001.fastq.gz
+lib1,RaACE2.787_08_bin3,RaACE2.787,3,8,200914,31,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s26-b3_S91_R1_001.fastq.gz
+lib1,RaACE2.787_08_bin4,RaACE2.787,4,8,200914,11,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s26-b4_S92_R1_001.fastq.gz
+lib1,RaACE2.787_09_bin1,RaACE2.787,1,9,200914,8714547,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s09-b1_S33_R1_001.fastq.gz
+lib1,RaACE2.787_09_bin2,RaACE2.787,2,9,200914,92114,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s09-b2_S34_R1_001.fastq.gz
+lib1,RaACE2.787_09_bin3,RaACE2.787,3,9,200914,26,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s09-b3_S35_R1_001.fastq.gz
+lib1,RaACE2.787_09_bin4,RaACE2.787,4,9,200914,4,/shared/ngs/illumina/tstarr/200917_D00300_1055_BHH3KJBCX3/Unaligned/Project_tstarr/200914_s09-b4_S36_R1_001.fastq.gz
+lib2,RsACE2.3364_01_bin1,RsACE2.3364,1,1,201029,4062636,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s01-b1_S1_R1_001.fastq.gz
+lib2,RsACE2.3364_01_bin2,RsACE2.3364,2,1,201029,2364224,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s01-b2_S2_R1_001.fastq.gz
+lib2,RsACE2.3364_01_bin3,RsACE2.3364,3,1,201029,641264,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s01-b3_S3_R1_001.fastq.gz
+lib2,RsACE2.3364_01_bin4,RsACE2.3364,4,1,201029,923966,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s01-b4_S4_R1_001.fastq.gz
+lib2,RsACE2.3364_02_bin1,RsACE2.3364,1,2,201029,5994598,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s02-b1_S5_R1_001.fastq.gz
+lib2,RsACE2.3364_02_bin2,RsACE2.3364,2,2,201029,987998,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s02-b2_S6_R1_001.fastq.gz
+lib2,RsACE2.3364_02_bin3,RsACE2.3364,3,2,201029,302360,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s02-b3_S7_R1_001.fastq.gz
+lib2,RsACE2.3364_02_bin4,RsACE2.3364,4,2,201029,711289,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s02-b4_S8_R1_001.fastq.gz
+lib2,RsACE2.3364_03_bin1,RsACE2.3364,1,3,201029,6860058,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s03-b1_S9_R1_001.fastq.gz
+lib2,RsACE2.3364_03_bin2,RsACE2.3364,2,3,201029,424291,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s03-b2_S10_R1_001.fastq.gz
+lib2,RsACE2.3364_03_bin3,RsACE2.3364,3,3,201029,399036,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s03-b3_S11_R1_001.fastq.gz
+lib2,RsACE2.3364_03_bin4,RsACE2.3364,4,3,201029,274673,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s03-b4_S12_R1_001.fastq.gz
+lib2,RsACE2.3364_04_bin1,RsACE2.3364,1,4,201029,7023029,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s04-b1_S13_R1_001.fastq.gz
+lib2,RsACE2.3364_04_bin2,RsACE2.3364,2,4,201029,449138,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s04-b2_S14_R1_001.fastq.gz
+lib2,RsACE2.3364_04_bin3,RsACE2.3364,3,4,201029,299749,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s04-b3_S15_R1_001.fastq.gz
+lib2,RsACE2.3364_04_bin4,RsACE2.3364,4,4,201029,47792,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s04-b4_S16_R1_001.fastq.gz
+lib2,RsACE2.3364_05_bin1,RsACE2.3364,1,5,201029,7302545,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s05-b1_S17_R1_001.fastq.gz
+lib2,RsACE2.3364_05_bin2,RsACE2.3364,2,5,201029,382262,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s05-b2_S18_R1_001.fastq.gz
+lib2,RsACE2.3364_05_bin3,RsACE2.3364,3,5,201029,72071,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s05-b3_S19_R1_001.fastq.gz
+lib2,RsACE2.3364_05_bin4,RsACE2.3364,4,5,201029,7015,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s05-b4_S20_R1_001.fastq.gz
+lib2,RsACE2.3364_06_bin1,RsACE2.3364,1,6,201029,7152650,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s06-b1_S21_R1_001.fastq.gz
+lib2,RsACE2.3364_06_bin2,RsACE2.3364,2,6,201029,245702,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s06-b2_S22_R1_001.fastq.gz
+lib2,RsACE2.3364_06_bin3,RsACE2.3364,3,6,201029,8533,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s06-b3_S23_R1_001.fastq.gz
+lib2,RsACE2.3364_06_bin4,RsACE2.3364,4,6,201029,35,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s06-b4_S24_R1_001.fastq.gz
+lib2,RsACE2.3364_07_bin1,RsACE2.3364,1,7,201029,7232247,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s07-b1_S25_R1_001.fastq.gz
+lib2,RsACE2.3364_07_bin2,RsACE2.3364,2,7,201029,158976,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s07-b2_S26_R1_001.fastq.gz
+lib2,RsACE2.3364_07_bin3,RsACE2.3364,3,7,201029,80,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s07-b3_S27_R1_001.fastq.gz
+lib2,RsACE2.3364_07_bin4,RsACE2.3364,4,7,201029,2,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s07-b4_S28_R1_001.fastq.gz
+lib2,RsACE2.3364_08_bin1,RsACE2.3364,1,8,201029,6114147,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s08-b1_S29_R1_001.fastq.gz
+lib2,RsACE2.3364_08_bin2,RsACE2.3364,2,8,201029,111015,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s08-b2_S30_R1_001.fastq.gz
+lib2,RsACE2.3364_08_bin3,RsACE2.3364,3,8,201029,12,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s08-b3_S31_R1_001.fastq.gz
+lib2,RsACE2.3364_08_bin4,RsACE2.3364,4,8,201029,1,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s08-b4_S32_R1_001.fastq.gz
+lib2,RaACE2.787_01_bin1,RaACE2.787,1,1,201029,4215396,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s10-b1_S37_R1_001.fastq.gz
+lib2,RaACE2.787_01_bin2,RaACE2.787,2,1,201029,1150919,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s10-b2_S38_R1_001.fastq.gz
+lib2,RaACE2.787_01_bin3,RaACE2.787,3,1,201029,601049,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s10-b3_S39_R1_001.fastq.gz
+lib2,RaACE2.787_01_bin4,RaACE2.787,4,1,201029,1912227,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s10-b4_S40_R1_001.fastq.gz
+lib2,RaACE2.787_02_bin1,RaACE2.787,1,2,201029,4918673,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s11-b1_S41_R1_001.fastq.gz
+lib2,RaACE2.787_02_bin2,RaACE2.787,2,2,201029,846255,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s11-b2_S42_R1_001.fastq.gz
+lib2,RaACE2.787_02_bin3,RaACE2.787,3,2,201029,533560,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s11-b3_S43_R1_001.fastq.gz
+lib2,RaACE2.787_02_bin4,RaACE2.787,4,2,201029,1682175,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s11-b4_S44_R1_001.fastq.gz
+lib2,RaACE2.787_03_bin1,RaACE2.787,1,3,201029,5436670,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s12-b1_S45_R1_001.fastq.gz
+lib2,RaACE2.787_03_bin2,RaACE2.787,2,3,201029,634602,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s12-b2_S46_R1_001.fastq.gz
+lib2,RaACE2.787_03_bin3,RaACE2.787,3,3,201029,580919,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s12-b3_S47_R1_001.fastq.gz
+lib2,RaACE2.787_03_bin4,RaACE2.787,4,3,201029,1496761,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s12-b4_S48_R1_001.fastq.gz
+lib2,RaACE2.787_04_bin1,RaACE2.787,1,4,201029,5107740,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s13-b1_S49_R1_001.fastq.gz
+lib2,RaACE2.787_04_bin2,RaACE2.787,2,4,201029,586161,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s13-b2_S50_R1_001.fastq.gz
+lib2,RaACE2.787_04_bin3,RaACE2.787,3,4,201029,724775,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s13-b3_S51_R1_001.fastq.gz
+lib2,RaACE2.787_04_bin4,RaACE2.787,4,4,201029,1118385,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s13-b4_S52_R1_001.fastq.gz
+lib2,RaACE2.787_05_bin1,RaACE2.787,1,5,201029,5474607,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s14-b1_S53_R1_001.fastq.gz
+lib2,RaACE2.787_05_bin2,RaACE2.787,2,5,201029,693044,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s14-b2_S54_R1_001.fastq.gz
+lib2,RaACE2.787_05_bin3,RaACE2.787,3,5,201029,920332,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s14-b3_S55_R1_001.fastq.gz
+lib2,RaACE2.787_05_bin4,RaACE2.787,4,5,201029,568182,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s14-b4_S56_R1_001.fastq.gz
+lib2,RaACE2.787_06_bin1,RaACE2.787,1,6,201029,5873144,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s15-b1_S57_R1_001.fastq.gz
+lib2,RaACE2.787_06_bin2,RaACE2.787,2,6,201029,1151354,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s15-b2_S58_R1_001.fastq.gz
+lib2,RaACE2.787_06_bin3,RaACE2.787,3,6,201029,723997,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s15-b3_S59_R1_001.fastq.gz
+lib2,RaACE2.787_06_bin4,RaACE2.787,4,6,201029,13404,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s15-b4_S60_R1_001.fastq.gz
+lib2,RaACE2.787_07_bin1,RaACE2.787,1,7,201029,6519484,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s16-b1_S61_R1_001.fastq.gz
+lib2,RaACE2.787_07_bin2,RaACE2.787,2,7,201029,857594,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s16-b2_S62_R1_001.fastq.gz
+lib2,RaACE2.787_07_bin3,RaACE2.787,3,7,201029,32956,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s16-b3_S63_R1_001.fastq.gz
+lib2,RaACE2.787_07_bin4,RaACE2.787,4,7,201029,2,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s16-b4_S64_R1_001.fastq.gz
+lib2,RaACE2.787_08_bin1,RaACE2.787,1,8,201029,6737750,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s17-b1_S65_R1_001.fastq.gz
+lib2,RaACE2.787_08_bin2,RaACE2.787,2,8,201029,272816,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s17-b2_S66_R1_001.fastq.gz
+lib2,RaACE2.787_08_bin3,RaACE2.787,3,8,201029,51,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s17-b3_S67_R1_001.fastq.gz
+lib2,RaACE2.787_08_bin4,RaACE2.787,4,8,201029,0,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s17-b4_S68_R1_001.fastq.gz
+lib2,RaACE2.787_09_bin1,RaACE2.787,1,9,201029,7012466,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s09-b1_S33_R1_001.fastq.gz
+lib2,RaACE2.787_09_bin2,RaACE2.787,2,9,201029,102278,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s09-b2_S34_R1_001.fastq.gz
+lib2,RaACE2.787_09_bin3,RaACE2.787,3,9,201029,6,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s09-b3_S35_R1_001.fastq.gz
+lib2,RaACE2.787_09_bin4,RaACE2.787,4,9,201029,3,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201029_s09-b4_S36_R1_001.fastq.gz
+lib1,RsACE2.3364_01_bin1,RsACE2.3364,1,1,201104,3116004,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s01-b1_S1_R1_001.fastq.gz
+lib1,RsACE2.3364_01_bin2,RsACE2.3364,2,1,201104,2353327,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s01-b2_S2_R1_001.fastq.gz
+lib1,RsACE2.3364_01_bin3,RsACE2.3364,3,1,201104,486342,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s01-b3_S3_R1_001.fastq.gz
+lib1,RsACE2.3364_01_bin4,RsACE2.3364,4,1,201104,695569,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s01-b4_S4_R1_001.fastq.gz
+lib1,RsACE2.3364_02_bin1,RsACE2.3364,1,2,201104,5184232,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s02-b1_S5_R1_001.fastq.gz
+lib1,RsACE2.3364_02_bin2,RsACE2.3364,2,2,201104,996475,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s02-b2_S6_R1_001.fastq.gz
+lib1,RsACE2.3364_02_bin3,RsACE2.3364,3,2,201104,210101,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s02-b3_S7_R1_001.fastq.gz
+lib1,RsACE2.3364_02_bin4,RsACE2.3364,4,2,201104,555049,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s02-b4_S8_R1_001.fastq.gz
+lib1,RsACE2.3364_03_bin1,RsACE2.3364,1,3,201104,5862091,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s03-b1_S9_R1_001.fastq.gz
+lib1,RsACE2.3364_03_bin2,RsACE2.3364,2,3,201104,398601,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s03-b2_S10_R1_001.fastq.gz
+lib1,RsACE2.3364_03_bin3,RsACE2.3364,3,3,201104,278976,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s03-b3_S11_R1_001.fastq.gz
+lib1,RsACE2.3364_03_bin4,RsACE2.3364,4,3,201104,254498,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s03-b4_S12_R1_001.fastq.gz
+lib1,RsACE2.3364_04_bin1,RsACE2.3364,1,4,201104,6055311,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s04-b1_S13_R1_001.fastq.gz
+lib1,RsACE2.3364_04_bin2,RsACE2.3364,2,4,201104,486000,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s04-b2_S14_R1_001.fastq.gz
+lib1,RsACE2.3364_04_bin3,RsACE2.3364,3,4,201104,248465,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s04-b3_S15_R1_001.fastq.gz
+lib1,RsACE2.3364_04_bin4,RsACE2.3364,4,4,201104,46408,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s04-b4_S16_R1_001.fastq.gz
+lib1,RsACE2.3364_05_bin1,RsACE2.3364,1,5,201104,5027559,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s05-b1_S17_R1_001.fastq.gz
+lib1,RsACE2.3364_05_bin2,RsACE2.3364,2,5,201104,186487,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s05-b2_S18_R1_001.fastq.gz
+lib1,RsACE2.3364_05_bin3,RsACE2.3364,3,5,201104,83844,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s05-b3_S19_R1_001.fastq.gz
+lib1,RsACE2.3364_05_bin4,RsACE2.3364,4,5,201104,14744,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s05-b4_S20_R1_001.fastq.gz
+lib1,RsACE2.3364_06_bin1,RsACE2.3364,1,6,201104,6407725,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s06-b1_S21_R1_001.fastq.gz
+lib1,RsACE2.3364_06_bin2,RsACE2.3364,2,6,201104,362706,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s06-b2_S22_R1_001.fastq.gz
+lib1,RsACE2.3364_06_bin3,RsACE2.3364,3,6,201104,23571,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s06-b3_S23_R1_001.fastq.gz
+lib1,RsACE2.3364_06_bin4,RsACE2.3364,4,6,201104,88,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s06-b4_S24_R1_001.fastq.gz
+lib1,RsACE2.3364_07_bin1,RsACE2.3364,1,7,201104,5956481,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s07-b1_S25_R1_001.fastq.gz
+lib1,RsACE2.3364_07_bin2,RsACE2.3364,2,7,201104,267685,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s07-b2_S26_R1_001.fastq.gz
+lib1,RsACE2.3364_07_bin3,RsACE2.3364,3,7,201104,296,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s07-b3_S27_R1_001.fastq.gz
+lib1,RsACE2.3364_07_bin4,RsACE2.3364,4,7,201104,37,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s07-b4_S28_R1_001.fastq.gz
+lib1,RsACE2.3364_08_bin1,RsACE2.3364,1,8,201104,5186808,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s08-b1_S29_R1_001.fastq.gz
+lib1,RsACE2.3364_08_bin2,RsACE2.3364,2,8,201104,158052,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s08-b2_S30_R1_001.fastq.gz
+lib1,RsACE2.3364_08_bin3,RsACE2.3364,3,8,201104,151,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s08-b3_S31_R1_001.fastq.gz
+lib1,RsACE2.3364_08_bin4,RsACE2.3364,4,8,201104,25,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s08-b4_S32_R1_001.fastq.gz
+lib1,RsACE2.3364_09_bin1,RsACE2.3364,1,9,201104,5872533,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s09-b1_S33_R1_001.fastq.gz
+lib1,RsACE2.3364_09_bin2,RsACE2.3364,2,9,201104,236090,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s09-b2_S34_R1_001.fastq.gz
+lib1,RsACE2.3364_09_bin3,RsACE2.3364,3,9,201104,68,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s09-b3_S35_R1_001.fastq.gz
+lib1,RsACE2.3364_09_bin4,RsACE2.3364,4,9,201104,17,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s09-b4_S36_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_01_bin1,RaACE2.787.pool6,1,1,201104,403894,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s10-b1_S37_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_01_bin2,RaACE2.787.pool6,2,1,201104,339418,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s10-b2_S38_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_01_bin3,RaACE2.787.pool6,3,1,201104,210986,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s10-b3_S39_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_01_bin4,RaACE2.787.pool6,4,1,201104,112148,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s10-b4_S40_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_02_bin1,RaACE2.787.pool6,1,2,201104,804420,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s11-b1_S41_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_02_bin2,RaACE2.787.pool6,2,2,201104,323742,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s11-b2_S42_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_02_bin3,RaACE2.787.pool6,3,2,201104,125704,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s11-b3_S43_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_02_bin4,RaACE2.787.pool6,4,2,201104,45877,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s11-b4_S44_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_03_bin1,RaACE2.787.pool6,1,3,201104,910268,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s12-b1_S45_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_03_bin2,RaACE2.787.pool6,2,3,201104,318806,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s12-b2_S46_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_03_bin3,RaACE2.787.pool6,3,3,201104,92512,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s12-b3_S47_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_03_bin4,RaACE2.787.pool6,4,3,201104,23095,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s12-b4_S48_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_04_bin1,RaACE2.787.pool6,1,4,201104,1178384,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s13-b1_S49_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_04_bin2,RaACE2.787.pool6,2,4,201104,220543,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s13-b2_S50_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_04_bin3,RaACE2.787.pool6,3,4,201104,46755,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s13-b3_S51_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_04_bin4,RaACE2.787.pool6,4,4,201104,2257,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s13-b4_S52_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_05_bin1,RaACE2.787.pool6,1,5,201104,1213761,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s14-b1_S53_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_05_bin2,RaACE2.787.pool6,2,5,201104,91554,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s14-b2_S54_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_05_bin3,RaACE2.787.pool6,3,5,201104,2431,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s14-b3_S55_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_05_bin4,RaACE2.787.pool6,4,5,201104,7,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s14-b4_S56_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_06_bin1,RaACE2.787.pool6,1,6,201104,1129362,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s15-b1_S57_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_06_bin2,RaACE2.787.pool6,2,6,201104,45076,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s15-b2_S58_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_06_bin3,RaACE2.787.pool6,3,6,201104,2196,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s15-b3_S59_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_06_bin4,RaACE2.787.pool6,4,6,201104,8,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s15-b4_S60_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_07_bin1,RaACE2.787.pool6,1,7,201104,1407727,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s16-b1_S61_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_07_bin2,RaACE2.787.pool6,2,7,201104,33938,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s16-b2_S62_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_07_bin3,RaACE2.787.pool6,3,7,201104,61,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s16-b3_S63_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_07_bin4,RaACE2.787.pool6,4,7,201104,18,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s16-b4_S64_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_08_bin1,RaACE2.787.pool6,1,8,201104,1326101,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s17-b1_S65_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_08_bin2,RaACE2.787.pool6,2,8,201104,26731,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s17-b2_S66_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_08_bin3,RaACE2.787.pool6,3,8,201104,28,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s17-b3_S67_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_08_bin4,RaACE2.787.pool6,4,8,201104,15,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s17-b4_S68_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_09_bin1,RaACE2.787.pool6,1,9,201104,1394397,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s18-b1_S69_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_09_bin2,RaACE2.787.pool6,2,9,201104,34749,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s18-b2_S70_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_09_bin3,RaACE2.787.pool6,3,9,201104,65,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s18-b3_S71_R1_001.fastq.gz
+lib1,RaACE2.787.pool6_09_bin4,RaACE2.787.pool6,4,9,201104,8,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s18-b4_S72_R1_001.fastq.gz
+lib1,huACE2.pool6_01_bin1,huACE2.pool6,1,1,201104,1084038,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s19-b1_S73_R1_001.fastq.gz
+lib1,huACE2.pool6_01_bin2,huACE2.pool6,2,1,201104,123372,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s19-b2_S74_R1_001.fastq.gz
+lib1,huACE2.pool6_01_bin3,huACE2.pool6,3,1,201104,19466,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s19-b3_S75_R1_001.fastq.gz
+lib1,huACE2.pool6_01_bin4,huACE2.pool6,4,1,201104,113530,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s19-b4_S76_R1_001.fastq.gz
+lib1,huACE2.pool6_02_bin1,huACE2.pool6,1,2,201104,1110460,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s20-b1_S77_R1_001.fastq.gz
+lib1,huACE2.pool6_02_bin2,huACE2.pool6,2,2,201104,109811,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s20-b2_S78_R1_001.fastq.gz
+lib1,huACE2.pool6_02_bin3,huACE2.pool6,3,2,201104,22455,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s20-b3_S79_R1_001.fastq.gz
+lib1,huACE2.pool6_02_bin4,huACE2.pool6,4,2,201104,107045,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s20-b4_S80_R1_001.fastq.gz
+lib1,huACE2.pool6_03_bin1,huACE2.pool6,1,3,201104,1182679,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s21-b1_S81_R1_001.fastq.gz
+lib1,huACE2.pool6_03_bin2,huACE2.pool6,2,3,201104,96920,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s21-b2_S82_R1_001.fastq.gz
+lib1,huACE2.pool6_03_bin3,huACE2.pool6,3,3,201104,15888,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s21-b3_S83_R1_001.fastq.gz
+lib1,huACE2.pool6_03_bin4,huACE2.pool6,4,3,201104,123143,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s21-b4_S84_R1_001.fastq.gz
+lib1,huACE2.pool6_04_bin1,huACE2.pool6,1,4,201104,1112028,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s22-b1_S85_R1_001.fastq.gz
+lib1,huACE2.pool6_04_bin2,huACE2.pool6,2,4,201104,99783,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s22-b2_S86_R1_001.fastq.gz
+lib1,huACE2.pool6_04_bin3,huACE2.pool6,3,4,201104,37243,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s22-b3_S87_R1_001.fastq.gz
+lib1,huACE2.pool6_04_bin4,huACE2.pool6,4,4,201104,43604,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s22-b4_S88_R1_001.fastq.gz
+lib1,huACE2.pool6_05_bin1,huACE2.pool6,1,5,201104,1114483,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s23-b1_S89_R1_001.fastq.gz
+lib1,huACE2.pool6_05_bin2,huACE2.pool6,2,5,201104,102755,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s23-b2_S90_R1_001.fastq.gz
+lib1,huACE2.pool6_05_bin3,huACE2.pool6,3,5,201104,25697,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s23-b3_S91_R1_001.fastq.gz
+lib1,huACE2.pool6_05_bin4,huACE2.pool6,4,5,201104,7085,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s23-b4_S92_R1_001.fastq.gz
+lib1,huACE2.pool6_06_bin1,huACE2.pool6,1,6,201104,1269846,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s24-b1_S93_R1_001.fastq.gz
+lib1,huACE2.pool6_06_bin2,huACE2.pool6,2,6,201104,96804,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s24-b2_S94_R1_001.fastq.gz
+lib1,huACE2.pool6_06_bin3,huACE2.pool6,3,6,201104,1460,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s24-b3_S95_R1_001.fastq.gz
+lib1,huACE2.pool6_06_bin4,huACE2.pool6,4,6,201104,240,/shared/ngs/illumina/tstarr/201123_D00300_1119_BHJKJTBCX3/Unaligned/Project_tstarr/201104_s24-b4_S96_R1_001.fastq.gz
+lib1,huACE2.pool6_07_bin1,huACE2.pool6,1,7,201104,1281599,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s25-b1_S69_R1_001.fastq.gz
+lib1,huACE2.pool6_07_bin2,huACE2.pool6,2,7,201104,77084,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s25-b2_S70_R1_001.fastq.gz
+lib1,huACE2.pool6_07_bin3,huACE2.pool6,3,7,201104,315,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s25-b3_S71_R1_001.fastq.gz
+lib1,huACE2.pool6_07_bin4,huACE2.pool6,4,7,201104,217,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s25-b4_S72_R1_001.fastq.gz
+lib1,huACE2.pool6_08_bin1,huACE2.pool6,1,8,201104,1215556,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s26-b1_S73_R1_001.fastq.gz
+lib1,huACE2.pool6_08_bin2,huACE2.pool6,2,8,201104,69725,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s26-b2_S74_R1_001.fastq.gz
+lib1,huACE2.pool6_08_bin3,huACE2.pool6,3,8,201104,315,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s26-b3_S75_R1_001.fastq.gz
+lib1,huACE2.pool6_08_bin4,huACE2.pool6,4,8,201104,260,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s26-b4_S76_R1_001.fastq.gz
+lib1,huACE2.pool6_09_bin1,huACE2.pool6,1,9,201104,1014539,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s27-b1_S77_R1_001.fastq.gz
+lib1,huACE2.pool6_09_bin2,huACE2.pool6,2,9,201104,74528,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s27-b2_S78_R1_001.fastq.gz
+lib1,huACE2.pool6_09_bin3,huACE2.pool6,3,9,201104,268,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s27-b3_S79_R1_001.fastq.gz
+lib1,huACE2.pool6_09_bin4,huACE2.pool6,4,9,201104,205,/shared/ngs/illumina/tstarr/201118_D00300_1116_AHJKM5BCX3/Unaligned/Project_tstarr/201104_s27-b4_S80_R1_001.fastq.gz
+lib1,cvACE2_01_bin1,cvACE2,1,1,201112,5228630,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s01-b1_S1_R1_001.fastq.gz
+lib1,cvACE2_01_bin2,cvACE2,2,1,201112,278448,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s01-b2_S2_R1_001.fastq.gz
+lib1,cvACE2_01_bin3,cvACE2,3,1,201112,220823,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s01-b3_S3_R1_001.fastq.gz
+lib1,cvACE2_01_bin4,cvACE2,4,1,201112,1120780,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s01-b4_S4_R1_001.fastq.gz
+lib1,cvACE2_02_bin1,cvACE2,1,2,201112,5859291,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s02-b1_S5_R1_001.fastq.gz
+lib1,cvACE2_02_bin2,cvACE2,2,2,201112,474742,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s02-b2_S6_R1_001.fastq.gz
+lib1,cvACE2_02_bin3,cvACE2,3,2,201112,654470,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s02-b3_S7_R1_001.fastq.gz
+lib1,cvACE2_02_bin4,cvACE2,4,2,201112,171440,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s02-b4_S8_R1_001.fastq.gz
+lib1,cvACE2_03_bin1,cvACE2,1,3,201112,5867862,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s03-b1_S9_R1_001.fastq.gz
+lib1,cvACE2_03_bin2,cvACE2,2,3,201112,406196,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s03-b2_S10_R1_001.fastq.gz
+lib1,cvACE2_03_bin3,cvACE2,3,3,201112,260429,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s03-b3_S11_R1_001.fastq.gz
+lib1,cvACE2_03_bin4,cvACE2,4,3,201112,685059,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s03-b4_S12_R1_001.fastq.gz
+lib1,cvACE2_04_bin1,cvACE2,1,4,201112,5978737,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s04-b1_S13_R1_001.fastq.gz
+lib1,cvACE2_04_bin2,cvACE2,2,4,201112,384332,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s04-b2_S14_R1_001.fastq.gz
+lib1,cvACE2_04_bin3,cvACE2,3,4,201112,63364,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s04-b3_S15_R1_001.fastq.gz
+lib1,cvACE2_04_bin4,cvACE2,4,4,201112,6938,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s04-b4_S16_R1_001.fastq.gz
+lib1,cvACE2_05_bin1,cvACE2,1,5,201112,6027326,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s05-b1_S17_R1_001.fastq.gz
+lib1,cvACE2_05_bin2,cvACE2,2,5,201112,353603,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s05-b2_S18_R1_001.fastq.gz
+lib1,cvACE2_05_bin3,cvACE2,3,5,201112,33943,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s05-b3_S19_R1_001.fastq.gz
+lib1,cvACE2_05_bin4,cvACE2,4,5,201112,26228,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s05-b4_S20_R1_001.fastq.gz
+lib1,cvACE2_06_bin1,cvACE2,1,6,201112,6491640,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s06-b1_S21_R1_001.fastq.gz
+lib1,cvACE2_06_bin2,cvACE2,2,6,201112,338351,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s06-b2_S22_R1_001.fastq.gz
+lib1,cvACE2_06_bin3,cvACE2,3,6,201112,28838,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s06-b3_S23_R1_001.fastq.gz
+lib1,cvACE2_06_bin4,cvACE2,4,6,201112,29190,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s06-b4_S24_R1_001.fastq.gz
+lib1,cvACE2_07_bin1,cvACE2,1,7,201112,6104068,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s07-b1_S25_R1_001.fastq.gz
+lib1,cvACE2_07_bin2,cvACE2,2,7,201112,313068,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s07-b2_S26_R1_001.fastq.gz
+lib1,cvACE2_07_bin3,cvACE2,3,7,201112,40594,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s07-b3_S27_R1_001.fastq.gz
+lib1,cvACE2_07_bin4,cvACE2,4,7,201112,32484,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s07-b4_S28_R1_001.fastq.gz
+lib1,cvACE2_08_bin1,cvACE2,1,8,201112,6163189,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s08-b1_S29_R1_001.fastq.gz
+lib1,cvACE2_08_bin2,cvACE2,2,8,201112,312063,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s08-b2_S30_R1_001.fastq.gz
+lib1,cvACE2_08_bin3,cvACE2,3,8,201112,51711,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s08-b3_S31_R1_001.fastq.gz
+lib1,cvACE2_08_bin4,cvACE2,4,8,201112,40649,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s08-b4_S32_R1_001.fastq.gz
+lib1,cvACE2_09_bin1,cvACE2,1,9,201112,6168475,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s09-b1_S33_R1_001.fastq.gz
+lib1,cvACE2_09_bin2,cvACE2,2,9,201112,143758,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s09-b2_S34_R1_001.fastq.gz
+lib1,cvACE2_09_bin3,cvACE2,3,9,201112,2943,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s09-b3_S35_R1_001.fastq.gz
+lib1,cvACE2_09_bin4,cvACE2,4,9,201112,2770,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s09-b4_S36_R1_001.fastq.gz
+lib2,cvACE2_01_bin1,cvACE2,1,1,201112,6077757,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s10-b1_S37_R1_001.fastq.gz
+lib2,cvACE2_01_bin2,cvACE2,2,1,201112,317999,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s10-b2_S38_R1_001.fastq.gz
+lib2,cvACE2_01_bin3,cvACE2,3,1,201112,253686,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s10-b3_S39_R1_001.fastq.gz
+lib2,cvACE2_01_bin4,cvACE2,4,1,201112,1308572,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s10-b4_S40_R1_001.fastq.gz
+lib2,cvACE2_02_bin1,cvACE2,1,2,201112,6096688,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s11-b1_S41_R1_001.fastq.gz
+lib2,cvACE2_02_bin2,cvACE2,2,2,201112,486728,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s11-b2_S42_R1_001.fastq.gz
+lib2,cvACE2_02_bin3,cvACE2,3,2,201112,666993,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s11-b3_S43_R1_001.fastq.gz
+lib2,cvACE2_02_bin4,cvACE2,4,2,201112,246623,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s11-b4_S44_R1_001.fastq.gz
+lib2,cvACE2_03_bin1,cvACE2,1,3,201112,5800886,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s12-b1_S45_R1_001.fastq.gz
+lib2,cvACE2_03_bin2,cvACE2,2,3,201112,383282,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s12-b2_S46_R1_001.fastq.gz
+lib2,cvACE2_03_bin3,cvACE2,3,3,201112,255976,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s12-b3_S47_R1_001.fastq.gz
+lib2,cvACE2_03_bin4,cvACE2,4,3,201112,668979,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s12-b4_S48_R1_001.fastq.gz
+lib2,cvACE2_04_bin1,cvACE2,1,4,201112,6103406,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s13-b1_S49_R1_001.fastq.gz
+lib2,cvACE2_04_bin2,cvACE2,2,4,201112,377827,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s13-b2_S50_R1_001.fastq.gz
+lib2,cvACE2_04_bin3,cvACE2,3,4,201112,62565,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s13-b3_S51_R1_001.fastq.gz
+lib2,cvACE2_04_bin4,cvACE2,4,4,201112,6980,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s13-b4_S52_R1_001.fastq.gz
+lib2,cvACE2_05_bin1,cvACE2,1,5,201112,6015235,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s14-b1_S53_R1_001.fastq.gz
+lib2,cvACE2_05_bin2,cvACE2,2,5,201112,283186,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s14-b2_S54_R1_001.fastq.gz
+lib2,cvACE2_05_bin3,cvACE2,3,5,201112,6360,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s14-b3_S55_R1_001.fastq.gz
+lib2,cvACE2_05_bin4,cvACE2,4,5,201112,4423,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s14-b4_S56_R1_001.fastq.gz
+lib2,cvACE2_06_bin1,cvACE2,1,6,201112,6116322,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s15-b1_S57_R1_001.fastq.gz
+lib2,cvACE2_06_bin2,cvACE2,2,6,201112,261754,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s15-b2_S58_R1_001.fastq.gz
+lib2,cvACE2_06_bin3,cvACE2,3,6,201112,30070,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s15-b3_S59_R1_001.fastq.gz
+lib2,cvACE2_06_bin4,cvACE2,4,6,201112,21252,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s15-b4_S60_R1_001.fastq.gz
+lib2,cvACE2_07_bin1,cvACE2,1,7,201112,5979478,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s16-b1_S61_R1_001.fastq.gz
+lib2,cvACE2_07_bin2,cvACE2,2,7,201112,261533,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s16-b2_S62_R1_001.fastq.gz
+lib2,cvACE2_07_bin3,cvACE2,3,7,201112,21187,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s16-b3_S63_R1_001.fastq.gz
+lib2,cvACE2_07_bin4,cvACE2,4,7,201112,15423,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s16-b4_S64_R1_001.fastq.gz
+lib2,cvACE2_08_bin1,cvACE2,1,8,201112,6072478,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s17-b1_S65_R1_001.fastq.gz
+lib2,cvACE2_08_bin2,cvACE2,2,8,201112,257307,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s17-b2_S66_R1_001.fastq.gz
+lib2,cvACE2_08_bin3,cvACE2,3,8,201112,25676,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s17-b3_S67_R1_001.fastq.gz
+lib2,cvACE2_08_bin4,cvACE2,4,8,201112,22000,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s17-b4_S68_R1_001.fastq.gz
+lib2,cvACE2_09_bin1,cvACE2,1,9,201112,6190432,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s18-b1_S69_R1_001.fastq.gz
+lib2,cvACE2_09_bin2,cvACE2,2,9,201112,199297,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s18-b2_S70_R1_001.fastq.gz
+lib2,cvACE2_09_bin3,cvACE2,3,9,201112,2749,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s18-b3_S71_R1_001.fastq.gz
+lib2,cvACE2_09_bin4,cvACE2,4,9,201112,3119,/shared/ngs/illumina/tstarr/201117_D00300_1114_AHJGM3BCX3/Unaligned/Project_tstarr/201112_s18-b4_S72_R1_001.fastq.gz
+lib1,RaACE2.9479_01_bin1,RaACE2.9479,1,1,210111,1966386,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s01-b1_S1_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s01-b1_S1_R1_001.fastq.gz
+lib1,RaACE2.9479_01_bin2,RaACE2.9479,2,1,210111,1217331,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s01-b2_S2_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s01-b2_S2_R1_001.fastq.gz
+lib1,RaACE2.9479_01_bin3,RaACE2.9479,3,1,210111,669754,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s01-b3_S3_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s01-b3_S3_R1_001.fastq.gz
+lib1,RaACE2.9479_01_bin4,RaACE2.9479,4,1,210111,1345067,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s01-b4_S4_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s01-b4_S4_R1_001.fastq.gz
+lib1,RaACE2.9479_02_bin1,RaACE2.9479,1,2,210111,2222491,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s02-b1_S5_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s02-b1_S5_R1_001.fastq.gz
+lib1,RaACE2.9479_02_bin2,RaACE2.9479,2,2,210111,815611,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s02-b2_S6_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s02-b2_S6_R1_001.fastq.gz
+lib1,RaACE2.9479_02_bin3,RaACE2.9479,3,2,210111,976746,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s02-b3_S7_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s02-b3_S7_R1_001.fastq.gz
+lib1,RaACE2.9479_02_bin4,RaACE2.9479,4,2,210111,1222462,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s02-b4_S8_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s02-b4_S8_R1_001.fastq.gz
+lib1,RaACE2.9479_03_bin1,RaACE2.9479,1,3,210111,2655809,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s03-b1_S9_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s03-b1_S9_R1_001.fastq.gz
+lib1,RaACE2.9479_03_bin2,RaACE2.9479,2,3,210111,868351,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s03-b2_S10_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s03-b2_S10_R1_001.fastq.gz
+lib1,RaACE2.9479_03_bin3,RaACE2.9479,3,3,210111,1305114,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s03-b3_S11_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s03-b3_S11_R1_001.fastq.gz
+lib1,RaACE2.9479_03_bin4,RaACE2.9479,4,3,210111,1141143,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s03-b4_S12_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s03-b4_S12_R1_001.fastq.gz
+lib1,RaACE2.9479_04_bin1,RaACE2.9479,1,4,210111,2759952,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s04-b1_S13_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s04-b1_S13_R1_001.fastq.gz
+lib1,RaACE2.9479_04_bin2,RaACE2.9479,2,4,210111,1123338,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s04-b2_S14_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s04-b2_S14_R1_001.fastq.gz
+lib1,RaACE2.9479_04_bin3,RaACE2.9479,3,4,210111,1011191,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s04-b3_S15_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s04-b3_S15_R1_001.fastq.gz
+lib1,RaACE2.9479_04_bin4,RaACE2.9479,4,4,210111,385033,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s04-b4_S16_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s04-b4_S16_R1_001.fastq.gz
+lib1,RaACE2.9479_05_bin1,RaACE2.9479,1,5,210111,2985177,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s05-b1_S17_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s05-b1_S17_R1_001.fastq.gz
+lib1,RaACE2.9479_05_bin2,RaACE2.9479,2,5,210111,1222389,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s05-b2_S18_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s05-b2_S18_R1_001.fastq.gz
+lib1,RaACE2.9479_05_bin3,RaACE2.9479,3,5,210111,823017,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s05-b3_S19_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s05-b3_S19_R1_001.fastq.gz
+lib1,RaACE2.9479_05_bin4,RaACE2.9479,4,5,210111,37552,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s05-b4_S20_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s05-b4_S20_R1_001.fastq.gz
+lib1,RaACE2.9479_06_bin1,RaACE2.9479,1,6,210111,4321804,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s06-b1_S21_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s06-b1_S21_R1_001.fastq.gz
+lib1,RaACE2.9479_06_bin2,RaACE2.9479,2,6,210111,1077592,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s06-b2_S22_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s06-b2_S22_R1_001.fastq.gz
+lib1,RaACE2.9479_06_bin3,RaACE2.9479,3,6,210111,130524,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s06-b3_S23_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s06-b3_S23_R1_001.fastq.gz
+lib1,RaACE2.9479_06_bin4,RaACE2.9479,4,6,210111,1,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s06-b4_S24_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s06-b4_S24_R1_001.fastq.gz
+lib1,RaACE2.9479_07_bin1,RaACE2.9479,1,7,210111,5142918,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s07-b1_S25_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s07-b1_S25_R1_001.fastq.gz
+lib1,RaACE2.9479_07_bin2,RaACE2.9479,2,7,210111,487929,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s07-b2_S26_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s07-b2_S26_R1_001.fastq.gz
+lib1,RaACE2.9479_07_bin3,RaACE2.9479,3,7,210111,87,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s07-b3_S27_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s07-b3_S27_R1_001.fastq.gz
+lib1,RaACE2.9479_07_bin4,RaACE2.9479,4,7,210111,0,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s07-b4_S28_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s07-b4_S28_R1_001.fastq.gz
+lib1,RaACE2.9479_08_bin1,RaACE2.9479,1,8,210111,5010321,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s08-b1_S29_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s08-b1_S29_R1_001.fastq.gz
+lib1,RaACE2.9479_08_bin2,RaACE2.9479,2,8,210111,103743,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s08-b2_S30_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s08-b2_S30_R1_001.fastq.gz
+lib1,RaACE2.9479_08_bin3,RaACE2.9479,3,8,210111,17,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s08-b3_S31_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s08-b3_S31_R1_001.fastq.gz
+lib1,RaACE2.9479_08_bin4,RaACE2.9479,4,8,210111,4,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s08-b4_S32_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s08-b4_S32_R1_001.fastq.gz
+lib1,RaACE2.9479_09_bin1,RaACE2.9479,1,9,210111,5294924,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s09-b1_S33_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s09-b1_S33_R1_001.fastq.gz
+lib1,RaACE2.9479_09_bin2,RaACE2.9479,2,9,210111,128156,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s09-b2_S34_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s09-b2_S34_R1_001.fastq.gz
+lib1,RaACE2.9479_09_bin3,RaACE2.9479,3,9,210111,7,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s09-b3_S35_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s09-b3_S35_R1_001.fastq.gz
+lib1,RaACE2.9479_09_bin4,RaACE2.9479,4,9,210111,1,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s09-b4_S36_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s09-b4_S36_R1_001.fastq.gz
+lib2,RaACE2.9479_01_bin1,RaACE2.9479,1,1,210111,2144307,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s10-b1_S37_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s10-b1_S37_R1_001.fastq.gz
+lib2,RaACE2.9479_01_bin2,RaACE2.9479,2,1,210111,1187537,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s10-b2_S38_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s10-b2_S38_R1_001.fastq.gz
+lib2,RaACE2.9479_01_bin3,RaACE2.9479,3,1,210111,633730,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s10-b3_S39_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s10-b3_S39_R1_001.fastq.gz
+lib2,RaACE2.9479_01_bin4,RaACE2.9479,4,1,210111,1330356,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s10-b4_S40_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s10-b4_S40_R1_001.fastq.gz
+lib2,RaACE2.9479_02_bin1,RaACE2.9479,1,2,210111,2467829,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s11-b1_S41_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s11-b1_S41_R1_001.fastq.gz
+lib2,RaACE2.9479_02_bin2,RaACE2.9479,2,2,210111,789775,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s11-b2_S42_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s11-b2_S42_R1_001.fastq.gz
+lib2,RaACE2.9479_02_bin3,RaACE2.9479,3,2,210111,1009748,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s11-b3_S43_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s11-b3_S43_R1_001.fastq.gz
+lib2,RaACE2.9479_02_bin4,RaACE2.9479,4,2,210111,1067303,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s11-b4_S44_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s11-b4_S44_R1_001.fastq.gz
+lib2,RaACE2.9479_03_bin1,RaACE2.9479,1,3,210111,2326872,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s12-b1_S45_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s12-b1_S45_R1_001.fastq.gz
+lib2,RaACE2.9479_03_bin2,RaACE2.9479,2,3,210111,742621,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s12-b2_S46_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s12-b2_S46_R1_001.fastq.gz
+lib2,RaACE2.9479_03_bin3,RaACE2.9479,3,3,210111,1109414,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s12-b3_S47_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s12-b3_S47_R1_001.fastq.gz
+lib2,RaACE2.9479_03_bin4,RaACE2.9479,4,3,210111,1073641,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s12-b4_S48_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s12-b4_S48_R1_001.fastq.gz
+lib2,RaACE2.9479_04_bin1,RaACE2.9479,1,4,210111,2773297,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s13-b1_S49_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s13-b1_S49_R1_001.fastq.gz
+lib2,RaACE2.9479_04_bin2,RaACE2.9479,2,4,210111,1054399,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s13-b2_S50_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s13-b2_S50_R1_001.fastq.gz
+lib2,RaACE2.9479_04_bin3,RaACE2.9479,3,4,210111,1077793,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s13-b3_S51_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s13-b3_S51_R1_001.fastq.gz
+lib2,RaACE2.9479_04_bin4,RaACE2.9479,4,4,210111,422536,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s13-b4_S52_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s13-b4_S52_R1_001.fastq.gz
+lib2,RaACE2.9479_05_bin1,RaACE2.9479,1,5,210111,3249890,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s14-b1_S53_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s14-b1_S53_R1_001.fastq.gz
+lib2,RaACE2.9479_05_bin2,RaACE2.9479,2,5,210111,1260490,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s14-b2_S54_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s14-b2_S54_R1_001.fastq.gz
+lib2,RaACE2.9479_05_bin3,RaACE2.9479,3,5,210111,840717,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s14-b3_S55_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s14-b3_S55_R1_001.fastq.gz
+lib2,RaACE2.9479_05_bin4,RaACE2.9479,4,5,210111,29285,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s14-b4_S56_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s14-b4_S56_R1_001.fastq.gz
+lib2,RaACE2.9479_06_bin1,RaACE2.9479,1,6,210111,4283258,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s15-b1_S57_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s15-b1_S57_R1_001.fastq.gz
+lib2,RaACE2.9479_06_bin2,RaACE2.9479,2,6,210111,1061533,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s15-b2_S58_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s15-b2_S58_R1_001.fastq.gz
+lib2,RaACE2.9479_06_bin3,RaACE2.9479,3,6,210111,127235,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s15-b3_S59_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s15-b3_S59_R1_001.fastq.gz
+lib2,RaACE2.9479_06_bin4,RaACE2.9479,4,6,210111,2,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s15-b4_S60_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s15-b4_S60_R1_001.fastq.gz
+lib2,RaACE2.9479_07_bin1,RaACE2.9479,1,7,210111,5124767,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s16-b1_S61_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s16-b1_S61_R1_001.fastq.gz
+lib2,RaACE2.9479_07_bin2,RaACE2.9479,2,7,210111,499306,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s16-b2_S62_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s16-b2_S62_R1_001.fastq.gz
+lib2,RaACE2.9479_07_bin3,RaACE2.9479,3,7,210111,142,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s16-b3_S63_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s16-b3_S63_R1_001.fastq.gz
+lib2,RaACE2.9479_07_bin4,RaACE2.9479,4,7,210111,1,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s16-b4_S64_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s16-b4_S64_R1_001.fastq.gz
+lib2,RaACE2.9479_08_bin1,RaACE2.9479,1,8,210111,5227703,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s17-b1_S65_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s17-b1_S65_R1_001.fastq.gz
+lib2,RaACE2.9479_08_bin2,RaACE2.9479,2,8,210111,111556,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s17-b2_S66_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s17-b2_S66_R1_001.fastq.gz
+lib2,RaACE2.9479_08_bin3,RaACE2.9479,3,8,210111,10,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s17-b3_S67_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s17-b3_S67_R1_001.fastq.gz
+lib2,RaACE2.9479_08_bin4,RaACE2.9479,4,8,210111,0,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s17-b4_S68_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s17-b4_S68_R1_001.fastq.gz
+lib2,RaACE2.9479_09_bin1,RaACE2.9479,1,9,210111,5294924,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s18-b1_S69_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s18-b1_S69_R1_001.fastq.gz
+lib2,RaACE2.9479_09_bin2,RaACE2.9479,2,9,210111,128156,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s18-b2_S70_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s18-b2_S70_R1_001.fastq.gz
+lib2,RaACE2.9479_09_bin3,RaACE2.9479,3,9,210111,7,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s18-b3_S71_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s18-b3_S71_R1_001.fastq.gz
+lib2,RaACE2.9479_09_bin4,RaACE2.9479,4,9,210111,1,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s18-b4_S72_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s18-b4_S72_R1_001.fastq.gz
+lib1,pgACE2_01_bin1,pgACE2,1,1,210106,1687510,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s01-b1_S1_R1_001.fastq.gz
+lib1,pgACE2_01_bin2,pgACE2,2,1,210106,2349453,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s01-b2_S2_R1_001.fastq.gz
+lib1,pgACE2_01_bin3,pgACE2,3,1,210106,465312,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s01-b3_S3_R1_001.fastq.gz
+lib1,pgACE2_01_bin4,pgACE2,4,1,210106,3115761,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s01-b4_S4_R1_001.fastq.gz
+lib1,pgACE2_02_bin1,pgACE2,1,2,210106,888295,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s02-b1_S5_R1_001.fastq.gz
+lib1,pgACE2_02_bin2,pgACE2,2,2,210106,289163,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s02-b2_S6_R1_001.fastq.gz
+lib1,pgACE2_02_bin3,pgACE2,3,2,210106,983773,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s02-b3_S7_R1_001.fastq.gz
+lib1,pgACE2_02_bin4,pgACE2,4,2,210106,171440,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s02-b4_S8_R1_001.fastq.gz
+lib1,pgACE2_03_bin1,pgACE2,1,3,210106,3734321,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s03-b1_S9_R1_001.fastq.gz
+lib1,pgACE2_03_bin2,pgACE2,2,3,210106,677694,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s03-b2_S10_R1_001.fastq.gz
+lib1,pgACE2_03_bin3,pgACE2,3,3,210106,431091,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s03-b3_S11_R1_001.fastq.gz
+lib1,pgACE2_03_bin4,pgACE2,4,3,210106,939539,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s03-b4_S12_R1_001.fastq.gz
+lib1,pgACE2_04_bin1,pgACE2,1,4,210106,4004045,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s04-b1_S13_R1_001.fastq.gz
+lib1,pgACE2_04_bin2,pgACE2,2,4,210106,733197,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s04-b2_S14_R1_001.fastq.gz
+lib1,pgACE2_04_bin3,pgACE2,3,4,210106,370659,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s04-b3_S15_R1_001.fastq.gz
+lib1,pgACE2_04_bin4,pgACE2,4,4,210106,649873,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s04-b4_S16_R1_001.fastq.gz
+lib1,pgACE2_05_bin1,pgACE2,1,5,210106,4245390,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s05-b1_S17_R1_001.fastq.gz
+lib1,pgACE2_05_bin2,pgACE2,2,5,210106,845822,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s05-b2_S18_R1_001.fastq.gz
+lib1,pgACE2_05_bin3,pgACE2,3,5,210106,383739,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s05-b3_S19_R1_001.fastq.gz
+lib1,pgACE2_05_bin4,pgACE2,4,5,210106,331141,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s05-b4_S20_R1_001.fastq.gz
+lib1,pgACE2_06_bin1,pgACE2,1,6,210106,4836732,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s06-b1_S21_R1_001.fastq.gz
+lib1,pgACE2_06_bin2,pgACE2,2,6,210106,731855,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s06-b2_S22_R1_001.fastq.gz
+lib1,pgACE2_06_bin3,pgACE2,3,6,210106,346534,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s06-b3_S23_R1_001.fastq.gz
+lib1,pgACE2_06_bin4,pgACE2,4,6,210106,1040,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s06-b4_S24_R1_001.fastq.gz
+lib1,pgACE2_07_bin1,pgACE2,1,7,210106,4988509,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s07-b1_S25_R1_001.fastq.gz
+lib1,pgACE2_07_bin2,pgACE2,2,7,210106,732017,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s07-b2_S26_R1_001.fastq.gz
+lib1,pgACE2_07_bin3,pgACE2,3,7,210106,4486,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s07-b3_S27_R1_001.fastq.gz
+lib1,pgACE2_07_bin4,pgACE2,4,7,210106,23,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s07-b4_S28_R1_001.fastq.gz
+lib1,pgACE2_08_bin1,pgACE2,1,8,210106,5151990,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s08-b1_S29_R1_001.fastq.gz
+lib1,pgACE2_08_bin2,pgACE2,2,8,210106,405231,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s08-b2_S30_R1_001.fastq.gz
+lib1,pgACE2_08_bin3,pgACE2,3,8,210106,417,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s08-b3_S31_R1_001.fastq.gz
+lib1,pgACE2_08_bin4,pgACE2,4,8,210106,9,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s08-b4_S32_R1_001.fastq.gz
+lib1,RsACE2.1434_01_bin1,RsACE2.1434,1,1,210106,2506170,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s10-b1_S37_R1_001.fastq.gz
+lib1,RsACE2.1434_01_bin2,RsACE2.1434,2,1,210106,2573577,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s10-b2_S38_R1_001.fastq.gz
+lib1,RsACE2.1434_01_bin3,RsACE2.1434,3,1,210106,389145,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s10-b3_S39_R1_001.fastq.gz
+lib1,RsACE2.1434_01_bin4,RsACE2.1434,4,1,210106,591407,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s10-b4_S40_R1_001.fastq.gz
+lib1,RsACE2.1434_02_bin1,RsACE2.1434,1,2,210106,4115000,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s11-b1_S41_R1_001.fastq.gz
+lib1,RsACE2.1434_02_bin2,RsACE2.1434,2,2,210106,1077937,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s11-b2_S42_R1_001.fastq.gz
+lib1,RsACE2.1434_02_bin3,RsACE2.1434,3,2,210106,276232,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s11-b3_S43_R1_001.fastq.gz
+lib1,RsACE2.1434_02_bin4,RsACE2.1434,4,2,210106,272640,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s11-b4_S44_R1_001.fastq.gz
+lib1,RsACE2.1434_03_bin1,RsACE2.1434,1,3,210106,4562224,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s12-b1_S45_R1_001.fastq.gz
+lib1,RsACE2.1434_03_bin2,RsACE2.1434,2,3,210106,689704,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s12-b2_S46_R1_001.fastq.gz
+lib1,RsACE2.1434_03_bin3,RsACE2.1434,3,3,210106,274001,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s12-b3_S47_R1_001.fastq.gz
+lib1,RsACE2.1434_03_bin4,RsACE2.1434,4,3,210106,71838,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s12-b4_S48_R1_001.fastq.gz
+lib1,RsACE2.1434_04_bin1,RsACE2.1434,1,4,210106,4936713,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s13-b1_S49_R1_001.fastq.gz
+lib1,RsACE2.1434_04_bin2,RsACE2.1434,2,4,210106,448173,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s13-b2_S50_R1_001.fastq.gz
+lib1,RsACE2.1434_04_bin3,RsACE2.1434,3,4,210106,43933,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s13-b3_S51_R1_001.fastq.gz
+lib1,RsACE2.1434_04_bin4,RsACE2.1434,4,4,210106,7979,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s13-b4_S52_R1_001.fastq.gz
+lib1,RsACE2.1434_05_bin1,RsACE2.1434,1,5,210106,4981737,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s14-b1_S53_R1_001.fastq.gz
+lib1,RsACE2.1434_05_bin2,RsACE2.1434,2,5,210106,435101,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s14-b2_S54_R1_001.fastq.gz
+lib1,RsACE2.1434_05_bin3,RsACE2.1434,3,5,210106,8287,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s14-b3_S55_R1_001.fastq.gz
+lib1,RsACE2.1434_05_bin4,RsACE2.1434,4,5,210106,1064,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s14-b4_S56_R1_001.fastq.gz
+lib1,RsACE2.1434_06_bin1,RsACE2.1434,1,6,210106,5067311,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s15-b1_S57_R1_001.fastq.gz
+lib1,RsACE2.1434_06_bin2,RsACE2.1434,2,6,210106,344852,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s15-b2_S58_R1_001.fastq.gz
+lib1,RsACE2.1434_06_bin3,RsACE2.1434,3,6,210106,1740,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s15-b3_S59_R1_001.fastq.gz
+lib1,RsACE2.1434_06_bin4,RsACE2.1434,4,6,210106,14,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s15-b4_S60_R1_001.fastq.gz
+lib1,RsACE2.1434_07_bin1,RsACE2.1434,1,7,210106,5182788,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s16-b1_S61_R1_001.fastq.gz
+lib1,RsACE2.1434_07_bin2,RsACE2.1434,2,7,210106,317666,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s16-b2_S62_R1_001.fastq.gz
+lib1,RsACE2.1434_07_bin3,RsACE2.1434,3,7,210106,336,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s16-b3_S63_R1_001.fastq.gz
+lib1,RsACE2.1434_07_bin4,RsACE2.1434,4,7,210106,1,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s16-b4_S64_R1_001.fastq.gz
+lib1,RsACE2.1434_08_bin1,RsACE2.1434,1,8,210106,4830198,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s17-b1_S65_R1_001.fastq.gz
+lib1,RsACE2.1434_08_bin2,RsACE2.1434,2,8,210106,264042,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s17-b2_S66_R1_001.fastq.gz
+lib1,RsACE2.1434_08_bin3,RsACE2.1434,3,8,210106,328,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s17-b3_S67_R1_001.fastq.gz
+lib1,RsACE2.1434_08_bin4,RsACE2.1434,4,8,210106,5,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s17-b4_S68_R1_001.fastq.gz
+lib1,RsACE2.1434_09_bin1,RsACE2.1434,1,9,210106,5879796,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s09-b1_S33_R1_001.fastq.gz
+lib1,RsACE2.1434_09_bin2,RsACE2.1434,2,9,210106,319703,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s09-b2_S34_R1_001.fastq.gz
+lib1,RsACE2.1434_09_bin3,RsACE2.1434,3,9,210106,47,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s09-b3_S35_R1_001.fastq.gz
+lib1,RsACE2.1434_09_bin4,RsACE2.1434,4,9,210106,5,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210106_s09-b4_S36_R1_001.fastq.gz
+lib2,pgACE2_01_bin1,pgACE2,1,1,210108,1247582,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s01-b1_S69_R1_001.fastq.gz
+lib2,pgACE2_01_bin2,pgACE2,2,1,210108,1887900,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s01-b2_S70_R1_001.fastq.gz
+lib2,pgACE2_01_bin3,pgACE2,3,1,210108,389875,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s01-b3_S71_R1_001.fastq.gz
+lib2,pgACE2_01_bin4,pgACE2,4,1,210108,1089410,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s01-b4_S72_R1_001.fastq.gz
+lib2,pgACE2_02_bin1,pgACE2,1,2,210108,2983505,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s02-b1_S73_R1_001.fastq.gz
+lib2,pgACE2_02_bin2,pgACE2,2,2,210108,616456,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s02-b2_S74_R1_001.fastq.gz
+lib2,pgACE2_02_bin3,pgACE2,3,2,210108,240532,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s02-b3_S75_R1_001.fastq.gz
+lib2,pgACE2_02_bin4,pgACE2,4,2,210108,1047895,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s02-b4_S76_R1_001.fastq.gz
+lib2,pgACE2_03_bin1,pgACE2,1,3,210108,3240608,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s03-b1_S77_R1_001.fastq.gz
+lib2,pgACE2_03_bin2,pgACE2,2,3,210108,617555,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s03-b2_S78_R1_001.fastq.gz
+lib2,pgACE2_03_bin3,pgACE2,3,3,210108,365075,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s03-b3_S79_R1_001.fastq.gz
+lib2,pgACE2_03_bin4,pgACE2,4,3,210108,890543,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s03-b4_S80_R1_001.fastq.gz
+lib2,pgACE2_04_bin1,pgACE2,1,4,210108,3778472,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s04-b1_S81_R1_001.fastq.gz
+lib2,pgACE2_04_bin2,pgACE2,2,4,210108,564796,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s04-b2_S82_R1_001.fastq.gz
+lib2,pgACE2_04_bin3,pgACE2,3,4,210108,311910,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s04-b3_S83_R1_001.fastq.gz
+lib2,pgACE2_04_bin4,pgACE2,4,4,210108,588117,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s04-b4_S84_R1_001.fastq.gz
+lib2,pgACE2_05_bin1,pgACE2,1,5,210108,3933820,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s05-b1_S85_R1_001.fastq.gz
+lib2,pgACE2_05_bin2,pgACE2,2,5,210108,636161,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s05-b2_S86_R1_001.fastq.gz
+lib2,pgACE2_05_bin3,pgACE2,3,5,210108,336109,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s05-b3_S87_R1_001.fastq.gz
+lib2,pgACE2_05_bin4,pgACE2,4,5,210108,312717,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s05-b4_S88_R1_001.fastq.gz
+lib2,pgACE2_06_bin1,pgACE2,1,6,210108,4737406,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s06-b1_S89_R1_001.fastq.gz
+lib2,pgACE2_06_bin2,pgACE2,2,6,210108,502654,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s06-b2_S90_R1_001.fastq.gz
+lib2,pgACE2_06_bin3,pgACE2,3,6,210108,333173,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s06-b3_S91_R1_001.fastq.gz
+lib2,pgACE2_06_bin4,pgACE2,4,6,210108,909,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s06-b4_S92_R1_001.fastq.gz
+lib2,pgACE2_07_bin1,pgACE2,1,7,210108,4908766,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s07-b1_S93_R1_001.fastq.gz
+lib2,pgACE2_07_bin2,pgACE2,2,7,210108,530918,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s07-b2_S94_R1_001.fastq.gz
+lib2,pgACE2_07_bin3,pgACE2,3,7,210108,2631,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s07-b3_S95_R1_001.fastq.gz
+lib2,pgACE2_07_bin4,pgACE2,4,7,210108,7,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s07-b4_S96_R1_001.fastq.gz
+lib2,pgACE2_08_bin1,pgACE2,1,8,210108,5103808,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s08-b1_S97_R1_001.fastq.gz
+lib2,pgACE2_08_bin2,pgACE2,2,8,210108,227399,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s08-b2_S98_R1_001.fastq.gz
+lib2,pgACE2_08_bin3,pgACE2,3,8,210108,81,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s08-b3_S99_R1_001.fastq.gz
+lib2,pgACE2_08_bin4,pgACE2,4,8,210108,1,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s08-b4_S100_R1_001.fastq.gz
+lib2,RsACE2.1434_01_bin1,RsACE2.1434,1,1,210108,1956281,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s19-b1_S73_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s19-b1_S73_R1_001.fastq.gz
+lib2,RsACE2.1434_01_bin2,RsACE2.1434,2,1,210108,2505959,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s19-b2_S74_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s19-b2_S74_R1_001.fastq.gz
+lib2,RsACE2.1434_01_bin3,RsACE2.1434,3,1,210108,372038,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s19-b3_S75_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s19-b3_S75_R1_001.fastq.gz
+lib2,RsACE2.1434_01_bin4,RsACE2.1434,4,1,210108,609151,/shared/ngs/illumina/tstarr/210115_D00300_1154_BHK3HCBCX3/Unaligned/Project_tstarr/210111_s19-b4_S76_R1_001.fastq.gz; /shared/ngs/illumina/tstarr/210119_D00300_1157_AHK3HNBCX3/Unaligned/Project_tstarr/210111_s19-b4_S76_R1_001.fastq.gz
+lib2,RsACE2.1434_02_bin1,RsACE2.1434,1,2,210108,4173944,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s11-b1_S109_R1_001.fastq.gz
+lib2,RsACE2.1434_02_bin2,RsACE2.1434,2,2,210108,1011125,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s11-b2_S110_R1_001.fastq.gz
+lib2,RsACE2.1434_02_bin3,RsACE2.1434,3,2,210108,277667,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s11-b3_S111_R1_001.fastq.gz
+lib2,RsACE2.1434_02_bin4,RsACE2.1434,4,2,210108,312889,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s11-b4_S112_R1_001.fastq.gz
+lib2,RsACE2.1434_03_bin1,RsACE2.1434,1,3,210108,4657837,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s12-b1_S113_R1_001.fastq.gz
+lib2,RsACE2.1434_03_bin2,RsACE2.1434,2,3,210108,578928,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s12-b2_S114_R1_001.fastq.gz
+lib2,RsACE2.1434_03_bin3,RsACE2.1434,3,3,210108,263911,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s12-b3_S115_R1_001.fastq.gz
+lib2,RsACE2.1434_03_bin4,RsACE2.1434,4,3,210108,70739,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s12-b4_S116_R1_001.fastq.gz
+lib2,RsACE2.1434_04_bin1,RsACE2.1434,1,4,210108,4700364,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s13-b1_S117_R1_001.fastq.gz
+lib2,RsACE2.1434_04_bin2,RsACE2.1434,2,4,210108,323457,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s13-b2_S118_R1_001.fastq.gz
+lib2,RsACE2.1434_04_bin3,RsACE2.1434,3,4,210108,39245,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s13-b3_S119_R1_001.fastq.gz
+lib2,RsACE2.1434_04_bin4,RsACE2.1434,4,4,210108,6303,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s13-b4_S120_R1_001.fastq.gz
+lib2,RsACE2.1434_05_bin1,RsACE2.1434,1,5,210108,5036962,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s14-b1_S121_R1_001.fastq.gz
+lib2,RsACE2.1434_05_bin2,RsACE2.1434,2,5,210108,229475,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s14-b2_S122_R1_001.fastq.gz
+lib2,RsACE2.1434_05_bin3,RsACE2.1434,3,5,210108,8279,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s14-b3_S123_R1_001.fastq.gz
+lib2,RsACE2.1434_05_bin4,RsACE2.1434,4,5,210108,1114,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s14-b4_S124_R1_001.fastq.gz
+lib2,RsACE2.1434_06_bin1,RsACE2.1434,1,6,210108,5210544,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s15-b1_S125_R1_001.fastq.gz
+lib2,RsACE2.1434_06_bin2,RsACE2.1434,2,6,210108,163805,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s15-b2_S126_R1_001.fastq.gz
+lib2,RsACE2.1434_06_bin3,RsACE2.1434,3,6,210108,1067,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s15-b3_S127_R1_001.fastq.gz
+lib2,RsACE2.1434_06_bin4,RsACE2.1434,4,6,210108,2,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s15-b4_S128_R1_001.fastq.gz
+lib2,RsACE2.1434_07_bin1,RsACE2.1434,1,7,210108,5128383,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s16-b1_S129_R1_001.fastq.gz
+lib2,RsACE2.1434_07_bin2,RsACE2.1434,2,7,210108,150719,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s16-b2_S130_R1_001.fastq.gz
+lib2,RsACE2.1434_07_bin3,RsACE2.1434,3,7,210108,88,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s16-b3_S131_R1_001.fastq.gz
+lib2,RsACE2.1434_07_bin4,RsACE2.1434,4,7,210108,1,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s16-b4_S132_R1_001.fastq.gz
+lib2,RsACE2.1434_08_bin1,RsACE2.1434,1,8,210108,4966161,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s17-b1_S133_R1_001.fastq.gz
+lib2,RsACE2.1434_08_bin2,RsACE2.1434,2,8,210108,156903,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s17-b2_S134_R1_001.fastq.gz
+lib2,RsACE2.1434_08_bin3,RsACE2.1434,3,8,210108,56,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s17-b3_S135_R1_001.fastq.gz
+lib2,RsACE2.1434_08_bin4,RsACE2.1434,4,8,210108,3,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s17-b4_S136_R1_001.fastq.gz
+lib2,RsACE2.1434_09_bin1,RsACE2.1434,1,9,210108,6178616,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s09-b1_S101_R1_001.fastq.gz
+lib2,RsACE2.1434_09_bin2,RsACE2.1434,2,9,210108,224262,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s09-b2_S102_R1_001.fastq.gz
+lib2,RsACE2.1434_09_bin3,RsACE2.1434,3,9,210108,22,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s09-b3_S103_R1_001.fastq.gz
+lib2,RsACE2.1434_09_bin4,RsACE2.1434,4,9,210108,2,/shared/ngs/illumina/tstarr/210115_D00300_1153_AHK3G5BCX3/Unaligned/Project_tstarr/210108_s09-b4_S104_R1_001.fastq.gz
+lib1,mACE2_01_bin1,mACE2,1,1,210621,3154642,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s01-b1_S1_R1_001.fastq.gz
+lib1,mACE2_01_bin2,mACE2,2,1,210621,733104,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s01-b2_S2_R1_001.fastq.gz
+lib1,mACE2_01_bin3,mACE2,3,1,210621,438751,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s01-b3_S3_R1_001.fastq.gz
+lib1,mACE2_01_bin4,mACE2,4,1,210621,760377,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s01-b4_S4_R1_001.fastq.gz
+lib1,mACE2_02_bin1,mACE2,1,2,210621,2801490,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s02-b1_S5_R1_001.fastq.gz
+lib1,mACE2_02_bin2,mACE2,2,2,210621,1492769,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s02-b2_S6_R1_001.fastq.gz
+lib1,mACE2_02_bin3,mACE2,3,2,210621,461090,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s02-b3_S7_R1_001.fastq.gz
+lib1,mACE2_02_bin4,mACE2,4,2,210621,476751,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s02-b4_S8_R1_001.fastq.gz
+lib1,mACE2_03_bin1,mACE2,1,3,210621,3527204,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s03-b1_S9_R1_001.fastq.gz
+lib1,mACE2_03_bin2,mACE2,2,3,210621,728367,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s03-b2_S10_R1_001.fastq.gz
+lib1,mACE2_03_bin3,mACE2,3,3,210621,425679,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s03-b3_S11_R1_001.fastq.gz
+lib1,mACE2_03_bin4,mACE2,4,3,210621,375531,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s03-b4_S12_R1_001.fastq.gz
+lib1,mACE2_04_bin1,mACE2,1,4,210621,4709241,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s04-b1_S13_R1_001.fastq.gz
+lib1,mACE2_04_bin2,mACE2,2,4,210621,341576,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s04-b2_S14_R1_001.fastq.gz
+lib1,mACE2_04_bin3,mACE2,3,4,210621,170245,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s04-b3_S15_R1_001.fastq.gz
+lib1,mACE2_04_bin4,mACE2,4,4,210621,56858,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s04-b4_S16_R1_001.fastq.gz
+lib1,mACE2_05_bin1,mACE2,1,5,210621,5002228,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s05-b1_S17_R1_001.fastq.gz
+lib1,mACE2_05_bin2,mACE2,2,5,210621,299156,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s05-b2_S18_R1_001.fastq.gz
+lib1,mACE2_05_bin3,mACE2,3,5,210621,66299,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s05-b3_S19_R1_001.fastq.gz
+lib1,mACE2_05_bin4,mACE2,4,5,210621,3388,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s05-b4_S20_R1_001.fastq.gz
+lib1,mACE2_06_bin1,mACE2,1,6,210621,4935838,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s06-b1_S21_R1_001.fastq.gz
+lib1,mACE2_06_bin2,mACE2,2,6,210621,193889,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s06-b2_S22_R1_001.fastq.gz
+lib1,mACE2_06_bin3,mACE2,3,6,210621,6690,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s06-b3_S23_R1_001.fastq.gz
+lib1,mACE2_06_bin4,mACE2,4,6,210621,18,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s06-b4_S24_R1_001.fastq.gz
+lib1,mACE2_07_bin1,mACE2,1,7,210621,5203796,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s07-b1_S25_R1_001.fastq.gz
+lib1,mACE2_07_bin2,mACE2,2,7,210621,115240,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s07-b2_S26_R1_001.fastq.gz
+lib1,mACE2_07_bin3,mACE2,3,7,210621,116,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s07-b3_S27_R1_001.fastq.gz
+lib1,mACE2_07_bin4,mACE2,4,7,210621,5,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s07-b4_S28_R1_001.fastq.gz
+lib1,mACE2_08_bin1,mACE2,1,8,210621,4976612,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s08-b1_S29_R1_001.fastq.gz
+lib1,mACE2_08_bin2,mACE2,2,8,210621,104661,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s08-b2_S30_R1_001.fastq.gz
+lib1,mACE2_08_bin3,mACE2,3,8,210621,47,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s08-b3_S31_R1_001.fastq.gz
+lib1,mACE2_08_bin4,mACE2,4,8,210621,5,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s08-b4_S32_R1_001.fastq.gz
+lib1,mACE2_09_bin1,mACE2,1,9,210621,5139544,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s09-b1_S33_R1_001.fastq.gz
+lib1,mACE2_09_bin2,mACE2,2,9,210621,87742,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s09-b2_S34_R1_001.fastq.gz
+lib1,mACE2_09_bin3,mACE2,3,9,210621,39,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s09-b3_S35_R1_001.fastq.gz
+lib1,mACE2_09_bin4,mACE2,4,9,210621,0,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s09-b4_S36_R1_001.fastq.gz
+lib2,mACE2_01_bin1,mACE2,1,1,210621,3449188,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s10-b1_S37_R1_001.fastq.gz
+lib2,mACE2_01_bin2,mACE2,2,1,210621,792091,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s10-b2_S38_R1_001.fastq.gz
+lib2,mACE2_01_bin3,mACE2,3,1,210621,492865,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s10-b3_S39_R1_001.fastq.gz
+lib2,mACE2_01_bin4,mACE2,4,1,210621,860302,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s10-b4_S40_R1_001.fastq.gz
+lib2,mACE2_02_bin1,mACE2,1,2,210621,2830921,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s11-b1_S41_R1_001.fastq.gz
+lib2,mACE2_02_bin2,mACE2,2,2,210621,1696716,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s11-b2_S42_R1_001.fastq.gz
+lib2,mACE2_02_bin3,mACE2,3,2,210621,501886,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s11-b3_S43_R1_001.fastq.gz
+lib2,mACE2_02_bin4,mACE2,4,2,210621,568531,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s11-b4_S44_R1_001.fastq.gz
+lib2,mACE2_03_bin1,mACE2,1,3,210621,3925625,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s12-b1_S45_R1_001.fastq.gz
+lib2,mACE2_03_bin2,mACE2,2,3,210621,778382,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s12-b2_S46_R1_001.fastq.gz
+lib2,mACE2_03_bin3,mACE2,3,3,210621,456496,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s12-b3_S47_R1_001.fastq.gz
+lib2,mACE2_03_bin4,mACE2,4,3,210621,394082,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s12-b4_S48_R1_001.fastq.gz
+lib2,mACE2_04_bin1,mACE2,1,4,210621,5039231,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s13-b1_S49_R1_001.fastq.gz
+lib2,mACE2_04_bin2,mACE2,2,4,210621,279735,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s13-b2_S50_R1_001.fastq.gz
+lib2,mACE2_04_bin3,mACE2,3,4,210621,196555,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s13-b3_S51_R1_001.fastq.gz
+lib2,mACE2_04_bin4,mACE2,4,4,210621,56569,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s13-b4_S52_R1_001.fastq.gz
+lib2,mACE2_05_bin1,mACE2,1,5,210621,4830487,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s14-b1_S53_R1_001.fastq.gz
+lib2,mACE2_05_bin2,mACE2,2,5,210621,249472,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s14-b2_S54_R1_001.fastq.gz
+lib2,mACE2_05_bin3,mACE2,3,5,210621,61442,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s14-b3_S55_R1_001.fastq.gz
+lib2,mACE2_05_bin4,mACE2,4,5,210621,2997,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s14-b4_S56_R1_001.fastq.gz
+lib2,mACE2_06_bin1,mACE2,1,6,210621,4928923,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s15-b1_S57_R1_001.fastq.gz
+lib2,mACE2_06_bin2,mACE2,2,6,210621,175056,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s15-b2_S58_R1_001.fastq.gz
+lib2,mACE2_06_bin3,mACE2,3,6,210621,6128,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s15-b3_S59_R1_001.fastq.gz
+lib2,mACE2_06_bin4,mACE2,4,6,210621,11,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s15-b4_S60_R1_001.fastq.gz
+lib2,mACE2_07_bin1,mACE2,1,7,210621,4955807,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s16-b1_S61_R1_001.fastq.gz
+lib2,mACE2_07_bin2,mACE2,2,7,210621,92484,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s16-b2_S62_R1_001.fastq.gz
+lib2,mACE2_07_bin3,mACE2,3,7,210621,114,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s16-b3_S63_R1_001.fastq.gz
+lib2,mACE2_07_bin4,mACE2,4,7,210621,4,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s16-b4_S64_R1_001.fastq.gz
+lib2,mACE2_08_bin1,mACE2,1,8,210621,5047176,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s17-b1_S65_R1_001.fastq.gz
+lib2,mACE2_08_bin2,mACE2,2,8,210621,81262,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s17-b2_S66_R1_001.fastq.gz
+lib2,mACE2_08_bin3,mACE2,3,8,210621,99,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s17-b3_S67_R1_001.fastq.gz
+lib2,mACE2_08_bin4,mACE2,4,8,210621,3,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s17-b4_S68_R1_001.fastq.gz
+lib2,mACE2_09_bin1,mACE2,1,9,210621,4962301,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s18-b1_S69_R1_001.fastq.gz
+lib2,mACE2_09_bin2,mACE2,2,9,210621,81184,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s18-b2_S70_R1_001.fastq.gz
+lib2,mACE2_09_bin3,mACE2,3,9,210621,37,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s18-b3_S71_R1_001.fastq.gz
+lib2,mACE2_09_bin4,mACE2,4,9,210621,6,/shared/ngs/illumina/tstarr/210629_D00300_1271_BHM55FBCX3/Unaligned/Project_tstarr/210621_s18-b4_S72_R1_001.fastq.gz
