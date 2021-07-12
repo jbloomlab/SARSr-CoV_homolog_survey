@@ -345,5 +345,53 @@ Parsed sequences with the `.Rmd` script in this directory. Compared the "v1" seq
   - Note that the v2 AncSARS2b is closer to the v1 AncSARS1a (only differs K403R, L441Q, S443A, K444S), consistent with those having the same ingroup sequecnes (plus cambodia for v2)
 
 
+## Addition of _even more_ new sarbecovirus RBD sequences (it never ends, of course)
+Two new sarb sequecnes from Black Sea/Caucasus region in Russia recently reported in [this preprint](https://www.biorxiv.org/content/10.1101/2021.05.17.444362v2), dubbed Khosta-1 and Khosta-2. They also pointed out to me one more clade 3 sequence related to BM48-31 that is on [Genbank](https://www.ncbi.nlm.nih.gov/nuccore/939726458) though not published.
+
+Started new subdirectory, copy in working RBD alignments
+```
+mkdir add_new_RBDs/add_more_new_RBDs
+cd add_new_RBDs/add_more_new_RBDs
+cp ../RBD_aa_aligned_v2.fasta ./
+cp ../RBDs_nt_unaligned_v2.fasta ./RBDs_nt_unaligned_v3.fasta
+```
+
+Downloaded new sequences, in file `RBDs_more_new_aa.fasta`. Added nt sequences to `RBDs_nt_unaligned_v3.fasta`: 
+  - BB9904 (Bulgaria, R. euryale): Genbank KR559017
+  - Khosta-1 (Russia, R. ferrumequinum): Genbank MZ190137
+  - Khosta-1 (Russia, R. hipposideros): Genbank MZ190138
+
+Use mafft to align new sequences in with the prior set:
+
+```
+mafft --add ./RBDs_more_new_aa.fasta --reorder ./RBD_aa_aligned_v2.fasta > ./RBD_aa_aligned_v3.fasta
+```
+
+Make nt alignment:
+
+```
+pal2nal.pl ./RBD_aa_aligned_v3.fasta RBDs_nt_unaligned_v3.fasta > ./RBD_nt_aligned_v3.clustal
+```
+Convert clustal to fasta
+
+Infer phylogeny in RAxML. Note, the first unconstrained tree did have EurAf first branching and mostly monophyletic, except the root made AncSarb=Khosta2 which doesn't make sense. Thus I do constrain monophyletic Eur/Af (as all but Khosta2, the most weird looking of the seqs, were monophyletic on first pass, but the root pulled Khosta2 out), but constraint doesn't dictate outgroup placement nor any other sequences. Before doing anything substantial with this updated sequence set, should make tree with Spike which will be better aligned with these new sequences and better illustrate branching. Maybe need to start alignment from scratch instead of adding these lineages to my existing alignment:
+
+```
+mkdir RBD_codon_tree_v3
+cd ./RBD_codon_tree_v3
+nohup raxmlHPC-PTHREADS -s ../RBD_nt_aligned_v3.fasta -n RBD_codon_tree_v3.txt -m GTRGAMMA -f a -p 20 -N autoMRE -x 20 -T 8 -g ../constraint.txt -q ../../codon_partitions.txt &
+```
+
+Open up the tree `./RBD_codon_tree_v3/RAxML_bestTree.RBD_codon_tree_v3.txt` in FigTree, root on the Hp-BCoV\_Zhejiang outgroup sequence, output tree as `RAxML_besttree_RBD_codon_v3_rooted.txt` in Newick format. This will polarize the direction of nodes for ASR.
+
+Infer ancestors:
+
+```
+mkdir ../ASR_v3
+cd ../ASR_v3
+nohup perl ../../../../programs/FastML.v3.11/www/fastml/FastML_Wrapper.pl --MSA_file ../RBD_aa_aligned_v3.fasta --seqType AA --Tree ../RBD_codon_tree_v3/RAxML_besttree_RBD_codon_v3_rooted.txt --SubMatrix LG --OptimizeBL yes --jointReconstruction yes --indelReconstruction BOTH --outDir /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/add_new_RBDs/add_more_new_RBDs/ASR_v3 &
+```
+Parsed sequences with the `.Rmd` script in this directory. Compared the "v1" sequences to these:
+  - AncSarbecovirus v3 reconstruciton has mutations xxxxxx compared to the v1. 
 
 

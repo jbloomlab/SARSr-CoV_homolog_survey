@@ -1,0 +1,6 @@
+_seqFile /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/add_new_RBDs/add_more_new_RBDs/ASR_v3/IndelsReconstruction//RBD_aa_aligned_v3.fasta.indelOutputFastaFile
+_treeFile /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/add_new_RBDs/add_more_new_RBDs/ASR_v3/RAxML_besttree_RBD_codon_v3_rooted.txt.ForIndelReconstruction
+_isRootFreqEQstationary 1
+_calculateAncestralReconstruct 1
+_costMatrixGainLossRatio  2
+_minNumOfOnes 1
