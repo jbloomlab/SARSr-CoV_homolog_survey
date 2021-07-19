@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = T)
 knitr::opts_chunk$set(dev.args = list(png = list(type = "cairo")))
 
 #list of packages to install/load
-packages = c("yaml","data.table","tidyverse","gridExtra","egg","ggseqlogo","bio3d","viridis")
+packages = c("yaml","data.table","tidyverse","gridExtra","egg","ggseqlogo","bio3d","viridis","ggrepel")
 #install any packages not already installed
 installed_packages <- packages %in% rownames(installed.packages())
 if(any(installed_packages == F)){
@@ -40,7 +40,7 @@ sessionInfo()
 
     ## R version 3.6.2 (2019-12-12)
     ## Platform: x86_64-pc-linux-gnu (64-bit)
-    ## Running under: Ubuntu 18.04.5 LTS
+    ## Running under: Ubuntu 18.04.4 LTS
     ## 
     ## Matrix products: default
     ## BLAS/LAPACK: /app/software/OpenBLAS/0.3.7-GCC-8.3.0/lib/libopenblas_haswellp-r0.3.7.so
@@ -57,11 +57,11 @@ sessionInfo()
     ## [1] stats     graphics  grDevices utils     datasets  methods   base     
     ## 
     ## other attached packages:
-    ##  [1] viridis_0.5.1     viridisLite_0.3.0 bio3d_2.4-0       ggseqlogo_0.1    
-    ##  [5] egg_0.4.5         gridExtra_2.3     forcats_0.4.0     stringr_1.4.0    
-    ##  [9] dplyr_0.8.3       purrr_0.3.3       readr_1.3.1       tidyr_1.0.0      
-    ## [13] tibble_3.0.2      ggplot2_3.3.0     tidyverse_1.3.0   data.table_1.12.8
-    ## [17] yaml_2.2.0        knitr_1.26       
+    ##  [1] ggrepel_0.8.1     viridis_0.5.1     viridisLite_0.3.0 bio3d_2.4-0      
+    ##  [5] ggseqlogo_0.1     egg_0.4.5         gridExtra_2.3     forcats_0.4.0    
+    ##  [9] stringr_1.4.0     dplyr_0.8.3       purrr_0.3.3       readr_1.3.1      
+    ## [13] tidyr_1.0.0       tibble_3.0.2      ggplot2_3.3.0     tidyverse_1.3.0  
+    ## [17] data.table_1.12.8 yaml_2.2.0        knitr_1.26       
     ## 
     ## loaded via a namespace (and not attached):
     ##  [1] tidyselect_1.1.0 xfun_0.11        haven_2.2.0      colorspace_1.4-1
@@ -476,3 +476,27 @@ pACE2
 ```
 
 <img src="analyze_preferences_files/figure-gfm/ACE2_correlations-1.png" style="display: block; margin: auto;" />
+
+Can we identify mouse-adaptive mutations that are specific to mouse but
+don’t enhance human ACE2 binding?
+
+``` r
+ggplot(data=dt_mutant[target %in% c("BM48-31","BtKY72","GD-Pangolin","SARS-CoV-2","RaTG13","Rs7327","SARS-CoV-1_Urbani_HP03L","SARS-CoV-1_PC4-137_PC04"),],aes(x=huACE2,y=mACE2))+
+#ggplot(data=dt_mutant,aes(x=huACE2,y=mACE2))+
+  geom_point(pch=16,alpha=0.5)+
+  facet_wrap(~target,nrow=2)+
+  geom_text_repel(aes(label=ifelse(((mACE2 > huACE2+1.5 & huACE2 < 7) | (mACE2 > 6 & huACE2 < 6)),as.character(paste(wildtype,position,mutant,sep="")),'')),size=3,color="gray40")+
+  #geom_text_repel(aes(label=ifelse(((mACE2 > huACE2-2 & mACE2>6)),as.character(paste(wildtype,position,mutant,sep="")),'')),size=3,color="gray40")+
+  geom_point(data=dt_mutant[target %in% c("BM48-31","BtKY72","GD-Pangolin","SARS-CoV-2","RaTG13","Rs7327","SARS-CoV-1_Urbani_HP03L","SARS-CoV-1_PC4-137_PC04") & as.character(wildtype)==as.character(mutant) & position==493,],pch=18,col="red",size=4)+
+  theme_classic()
+```
+
+    ## Warning: Removed 7 rows containing missing values (geom_point).
+
+    ## Warning: Removed 7 rows containing missing values (geom_text_repel).
+
+<img src="analyze_preferences_files/figure-gfm/correlation_mACE2_SARS2-muts-1.png" style="display: block; margin: auto;" />
+
+``` r
+invisible(dev.print(pdf, paste(config$preferences_dir,"/mACE2_v_huACE2_by_bg.pdf",sep=""),useDingbats=F))
+```

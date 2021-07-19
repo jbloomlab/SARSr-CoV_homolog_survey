@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = T)
 knitr::opts_chunk$set(dev.args = list(png = list(type = "cairo")))
 
 #list of packages to install/load
-packages = c("yaml","data.table","tidyverse","gridExtra","egg","ggseqlogo","bio3d","viridis")
+packages = c("yaml","data.table","tidyverse","gridExtra","egg","ggseqlogo","bio3d","viridis","ggrepel")
 #install any packages not already installed
 installed_packages <- packages %in% rownames(installed.packages())
 if(any(installed_packages == F)){
@@ -370,4 +370,18 @@ pACE2 <- ggplot(diffs_ACE2,aes(ACE2_2,ACE2_1))+geom_tile(aes(fill=median_cor),co
 pACE2
 ```
 
+Can we identify mouse-adaptive mutations that are specific to mouse but don't enhance human ACE2 binding?
+
+```{r correlation_mACE2_SARS2-muts, fig.width=10, fig.height=5, fig.align="center", dpi=300,dev="png"}
+ggplot(data=dt_mutant[target %in% c("BM48-31","BtKY72","GD-Pangolin","SARS-CoV-2","RaTG13","Rs7327","SARS-CoV-1_Urbani_HP03L","SARS-CoV-1_PC4-137_PC04"),],aes(x=huACE2,y=mACE2))+
+#ggplot(data=dt_mutant,aes(x=huACE2,y=mACE2))+
+  geom_point(pch=16,alpha=0.5)+
+  facet_wrap(~target,nrow=2)+
+  geom_text_repel(aes(label=ifelse(((mACE2 > huACE2+1.5 & huACE2 < 7) | (mACE2 > 6 & huACE2 < 6)),as.character(paste(wildtype,position,mutant,sep="")),'')),size=3,color="gray40")+
+  #geom_text_repel(aes(label=ifelse(((mACE2 > huACE2-2 & mACE2>6)),as.character(paste(wildtype,position,mutant,sep="")),'')),size=3,color="gray40")+
+  geom_point(data=dt_mutant[target %in% c("BM48-31","BtKY72","GD-Pangolin","SARS-CoV-2","RaTG13","Rs7327","SARS-CoV-1_Urbani_HP03L","SARS-CoV-1_PC4-137_PC04") & as.character(wildtype)==as.character(mutant) & position==493,],pch=18,col="red",size=4)+
+  theme_classic()
+
+invisible(dev.print(pdf, paste(config$preferences_dir,"/mACE2_v_huACE2_by_bg.pdf",sep=""),useDingbats=F))
+```
 
