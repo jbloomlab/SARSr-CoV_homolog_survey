@@ -1,6 +1,6 @@
 # Evolutionary homolog scanning of SARS-related CoV RBDs
 
-Study and analysis by Tyler Starr, [Jesse Bloom](https://research.fhcrc.org/bloom/en.html), and co-authors.
+Study and analysis by Tyler Starr, [Jesse Bloom](https://research.fhcrc.org/bloom/en.html), and co-authors. For more information, see [our preprint](https://www.biorxiv.org/content/10.1101/2021.07.17.452804v1.abstract?%3Fcollection=).
 
 ## Summary of workflow and results
 For a summary of the workflow and links to key results files, [click here](results/summary/summary.md).
