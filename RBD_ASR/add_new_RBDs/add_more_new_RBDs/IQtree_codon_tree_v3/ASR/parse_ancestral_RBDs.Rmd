@@ -1,0 +1,194 @@
+---
+title: "Parse ancestral RBDs"
+author: "Tyler Starr"
+date: "7/9/2020"
+output:
+  github_document:
+    toc: true
+    html_preview: false
+editor_options: 
+  chunk_output_type: inline
+---
+
+After the series of bioinformatics steps outlined in `./RBD_ASR/README.md`, I have FastML outputs for ancestrally reconstructed RBD sequences. These data consist of a table giving the posterior probability of each amino acid at each position at each internal node, followed by a second table that gives the likelihood that each internal node has each position deleted or not given a likelihood-based indel reconstruction. Here, we combine these two pieces of information to generate our MAP ancestors. We also consider some alternative ancestral sequences, including incorporating ambiguously reconstructed positions in the context of the ML phylogeny, as well as reconstructions under additional reasonable phylogenetic hypotheses.
+
+```{r setup, message=FALSE, warning=FALSE, error=FALSE}
+require("knitr")
+knitr::opts_chunk$set(echo = T)
+knitr::opts_chunk$set(dev.args = list(png = list(type = "cairo")))
+
+#list of packages to install/load
+packages = c("yaml","data.table","tidyverse")
+#install any packages not already installed
+installed_packages <- packages %in% rownames(installed.packages())
+if(any(installed_packages == F)){
+  install.packages(packages[!installed_packages])
+}
+#load packages
+invisible(lapply(packages, library, character.only=T))
+
+#read in file giving concordance between RBD numbering and SARS-CoV-2 Spike numbering, along with other possibly interesting annotations
+RBD_sites <- read.csv(file="../../RBD_sites_v3.csv",stringsAsFactors=F)
+
+#make output directory
+if(!file.exists("./parsed_sequences")){
+ dir.create(file.path("./parsed_sequences"))
+}
+```
+
+Session info for reproducing environment:
+```{r print_sessionInfo}
+sessionInfo()
+```
+
+## ASR on the ML phylogeny
+
+We'll start by generating the best ancestral reconstructions at nodes of interest on the ML phylogeny. We will also generate alternative reconstructions that incorporate ambiguously reconstructed amino acid states, so we can ultimately characterize the robustness of our functional measurments to uncertainty in the reconstructions.
+
+To begin, we read in the tables giving the posterior probabilities of each amino acid at each internal node on the phylogeny, and a table that gives the probability that a residue is a deletion at each node on the phylogeny given the indel modeling performed by FastML.
+
+
+
+```{r input-ML-phylogeny-reconstruction}
+PP_ML <- data.table(read.csv(file="prob.marginal.csv"))
+indels_ML <- read.table(file="IndelsMarginalProb.txt",sep="\t",header=T)
+
+#let's add the indels category as a column in PP_ML
+for(i in 1:nrow(PP_ML)){
+  if(PP_ML$Pos[i] %in% indels_ML$Pos){
+    PP_ML$gap[i] <- indels_ML[indels_ML$Pos==PP_ML$Pos[i] & indels_ML$Node==PP_ML$Ancestral.Node[i],"Prob_Of_Indel"]
+  }else{
+    PP_ML$gap[i] <- 0
+  }
+}
+
+#recalibrate PP in amino acid states incorporating the probability of a gap character -- that is, such that rowSum is always 1
+for(i in 1:nrow(PP_ML)){
+  PP_ML[i,c("A","C","D","E","F","G","H","I","K","L","M","N","P","Q","R","S","T","V","W","Y")] <- PP_ML[i,c("A","C","D","E","F","G","H","I","K","L","M","N","P","Q","R","S","T","V","W","Y")]*(1-PP_ML[i,gap])
+}
+
+```
+
+We want ancestral sequences for the ancestral sarbecovirus, the ancestral non-Asian RBD, the ancestral SE-Asian RBD, the ancestor of the three SE Asian clades, and then the lineage of ancestors leading to SARS-CoV-1 and SARS-CoV-2. A table giving these node labels, shorthand names, and some "Notes" information is given in the file `data/ancestors_input.csv`. We load that table in, and append the MAP sequence, along with some statistics about average statistical support for ancestral states, and a list of ambiguously reconstructed states (PP < 0.8), and the plausible alternative states (PP > 0.2) at that node.
+
+```{r get-MAP-ancestors}
+ancestors <- read.csv(file="./ancestors.csv")
+
+get.MAP <- function(node, table,altall=T){
+  dt <- table[Ancestral.Node==node,]
+  seq <- vector(mode="character",length=nrow(dt))
+  PP.MAP <- vector(mode="numeric",length=nrow(dt))
+  ambig.states <- vector(mode="character")
+  alt.states <- vector(mode="character")
+  if(altall==T){
+    altall.seq <- vector(mode="character",length=nrow(dt))
+  }
+  for(i in dt$Pos){
+    MAP.state <- c("A","C","D","E","F","G","H","I","K","L","M","N","P","Q","R","S","T","V","W","Y","gap")[which(dt[i,c("A","C","D","E","F","G","H","I","K","L","M","N","P","Q","R","S","T","V","W","Y","gap")]==max(dt[i,c("A","C","D","E","F","G","H","I","K","L","M","N","P","Q","R","S","T","V","W","Y","gap")]))]
+    if(MAP.state=="gap"){seq[i] <- "-"}else{seq[i] <- MAP.state}
+    if(altall==T){
+      altall.seq[i] <- seq[i]
+    }
+    PP.MAP[i] <- dt[i,get(MAP.state)]
+    if(PP.MAP[i] < 0.8){
+      ambig.states <- c(ambig.states,paste(MAP.state,i,sep=""))
+      for(aa in c("A","C","D","E","F","G","H","I","K","L","M","N","P","Q","R","S","T","V","W","Y","gap")){
+        if(aa != MAP.state){
+          if(dt[i,get(aa)]>0.2){
+            alt.states <- c(alt.states,paste(aa,i,sep=""))
+          }
+        }
+      }
+      if(altall==T){
+        aas <- c("A","C","D","E","F","G","H","I","K","L","M","N","P","Q","R","S","T","V","W","Y","gap")[c("A","C","D","E","F","G","H","I","K","L","M","N","P","Q","R","S","T","V","W","Y","gap") != MAP.state]
+        if(max(dt[i,..aas]) >= 0.2){
+          altall.state <- aas[which(dt[i,..aas]==max(dt[i,..aas]))]
+          if(altall.state=="gap"){altall.seq[i] <- "-"}else{altall.seq[i] <- altall.state}
+        }
+      }
+    }
+  }
+  if(altall==T){
+    if(sum(altall.seq != seq)>0){
+      return(list(list(seq),list(PP.MAP),list(ambig.states),list(alt.states),list(altall.seq)))
+    }else{
+      return(list(list(seq),list(PP.MAP),list(ambig.states),list(alt.states),list(NA)))
+    }
+  }else{
+    return(list(list(seq),list(PP.MAP),list(ambig.states),list(alt.states)))
+  }
+}
+
+for(i in 1:nrow(ancestors)){
+  ancestors[i,c("MAP_seq","MAP_PP","ambig_states","alt_states","altALL_seq")] <- get.MAP(node=ancestors[i,"node_ML"],table=PP_ML)
+}
+
+```
+
+Let's enumerate the substitutions that link each (MAP) ancestral sequence to its prior ancestor, as that can be helpful to have listed out.
+
+```{r enumerate_substitutions}
+#function that compares two sequences and outputs differences
+enumerate_subs <- function(seq1, seq2, SARS2_numbering=F){
+  diffs <- vector(mode="character")
+  for(i in 1:length(seq1)){
+    if(seq1[i] != seq2[i]){
+      if(SARS2_numbering==T){
+        diffs <- c(diffs,paste(seq1[i],RBD_sites[RBD_sites$site_alignment==i,"site_SARS2"],seq2[i],sep=""))
+      }else{
+        diffs <- c(diffs,paste(seq1[i],i,seq2[i],sep=""))
+      }
+      
+    }
+  }
+  if(length(diffs)>0){return(paste(diffs,collapse=";"))}else{return("")}
+}
+
+#need to manually do for each node since ancestors are not always directly above one another in the table
+ancestors[ancestors$node_ML=="N2","subs_alignpos"] <- ""
+ancestors[ancestors$node_ML=="N2","subs_SARS2pos"] <- ""
+
+ancestors[ancestors$node_ML=="N3","subs_alignpos"] <- enumerate_subs(seq1=ancestors[ancestors$node_ML=="N2","MAP_seq"][[1]],seq2=ancestors[ancestors$node_ML=="N3","MAP_seq"][[1]])
+ancestors[ancestors$node_ML=="N3","subs_SARS2pos"] <- enumerate_subs(seq1=ancestors[ancestors$node_ML=="N2","MAP_seq"][[1]],seq2=ancestors[ancestors$node_ML=="N3","MAP_seq"][[1]],SARS2_numbering=T)
+
+ancestors[ancestors$node_ML=="N10","subs_alignpos"] <- enumerate_subs(seq1=ancestors[ancestors$node_ML=="N2","MAP_seq"][[1]],seq2=ancestors[ancestors$node_ML=="N10","MAP_seq"][[1]])
+ancestors[ancestors$node_ML=="N10","subs_SARS2pos"] <- enumerate_subs(seq1=ancestors[ancestors$node_ML=="N2","MAP_seq"][[1]],seq2=ancestors[ancestors$node_ML=="N10","MAP_seq"][[1]],SARS2_numbering=T)
+
+ancestors[ancestors$node_ML=="N11","subs_alignpos"] <- enumerate_subs(seq1=ancestors[ancestors$node_ML=="N10","MAP_seq"][[1]],seq2=ancestors[ancestors$node_ML=="N11","MAP_seq"][[1]])
+ancestors[ancestors$node_ML=="N11","subs_SARS2pos"] <- enumerate_subs(seq1=ancestors[ancestors$node_ML=="N10","MAP_seq"][[1]],seq2=ancestors[ancestors$node_ML=="N11","MAP_seq"][[1]],SARS2_numbering=T)
+
+ancestors[ancestors$node_ML=="N35","subs_alignpos"] <- enumerate_subs(seq1=ancestors[ancestors$node_ML=="N11","MAP_seq"][[1]],seq2=ancestors[ancestors$node_ML=="N35","MAP_seq"][[1]])
+ancestors[ancestors$node_ML=="N35","subs_SARS2pos"] <- enumerate_subs(seq1=ancestors[ancestors$node_ML=="N11","MAP_seq"][[1]],seq2=ancestors[ancestors$node_ML=="N35","MAP_seq"][[1]],SARS2_numbering=T)
+
+```
+
+The ancestors table is useful if doing anything comparative in `R` because it keeps sequence strings split. However, for compiling sequences, manual browsing of csv, etc., easiest to collapse some information into a better output.
+
+```{r output_ancestors}
+ancestors_out <- subset(ancestors,select = c(node_ML,name,subs_alignpos,subs_SARS2pos))
+for(i in 1:nrow(ancestors_out)){
+  ancestors_out$MAP_seq[i] <- paste(ancestors$MAP_seq[i][[1]],collapse="")
+  ancestors_out$MAP_PP[i] <- mean(ancestors$MAP_PP[i][[1]])
+  ancestors_out$ambig_states[i] <- paste(ancestors$ambig_states[i][[1]],collapse=";")
+  ancestors_out$alt_states[i] <- paste(ancestors$alt_states[i][[1]],collapse=";")
+  ancestors_out$altALL_seq[i] <- paste(ancestors$altALL_seq[i][[1]],collapse="")
+}
+write.csv(ancestors_out,file="./ancestors_out.csv", quote=F, row.names=F)
+
+
+```
+
+Utility code to output differences between ancestors and the terminal nodes (extant sequences)
+
+```{r diffs_anc_extant}
+#diff btwn ancSarb and "original" AncSarb (added gap to make it compatible with new alignment)
+enumerate_subs(seq1=ancestors[ancestors$name=="AncSarbecovirus","MAP_seq"][[1]],
+               seq2=strsplit("NITNLCPFGEVFNATSFPSVYAWERMRISNCVADYSVLYNSSSSFSTFKCYGVSPTKLNDLCFSSVYADYFVVKGDDVRQIAPAQTGVIADYNYKLPDDFTGCVIAWNTNSLDSSS--GNNFFYRLFRHGKIKPYERDISNVLYNPAGGTCSSIEGLNCYKPLKSYGF-TPTSGVGYQPYRVVVLSFELLNAPATVCGPKQST",split="")[[1]],
+               SARS2_numbering=T)
+
+#diff btwn ancAsia2 and "original" AncAsia (added gap to make it compatible with new alignment)
+enumerate_subs(seq1=ancestors[ancestors$name=="AncAsia2","MAP_seq"][[1]],
+               seq2=strsplit("NITNLCPFGEVFNATTFPSVYAWERKRISNCVADYSVLYNST-SFSTFKCYGVSPTKLNDLCFSNVYADSFVVKGDDVRQIAPGQTGVIADYNYKLPDDFTGCVIAWNTNNLDSSSSGNYNYLYRLFRHSKLKPFERDISNEIYSPGGQPCSGVEGFNCYYPLQSYGF-HPTTGVGYQPYRVVVLSFELLNAPATVCGPKLST
+",split="")[[1]],
+               SARS2_numbering=T)
+```

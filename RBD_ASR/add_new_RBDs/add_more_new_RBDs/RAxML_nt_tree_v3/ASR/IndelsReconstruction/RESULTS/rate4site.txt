@@ -1,0 +1,25 @@
+# Rate values were normalized to Z score (mean rate=0, +/-1 rat= +/-standard error)
+# Rates were calculated using the expectation of the posterior rate distribution
+# Prior distribution is Gamma with 4 discrete categories
+# The alpha parameter 0.9618
+# sp.rates(j)  j= 0	0.1293	0.25
+# sp.rates(j)  j= 1	0.4649	0.25
+# sp.rates(j)  j= 2	0.9934	0.25
+# sp.rates(j)  j= 3	2.412	0.25
+
+=========================================================================================================================================================
+# POS	RATE
+1	-1.142
+2	0.2404
+3	-0.5332
+4	0.5323
+5	0.7231
+6	0.4376
+7	-0.5332
+8	-0.7306
+9	1.763
+10	0.2266
+11	0.9038
+12	-1.888
+# Average = 1.407
+# Standard Deviation = 0.5414

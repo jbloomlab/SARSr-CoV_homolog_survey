@@ -9,6 +9,7 @@ dependencies:
   - pip
   - pbccs
   - raxml
+  - iqtree
   - sra-tools
   - dssp
   - mafft

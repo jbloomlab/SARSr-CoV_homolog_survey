@@ -331,7 +331,7 @@ nohup raxmlHPC-PTHREADS -s ../RBD_nt_aligned_v2.fasta -n RBD_codon_tree_v2.txt -
 
 Open up the tree `./RBD_codon_tree_v2/RAxML_bestTree.RBD_codon_tree_v2.txt` in FigTree, root on the Hp-BCoV\_Zhejiang outgroup sequence, output tree as `RAxML_besttree_RBD_codon_v2_rooted.txt` in Newick format. This will polarize the direction of nodes for ASR.
 
-Infer ancestors (note, haven't redone since adding RsYN04):
+Infer ancestors:
 
 ```
 mkdir ../ASR_v2
@@ -341,57 +341,178 @@ nohup perl ../../../programs/FastML.v3.11/www/fastml/FastML_Wrapper.pl --MSA_fil
 Parsed sequences with the `.Rmd` script in this directory. Compared the "v1" sequences to these:
   - AncSarbecovirus v2 reconstruciton has mutations I434L, F452Y, K490E, S501A compared to the v1. S501A probably slightly enhances the Ra.9479 affinity, others probably don't matter
   - AncAsia v2 has mutaitons N394S, I434L, L441Q, L452Y, G482S, Q493K, H498Y, T501A rleative to v1. From SSM data in v1 AncAsia, the three contact sites still compatible with binding (at least individually)
-  - AncSARS2a v2 has mutations L441Q, S443A, K444S, G446S, L452Y, T470N, T478Q, N481S, G482S, Q493K, H498Y, T501A. Again, probably the indiviudal mutations compatible with binding, but there are many, so ti might be worth binding. (Might show binding for e.g. cvACE2 binding whihc the v1 didn't)
+  - AncSARS2a v2 has mutations L441Q, S443A, K444S, G446S, L452Y, T470N, T478Q, N481S, G482S, Q493K, H498Y, T501A. Again, probably the indiviudal mutations compatible with binding, but there are many, so ti might be worth testing. (Might show binding for e.g. cvACE2 binding whihc the v1 didn't)
   - Note that the v2 AncSARS2b is closer to the v1 AncSARS1a (only differs K403R, L441Q, S443A, K444S), consistent with those having the same ingroup sequecnes (plus cambodia for v2)
 
 
 ## Addition of _even more_ new sarbecovirus RBD sequences (it never ends, of course)
-Two new sarb sequecnes from Black Sea/Caucasus region in Russia recently reported in [this preprint](https://www.biorxiv.org/content/10.1101/2021.05.17.444362v2), dubbed Khosta-1 and Khosta-2. They also pointed out to me one more clade 3 sequence related to BM48-31 that is on [Genbank](https://www.ncbi.nlm.nih.gov/nuccore/939726458) though not published.
+Two new sarb sequecnes from Black Sea/Caucasus region in Russia recently reported in [this preprint](https://www.biorxiv.org/content/10.1101/2021.05.17.444362v2), dubbed Khosta-1 and Khosta-2. They also pointed out to me one more clade 3 sequence related to BM48-31 that is on [Genbank](https://www.ncbi.nlm.nih.gov/nuccore/939726458) though not published. And a [recent paper](https://www.nature.com/articles/s41598-021-94011-z) published genome of RhGB01 from Great Britain, in an R. hipposideros bat
 
 Started new subdirectory, copy in working RBD alignments
 ```
 mkdir add_new_RBDs/add_more_new_RBDs
 cd add_new_RBDs/add_more_new_RBDs
-cp ../RBD_aa_aligned_v2.fasta ./
 cp ../RBDs_nt_unaligned_v2.fasta ./RBDs_nt_unaligned_v3.fasta
 ```
 
-Downloaded new sequences, in file `RBDs_more_new_aa.fasta`. Added nt sequences to `RBDs_nt_unaligned_v3.fasta`: 
+Downloaded new sequences, merged with v2 alignment (removing gaps to unalign everything) in file `RBDs_aa_unaligned_v3.fasta`. Added nt sequences to `RBDs_nt_unaligned_v3.fasta`: 
   - BB9904 (Bulgaria, R. euryale): Genbank KR559017
   - Khosta-1 (Russia, R. ferrumequinum): Genbank MZ190137
-  - Khosta-1 (Russia, R. hipposideros): Genbank MZ190138
-
-Use mafft to align new sequences in with the prior set:
+  - Khosta-2 (Russia, R. hipposideros): Genbank MZ190138
+  - RhGB01 (Great Britain, R. hipposideros): Genbank MW719567
+  
+Use mafft to align updated amino acid sequence set 'fresh' (having undone prior alignment)
 
 ```
-mafft --add ./RBDs_more_new_aa.fasta --reorder ./RBD_aa_aligned_v2.fasta > ./RBD_aa_aligned_v3.fasta
+mafft --reorder --op 4.5 ./RBDs_aa_unaligned_v3.fasta > ./RBDs_aa_aligned_v3.fasta
 ```
 
 Make nt alignment:
 
 ```
-pal2nal.pl ./RBD_aa_aligned_v3.fasta RBDs_nt_unaligned_v3.fasta > ./RBD_nt_aligned_v3.clustal
+pal2nal.pl RBDs_aa_aligned_v3.fasta ./RBDs_nt_unaligned_v3.fasta > RBDs_nt_aligned_v3.clustal
 ```
-Convert clustal to fasta
+Convert clustal to fasta, save as `RBDs_nt_aligned_v3.fasta`
 
-Infer phylogeny in RAxML. Note, the first unconstrained tree did have EurAf first branching and mostly monophyletic, except the root made AncSarb=Khosta2 which doesn't make sense. Thus I do constrain monophyletic Eur/Af (as all but Khosta2, the most weird looking of the seqs, were monophyletic on first pass, but the root pulled Khosta2 out), but constraint doesn't dictate outgroup placement nor any other sequences. Before doing anything substantial with this updated sequence set, should make tree with Spike which will be better aligned with these new sequences and better illustrate branching. Maybe need to start alignment from scratch instead of adding these lineages to my existing alignment:
 
-```
-mkdir RBD_codon_tree_v3
-cd ./RBD_codon_tree_v3
-nohup raxmlHPC-PTHREADS -s ../RBD_nt_aligned_v3.fasta -n RBD_codon_tree_v3.txt -m GTRGAMMA -f a -p 20 -N autoMRE -x 20 -T 8 -g ../constraint.txt -q ../../codon_partitions.txt &
-```
-
-Open up the tree `./RBD_codon_tree_v3/RAxML_bestTree.RBD_codon_tree_v3.txt` in FigTree, root on the Hp-BCoV\_Zhejiang outgroup sequence, output tree as `RAxML_besttree_RBD_codon_v3_rooted.txt` in Newick format. This will polarize the direction of nodes for ASR.
-
-Infer ancestors:
+Infer ML tree in RAxML based on nt and aa seqs
 
 ```
-mkdir ../ASR_v3
-cd ../ASR_v3
-nohup perl ../../../../programs/FastML.v3.11/www/fastml/FastML_Wrapper.pl --MSA_file ../RBD_aa_aligned_v3.fasta --seqType AA --Tree ../RBD_codon_tree_v3/RAxML_besttree_RBD_codon_v3_rooted.txt --SubMatrix LG --OptimizeBL yes --jointReconstruction yes --indelReconstruction BOTH --outDir /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/add_new_RBDs/add_more_new_RBDs/ASR_v3 &
+mkdir RAxML_nt_tree_v3
+cd ./RAxML_nt_tree_v3
+nohup raxmlHPC-PTHREADS -s ../RBDs_nt_aligned_v3.fasta -n RAxML_nt_tree_v3.txt -m GTRGAMMA -f a -p 20 -N autoMRE -x 20 -T 8 -q ../codon_partitions.txt &
 ```
-Parsed sequences with the `.Rmd` script in this directory. Compared the "v1" sequences to these:
-  - AncSarbecovirus v3 reconstruciton has mutations xxxxxx compared to the v1. 
+
+RAxML, aa seqs:
+```
+mkdir ../RAxML_aa_tree_v3
+cd ../RAxML_aa_tree_v3
+nohup raxmlHPC-PTHREADS -s ../RBDs_aa_aligned_v3.fasta -n RAxML_aa_tree_v3.txt -m PROTGAMMALG -f a -p 10 -N autoMRE -x 10 -T 8 &
+```
+
+And also try in IQtree with a true codon substitution model, let IQtree find best fit model
+
+```
+mkdir ../IQtree_codon_tree_v3
+cd ../IQtree_codon_tree_v3
+nohup iqtree -s ../RBDs_nt_aligned_v3.fasta -st CODON -T AUTO -ntmax 8 -B 1000 -alrt 1000 --prefix IQtree_codon_tree_v3 &
+```
+
+Some variability between the three trees. All three have the root breaking up the Eur/Af sequences as paraphyletic, but first to diverge separate from Asian sarbecoviruses. The RAxML nt tree bascially pulls Khosta-2 out as a zero-branch-length extension from teh sarb root (aka, it is ancSarb), followed by RhGB01, then the remaining Af/Eur forming a clade. RsYn04 than branches from teh remaining three Asia clades as I saw previously. The RAxML aa tree pulls RhGB01 out as the zero-branch length "root" sequence, while Khosta2 then falls in with the clade of remaining Eur/Af. RsYN04 is seen to branch internal to the other three Asia clades. This is similar to what is found in the codon tree, with the only exception that RhGB01 gets some branch length away from 'the root' in its breakup of the Eur/Af monophyly.
+
+This does still seem to support more or less our original rooting of Eur/Af / Asia divergence, except we're getting more Eur/Af paraphyly. RsYN04 position appears to differ based on nt versus codon/aa trees, though its placement is not determined with super strong node support in either scenario, though in eithe rcase it is 'it's own' group independent of other clades.
+
+In thec ase of the RAxML aa and nt trees, ancSarb will just be inferred to be the same as either Khosta2 or RhGB01. Would be worth doing ASR in IQtree though on the codon tree, sicne there is 'branch length' to RhGB01 from the root meaning there will be sequence differences. I believe I can do this ASR *in* IQtree itself using this same codon sub model. We will try taht below.
+
+Other than that, I wonder whether it's worth looking at constraining Eur/Af monophyly as an alternative ancestor. (Not saying I believe strongly enough we need to impose this monophyly, but rather that the ancSarb=khosta2 or RhGB01 means it's just those phenotypes. We could additionally test this alternative constraint tree ancSarb for more understanding of the robustness of its RaACE2 binding observation.) I could infer full spike trees and see if that gives any more signal for monophyletic Eur/Af sarbs?
+
+
+Want to do whole spike tree with more robust outgroup inclusion to understand rooting in context of these newly added sequences.
+
+```
+mkdir ../spike
+cd ../spike
+```
+Copied in unaligned spike sequences from `RBD_ASR/outgroup-rooting/unaligned-sequences`
+Added all of the new spikes listed above, saved as `spikes_aa_unaligned_v3.fasta` and `spikes_nt_unaligned_v3.fasta`
+
+Align spike aa seqs
+```
+mafft --reorder --op 4.5 ./spikes_aa_unaligned_v3.fasta > ./spikes_aa_aligned_v3.fasta
+```
+
+Also make the nt alignment from amino acid sequences using PAL2NAL, and convert to fasta with online tool linked above:
+
+```
+pal2nal.pl ./spikes_aa_aligned_v3.fasta ./spikes_nt_unaligned_v3.fasta > ./spikes_nt_aligned_v3.clustal
+```
+
+Manually cleaned up alignments, deleted regions that are gaps in sarbecovirues but insertions in outgroups. 
+
+Saved as: `./spikes_aa_aligned_v3_cleaned.fasta` and `./spikes_nt_aligned_v3_cleaned.fasta`
+
+Infer RAxML tree using partitioned nt model
+
+```
+mkdir ./RAxML_nt_tree
+cd ./RAxML_nt_tree
+nohup raxmlHPC-PTHREADS -s ../spikes_nt_aligned_v3_cleaned.fasta -n RAxML_spike_nt_tree.txt -m GTRGAMMA -f a -p 10 -N autoMRE -x 10 -T 8 -q ../codon_partitions.txt &
+```
+
+Infer RAxML tree using aa model
+
+```
+mkdir ../RAxML_aa_tree
+cd ./RAxML_aa_tree
+nohup raxmlHPC-PTHREADS -s ../spikes_aa_aligned_v3_cleaned.fasta -n RAxML_spike_aa_tree.txt -m PROTGAMMALG -f a -p 10 -N autoMRE -x 10 -T 8 &
+```
+
+Infer IQtree tree using best-fit codon substitution model
+```
+mkdir ../iqtree_codon_tree
+cd ../iqtree_codon_tree
+nohup iqtree -s ../spikes_nt_aligned_v3_cleaned.fasta -st CODON -T AUTO -ntmax 8 -B 1000 -alrt 1000 --prefix IQtree_spike_codon_tree &
+
+```
+
+Interpretation:
+ - Spike nt tree gives same pattern as the RBD tree: rooting induces paraphyly of Eur/Af sequences, with Khosta-2 divergence followed by RhGB01 and then monophyly of remaining Eur/Af seqs. RsYN04 placement is where I originally saw it, prior to dviergence of three other asia clades. The node support for RsYN04 placement is decent (node support 84 for monophyly of other three clades of Asia sarb), node support for paraphyly of Eur/Af modest at best (would break node supports 52 and 58 to make Eur/Af monophyletic)
+ - Spike aa tree gives Eur/Af monophyly (node support decent with 82) as well as RsYN04 in the prior position I've seen (would only have to break node support 40 for clade 1a/1b/2 monophyly)
+ - IQtree codon tree gives 100 support Eur/Af monophyly. It does have RsYN04 coming out as the first branch from the root, htough, which is the first time I've seen this. That has ok but not perfect node suppport.
+
+So, my conclusions are:
+ - all but IQtree, spike tree continue to support initial splits being between Eur/Af and Asia
+ - 4 of the six spike+RBD trees induce Af/Eur paraphyly, though ordinarily with weak support. Two of the trees recover monophylyetic Eur/Af
+ - The paraphyletic spike trees (excpet IQtree codon, RBD) have zero branch from root to a sequence I'm already ordering, implying the ancestor would just *be* that sequence. I could therefore address those putative ancestral phenotypes based on these seuqecnes that I'm already ordering, even if I don't truly believe ancestor had this same sequence and this is likely phylogentic artefact
+ - It could be worth trying an IQtree ASR approach on the codon RBD tree it recovers with RhGB01 branching (wiht branch length) from ancSarb
+ - It could be worth inferring the RBD tree constraining monophyletic Eur/Af as I still think that's a reasonable 'true' topology that is sometimes recovered despite the long outgroup branch
+
+RAxML RBD, partitioned nt model with constraint for Eur/Af monophyly
+```
+mkdir ../RAxML_nt_tree_v3_constraint
+cd ../RAxML_nt_tree_v3_constraint
+nohup raxmlHPC-PTHREADS -s ../RBDs_nt_aligned_v3.fasta -n RAxML_nt_tree_v3_constraint.txt -m GTRGAMMA -f a -p 20 -N autoMRE -g ../constraint.txt -x 20 -T 8 -q ../codon_partitions.txt &
+```
+
+RAxML, aa seqs with constraint for Eur/Af monophyly:
+```
+mkdir ../RAxML_aa_tree_v3_constraint
+cd ../RAxML_aa_tree_v3_constraint
+nohup raxmlHPC-PTHREADS -s ../RBDs_aa_aligned_v3.fasta -n RAxML_aa_tree_v3_constraint.txt -m PROTGAMMALG -f a -p 10 -N autoMRE -g ../constraint.txt -x 10 -T 8 &
+```
+
+Last, do ancestral sequence reconstruction. Will do it (1) on the constrained RBD nt tree topology, (2) using IQtree (no indel reconstruction...) with its ASR function based on its codon model and topology, and (3) on the unconstrained RBD nt tree topology (to see what results are)
+
+
+Open up the following trees in FigTree, rooted, adn outputted tree with `_rooted` nomenclature as Newick tree for input to ASR: `./RAxML_nt_tree_v3/RAxML_bestTree.RAxML_nt_tree_v3.txt`, `./RAxML_nt_tree_v3_constraint/RAxML_bestTree.RAxML_nt_tree_v3_constraint.txt` and `./IQtree_codon_tree_v3/IQtree_codon_tree_v3.treefile`
+
+Infer ancestors -- do in an `ASR` subdirectory within each of the respective phylogeny's subdirectory.
+
+RAxML nt tree, unconstrained
+```
+nohup perl ../../../../../programs/FastML.v3.11/www/fastml/FastML_Wrapper.pl --MSA_file ../../RBDs_aa_aligned_v3.fasta --seqType AA --Tree ../RAxML_bestTree.RAxML_nt_tree_v3_rooted.txt --SubMatrix LG --OptimizeBL yes --jointReconstruction yes --indelReconstruction BOTH --outDir /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/add_new_RBDs/add_more_new_RBDs/RAxML_nt_tree_v3/ASR &
+```
+RAxML, constrained nt tree
+```
+nohup perl ../../../../../programs/FastML.v3.11/www/fastml/FastML_Wrapper.pl --MSA_file ../../RBDs_aa_aligned_v3.fasta --seqType AA --Tree ../RAxML_bestTree.RAxML_nt_tree_v3_constraint_rooted.txt --SubMatrix LG --OptimizeBL yes --jointReconstruction yes --indelReconstruction BOTH --outDir /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/add_new_RBDs/add_more_new_RBDs/RAxML_nt_tree_v3_constraint/ASR &
+```
+IQtree, codon tree (using best fit model used in the ML tree inference)
+```
+nohup iqtree -s ../../RBDs_nt_aligned_v3.fasta -te ../IQtree_codon_tree_v3_rooted.txt -m KOSI07+F3X4+R5 -st CODON -asr -T AUTO -ntmax 8 --prefix IQtree_codon_tree_v3_ASR &
+```
+Also run FastML here to infer indels? Maybe without optimizing branch length since the indel model is independent of amino acid/codon substitution modeling?
+
+```
+mkdir fastml
+cd fastml
+nohup perl ../../../../../../programs/FastML.v3.11/www/fastml/FastML_Wrapper.pl --MSA_file ../../../RBDs_aa_aligned_v3.fasta --seqType AA --Tree ../../IQtree_codon_tree_v3_rooted.txt --SubMatrix LG --OptimizeBL no --jointReconstruction no --indelReconstruction BOTH --outDir /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/add_new_RBDs/add_more_new_RBDs/IQtree_codon_tree_v3/ASR/fastml &
+```
+
+Parsed sequences with the `.Rmd` script in each ASR subdirectory.
+  - AncSarbecovirus1 in the v3, nt tree, no constraint , as I expected is inferred to be identical to Khosta-2. This is because the root is put with 0 branch length to Khosta2 in this tree, as I noted above. Therefore, nothing to order here.
+  - AncSarbecovirus in the v3 nt tree with constrained monophyly: how does it differ from original AncSarbecovirus?: "Q340E;T346S;D360N;A372aS;G413A;L434I;R439N;I441L;K444S;Q445S;G446-;-448G;-449N;-450N;Y452F;A475P;-482S;P483I;S484E;E490K;V501S" -- some of this is difference in placement of gaps with new sequences, together with new signal. This ancestor seems worth ordering and testing, called AncSarbecovirus\_v3
+  - AncAsia2 in the v3 nt tree with constrained monophyly: how does it differ from original AncAsia? "Q340E;R403K;E406D;L434I;R439N;S440N;Q441L;A443S;Q445S;Y452L;K458H;V471E;A475P;-482G;P483V;S484E;L486F;K493Q;T498H;V501T" -- I do expect the T498 to be less of a strong (human and perhaps other) ACE2 binding state than H, and same perhaps with V501. Should probably order this along with AncAsia1 (ancestor of AncAsia1+RsYN04 -- only major difference is it's inferred to have the "region 1" deletion), as well as "AncSARS12" (ancestor of SARS1 and SARS2 clade, in case human ACE2 origin is pushed down a node in this AncAsia2).
+  - IQtree reconstruction -- doesn't allow for reconstruction of the AncSarbecovirus sequecne, not sure why. This will take longer term effort to figure out how to do in codon sub model context, given lack of indel reconstruction and this issue with AncSarb. I am going to order the new extant sarbs which is the most important bit anyway, along with the "v3" ancestor above.
+  
 
 
