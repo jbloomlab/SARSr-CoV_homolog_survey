@@ -1,0 +1,8 @@
+_seqFile /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/add_new_RBDs/add_more_new_RBDs/IQtree_codon_tree_v3/ASR/fastml/RBDs_aa_aligned_v3.fasta
+_indelOutputInfoFile /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/add_new_RBDs/add_more_new_RBDs/IQtree_codon_tree_v3/ASR/fastml/IndelsReconstruction//RBDs_aa_aligned_v3.fasta.indelOutputInfoFile
+_indelOutputFastaFile /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/add_new_RBDs/add_more_new_RBDs/IQtree_codon_tree_v3/ASR/fastml/IndelsReconstruction//RBDs_aa_aligned_v3.fasta.indelOutputFastaFile
+_nexusFileName /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/add_new_RBDs/add_more_new_RBDs/IQtree_codon_tree_v3/ASR/fastml/IndelsReconstruction//RBDs_aa_aligned_v3.fasta.indel_nexusFile
+_logFile /fh/fast/bloom_j/computational_notebooks/tstarr/2020/SARSr-CoV_homolog_survey/RBD_ASR/add_new_RBDs/add_more_new_RBDs/IQtree_codon_tree_v3/ASR/fastml/IndelsReconstruction//RBDs_aa_aligned_v3.fastaIndelCoder.log
+_logValue 9
+_codingType SIC
+_isOmitLeadingAndEndingGaps 0
