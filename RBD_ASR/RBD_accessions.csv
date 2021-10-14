@@ -1,68 +1,68 @@
-﻿ID,accession
-SARS-CoV-2,MN908947
-Pangolin_GD,Lam et al. 2020
-RaTG13,MN996532
-Pangolin_GX-P2V,EPI_ISL_410542
-SARS-CoV-1_Urbani_HP03,AY278741
-SARS-CoV-1_BJ02_HP03M,AY278487
-SARS-CoV-1_HGZ8L1-A_HP03E,AY394981
-SARS-CoV-1_GD01_HP03L,AY278489
-SARS-CoV-1_GZ-C_HP03L,AY394979
-SARS-CoV-1_Sino1-11_HP03L,AY485277
-SARS-CoV-1_Sin852_HP03L,AY559082
-SARS-CoV-1_SZ3_PC03,AY304486
-SARS-CoV-1_SZ13_PC03,AY304487
-SARS-CoV-1_SZ1_PC03,AY304489
-SARS-CoV-1_GD03T0013_HP04,AY525636
-SARS-CoV-1_GZ0402_HP04,AY613947
-SARS-CoV-1_PC4-127_PC04,AY613951
-SARS-CoV-1_PC4-137_PC04,AY627045
-SARS-CoV-1_PC4-13_PC04,AY613948
-WIV16,KT444582
-WIV1,KF367457
-Rs7327,KY417151
-LYRa11,KF569996
-Rs4231,KY417146
-RsSHC014,KC881005
-Rs4084,KY417144
-BM48-31,NC014470
-BtKY72,KY352407
-ZXC21,MG772934
-ZC45,MG772933
-JL2012,KJ473811
-Rf1,DQ412042
-HeB2013,KJ473812
-273-2005,DQ648856
-Rf4092,KY417145
-YN2013,KJ473816
-RmYN02,EPI_ISL_412977
-As6526,KY417142
-Rs4237,KY417147
-Rs4081,KY417143
-Rp3,DQ071615
-279-2005,DQ648857
-Shaanxi2011,JX993987
-Yunnan2011,JX993988
-Rs4247,KY417148
-HKU3-13,GQ153548
-HKU3-1,DQ022305
-GX2013,KJ473815
-Longquan-140,KF294457
-HKU3-8,GQ153543
-HuB2013,KJ473814
-Hp-BCoV_Zhejiang_2013,KF636752
-HKU1,KF686346
-OC43,KX344031
-MERS-CoV,NC_019843
-Bat-CoV-GCCDC1,MT350598
-Rousettus-CoV_HKU9,MG762674
-Rc-o319,LC556375
-RacCS203,MW251308
-RshSTT182,EPI_ISL_852604
-PDF-2370,Wells et al. supplement
-PRD-0038,Wells et al. supplement
-RsYN04,EPI_ISL_1699444
-BB9904,KR559017
-Khosta-1,MZ190137
-Khosta-2,MZ190138
-RhGB01,MW719567
+﻿ID,accession,species,location
+SARS-CoV-2,MN908947,human,outbreak Hubei
+Pangolin_GD,Lam et al. 2020,pangolin,seized Guandong
+RaTG13,MN996532,R. affinis,Yunnan
+Pangolin_GX-P2V,EPI_ISL_410542,pangolin,seized Guanxi
+SARS-CoV-1_Urbani_HP03,AY278741,human,outbreak Guangdong
+SARS-CoV-1_BJ02_HP03M,AY278487,human,outbreak Guangdong
+SARS-CoV-1_HGZ8L1-A_HP03E,AY394981,human,outbreak Guangdong
+SARS-CoV-1_GD01_HP03L,AY278489,human,outbreak Guangdong
+SARS-CoV-1_GZ-C_HP03L,AY394979,human,outbreak Guangdong
+SARS-CoV-1_Sino1-11_HP03L,AY485277,human,outbreak Guangdong
+SARS-CoV-1_Sin852_HP03L,AY559082,human,outbreak Guangdong
+SARS-CoV-1_SZ3_PC03,AY304486,civet,outbreak Guangdong
+SARS-CoV-1_SZ13_PC03,AY304487,civet,outbreak Guangdong
+SARS-CoV-1_SZ1_PC03,AY304489,civet,outbreak Guangdong
+SARS-CoV-1_GD03T0013_HP04,AY525636,human,outbreak Guangdong
+SARS-CoV-1_GZ0402_HP04,AY613947,human,outbreak Guangdong
+SARS-CoV-1_PC4-127_PC04,AY613951,civet,outbreak Guangdong
+SARS-CoV-1_PC4-137_PC04,AY627045,civet,outbreak Guangdong
+SARS-CoV-1_PC4-13_PC04,AY613948,civet,outbreak Guangdong
+WIV16,KT444582,R. sinicus,Yunnan
+WIV1,KF367457,R. sinicus,Yunnan
+Rs7327,KY417151,R. sinicus,Yunnan
+LYRa11,KF569996,R. affinis,Yunnan
+Rs4231,KY417146,R. sinicus,Yunnan
+RsSHC014,KC881005,R. sinicus,Yunnan
+Rs4084,KY417144,R. sinicus,Yunnan
+BM48-31,NC014470,R. blasii,Bulgaria
+BtKY72,KY352407,Rhinolophus spp.,Kenya
+ZXC21,MG772934,R. pusillus,Zhejiang
+ZC45,MG772933,R. pusillus,Zhejiang
+JL2012,KJ473811,R. ferrumequinum,Jilin
+Rf1,DQ412042,R. ferrumequinum,Hubei
+HeB2013,KJ473812,R. ferrumequinum,Hebei
+273-2005,DQ648856,R. ferrumequinum,Hubei
+Rf4092,KY417145,R. ferrumequinum,Yunnan
+YN2013,KJ473816,R. sinicus,Yunnan
+RmYN02,EPI_ISL_412977,R. malayanus,Yunnan
+As6526,KY417142,Aselliscus stoliczkanus,Yunnan
+Rs4237,KY417147,R. sinicus,Yunnan
+Rs4081,KY417143,R. sinicus,Yunnan
+Rp3,DQ071615,R. pearsonii,Guanxi
+279-2005,DQ648857,R. macrotis,Hubei
+Shaanxi2011,JX993987,R. pusillus,Shaanxi
+Yunnan2011,JX993988,Chaerephon plicata,Yunnan
+Rs4247,KY417148,R. sinicus,Yunnan
+HKU3-13,GQ153548,R. sinicus,Guangdong
+HKU3-1,DQ022305,R. sinicus,Guangdong
+GX2013,KJ473815,R. sinicus,Guanxi
+Longquan-140,KF294457,R. monoceros,Zhejiang
+HKU3-8,GQ153543,R. sinicus,Guangdong
+HuB2013,KJ473814,R. sinicus,Hubei
+Hp-BCoV_Zhejiang_2013,KF636752,outgroup,outgroup
+HKU1,KF686346,outgroup,outgroup
+OC43,KX344031,outgroup,outgroup
+MERS-CoV,NC_019843,outgroup,outgroup
+Bat-CoV-GCCDC1,MT350598,outgroup,outgroup
+Rousettus-CoV_HKU9,MG762674,outgroup,outgroup
+Rc-o319,LC556375,R. cornutus,Japan
+RacCS203,MW251308,R. acuminatus,Thailand
+RshSTT182,EPI_ISL_852604,R. shameli,Cambodia
+PDF-2370,Wells et al. supplement,Rhinolophus spp.,Uganda
+PRD-0038,Wells et al. supplement,Rhinolophus spp.,Rwanda
+RsYN04,EPI_ISL_1699444,R. stheno,Yunnan
+BB9904,KR559017,R. euryale,Bulgaria
+Khosta-1,MZ190137,R. ferrumequinum,"Caucasus, Russia"
+Khosta-2,MZ190138,R. hipposideros,"Caucasus, Russia"
+RhGB01,MW719567,R. hipposideros,"Gloucestershire, United Kingdom"
